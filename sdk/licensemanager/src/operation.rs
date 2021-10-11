@@ -107,7 +107,7 @@ impl smithy_http::response::ParseStrictResponse for CheckoutLicense {
     }
 }
 
-/// <p>Creates a grant for the specified license. A grant shares the use of license entitlements with specific AWS accounts.</p>
+/// <p>Creates a grant for the specified license. A grant shares the use of license entitlements with specific Amazon Web Services accounts.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGrant {
     _private: (),
@@ -220,7 +220,39 @@ impl smithy_http::response::ParseStrictResponse for CreateLicenseConfiguration {
     }
 }
 
-/// <p>Creates a new report generator.</p>
+/// <p>Creates a new license conversion task.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLicenseConversionTaskForResource {
+    _private: (),
+}
+impl CreateLicenseConversionTaskForResource {
+    /// Creates a new builder-style object to manufacture [`CreateLicenseConversionTaskForResourceInput`](crate::input::CreateLicenseConversionTaskForResourceInput)
+    pub fn builder() -> crate::input::create_license_conversion_task_for_resource_input::Builder {
+        crate::input::create_license_conversion_task_for_resource_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateLicenseConversionTaskForResource {
+    type Output = std::result::Result<
+        crate::output::CreateLicenseConversionTaskForResourceOutput,
+        crate::error::CreateLicenseConversionTaskForResourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_license_conversion_task_for_resource_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_create_license_conversion_task_for_resource_response(
+                response,
+            )
+        }
+    }
+}
+
+/// <p>Creates a report generator.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGenerator {
     _private: (),
@@ -386,8 +418,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteLicenseConfiguration {
     }
 }
 
-/// <p>Delete an existing report generator.</p>
-/// <p>This action deletes the report generator, which stops it from generating future reports and cannot be reversed. However, the previous reports from this generator will remain in your S3 bucket.</p>
+/// <p>Deletes the specified report generator.</p>
+/// <p>This action deletes the report generator, which stops it from generating future reports.
+/// The action cannot be reversed. It has no effect on the previous reports from this generator.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLicenseManagerReportGenerator {
     _private: (),
@@ -575,7 +608,35 @@ impl smithy_http::response::ParseStrictResponse for GetLicenseConfiguration {
     }
 }
 
-/// <p>Gets information on the specified report generator.</p>
+/// <p>Gets information about the specified license type conversion task.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetLicenseConversionTask {
+    _private: (),
+}
+impl GetLicenseConversionTask {
+    /// Creates a new builder-style object to manufacture [`GetLicenseConversionTaskInput`](crate::input::GetLicenseConversionTaskInput)
+    pub fn builder() -> crate::input::get_license_conversion_task_input::Builder {
+        crate::input::get_license_conversion_task_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetLicenseConversionTask {
+    type Output = std::result::Result<
+        crate::output::GetLicenseConversionTaskOutput,
+        crate::error::GetLicenseConversionTaskError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_license_conversion_task_error(response)
+        } else {
+            crate::operation_deser::parse_get_license_conversion_task_response(response)
+        }
+    }
+}
+
+/// <p>Gets information about the specified report generator.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetLicenseManagerReportGenerator {
     _private: (),
@@ -777,6 +838,34 @@ impl smithy_http::response::ParseStrictResponse for ListLicenseConfigurations {
             crate::operation_deser::parse_list_license_configurations_error(response)
         } else {
             crate::operation_deser::parse_list_license_configurations_response(response)
+        }
+    }
+}
+
+/// <p>Lists the license type conversion tasks for your account.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListLicenseConversionTasks {
+    _private: (),
+}
+impl ListLicenseConversionTasks {
+    /// Creates a new builder-style object to manufacture [`ListLicenseConversionTasksInput`](crate::input::ListLicenseConversionTasksInput)
+    pub fn builder() -> crate::input::list_license_conversion_tasks_input::Builder {
+        crate::input::list_license_conversion_tasks_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListLicenseConversionTasks {
+    type Output = std::result::Result<
+        crate::output::ListLicenseConversionTasksOutput,
+        crate::error::ListLicenseConversionTasksError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_license_conversion_tasks_error(response)
+        } else {
+            crate::operation_deser::parse_list_license_conversion_tasks_response(response)
         }
     }
 }
@@ -1168,7 +1257,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateLicenseConfiguration {
 }
 
 /// <p>Updates a report generator.</p>
-/// <p>After you make changes to a report generator, it will start generating new reports within 60 minutes of being updated.</p>
+/// <p>After you make changes to a report generator, it starts generating new reports within 60 minutes of being updated.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLicenseManagerReportGenerator {
     _private: (),
@@ -1196,9 +1285,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateLicenseManagerReportGe
     }
 }
 
-/// <p>Adds or removes the specified license configurations for the specified AWS resource.</p>
+/// <p>Adds or removes the specified license configurations for the specified Amazon Web Services resource.</p>
 /// <p>You can update the license specifications of AMIs, instances, and hosts.
-/// You cannot update the license specifications for launch templates and AWS CloudFormation templates,
+/// You cannot update the license specifications for launch templates and CloudFormation templates,
 /// as they send license configurations to the operation that creates the resource.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLicenseSpecificationsForResource {

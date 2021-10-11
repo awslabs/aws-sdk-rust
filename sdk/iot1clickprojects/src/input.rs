@@ -90,127 +90,133 @@ impl AssociateDeviceWithPlacementInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_associate_device_with_placement(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::AssociateDeviceWithPlacementInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_1 = &_input.project_name;
+            let input_1 =
+                input_1
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_name = smithy_http::label::fmt_string(input_1, false);
+            if project_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "project_name",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::AssociateDeviceWithPlacement::new(),
+            let input_2 = &_input.placement_name;
+            let input_2 =
+                input_2
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "placement_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let placement_name = smithy_http::label::fmt_string(input_2, false);
+            if placement_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "placement_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_3 = &_input.device_template_name;
+            let input_3 =
+                input_3
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "device_template_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let device_template_name = smithy_http::label::fmt_string(input_3, false);
+            if device_template_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "device_template_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/projects/{projectName}/placements/{placementName}/devices/{deviceTemplateName}",
+                projectName = project_name,
+                placementName = placement_name,
+                deviceTemplateName = device_template_name
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "AssociateDeviceWithPlacement",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_1 = &self.project_name;
-        let input_1 = input_1
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            })?;
-        let project_name = smithy_http::label::fmt_string(input_1, false);
-        if project_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        let input_2 = &self.placement_name;
-        let input_2 = input_2
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "placement_name",
-                details: "cannot be empty or unset",
-            })?;
-        let placement_name = smithy_http::label::fmt_string(input_2, false);
-        if placement_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "placement_name",
-                details: "cannot be empty or unset",
-            });
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AssociateDeviceWithPlacementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
         }
-        let input_3 = &self.device_template_name;
-        let input_3 = input_3
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "device_template_name",
-                details: "cannot be empty or unset",
-            })?;
-        let device_template_name = smithy_http::label::fmt_string(input_3, false);
-        if device_template_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "device_template_name",
-                details: "cannot be empty or unset",
-            });
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AssociateDeviceWithPlacementInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
         }
-        write!(
-            output,
-            "/projects/{projectName}/placements/{placementName}/devices/{deviceTemplateName}",
-            projectName = project_name,
-            placementName = placement_name,
-            deviceTemplateName = device_template_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_device_with_placement(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateDeviceWithPlacement::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "AssociateDeviceWithPlacement",
+            "iot1clickprojects",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -316,99 +322,103 @@ impl CreatePlacementInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_placement(&self)
-                    .map_err(|err| {
+        fn uri_base(
+            _input: &crate::input::CreatePlacementInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_4 = &_input.project_name;
+            let input_4 =
+                input_4
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_name = smithy_http::label::fmt_string(input_4, false);
+            if project_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "project_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/projects/{projectName}/placements",
+                projectName = project_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreatePlacementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreatePlacementInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_placement(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreatePlacement::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreatePlacement",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_4 = &self.project_name;
-        let input_4 = input_4
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            })?;
-        let project_name = smithy_http::label::fmt_string(input_4, false);
-        if project_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            });
-        }
-        write!(
-            output,
-            "/projects/{projectName}/placements",
-            projectName = project_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreatePlacement::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreatePlacement",
+            "iot1clickprojects",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -526,80 +536,78 @@ impl CreateProjectInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateProjectInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/projects").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateProjectInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateProjectInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateProject::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateProject",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/projects").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::CreateProject::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "CreateProject",
+                    "iot1clickprojects",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -682,110 +690,115 @@ impl DeletePlacementInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::DeletePlacementInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_5 = &_input.project_name;
+            let input_5 =
+                input_5
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_name = smithy_http::label::fmt_string(input_5, false);
+            if project_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "project_name",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeletePlacement::new(),
+            let input_6 = &_input.placement_name;
+            let input_6 =
+                input_6
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "placement_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let placement_name = smithy_http::label::fmt_string(input_6, false);
+            if placement_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "placement_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/projects/{projectName}/placements/{placementName}",
+                projectName = project_name,
+                placementName = placement_name
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeletePlacement",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_5 = &self.project_name;
-        let input_5 = input_5
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            })?;
-        let project_name = smithy_http::label::fmt_string(input_5, false);
-        if project_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        let input_6 = &self.placement_name;
-        let input_6 = input_6
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "placement_name",
-                details: "cannot be empty or unset",
-            })?;
-        let placement_name = smithy_http::label::fmt_string(input_6, false);
-        if placement_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "placement_name",
-                details: "cannot be empty or unset",
-            });
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeletePlacementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
         }
-        write!(
-            output,
-            "/projects/{projectName}/placements/{placementName}",
-            projectName = project_name,
-            placementName = placement_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeletePlacementInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeletePlacement::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeletePlacement",
+            "iot1clickprojects",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -852,95 +865,97 @@ impl DeleteProjectInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::DeleteProjectInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_7 = &_input.project_name;
+            let input_7 =
+                input_7
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_name = smithy_http::label::fmt_string(input_7, false);
+            if project_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "project_name",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteProject::new(),
+            write!(
+                output,
+                "/projects/{projectName}",
+                projectName = project_name
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteProject",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_7 = &self.project_name;
-        let input_7 = input_7
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            })?;
-        let project_name = smithy_http::label::fmt_string(input_7, false);
-        if project_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/projects/{projectName}",
-            projectName = project_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteProjectInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteProjectInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DeleteProject::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DeleteProject",
+                    "iot1clickprojects",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1023,110 +1038,115 @@ impl DescribePlacementInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::DescribePlacementInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_8 = &_input.project_name;
+            let input_8 =
+                input_8
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_name = smithy_http::label::fmt_string(input_8, false);
+            if project_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "project_name",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribePlacement::new(),
+            let input_9 = &_input.placement_name;
+            let input_9 =
+                input_9
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "placement_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let placement_name = smithy_http::label::fmt_string(input_9, false);
+            if placement_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "placement_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/projects/{projectName}/placements/{placementName}",
+                projectName = project_name,
+                placementName = placement_name
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribePlacement",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_8 = &self.project_name;
-        let input_8 = input_8
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            })?;
-        let project_name = smithy_http::label::fmt_string(input_8, false);
-        if project_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        let input_9 = &self.placement_name;
-        let input_9 = input_9
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "placement_name",
-                details: "cannot be empty or unset",
-            })?;
-        let placement_name = smithy_http::label::fmt_string(input_9, false);
-        if placement_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "placement_name",
-                details: "cannot be empty or unset",
-            });
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribePlacementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
         }
-        write!(
-            output,
-            "/projects/{projectName}/placements/{placementName}",
-            projectName = project_name,
-            placementName = placement_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribePlacementInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribePlacement::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribePlacement",
+            "iot1clickprojects",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1195,96 +1215,99 @@ impl DescribeProjectInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeProject::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeProject",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_10 = &self.project_name;
-        let input_10 =
-            input_10
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeProjectInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_10 = &_input.project_name;
+            let input_10 =
+                input_10
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_name = smithy_http::label::fmt_string(input_10, false);
+            if project_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
-                })?;
-        let project_name = smithy_http::label::fmt_string(input_10, false);
-        if project_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/projects/{projectName}",
+                projectName = project_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/projects/{projectName}",
-            projectName = project_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeProjectInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeProjectInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeProject::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeProject",
+            "iot1clickprojects",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1382,128 +1405,131 @@ impl DisassociateDeviceFromPlacementInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DisassociateDeviceFromPlacement::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DisassociateDeviceFromPlacement",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_11 = &self.project_name;
-        let input_11 =
-            input_11
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DisassociateDeviceFromPlacementInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_11 = &_input.project_name;
+            let input_11 =
+                input_11
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_name = smithy_http::label::fmt_string(input_11, false);
+            if project_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
-                })?;
-        let project_name = smithy_http::label::fmt_string(input_11, false);
-        if project_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_12 = &self.placement_name;
-        let input_12 =
-            input_12
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_12 = &_input.placement_name;
+            let input_12 =
+                input_12
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "placement_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let placement_name = smithy_http::label::fmt_string(input_12, false);
+            if placement_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "placement_name",
                     details: "cannot be empty or unset",
-                })?;
-        let placement_name = smithy_http::label::fmt_string(input_12, false);
-        if placement_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "placement_name",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_13 = &self.device_template_name;
-        let input_13 =
-            input_13
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_13 = &_input.device_template_name;
+            let input_13 =
+                input_13
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "device_template_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let device_template_name = smithy_http::label::fmt_string(input_13, false);
+            if device_template_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "device_template_name",
                     details: "cannot be empty or unset",
-                })?;
-        let device_template_name = smithy_http::label::fmt_string(input_13, false);
-        if device_template_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "device_template_name",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/projects/{projectName}/placements/{placementName}/devices/{deviceTemplateName}",
+                projectName = project_name,
+                placementName = placement_name,
+                deviceTemplateName = device_template_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/projects/{projectName}/placements/{placementName}/devices/{deviceTemplateName}",
-            projectName = project_name,
-            placementName = placement_name,
-            deviceTemplateName = device_template_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisassociateDeviceFromPlacementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisassociateDeviceFromPlacementInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateDeviceFromPlacement::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DisassociateDeviceFromPlacement",
+            "iot1clickprojects",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1586,112 +1612,115 @@ impl GetDevicesInPlacementInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetDevicesInPlacement::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetDevicesInPlacement",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_14 = &self.project_name;
-        let input_14 =
-            input_14
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetDevicesInPlacementInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_14 = &_input.project_name;
+            let input_14 =
+                input_14
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_name = smithy_http::label::fmt_string(input_14, false);
+            if project_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
-                })?;
-        let project_name = smithy_http::label::fmt_string(input_14, false);
-        if project_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_15 = &self.placement_name;
-        let input_15 =
-            input_15
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_15 = &_input.placement_name;
+            let input_15 =
+                input_15
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "placement_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let placement_name = smithy_http::label::fmt_string(input_15, false);
+            if placement_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "placement_name",
                     details: "cannot be empty or unset",
-                })?;
-        let placement_name = smithy_http::label::fmt_string(input_15, false);
-        if placement_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "placement_name",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/projects/{projectName}/placements/{placementName}/devices",
+                projectName = project_name,
+                placementName = placement_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/projects/{projectName}/placements/{placementName}/devices",
-            projectName = project_name,
-            placementName = placement_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetDevicesInPlacementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetDevicesInPlacementInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDevicesInPlacement::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetDevicesInPlacement",
+            "iot1clickprojects",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1783,109 +1812,112 @@ impl ListPlacementsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListPlacements::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListPlacements",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_16 = &self.project_name;
-        let input_16 =
-            input_16
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListPlacementsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_16 = &_input.project_name;
+            let input_16 =
+                input_16
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_name = smithy_http::label::fmt_string(input_16, false);
+            if project_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
-                })?;
-        let project_name = smithy_http::label::fmt_string(input_16, false);
-        if project_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/projects/{projectName}/placements",
+                projectName = project_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/projects/{projectName}/placements",
-            projectName = project_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_17) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_17));
+        fn uri_query(_input: &crate::input::ListPlacementsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_17) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_17));
+            }
+            if let Some(inner_18) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                );
+            }
         }
-        if let Some(inner_18) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_18).encode(),
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListPlacementsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListPlacementsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPlacements::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListPlacements",
+            "iot1clickprojects",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1964,89 +1996,90 @@ impl ListProjectsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::ListProjectsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/projects").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::ListProjectsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_19) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_19));
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListProjects::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListProjects",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/projects").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_19) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_19));
+            if let Some(inner_20) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_20).encode(),
+                );
+            }
         }
-        if let Some(inner_20) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_20).encode(),
-            );
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListProjectsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListProjectsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::ListProjects::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "ListProjects",
+                    "iot1clickprojects",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2115,92 +2148,95 @@ impl ListTagsForResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListTagsForResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListTagsForResource",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_21 = &self.resource_arn;
-        let input_21 =
-            input_21
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListTagsForResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_21 = &_input.resource_arn;
+            let input_21 =
+                input_21
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let resource_arn = smithy_http::label::fmt_string(input_21, false);
+            if resource_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let resource_arn = smithy_http::label::fmt_string(input_21, false);
-        if resource_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "resource_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListTagsForResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListTagsForResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "iot1clickprojects",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2290,96 +2326,94 @@ impl TagResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::TagResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_22 = &_input.resource_arn;
+            let input_22 =
+                input_22
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::TagResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "TagResource",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_22 = &self.resource_arn;
-        let input_22 =
-            input_22
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let resource_arn = smithy_http::label::fmt_string(input_22, false);
+            if resource_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let resource_arn = smithy_http::label::fmt_string(input_22, false);
-        if resource_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "resource_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::TagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::TagResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "TagResource",
+                    "iot1clickprojects",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2461,101 +2495,102 @@ impl UntagResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UntagResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UntagResource",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_23 = &self.resource_arn;
-        let input_23 =
-            input_23
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UntagResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_23 = &_input.resource_arn;
+            let input_23 =
+                input_23
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let resource_arn = smithy_http::label::fmt_string(input_23, false);
+            if resource_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let resource_arn = smithy_http::label::fmt_string(input_23, false);
-        if resource_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "resource_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_24) = &self.tag_keys {
-            for inner_25 in inner_24 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_25));
+        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_24) = &_input.tag_keys {
+                for inner_25 in inner_24 {
+                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_25));
+                }
             }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UntagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UntagResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UntagResource",
+                    "iot1clickprojects",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2661,116 +2696,119 @@ impl UpdatePlacementInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_placement(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdatePlacement::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdatePlacement",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_26 = &self.project_name;
-        let input_26 =
-            input_26
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UpdatePlacementInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_26 = &_input.project_name;
+            let input_26 =
+                input_26
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_name = smithy_http::label::fmt_string(input_26, false);
+            if project_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
-                })?;
-        let project_name = smithy_http::label::fmt_string(input_26, false);
-        if project_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_27 = &self.placement_name;
-        let input_27 =
-            input_27
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_27 = &_input.placement_name;
+            let input_27 =
+                input_27
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "placement_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let placement_name = smithy_http::label::fmt_string(input_27, false);
+            if placement_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "placement_name",
                     details: "cannot be empty or unset",
-                })?;
-        let placement_name = smithy_http::label::fmt_string(input_27, false);
-        if placement_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "placement_name",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/projects/{projectName}/placements/{placementName}",
+                projectName = project_name,
+                placementName = placement_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/projects/{projectName}/placements/{placementName}",
-            projectName = project_name,
-            placementName = placement_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdatePlacementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdatePlacementInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_placement(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdatePlacement::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdatePlacement",
+            "iot1clickprojects",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2865,100 +2903,98 @@ impl UpdateProjectInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::UpdateProjectInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_28 = &_input.project_name;
+            let input_28 =
+                input_28
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_name",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateProject::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateProject",
-                "iot1clickprojects",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_28 = &self.project_name;
-        let input_28 =
-            input_28
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let project_name = smithy_http::label::fmt_string(input_28, false);
+            if project_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
-                })?;
-        let project_name = smithy_http::label::fmt_string(input_28, false);
-        if project_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_name",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/projects/{projectName}",
+                projectName = project_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/projects/{projectName}",
-            projectName = project_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateProjectInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateProjectInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UpdateProject::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UpdateProject",
+                    "iot1clickprojects",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,

@@ -75,6 +75,19 @@ pub fn serialize_operation_crate_operation_create_tags(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_create_updated_workspace_image(
+    input: &crate::input::CreateUpdatedWorkspaceImageInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_updated_workspace_image_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_create_workspace_bundle(
     input: &crate::input::CreateWorkspaceBundleInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

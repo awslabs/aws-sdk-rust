@@ -10404,6 +10404,46 @@ pub fn deser_operation_crate_operation_render_ui_template(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_retry_pipeline_execution(
+    input: &[u8],
+    mut builder: crate::output::retry_pipeline_execution_output::Builder,
+) -> Result<crate::output::retry_pipeline_execution_output::Builder, smithy_json::deserialize::Error>
+{
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "PipelineExecutionArn" => {
+                        builder = builder.set_pipeline_execution_arn(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_search(
     input: &[u8],
     mut builder: crate::output::search_output::Builder,
@@ -31772,6 +31812,11 @@ where
                                     )?,
                                 );
                             }
+                            "Project" => {
+                                builder = builder.set_project(
+                                    crate::json_deser::deser_structure_crate_model_project(tokens)?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -36232,6 +36277,122 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "Tags" => {
+                                builder = builder.set_tags(
+                                    crate::json_deser::deser_list_com_amazonaws_sagemaker_tag_list(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_project<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::Project>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::Project::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ProjectArn" => {
+                                builder = builder.set_project_arn(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ProjectName" => {
+                                builder = builder.set_project_name(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ProjectId" => {
+                                builder = builder.set_project_id(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ProjectDescription" => {
+                                builder = builder.set_project_description(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ServiceCatalogProvisioningDetails" => {
+                                builder = builder.set_service_catalog_provisioning_details(
+                                    crate::json_deser::deser_structure_crate_model_service_catalog_provisioning_details(tokens)?
+                                );
+                            }
+                            "ServiceCatalogProvisionedProductDetails" => {
+                                builder = builder.set_service_catalog_provisioned_product_details(
+                                    crate::json_deser::deser_structure_crate_model_service_catalog_provisioned_product_details(tokens)?
+                                );
+                            }
+                            "ProjectStatus" => {
+                                builder = builder.set_project_status(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::ProjectStatus::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "CreatedBy" => {
+                                builder = builder.set_created_by(
+                                    crate::json_deser::deser_structure_crate_model_user_context(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "CreationTime" => {
+                                builder = builder.set_creation_time(
+                                    smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        smithy_types::instant::Format::EpochSeconds,
+                                    )?,
                                 );
                             }
                             "Tags" => {

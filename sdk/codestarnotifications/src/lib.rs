@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>This AWS CodeStar Notifications API Reference provides descriptions and usage examples of the
 //! operations and data types for the AWS CodeStar Notifications API. You can use the AWS CodeStar Notifications API
 //! to work with the following objects:</p>

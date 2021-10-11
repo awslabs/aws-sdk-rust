@@ -74,87 +74,88 @@ impl AddLfTagsToResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_add_lf_tags_to_resource(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::AddLfTagsToResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AddLfTagsToResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AddLfTagsToResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.AddLFTagsToResource",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::AddLFTagsToResource::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_add_lf_tags_to_resource(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "AddLFTagsToResource",
-                "lakeformation",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.AddLFTagsToResource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AddLFTagsToResource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "AddLFTagsToResource",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -242,87 +243,88 @@ impl BatchGrantPermissionsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_batch_grant_permissions(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::BatchGrantPermissionsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::BatchGrantPermissionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::BatchGrantPermissionsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.BatchGrantPermissions",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::BatchGrantPermissions::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_batch_grant_permissions(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "BatchGrantPermissions",
-                "lakeformation",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.BatchGrantPermissions",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchGrantPermissions::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "BatchGrantPermissions",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -410,87 +412,88 @@ impl BatchRevokePermissionsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_batch_revoke_permissions(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::BatchRevokePermissionsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::BatchRevokePermissionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::BatchRevokePermissionsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.BatchRevokePermissions",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::BatchRevokePermissions::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_batch_revoke_permissions(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "BatchRevokePermissions",
-                "lakeformation",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.BatchRevokePermissions",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchRevokePermissions::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "BatchRevokePermissions",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -583,85 +586,85 @@ impl CreateLfTagInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_lf_tag(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateLfTagInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateLfTagInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateLfTagInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.CreateLFTag",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateLFTag::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateLFTag",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_lf_tag(&self)
+            .map_err(|err| {
+            smithy_http::operation::BuildError::SerializationError(err.into())
+        })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.CreateLFTag",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::CreateLFTag::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "CreateLFTag",
+                    "lakeformation",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -739,85 +742,85 @@ impl DeleteLfTagInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_lf_tag(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteLfTagInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteLfTagInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteLfTagInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.DeleteLFTag",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteLFTag::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteLFTag",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_lf_tag(&self)
+            .map_err(|err| {
+            smithy_http::operation::BuildError::SerializationError(err.into())
+        })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.DeleteLFTag",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DeleteLFTag::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DeleteLFTag",
+                    "lakeformation",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -886,87 +889,88 @@ impl DeregisterResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_deregister_resource(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::DeregisterResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeregisterResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeregisterResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.DeregisterResource",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_deregister_resource(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeregisterResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeregisterResource",
-                "lakeformation",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.DeregisterResource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeregisterResource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeregisterResource",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1035,85 +1039,88 @@ impl DescribeResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_describe_resource(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.DescribeResource",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeResource",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_resource(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.DescribeResource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeResource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeResource",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1182,87 +1189,88 @@ impl GetDataLakeSettingsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_data_lake_settings(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::GetDataLakeSettingsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetDataLakeSettingsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetDataLakeSettingsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.GetDataLakeSettings",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_data_lake_settings(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetDataLakeSettings::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetDataLakeSettings",
-                "lakeformation",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.GetDataLakeSettings",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDataLakeSettings::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetDataLakeSettings",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1365,83 +1373,86 @@ impl GetEffectivePermissionsForPathInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_effective_permissions_for_path(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetEffectivePermissionsForPathInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetEffectivePermissionsForPathInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetEffectivePermissionsForPathInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.GetEffectivePermissionsForPath",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetEffectivePermissionsForPath::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetEffectivePermissionsForPath",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_effective_permissions_for_path(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.GetEffectivePermissionsForPath",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetEffectivePermissionsForPath::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetEffectivePermissionsForPath",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1519,82 +1530,82 @@ impl GetLfTagInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_crate_operation_get_lf_tag(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetLfTagInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetLfTagInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetLfTagInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.GetLFTag",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op =
-                smithy_http::operation::Operation::new(request, crate::operation::GetLFTag::new())
-                    .with_metadata(smithy_http::operation::Metadata::new(
-                        "GetLFTag",
-                        "lakeformation",
-                    ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_lf_tag(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.GetLFTag",
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        Ok(builder)
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(request, crate::operation::GetLFTag::new())
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetLFTag",
+                "lakeformation",
+            ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1685,87 +1696,86 @@ impl GetResourceLfTagsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_resource_lf_tags(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetResourceLfTagsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResourceLfTagsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResourceLfTagsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.GetResourceLFTags",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetResourceLFTags::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetResourceLFTags",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_lf_tags(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.GetResourceLFTags",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResourceLFTags::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetResourceLFTags",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1894,85 +1904,88 @@ impl GrantPermissionsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_grant_permissions(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GrantPermissionsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GrantPermissionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GrantPermissionsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.GrantPermissions",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GrantPermissions::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GrantPermissions",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_grant_permissions(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.GrantPermissions",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GrantPermissions::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GrantPermissions",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2075,85 +2088,83 @@ impl ListLfTagsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_lf_tags(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ListLfTagsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListLfTagsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListLfTagsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.ListLFTags",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListLFTags::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListLFTags",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_lf_tags(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.ListLFTags",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::ListLFTags::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "ListLFTags",
+                    "lakeformation",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2284,85 +2295,88 @@ impl ListPermissionsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_permissions(&self)
-                    .map_err(|err| {
+        fn uri_base(
+            _input: &crate::input::ListPermissionsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListPermissionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListPermissionsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.ListPermissions",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_permissions(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListPermissions::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListPermissions",
-                "lakeformation",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.ListPermissions",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPermissions::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListPermissions",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2459,85 +2473,83 @@ impl ListResourcesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ListResourcesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListResourcesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListResourcesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.ListResources",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListResources::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListResources",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.ListResources",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::ListResources::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "ListResources",
+                    "lakeformation",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2620,87 +2632,88 @@ impl PutDataLakeSettingsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_put_data_lake_settings(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::PutDataLakeSettingsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutDataLakeSettingsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutDataLakeSettingsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.PutDataLakeSettings",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_data_lake_settings(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutDataLakeSettings::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutDataLakeSettings",
-                "lakeformation",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.PutDataLakeSettings",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutDataLakeSettings::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutDataLakeSettings",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2792,85 +2805,88 @@ impl RegisterResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_register_resource(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::RegisterResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::RegisterResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::RegisterResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.RegisterResource",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::RegisterResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "RegisterResource",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_register_resource(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.RegisterResource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterResource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "RegisterResource",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2966,83 +2982,88 @@ impl RemoveLfTagsFromResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_remove_lf_tags_from_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::RemoveLfTagsFromResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::RemoveLfTagsFromResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::RemoveLfTagsFromResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.RemoveLFTagsFromResource",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::RemoveLFTagsFromResource::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_remove_lf_tags_from_resource(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "RemoveLFTagsFromResource",
-                "lakeformation",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.RemoveLFTagsFromResource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveLFTagsFromResource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "RemoveLFTagsFromResource",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3170,85 +3191,88 @@ impl RevokePermissionsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_revoke_permissions(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::RevokePermissionsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::RevokePermissionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::RevokePermissionsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.RevokePermissions",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::RevokePermissions::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "RevokePermissions",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_revoke_permissions(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.RevokePermissions",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RevokePermissions::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "RevokePermissions",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3355,83 +3379,88 @@ impl SearchDatabasesByLfTagsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_search_databases_by_lf_tags(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::SearchDatabasesByLfTagsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::SearchDatabasesByLfTagsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::SearchDatabasesByLfTagsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.SearchDatabasesByLFTags",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::SearchDatabasesByLFTags::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_databases_by_lf_tags(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "SearchDatabasesByLFTags",
-                "lakeformation",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.SearchDatabasesByLFTags",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SearchDatabasesByLFTags::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "SearchDatabasesByLFTags",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3537,87 +3566,88 @@ impl SearchTablesByLfTagsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_search_tables_by_lf_tags(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::SearchTablesByLfTagsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::SearchTablesByLfTagsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::SearchTablesByLfTagsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.SearchTablesByLFTags",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::SearchTablesByLFTags::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_search_tables_by_lf_tags(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "SearchTablesByLFTags",
-                "lakeformation",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.SearchTablesByLFTags",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SearchTablesByLFTags::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "SearchTablesByLFTags",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3725,85 +3755,85 @@ impl UpdateLfTagInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_lf_tag(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateLfTagInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateLfTagInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateLfTagInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.UpdateLFTag",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateLFTag::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateLFTag",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_lf_tag(&self)
+            .map_err(|err| {
+            smithy_http::operation::BuildError::SerializationError(err.into())
+        })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.UpdateLFTag",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UpdateLFTag::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UpdateLFTag",
+                    "lakeformation",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3883,85 +3913,85 @@ impl UpdateResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_resource(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSLakeFormation.UpdateResource",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateResource",
-                "lakeformation",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_resource(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AWSLakeFormation.UpdateResource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateResource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateResource",
+            "lakeformation",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,

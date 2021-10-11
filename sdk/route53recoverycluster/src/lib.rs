@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Welcome to the Amazon Route 53 Application Recovery Controller API Reference Guide for Recovery Control Data Plane .</p>
 //! <p>Recovery control in Route 53 Application Recovery Controller includes extremely reliable routing controls that enable you to recover applications
 //! by rerouting traffic, for example, across Availability Zones or AWS Regions. Routing controls are simple on/off switches

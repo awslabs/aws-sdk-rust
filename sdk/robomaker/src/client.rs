@@ -1055,6 +1055,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
+        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(inp);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.inner = self.inner.set_environment(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct CreateRobotApplicationVersion<
@@ -1120,6 +1132,30 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_current_revision_id(input);
+            self
+        }
+        /// Appends an item to `s3Etags`.
+        ///
+        /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
+        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
+        pub fn s3_etags(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_etags(inp);
+            self
+        }
+        pub fn set_s3_etags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_s3_etags(input);
+            self
+        }
+        /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
+        pub fn image_digest(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_digest(inp);
+            self
+        }
+        pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_digest(input);
             self
         }
     }
@@ -1252,6 +1288,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
+        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(inp);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.inner = self.inner.set_environment(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct CreateSimulationApplicationVersion<
@@ -1317,6 +1365,30 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_current_revision_id(input);
+            self
+        }
+        /// Appends an item to `s3Etags`.
+        ///
+        /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
+        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
+        pub fn s3_etags(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_etags(inp);
+            self
+        }
+        pub fn set_s3_etags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_s3_etags(input);
+            self
+        }
+        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
+        pub fn image_digest(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_digest(inp);
+            self
+        }
+        pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_digest(input);
             self
         }
     }
@@ -4528,6 +4600,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_revision_id(input);
             self
         }
+        /// <p>The object that contains the Docker image URI for your robot application.</p>
+        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(inp);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.inner = self.inner.set_environment(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct UpdateSimulationApplication<
@@ -4646,6 +4730,18 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_current_revision_id(input);
+            self
+        }
+        /// <p>The object that contains the Docker image URI for your simulation application.</p>
+        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(inp);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.inner = self.inner.set_environment(input);
             self
         }
     }

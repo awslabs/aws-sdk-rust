@@ -353,7 +353,7 @@ impl smithy_http::response::ParseStrictResponse for CreateInstance {
     }
 }
 
-/// <p>Create an AppIntegration association with an Amazon Connect instance.</p>
+/// <p>Creates an AWS resource association with an Amazon Connect instance.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateIntegrationAssociation {
     _private: (),
@@ -464,7 +464,7 @@ impl smithy_http::response::ParseStrictResponse for CreateRoutingProfile {
     }
 }
 
-/// <p>Creates a use case for an AppIntegration association.</p>
+/// <p>Creates a use case for an integration association.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateUseCase {
     _private: (),
@@ -605,7 +605,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteInstance {
     }
 }
 
-/// <p>Deletes an AppIntegration association from an Amazon Connect instance. The association must not have
+/// <p>Deletes an AWS resource association from an Amazon Connect instance. The association must not have
 /// any use cases associated with it.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteIntegrationAssociation {
@@ -662,7 +662,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteQuickConnect {
     }
 }
 
-/// <p>Deletes a use case from an AppIntegration association.</p>
+/// <p>Deletes a use case from an integration association.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteUseCase {
     _private: (),
@@ -1684,7 +1684,7 @@ impl smithy_http::response::ParseStrictResponse for ListInstanceStorageConfigs {
     }
 }
 
-/// <p>Provides summary information about the AppIntegration associations for the specified Amazon Connect
+/// <p>Provides summary information about the AWS resource associations for the specified Amazon Connect
 /// instance.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListIntegrationAssociations {
@@ -2065,7 +2065,7 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
-/// <p>Lists the use cases. </p>
+/// <p>Lists the use cases for the integration association. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListUseCases {
     _private: (),
@@ -2267,6 +2267,11 @@ impl smithy_http::response::ParseStrictResponse for StartContactRecording {
 /// <note>
 /// <p>UK numbers with a 447 prefix are not allowed by default. Before you can dial these UK
 /// mobile numbers, you must submit a service quota increase request. For more information, see
+/// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+/// </note>
+/// <note>
+/// <p>Campaign calls are not allowed by default. Before you can make a call with
+/// <code>TrafficType</code> = <code>CAMPAIGN</code>, you must submit a service quota increase request. For more information, see
 /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]

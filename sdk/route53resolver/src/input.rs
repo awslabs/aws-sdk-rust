@@ -140,86 +140,89 @@ impl AssociateFirewallRuleGroupInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.creator_request_id.is_none() {
-                self.creator_request_id = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_associate_firewall_rule_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::AssociateFirewallRuleGroupInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AssociateFirewallRuleGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AssociateFirewallRuleGroupInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.AssociateFirewallRuleGroup",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::AssociateFirewallRuleGroup::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "AssociateFirewallRuleGroup",
-                "route53resolver",
+            Ok(builder)
+        }
+        if self.creator_request_id.is_none() {
+            self.creator_request_id = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_firewall_rule_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.AssociateFirewallRuleGroup",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateFirewallRuleGroup::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "AssociateFirewallRuleGroup",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -307,83 +310,86 @@ impl AssociateResolverEndpointIpAddressInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_associate_resolver_endpoint_ip_address(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::AssociateResolverEndpointIpAddressInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AssociateResolverEndpointIpAddressInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AssociateResolverEndpointIpAddressInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.AssociateResolverEndpointIpAddress",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::AssociateResolverEndpointIpAddress::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "AssociateResolverEndpointIpAddress",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_resolver_endpoint_ip_address(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.AssociateResolverEndpointIpAddress",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateResolverEndpointIpAddress::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "AssociateResolverEndpointIpAddress",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -473,83 +479,86 @@ impl AssociateResolverQueryLogConfigInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_associate_resolver_query_log_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::AssociateResolverQueryLogConfigInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AssociateResolverQueryLogConfigInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AssociateResolverQueryLogConfigInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.AssociateResolverQueryLogConfig",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::AssociateResolverQueryLogConfig::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "AssociateResolverQueryLogConfig",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_resolver_query_log_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.AssociateResolverQueryLogConfig",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateResolverQueryLogConfig::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "AssociateResolverQueryLogConfig",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -644,87 +653,88 @@ impl AssociateResolverRuleInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_associate_resolver_rule(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::AssociateResolverRuleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AssociateResolverRuleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AssociateResolverRuleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.AssociateResolverRule",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::AssociateResolverRule::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_resolver_rule(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "AssociateResolverRule",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.AssociateResolverRule",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateResolverRule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "AssociateResolverRule",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -825,86 +835,91 @@ impl CreateFirewallDomainListInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.creator_request_id.is_none() {
-                self.creator_request_id = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_firewall_domain_list(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateFirewallDomainListInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateFirewallDomainListInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateFirewallDomainListInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.CreateFirewallDomainList",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateFirewallDomainList::new(),
+            Ok(builder)
+        }
+        if self.creator_request_id.is_none() {
+            self.creator_request_id = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_firewall_domain_list(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateFirewallDomainList",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.CreateFirewallDomainList",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFirewallDomainList::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateFirewallDomainList",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1132,90 +1147,89 @@ impl CreateFirewallRuleInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.creator_request_id.is_none() {
-                self.creator_request_id = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_firewall_rule(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateFirewallRuleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateFirewallRuleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateFirewallRuleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.CreateFirewallRule",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateFirewallRule::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateFirewallRule",
-                "route53resolver",
+            Ok(builder)
+        }
+        if self.creator_request_id.is_none() {
+            self.creator_request_id = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_firewall_rule(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.CreateFirewallRule",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFirewallRule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateFirewallRule",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1316,86 +1330,91 @@ impl CreateFirewallRuleGroupInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.creator_request_id.is_none() {
-                self.creator_request_id = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_firewall_rule_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateFirewallRuleGroupInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateFirewallRuleGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateFirewallRuleGroupInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.CreateFirewallRuleGroup",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateFirewallRuleGroup::new(),
+            Ok(builder)
+        }
+        if self.creator_request_id.is_none() {
+            self.creator_request_id = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_firewall_rule_group(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateFirewallRuleGroup",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.CreateFirewallRuleGroup",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFirewallRuleGroup::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateFirewallRuleGroup",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1549,87 +1568,88 @@ impl CreateResolverEndpointInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_resolver_endpoint(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateResolverEndpointInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateResolverEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateResolverEndpointInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.CreateResolverEndpoint",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateResolverEndpoint::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_resolver_endpoint(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateResolverEndpoint",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.CreateResolverEndpoint",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateResolverEndpoint::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateResolverEndpoint",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1772,86 +1792,89 @@ impl CreateResolverQueryLogConfigInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.creator_request_id.is_none() {
-                self.creator_request_id = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_resolver_query_log_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateResolverQueryLogConfigInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateResolverQueryLogConfigInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateResolverQueryLogConfigInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.CreateResolverQueryLogConfig",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateResolverQueryLogConfig::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateResolverQueryLogConfig",
-                "route53resolver",
+            Ok(builder)
+        }
+        if self.creator_request_id.is_none() {
+            self.creator_request_id = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_resolver_query_log_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.CreateResolverQueryLogConfig",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateResolverQueryLogConfig::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateResolverQueryLogConfig",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2014,87 +2037,86 @@ impl CreateResolverRuleInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_resolver_rule(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateResolverRuleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateResolverRuleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateResolverRuleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.CreateResolverRule",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateResolverRule::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateResolverRule",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_resolver_rule(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.CreateResolverRule",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateResolverRule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateResolverRule",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2167,83 +2189,88 @@ impl DeleteFirewallDomainListInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_firewall_domain_list(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteFirewallDomainListInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteFirewallDomainListInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteFirewallDomainListInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.DeleteFirewallDomainList",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteFirewallDomainList::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_firewall_domain_list(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteFirewallDomainList",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.DeleteFirewallDomainList",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFirewallDomainList::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteFirewallDomainList",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2329,87 +2356,86 @@ impl DeleteFirewallRuleInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_firewall_rule(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteFirewallRuleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteFirewallRuleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteFirewallRuleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.DeleteFirewallRule",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteFirewallRule::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteFirewallRule",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_firewall_rule(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.DeleteFirewallRule",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFirewallRule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteFirewallRule",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2482,83 +2508,88 @@ impl DeleteFirewallRuleGroupInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_firewall_rule_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteFirewallRuleGroupInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteFirewallRuleGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteFirewallRuleGroupInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.DeleteFirewallRuleGroup",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteFirewallRuleGroup::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_firewall_rule_group(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteFirewallRuleGroup",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.DeleteFirewallRuleGroup",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFirewallRuleGroup::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteFirewallRuleGroup",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2630,87 +2661,88 @@ impl DeleteResolverEndpointInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_resolver_endpoint(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteResolverEndpointInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteResolverEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteResolverEndpointInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.DeleteResolverEndpoint",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteResolverEndpoint::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_resolver_endpoint(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteResolverEndpoint",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.DeleteResolverEndpoint",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteResolverEndpoint::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteResolverEndpoint",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2786,83 +2818,86 @@ impl DeleteResolverQueryLogConfigInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_resolver_query_log_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteResolverQueryLogConfigInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteResolverQueryLogConfigInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteResolverQueryLogConfigInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.DeleteResolverQueryLogConfig",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteResolverQueryLogConfig::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteResolverQueryLogConfig",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_resolver_query_log_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.DeleteResolverQueryLogConfig",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteResolverQueryLogConfig::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteResolverQueryLogConfig",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2934,87 +2969,86 @@ impl DeleteResolverRuleInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_resolver_rule(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteResolverRuleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteResolverRuleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteResolverRuleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.DeleteResolverRule",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteResolverRule::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteResolverRule",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_resolver_rule(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.DeleteResolverRule",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteResolverRule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteResolverRule",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3090,83 +3124,86 @@ impl DisassociateFirewallRuleGroupInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_disassociate_firewall_rule_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DisassociateFirewallRuleGroupInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisassociateFirewallRuleGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisassociateFirewallRuleGroupInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.DisassociateFirewallRuleGroup",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DisassociateFirewallRuleGroup::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DisassociateFirewallRuleGroup",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_firewall_rule_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.DisassociateFirewallRuleGroup",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateFirewallRuleGroup::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DisassociateFirewallRuleGroup",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3254,83 +3291,86 @@ impl DisassociateResolverEndpointIpAddressInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_endpoint_ip_address(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DisassociateResolverEndpointIpAddressInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisassociateResolverEndpointIpAddressInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisassociateResolverEndpointIpAddressInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.DisassociateResolverEndpointIpAddress",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DisassociateResolverEndpointIpAddress::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DisassociateResolverEndpointIpAddress",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_endpoint_ip_address(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.DisassociateResolverEndpointIpAddress",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateResolverEndpointIpAddress::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DisassociateResolverEndpointIpAddress",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3417,83 +3457,86 @@ impl DisassociateResolverQueryLogConfigInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_query_log_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DisassociateResolverQueryLogConfigInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisassociateResolverQueryLogConfigInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisassociateResolverQueryLogConfigInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.DisassociateResolverQueryLogConfig",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DisassociateResolverQueryLogConfig::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DisassociateResolverQueryLogConfig",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_query_log_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.DisassociateResolverQueryLogConfig",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateResolverQueryLogConfig::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DisassociateResolverQueryLogConfig",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3577,83 +3620,88 @@ impl DisassociateResolverRuleInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_rule(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DisassociateResolverRuleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisassociateResolverRuleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisassociateResolverRuleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.DisassociateResolverRule",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DisassociateResolverRule::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_resolver_rule(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DisassociateResolverRule",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.DisassociateResolverRule",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateResolverRule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DisassociateResolverRule",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3722,87 +3770,88 @@ impl GetFirewallConfigInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_firewall_config(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::GetFirewallConfigInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetFirewallConfigInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetFirewallConfigInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetFirewallConfig",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_firewall_config(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetFirewallConfig::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetFirewallConfig",
-                "route53resolver",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetFirewallConfig",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetFirewallConfig::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetFirewallConfig",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3874,87 +3923,88 @@ impl GetFirewallDomainListInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_firewall_domain_list(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetFirewallDomainListInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetFirewallDomainListInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetFirewallDomainListInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetFirewallDomainList",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetFirewallDomainList::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_firewall_domain_list(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetFirewallDomainList",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetFirewallDomainList",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetFirewallDomainList::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetFirewallDomainList",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4026,87 +4076,88 @@ impl GetFirewallRuleGroupInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetFirewallRuleGroupInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetFirewallRuleGroupInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetFirewallRuleGroupInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetFirewallRuleGroup",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetFirewallRuleGroup::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetFirewallRuleGroup",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetFirewallRuleGroup",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetFirewallRuleGroup::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetFirewallRuleGroup",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4182,83 +4233,86 @@ impl GetFirewallRuleGroupAssociationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group_association(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetFirewallRuleGroupAssociationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetFirewallRuleGroupAssociationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetFirewallRuleGroupAssociationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetFirewallRuleGroupAssociation",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetFirewallRuleGroupAssociation::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetFirewallRuleGroupAssociation",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group_association(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetFirewallRuleGroupAssociation",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetFirewallRuleGroupAssociation::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetFirewallRuleGroupAssociation",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4326,83 +4380,86 @@ impl GetFirewallRuleGroupPolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetFirewallRuleGroupPolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetFirewallRuleGroupPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetFirewallRuleGroupPolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetFirewallRuleGroupPolicy",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetFirewallRuleGroupPolicy::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetFirewallRuleGroupPolicy",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_firewall_rule_group_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetFirewallRuleGroupPolicy",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetFirewallRuleGroupPolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetFirewallRuleGroupPolicy",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4472,83 +4529,88 @@ impl GetResolverDnssecConfigInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_resolver_dnssec_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetResolverDnssecConfigInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResolverDnssecConfigInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResolverDnssecConfigInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetResolverDnssecConfig",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetResolverDnssecConfig::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_dnssec_config(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetResolverDnssecConfig",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetResolverDnssecConfig",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResolverDnssecConfig::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetResolverDnssecConfig",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4620,87 +4682,88 @@ impl GetResolverEndpointInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_resolver_endpoint(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::GetResolverEndpointInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResolverEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResolverEndpointInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetResolverEndpoint",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_endpoint(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetResolverEndpoint::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetResolverEndpoint",
-                "route53resolver",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetResolverEndpoint",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResolverEndpoint::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetResolverEndpoint",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4776,83 +4839,86 @@ impl GetResolverQueryLogConfigInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetResolverQueryLogConfigInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResolverQueryLogConfigInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResolverQueryLogConfigInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetResolverQueryLogConfig",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetResolverQueryLogConfig::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetResolverQueryLogConfig",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetResolverQueryLogConfig",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResolverQueryLogConfig::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetResolverQueryLogConfig",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4931,83 +4997,86 @@ impl GetResolverQueryLogConfigAssociationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config_association(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetResolverQueryLogConfigAssociationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResolverQueryLogConfigAssociationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResolverQueryLogConfigAssociationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetResolverQueryLogConfigAssociation",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetResolverQueryLogConfigAssociation::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetResolverQueryLogConfigAssociation",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config_association(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetResolverQueryLogConfigAssociation",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResolverQueryLogConfigAssociation::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetResolverQueryLogConfigAssociation",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5075,83 +5144,86 @@ impl GetResolverQueryLogConfigPolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetResolverQueryLogConfigPolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResolverQueryLogConfigPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResolverQueryLogConfigPolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetResolverQueryLogConfigPolicy",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetResolverQueryLogConfigPolicy::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetResolverQueryLogConfigPolicy",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_query_log_config_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetResolverQueryLogConfigPolicy",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResolverQueryLogConfigPolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetResolverQueryLogConfigPolicy",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5223,85 +5295,88 @@ impl GetResolverRuleInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetResolverRuleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResolverRuleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResolverRuleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetResolverRule",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetResolverRule::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetResolverRule",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetResolverRule",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResolverRule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetResolverRule",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5377,83 +5452,86 @@ impl GetResolverRuleAssociationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule_association(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetResolverRuleAssociationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResolverRuleAssociationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResolverRuleAssociationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetResolverRuleAssociation",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetResolverRuleAssociation::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetResolverRuleAssociation",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule_association(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetResolverRuleAssociation",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResolverRuleAssociation::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetResolverRuleAssociation",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5520,87 +5598,88 @@ impl GetResolverRulePolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule_policy(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetResolverRulePolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetResolverRulePolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetResolverRulePolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.GetResolverRulePolicy",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetResolverRulePolicy::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_resolver_rule_policy(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetResolverRulePolicy",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.GetResolverRulePolicy",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResolverRulePolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetResolverRulePolicy",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5703,87 +5782,88 @@ impl ImportFirewallDomainsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_import_firewall_domains(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ImportFirewallDomainsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ImportFirewallDomainsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ImportFirewallDomainsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ImportFirewallDomains",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ImportFirewallDomains::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_import_firewall_domains(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ImportFirewallDomains",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ImportFirewallDomains",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ImportFirewallDomains::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ImportFirewallDomains",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5870,87 +5950,88 @@ impl ListFirewallConfigsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_firewall_configs(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::ListFirewallConfigsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListFirewallConfigsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListFirewallConfigsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListFirewallConfigs",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_configs(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListFirewallConfigs::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListFirewallConfigs",
-                "route53resolver",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListFirewallConfigs",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFirewallConfigs::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListFirewallConfigs",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6038,83 +6119,88 @@ impl ListFirewallDomainListsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_firewall_domain_lists(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ListFirewallDomainListsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListFirewallDomainListsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListFirewallDomainListsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListFirewallDomainLists",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListFirewallDomainLists::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_domain_lists(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListFirewallDomainLists",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListFirewallDomainLists",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFirewallDomainLists::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListFirewallDomainLists",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6215,87 +6301,88 @@ impl ListFirewallDomainsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_firewall_domains(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::ListFirewallDomainsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListFirewallDomainsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListFirewallDomainsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListFirewallDomains",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_domains(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListFirewallDomains::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListFirewallDomains",
-                "route53resolver",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListFirewallDomains",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFirewallDomains::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListFirewallDomains",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6437,83 +6524,86 @@ impl ListFirewallRuleGroupAssociationsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_firewall_rule_group_associations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ListFirewallRuleGroupAssociationsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListFirewallRuleGroupAssociationsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListFirewallRuleGroupAssociationsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListFirewallRuleGroupAssociations",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListFirewallRuleGroupAssociations::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListFirewallRuleGroupAssociations",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_rule_group_associations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListFirewallRuleGroupAssociations",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFirewallRuleGroupAssociations::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListFirewallRuleGroupAssociations",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6600,83 +6690,88 @@ impl ListFirewallRuleGroupsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_firewall_rule_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ListFirewallRuleGroupsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListFirewallRuleGroupsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListFirewallRuleGroupsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListFirewallRuleGroups",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListFirewallRuleGroups::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_rule_groups(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListFirewallRuleGroups",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListFirewallRuleGroups",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFirewallRuleGroups::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListFirewallRuleGroups",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6816,87 +6911,88 @@ impl ListFirewallRulesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_firewall_rules(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::ListFirewallRulesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListFirewallRulesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListFirewallRulesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListFirewallRules",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_firewall_rules(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListFirewallRules::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListFirewallRules",
-                "route53resolver",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListFirewallRules",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFirewallRules::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListFirewallRules",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6998,83 +7094,88 @@ impl ListResolverDnssecConfigsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_resolver_dnssec_configs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ListResolverDnssecConfigsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListResolverDnssecConfigsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListResolverDnssecConfigsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListResolverDnssecConfigs",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListResolverDnssecConfigs::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_dnssec_configs(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListResolverDnssecConfigs",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListResolverDnssecConfigs",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResolverDnssecConfigs::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListResolverDnssecConfigs",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7173,83 +7274,86 @@ impl ListResolverEndpointIpAddressesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_resolver_endpoint_ip_addresses(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ListResolverEndpointIpAddressesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListResolverEndpointIpAddressesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListResolverEndpointIpAddressesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListResolverEndpointIpAddresses",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListResolverEndpointIpAddresses::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListResolverEndpointIpAddresses",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_endpoint_ip_addresses(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListResolverEndpointIpAddresses",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResolverEndpointIpAddresses::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListResolverEndpointIpAddresses",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7347,87 +7451,88 @@ impl ListResolverEndpointsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_resolver_endpoints(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ListResolverEndpointsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListResolverEndpointsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListResolverEndpointsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListResolverEndpoints",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListResolverEndpoints::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_endpoints(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListResolverEndpoints",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListResolverEndpoints",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResolverEndpoints::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListResolverEndpoints",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7629,83 +7734,86 @@ impl ListResolverQueryLogConfigAssociationsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_resolver_query_log_config_associations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ListResolverQueryLogConfigAssociationsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListResolverQueryLogConfigAssociationsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListResolverQueryLogConfigAssociationsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListResolverQueryLogConfigAssociations",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListResolverQueryLogConfigAssociations::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListResolverQueryLogConfigAssociations",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_query_log_config_associations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListResolverQueryLogConfigAssociations",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResolverQueryLogConfigAssociations::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListResolverQueryLogConfigAssociations",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7911,83 +8019,86 @@ impl ListResolverQueryLogConfigsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_resolver_query_log_configs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ListResolverQueryLogConfigsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListResolverQueryLogConfigsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListResolverQueryLogConfigsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListResolverQueryLogConfigs",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListResolverQueryLogConfigs::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListResolverQueryLogConfigs",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_query_log_configs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListResolverQueryLogConfigs",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResolverQueryLogConfigs::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListResolverQueryLogConfigs",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8086,83 +8197,86 @@ impl ListResolverRuleAssociationsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_resolver_rule_associations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::ListResolverRuleAssociationsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListResolverRuleAssociationsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListResolverRuleAssociationsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListResolverRuleAssociations",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListResolverRuleAssociations::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListResolverRuleAssociations",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_rule_associations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListResolverRuleAssociations",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResolverRuleAssociations::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListResolverRuleAssociations",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8260,87 +8374,88 @@ impl ListResolverRulesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_resolver_rules(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::ListResolverRulesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListResolverRulesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListResolverRulesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListResolverRules",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_resolver_rules(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListResolverRules::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListResolverRules",
-                "route53resolver",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListResolverRules",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResolverRules::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListResolverRules",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8434,87 +8549,88 @@ impl ListTagsForResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::ListTagsForResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListTagsForResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListTagsForResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.ListTagsForResource",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListTagsForResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListTagsForResource",
-                "route53resolver",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.ListTagsForResource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8598,83 +8714,86 @@ impl PutFirewallRuleGroupPolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_put_firewall_rule_group_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::PutFirewallRuleGroupPolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutFirewallRuleGroupPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutFirewallRuleGroupPolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.PutFirewallRuleGroupPolicy",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutFirewallRuleGroupPolicy::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutFirewallRuleGroupPolicy",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_firewall_rule_group_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.PutFirewallRuleGroupPolicy",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutFirewallRuleGroupPolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutFirewallRuleGroupPolicy",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8787,83 +8906,86 @@ impl PutResolverQueryLogConfigPolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_put_resolver_query_log_config_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::PutResolverQueryLogConfigPolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutResolverQueryLogConfigPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutResolverQueryLogConfigPolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.PutResolverQueryLogConfigPolicy",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutResolverQueryLogConfigPolicy::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutResolverQueryLogConfigPolicy",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_resolver_query_log_config_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.PutResolverQueryLogConfigPolicy",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutResolverQueryLogConfigPolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutResolverQueryLogConfigPolicy",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8976,87 +9098,88 @@ impl PutResolverRulePolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_put_resolver_rule_policy(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::PutResolverRulePolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutResolverRulePolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutResolverRulePolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.PutResolverRulePolicy",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutResolverRulePolicy::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_resolver_rule_policy(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutResolverRulePolicy",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.PutResolverRulePolicy",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutResolverRulePolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutResolverRulePolicy",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9171,85 +9294,83 @@ impl TagResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::TagResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::TagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::TagResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.TagResource",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::TagResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "TagResource",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.TagResource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "TagResource",
+                    "route53resolver",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9364,85 +9485,83 @@ impl UntagResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UntagResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UntagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UntagResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.UntagResource",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UntagResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UntagResource",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.UntagResource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UntagResource",
+                    "route53resolver",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9536,87 +9655,88 @@ impl UpdateFirewallConfigInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_firewall_config(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::UpdateFirewallConfigInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateFirewallConfigInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateFirewallConfigInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.UpdateFirewallConfig",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_config(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateFirewallConfig::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateFirewallConfig",
-                "route53resolver",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.UpdateFirewallConfig",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFirewallConfig::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateFirewallConfig",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9731,87 +9851,88 @@ impl UpdateFirewallDomainsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_firewall_domains(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateFirewallDomainsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateFirewallDomainsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateFirewallDomainsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.UpdateFirewallDomains",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateFirewallDomains::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_domains(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateFirewallDomains",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.UpdateFirewallDomains",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFirewallDomains::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateFirewallDomains",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10018,87 +10139,86 @@ impl UpdateFirewallRuleInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_firewall_rule(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateFirewallRuleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateFirewallRuleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateFirewallRuleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.UpdateFirewallRule",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateFirewallRule::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateFirewallRule",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_rule(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.UpdateFirewallRule",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFirewallRule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateFirewallRule",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10218,83 +10338,86 @@ impl UpdateFirewallRuleGroupAssociationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_firewall_rule_group_association(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateFirewallRuleGroupAssociationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateFirewallRuleGroupAssociationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateFirewallRuleGroupAssociationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.UpdateFirewallRuleGroupAssociation",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateFirewallRuleGroupAssociation::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateFirewallRuleGroupAssociation",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_firewall_rule_group_association(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.UpdateFirewallRuleGroupAssociation",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFirewallRuleGroupAssociation::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateFirewallRuleGroupAssociation",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10379,83 +10502,86 @@ impl UpdateResolverDnssecConfigInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_resolver_dnssec_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateResolverDnssecConfigInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateResolverDnssecConfigInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateResolverDnssecConfigInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.UpdateResolverDnssecConfig",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateResolverDnssecConfig::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateResolverDnssecConfig",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_resolver_dnssec_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.UpdateResolverDnssecConfig",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateResolverDnssecConfig::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateResolverDnssecConfig",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10538,87 +10664,88 @@ impl UpdateResolverEndpointInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_resolver_endpoint(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateResolverEndpointInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateResolverEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateResolverEndpointInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.UpdateResolverEndpoint",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateResolverEndpoint::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_resolver_endpoint(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateResolverEndpoint",
-                "route53resolver",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.UpdateResolverEndpoint",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateResolverEndpoint::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateResolverEndpoint",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10704,87 +10831,86 @@ impl UpdateResolverRuleInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_resolver_rule(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateResolverRuleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateResolverRuleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateResolverRuleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "Route53Resolver.UpdateResolverRule",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateResolverRule::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateResolverRule",
-                "route53resolver",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_resolver_rule(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "Route53Resolver.UpdateResolverRule",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateResolverRule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateResolverRule",
+            "route53resolver",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,

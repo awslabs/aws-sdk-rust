@@ -295,6 +295,26 @@ pub mod fluent_builders {
                 .set_elasticsearch_destination_configuration(input);
             self
         }
+        pub fn amazonopensearchservice_destination_configuration(
+            mut self,
+            inp: crate::model::AmazonopensearchserviceDestinationConfiguration,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .amazonopensearchservice_destination_configuration(inp);
+            self
+        }
+        pub fn set_amazonopensearchservice_destination_configuration(
+            mut self,
+            input: std::option::Option<
+                crate::model::AmazonopensearchserviceDestinationConfiguration,
+            >,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_amazonopensearchservice_destination_configuration(input);
+            self
+        }
         /// <p>The destination in Splunk. You can specify only one destination.</p>
         pub fn splunk_destination_configuration(
             mut self,
@@ -1247,6 +1267,22 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ElasticsearchDestinationUpdate>,
         ) -> Self {
             self.inner = self.inner.set_elasticsearch_destination_update(input);
+            self
+        }
+        pub fn amazonopensearchservice_destination_update(
+            mut self,
+            inp: crate::model::AmazonopensearchserviceDestinationUpdate,
+        ) -> Self {
+            self.inner = self.inner.amazonopensearchservice_destination_update(inp);
+            self
+        }
+        pub fn set_amazonopensearchservice_destination_update(
+            mut self,
+            input: std::option::Option<crate::model::AmazonopensearchserviceDestinationUpdate>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_amazonopensearchservice_destination_update(input);
             self
         }
         /// <p>Describes an update for a destination in Splunk.</p>

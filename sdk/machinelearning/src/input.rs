@@ -72,82 +72,82 @@ impl AddTagsInput {
         smithy_http::operation::Operation<crate::operation::AddTags, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::AddTagsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AddTagsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AddTagsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.AddTags",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op =
-                smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
-                    .with_metadata(smithy_http::operation::Metadata::new(
-                        "AddTags",
-                        "machinelearning",
-                    ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.AddTags",
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        Ok(builder)
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "AddTags",
+                "machinelearning",
+            ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -274,87 +274,88 @@ impl CreateBatchPredictionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_batch_prediction(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateBatchPredictionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateBatchPredictionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateBatchPredictionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.CreateBatchPrediction",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateBatchPrediction::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_batch_prediction(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateBatchPrediction",
-                "machinelearning",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.CreateBatchPrediction",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateBatchPrediction::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateBatchPrediction",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -530,83 +531,88 @@ impl CreateDataSourceFromRdsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_rds(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateDataSourceFromRdsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateDataSourceFromRdsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateDataSourceFromRdsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.CreateDataSourceFromRDS",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateDataSourceFromRDS::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_rds(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateDataSourceFromRDS",
-                "machinelearning",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.CreateDataSourceFromRDS",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateDataSourceFromRDS::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateDataSourceFromRDS",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -780,83 +786,86 @@ impl CreateDataSourceFromRedshiftInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_redshift(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateDataSourceFromRedshiftInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateDataSourceFromRedshiftInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateDataSourceFromRedshiftInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.CreateDataSourceFromRedshift",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateDataSourceFromRedshift::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateDataSourceFromRedshift",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_redshift(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.CreateDataSourceFromRedshift",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateDataSourceFromRedshift::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateDataSourceFromRedshift",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -986,83 +995,88 @@ impl CreateDataSourceFromS3Input {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_s3(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateDataSourceFromS3Input,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateDataSourceFromS3Input,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateDataSourceFromS3Input,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.CreateDataSourceFromS3",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateDataSourceFromS3::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_data_source_from_s3(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateDataSourceFromS3",
-                "machinelearning",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.CreateDataSourceFromS3",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateDataSourceFromS3::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateDataSourceFromS3",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1175,85 +1189,88 @@ impl CreateEvaluationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_evaluation(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateEvaluationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateEvaluationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateEvaluationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.CreateEvaluation",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateEvaluation::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateEvaluation",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_evaluation(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.CreateEvaluation",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateEvaluation::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateEvaluation",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1420,85 +1437,83 @@ impl CreateMlModelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_ml_model(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateMlModelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateMlModelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateMlModelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.CreateMLModel",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateMLModel::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateMLModel",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_ml_model(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.CreateMLModel",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::CreateMLModel::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "CreateMLModel",
+                    "machinelearning",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1567,87 +1582,88 @@ impl CreateRealtimeEndpointInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_realtime_endpoint(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateRealtimeEndpointInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateRealtimeEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateRealtimeEndpointInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.CreateRealtimeEndpoint",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateRealtimeEndpoint::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_realtime_endpoint(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateRealtimeEndpoint",
-                "machinelearning",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.CreateRealtimeEndpoint",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateRealtimeEndpoint::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateRealtimeEndpoint",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1719,87 +1735,88 @@ impl DeleteBatchPredictionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_batch_prediction(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteBatchPredictionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteBatchPredictionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteBatchPredictionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.DeleteBatchPrediction",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteBatchPrediction::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_batch_prediction(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteBatchPrediction",
-                "machinelearning",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.DeleteBatchPrediction",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteBatchPrediction::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteBatchPrediction",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1871,85 +1888,88 @@ impl DeleteDataSourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_data_source(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteDataSourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteDataSourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteDataSourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.DeleteDataSource",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteDataSource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteDataSource",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_data_source(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.DeleteDataSource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDataSource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteDataSource",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2021,85 +2041,88 @@ impl DeleteEvaluationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_evaluation(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteEvaluationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteEvaluationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteEvaluationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.DeleteEvaluation",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteEvaluation::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteEvaluation",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_evaluation(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.DeleteEvaluation",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteEvaluation::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteEvaluation",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2166,85 +2189,83 @@ impl DeleteMlModelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_ml_model(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteMlModelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteMlModelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteMlModelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.DeleteMLModel",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteMLModel::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteMLModel",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_ml_model(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.DeleteMLModel",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DeleteMLModel::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DeleteMLModel",
+                    "machinelearning",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2313,87 +2334,88 @@ impl DeleteRealtimeEndpointInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_delete_realtime_endpoint(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteRealtimeEndpointInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteRealtimeEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteRealtimeEndpointInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.DeleteRealtimeEndpoint",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteRealtimeEndpoint::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_realtime_endpoint(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteRealtimeEndpoint",
-                "machinelearning",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.DeleteRealtimeEndpoint",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteRealtimeEndpoint::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteRealtimeEndpoint",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2489,84 +2511,83 @@ impl DeleteTagsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DeleteTagsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteTagsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteTagsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.DeleteTags",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteTags::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteTags",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.DeleteTags",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DeleteTags::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DeleteTags",
+                    "machinelearning",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2819,83 +2840,88 @@ impl DescribeBatchPredictionsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_describe_batch_predictions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeBatchPredictionsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeBatchPredictionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeBatchPredictionsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.DescribeBatchPredictions",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeBatchPredictions::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_batch_predictions(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeBatchPredictions",
-                "machinelearning",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.DescribeBatchPredictions",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeBatchPredictions::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeBatchPredictions",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3134,87 +3160,88 @@ impl DescribeDataSourcesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_describe_data_sources(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::DescribeDataSourcesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeDataSourcesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeDataSourcesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.DescribeDataSources",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_data_sources(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeDataSources::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeDataSources",
-                "machinelearning",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.DescribeDataSources",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeDataSources::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeDataSources",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3462,87 +3489,86 @@ impl DescribeEvaluationsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_describe_evaluations(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeEvaluationsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeEvaluationsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeEvaluationsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.DescribeEvaluations",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeEvaluations::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeEvaluations",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_evaluations(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.DescribeEvaluations",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeEvaluations::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeEvaluations",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3798,85 +3824,88 @@ impl DescribeMlModelsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_describe_ml_models(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeMlModelsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeMlModelsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeMlModelsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.DescribeMLModels",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeMLModels::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeMLModels",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_ml_models(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.DescribeMLModels",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeMLModels::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeMLModels",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3957,85 +3986,85 @@ impl DescribeTagsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeTagsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeTagsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeTagsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.DescribeTags",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeTags::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeTags",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)
+            .map_err(|err| {
+            smithy_http::operation::BuildError::SerializationError(err.into())
+        })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.DescribeTags",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DescribeTags::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DescribeTags",
+                    "machinelearning",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4107,87 +4136,86 @@ impl GetBatchPredictionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_batch_prediction(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetBatchPredictionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetBatchPredictionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetBatchPredictionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.GetBatchPrediction",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetBatchPrediction::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetBatchPrediction",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_batch_prediction(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.GetBatchPrediction",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetBatchPrediction::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetBatchPrediction",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4270,85 +4298,83 @@ impl GetDataSourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_data_source(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetDataSourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetDataSourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetDataSourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.GetDataSource",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetDataSource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetDataSource",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_data_source(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.GetDataSource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::GetDataSource::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "GetDataSource",
+                    "machinelearning",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4418,85 +4444,83 @@ impl GetEvaluationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_evaluation(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetEvaluationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetEvaluationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetEvaluationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.GetEvaluation",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetEvaluation::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetEvaluation",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_evaluation(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.GetEvaluation",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::GetEvaluation::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "GetEvaluation",
+                    "machinelearning",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4576,85 +4600,83 @@ impl GetMlModelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_get_ml_model(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetMlModelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetMlModelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetMlModelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.GetMLModel",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetMLModel::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetMLModel",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_ml_model(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.GetMLModel",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::GetMLModel::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "GetMLModel",
+                    "machinelearning",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4754,82 +4776,82 @@ impl PredictInput {
         smithy_http::operation::Operation<crate::operation::Predict, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_crate_operation_predict(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::PredictInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PredictInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PredictInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.Predict",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op =
-                smithy_http::operation::Operation::new(request, crate::operation::Predict::new())
-                    .with_metadata(smithy_http::operation::Metadata::new(
-                        "Predict",
-                        "machinelearning",
-                    ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_predict(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.Predict",
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        Ok(builder)
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(request, crate::operation::Predict::new())
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "Predict",
+                "machinelearning",
+            ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4915,87 +4937,88 @@ impl UpdateBatchPredictionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_batch_prediction(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateBatchPredictionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateBatchPredictionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateBatchPredictionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.UpdateBatchPrediction",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateBatchPrediction::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_batch_prediction(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateBatchPrediction",
-                "machinelearning",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.UpdateBatchPrediction",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateBatchPrediction::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateBatchPrediction",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5081,85 +5104,88 @@ impl UpdateDataSourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateDataSourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateDataSourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateDataSourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.UpdateDataSource",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateDataSource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateDataSource",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_data_source(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.UpdateDataSource",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateDataSource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateDataSource",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5245,85 +5271,88 @@ impl UpdateEvaluationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_evaluation(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateEvaluationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateEvaluationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateEvaluationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.UpdateEvaluation",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateEvaluation::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateEvaluation",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_evaluation(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.UpdateEvaluation",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateEvaluation::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateEvaluation",
+            "machinelearning",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5416,85 +5445,83 @@ impl UpdateMlModelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_ml_model(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::UpdateMlModelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateMlModelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateMlModelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AmazonML_20141212.UpdateMLModel",
             );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateMLModel::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateMLModel",
-                "machinelearning",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_ml_model(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
             ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/x-amz-json-1.1",
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
         );
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("x-amz-target"),
-            "AmazonML_20141212.UpdateMLModel",
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
         );
-        Ok(builder)
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UpdateMLModel::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UpdateMLModel",
+                    "machinelearning",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,

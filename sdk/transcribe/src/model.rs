@@ -1466,6 +1466,8 @@ pub struct TranscriptionJob {
     pub identified_language_score: std::option::Option<f32>,
     /// <p>A key:value pair assigned to a given transcription job.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Generate subtitles for your batch transcription job.</p>
+    pub subtitles: std::option::Option<crate::model::SubtitlesOutput>,
 }
 impl std::fmt::Debug for TranscriptionJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1489,6 +1491,7 @@ impl std::fmt::Debug for TranscriptionJob {
         formatter.field("language_options", &self.language_options);
         formatter.field("identified_language_score", &self.identified_language_score);
         formatter.field("tags", &self.tags);
+        formatter.field("subtitles", &self.subtitles);
         formatter.finish()
     }
 }
@@ -1518,6 +1521,7 @@ pub mod transcription_job {
         pub(crate) language_options: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
         pub(crate) identified_language_score: std::option::Option<f32>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) subtitles: std::option::Option<crate::model::SubtitlesOutput>,
     }
     impl Builder {
         /// <p>The name of the transcription job.</p>
@@ -1777,6 +1781,18 @@ pub mod transcription_job {
             self.tags = input;
             self
         }
+        /// <p>Generate subtitles for your batch transcription job.</p>
+        pub fn subtitles(mut self, input: crate::model::SubtitlesOutput) -> Self {
+            self.subtitles = Some(input);
+            self
+        }
+        pub fn set_subtitles(
+            mut self,
+            input: std::option::Option<crate::model::SubtitlesOutput>,
+        ) -> Self {
+            self.subtitles = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TranscriptionJob`](crate::model::TranscriptionJob)
         pub fn build(self) -> crate::model::TranscriptionJob {
             crate::model::TranscriptionJob {
@@ -1799,6 +1815,7 @@ pub mod transcription_job {
                 language_options: self.language_options,
                 identified_language_score: self.identified_language_score,
                 tags: self.tags,
+                subtitles: self.subtitles,
             }
         }
     }
@@ -1807,6 +1824,125 @@ impl TranscriptionJob {
     /// Creates a new builder-style object to manufacture [`TranscriptionJob`](crate::model::TranscriptionJob)
     pub fn builder() -> crate::model::transcription_job::Builder {
         crate::model::transcription_job::Builder::default()
+    }
+}
+
+/// <p>Specify the output format for your subtitle file.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SubtitlesOutput {
+    /// <p>Specify the output format for your subtitle file; if you select both SRT and VTT formats, two output files are genereated.</p>
+    pub formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
+    /// <p>Choose the output location for your subtitle file. This location must be an S3 bucket.</p>
+    pub subtitle_file_uris: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for SubtitlesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SubtitlesOutput");
+        formatter.field("formats", &self.formats);
+        formatter.field("subtitle_file_uris", &self.subtitle_file_uris);
+        formatter.finish()
+    }
+}
+/// See [`SubtitlesOutput`](crate::model::SubtitlesOutput)
+pub mod subtitles_output {
+    /// A builder for [`SubtitlesOutput`](crate::model::SubtitlesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
+        pub(crate) subtitle_file_uris: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        pub fn formats(mut self, input: impl Into<crate::model::SubtitleFormat>) -> Self {
+            let mut v = self.formats.unwrap_or_default();
+            v.push(input.into());
+            self.formats = Some(v);
+            self
+        }
+        pub fn set_formats(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
+        ) -> Self {
+            self.formats = input;
+            self
+        }
+        pub fn subtitle_file_uris(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subtitle_file_uris.unwrap_or_default();
+            v.push(input.into());
+            self.subtitle_file_uris = Some(v);
+            self
+        }
+        pub fn set_subtitle_file_uris(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subtitle_file_uris = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SubtitlesOutput`](crate::model::SubtitlesOutput)
+        pub fn build(self) -> crate::model::SubtitlesOutput {
+            crate::model::SubtitlesOutput {
+                formats: self.formats,
+                subtitle_file_uris: self.subtitle_file_uris,
+            }
+        }
+    }
+}
+impl SubtitlesOutput {
+    /// Creates a new builder-style object to manufacture [`SubtitlesOutput`](crate::model::SubtitlesOutput)
+    pub fn builder() -> crate::model::subtitles_output::Builder {
+        crate::model::subtitles_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SubtitleFormat {
+    Srt,
+    Vtt,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SubtitleFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "srt" => SubtitleFormat::Srt,
+            "vtt" => SubtitleFormat::Vtt,
+            other => SubtitleFormat::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SubtitleFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SubtitleFormat::from(s))
+    }
+}
+impl SubtitleFormat {
+    pub fn as_str(&self) -> &str {
+        match self {
+            SubtitleFormat::Srt => "srt",
+            SubtitleFormat::Vtt => "vtt",
+            SubtitleFormat::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["srt", "vtt"]
+    }
+}
+impl AsRef<str> for SubtitleFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2643,6 +2779,57 @@ impl TranscriptionJobStatus {
 impl AsRef<str> for TranscriptionJobStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Generate subtitles for your batch transcription job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Subtitles {
+    /// <p>Specify the output format for your subtitle file.</p>
+    pub formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
+}
+impl std::fmt::Debug for Subtitles {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Subtitles");
+        formatter.field("formats", &self.formats);
+        formatter.finish()
+    }
+}
+/// See [`Subtitles`](crate::model::Subtitles)
+pub mod subtitles {
+    /// A builder for [`Subtitles`](crate::model::Subtitles)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) formats: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
+    }
+    impl Builder {
+        pub fn formats(mut self, input: impl Into<crate::model::SubtitleFormat>) -> Self {
+            let mut v = self.formats.unwrap_or_default();
+            v.push(input.into());
+            self.formats = Some(v);
+            self
+        }
+        pub fn set_formats(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SubtitleFormat>>,
+        ) -> Self {
+            self.formats = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Subtitles`](crate::model::Subtitles)
+        pub fn build(self) -> crate::model::Subtitles {
+            crate::model::Subtitles {
+                formats: self.formats,
+            }
+        }
+    }
+}
+impl Subtitles {
+    /// Creates a new builder-style object to manufacture [`Subtitles`](crate::model::Subtitles)
+    pub fn builder() -> crate::model::subtitles::Builder {
+        crate::model::subtitles::Builder::default()
     }
 }
 

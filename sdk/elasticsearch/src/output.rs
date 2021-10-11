@@ -787,11 +787,11 @@ impl ListDomainsForPackageOutput {
     }
 }
 
-/// <p>The result of a <code>ListDomainNames</code> operation. Contains the names of all Elasticsearch domains owned by this account.</p>
+/// <p>The result of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account and their respective engine types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainNamesOutput {
-    /// <p>List of Elasticsearch domain names.</p>
+    /// <p>List of domain names and respective engine types.</p>
     pub domain_names: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
 }
 impl std::fmt::Debug for ListDomainNamesOutput {

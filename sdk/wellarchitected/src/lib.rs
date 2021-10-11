@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>AWS Well-Architected Tool</fullname>
 //! <p>This is the <i>AWS Well-Architected Tool API Reference</i>. The AWS Well-Architected Tool API provides programmatic access to the
 //! <a href="http://aws.amazon.com/well-architected-tool">AWS Well-Architected Tool</a> in the

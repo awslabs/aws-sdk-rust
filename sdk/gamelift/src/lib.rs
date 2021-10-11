@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon GameLift Service</fullname>
 //! <p>GameLift provides solutions for hosting session-based multiplayer game servers in the
 //! cloud, including tools for deploying, operating, and scaling game servers. Built on AWS

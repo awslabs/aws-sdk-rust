@@ -993,6 +993,11 @@ pub fn deser_operation_crate_operation_describe_index(
                                 .transpose()?,
                         );
                     }
+                    "UserGroupResolutionConfiguration" => {
+                        builder = builder.set_user_group_resolution_configuration(
+                            crate::json_deser::deser_structure_crate_model_user_group_resolution_configuration(tokens)?
+                        );
+                    }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -2524,6 +2529,55 @@ where
         }
         _ => Err(smithy_json::deserialize::Error::custom(
             "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_user_group_resolution_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::UserGroupResolutionConfiguration>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::UserGroupResolutionConfiguration::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "UserGroupResolutionMode" => {
+                                builder = builder.set_user_group_resolution_mode(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::UserGroupResolutionMode::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
         )),
     }
 }

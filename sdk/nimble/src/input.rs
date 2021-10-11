@@ -72,127 +72,125 @@ impl AcceptEulasInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_accept_eulas(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::AcceptEulasInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_1 = &_input.studio_id;
+            let input_1 =
+                input_1
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+            let studio_id = smithy_http::label::fmt_string(input_1, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "studio_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::AcceptEulas::new(),
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/eula-acceptances",
+                studioId = studio_id
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "AcceptEulas",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_1 = &self.studio_id;
-        let input_1 = input_1
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            })?;
-        let studio_id = smithy_http::label::fmt_string(input_1, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/eula-acceptances",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_2) = &self.client_token {
-            let formatted_3 = AsRef::<str>::as_ref(inner_2);
-            if !formatted_3.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_3;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::AcceptEulasInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_2) = &_input.client_token {
+                let formatted_3 = AsRef::<str>::as_ref(inner_2);
+                if !formatted_3.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_3;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AcceptEulasInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AcceptEulasInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_accept_eulas(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::AcceptEulas::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "AcceptEulas",
+                    "nimble",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -384,129 +382,130 @@ impl CreateLaunchProfileInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
+        fn uri_base(
+            _input: &crate::input::CreateLaunchProfileInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_4 = &_input.studio_id;
+            let input_4 =
+                input_4
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_4, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "studio_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_launch_profile(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateLaunchProfile::new(),
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/launch-profiles",
+                studioId = studio_id
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateLaunchProfile",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_4 = &self.studio_id;
-        let input_4 = input_4
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            })?;
-        let studio_id = smithy_http::label::fmt_string(input_4, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/launch-profiles",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_5) = &self.client_token {
-            let formatted_6 = AsRef::<str>::as_ref(inner_5);
-            if !formatted_6.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_6;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::CreateLaunchProfileInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_5) = &_input.client_token {
+                let formatted_6 = AsRef::<str>::as_ref(inner_5);
+                if !formatted_6.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_6;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateLaunchProfileInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateLaunchProfileInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_launch_profile(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLaunchProfile::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateLaunchProfile",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -642,129 +641,130 @@ impl CreateStreamingImageInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
+        fn uri_base(
+            _input: &crate::input::CreateStreamingImageInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_7 = &_input.studio_id;
+            let input_7 =
+                input_7
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_7, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "studio_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_streaming_image(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateStreamingImage::new(),
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-images",
+                studioId = studio_id
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateStreamingImage",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_7 = &self.studio_id;
-        let input_7 = input_7
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            })?;
-        let studio_id = smithy_http::label::fmt_string(input_7, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/streaming-images",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_8) = &self.client_token {
-            let formatted_9 = AsRef::<str>::as_ref(inner_8);
-            if !formatted_9.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_9;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::CreateStreamingImageInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_8) = &_input.client_token {
+                let formatted_9 = AsRef::<str>::as_ref(inner_8);
+                if !formatted_9.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_9;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateStreamingImageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateStreamingImageInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_streaming_image(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateStreamingImage::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateStreamingImage",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -920,130 +920,130 @@ impl CreateStreamingSessionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_streaming_session(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateStreamingSession::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateStreamingSession",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_10 = &self.studio_id;
-        let input_10 =
-            input_10
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::CreateStreamingSessionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_10 = &_input.studio_id;
+            let input_10 =
+                input_10
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_10, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_10, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-sessions",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/streaming-sessions",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_11) = &self.client_token {
-            let formatted_12 = AsRef::<str>::as_ref(inner_11);
-            if !formatted_12.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_12;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::CreateStreamingSessionInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_11) = &_input.client_token {
+                let formatted_12 = AsRef::<str>::as_ref(inner_11);
+                if !formatted_12.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_12;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateStreamingSessionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateStreamingSessionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_streaming_session(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateStreamingSession::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateStreamingSession",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1146,142 +1146,144 @@ impl CreateStreamingSessionStreamInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_streaming_session_stream(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateStreamingSessionStream::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateStreamingSessionStream",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_13 = &self.studio_id;
-        let input_13 =
-            input_13
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::CreateStreamingSessionStreamInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_13 = &_input.studio_id;
+            let input_13 =
+                input_13
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_13, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_13, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_14 = &self.session_id;
-        let input_14 =
-            input_14
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_14 = &_input.session_id;
+            let input_14 =
+                input_14
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "session_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let session_id = smithy_http::label::fmt_string(input_14, false);
+            if session_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "session_id",
                     details: "cannot be empty or unset",
-                })?;
-        let session_id = smithy_http::label::fmt_string(input_14, false);
-        if session_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "session_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}/streams",
+                studioId = studio_id,
+                sessionId = session_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}/streams",
-            studioId = studio_id,
-            sessionId = session_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_15) = &self.client_token {
-            let formatted_16 = AsRef::<str>::as_ref(inner_15);
-            if !formatted_16.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_16;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::CreateStreamingSessionStreamInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_15) = &_input.client_token {
+                let formatted_16 = AsRef::<str>::as_ref(inner_15);
+                if !formatted_16.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_16;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateStreamingSessionStreamInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateStreamingSessionStreamInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_streaming_session_stream(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateStreamingSessionStream::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateStreamingSessionStream",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1439,108 +1441,107 @@ impl CreateStudioInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_studio(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateStudio::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateStudio",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/2020-08-01/studios").expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_17) = &self.client_token {
-            let formatted_18 = AsRef::<str>::as_ref(inner_17);
-            if !formatted_18.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_18;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn uri_base(
+            _input: &crate::input::CreateStudioInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/2020-08-01/studios").expect("formatting should succeed");
+            Ok(())
+        }
+        fn add_headers(
+            _input: &crate::input::CreateStudioInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_17) = &_input.client_token {
+                let formatted_18 = AsRef::<str>::as_ref(inner_17);
+                if !formatted_18.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_18;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateStudioInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateStudioInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_studio(&self)
+            .map_err(|err| {
+            smithy_http::operation::BuildError::SerializationError(err.into())
+        })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::CreateStudio::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "CreateStudio",
+                    "nimble",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1762,130 +1763,130 @@ impl CreateStudioComponentInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_studio_component(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateStudioComponent::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateStudioComponent",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_19 = &self.studio_id;
-        let input_19 =
-            input_19
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::CreateStudioComponentInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_19 = &_input.studio_id;
+            let input_19 =
+                input_19
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_19, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_19, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/studio-components",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/studio-components",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_20) = &self.client_token {
-            let formatted_21 = AsRef::<str>::as_ref(inner_20);
-            if !formatted_21.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_21;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::CreateStudioComponentInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_20) = &_input.client_token {
+                let formatted_21 = AsRef::<str>::as_ref(inner_20);
+                if !formatted_21.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_21;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateStudioComponentInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateStudioComponentInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_studio_component(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateStudioComponent::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateStudioComponent",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1979,140 +1980,142 @@ impl DeleteLaunchProfileInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteLaunchProfile::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteLaunchProfile",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_22 = &self.studio_id;
-        let input_22 =
-            input_22
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteLaunchProfileInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_22 = &_input.studio_id;
+            let input_22 =
+                input_22
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_22, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_22, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_23 = &self.launch_profile_id;
-        let input_23 =
-            input_23
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_23 = &_input.launch_profile_id;
+            let input_23 =
+                input_23
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "launch_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let launch_profile_id = smithy_http::label::fmt_string(input_23, false);
+            if launch_profile_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
                     details: "cannot be empty or unset",
-                })?;
-        let launch_profile_id = smithy_http::label::fmt_string(input_23, false);
-        if launch_profile_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "launch_profile_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}",
+                studioId = studio_id,
+                launchProfileId = launch_profile_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}",
-            studioId = studio_id,
-            launchProfileId = launch_profile_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_24) = &self.client_token {
-            let formatted_25 = AsRef::<str>::as_ref(inner_24);
-            if !formatted_25.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_25;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteLaunchProfileInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_24) = &_input.client_token {
+                let formatted_25 = AsRef::<str>::as_ref(inner_24);
+                if !formatted_25.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_25;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteLaunchProfileInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteLaunchProfileInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLaunchProfile::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteLaunchProfile",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2218,149 +2221,151 @@ impl DeleteLaunchProfileMemberInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteLaunchProfileMember::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteLaunchProfileMember",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_26 = &self.studio_id;
-        let input_26 =
-            input_26
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteLaunchProfileMemberInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_26 = &_input.studio_id;
+            let input_26 =
+                input_26
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_26, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_26, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_27 = &self.launch_profile_id;
-        let input_27 =
-            input_27
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_27 = &_input.launch_profile_id;
+            let input_27 =
+                input_27
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "launch_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let launch_profile_id = smithy_http::label::fmt_string(input_27, false);
+            if launch_profile_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
                     details: "cannot be empty or unset",
-                })?;
-        let launch_profile_id = smithy_http::label::fmt_string(input_27, false);
-        if launch_profile_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "launch_profile_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_28 = &self.principal_id;
-        let input_28 =
-            input_28
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_28 = &_input.principal_id;
+            let input_28 =
+                input_28
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "principal_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let principal_id = smithy_http::label::fmt_string(input_28, false);
+            if principal_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "principal_id",
                     details: "cannot be empty or unset",
-                })?;
-        let principal_id = smithy_http::label::fmt_string(input_28, false);
-        if principal_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "principal_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/membership/{principalId}", studioId = studio_id, launchProfileId = launch_profile_id, principalId = principal_id).expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/membership/{principalId}", studioId = studio_id, launchProfileId = launch_profile_id, principalId = principal_id).expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_29) = &self.client_token {
-            let formatted_30 = AsRef::<str>::as_ref(inner_29);
-            if !formatted_30.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_30;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteLaunchProfileMemberInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_29) = &_input.client_token {
+                let formatted_30 = AsRef::<str>::as_ref(inner_29);
+                if !formatted_30.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_30;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteLaunchProfileMemberInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteLaunchProfileMemberInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLaunchProfileMember::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteLaunchProfileMember",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2454,140 +2459,142 @@ impl DeleteStreamingImageInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteStreamingImage::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteStreamingImage",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_31 = &self.studio_id;
-        let input_31 =
-            input_31
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteStreamingImageInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_31 = &_input.studio_id;
+            let input_31 =
+                input_31
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_31, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_31, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_32 = &self.streaming_image_id;
-        let input_32 =
-            input_32
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_32 = &_input.streaming_image_id;
+            let input_32 =
+                input_32
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "streaming_image_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let streaming_image_id = smithy_http::label::fmt_string(input_32, false);
+            if streaming_image_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "streaming_image_id",
                     details: "cannot be empty or unset",
-                })?;
-        let streaming_image_id = smithy_http::label::fmt_string(input_32, false);
-        if streaming_image_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "streaming_image_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-images/{streamingImageId}",
+                studioId = studio_id,
+                streamingImageId = streaming_image_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/streaming-images/{streamingImageId}",
-            studioId = studio_id,
-            streamingImageId = streaming_image_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_33) = &self.client_token {
-            let formatted_34 = AsRef::<str>::as_ref(inner_33);
-            if !formatted_34.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_34;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteStreamingImageInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_33) = &_input.client_token {
+                let formatted_34 = AsRef::<str>::as_ref(inner_33);
+                if !formatted_34.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_34;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteStreamingImageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteStreamingImageInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteStreamingImage::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteStreamingImage",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2678,140 +2685,142 @@ impl DeleteStreamingSessionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteStreamingSession::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteStreamingSession",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_35 = &self.studio_id;
-        let input_35 =
-            input_35
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteStreamingSessionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_35 = &_input.studio_id;
+            let input_35 =
+                input_35
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_35, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_35, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_36 = &self.session_id;
-        let input_36 =
-            input_36
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_36 = &_input.session_id;
+            let input_36 =
+                input_36
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "session_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let session_id = smithy_http::label::fmt_string(input_36, false);
+            if session_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "session_id",
                     details: "cannot be empty or unset",
-                })?;
-        let session_id = smithy_http::label::fmt_string(input_36, false);
-        if session_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "session_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}",
+                studioId = studio_id,
+                sessionId = session_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}",
-            studioId = studio_id,
-            sessionId = session_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_37) = &self.client_token {
-            let formatted_38 = AsRef::<str>::as_ref(inner_37);
-            if !formatted_38.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_38;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteStreamingSessionInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_37) = &_input.client_token {
+                let formatted_38 = AsRef::<str>::as_ref(inner_37);
+                if !formatted_38.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_38;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteStreamingSessionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteStreamingSessionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteStreamingSession::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteStreamingSession",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2889,124 +2898,124 @@ impl DeleteStudioInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteStudio::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteStudio",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_39 = &self.studio_id;
-        let input_39 =
-            input_39
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteStudioInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_39 = &_input.studio_id;
+            let input_39 =
+                input_39
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_39, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_39, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_40) = &self.client_token {
-            let formatted_41 = AsRef::<str>::as_ref(inner_40);
-            if !formatted_41.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_41;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteStudioInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_40) = &_input.client_token {
+                let formatted_41 = AsRef::<str>::as_ref(inner_40);
+                if !formatted_41.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_41;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteStudioInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteStudioInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DeleteStudio::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DeleteStudio",
+                    "nimble",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3100,140 +3109,142 @@ impl DeleteStudioComponentInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteStudioComponent::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteStudioComponent",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_42 = &self.studio_id;
-        let input_42 =
-            input_42
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteStudioComponentInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_42 = &_input.studio_id;
+            let input_42 =
+                input_42
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_42, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_42, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_43 = &self.studio_component_id;
-        let input_43 =
-            input_43
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_43 = &_input.studio_component_id;
+            let input_43 =
+                input_43
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_component_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_component_id = smithy_http::label::fmt_string(input_43, false);
+            if studio_component_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_component_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_component_id = smithy_http::label::fmt_string(input_43, false);
-        if studio_component_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_component_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/studio-components/{studioComponentId}",
+                studioId = studio_id,
+                studioComponentId = studio_component_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/studio-components/{studioComponentId}",
-            studioId = studio_id,
-            studioComponentId = studio_component_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_44) = &self.client_token {
-            let formatted_45 = AsRef::<str>::as_ref(inner_44);
-            if !formatted_45.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_45;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteStudioComponentInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_44) = &_input.client_token {
+                let formatted_45 = AsRef::<str>::as_ref(inner_44);
+                if !formatted_45.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_45;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteStudioComponentInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteStudioComponentInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteStudioComponent::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteStudioComponent",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3324,140 +3335,142 @@ impl DeleteStudioMemberInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteStudioMember::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteStudioMember",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_46 = &self.studio_id;
-        let input_46 =
-            input_46
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteStudioMemberInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_46 = &_input.studio_id;
+            let input_46 =
+                input_46
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_46, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_46, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_47 = &self.principal_id;
-        let input_47 =
-            input_47
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_47 = &_input.principal_id;
+            let input_47 =
+                input_47
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "principal_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let principal_id = smithy_http::label::fmt_string(input_47, false);
+            if principal_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "principal_id",
                     details: "cannot be empty or unset",
-                })?;
-        let principal_id = smithy_http::label::fmt_string(input_47, false);
-        if principal_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "principal_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/membership/{principalId}",
+                studioId = studio_id,
+                principalId = principal_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/membership/{principalId}",
-            studioId = studio_id,
-            principalId = principal_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_48) = &self.client_token {
-            let formatted_49 = AsRef::<str>::as_ref(inner_48);
-            if !formatted_49.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_49;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteStudioMemberInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_48) = &_input.client_token {
+                let formatted_49 = AsRef::<str>::as_ref(inner_48);
+                if !formatted_49.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_49;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteStudioMemberInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteStudioMemberInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteStudioMember::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteStudioMember",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3521,87 +3534,89 @@ impl GetEulaInput {
         smithy_http::operation::Operation<crate::operation::GetEula, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op =
-                smithy_http::operation::Operation::new(request, crate::operation::GetEula::new())
-                    .with_metadata(smithy_http::operation::Metadata::new("GetEula", "nimble"));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_50 = &self.eula_id;
-        let input_50 =
-            input_50
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetEulaInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_50 = &_input.eula_id;
+            let input_50 =
+                input_50
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "eula_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let eula_id = smithy_http::label::fmt_string(input_50, false);
+            if eula_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "eula_id",
                     details: "cannot be empty or unset",
-                })?;
-        let eula_id = smithy_http::label::fmt_string(input_50, false);
-        if eula_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "eula_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/2020-08-01/eulas/{eulaId}", eulaId = eula_id)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/2020-08-01/eulas/{eulaId}", eulaId = eula_id)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetEulaInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetEulaInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(request, crate::operation::GetEula::new())
+            .with_metadata(smithy_http::operation::Metadata::new("GetEula", "nimble"));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3684,112 +3699,115 @@ impl GetLaunchProfileInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetLaunchProfile::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetLaunchProfile",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_51 = &self.studio_id;
-        let input_51 =
-            input_51
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetLaunchProfileInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_51 = &_input.studio_id;
+            let input_51 =
+                input_51
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_51, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_51, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_52 = &self.launch_profile_id;
-        let input_52 =
-            input_52
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_52 = &_input.launch_profile_id;
+            let input_52 =
+                input_52
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "launch_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let launch_profile_id = smithy_http::label::fmt_string(input_52, false);
+            if launch_profile_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
                     details: "cannot be empty or unset",
-                })?;
-        let launch_profile_id = smithy_http::label::fmt_string(input_52, false);
-        if launch_profile_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "launch_profile_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}",
+                studioId = studio_id,
+                launchProfileId = launch_profile_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}",
-            studioId = studio_id,
-            launchProfileId = launch_profile_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetLaunchProfileInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetLaunchProfileInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetLaunchProfile::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetLaunchProfile",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3873,112 +3891,115 @@ impl GetLaunchProfileDetailsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetLaunchProfileDetails::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetLaunchProfileDetails",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_53 = &self.studio_id;
-        let input_53 =
-            input_53
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetLaunchProfileDetailsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_53 = &_input.studio_id;
+            let input_53 =
+                input_53
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_53, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_53, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_54 = &self.launch_profile_id;
-        let input_54 =
-            input_54
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_54 = &_input.launch_profile_id;
+            let input_54 =
+                input_54
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "launch_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let launch_profile_id = smithy_http::label::fmt_string(input_54, false);
+            if launch_profile_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
                     details: "cannot be empty or unset",
-                })?;
-        let launch_profile_id = smithy_http::label::fmt_string(input_54, false);
-        if launch_profile_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "launch_profile_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/details",
+                studioId = studio_id,
+                launchProfileId = launch_profile_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/details",
-            studioId = studio_id,
-            launchProfileId = launch_profile_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetLaunchProfileDetailsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetLaunchProfileDetailsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetLaunchProfileDetails::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetLaunchProfileDetails",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4106,130 +4127,136 @@ impl GetLaunchProfileInitializationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetLaunchProfileInitialization::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetLaunchProfileInitialization",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_55 = &self.studio_id;
-        let input_55 =
-            input_55
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetLaunchProfileInitializationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_55 = &_input.studio_id;
+            let input_55 =
+                input_55
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_55, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_55, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_56 = &self.launch_profile_id;
-        let input_56 =
-            input_56
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_56 = &_input.launch_profile_id;
+            let input_56 =
+                input_56
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "launch_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let launch_profile_id = smithy_http::label::fmt_string(input_56, false);
+            if launch_profile_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
                     details: "cannot be empty or unset",
-                })?;
-        let launch_profile_id = smithy_http::label::fmt_string(input_56, false);
-        if launch_profile_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "launch_profile_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/init",
+                studioId = studio_id,
+                launchProfileId = launch_profile_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/init",
-            studioId = studio_id,
-            launchProfileId = launch_profile_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_57) = &self.launch_profile_protocol_versions {
-            for inner_58 in inner_57 {
-                query.push_kv(
-                    "launchProfileProtocolVersions",
-                    &smithy_http::query::fmt_string(&inner_58),
-                );
+        fn uri_query(
+            _input: &crate::input::GetLaunchProfileInitializationInput,
+            mut output: &mut String,
+        ) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_57) = &_input.launch_profile_protocol_versions {
+                for inner_58 in inner_57 {
+                    query.push_kv(
+                        "launchProfileProtocolVersions",
+                        &smithy_http::query::fmt_string(&inner_58),
+                    );
+                }
+            }
+            if let Some(inner_59) = &_input.launch_purpose {
+                query.push_kv("launchPurpose", &smithy_http::query::fmt_string(&inner_59));
+            }
+            if let Some(inner_60) = &_input.platform {
+                query.push_kv("platform", &smithy_http::query::fmt_string(&inner_60));
             }
         }
-        if let Some(inner_59) = &self.launch_purpose {
-            query.push_kv("launchPurpose", &smithy_http::query::fmt_string(&inner_59));
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetLaunchProfileInitializationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
         }
-        if let Some(inner_60) = &self.platform {
-            query.push_kv("platform", &smithy_http::query::fmt_string(&inner_60));
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetLaunchProfileInitializationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetLaunchProfileInitialization::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetLaunchProfileInitialization",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4323,121 +4350,124 @@ impl GetLaunchProfileMemberInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetLaunchProfileMember::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetLaunchProfileMember",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_61 = &self.studio_id;
-        let input_61 =
-            input_61
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetLaunchProfileMemberInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_61 = &_input.studio_id;
+            let input_61 =
+                input_61
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_61, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_61, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_62 = &self.launch_profile_id;
-        let input_62 =
-            input_62
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_62 = &_input.launch_profile_id;
+            let input_62 =
+                input_62
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "launch_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let launch_profile_id = smithy_http::label::fmt_string(input_62, false);
+            if launch_profile_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
                     details: "cannot be empty or unset",
-                })?;
-        let launch_profile_id = smithy_http::label::fmt_string(input_62, false);
-        if launch_profile_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "launch_profile_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_63 = &self.principal_id;
-        let input_63 =
-            input_63
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_63 = &_input.principal_id;
+            let input_63 =
+                input_63
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "principal_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let principal_id = smithy_http::label::fmt_string(input_63, false);
+            if principal_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "principal_id",
                     details: "cannot be empty or unset",
-                })?;
-        let principal_id = smithy_http::label::fmt_string(input_63, false);
-        if principal_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "principal_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/membership/{principalId}", studioId = studio_id, launchProfileId = launch_profile_id, principalId = principal_id).expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/membership/{principalId}", studioId = studio_id, launchProfileId = launch_profile_id, principalId = principal_id).expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetLaunchProfileMemberInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetLaunchProfileMemberInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetLaunchProfileMember::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetLaunchProfileMember",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4520,112 +4550,115 @@ impl GetStreamingImageInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetStreamingImage::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetStreamingImage",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_64 = &self.studio_id;
-        let input_64 =
-            input_64
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetStreamingImageInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_64 = &_input.studio_id;
+            let input_64 =
+                input_64
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_64, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_64, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_65 = &self.streaming_image_id;
-        let input_65 =
-            input_65
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_65 = &_input.streaming_image_id;
+            let input_65 =
+                input_65
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "streaming_image_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let streaming_image_id = smithy_http::label::fmt_string(input_65, false);
+            if streaming_image_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "streaming_image_id",
                     details: "cannot be empty or unset",
-                })?;
-        let streaming_image_id = smithy_http::label::fmt_string(input_65, false);
-        if streaming_image_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "streaming_image_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-images/{streamingImageId}",
+                studioId = studio_id,
+                streamingImageId = streaming_image_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/streaming-images/{streamingImageId}",
-            studioId = studio_id,
-            streamingImageId = streaming_image_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetStreamingImageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetStreamingImageInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetStreamingImage::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetStreamingImage",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4705,112 +4738,115 @@ impl GetStreamingSessionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetStreamingSession::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetStreamingSession",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_66 = &self.studio_id;
-        let input_66 =
-            input_66
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetStreamingSessionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_66 = &_input.studio_id;
+            let input_66 =
+                input_66
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_66, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_66, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_67 = &self.session_id;
-        let input_67 =
-            input_67
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_67 = &_input.session_id;
+            let input_67 =
+                input_67
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "session_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let session_id = smithy_http::label::fmt_string(input_67, false);
+            if session_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "session_id",
                     details: "cannot be empty or unset",
-                })?;
-        let session_id = smithy_http::label::fmt_string(input_67, false);
-        if session_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "session_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}",
+                studioId = studio_id,
+                sessionId = session_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}",
-            studioId = studio_id,
-            sessionId = session_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetStreamingSessionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetStreamingSessionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetStreamingSession::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetStreamingSession",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4902,128 +4938,131 @@ impl GetStreamingSessionStreamInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetStreamingSessionStream::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetStreamingSessionStream",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_68 = &self.studio_id;
-        let input_68 =
-            input_68
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetStreamingSessionStreamInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_68 = &_input.studio_id;
+            let input_68 =
+                input_68
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_68, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_68, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_69 = &self.session_id;
-        let input_69 =
-            input_69
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_69 = &_input.session_id;
+            let input_69 =
+                input_69
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "session_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let session_id = smithy_http::label::fmt_string(input_69, false);
+            if session_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "session_id",
                     details: "cannot be empty or unset",
-                })?;
-        let session_id = smithy_http::label::fmt_string(input_69, false);
-        if session_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "session_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_70 = &self.stream_id;
-        let input_70 =
-            input_70
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_70 = &_input.stream_id;
+            let input_70 =
+                input_70
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "stream_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let stream_id = smithy_http::label::fmt_string(input_70, false);
+            if stream_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "stream_id",
                     details: "cannot be empty or unset",
-                })?;
-        let stream_id = smithy_http::label::fmt_string(input_70, false);
-        if stream_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "stream_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}/streams/{streamId}",
+                studioId = studio_id,
+                sessionId = session_id,
+                streamId = stream_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}/streams/{streamId}",
-            studioId = studio_id,
-            sessionId = session_id,
-            streamId = stream_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetStreamingSessionStreamInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetStreamingSessionStreamInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetStreamingSessionStream::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetStreamingSessionStream",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5090,91 +5129,94 @@ impl GetStudioInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op =
-                smithy_http::operation::Operation::new(request, crate::operation::GetStudio::new())
-                    .with_metadata(smithy_http::operation::Metadata::new("GetStudio", "nimble"));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_71 = &self.studio_id;
-        let input_71 =
-            input_71
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetStudioInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_71 = &_input.studio_id;
+            let input_71 =
+                input_71
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_71, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_71, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetStudioInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetStudioInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::GetStudio::new())
+                .with_metadata(smithy_http::operation::Metadata::new("GetStudio", "nimble"));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5257,112 +5299,115 @@ impl GetStudioComponentInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetStudioComponent::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetStudioComponent",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_72 = &self.studio_id;
-        let input_72 =
-            input_72
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetStudioComponentInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_72 = &_input.studio_id;
+            let input_72 =
+                input_72
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_72, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_72, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_73 = &self.studio_component_id;
-        let input_73 =
-            input_73
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_73 = &_input.studio_component_id;
+            let input_73 =
+                input_73
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_component_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_component_id = smithy_http::label::fmt_string(input_73, false);
+            if studio_component_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_component_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_component_id = smithy_http::label::fmt_string(input_73, false);
-        if studio_component_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_component_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/studio-components/{studioComponentId}",
+                studioId = studio_id,
+                studioComponentId = studio_component_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/studio-components/{studioComponentId}",
-            studioId = studio_id,
-            studioComponentId = studio_component_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetStudioComponentInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetStudioComponentInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetStudioComponent::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetStudioComponent",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5442,112 +5487,115 @@ impl GetStudioMemberInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetStudioMember::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetStudioMember",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_74 = &self.studio_id;
-        let input_74 =
-            input_74
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetStudioMemberInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_74 = &_input.studio_id;
+            let input_74 =
+                input_74
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_74, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_74, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_75 = &self.principal_id;
-        let input_75 =
-            input_75
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_75 = &_input.principal_id;
+            let input_75 =
+                input_75
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "principal_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let principal_id = smithy_http::label::fmt_string(input_75, false);
+            if principal_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "principal_id",
                     details: "cannot be empty or unset",
-                })?;
-        let principal_id = smithy_http::label::fmt_string(input_75, false);
-        if principal_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "principal_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/membership/{principalId}",
+                studioId = studio_id,
+                principalId = principal_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/membership/{principalId}",
-            studioId = studio_id,
-            principalId = principal_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetStudioMemberInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetStudioMemberInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetStudioMember::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetStudioMember",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5642,108 +5690,111 @@ impl ListEulaAcceptancesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListEulaAcceptances::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListEulaAcceptances",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_76 = &self.studio_id;
-        let input_76 =
-            input_76
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListEulaAcceptancesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_76 = &_input.studio_id;
+            let input_76 =
+                input_76
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_76, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_76, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/eula-acceptances",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/eula-acceptances",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_77) = &self.eula_ids {
-            for inner_78 in inner_77 {
-                query.push_kv("eulaIds", &smithy_http::query::fmt_string(&inner_78));
+        fn uri_query(_input: &crate::input::ListEulaAcceptancesInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_77) = &_input.eula_ids {
+                for inner_78 in inner_77 {
+                    query.push_kv("eulaIds", &smithy_http::query::fmt_string(&inner_78));
+                }
+            }
+            if let Some(inner_79) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_79));
             }
         }
-        if let Some(inner_79) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_79));
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListEulaAcceptancesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListEulaAcceptancesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEulaAcceptances::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListEulaAcceptances",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5825,83 +5876,86 @@ impl ListEulasInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::ListEulasInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/2020-08-01/eulas").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::ListEulasInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_80) = &_input.eula_ids {
+                for inner_81 in inner_80 {
+                    query.push_kv("eulaIds", &smithy_http::query::fmt_string(&inner_81));
+                }
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op =
-                smithy_http::operation::Operation::new(request, crate::operation::ListEulas::new())
-                    .with_metadata(smithy_http::operation::Metadata::new("ListEulas", "nimble"));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/2020-08-01/eulas").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_80) = &self.eula_ids {
-            for inner_81 in inner_80 {
-                query.push_kv("eulaIds", &smithy_http::query::fmt_string(&inner_81));
+            if let Some(inner_82) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_82));
             }
         }
-        if let Some(inner_82) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_82));
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListEulasInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListEulasInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::ListEulas::new())
+                .with_metadata(smithy_http::operation::Metadata::new("ListEulas", "nimble"));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6007,125 +6061,131 @@ impl ListLaunchProfileMembersInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListLaunchProfileMembers::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListLaunchProfileMembers",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_83 = &self.studio_id;
-        let input_83 =
-            input_83
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListLaunchProfileMembersInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_83 = &_input.studio_id;
+            let input_83 =
+                input_83
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_83, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_83, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_84 = &self.launch_profile_id;
-        let input_84 =
-            input_84
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_84 = &_input.launch_profile_id;
+            let input_84 =
+                input_84
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "launch_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let launch_profile_id = smithy_http::label::fmt_string(input_84, false);
+            if launch_profile_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
                     details: "cannot be empty or unset",
-                })?;
-        let launch_profile_id = smithy_http::label::fmt_string(input_84, false);
-        if launch_profile_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "launch_profile_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/membership",
+                studioId = studio_id,
+                launchProfileId = launch_profile_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/membership",
-            studioId = studio_id,
-            launchProfileId = launch_profile_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if self.max_results != 0 {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
+        fn uri_query(
+            _input: &crate::input::ListLaunchProfileMembersInput,
+            mut output: &mut String,
+        ) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if _input.max_results != 0 {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                );
+            }
+            if let Some(inner_85) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_85));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListLaunchProfileMembersInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListLaunchProfileMembersInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_85) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_85));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLaunchProfileMembers::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListLaunchProfileMembers",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6242,117 +6302,120 @@ impl ListLaunchProfilesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListLaunchProfiles::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListLaunchProfiles",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_86 = &self.studio_id;
-        let input_86 =
-            input_86
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListLaunchProfilesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_86 = &_input.studio_id;
+            let input_86 =
+                input_86
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_86, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_86, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/launch-profiles",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/launch-profiles",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if self.max_results != 0 {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
-            );
-        }
-        if let Some(inner_87) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_87));
-        }
-        if let Some(inner_88) = &self.principal_id {
-            query.push_kv("principalId", &smithy_http::query::fmt_string(&inner_88));
-        }
-        if let Some(inner_89) = &self.states {
-            for inner_90 in inner_89 {
-                query.push_kv("states", &smithy_http::query::fmt_string(&inner_90));
+        fn uri_query(_input: &crate::input::ListLaunchProfilesInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if _input.max_results != 0 {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                );
+            }
+            if let Some(inner_87) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_87));
+            }
+            if let Some(inner_88) = &_input.principal_id {
+                query.push_kv("principalId", &smithy_http::query::fmt_string(&inner_88));
+            }
+            if let Some(inner_89) = &_input.states {
+                for inner_90 in inner_89 {
+                    query.push_kv("states", &smithy_http::query::fmt_string(&inner_90));
+                }
             }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListLaunchProfilesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListLaunchProfilesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLaunchProfiles::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListLaunchProfiles",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6443,106 +6506,109 @@ impl ListStreamingImagesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListStreamingImages::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListStreamingImages",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_91 = &self.studio_id;
-        let input_91 =
-            input_91
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListStreamingImagesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_91 = &_input.studio_id;
+            let input_91 =
+                input_91
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_91, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_91, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-images",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/streaming-images",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_92) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_92));
+        fn uri_query(_input: &crate::input::ListStreamingImagesInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_92) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_92));
+            }
+            if let Some(inner_93) = &_input.owner {
+                query.push_kv("owner", &smithy_http::query::fmt_string(&inner_93));
+            }
         }
-        if let Some(inner_93) = &self.owner {
-            query.push_kv("owner", &smithy_http::query::fmt_string(&inner_93));
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListStreamingImagesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListStreamingImagesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStreamingImages::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListStreamingImages",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6655,112 +6721,115 @@ impl ListStreamingSessionsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListStreamingSessions::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListStreamingSessions",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_94 = &self.studio_id;
-        let input_94 =
-            input_94
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListStreamingSessionsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_94 = &_input.studio_id;
+            let input_94 =
+                input_94
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_94, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_94, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-sessions",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/streaming-sessions",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_95) = &self.created_by {
-            query.push_kv("createdBy", &smithy_http::query::fmt_string(&inner_95));
+        fn uri_query(_input: &crate::input::ListStreamingSessionsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_95) = &_input.created_by {
+                query.push_kv("createdBy", &smithy_http::query::fmt_string(&inner_95));
+            }
+            if let Some(inner_96) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_96));
+            }
+            if let Some(inner_97) = &_input.owned_by {
+                query.push_kv("ownedBy", &smithy_http::query::fmt_string(&inner_97));
+            }
+            if let Some(inner_98) = &_input.session_ids {
+                query.push_kv("sessionIds", &smithy_http::query::fmt_string(&inner_98));
+            }
         }
-        if let Some(inner_96) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_96));
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListStreamingSessionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
         }
-        if let Some(inner_97) = &self.owned_by {
-            query.push_kv("ownedBy", &smithy_http::query::fmt_string(&inner_97));
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListStreamingSessionsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
         }
-        if let Some(inner_98) = &self.session_ids {
-            query.push_kv("sessionIds", &smithy_http::query::fmt_string(&inner_98));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStreamingSessions::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListStreamingSessions",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6881,119 +6950,122 @@ impl ListStudioComponentsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListStudioComponents::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListStudioComponents",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_99 = &self.studio_id;
-        let input_99 =
-            input_99
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListStudioComponentsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_99 = &_input.studio_id;
+            let input_99 =
+                input_99
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_99, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_99, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/studio-components",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/studio-components",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if self.max_results != 0 {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
+        fn uri_query(_input: &crate::input::ListStudioComponentsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if _input.max_results != 0 {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                );
+            }
+            if let Some(inner_100) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_100));
+            }
+            if let Some(inner_101) = &_input.states {
+                for inner_102 in inner_101 {
+                    query.push_kv("states", &smithy_http::query::fmt_string(&inner_102));
+                }
+            }
+            if let Some(inner_103) = &_input.types {
+                for inner_104 in inner_103 {
+                    query.push_kv("types", &smithy_http::query::fmt_string(&inner_104));
+                }
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListStudioComponentsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListStudioComponentsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_100) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_100));
-        }
-        if let Some(inner_101) = &self.states {
-            for inner_102 in inner_101 {
-                query.push_kv("states", &smithy_http::query::fmt_string(&inner_102));
-            }
-        }
-        if let Some(inner_103) = &self.types {
-            for inner_104 in inner_103 {
-                query.push_kv("types", &smithy_http::query::fmt_string(&inner_104));
-            }
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStudioComponents::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListStudioComponents",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7084,109 +7156,112 @@ impl ListStudioMembersInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListStudioMembers::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListStudioMembers",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_105 = &self.studio_id;
-        let input_105 =
-            input_105
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListStudioMembersInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_105 = &_input.studio_id;
+            let input_105 =
+                input_105
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_105, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_105, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/membership",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/membership",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if self.max_results != 0 {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
+        fn uri_query(_input: &crate::input::ListStudioMembersInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if _input.max_results != 0 {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                );
+            }
+            if let Some(inner_106) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_106));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListStudioMembersInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListStudioMembersInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_106) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_106));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStudioMembers::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListStudioMembers",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7253,83 +7328,84 @@ impl ListStudiosInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListStudios::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListStudios",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/2020-08-01/studios").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_107) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_107));
+        fn uri_base(
+            _input: &crate::input::ListStudiosInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/2020-08-01/studios").expect("formatting should succeed");
+            Ok(())
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        fn uri_query(_input: &crate::input::ListStudiosInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_107) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_107));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListStudiosInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListStudiosInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::ListStudios::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "ListStudios",
+                    "nimble",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7398,96 +7474,99 @@ impl ListTagsForResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListTagsForResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListTagsForResource",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_108 = &self.resource_arn;
-        let input_108 =
-            input_108
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListTagsForResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_108 = &_input.resource_arn;
+            let input_108 =
+                input_108
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let resource_arn = smithy_http::label::fmt_string(input_108, false);
+            if resource_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let resource_arn = smithy_http::label::fmt_string(input_108, false);
-        if resource_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "resource_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/tags/{resourceArn}",
+                resourceArn = resource_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/tags/{resourceArn}",
-            resourceArn = resource_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListTagsForResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListTagsForResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7612,142 +7691,146 @@ impl PutLaunchProfileMembersInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_put_launch_profile_members(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutLaunchProfileMembers::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutLaunchProfileMembers",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_109 = &self.studio_id;
-        let input_109 =
-            input_109
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::PutLaunchProfileMembersInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_109 = &_input.studio_id;
+            let input_109 =
+                input_109
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_109, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_109, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_110 = &self.launch_profile_id;
-        let input_110 =
-            input_110
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_110 = &_input.launch_profile_id;
+            let input_110 =
+                input_110
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "launch_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let launch_profile_id = smithy_http::label::fmt_string(input_110, false);
+            if launch_profile_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
                     details: "cannot be empty or unset",
-                })?;
-        let launch_profile_id = smithy_http::label::fmt_string(input_110, false);
-        if launch_profile_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "launch_profile_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/membership",
+                studioId = studio_id,
+                launchProfileId = launch_profile_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/membership",
-            studioId = studio_id,
-            launchProfileId = launch_profile_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_111) = &self.client_token {
-            let formatted_112 = AsRef::<str>::as_ref(inner_111);
-            if !formatted_112.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_112;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::PutLaunchProfileMembersInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_111) = &_input.client_token {
+                let formatted_112 = AsRef::<str>::as_ref(inner_111);
+                if !formatted_112.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_112;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutLaunchProfileMembersInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutLaunchProfileMembersInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_launch_profile_members(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutLaunchProfileMembers::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutLaunchProfileMembers",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7856,128 +7939,130 @@ impl PutStudioMembersInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_put_studio_members(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::PutStudioMembersInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_113 = &_input.studio_id;
+            let input_113 =
+                input_113
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutStudioMembers::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutStudioMembers",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_113 = &self.studio_id;
-        let input_113 =
-            input_113
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let studio_id = smithy_http::label::fmt_string(input_113, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_113, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/membership",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/membership",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_114) = &self.client_token {
-            let formatted_115 = AsRef::<str>::as_ref(inner_114);
-            if !formatted_115.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_115;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::PutStudioMembersInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_114) = &_input.client_token {
+                let formatted_115 = AsRef::<str>::as_ref(inner_114);
+                if !formatted_115.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_115;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutStudioMembersInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutStudioMembersInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_studio_members(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutStudioMembers::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutStudioMembers",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8058,124 +8143,126 @@ impl StartStudioSsoConfigurationRepairInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::StartStudioSSOConfigurationRepair::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "StartStudioSSOConfigurationRepair",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_116 = &self.studio_id;
-        let input_116 =
-            input_116
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::StartStudioSsoConfigurationRepairInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_116 = &_input.studio_id;
+            let input_116 =
+                input_116
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_116, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_116, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/sso-configuration",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/sso-configuration",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_117) = &self.client_token {
-            let formatted_118 = AsRef::<str>::as_ref(inner_117);
-            if !formatted_118.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_118;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::StartStudioSsoConfigurationRepairInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_117) = &_input.client_token {
+                let formatted_118 = AsRef::<str>::as_ref(inner_117);
+                if !formatted_118.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_118;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartStudioSsoConfigurationRepairInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartStudioSsoConfigurationRepairInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartStudioSSOConfigurationRepair::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "StartStudioSSOConfigurationRepair",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8265,100 +8352,98 @@ impl TagResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::TagResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_119 = &_input.resource_arn;
+            let input_119 =
+                input_119
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::TagResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "TagResource",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_119 = &self.resource_arn;
-        let input_119 =
-            input_119
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let resource_arn = smithy_http::label::fmt_string(input_119, false);
+            if resource_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let resource_arn = smithy_http::label::fmt_string(input_119, false);
-        if resource_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "resource_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/tags/{resourceArn}",
+                resourceArn = resource_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/tags/{resourceArn}",
-            resourceArn = resource_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::TagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::TagResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "TagResource",
+                    "nimble",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8440,105 +8525,106 @@ impl UntagResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UntagResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UntagResource",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_120 = &self.resource_arn;
-        let input_120 =
-            input_120
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UntagResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_120 = &_input.resource_arn;
+            let input_120 =
+                input_120
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let resource_arn = smithy_http::label::fmt_string(input_120, false);
+            if resource_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let resource_arn = smithy_http::label::fmt_string(input_120, false);
-        if resource_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "resource_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/tags/{resourceArn}",
+                resourceArn = resource_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/tags/{resourceArn}",
-            resourceArn = resource_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_121) = &self.tag_keys {
-            for inner_122 in inner_121 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_122));
+        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_121) = &_input.tag_keys {
+                for inner_122 in inner_121 {
+                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_122));
+                }
             }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UntagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UntagResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UntagResource",
+                    "nimble",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8706,146 +8792,146 @@ impl UpdateLaunchProfileInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_launch_profile(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateLaunchProfile::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateLaunchProfile",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_123 = &self.studio_id;
-        let input_123 =
-            input_123
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UpdateLaunchProfileInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_123 = &_input.studio_id;
+            let input_123 =
+                input_123
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_123, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_123, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_124 = &self.launch_profile_id;
-        let input_124 =
-            input_124
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_124 = &_input.launch_profile_id;
+            let input_124 =
+                input_124
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "launch_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let launch_profile_id = smithy_http::label::fmt_string(input_124, false);
+            if launch_profile_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
                     details: "cannot be empty or unset",
-                })?;
-        let launch_profile_id = smithy_http::label::fmt_string(input_124, false);
-        if launch_profile_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "launch_profile_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}",
+                studioId = studio_id,
+                launchProfileId = launch_profile_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}",
-            studioId = studio_id,
-            launchProfileId = launch_profile_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_125) = &self.client_token {
-            let formatted_126 = AsRef::<str>::as_ref(inner_125);
-            if !formatted_126.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_126;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::UpdateLaunchProfileInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_125) = &_input.client_token {
+                let formatted_126 = AsRef::<str>::as_ref(inner_125);
+                if !formatted_126.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_126;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("PATCH").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateLaunchProfileInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("PATCH").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateLaunchProfileInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_launch_profile(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateLaunchProfile::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateLaunchProfile",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8965,151 +9051,155 @@ impl UpdateLaunchProfileMemberInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_launch_profile_member(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateLaunchProfileMember::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateLaunchProfileMember",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_127 = &self.studio_id;
-        let input_127 =
-            input_127
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UpdateLaunchProfileMemberInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_127 = &_input.studio_id;
+            let input_127 =
+                input_127
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_127, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_127, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_128 = &self.launch_profile_id;
-        let input_128 =
-            input_128
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_128 = &_input.launch_profile_id;
+            let input_128 =
+                input_128
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "launch_profile_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let launch_profile_id = smithy_http::label::fmt_string(input_128, false);
+            if launch_profile_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "launch_profile_id",
                     details: "cannot be empty or unset",
-                })?;
-        let launch_profile_id = smithy_http::label::fmt_string(input_128, false);
-        if launch_profile_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "launch_profile_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_129 = &self.principal_id;
-        let input_129 =
-            input_129
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_129 = &_input.principal_id;
+            let input_129 =
+                input_129
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "principal_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let principal_id = smithy_http::label::fmt_string(input_129, false);
+            if principal_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "principal_id",
                     details: "cannot be empty or unset",
-                })?;
-        let principal_id = smithy_http::label::fmt_string(input_129, false);
-        if principal_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "principal_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/membership/{principalId}", studioId = studio_id, launchProfileId = launch_profile_id, principalId = principal_id).expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/2020-08-01/studios/{studioId}/launch-profiles/{launchProfileId}/membership/{principalId}", studioId = studio_id, launchProfileId = launch_profile_id, principalId = principal_id).expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_130) = &self.client_token {
-            let formatted_131 = AsRef::<str>::as_ref(inner_130);
-            if !formatted_131.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_131;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::UpdateLaunchProfileMemberInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_130) = &_input.client_token {
+                let formatted_131 = AsRef::<str>::as_ref(inner_130);
+                if !formatted_131.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_131;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("PATCH").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateLaunchProfileMemberInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("PATCH").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateLaunchProfileMemberInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_launch_profile_member(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateLaunchProfileMember::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateLaunchProfileMember",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9225,146 +9315,146 @@ impl UpdateStreamingImageInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_streaming_image(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateStreamingImage::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateStreamingImage",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_132 = &self.studio_id;
-        let input_132 =
-            input_132
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UpdateStreamingImageInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_132 = &_input.studio_id;
+            let input_132 =
+                input_132
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_132, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_132, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_133 = &self.streaming_image_id;
-        let input_133 =
-            input_133
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_133 = &_input.streaming_image_id;
+            let input_133 =
+                input_133
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "streaming_image_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let streaming_image_id = smithy_http::label::fmt_string(input_133, false);
+            if streaming_image_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "streaming_image_id",
                     details: "cannot be empty or unset",
-                })?;
-        let streaming_image_id = smithy_http::label::fmt_string(input_133, false);
-        if streaming_image_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "streaming_image_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/streaming-images/{streamingImageId}",
+                studioId = studio_id,
+                streamingImageId = streaming_image_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/streaming-images/{streamingImageId}",
-            studioId = studio_id,
-            streamingImageId = streaming_image_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_134) = &self.client_token {
-            let formatted_135 = AsRef::<str>::as_ref(inner_134);
-            if !formatted_135.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_135;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::UpdateStreamingImageInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_134) = &_input.client_token {
+                let formatted_135 = AsRef::<str>::as_ref(inner_134);
+                if !formatted_135.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_135;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("PATCH").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateStreamingImageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("PATCH").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateStreamingImageInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_streaming_image(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateStreamingImage::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateStreamingImage",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9481,128 +9571,127 @@ impl UpdateStudioInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_studio(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::UpdateStudioInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_136 = &_input.studio_id;
+            let input_136 =
+                input_136
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateStudio::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateStudio",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_136 = &self.studio_id;
-        let input_136 =
-            input_136
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let studio_id = smithy_http::label::fmt_string(input_136, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_136, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}",
+                studioId = studio_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}",
-            studioId = studio_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_137) = &self.client_token {
-            let formatted_138 = AsRef::<str>::as_ref(inner_137);
-            if !formatted_138.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_138;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::UpdateStudioInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_137) = &_input.client_token {
+                let formatted_138 = AsRef::<str>::as_ref(inner_137);
+                if !formatted_138.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_138;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("PATCH").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateStudioInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("PATCH").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateStudioInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_studio(&self)
+            .map_err(|err| {
+            smithy_http::operation::BuildError::SerializationError(err.into())
+        })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UpdateStudio::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UpdateStudio",
+                    "nimble",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9815,146 +9904,146 @@ impl UpdateStudioComponentInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_studio_component(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateStudioComponent::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateStudioComponent",
-                "nimble",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_139 = &self.studio_id;
-        let input_139 =
-            input_139
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UpdateStudioComponentInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_139 = &_input.studio_id;
+            let input_139 =
+                input_139
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_id = smithy_http::label::fmt_string(input_139, false);
+            if studio_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_id = smithy_http::label::fmt_string(input_139, false);
-        if studio_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_140 = &self.studio_component_id;
-        let input_140 =
-            input_140
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_140 = &_input.studio_component_id;
+            let input_140 =
+                input_140
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "studio_component_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let studio_component_id = smithy_http::label::fmt_string(input_140, false);
+            if studio_component_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "studio_component_id",
                     details: "cannot be empty or unset",
-                })?;
-        let studio_component_id = smithy_http::label::fmt_string(input_140, false);
-        if studio_component_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "studio_component_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/2020-08-01/studios/{studioId}/studio-components/{studioComponentId}",
+                studioId = studio_id,
+                studioComponentId = studio_component_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/2020-08-01/studios/{studioId}/studio-components/{studioComponentId}",
-            studioId = studio_id,
-            studioComponentId = studio_component_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_141) = &self.client_token {
-            let formatted_142 = AsRef::<str>::as_ref(inner_141);
-            if !formatted_142.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_142;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::UpdateStudioComponentInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_141) = &_input.client_token {
+                let formatted_142 = AsRef::<str>::as_ref(inner_141);
+                if !formatted_142.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_142;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "client_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amz-Client-Token", header_value);
+                        })?;
+                    builder = builder.header("X-Amz-Client-Token", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("PATCH").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateStudioComponentInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("PATCH").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateStudioComponentInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_studio_component(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateStudioComponent::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateStudioComponent",
+            "nimble",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,

@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>AWS OpsWorks</fullname>
 //! <p>Welcome to the <i>AWS OpsWorks Stacks API Reference</i>. This guide provides descriptions, syntax, and
 //! usage examples for AWS OpsWorks Stacks actions and data types, including common parameters and error

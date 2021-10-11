@@ -5493,6 +5493,34 @@ impl smithy_http::response::ParseStrictResponse for ListViolationEvents {
     }
 }
 
+/// <p>Set a verification state and provide a description of that verification state on a violation (detect alarm).</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutVerificationStateOnViolation {
+    _private: (),
+}
+impl PutVerificationStateOnViolation {
+    /// Creates a new builder-style object to manufacture [`PutVerificationStateOnViolationInput`](crate::input::PutVerificationStateOnViolationInput)
+    pub fn builder() -> crate::input::put_verification_state_on_violation_input::Builder {
+        crate::input::put_verification_state_on_violation_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for PutVerificationStateOnViolation {
+    type Output = std::result::Result<
+        crate::output::PutVerificationStateOnViolationOutput,
+        crate::error::PutVerificationStateOnViolationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_verification_state_on_violation_error(response)
+        } else {
+            crate::operation_deser::parse_put_verification_state_on_violation_response(response)
+        }
+    }
+}
+
 /// <p>Registers a CA certificate with IoT. This CA certificate can then be used to sign
 /// device certificates, which can be then registered with IoT. You can register up to 10
 /// CA certificates per Amazon Web Services account that have the same subject field. This enables you to have

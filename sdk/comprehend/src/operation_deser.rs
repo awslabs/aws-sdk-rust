@@ -3867,6 +3867,108 @@ pub fn parse_list_document_classifiers_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_document_classifier_summaries_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListDocumentClassifierSummariesOutput,
+    crate::error::ListDocumentClassifierSummariesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListDocumentClassifierSummariesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListDocumentClassifierSummariesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::ListDocumentClassifierSummariesError {
+            meta: generic,
+            kind: crate::error::ListDocumentClassifierSummariesErrorKind::InternalServerException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListDocumentClassifierSummariesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "InvalidRequestException" => crate::error::ListDocumentClassifierSummariesError {
+            meta: generic,
+            kind: crate::error::ListDocumentClassifierSummariesErrorKind::InvalidRequestException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_request_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListDocumentClassifierSummariesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "TooManyRequestsException" => crate::error::ListDocumentClassifierSummariesError {
+            meta: generic,
+            kind: crate::error::ListDocumentClassifierSummariesErrorKind::TooManyRequestsException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::too_many_requests_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListDocumentClassifierSummariesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::ListDocumentClassifierSummariesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_document_classifier_summaries_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListDocumentClassifierSummariesOutput,
+    crate::error::ListDocumentClassifierSummariesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_document_classifier_summaries_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_list_document_classifier_summaries(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ListDocumentClassifierSummariesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_dominant_language_detection_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -4286,6 +4388,102 @@ pub fn parse_list_entity_recognizers_response(
             output,
         )
         .map_err(crate::error::ListEntityRecognizersError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_entity_recognizer_summaries_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListEntityRecognizerSummariesOutput,
+    crate::error::ListEntityRecognizerSummariesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListEntityRecognizerSummariesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListEntityRecognizerSummariesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::ListEntityRecognizerSummariesError {
+            meta: generic,
+            kind: crate::error::ListEntityRecognizerSummariesErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEntityRecognizerSummariesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::ListEntityRecognizerSummariesError {
+            meta: generic,
+            kind: crate::error::ListEntityRecognizerSummariesErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEntityRecognizerSummariesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::ListEntityRecognizerSummariesError {
+            meta: generic,
+            kind: crate::error::ListEntityRecognizerSummariesErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEntityRecognizerSummariesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListEntityRecognizerSummariesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_entity_recognizer_summaries_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListEntityRecognizerSummariesOutput,
+    crate::error::ListEntityRecognizerSummariesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_entity_recognizer_summaries_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_list_entity_recognizer_summaries(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ListEntityRecognizerSummariesError::unhandled)?;
         output.build()
     })
 }

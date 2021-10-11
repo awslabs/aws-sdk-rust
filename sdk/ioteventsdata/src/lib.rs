@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>AWS IoT Events monitors your equipment or device fleets for failures or changes in operation, and
 //! triggers actions when such events occur. You can use AWS IoT Events Data API commands to send inputs to
 //! detectors, list detectors, and view or update a detector's status.</p>

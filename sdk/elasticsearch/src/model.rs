@@ -3487,7 +3487,7 @@ pub struct ElasticsearchClusterConfig {
     pub warm_type: std::option::Option<crate::model::EsWarmPartitionInstanceType>,
     /// <p>The number of warm nodes in the cluster.</p>
     pub warm_count: std::option::Option<i32>,
-    /// <p>Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.</p>
+    /// <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain</p>
     pub cold_storage_options: std::option::Option<crate::model::ColdStorageOptions>,
 }
 impl std::fmt::Debug for ElasticsearchClusterConfig {
@@ -3632,7 +3632,7 @@ pub mod elasticsearch_cluster_config {
             self.warm_count = input;
             self
         }
-        /// <p>Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.</p>
+        /// <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain</p>
         pub fn cold_storage_options(mut self, input: crate::model::ColdStorageOptions) -> Self {
             self.cold_storage_options = Some(input);
             self
@@ -3669,11 +3669,11 @@ impl ElasticsearchClusterConfig {
     }
 }
 
-/// <p>Specifies settings for cold storage.</p>
+/// <p>Specifies the configuration for cold storage options such as enabled</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ColdStorageOptions {
-    /// <p>True to enable cold storage for an Elasticsearch domain.</p>
+    /// <p>Enable cold storage option. Accepted values true or false</p>
     pub enabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for ColdStorageOptions {
@@ -3692,7 +3692,7 @@ pub mod cold_storage_options {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>True to enable cold storage for an Elasticsearch domain.</p>
+        /// <p>Enable cold storage option. Accepted values true or false</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
@@ -5431,11 +5431,14 @@ impl AsRef<str> for DomainPackageStatus {
 pub struct DomainInfo {
     /// <p> Specifies the <code>DomainName</code>.</p>
     pub domain_name: std::option::Option<std::string::String>,
+    /// <p> Specifies the <code>EngineType</code> of the domain.</p>
+    pub engine_type: std::option::Option<crate::model::EngineType>,
 }
 impl std::fmt::Debug for DomainInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DomainInfo");
         formatter.field("domain_name", &self.domain_name);
+        formatter.field("engine_type", &self.engine_type);
         formatter.finish()
     }
 }
@@ -5446,6 +5449,7 @@ pub mod domain_info {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
     }
     impl Builder {
         /// <p> Specifies the <code>DomainName</code>.</p>
@@ -5457,10 +5461,23 @@ pub mod domain_info {
             self.domain_name = input;
             self
         }
+        /// <p> Specifies the <code>EngineType</code> of the domain.</p>
+        pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
+            self.engine_type = Some(input);
+            self
+        }
+        pub fn set_engine_type(
+            mut self,
+            input: std::option::Option<crate::model::EngineType>,
+        ) -> Self {
+            self.engine_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DomainInfo`](crate::model::DomainInfo)
         pub fn build(self) -> crate::model::DomainInfo {
             crate::model::DomainInfo {
                 domain_name: self.domain_name,
+                engine_type: self.engine_type,
             }
         }
     }
@@ -5469,6 +5486,56 @@ impl DomainInfo {
     /// Creates a new builder-style object to manufacture [`DomainInfo`](crate::model::DomainInfo)
     pub fn builder() -> crate::model::domain_info::Builder {
         crate::model::domain_info::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EngineType {
+    Elasticsearch,
+    OpenSearch,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EngineType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Elasticsearch" => EngineType::Elasticsearch,
+            "OpenSearch" => EngineType::OpenSearch,
+            other => EngineType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EngineType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EngineType::from(s))
+    }
+}
+impl EngineType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            EngineType::Elasticsearch => "Elasticsearch",
+            EngineType::OpenSearch => "OpenSearch",
+            EngineType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Elasticsearch", "OpenSearch"]
+    }
+}
+impl AsRef<str> for EngineType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

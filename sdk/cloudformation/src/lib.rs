@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>AWS CloudFormation</fullname>
 //! <p>CloudFormation allows you to create and manage Amazon Web Services infrastructure deployments
 //! predictably and repeatedly. You can use CloudFormation to leverage Amazon Web Services products, such

@@ -11,9 +11,9 @@ These services have been tested and include usage examples
 - [x] Amazon KMS
 - [x] Amazon Polly
 - [x] Amazon Secrets Manager
-- [X] Amazon Qldb
-- [X] Amazon Qldb-Session
-- [X] Amazon Lambda
+- [x] Amazon Qldb
+- [x] Amazon Qldb-Session
+- [x] Amazon Lambda
 - [x] [Amazon S3](https://github.com/awslabs/aws-sdk-rust/issues/16)
 - [x] [Amazon SSM](https://github.com/awslabs/aws-sdk-rust/issues/22)
 - [x] [Amazon SQS](https://github.com/awslabs/aws-sdk-rust/issues/19)
@@ -51,6 +51,7 @@ These services have been tested and include usage examples
 These services have not yet been manually tested by the SDK team and may not have usage examples yet. Please report any issues you find!
 
 - [x] Amazon Access Analyzer
+- [x] Amazon Account
 - [x] Amazon ACM
 - [x] Amazon Acm-Pca
 - [x] Amazon Alexa For Business
@@ -73,6 +74,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Chime Identity
 - [x] Amazon Chime Messaging
 - [x] Amazon Cloud9
+- [x] Amazon Cloud Control
 - [x] Amazon Cloud Directory
 - [x] Amazon Cloud Front
 - [x] Amazon Cloudhsm
@@ -95,6 +97,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Compute-Optimizer
 - [x] Amazon Connect
 - [x] Amazon Connectparticipant
+- [x] Amazon Connect Voice ID
 - [x] Amazon Cur
 - [x] Amazon Databrew
 - [x] Amazon Dataexchange
@@ -128,7 +131,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Forecast
 - [x] Amazon Forecast Query
 - [x] Amazon Fraud Detector
-- [x] Amazon FSX
+- [x] Amazon FSx
 - [x] Amazon Gamelift
 - [x] Amazon Global Accelerator
 - [x] Amazon Glue
@@ -153,6 +156,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Iotthingsgraph
 - [x] Amazon Ivs
 - [x] Amazon Kafka
+- [x] Amazon Kafka Connect
 - [x] Amazon Kendra
 - [x] Amazon Kinesis Analytics
 - [x] Amazon Kinesis Analytics v2
@@ -243,12 +247,13 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Waf
 - [x] Amazon Waf-Regional
 - [x] [Amazon Wafv2](https://github.com/awslabs/aws-sdk-rust/issues/118)
+- [x] Amazon Wisdom
 - [x] Amazon Workdocs
 - [x] Amazon Worklink
 - [x] Amazon Workmail
 - [x] Amazon Workmailmessageflow
 - [x] Amazon Workspaces
-- [x] Amazon Xray
+- [x] Amazon xray
 
 ## No support (yet)
 We're working on it! Please file or upvote on the relevant issue to help us prioritize.

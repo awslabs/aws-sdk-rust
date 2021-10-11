@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>AWS Support</fullname>
 //! <p>The <i>AWS Support API Reference</i> is intended for programmers who need detailed
 //! information about the AWS Support operations and data types. You can use the API to manage

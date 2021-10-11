@@ -86,109 +86,113 @@ impl AssociateAssetsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
+        fn uri_base(
+            _input: &crate::input::AssociateAssetsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_1 = &_input.asset_id;
+            let input_1 =
+                input_1
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let asset_id = smithy_http::label::fmt_string(input_1, false);
+            if asset_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "asset_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_associate_assets(&self)
-                    .map_err(|err| {
+            write!(output, "/assets/{assetId}/associate", assetId = asset_id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AssociateAssetsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AssociateAssetsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_assets(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::AssociateAssets::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "AssociateAssets",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_1 = &self.asset_id;
-        let input_1 = input_1
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "asset_id",
-                details: "cannot be empty or unset",
-            })?;
-        let asset_id = smithy_http::label::fmt_string(input_1, false);
-        if asset_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        write!(output, "/assets/{assetId}/associate", assetId = asset_id)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateAssets::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "AssociateAssets",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -284,111 +288,115 @@ impl BatchAssociateProjectAssetsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
+        fn uri_base(
+            _input: &crate::input::BatchAssociateProjectAssetsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_2 = &_input.project_id;
+            let input_2 =
+                input_2
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_id = smithy_http::label::fmt_string(input_2, false);
+            if project_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "project_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_batch_associate_project_assets(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::BatchAssociateProjectAssets::new(),
+            write!(
+                output,
+                "/projects/{projectId}/assets/associate",
+                projectId = project_id
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "BatchAssociateProjectAssets",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_2 = &self.project_id;
-        let input_2 = input_2
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "project_id",
-                details: "cannot be empty or unset",
-            })?;
-        let project_id = smithy_http::label::fmt_string(input_2, false);
-        if project_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_id",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/projects/{projectId}/assets/associate",
-            projectId = project_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::BatchAssociateProjectAssetsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::BatchAssociateProjectAssetsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_batch_associate_project_assets(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchAssociateProjectAssets::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "BatchAssociateProjectAssets",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -484,111 +492,115 @@ impl BatchDisassociateProjectAssetsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
+        fn uri_base(
+            _input: &crate::input::BatchDisassociateProjectAssetsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_3 = &_input.project_id;
+            let input_3 =
+                input_3
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_id = smithy_http::label::fmt_string(input_3, false);
+            if project_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "project_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_project_assets(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::BatchDisassociateProjectAssets::new(),
+            write!(
+                output,
+                "/projects/{projectId}/assets/disassociate",
+                projectId = project_id
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "BatchDisassociateProjectAssets",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_3 = &self.project_id;
-        let input_3 = input_3
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "project_id",
-                details: "cannot be empty or unset",
-            })?;
-        let project_id = smithy_http::label::fmt_string(input_3, false);
-        if project_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_id",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/projects/{projectId}/assets/disassociate",
-            projectId = project_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::BatchDisassociateProjectAssetsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::BatchDisassociateProjectAssetsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_project_assets(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchDisassociateProjectAssets::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "BatchDisassociateProjectAssets",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -666,89 +678,92 @@ impl BatchPutAssetPropertyValueInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_batch_put_asset_property_value(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::BatchPutAssetPropertyValueInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/properties").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::BatchPutAssetPropertyValueInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::BatchPutAssetPropertyValueInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::BatchPutAssetPropertyValue::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "BatchPutAssetPropertyValue",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/properties").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_batch_put_asset_property_value(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchPutAssetPropertyValue::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "BatchPutAssetPropertyValue",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -882,96 +897,95 @@ impl CreateAccessPolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_access_policy(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateAccessPolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/access-policies").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateAccessPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateAccessPolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateAccessPolicy::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateAccessPolicy",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/access-policies").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_access_policy(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAccessPolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateAccessPolicy",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1086,94 +1100,92 @@ impl CreateAssetInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_asset(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateAssetInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/assets").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateAssetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateAssetInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateAsset::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateAsset",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/assets").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_asset(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::CreateAsset::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "CreateAsset",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1352,94 +1364,97 @@ impl CreateAssetModelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_asset_model(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateAssetModelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/asset-models").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateAssetModelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateAssetModelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateAssetModel::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateAssetModel",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/asset-models").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_asset_model(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAssetModel::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateAssetModel",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1585,94 +1600,97 @@ impl CreateDashboardInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_dashboard(&self)
-                    .map_err(|err| {
+        fn uri_base(
+            _input: &crate::input::CreateDashboardInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/dashboards").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateDashboardInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateDashboardInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_dashboard(&self)
+                .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateDashboard::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateDashboard",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/dashboards").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateDashboard::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateDashboard",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1776,91 +1794,89 @@ impl CreateGatewayInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_gateway(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateGatewayInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/20200301/gateways").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateGatewayInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateGatewayInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateGateway::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateGateway",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/20200301/gateways").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_gateway(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::CreateGateway::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "CreateGateway",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2082,94 +2098,94 @@ impl CreatePortalInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_portal(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreatePortalInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/portals").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreatePortalInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreatePortalInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreatePortal::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreatePortal",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/portals").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_portal(&self)
+            .map_err(|err| {
+            smithy_http::operation::BuildError::SerializationError(err.into())
+        })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::CreatePortal::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "CreatePortal",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2295,94 +2311,92 @@ impl CreateProjectInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::CreateProjectInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/projects").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateProjectInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateProjectInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateProject::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateProject",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/projects").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::CreateProject::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "CreateProject",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2465,116 +2479,120 @@ impl DeleteAccessPolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
+        fn uri_base(
+            _input: &crate::input::DeleteAccessPolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_4 = &_input.access_policy_id;
+            let input_4 =
+                input_4
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "access_policy_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let access_policy_id = smithy_http::label::fmt_string(input_4, false);
+            if access_policy_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "access_policy_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteAccessPolicy::new(),
+            write!(
+                output,
+                "/access-policies/{accessPolicyId}",
+                accessPolicyId = access_policy_id
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteAccessPolicy",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_4 = &self.access_policy_id;
-        let input_4 = input_4
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "access_policy_id",
-                details: "cannot be empty or unset",
-            })?;
-        let access_policy_id = smithy_http::label::fmt_string(input_4, false);
-        if access_policy_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "access_policy_id",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/access-policies/{accessPolicyId}",
-            accessPolicyId = access_policy_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.client_token {
-            query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_5));
+        fn uri_query(_input: &crate::input::DeleteAccessPolicyInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_5) = &_input.client_token {
+                query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_5));
+            }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteAccessPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteAccessPolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAccessPolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteAccessPolicy",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2652,111 +2670,114 @@ impl DeleteAssetInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
+        fn uri_base(
+            _input: &crate::input::DeleteAssetInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_6 = &_input.asset_id;
+            let input_6 =
+                input_6
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let asset_id = smithy_http::label::fmt_string(input_6, false);
+            if asset_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "asset_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteAsset::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteAsset",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_6 = &self.asset_id;
-        let input_6 = input_6
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "asset_id",
-                details: "cannot be empty or unset",
-            })?;
-        let asset_id = smithy_http::label::fmt_string(input_6, false);
-        if asset_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_id",
-                details: "cannot be empty or unset",
-            });
+            write!(output, "/assets/{assetId}", assetId = asset_id)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/assets/{assetId}", assetId = asset_id).expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.client_token {
-            query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_7));
+        fn uri_query(_input: &crate::input::DeleteAssetInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_7) = &_input.client_token {
+                query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_7));
+            }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteAssetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteAssetInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DeleteAsset::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DeleteAsset",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2839,116 +2860,120 @@ impl DeleteAssetModelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
+        fn uri_base(
+            _input: &crate::input::DeleteAssetModelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_8 = &_input.asset_model_id;
+            let input_8 =
+                input_8
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_model_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let asset_model_id = smithy_http::label::fmt_string(input_8, false);
+            if asset_model_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "asset_model_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteAssetModel::new(),
+            write!(
+                output,
+                "/asset-models/{assetModelId}",
+                assetModelId = asset_model_id
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteAssetModel",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_8 = &self.asset_model_id;
-        let input_8 = input_8
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "asset_model_id",
-                details: "cannot be empty or unset",
-            })?;
-        let asset_model_id = smithy_http::label::fmt_string(input_8, false);
-        if asset_model_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_model_id",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/asset-models/{assetModelId}",
-            assetModelId = asset_model_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_9) = &self.client_token {
-            query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_9));
+        fn uri_query(_input: &crate::input::DeleteAssetModelInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_9) = &_input.client_token {
+                query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_9));
+            }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteAssetModelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteAssetModelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAssetModel::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteAssetModel",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3028,117 +3053,120 @@ impl DeleteDashboardInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteDashboard::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteDashboard",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_10 = &self.dashboard_id;
-        let input_10 =
-            input_10
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteDashboardInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_10 = &_input.dashboard_id;
+            let input_10 =
+                input_10
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "dashboard_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let dashboard_id = smithy_http::label::fmt_string(input_10, false);
+            if dashboard_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
-                })?;
-        let dashboard_id = smithy_http::label::fmt_string(input_10, false);
-        if dashboard_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "dashboard_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/dashboards/{dashboardId}",
+                dashboardId = dashboard_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/dashboards/{dashboardId}",
-            dashboardId = dashboard_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_11) = &self.client_token {
-            query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_11));
+        fn uri_query(_input: &crate::input::DeleteDashboardInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_11) = &_input.client_token {
+                query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_11));
+            }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteDashboardInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteDashboardInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDashboard::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteDashboard",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3205,107 +3233,108 @@ impl DeleteGatewayInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteGateway::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteGateway",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_12 = &self.gateway_id;
-        let input_12 =
-            input_12
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteGatewayInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_12 = &_input.gateway_id;
+            let input_12 =
+                input_12
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "gateway_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let gateway_id = smithy_http::label::fmt_string(input_12, false);
+            if gateway_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
                     details: "cannot be empty or unset",
-                })?;
-        let gateway_id = smithy_http::label::fmt_string(input_12, false);
-        if gateway_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "gateway_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/20200301/gateways/{gatewayId}",
+                gatewayId = gateway_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/20200301/gateways/{gatewayId}",
-            gatewayId = gateway_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteGatewayInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteGatewayInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DeleteGateway::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DeleteGateway",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3383,113 +3412,114 @@ impl DeletePortalInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeletePortal::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeletePortal",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_13 = &self.portal_id;
-        let input_13 =
-            input_13
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeletePortalInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_13 = &_input.portal_id;
+            let input_13 =
+                input_13
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "portal_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let portal_id = smithy_http::label::fmt_string(input_13, false);
+            if portal_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "portal_id",
                     details: "cannot be empty or unset",
-                })?;
-        let portal_id = smithy_http::label::fmt_string(input_13, false);
-        if portal_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "portal_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/portals/{portalId}", portalId = portal_id)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/portals/{portalId}", portalId = portal_id)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_14) = &self.client_token {
-            query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_14));
+        fn uri_query(_input: &crate::input::DeletePortalInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_14) = &_input.client_token {
+                query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_14));
+            }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeletePortalInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeletePortalInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DeletePortal::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DeletePortal",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3567,113 +3597,114 @@ impl DeleteProjectInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteProject::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteProject",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_15 = &self.project_id;
-        let input_15 =
-            input_15
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteProjectInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_15 = &_input.project_id;
+            let input_15 =
+                input_15
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_id = smithy_http::label::fmt_string(input_15, false);
+            if project_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
                     details: "cannot be empty or unset",
-                })?;
-        let project_id = smithy_http::label::fmt_string(input_15, false);
-        if project_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/projects/{projectId}", projectId = project_id)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/projects/{projectId}", projectId = project_id)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_16) = &self.client_token {
-            query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_16));
+        fn uri_query(_input: &crate::input::DeleteProjectInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_16) = &_input.client_token {
+                query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_16));
+            }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteProjectInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteProjectInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DeleteProject::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DeleteProject",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3745,107 +3776,110 @@ impl DescribeAccessPolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeAccessPolicy::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeAccessPolicy",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_17 = &self.access_policy_id;
-        let input_17 =
-            input_17
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeAccessPolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_17 = &_input.access_policy_id;
+            let input_17 =
+                input_17
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "access_policy_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let access_policy_id = smithy_http::label::fmt_string(input_17, false);
+            if access_policy_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "access_policy_id",
                     details: "cannot be empty or unset",
-                })?;
-        let access_policy_id = smithy_http::label::fmt_string(input_17, false);
-        if access_policy_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "access_policy_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/access-policies/{accessPolicyId}",
+                accessPolicyId = access_policy_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/access-policies/{accessPolicyId}",
-            accessPolicyId = access_policy_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeAccessPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeAccessPolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAccessPolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeAccessPolicy",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3912,102 +3946,104 @@ impl DescribeAssetInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeAsset::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeAsset",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_18 = &self.asset_id;
-        let input_18 =
-            input_18
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeAssetInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_18 = &_input.asset_id;
+            let input_18 =
+                input_18
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let asset_id = smithy_http::label::fmt_string(input_18, false);
+            if asset_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
                     details: "cannot be empty or unset",
-                })?;
-        let asset_id = smithy_http::label::fmt_string(input_18, false);
-        if asset_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/assets/{assetId}", assetId = asset_id)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/assets/{assetId}", assetId = asset_id).expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeAssetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeAssetInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DescribeAsset::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DescribeAsset",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4079,107 +4115,110 @@ impl DescribeAssetModelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeAssetModel::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeAssetModel",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_19 = &self.asset_model_id;
-        let input_19 =
-            input_19
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeAssetModelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_19 = &_input.asset_model_id;
+            let input_19 =
+                input_19
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_model_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let asset_model_id = smithy_http::label::fmt_string(input_19, false);
+            if asset_model_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "asset_model_id",
                     details: "cannot be empty or unset",
-                })?;
-        let asset_model_id = smithy_http::label::fmt_string(input_19, false);
-        if asset_model_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_model_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/asset-models/{assetModelId}",
+                assetModelId = asset_model_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/asset-models/{assetModelId}",
-            assetModelId = asset_model_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeAssetModelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeAssetModelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAssetModel::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeAssetModel",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4259,123 +4298,126 @@ impl DescribeAssetPropertyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeAssetProperty::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeAssetProperty",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_20 = &self.asset_id;
-        let input_20 =
-            input_20
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeAssetPropertyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_20 = &_input.asset_id;
+            let input_20 =
+                input_20
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let asset_id = smithy_http::label::fmt_string(input_20, false);
+            if asset_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
                     details: "cannot be empty or unset",
-                })?;
-        let asset_id = smithy_http::label::fmt_string(input_20, false);
-        if asset_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_21 = &self.property_id;
-        let input_21 =
-            input_21
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_21 = &_input.property_id;
+            let input_21 =
+                input_21
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "property_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let property_id = smithy_http::label::fmt_string(input_21, false);
+            if property_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "property_id",
                     details: "cannot be empty or unset",
-                })?;
-        let property_id = smithy_http::label::fmt_string(input_21, false);
-        if property_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "property_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/assets/{assetId}/properties/{propertyId}",
+                assetId = asset_id,
+                propertyId = property_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/assets/{assetId}/properties/{propertyId}",
-            assetId = asset_id,
-            propertyId = property_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeAssetPropertyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeAssetPropertyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAssetProperty::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeAssetProperty",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4444,107 +4486,110 @@ impl DescribeDashboardInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeDashboard::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeDashboard",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_22 = &self.dashboard_id;
-        let input_22 =
-            input_22
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeDashboardInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_22 = &_input.dashboard_id;
+            let input_22 =
+                input_22
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "dashboard_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let dashboard_id = smithy_http::label::fmt_string(input_22, false);
+            if dashboard_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
-                })?;
-        let dashboard_id = smithy_http::label::fmt_string(input_22, false);
-        if dashboard_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "dashboard_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/dashboards/{dashboardId}",
+                dashboardId = dashboard_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/dashboards/{dashboardId}",
-            dashboardId = dashboard_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeDashboardInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeDashboardInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeDashboard::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeDashboard",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4602,87 +4647,90 @@ impl DescribeDefaultEncryptionConfigurationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeDefaultEncryptionConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/configuration/account/encryption").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeDefaultEncryptionConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeDefaultEncryptionConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeDefaultEncryptionConfiguration::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeDefaultEncryptionConfiguration",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/configuration/account/encryption").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeDefaultEncryptionConfiguration::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeDefaultEncryptionConfiguration",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4751,107 +4799,110 @@ impl DescribeGatewayInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeGateway::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeGateway",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_23 = &self.gateway_id;
-        let input_23 =
-            input_23
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeGatewayInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_23 = &_input.gateway_id;
+            let input_23 =
+                input_23
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "gateway_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let gateway_id = smithy_http::label::fmt_string(input_23, false);
+            if gateway_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
                     details: "cannot be empty or unset",
-                })?;
-        let gateway_id = smithy_http::label::fmt_string(input_23, false);
-        if gateway_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "gateway_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/20200301/gateways/{gatewayId}",
+                gatewayId = gateway_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/20200301/gateways/{gatewayId}",
-            gatewayId = gateway_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeGatewayInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeGatewayInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeGateway::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeGateway",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4940,123 +4991,126 @@ impl DescribeGatewayCapabilityConfigurationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeGatewayCapabilityConfiguration::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeGatewayCapabilityConfiguration",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_24 = &self.gateway_id;
-        let input_24 =
-            input_24
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeGatewayCapabilityConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_24 = &_input.gateway_id;
+            let input_24 =
+                input_24
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "gateway_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let gateway_id = smithy_http::label::fmt_string(input_24, false);
+            if gateway_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
                     details: "cannot be empty or unset",
-                })?;
-        let gateway_id = smithy_http::label::fmt_string(input_24, false);
-        if gateway_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "gateway_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_25 = &self.capability_namespace;
-        let input_25 =
-            input_25
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_25 = &_input.capability_namespace;
+            let input_25 =
+                input_25
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "capability_namespace",
+                        details: "cannot be empty or unset",
+                    })?;
+            let capability_namespace = smithy_http::label::fmt_string(input_25, false);
+            if capability_namespace.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "capability_namespace",
                     details: "cannot be empty or unset",
-                })?;
-        let capability_namespace = smithy_http::label::fmt_string(input_25, false);
-        if capability_namespace.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "capability_namespace",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/20200301/gateways/{gatewayId}/capability/{capabilityNamespace}",
+                gatewayId = gateway_id,
+                capabilityNamespace = capability_namespace
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/20200301/gateways/{gatewayId}/capability/{capabilityNamespace}",
-            gatewayId = gateway_id,
-            capabilityNamespace = capability_namespace
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeGatewayCapabilityConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeGatewayCapabilityConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeGatewayCapabilityConfiguration::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeGatewayCapabilityConfiguration",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5112,87 +5166,90 @@ impl DescribeLoggingOptionsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeLoggingOptionsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/logging").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeLoggingOptionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeLoggingOptionsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeLoggingOptions::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeLoggingOptions",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/logging").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeLoggingOptions::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeLoggingOptions",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5261,103 +5318,106 @@ impl DescribePortalInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribePortal::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribePortal",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_26 = &self.portal_id;
-        let input_26 =
-            input_26
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribePortalInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_26 = &_input.portal_id;
+            let input_26 =
+                input_26
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "portal_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let portal_id = smithy_http::label::fmt_string(input_26, false);
+            if portal_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "portal_id",
                     details: "cannot be empty or unset",
-                })?;
-        let portal_id = smithy_http::label::fmt_string(input_26, false);
-        if portal_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "portal_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/portals/{portalId}", portalId = portal_id)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/portals/{portalId}", portalId = portal_id)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribePortalInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribePortalInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribePortal::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribePortal",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5426,103 +5486,106 @@ impl DescribeProjectInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeProject::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeProject",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_27 = &self.project_id;
-        let input_27 =
-            input_27
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeProjectInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_27 = &_input.project_id;
+            let input_27 =
+                input_27
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_id = smithy_http::label::fmt_string(input_27, false);
+            if project_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
                     details: "cannot be empty or unset",
-                })?;
-        let project_id = smithy_http::label::fmt_string(input_27, false);
-        if project_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/projects/{projectId}", projectId = project_id)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/projects/{projectId}", projectId = project_id)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeProjectInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeProjectInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeProject::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeProject",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5579,87 +5642,90 @@ impl DescribeStorageConfigurationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::DescribeStorageConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/configuration/account/storage").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeStorageConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeStorageConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeStorageConfiguration::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeStorageConfiguration",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/configuration/account/storage").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeStorageConfiguration::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeStorageConfiguration",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5767,112 +5833,113 @@ impl DisassociateAssetsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
+        fn uri_base(
+            _input: &crate::input::DisassociateAssetsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_28 = &_input.asset_id;
+            let input_28 =
+                input_28
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let asset_id = smithy_http::label::fmt_string(input_28, false);
+            if asset_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "asset_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_disassociate_assets(
-                    &self,
-                )
+            write!(output, "/assets/{assetId}/disassociate", assetId = asset_id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisassociateAssetsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisassociateAssetsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_assets(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DisassociateAssets::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DisassociateAssets",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_28 = &self.asset_id;
-        let input_28 =
-            input_28
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "asset_id",
-                    details: "cannot be empty or unset",
-                })?;
-        let asset_id = smithy_http::label::fmt_string(input_28, false);
-        if asset_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        write!(output, "/assets/{assetId}/disassociate", assetId = asset_id)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateAssets::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DisassociateAssets",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6072,143 +6139,149 @@ impl GetAssetPropertyAggregatesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
+        fn uri_base(
+            _input: &crate::input::GetAssetPropertyAggregatesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/properties/aggregates").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::GetAssetPropertyAggregatesInput,
+            mut output: &mut String,
+        ) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_29) = &_input.asset_id {
+                query.push_kv("assetId", &smithy_http::query::fmt_string(&inner_29));
+            }
+            if let Some(inner_30) = &_input.property_id {
+                query.push_kv("propertyId", &smithy_http::query::fmt_string(&inner_30));
+            }
+            if let Some(inner_31) = &_input.property_alias {
+                query.push_kv("propertyAlias", &smithy_http::query::fmt_string(&inner_31));
+            }
+            if let Some(inner_32) = &_input.aggregate_types {
+                for inner_33 in inner_32 {
+                    query.push_kv("aggregateTypes", &smithy_http::query::fmt_string(&inner_33));
                 }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
+            }
+            if let Some(inner_34) = &_input.resolution {
+                query.push_kv("resolution", &smithy_http::query::fmt_string(&inner_34));
+            }
+            if let Some(inner_35) = &_input.qualities {
+                for inner_36 in inner_35 {
+                    query.push_kv("qualities", &smithy_http::query::fmt_string(&inner_36));
                 }
             }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+            if let Some(inner_37) = &_input.start_date {
+                query.push_kv(
+                    "startDate",
+                    &smithy_http::query::fmt_timestamp(
+                        inner_37,
+                        smithy_types::instant::Format::DateTime,
+                    ),
+                );
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetAssetPropertyAggregates::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetAssetPropertyAggregates",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/properties/aggregates").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_29) = &self.asset_id {
-            query.push_kv("assetId", &smithy_http::query::fmt_string(&inner_29));
-        }
-        if let Some(inner_30) = &self.property_id {
-            query.push_kv("propertyId", &smithy_http::query::fmt_string(&inner_30));
-        }
-        if let Some(inner_31) = &self.property_alias {
-            query.push_kv("propertyAlias", &smithy_http::query::fmt_string(&inner_31));
-        }
-        if let Some(inner_32) = &self.aggregate_types {
-            for inner_33 in inner_32 {
-                query.push_kv("aggregateTypes", &smithy_http::query::fmt_string(&inner_33));
+            if let Some(inner_38) = &_input.end_date {
+                query.push_kv(
+                    "endDate",
+                    &smithy_http::query::fmt_timestamp(
+                        inner_38,
+                        smithy_types::instant::Format::DateTime,
+                    ),
+                );
+            }
+            if let Some(inner_39) = &_input.time_ordering {
+                query.push_kv("timeOrdering", &smithy_http::query::fmt_string(&inner_39));
+            }
+            if let Some(inner_40) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_40));
+            }
+            if let Some(inner_41) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_41).encode(),
+                );
             }
         }
-        if let Some(inner_34) = &self.resolution {
-            query.push_kv("resolution", &smithy_http::query::fmt_string(&inner_34));
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetAssetPropertyAggregatesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
         }
-        if let Some(inner_35) = &self.qualities {
-            for inner_36 in inner_35 {
-                query.push_kv("qualities", &smithy_http::query::fmt_string(&inner_36));
-            }
-        }
-        if let Some(inner_37) = &self.start_date {
-            query.push_kv(
-                "startDate",
-                &smithy_http::query::fmt_timestamp(
-                    inner_37,
-                    smithy_types::instant::Format::DateTime,
-                ),
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetAssetPropertyAggregatesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_38) = &self.end_date {
-            query.push_kv(
-                "endDate",
-                &smithy_http::query::fmt_timestamp(
-                    inner_38,
-                    smithy_types::instant::Format::DateTime,
-                ),
-            );
-        }
-        if let Some(inner_39) = &self.time_ordering {
-            query.push_kv("timeOrdering", &smithy_http::query::fmt_string(&inner_39));
-        }
-        if let Some(inner_40) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_40));
-        }
-        if let Some(inner_41) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_41).encode(),
-            );
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAssetPropertyAggregates::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetAssetPropertyAggregates",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6305,100 +6378,103 @@ impl GetAssetPropertyValueInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
+        fn uri_base(
+            _input: &crate::input::GetAssetPropertyValueInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/properties/latest").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::GetAssetPropertyValueInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_42) = &_input.asset_id {
+                query.push_kv("assetId", &smithy_http::query::fmt_string(&inner_42));
             }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+            if let Some(inner_43) = &_input.property_id {
+                query.push_kv("propertyId", &smithy_http::query::fmt_string(&inner_43));
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
+            if let Some(inner_44) = &_input.property_alias {
+                query.push_kv("propertyAlias", &smithy_http::query::fmt_string(&inner_44));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetAssetPropertyValueInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetAssetPropertyValueInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetAssetPropertyValue::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetAssetPropertyValue",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/properties/latest").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_42) = &self.asset_id {
-            query.push_kv("assetId", &smithy_http::query::fmt_string(&inner_42));
+            Ok(builder)
         }
-        if let Some(inner_43) = &self.property_id {
-            query.push_kv("propertyId", &smithy_http::query::fmt_string(&inner_43));
-        }
-        if let Some(inner_44) = &self.property_alias {
-            query.push_kv("propertyAlias", &smithy_http::query::fmt_string(&inner_44));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAssetPropertyValue::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetAssetPropertyValue",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6572,135 +6648,141 @@ impl GetAssetPropertyValueHistoryInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
+        fn uri_base(
+            _input: &crate::input::GetAssetPropertyValueHistoryInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/properties/history").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::GetAssetPropertyValueHistoryInput,
+            mut output: &mut String,
+        ) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_45) = &_input.asset_id {
+                query.push_kv("assetId", &smithy_http::query::fmt_string(&inner_45));
+            }
+            if let Some(inner_46) = &_input.property_id {
+                query.push_kv("propertyId", &smithy_http::query::fmt_string(&inner_46));
+            }
+            if let Some(inner_47) = &_input.property_alias {
+                query.push_kv("propertyAlias", &smithy_http::query::fmt_string(&inner_47));
+            }
+            if let Some(inner_48) = &_input.start_date {
+                query.push_kv(
+                    "startDate",
+                    &smithy_http::query::fmt_timestamp(
+                        inner_48,
+                        smithy_types::instant::Format::DateTime,
+                    ),
+                );
+            }
+            if let Some(inner_49) = &_input.end_date {
+                query.push_kv(
+                    "endDate",
+                    &smithy_http::query::fmt_timestamp(
+                        inner_49,
+                        smithy_types::instant::Format::DateTime,
+                    ),
+                );
+            }
+            if let Some(inner_50) = &_input.qualities {
+                for inner_51 in inner_50 {
+                    query.push_kv("qualities", &smithy_http::query::fmt_string(&inner_51));
                 }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
             }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+            if let Some(inner_52) = &_input.time_ordering {
+                query.push_kv("timeOrdering", &smithy_http::query::fmt_string(&inner_52));
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetAssetPropertyValueHistory::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetAssetPropertyValueHistory",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/properties/history").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_45) = &self.asset_id {
-            query.push_kv("assetId", &smithy_http::query::fmt_string(&inner_45));
-        }
-        if let Some(inner_46) = &self.property_id {
-            query.push_kv("propertyId", &smithy_http::query::fmt_string(&inner_46));
-        }
-        if let Some(inner_47) = &self.property_alias {
-            query.push_kv("propertyAlias", &smithy_http::query::fmt_string(&inner_47));
-        }
-        if let Some(inner_48) = &self.start_date {
-            query.push_kv(
-                "startDate",
-                &smithy_http::query::fmt_timestamp(
-                    inner_48,
-                    smithy_types::instant::Format::DateTime,
-                ),
-            );
-        }
-        if let Some(inner_49) = &self.end_date {
-            query.push_kv(
-                "endDate",
-                &smithy_http::query::fmt_timestamp(
-                    inner_49,
-                    smithy_types::instant::Format::DateTime,
-                ),
-            );
-        }
-        if let Some(inner_50) = &self.qualities {
-            for inner_51 in inner_50 {
-                query.push_kv("qualities", &smithy_http::query::fmt_string(&inner_51));
+            if let Some(inner_53) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_53));
+            }
+            if let Some(inner_54) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                );
             }
         }
-        if let Some(inner_52) = &self.time_ordering {
-            query.push_kv("timeOrdering", &smithy_http::query::fmt_string(&inner_52));
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetAssetPropertyValueHistoryInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
         }
-        if let Some(inner_53) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_53));
-        }
-        if let Some(inner_54) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_54).encode(),
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetAssetPropertyValueHistoryInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAssetPropertyValueHistory::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetAssetPropertyValueHistory",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6955,151 +7037,157 @@ impl GetInterpolatedAssetPropertyValuesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
+        fn uri_base(
+            _input: &crate::input::GetInterpolatedAssetPropertyValuesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/properties/interpolated").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::GetInterpolatedAssetPropertyValuesInput,
+            mut output: &mut String,
+        ) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_55) = &_input.asset_id {
+                query.push_kv("assetId", &smithy_http::query::fmt_string(&inner_55));
             }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+            if let Some(inner_56) = &_input.property_id {
+                query.push_kv("propertyId", &smithy_http::query::fmt_string(&inner_56));
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
+            if let Some(inner_57) = &_input.property_alias {
+                query.push_kv("propertyAlias", &smithy_http::query::fmt_string(&inner_57));
+            }
+            if let Some(inner_58) = &_input.start_time_in_seconds {
+                query.push_kv(
+                    "startTimeInSeconds",
+                    &smithy_types::primitive::Encoder::from(*inner_58).encode(),
+                );
+            }
+            if let Some(inner_59) = &_input.start_time_offset_in_nanos {
+                query.push_kv(
+                    "startTimeOffsetInNanos",
+                    &smithy_types::primitive::Encoder::from(*inner_59).encode(),
+                );
+            }
+            if let Some(inner_60) = &_input.end_time_in_seconds {
+                query.push_kv(
+                    "endTimeInSeconds",
+                    &smithy_types::primitive::Encoder::from(*inner_60).encode(),
+                );
+            }
+            if let Some(inner_61) = &_input.end_time_offset_in_nanos {
+                query.push_kv(
+                    "endTimeOffsetInNanos",
+                    &smithy_types::primitive::Encoder::from(*inner_61).encode(),
+                );
+            }
+            if let Some(inner_62) = &_input.quality {
+                query.push_kv("quality", &smithy_http::query::fmt_string(&inner_62));
+            }
+            if let Some(inner_63) = &_input.interval_in_seconds {
+                query.push_kv(
+                    "intervalInSeconds",
+                    &smithy_types::primitive::Encoder::from(*inner_63).encode(),
+                );
+            }
+            if let Some(inner_64) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_64));
+            }
+            if let Some(inner_65) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_65).encode(),
+                );
+            }
+            if let Some(inner_66) = &_input.r#type {
+                query.push_kv("type", &smithy_http::query::fmt_string(&inner_66));
+            }
+            if let Some(inner_67) = &_input.interval_window_in_seconds {
+                query.push_kv(
+                    "intervalWindowInSeconds",
+                    &smithy_types::primitive::Encoder::from(*inner_67).encode(),
+                );
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetInterpolatedAssetPropertyValuesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetInterpolatedAssetPropertyValuesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetInterpolatedAssetPropertyValues::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetInterpolatedAssetPropertyValues",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/properties/interpolated").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_55) = &self.asset_id {
-            query.push_kv("assetId", &smithy_http::query::fmt_string(&inner_55));
+            Ok(builder)
         }
-        if let Some(inner_56) = &self.property_id {
-            query.push_kv("propertyId", &smithy_http::query::fmt_string(&inner_56));
-        }
-        if let Some(inner_57) = &self.property_alias {
-            query.push_kv("propertyAlias", &smithy_http::query::fmt_string(&inner_57));
-        }
-        if let Some(inner_58) = &self.start_time_in_seconds {
-            query.push_kv(
-                "startTimeInSeconds",
-                &smithy_types::primitive::Encoder::from(*inner_58).encode(),
-            );
-        }
-        if let Some(inner_59) = &self.start_time_offset_in_nanos {
-            query.push_kv(
-                "startTimeOffsetInNanos",
-                &smithy_types::primitive::Encoder::from(*inner_59).encode(),
-            );
-        }
-        if let Some(inner_60) = &self.end_time_in_seconds {
-            query.push_kv(
-                "endTimeInSeconds",
-                &smithy_types::primitive::Encoder::from(*inner_60).encode(),
-            );
-        }
-        if let Some(inner_61) = &self.end_time_offset_in_nanos {
-            query.push_kv(
-                "endTimeOffsetInNanos",
-                &smithy_types::primitive::Encoder::from(*inner_61).encode(),
-            );
-        }
-        if let Some(inner_62) = &self.quality {
-            query.push_kv("quality", &smithy_http::query::fmt_string(&inner_62));
-        }
-        if let Some(inner_63) = &self.interval_in_seconds {
-            query.push_kv(
-                "intervalInSeconds",
-                &smithy_types::primitive::Encoder::from(*inner_63).encode(),
-            );
-        }
-        if let Some(inner_64) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_64));
-        }
-        if let Some(inner_65) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_65).encode(),
-            );
-        }
-        if let Some(inner_66) = &self.r#type {
-            query.push_kv("type", &smithy_http::query::fmt_string(&inner_66));
-        }
-        if let Some(inner_67) = &self.interval_window_in_seconds {
-            query.push_kv(
-                "intervalWindowInSeconds",
-                &smithy_types::primitive::Encoder::from(*inner_67).encode(),
-            );
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetInterpolatedAssetPropertyValues::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetInterpolatedAssetPropertyValues",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7247,115 +7335,118 @@ impl ListAccessPoliciesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
+        fn uri_base(
+            _input: &crate::input::ListAccessPoliciesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/access-policies").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::ListAccessPoliciesInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_68) = &_input.identity_type {
+                query.push_kv("identityType", &smithy_http::query::fmt_string(&inner_68));
             }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+            if let Some(inner_69) = &_input.identity_id {
+                query.push_kv("identityId", &smithy_http::query::fmt_string(&inner_69));
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
+            if let Some(inner_70) = &_input.resource_type {
+                query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_70));
+            }
+            if let Some(inner_71) = &_input.resource_id {
+                query.push_kv("resourceId", &smithy_http::query::fmt_string(&inner_71));
+            }
+            if let Some(inner_72) = &_input.iam_arn {
+                query.push_kv("iamArn", &smithy_http::query::fmt_string(&inner_72));
+            }
+            if let Some(inner_73) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_73));
+            }
+            if let Some(inner_74) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_74).encode(),
+                );
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListAccessPoliciesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListAccessPoliciesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListAccessPolicies::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListAccessPolicies",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/access-policies").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_68) = &self.identity_type {
-            query.push_kv("identityType", &smithy_http::query::fmt_string(&inner_68));
+            Ok(builder)
         }
-        if let Some(inner_69) = &self.identity_id {
-            query.push_kv("identityId", &smithy_http::query::fmt_string(&inner_69));
-        }
-        if let Some(inner_70) = &self.resource_type {
-            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_70));
-        }
-        if let Some(inner_71) = &self.resource_id {
-            query.push_kv("resourceId", &smithy_http::query::fmt_string(&inner_71));
-        }
-        if let Some(inner_72) = &self.iam_arn {
-            query.push_kv("iamArn", &smithy_http::query::fmt_string(&inner_72));
-        }
-        if let Some(inner_73) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_73));
-        }
-        if let Some(inner_74) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_74).encode(),
-            );
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAccessPolicies::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListAccessPolicies",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7436,100 +7527,103 @@ impl ListAssetModelsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListAssetModels::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListAssetModels",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/asset-models").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_75) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_75));
+        fn uri_base(
+            _input: &crate::input::ListAssetModelsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/asset-models").expect("formatting should succeed");
+            Ok(())
         }
-        if let Some(inner_76) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_76).encode(),
-            );
+        fn uri_query(_input: &crate::input::ListAssetModelsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_75) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_75));
+            }
+            if let Some(inner_76) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_76).encode(),
+                );
+            }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListAssetModelsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListAssetModelsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAssetModels::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListAssetModels",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7643,123 +7737,126 @@ impl ListAssetRelationshipsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListAssetRelationships::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListAssetRelationships",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_77 = &self.asset_id;
-        let input_77 =
-            input_77
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListAssetRelationshipsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_77 = &_input.asset_id;
+            let input_77 =
+                input_77
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let asset_id = smithy_http::label::fmt_string(input_77, false);
+            if asset_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
                     details: "cannot be empty or unset",
-                })?;
-        let asset_id = smithy_http::label::fmt_string(input_77, false);
-        if asset_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/assets/{assetId}/assetRelationships",
+                assetId = asset_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/assets/{assetId}/assetRelationships",
-            assetId = asset_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_78) = &self.traversal_type {
-            query.push_kv("traversalType", &smithy_http::query::fmt_string(&inner_78));
+        fn uri_query(_input: &crate::input::ListAssetRelationshipsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_78) = &_input.traversal_type {
+                query.push_kv("traversalType", &smithy_http::query::fmt_string(&inner_78));
+            }
+            if let Some(inner_79) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_79));
+            }
+            if let Some(inner_80) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_80).encode(),
+                );
+            }
         }
-        if let Some(inner_79) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_79));
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListAssetRelationshipsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
         }
-        if let Some(inner_80) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_80).encode(),
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListAssetRelationshipsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAssetRelationships::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListAssetRelationships",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7882,106 +7979,107 @@ impl ListAssetsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
+        fn uri_base(
+            _input: &crate::input::ListAssetsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/assets").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::ListAssetsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_81) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_81));
             }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+            if let Some(inner_82) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_82).encode(),
+                );
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
+            if let Some(inner_83) = &_input.asset_model_id {
+                query.push_kv("assetModelId", &smithy_http::query::fmt_string(&inner_83));
+            }
+            if let Some(inner_84) = &_input.filter {
+                query.push_kv("filter", &smithy_http::query::fmt_string(&inner_84));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListAssetsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListAssetsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListAssets::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListAssets",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/assets").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_81) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_81));
+            Ok(builder)
         }
-        if let Some(inner_82) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_82).encode(),
-            );
-        }
-        if let Some(inner_83) = &self.asset_model_id {
-            query.push_kv("assetModelId", &smithy_http::query::fmt_string(&inner_83));
-        }
-        if let Some(inner_84) = &self.filter {
-            query.push_kv("filter", &smithy_http::query::fmt_string(&inner_84));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::ListAssets::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "ListAssets",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8116,125 +8214,128 @@ impl ListAssociatedAssetsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListAssociatedAssets::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListAssociatedAssets",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_85 = &self.asset_id;
-        let input_85 =
-            input_85
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListAssociatedAssetsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_85 = &_input.asset_id;
+            let input_85 =
+                input_85
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let asset_id = smithy_http::label::fmt_string(input_85, false);
+            if asset_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
                     details: "cannot be empty or unset",
-                })?;
-        let asset_id = smithy_http::label::fmt_string(input_85, false);
-        if asset_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/assets/{assetId}/hierarchies", assetId = asset_id)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/assets/{assetId}/hierarchies", assetId = asset_id)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_86) = &self.hierarchy_id {
-            query.push_kv("hierarchyId", &smithy_http::query::fmt_string(&inner_86));
+        fn uri_query(_input: &crate::input::ListAssociatedAssetsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_86) = &_input.hierarchy_id {
+                query.push_kv("hierarchyId", &smithy_http::query::fmt_string(&inner_86));
+            }
+            if let Some(inner_87) = &_input.traversal_direction {
+                query.push_kv(
+                    "traversalDirection",
+                    &smithy_http::query::fmt_string(&inner_87),
+                );
+            }
+            if let Some(inner_88) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_88));
+            }
+            if let Some(inner_89) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_89).encode(),
+                );
+            }
         }
-        if let Some(inner_87) = &self.traversal_direction {
-            query.push_kv(
-                "traversalDirection",
-                &smithy_http::query::fmt_string(&inner_87),
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListAssociatedAssetsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListAssociatedAssetsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_88) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_88));
-        }
-        if let Some(inner_89) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_89).encode(),
-            );
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAssociatedAssets::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListAssociatedAssets",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8326,103 +8427,106 @@ impl ListDashboardsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
+        fn uri_base(
+            _input: &crate::input::ListDashboardsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/dashboards").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::ListDashboardsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_90) = &_input.project_id {
+                query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_90));
             }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+            if let Some(inner_91) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_91));
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
+            if let Some(inner_92) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_92).encode(),
+                );
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListDashboardsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListDashboardsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListDashboards::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListDashboards",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/dashboards").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_90) = &self.project_id {
-            query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_90));
+            Ok(builder)
         }
-        if let Some(inner_91) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_91));
-        }
-        if let Some(inner_92) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_92).encode(),
-            );
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDashboards::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListDashboards",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8501,100 +8605,101 @@ impl ListGatewaysInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListGateways::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListGateways",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/20200301/gateways").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_93) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_93));
+        fn uri_base(
+            _input: &crate::input::ListGatewaysInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/20200301/gateways").expect("formatting should succeed");
+            Ok(())
         }
-        if let Some(inner_94) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_94).encode(),
-            );
+        fn uri_query(_input: &crate::input::ListGatewaysInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_93) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_93));
+            }
+            if let Some(inner_94) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_94).encode(),
+                );
+            }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListGatewaysInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListGatewaysInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::ListGateways::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "ListGateways",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8673,100 +8778,101 @@ impl ListPortalsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListPortals::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListPortals",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/portals").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_95) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_95));
+        fn uri_base(
+            _input: &crate::input::ListPortalsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/portals").expect("formatting should succeed");
+            Ok(())
         }
-        if let Some(inner_96) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_96).encode(),
-            );
+        fn uri_query(_input: &crate::input::ListPortalsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_95) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_95));
+            }
+            if let Some(inner_96) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_96).encode(),
+                );
+            }
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListPortalsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListPortalsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::ListPortals::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "ListPortals",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8858,120 +8964,123 @@ impl ListProjectAssetsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListProjectAssets::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListProjectAssets",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_97 = &self.project_id;
-        let input_97 =
-            input_97
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListProjectAssetsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_97 = &_input.project_id;
+            let input_97 =
+                input_97
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let project_id = smithy_http::label::fmt_string(input_97, false);
+            if project_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
                     details: "cannot be empty or unset",
-                })?;
-        let project_id = smithy_http::label::fmt_string(input_97, false);
-        if project_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/projects/{projectId}/assets",
+                projectId = project_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/projects/{projectId}/assets",
-            projectId = project_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_98) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_98));
+        fn uri_query(_input: &crate::input::ListProjectAssetsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_98) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_98));
+            }
+            if let Some(inner_99) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_99).encode(),
+                );
+            }
         }
-        if let Some(inner_99) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_99).encode(),
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListProjectAssetsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListProjectAssetsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListProjectAssets::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListProjectAssets",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9061,103 +9170,104 @@ impl ListProjectsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
+        fn uri_base(
+            _input: &crate::input::ListProjectsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/projects").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::ListProjectsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_100) = &_input.portal_id {
+                query.push_kv("portalId", &smithy_http::query::fmt_string(&inner_100));
             }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+            if let Some(inner_101) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_101));
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
+            if let Some(inner_102) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_102).encode(),
+                );
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListProjectsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListProjectsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListProjects::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListProjects",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/projects").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_100) = &self.portal_id {
-            query.push_kv("portalId", &smithy_http::query::fmt_string(&inner_100));
+            Ok(builder)
         }
-        if let Some(inner_101) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_101));
-        }
-        if let Some(inner_102) = &self.max_results {
-            query.push_kv(
-                "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_102).encode(),
-            );
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::ListProjects::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "ListProjects",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9226,94 +9336,97 @@ impl ListTagsForResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListTagsForResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListTagsForResource",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/tags").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_103) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_103));
+        fn uri_base(
+            _input: &crate::input::ListTagsForResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/tags").expect("formatting should succeed");
+            Ok(())
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        fn uri_query(_input: &crate::input::ListTagsForResourceInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_103) = &_input.resource_arn {
+                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_103));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListTagsForResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListTagsForResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9398,89 +9511,92 @@ impl PutDefaultEncryptionConfigurationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_put_default_encryption_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::PutDefaultEncryptionConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/configuration/account/encryption").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutDefaultEncryptionConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutDefaultEncryptionConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutDefaultEncryptionConfiguration::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutDefaultEncryptionConfiguration",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/configuration/account/encryption").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_default_encryption_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutDefaultEncryptionConfiguration::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutDefaultEncryptionConfiguration",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9552,93 +9668,94 @@ impl PutLoggingOptionsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_put_logging_options(
-                    &self,
-                )
+        fn uri_base(
+            _input: &crate::input::PutLoggingOptionsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/logging").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutLoggingOptionsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutLoggingOptionsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_logging_options(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutLoggingOptions::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutLoggingOptions",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/logging").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutLoggingOptions::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutLoggingOptions",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9736,89 +9853,94 @@ impl PutStorageConfigurationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_put_storage_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::PutStorageConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/configuration/account/storage").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutStorageConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutStorageConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutStorageConfiguration::new(),
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_storage_configuration(
+                &self,
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutStorageConfiguration",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/configuration/account/storage").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutStorageConfiguration::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutStorageConfiguration",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9908,98 +10030,96 @@ impl TagResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::TagResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "TagResource",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/tags").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_104) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_104));
+        fn uri_base(
+            _input: &crate::input::TagResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/tags").expect("formatting should succeed");
+            Ok(())
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        fn uri_query(_input: &crate::input::TagResourceInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_104) = &_input.resource_arn {
+                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_104));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::TagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::TagResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "TagResource",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10081,99 +10201,100 @@ impl UntagResourceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
+        fn uri_base(
+            _input: &crate::input::UntagResourceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/tags").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_105) = &_input.resource_arn {
+                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_105));
+            }
+            if let Some(inner_106) = &_input.tag_keys {
+                for inner_107 in inner_106 {
+                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_107));
                 }
             }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UntagResource::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UntagResource",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/tags").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_105) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_105));
         }
-        if let Some(inner_106) = &self.tag_keys {
-            for inner_107 in inner_106 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_107));
-            }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UntagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("DELETE").uri(uri))
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UntagResourceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UntagResource",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10298,116 +10419,115 @@ impl UpdateAccessPolicyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_access_policy(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateAccessPolicy::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateAccessPolicy",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_108 = &self.access_policy_id;
-        let input_108 =
-            input_108
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UpdateAccessPolicyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_108 = &_input.access_policy_id;
+            let input_108 =
+                input_108
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "access_policy_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let access_policy_id = smithy_http::label::fmt_string(input_108, false);
+            if access_policy_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "access_policy_id",
                     details: "cannot be empty or unset",
-                })?;
-        let access_policy_id = smithy_http::label::fmt_string(input_108, false);
-        if access_policy_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "access_policy_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/access-policies/{accessPolicyId}",
+                accessPolicyId = access_policy_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/access-policies/{accessPolicyId}",
-            accessPolicyId = access_policy_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateAccessPolicyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateAccessPolicyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_access_policy(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAccessPolicy::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateAccessPolicy",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10496,109 +10616,108 @@ impl UpdateAssetInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_asset(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::UpdateAssetInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_109 = &_input.asset_id;
+            let input_109 =
+                input_109
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_id",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateAsset::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateAsset",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_109 = &self.asset_id;
-        let input_109 =
-            input_109
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let asset_id = smithy_http::label::fmt_string(input_109, false);
+            if asset_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
                     details: "cannot be empty or unset",
-                })?;
-        let asset_id = smithy_http::label::fmt_string(input_109, false);
-        if asset_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/assets/{assetId}", assetId = asset_id)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/assets/{assetId}", assetId = asset_id).expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateAssetInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateAssetInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_asset(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UpdateAsset::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UpdateAsset",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10766,114 +10885,117 @@ impl UpdateAssetModelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_asset_model(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::UpdateAssetModelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_110 = &_input.asset_model_id;
+            let input_110 =
+                input_110
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_model_id",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateAssetModel::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateAssetModel",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_110 = &self.asset_model_id;
-        let input_110 =
-            input_110
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let asset_model_id = smithy_http::label::fmt_string(input_110, false);
+            if asset_model_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "asset_model_id",
                     details: "cannot be empty or unset",
-                })?;
-        let asset_model_id = smithy_http::label::fmt_string(input_110, false);
-        if asset_model_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_model_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/asset-models/{assetModelId}",
+                assetModelId = asset_model_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/asset-models/{assetModelId}",
-            assetModelId = asset_model_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateAssetModelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateAssetModelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_asset_model(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAssetModel::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateAssetModel",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11003,132 +11125,133 @@ impl UpdateAssetPropertyInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
+        fn uri_base(
+            _input: &crate::input::UpdateAssetPropertyInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_111 = &_input.asset_id;
+            let input_111 =
+                input_111
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "asset_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let asset_id = smithy_http::label::fmt_string(input_111, false);
+            if asset_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "asset_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_asset_property(
-                    &self,
-                )
+            let input_112 = &_input.property_id;
+            let input_112 =
+                input_112
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "property_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let property_id = smithy_http::label::fmt_string(input_112, false);
+            if property_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "property_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/assets/{assetId}/properties/{propertyId}",
+                assetId = asset_id,
+                propertyId = property_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateAssetPropertyInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateAssetPropertyInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_asset_property(&self)
                 .map_err(|err| {
                     smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateAssetProperty::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateAssetProperty",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_111 = &self.asset_id;
-        let input_111 =
-            input_111
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "asset_id",
-                    details: "cannot be empty or unset",
-                })?;
-        let asset_id = smithy_http::label::fmt_string(input_111, false);
-        if asset_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "asset_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_112 = &self.property_id;
-        let input_112 =
-            input_112
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "property_id",
-                    details: "cannot be empty or unset",
-                })?;
-        let property_id = smithy_http::label::fmt_string(input_112, false);
-        if property_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "property_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        write!(
-            output,
-            "/assets/{assetId}/properties/{propertyId}",
-            assetId = asset_id,
-            propertyId = property_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAssetProperty::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateAssetProperty",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11251,114 +11374,117 @@ impl UpdateDashboardInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_dashboard(&self)
-                    .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateDashboard::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateDashboard",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_113 = &self.dashboard_id;
-        let input_113 =
-            input_113
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UpdateDashboardInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_113 = &_input.dashboard_id;
+            let input_113 =
+                input_113
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "dashboard_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let dashboard_id = smithy_http::label::fmt_string(input_113, false);
+            if dashboard_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
-                })?;
-        let dashboard_id = smithy_http::label::fmt_string(input_113, false);
-        if dashboard_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "dashboard_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/dashboards/{dashboardId}",
+                dashboardId = dashboard_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/dashboards/{dashboardId}",
-            dashboardId = dashboard_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateDashboardInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateDashboardInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_dashboard(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateDashboard::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateDashboard",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11436,111 +11562,109 @@ impl UpdateGatewayInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_gateway(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::UpdateGatewayInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_114 = &_input.gateway_id;
+            let input_114 =
+                input_114
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "gateway_id",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateGateway::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateGateway",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_114 = &self.gateway_id;
-        let input_114 =
-            input_114
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let gateway_id = smithy_http::label::fmt_string(input_114, false);
+            if gateway_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
                     details: "cannot be empty or unset",
-                })?;
-        let gateway_id = smithy_http::label::fmt_string(input_114, false);
-        if gateway_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "gateway_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/20200301/gateways/{gatewayId}",
+                gatewayId = gateway_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/20200301/gateways/{gatewayId}",
-            gatewayId = gateway_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateGatewayInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateGatewayInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_gateway(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UpdateGateway::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UpdateGateway",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11644,109 +11768,112 @@ impl UpdateGatewayCapabilityConfigurationInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_gateway_capability_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateGatewayCapabilityConfiguration::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateGatewayCapabilityConfiguration",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_115 = &self.gateway_id;
-        let input_115 =
-            input_115
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UpdateGatewayCapabilityConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_115 = &_input.gateway_id;
+            let input_115 =
+                input_115
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "gateway_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let gateway_id = smithy_http::label::fmt_string(input_115, false);
+            if gateway_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
                     details: "cannot be empty or unset",
-                })?;
-        let gateway_id = smithy_http::label::fmt_string(input_115, false);
-        if gateway_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "gateway_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/20200301/gateways/{gatewayId}/capability",
+                gatewayId = gateway_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/20200301/gateways/{gatewayId}/capability",
-            gatewayId = gateway_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateGatewayCapabilityConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateGatewayCapabilityConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_gateway_capability_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateGatewayCapabilityConfiguration::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateGatewayCapabilityConfiguration",
+            "iotsitewise",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11925,110 +12052,110 @@ impl UpdatePortalInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_portal(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::UpdatePortalInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_116 = &_input.portal_id;
+            let input_116 =
+                input_116
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "portal_id",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdatePortal::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdatePortal",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_116 = &self.portal_id;
-        let input_116 =
-            input_116
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let portal_id = smithy_http::label::fmt_string(input_116, false);
+            if portal_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "portal_id",
                     details: "cannot be empty or unset",
-                })?;
-        let portal_id = smithy_http::label::fmt_string(input_116, false);
-        if portal_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "portal_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/portals/{portalId}", portalId = portal_id)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/portals/{portalId}", portalId = portal_id)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdatePortalInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdatePortalInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_portal(&self)
+            .map_err(|err| {
+            smithy_http::operation::BuildError::SerializationError(err.into())
+        })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UpdatePortal::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UpdatePortal",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12131,110 +12258,108 @@ impl UpdateProjectInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_token.is_none() {
-                self.client_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::UpdateProjectInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_117 = &_input.project_id;
+            let input_117 =
+                input_117
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "project_id",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
-            match endpoint_prefix {
-                Ok(prefix) => {
-                    request.properties_mut().insert(prefix);
-                }
-                Err(err) => {
-                    return Err(smithy_http::operation::BuildError::SerializationError(
-                        err.into(),
-                    ))
-                }
-            }
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateProject::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateProject",
-                "iotsitewise",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_117 = &self.project_id;
-        let input_117 =
-            input_117
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let project_id = smithy_http::label::fmt_string(input_117, false);
+            if project_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
                     details: "cannot be empty or unset",
-                })?;
-        let project_id = smithy_http::label::fmt_string(input_117, false);
-        if project_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "project_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/projects/{projectId}", projectId = project_id)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/projects/{projectId}", projectId = project_id)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateProjectInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateProjectInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_project(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
+        match endpoint_prefix {
+            Ok(prefix) => {
+                request.properties_mut().insert(prefix);
+            }
+            Err(err) => {
+                return Err(smithy_http::operation::BuildError::SerializationError(
+                    err.into(),
+                ))
+            }
+        }
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UpdateProject::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UpdateProject",
+                    "iotsitewise",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,

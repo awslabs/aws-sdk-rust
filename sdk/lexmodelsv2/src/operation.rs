@@ -711,6 +711,45 @@ impl smithy_http::response::ParseStrictResponse for DeleteSlotType {
     }
 }
 
+/// <p>Deletes stored utterances.</p>
+/// <p>Amazon Lex stores the utterances that users send to your bot. Utterances
+/// are stored for 15 days for use with the  operation, and then stored
+/// indefinitely for use in improving the ability of your bot to respond to
+/// user input..</p>
+/// <p>Use the <code>DeleteUtterances</code> operation to manually delete
+/// utterances for a specific session. When you use the
+/// <code>DeleteUtterances</code> operation, utterances stored for
+/// improving your bot's ability to respond to user input are deleted
+/// immediately. Utterances stored for use with the
+/// <code>ListAggregatedUtterances</code> operation are deleted after 15
+/// days.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteUtterances {
+    _private: (),
+}
+impl DeleteUtterances {
+    /// Creates a new builder-style object to manufacture [`DeleteUtterancesInput`](crate::input::DeleteUtterancesInput)
+    pub fn builder() -> crate::input::delete_utterances_input::Builder {
+        crate::input::delete_utterances_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteUtterances {
+    type Output = std::result::Result<
+        crate::output::DeleteUtterancesOutput,
+        crate::error::DeleteUtterancesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_utterances_error(response)
+        } else {
+            crate::operation_deser::parse_delete_utterances_response(response)
+        }
+    }
+}
+
 /// <p>Provides metadata information about a bot. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBot {
@@ -978,6 +1017,58 @@ impl smithy_http::response::ParseStrictResponse for DescribeSlotType {
             crate::operation_deser::parse_describe_slot_type_error(response)
         } else {
             crate::operation_deser::parse_describe_slot_type_response(response)
+        }
+    }
+}
+
+/// <p>Provides a list of utterances that users have sent to the
+/// bot.</p>
+/// <p>Utterances are aggregated by the text of the utterance. For example,
+/// all instances where customers used the phrase "I want to order pizza"
+/// are aggregated into the same line in the response.</p>
+/// <p>You can see both detected utterances and missed utterances. A
+/// detected utterance is where the bot properly recognized the utterance
+/// and activated the associated intent. A missed utterance was not
+/// recognized by the bot and didn't activate an intent.</p>
+/// <p>Utterances can be aggregated for a bot alias or for a bot version,
+/// but not both at the same time.</p>
+/// <p>Utterances statistics are not generated under the following
+/// conditions:</p>
+/// <ul>
+/// <li>
+/// <p>The <code>childDirected</code> field was set to true when the
+/// bot was created.</p>
+/// </li>
+/// <li>
+/// <p>You are using slot obfuscation with one or more slots.</p>
+/// </li>
+/// <li>
+/// <p>You opted out of participating in improving Amazon Lex.</p>
+/// </li>
+/// </ul>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAggregatedUtterances {
+    _private: (),
+}
+impl ListAggregatedUtterances {
+    /// Creates a new builder-style object to manufacture [`ListAggregatedUtterancesInput`](crate::input::ListAggregatedUtterancesInput)
+    pub fn builder() -> crate::input::list_aggregated_utterances_input::Builder {
+        crate::input::list_aggregated_utterances_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListAggregatedUtterances {
+    type Output = std::result::Result<
+        crate::output::ListAggregatedUtterancesOutput,
+        crate::error::ListAggregatedUtterancesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_aggregated_utterances_error(response)
+        } else {
+            crate::operation_deser::parse_list_aggregated_utterances_response(response)
         }
     }
 }

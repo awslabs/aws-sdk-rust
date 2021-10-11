@@ -93,127 +93,133 @@ impl BatchCreateChannelMembershipInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_batch_create_channel_membership(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::BatchCreateChannelMembershipInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_1 = &_input.channel_arn;
+            let input_1 =
+                input_1
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_1, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_arn",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::BatchCreateChannelMembership::new(),
+            write!(
+                output,
+                "/channels/{ChannelArn}/memberships",
+                ChannelArn = channel_arn
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "BatchCreateChannelMembership",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_1 = &self.channel_arn;
-        let input_1 = input_1
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            })?;
-        let channel_arn = smithy_http::label::fmt_string(input_1, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/memberships",
-            ChannelArn = channel_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_2) = &self.chime_bearer {
-            let formatted_3 = AsRef::<str>::as_ref(inner_2);
-            if !formatted_3.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_3;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::BatchCreateChannelMembershipInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_2) = &_input.chime_bearer {
+                let formatted_3 = AsRef::<str>::as_ref(inner_2);
+                if !formatted_3.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_3;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        query.push_kv("operation", "batch-create");
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        fn uri_query(
+            _input: &crate::input::BatchCreateChannelMembershipInput,
+            mut output: &mut String,
+        ) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            query.push_kv("operation", "batch-create");
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::BatchCreateChannelMembershipInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::BatchCreateChannelMembershipInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_batch_create_channel_membership(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchCreateChannelMembership::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "BatchCreateChannelMembership",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -374,108 +380,105 @@ impl CreateChannelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_request_token.is_none() {
-                self.client_request_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
-                    })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateChannel::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateChannel",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/channels").expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_4) = &self.chime_bearer {
-            let formatted_5 = AsRef::<str>::as_ref(inner_4);
-            if !formatted_5.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_5;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn uri_base(
+            _input: &crate::input::CreateChannelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/channels").expect("formatting should succeed");
+            Ok(())
+        }
+        fn add_headers(
+            _input: &crate::input::CreateChannelInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_4) = &_input.chime_bearer {
+                let formatted_5 = AsRef::<str>::as_ref(inner_4);
+                if !formatted_5.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_5;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateChannelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateChannelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_request_token.is_none() {
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::CreateChannel::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "CreateChannel",
+                    "chimesdkmessaging",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -566,124 +569,127 @@ impl CreateChannelBanInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_channel_ban(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::CreateChannelBanInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_6 = &_input.channel_arn;
+            let input_6 =
+                input_6
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+            let channel_arn = smithy_http::label::fmt_string(input_6, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_arn",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateChannelBan::new(),
+            write!(
+                output,
+                "/channels/{ChannelArn}/bans",
+                ChannelArn = channel_arn
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateChannelBan",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_6 = &self.channel_arn;
-        let input_6 = input_6
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            })?;
-        let channel_arn = smithy_http::label::fmt_string(input_6, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/bans",
-            ChannelArn = channel_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_7) = &self.chime_bearer {
-            let formatted_8 = AsRef::<str>::as_ref(inner_7);
-            if !formatted_8.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_8;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::CreateChannelBanInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_7) = &_input.chime_bearer {
+                let formatted_8 = AsRef::<str>::as_ref(inner_7);
+                if !formatted_8.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_8;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateChannelBanInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateChannelBanInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_channel_ban(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateChannelBan::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateChannelBan",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -793,122 +799,127 @@ impl CreateChannelMembershipInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_channel_membership(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
-            ;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::CreateChannelMembershipInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_9 = &_input.channel_arn;
+            let input_9 =
+                input_9
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_9, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "channel_arn",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateChannelMembership::new(),
+            write!(
+                output,
+                "/channels/{ChannelArn}/memberships",
+                ChannelArn = channel_arn
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateChannelMembership",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_9 = &self.channel_arn;
-        let input_9 = input_9
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            })?;
-        let channel_arn = smithy_http::label::fmt_string(input_9, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/memberships",
-            ChannelArn = channel_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_10) = &self.chime_bearer {
-            let formatted_11 = AsRef::<str>::as_ref(inner_10);
-            if !formatted_11.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_11;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::CreateChannelMembershipInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_10) = &_input.chime_bearer {
+                let formatted_11 = AsRef::<str>::as_ref(inner_10);
+                if !formatted_11.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_11;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateChannelMembershipInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateChannelMembershipInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_channel_membership(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateChannelMembership::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateChannelMembership",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1002,127 +1013,127 @@ impl CreateChannelModeratorInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_create_channel_moderator(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::CreateChannelModerator::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "CreateChannelModerator",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_12 = &self.channel_arn;
-        let input_12 =
-            input_12
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::CreateChannelModeratorInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_12 = &_input.channel_arn;
+            let input_12 =
+                input_12
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_12, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_12, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/moderators",
+                ChannelArn = channel_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/moderators",
-            ChannelArn = channel_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_13) = &self.chime_bearer {
-            let formatted_14 = AsRef::<str>::as_ref(inner_13);
-            if !formatted_14.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_14;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::CreateChannelModeratorInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_13) = &_input.chime_bearer {
+                let formatted_14 = AsRef::<str>::as_ref(inner_13);
+                if !formatted_14.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_14;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateChannelModeratorInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateChannelModeratorInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_channel_moderator(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateChannelModerator::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateChannelModerator",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1200,117 +1211,117 @@ impl DeleteChannelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteChannel::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteChannel",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_15 = &self.channel_arn;
-        let input_15 =
-            input_15
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteChannelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_15 = &_input.channel_arn;
+            let input_15 =
+                input_15
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_15, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_15, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/channels/{ChannelArn}", ChannelArn = channel_arn)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/channels/{ChannelArn}", ChannelArn = channel_arn)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_16) = &self.chime_bearer {
-            let formatted_17 = AsRef::<str>::as_ref(inner_16);
-            if !formatted_17.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_17;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteChannelInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_16) = &_input.chime_bearer {
+                let formatted_17 = AsRef::<str>::as_ref(inner_16);
+                if !formatted_17.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_17;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteChannelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteChannelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DeleteChannel::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DeleteChannel",
+                    "chimesdkmessaging",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1401,137 +1412,139 @@ impl DeleteChannelBanInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteChannelBan::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteChannelBan",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_18 = &self.channel_arn;
-        let input_18 =
-            input_18
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteChannelBanInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_18 = &_input.channel_arn;
+            let input_18 =
+                input_18
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_18, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_18, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_19 = &self.member_arn;
-        let input_19 =
-            input_19
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_19 = &_input.member_arn;
+            let input_19 =
+                input_19
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "member_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let member_arn = smithy_http::label::fmt_string(input_19, false);
+            if member_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "member_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let member_arn = smithy_http::label::fmt_string(input_19, false);
-        if member_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "member_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/bans/{MemberArn}",
+                ChannelArn = channel_arn,
+                MemberArn = member_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/bans/{MemberArn}",
-            ChannelArn = channel_arn,
-            MemberArn = member_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_20) = &self.chime_bearer {
-            let formatted_21 = AsRef::<str>::as_ref(inner_20);
-            if !formatted_21.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_21;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteChannelBanInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_20) = &_input.chime_bearer {
+                let formatted_21 = AsRef::<str>::as_ref(inner_20);
+                if !formatted_21.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_21;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteChannelBanInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteChannelBanInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteChannelBan::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteChannelBan",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1623,137 +1636,139 @@ impl DeleteChannelMembershipInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteChannelMembership::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteChannelMembership",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_22 = &self.channel_arn;
-        let input_22 =
-            input_22
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteChannelMembershipInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_22 = &_input.channel_arn;
+            let input_22 =
+                input_22
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_22, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_22, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_23 = &self.member_arn;
-        let input_23 =
-            input_23
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_23 = &_input.member_arn;
+            let input_23 =
+                input_23
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "member_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let member_arn = smithy_http::label::fmt_string(input_23, false);
+            if member_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "member_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let member_arn = smithy_http::label::fmt_string(input_23, false);
-        if member_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "member_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/memberships/{MemberArn}",
+                ChannelArn = channel_arn,
+                MemberArn = member_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/memberships/{MemberArn}",
-            ChannelArn = channel_arn,
-            MemberArn = member_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_24) = &self.chime_bearer {
-            let formatted_25 = AsRef::<str>::as_ref(inner_24);
-            if !formatted_25.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_25;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteChannelMembershipInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_24) = &_input.chime_bearer {
+                let formatted_25 = AsRef::<str>::as_ref(inner_24);
+                if !formatted_25.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_25;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteChannelMembershipInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteChannelMembershipInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteChannelMembership::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteChannelMembership",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1844,137 +1859,139 @@ impl DeleteChannelMessageInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteChannelMessage::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteChannelMessage",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_26 = &self.channel_arn;
-        let input_26 =
-            input_26
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteChannelMessageInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_26 = &_input.channel_arn;
+            let input_26 =
+                input_26
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_26, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_26, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_27 = &self.message_id;
-        let input_27 =
-            input_27
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_27 = &_input.message_id;
+            let input_27 =
+                input_27
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "message_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let message_id = smithy_http::label::fmt_string(input_27, false);
+            if message_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
                     details: "cannot be empty or unset",
-                })?;
-        let message_id = smithy_http::label::fmt_string(input_27, false);
-        if message_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "message_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/messages/{MessageId}",
+                ChannelArn = channel_arn,
+                MessageId = message_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/messages/{MessageId}",
-            ChannelArn = channel_arn,
-            MessageId = message_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_28) = &self.chime_bearer {
-            let formatted_29 = AsRef::<str>::as_ref(inner_28);
-            if !formatted_29.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_29;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteChannelMessageInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_28) = &_input.chime_bearer {
+                let formatted_29 = AsRef::<str>::as_ref(inner_28);
+                if !formatted_29.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_29;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteChannelMessageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteChannelMessageInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteChannelMessage::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteChannelMessage",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2068,137 +2085,139 @@ impl DeleteChannelModeratorInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteChannelModerator::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteChannelModerator",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_30 = &self.channel_arn;
-        let input_30 =
-            input_30
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DeleteChannelModeratorInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_30 = &_input.channel_arn;
+            let input_30 =
+                input_30
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_30, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_30, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_31 = &self.channel_moderator_arn;
-        let input_31 =
-            input_31
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_31 = &_input.channel_moderator_arn;
+            let input_31 =
+                input_31
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_moderator_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_moderator_arn = smithy_http::label::fmt_string(input_31, false);
+            if channel_moderator_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_moderator_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_moderator_arn = smithy_http::label::fmt_string(input_31, false);
-        if channel_moderator_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_moderator_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/moderators/{ChannelModeratorArn}",
+                ChannelArn = channel_arn,
+                ChannelModeratorArn = channel_moderator_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/moderators/{ChannelModeratorArn}",
-            ChannelArn = channel_arn,
-            ChannelModeratorArn = channel_moderator_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_32) = &self.chime_bearer {
-            let formatted_33 = AsRef::<str>::as_ref(inner_32);
-            if !formatted_33.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_33;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DeleteChannelModeratorInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_32) = &_input.chime_bearer {
+                let formatted_33 = AsRef::<str>::as_ref(inner_32);
+                if !formatted_33.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_33;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteChannelModeratorInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteChannelModeratorInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteChannelModerator::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteChannelModerator",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2278,117 +2297,119 @@ impl DescribeChannelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeChannel::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeChannel",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_34 = &self.channel_arn;
-        let input_34 =
-            input_34
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeChannelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_34 = &_input.channel_arn;
+            let input_34 =
+                input_34
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_34, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_34, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/channels/{ChannelArn}", ChannelArn = channel_arn)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/channels/{ChannelArn}", ChannelArn = channel_arn)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_35) = &self.chime_bearer {
-            let formatted_36 = AsRef::<str>::as_ref(inner_35);
-            if !formatted_36.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_36;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DescribeChannelInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_35) = &_input.chime_bearer {
+                let formatted_36 = AsRef::<str>::as_ref(inner_35);
+                if !formatted_36.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_36;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeChannelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeChannelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeChannel::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeChannel",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2479,137 +2500,139 @@ impl DescribeChannelBanInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeChannelBan::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeChannelBan",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_37 = &self.channel_arn;
-        let input_37 =
-            input_37
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeChannelBanInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_37 = &_input.channel_arn;
+            let input_37 =
+                input_37
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_37, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_37, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_38 = &self.member_arn;
-        let input_38 =
-            input_38
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_38 = &_input.member_arn;
+            let input_38 =
+                input_38
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "member_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let member_arn = smithy_http::label::fmt_string(input_38, false);
+            if member_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "member_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let member_arn = smithy_http::label::fmt_string(input_38, false);
-        if member_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "member_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/bans/{MemberArn}",
+                ChannelArn = channel_arn,
+                MemberArn = member_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/bans/{MemberArn}",
-            ChannelArn = channel_arn,
-            MemberArn = member_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_39) = &self.chime_bearer {
-            let formatted_40 = AsRef::<str>::as_ref(inner_39);
-            if !formatted_40.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_40;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DescribeChannelBanInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_39) = &_input.chime_bearer {
+                let formatted_40 = AsRef::<str>::as_ref(inner_39);
+                if !formatted_40.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_40;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeChannelBanInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeChannelBanInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeChannelBan::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeChannelBan",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2701,137 +2724,139 @@ impl DescribeChannelMembershipInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeChannelMembership::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeChannelMembership",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_41 = &self.channel_arn;
-        let input_41 =
-            input_41
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeChannelMembershipInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_41 = &_input.channel_arn;
+            let input_41 =
+                input_41
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_41, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_41, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_42 = &self.member_arn;
-        let input_42 =
-            input_42
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_42 = &_input.member_arn;
+            let input_42 =
+                input_42
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "member_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let member_arn = smithy_http::label::fmt_string(input_42, false);
+            if member_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "member_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let member_arn = smithy_http::label::fmt_string(input_42, false);
-        if member_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "member_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/memberships/{MemberArn}",
+                ChannelArn = channel_arn,
+                MemberArn = member_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/memberships/{MemberArn}",
-            ChannelArn = channel_arn,
-            MemberArn = member_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_43) = &self.chime_bearer {
-            let formatted_44 = AsRef::<str>::as_ref(inner_43);
-            if !formatted_44.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_44;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DescribeChannelMembershipInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_43) = &_input.chime_bearer {
+                let formatted_44 = AsRef::<str>::as_ref(inner_43);
+                if !formatted_44.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_44;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeChannelMembershipInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeChannelMembershipInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeChannelMembership::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeChannelMembership",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2929,128 +2954,133 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeChannelMembershipForAppInstanceUser::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeChannelMembershipForAppInstanceUser",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_45 = &self.channel_arn;
-        let input_45 =
-            input_45
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeChannelMembershipForAppInstanceUserInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_45 = &_input.channel_arn;
+            let input_45 =
+                input_45
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_45, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_45, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/channels/{ChannelArn}", ChannelArn = channel_arn)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/channels/{ChannelArn}", ChannelArn = channel_arn)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_46) = &self.chime_bearer {
-            let formatted_47 = AsRef::<str>::as_ref(inner_46);
-            if !formatted_47.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_47;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DescribeChannelMembershipForAppInstanceUserInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_46) = &_input.chime_bearer {
+                let formatted_47 = AsRef::<str>::as_ref(inner_46);
+                if !formatted_47.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_47;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        fn uri_query(
+            _input: &crate::input::DescribeChannelMembershipForAppInstanceUserInput,
+            mut output: &mut String,
+        ) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            query.push_kv("scope", "app-instance-user-membership");
+            if let Some(inner_48) = &_input.app_instance_user_arn {
+                query.push_kv(
+                    "app-instance-user-arn",
+                    &smithy_http::query::fmt_string(&inner_48),
+                );
             }
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        query.push_kv("scope", "app-instance-user-membership");
-        if let Some(inner_48) = &self.app_instance_user_arn {
-            query.push_kv(
-                "app-instance-user-arn",
-                &smithy_http::query::fmt_string(&inner_48),
-            );
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeChannelMembershipForAppInstanceUserInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeChannelMembershipForAppInstanceUserInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeChannelMembershipForAppInstanceUser::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeChannelMembershipForAppInstanceUser",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3149,128 +3179,133 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeChannelModeratedByAppInstanceUser::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeChannelModeratedByAppInstanceUser",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_49 = &self.channel_arn;
-        let input_49 =
-            input_49
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeChannelModeratedByAppInstanceUserInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_49 = &_input.channel_arn;
+            let input_49 =
+                input_49
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_49, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_49, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/channels/{ChannelArn}", ChannelArn = channel_arn)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/channels/{ChannelArn}", ChannelArn = channel_arn)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_50) = &self.chime_bearer {
-            let formatted_51 = AsRef::<str>::as_ref(inner_50);
-            if !formatted_51.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_51;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DescribeChannelModeratedByAppInstanceUserInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_50) = &_input.chime_bearer {
+                let formatted_51 = AsRef::<str>::as_ref(inner_50);
+                if !formatted_51.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_51;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        fn uri_query(
+            _input: &crate::input::DescribeChannelModeratedByAppInstanceUserInput,
+            mut output: &mut String,
+        ) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            query.push_kv("scope", "app-instance-user-moderated-channel");
+            if let Some(inner_52) = &_input.app_instance_user_arn {
+                query.push_kv(
+                    "app-instance-user-arn",
+                    &smithy_http::query::fmt_string(&inner_52),
+                );
             }
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        query.push_kv("scope", "app-instance-user-moderated-channel");
-        if let Some(inner_52) = &self.app_instance_user_arn {
-            query.push_kv(
-                "app-instance-user-arn",
-                &smithy_http::query::fmt_string(&inner_52),
-            );
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeChannelModeratedByAppInstanceUserInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
         }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeChannelModeratedByAppInstanceUserInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeChannelModeratedByAppInstanceUser::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeChannelModeratedByAppInstanceUser",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3366,137 +3401,139 @@ impl DescribeChannelModeratorInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DescribeChannelModerator::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DescribeChannelModerator",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_53 = &self.channel_arn;
-        let input_53 =
-            input_53
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::DescribeChannelModeratorInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_53 = &_input.channel_arn;
+            let input_53 =
+                input_53
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_53, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_53, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_54 = &self.channel_moderator_arn;
-        let input_54 =
-            input_54
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_54 = &_input.channel_moderator_arn;
+            let input_54 =
+                input_54
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_moderator_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_moderator_arn = smithy_http::label::fmt_string(input_54, false);
+            if channel_moderator_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_moderator_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_moderator_arn = smithy_http::label::fmt_string(input_54, false);
-        if channel_moderator_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_moderator_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/moderators/{ChannelModeratorArn}",
+                ChannelArn = channel_arn,
+                ChannelModeratorArn = channel_moderator_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/moderators/{ChannelModeratorArn}",
-            ChannelArn = channel_arn,
-            ChannelModeratorArn = channel_moderator_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_55) = &self.chime_bearer {
-            let formatted_56 = AsRef::<str>::as_ref(inner_55);
-            if !formatted_56.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_56;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::DescribeChannelModeratorInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_55) = &_input.chime_bearer {
+                let formatted_56 = AsRef::<str>::as_ref(inner_55);
+                if !formatted_56.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_56;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeChannelModeratorInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeChannelModeratorInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeChannelModerator::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DescribeChannelModerator",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3587,137 +3624,139 @@ impl GetChannelMessageInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetChannelMessage::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetChannelMessage",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_57 = &self.channel_arn;
-        let input_57 =
-            input_57
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::GetChannelMessageInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_57 = &_input.channel_arn;
+            let input_57 =
+                input_57
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_57, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_57, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_58 = &self.message_id;
-        let input_58 =
-            input_58
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_58 = &_input.message_id;
+            let input_58 =
+                input_58
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "message_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let message_id = smithy_http::label::fmt_string(input_58, false);
+            if message_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
                     details: "cannot be empty or unset",
-                })?;
-        let message_id = smithy_http::label::fmt_string(input_58, false);
-        if message_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "message_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/messages/{MessageId}",
+                ChannelArn = channel_arn,
+                MessageId = message_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/messages/{MessageId}",
-            ChannelArn = channel_arn,
-            MessageId = message_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_59) = &self.chime_bearer {
-            let formatted_60 = AsRef::<str>::as_ref(inner_59);
-            if !formatted_60.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_60;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::GetChannelMessageInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_59) = &_input.chime_bearer {
+                let formatted_60 = AsRef::<str>::as_ref(inner_59);
+                if !formatted_60.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_60;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetChannelMessageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetChannelMessageInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetChannelMessage::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetChannelMessage",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3774,76 +3813,79 @@ impl GetMessagingSessionEndpointInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
+        fn uri_base(
+            _input: &crate::input::GetMessagingSessionEndpointInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/endpoints/messaging-session").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetMessagingSessionEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetMessagingSessionEndpointInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetMessagingSessionEndpoint::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetMessagingSessionEndpoint",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/endpoints/messaging-session").expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMessagingSessionEndpoint::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetMessagingSessionEndpoint",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3945,134 +3987,136 @@ impl ListChannelBansInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListChannelBans::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListChannelBans",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_61 = &self.channel_arn;
-        let input_61 =
-            input_61
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListChannelBansInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_61 = &_input.channel_arn;
+            let input_61 =
+                input_61
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_61, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_61, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/bans",
+                ChannelArn = channel_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/bans",
-            ChannelArn = channel_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_62) = &self.chime_bearer {
-            let formatted_63 = AsRef::<str>::as_ref(inner_62);
-            if !formatted_63.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_63;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::ListChannelBansInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_62) = &_input.chime_bearer {
+                let formatted_63 = AsRef::<str>::as_ref(inner_62);
+                if !formatted_63.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_63;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        fn uri_query(_input: &crate::input::ListChannelBansInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_64) = &_input.max_results {
+                query.push_kv(
+                    "max-results",
+                    &smithy_types::primitive::Encoder::from(*inner_64).encode(),
+                );
+            }
+            if let Some(inner_65) = &_input.next_token {
+                query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_65));
             }
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_64) = &self.max_results {
-            query.push_kv(
-                "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_64).encode(),
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListChannelBansInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListChannelBansInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_65) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_65));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListChannelBans::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListChannelBans",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4192,137 +4236,139 @@ impl ListChannelMembershipsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListChannelMemberships::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListChannelMemberships",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_66 = &self.channel_arn;
-        let input_66 =
-            input_66
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListChannelMembershipsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_66 = &_input.channel_arn;
+            let input_66 =
+                input_66
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_66, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_66, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/memberships",
+                ChannelArn = channel_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/memberships",
-            ChannelArn = channel_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_67) = &self.chime_bearer {
-            let formatted_68 = AsRef::<str>::as_ref(inner_67);
-            if !formatted_68.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_68;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::ListChannelMembershipsInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_67) = &_input.chime_bearer {
+                let formatted_68 = AsRef::<str>::as_ref(inner_67);
+                if !formatted_68.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_68;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        fn uri_query(_input: &crate::input::ListChannelMembershipsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_69) = &_input.r#type {
+                query.push_kv("type", &smithy_http::query::fmt_string(&inner_69));
+            }
+            if let Some(inner_70) = &_input.max_results {
+                query.push_kv(
+                    "max-results",
+                    &smithy_types::primitive::Encoder::from(*inner_70).encode(),
+                );
+            }
+            if let Some(inner_71) = &_input.next_token {
+                query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_71));
             }
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_69) = &self.r#type {
-            query.push_kv("type", &smithy_http::query::fmt_string(&inner_69));
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListChannelMembershipsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
         }
-        if let Some(inner_70) = &self.max_results {
-            query.push_kv(
-                "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_70).encode(),
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListChannelMembershipsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_71) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_71));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListChannelMemberships::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListChannelMemberships",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4432,121 +4478,126 @@ impl ListChannelMembershipsForAppInstanceUserInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListChannelMembershipsForAppInstanceUser::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListChannelMembershipsForAppInstanceUser",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/channels").expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_72) = &self.chime_bearer {
-            let formatted_73 = AsRef::<str>::as_ref(inner_72);
-            if !formatted_73.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_73;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn uri_base(
+            _input: &crate::input::ListChannelMembershipsForAppInstanceUserInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/channels").expect("formatting should succeed");
+            Ok(())
+        }
+        fn add_headers(
+            _input: &crate::input::ListChannelMembershipsForAppInstanceUserInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_72) = &_input.chime_bearer {
+                let formatted_73 = AsRef::<str>::as_ref(inner_72);
+                if !formatted_73.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_73;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        fn uri_query(
+            _input: &crate::input::ListChannelMembershipsForAppInstanceUserInput,
+            mut output: &mut String,
+        ) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            query.push_kv("scope", "app-instance-user-memberships");
+            if let Some(inner_74) = &_input.app_instance_user_arn {
+                query.push_kv(
+                    "app-instance-user-arn",
+                    &smithy_http::query::fmt_string(&inner_74),
+                );
+            }
+            if let Some(inner_75) = &_input.max_results {
+                query.push_kv(
+                    "max-results",
+                    &smithy_types::primitive::Encoder::from(*inner_75).encode(),
+                );
+            }
+            if let Some(inner_76) = &_input.next_token {
+                query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_76));
             }
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        query.push_kv("scope", "app-instance-user-memberships");
-        if let Some(inner_74) = &self.app_instance_user_arn {
-            query.push_kv(
-                "app-instance-user-arn",
-                &smithy_http::query::fmt_string(&inner_74),
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListChannelMembershipsForAppInstanceUserInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListChannelMembershipsForAppInstanceUserInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_75) = &self.max_results {
-            query.push_kv(
-                "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_75).encode(),
-            );
-        }
-        if let Some(inner_76) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_76));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListChannelMembershipsForAppInstanceUser::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListChannelMembershipsForAppInstanceUser",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4686,155 +4737,157 @@ impl ListChannelMessagesInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListChannelMessages::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListChannelMessages",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_77 = &self.channel_arn;
-        let input_77 =
-            input_77
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListChannelMessagesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_77 = &_input.channel_arn;
+            let input_77 =
+                input_77
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_77, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_77, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/messages",
+                ChannelArn = channel_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/messages",
-            ChannelArn = channel_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_78) = &self.chime_bearer {
-            let formatted_79 = AsRef::<str>::as_ref(inner_78);
-            if !formatted_79.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_79;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::ListChannelMessagesInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_78) = &_input.chime_bearer {
+                let formatted_79 = AsRef::<str>::as_ref(inner_78);
+                if !formatted_79.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_79;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        fn uri_query(_input: &crate::input::ListChannelMessagesInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_80) = &_input.sort_order {
+                query.push_kv("sort-order", &smithy_http::query::fmt_string(&inner_80));
+            }
+            if let Some(inner_81) = &_input.not_before {
+                query.push_kv(
+                    "not-before",
+                    &smithy_http::query::fmt_timestamp(
+                        inner_81,
+                        smithy_types::instant::Format::DateTime,
+                    ),
+                );
+            }
+            if let Some(inner_82) = &_input.not_after {
+                query.push_kv(
+                    "not-after",
+                    &smithy_http::query::fmt_timestamp(
+                        inner_82,
+                        smithy_types::instant::Format::DateTime,
+                    ),
+                );
+            }
+            if let Some(inner_83) = &_input.max_results {
+                query.push_kv(
+                    "max-results",
+                    &smithy_types::primitive::Encoder::from(*inner_83).encode(),
+                );
+            }
+            if let Some(inner_84) = &_input.next_token {
+                query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_84));
             }
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_80) = &self.sort_order {
-            query.push_kv("sort-order", &smithy_http::query::fmt_string(&inner_80));
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListChannelMessagesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
         }
-        if let Some(inner_81) = &self.not_before {
-            query.push_kv(
-                "not-before",
-                &smithy_http::query::fmt_timestamp(
-                    inner_81,
-                    smithy_types::instant::Format::DateTime,
-                ),
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListChannelMessagesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_82) = &self.not_after {
-            query.push_kv(
-                "not-after",
-                &smithy_http::query::fmt_timestamp(
-                    inner_82,
-                    smithy_types::instant::Format::DateTime,
-                ),
-            );
-        }
-        if let Some(inner_83) = &self.max_results {
-            query.push_kv(
-                "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_83).encode(),
-            );
-        }
-        if let Some(inner_84) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_84));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListChannelMessages::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListChannelMessages",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4937,134 +4990,136 @@ impl ListChannelModeratorsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListChannelModerators::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListChannelModerators",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_85 = &self.channel_arn;
-        let input_85 =
-            input_85
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::ListChannelModeratorsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_85 = &_input.channel_arn;
+            let input_85 =
+                input_85
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_85, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_85, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/moderators",
+                ChannelArn = channel_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/moderators",
-            ChannelArn = channel_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_86) = &self.chime_bearer {
-            let formatted_87 = AsRef::<str>::as_ref(inner_86);
-            if !formatted_87.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_87;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::ListChannelModeratorsInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_86) = &_input.chime_bearer {
+                let formatted_87 = AsRef::<str>::as_ref(inner_86);
+                if !formatted_87.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_87;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        fn uri_query(_input: &crate::input::ListChannelModeratorsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_88) = &_input.max_results {
+                query.push_kv(
+                    "max-results",
+                    &smithy_types::primitive::Encoder::from(*inner_88).encode(),
+                );
+            }
+            if let Some(inner_89) = &_input.next_token {
+                query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_89));
             }
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_88) = &self.max_results {
-            query.push_kv(
-                "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_88).encode(),
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListChannelModeratorsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListChannelModeratorsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_89) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_89));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListChannelModerators::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListChannelModerators",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5183,123 +5238,123 @@ impl ListChannelsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListChannels::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListChannels",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/channels").expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_90) = &self.chime_bearer {
-            let formatted_91 = AsRef::<str>::as_ref(inner_90);
-            if !formatted_91.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_91;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn uri_base(
+            _input: &crate::input::ListChannelsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/channels").expect("formatting should succeed");
+            Ok(())
+        }
+        fn add_headers(
+            _input: &crate::input::ListChannelsInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_90) = &_input.chime_bearer {
+                let formatted_91 = AsRef::<str>::as_ref(inner_90);
+                if !formatted_91.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_91;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        fn uri_query(_input: &crate::input::ListChannelsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_92) = &_input.app_instance_arn {
+                query.push_kv(
+                    "app-instance-arn",
+                    &smithy_http::query::fmt_string(&inner_92),
+                );
+            }
+            if let Some(inner_93) = &_input.privacy {
+                query.push_kv("privacy", &smithy_http::query::fmt_string(&inner_93));
+            }
+            if let Some(inner_94) = &_input.max_results {
+                query.push_kv(
+                    "max-results",
+                    &smithy_types::primitive::Encoder::from(*inner_94).encode(),
+                );
+            }
+            if let Some(inner_95) = &_input.next_token {
+                query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_95));
             }
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_92) = &self.app_instance_arn {
-            query.push_kv(
-                "app-instance-arn",
-                &smithy_http::query::fmt_string(&inner_92),
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListChannelsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListChannelsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_93) = &self.privacy {
-            query.push_kv("privacy", &smithy_http::query::fmt_string(&inner_93));
-        }
-        if let Some(inner_94) = &self.max_results {
-            query.push_kv(
-                "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_94).encode(),
-            );
-        }
-        if let Some(inner_95) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_95));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::ListChannels::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "ListChannels",
+                    "chimesdkmessaging",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5407,121 +5462,126 @@ impl ListChannelsModeratedByAppInstanceUserInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::ListChannelsModeratedByAppInstanceUser::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListChannelsModeratedByAppInstanceUser",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/channels").expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_96) = &self.chime_bearer {
-            let formatted_97 = AsRef::<str>::as_ref(inner_96);
-            if !formatted_97.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_97;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn uri_base(
+            _input: &crate::input::ListChannelsModeratedByAppInstanceUserInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/channels").expect("formatting should succeed");
+            Ok(())
+        }
+        fn add_headers(
+            _input: &crate::input::ListChannelsModeratedByAppInstanceUserInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_96) = &_input.chime_bearer {
+                let formatted_97 = AsRef::<str>::as_ref(inner_96);
+                if !formatted_97.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_97;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
+            }
+            Ok(builder)
+        }
+        fn uri_query(
+            _input: &crate::input::ListChannelsModeratedByAppInstanceUserInput,
+            mut output: &mut String,
+        ) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            query.push_kv("scope", "app-instance-user-moderated-channels");
+            if let Some(inner_98) = &_input.app_instance_user_arn {
+                query.push_kv(
+                    "app-instance-user-arn",
+                    &smithy_http::query::fmt_string(&inner_98),
+                );
+            }
+            if let Some(inner_99) = &_input.max_results {
+                query.push_kv(
+                    "max-results",
+                    &smithy_types::primitive::Encoder::from(*inner_99).encode(),
+                );
+            }
+            if let Some(inner_100) = &_input.next_token {
+                query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_100));
             }
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        query.push_kv("scope", "app-instance-user-moderated-channels");
-        if let Some(inner_98) = &self.app_instance_user_arn {
-            query.push_kv(
-                "app-instance-user-arn",
-                &smithy_http::query::fmt_string(&inner_98),
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListChannelsModeratedByAppInstanceUserInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListChannelsModeratedByAppInstanceUserInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
+            Ok(builder)
         }
-        if let Some(inner_99) = &self.max_results {
-            query.push_kv(
-                "max-results",
-                &smithy_types::primitive::Encoder::from(*inner_99).encode(),
-            );
-        }
-        if let Some(inner_100) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_100));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListChannelsModeratedByAppInstanceUser::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListChannelsModeratedByAppInstanceUser",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5612,142 +5672,144 @@ impl RedactChannelMessageInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::RedactChannelMessage::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "RedactChannelMessage",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_101 = &self.channel_arn;
-        let input_101 =
-            input_101
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::RedactChannelMessageInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_101 = &_input.channel_arn;
+            let input_101 =
+                input_101
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_101, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_101, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_102 = &self.message_id;
-        let input_102 =
-            input_102
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_102 = &_input.message_id;
+            let input_102 =
+                input_102
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "message_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let message_id = smithy_http::label::fmt_string(input_102, false);
+            if message_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
                     details: "cannot be empty or unset",
-                })?;
-        let message_id = smithy_http::label::fmt_string(input_102, false);
-        if message_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "message_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/messages/{MessageId}",
+                ChannelArn = channel_arn,
+                MessageId = message_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/messages/{MessageId}",
-            ChannelArn = channel_arn,
-            MessageId = message_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_103) = &self.chime_bearer {
-            let formatted_104 = AsRef::<str>::as_ref(inner_103);
-            if !formatted_104.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_104;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::RedactChannelMessageInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_103) = &_input.chime_bearer {
+                let formatted_104 = AsRef::<str>::as_ref(inner_103);
+                if !formatted_104.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_104;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        query.push_kv("operation", "redact");
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        fn uri_query(_input: &crate::input::RedactChannelMessageInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            query.push_kv("operation", "redact");
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::RedactChannelMessageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::RedactChannelMessageInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RedactChannelMessage::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "RedactChannelMessage",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5891,130 +5953,128 @@ impl SendChannelMessageInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            if self.client_request_token.is_none() {
-                self.client_request_token = Some(_config.make_token.make_idempotency_token());
-            }
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_send_channel_message(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::SendChannelMessage::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "SendChannelMessage",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_105 = &self.channel_arn;
-        let input_105 =
-            input_105
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::SendChannelMessageInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_105 = &_input.channel_arn;
+            let input_105 =
+                input_105
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_105, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_105, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/messages",
+                ChannelArn = channel_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/messages",
-            ChannelArn = channel_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_106) = &self.chime_bearer {
-            let formatted_107 = AsRef::<str>::as_ref(inner_106);
-            if !formatted_107.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_107;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::SendChannelMessageInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_106) = &_input.chime_bearer {
+                let formatted_107 = AsRef::<str>::as_ref(inner_106);
+                if !formatted_107.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_107;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::SendChannelMessageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::SendChannelMessageInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_request_token.is_none() {
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_send_channel_message(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SendChannelMessage::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "SendChannelMessage",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6125,121 +6185,118 @@ impl UpdateChannelInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::UpdateChannelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_108 = &_input.channel_arn;
+            let input_108 =
+                input_108
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateChannel::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateChannel",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_108 = &self.channel_arn;
-        let input_108 =
-            input_108
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let channel_arn = smithy_http::label::fmt_string(input_108, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_108, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/channels/{ChannelArn}", ChannelArn = channel_arn)
+                .expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/channels/{ChannelArn}", ChannelArn = channel_arn)
-            .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_109) = &self.chime_bearer {
-            let formatted_110 = AsRef::<str>::as_ref(inner_109);
-            if !formatted_110.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_110;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::UpdateChannelInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_109) = &_input.chime_bearer {
+                let formatted_110 = AsRef::<str>::as_ref(inner_109);
+                if !formatted_110.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_110;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateChannelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateChannelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::UpdateChannel::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "UpdateChannel",
+                    "chimesdkmessaging",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6352,143 +6409,143 @@ impl UpdateChannelMessageInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_update_channel_message(
-                    &self,
-                )
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateChannelMessage::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateChannelMessage",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_111 = &self.channel_arn;
-        let input_111 =
-            input_111
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UpdateChannelMessageInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_111 = &_input.channel_arn;
+            let input_111 =
+                input_111
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_111, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_111, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_112 = &self.message_id;
-        let input_112 =
-            input_112
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_112 = &_input.message_id;
+            let input_112 =
+                input_112
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "message_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let message_id = smithy_http::label::fmt_string(input_112, false);
+            if message_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
                     details: "cannot be empty or unset",
-                })?;
-        let message_id = smithy_http::label::fmt_string(input_112, false);
-        if message_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "message_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/messages/{MessageId}",
+                ChannelArn = channel_arn,
+                MessageId = message_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/messages/{MessageId}",
-            ChannelArn = channel_arn,
-            MessageId = message_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_113) = &self.chime_bearer {
-            let formatted_114 = AsRef::<str>::as_ref(inner_113);
-            if !formatted_114.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_114;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::UpdateChannelMessageInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_113) = &_input.chime_bearer {
+                let formatted_114 = AsRef::<str>::as_ref(inner_113);
+                if !formatted_114.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_114;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateChannelMessageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateChannelMessageInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_channel_message(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateChannelMessage::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateChannelMessage",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6569,121 +6626,123 @@ impl UpdateChannelReadMarkerInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UpdateChannelReadMarker::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UpdateChannelReadMarker",
-                "chimesdkmessaging",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_115 = &self.channel_arn;
-        let input_115 =
-            input_115
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::UpdateChannelReadMarkerInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_115 = &_input.channel_arn;
+            let input_115 =
+                input_115
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "channel_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let channel_arn = smithy_http::label::fmt_string(input_115, false);
+            if channel_arn.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
-                })?;
-        let channel_arn = smithy_http::label::fmt_string(input_115, false);
-        if channel_arn.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "channel_arn",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/channels/{ChannelArn}/readMarker",
+                ChannelArn = channel_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/channels/{ChannelArn}/readMarker",
-            ChannelArn = channel_arn
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_116) = &self.chime_bearer {
-            let formatted_117 = AsRef::<str>::as_ref(inner_116);
-            if !formatted_117.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_117;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::UpdateChannelReadMarkerInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_116) = &_input.chime_bearer {
+                let formatted_117 = AsRef::<str>::as_ref(inner_116);
+                if !formatted_117.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_117;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "chime_bearer",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-chime-bearer", header_value);
+                        })?;
+                    builder = builder.header("x-amz-chime-bearer", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("PUT").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateChannelReadMarkerInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateChannelReadMarkerInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateChannelReadMarker::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateChannelReadMarker",
+            "chimesdkmessaging",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,

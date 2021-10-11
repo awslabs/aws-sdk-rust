@@ -556,6 +556,14 @@ pub fn deser_operation_crate_operation_create_report_plan(
             Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "CreationTime" => {
+                        builder = builder.set_creation_time(
+                            smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                smithy_types::instant::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
                     "ReportPlanArn" => {
                         builder = builder.set_report_plan_arn(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -5218,6 +5226,21 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "FrameworkArns" => {
+                                builder = builder.set_framework_arns(
+                                    crate::json_deser::deser_list_com_amazonaws_backup_string_list(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "NumberOfFrameworks" => {
+                                builder = builder.set_number_of_frameworks(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

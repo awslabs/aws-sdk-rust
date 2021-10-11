@@ -1,3 +1,8 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
 use aws_config::meta::region::RegionProviderChain;
 use batch::{Client, Region};
 

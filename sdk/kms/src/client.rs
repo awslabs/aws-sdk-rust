@@ -394,9 +394,11 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the alias name. This value must begin with <code>alias/</code> followed by a
         /// name, such as <code>alias/ExampleAlias</code>. </p>
-        /// <p>The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters,
-        /// forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved
-        /// for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</p>
+        /// <p>The <code>AliasName</code> value must be string of 1-256 characters. It can contain only
+        /// alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name
+        /// cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed
+        /// keys</a>.</p>
         pub fn alias_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.alias_name(inp);
             self
@@ -405,8 +407,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias_name(input);
             self
         }
-        /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be
-        /// in the same Amazon Web Services Region. </p>
+        /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must
+        /// be in the same Amazon Web Services Region. </p>
         /// <p>A valid key ID is required. If you supply a null or empty string value, this operation
         /// returns an error.</p>
         /// <p>For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and
@@ -482,7 +484,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account.</p>
+        /// <p>Specifies a friendly name for the custom key store. The name must be unique in your
+        /// Amazon Web Services account.</p>
         pub fn custom_key_store_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.custom_key_store_name(inp);
             self
@@ -584,7 +587,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifies the KMS key for the grant. The grant gives principals permission to use this KMS key.</p>
+        /// <p>Identifies the KMS key for the grant. The grant gives principals permission to use this
+        /// KMS key.</p>
         /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
         /// different Amazon Web Services account, you must use the key ARN.</p>
         /// <p>For example:</p>
@@ -608,9 +612,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity that gets the permissions specified in the grant.</p>
-        /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, IAM roles, federated
-        /// users, and assumed role users. For examples of the ARN syntax to use for specifying a
-        /// principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access
+        /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an
+        /// Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, IAM roles,
+        /// federated users, and assumed role users. For examples of the ARN syntax to use for specifying
+        /// a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access
         /// Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General
         /// Reference</i>.</p>
         pub fn grantee_principal(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -626,13 +631,16 @@ pub mod fluent_builders {
         }
         /// <p>The principal that has permission to use the <a>RetireGrant</a> operation to
         /// retire the grant. </p>
-        /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated users, and
-        /// assumed role users. For examples of the ARN syntax to use for specifying a principal, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the
-        /// <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an
+        /// Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated
+        /// users, and assumed role users. For examples of the ARN syntax to use for specifying a
+        /// principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access
+        /// Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General
+        /// Reference</i>.</p>
         /// <p>The grant determines the retiring principal. Other principals might have permission to
         /// retire the grant or revoke the grant. For details, see <a>RevokeGrant</a> and
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>. </p>
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and
+        /// revoking grants</a> in the <i>Key Management Service Developer Guide</i>. </p>
         pub fn retiring_principal(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.retiring_principal(inp);
             self
@@ -648,10 +656,11 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         /// <p>A list of operations that the grant permits. </p>
-        /// <p>The operation must be supported on the KMS key. For example, you cannot create a grant for a
-        /// symmetric KMS key that allows the <a>Sign</a> operation, or a grant for an asymmetric KMS key that allows the <a>GenerateDataKey</a> operation. If you try, KMS returns a
-        /// <code>ValidationError</code> exception. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant operations</a> in the
-        /// <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>The operation must be supported on the KMS key. For example, you cannot create a grant for
+        /// a symmetric KMS key that allows the <a>Sign</a> operation, or a grant for an
+        /// asymmetric KMS key that allows the <a>GenerateDataKey</a> operation. If you try,
+        /// KMS returns a <code>ValidationError</code> exception. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+        /// operations</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn operations(mut self, inp: impl Into<crate::model::GrantOperation>) -> Self {
             self.inner = self.inner.operations(inp);
             self
@@ -708,8 +717,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_grant_tokens(input);
             self
         }
-        /// <p>A friendly name for the grant. Use this value to prevent the unintended
-        /// creation of duplicate grants when retrying this request.</p>
+        /// <p>A friendly name for the grant. Use this value to prevent the unintended creation of
+        /// duplicate grants when retrying this request.</p>
         /// <p>When this value is absent, all <code>CreateGrant</code> requests result in a new grant
         /// with a unique <code>GrantId</code> even if all the supplied parameters are identical. This can
         /// result in unintended duplicates when you retry the <code>CreateGrant</code> request.</p>
@@ -777,21 +786,23 @@ pub mod fluent_builders {
         /// <li>
         /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
         /// must allow the principal that is making the <code>CreateKey</code> request to make a
-        /// subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk that
-        /// the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
+        /// subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk
+        /// that the KMS key becomes unmanageable. For more information, refer to the scenario in the
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
         /// <i>Key Management Service Developer Guide</i>
         /// </i>.</p>
         /// </li>
         /// <li>
         /// <p>Each statement in the key policy must contain one or more principals. The principals
-        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal
-        /// (for example, an IAM user or role), you might need to enforce a delay before including the
-        /// new principal in a key policy because the new principal might not be immediately visible
-        /// to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services
+        /// principal (for example, an IAM user or role), you might need to enforce a delay before
+        /// including the new principal in a key policy because the new principal might not be
+        /// immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services
+        /// Identity and Access Management User Guide</i>.</p>
         /// </li>
         /// </ul>
-        /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key. For
-        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default Key Policy</a> in the
+        /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default Key Policy</a> in the
         /// <i>Key Management Service Developer Guide</i>. </p>
         /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
         /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i>
@@ -806,8 +817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the KMS key.</p>
-        /// <p>Use a description that helps you decide whether the KMS key is
-        /// appropriate for a task. The default value is an empty string (no description).</p>
+        /// <p>Use a description that helps you decide whether the KMS key is appropriate for a task. The
+        /// default value is an empty string (no description).</p>
         /// <p>To set or change the description after the key is created, use <a>UpdateKeyDescription</a>.</p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
@@ -818,19 +829,21 @@ pub mod fluent_builders {
             self
         }
         /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key. The default value is
-        /// <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric KMS keys. You can't
-        /// change the <code>KeyUsage</code> value after the KMS key is created.</p>
+        /// <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric KMS keys. You
+        /// can't change the <code>KeyUsage</code> value after the KMS key is created.</p>
         /// <p>Select only one valid value.</p>
         /// <ul>
         /// <li>
-        /// <p>For symmetric KMS keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
+        /// <p>For symmetric KMS keys, omit the parameter or specify
+        /// <code>ENCRYPT_DECRYPT</code>.</p>
         /// </li>
         /// <li>
         /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or
         /// <code>SIGN_VERIFY</code>.</p>
         /// </li>
         /// <li>
-        /// <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+        /// <p>For asymmetric KMS keys with ECC key material, specify
+        /// <code>SIGN_VERIFY</code>.</p>
         /// </li>
         /// </ul>
         pub fn key_usage(mut self, inp: crate::model::KeyUsageType) -> Self {
@@ -844,8 +857,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_key_usage(input);
             self
         }
-        /// <p>Instead, use the <code>KeySpec</code> parameter.</p>      
-        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS will support both parameters.</p>
+        /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same
+        /// way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your
+        /// code. However, to avoid breaking changes, KMS will support both parameters.</p>
         pub fn customer_master_key_spec(
             mut self,
             inp: crate::model::CustomerMasterKeySpec,
@@ -860,9 +875,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_customer_master_key_spec(input);
             self
         }
-        /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>,
-        /// creates a KMS key with a 256-bit symmetric key for encryption and decryption. For help choosing a
-        /// key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How to Choose Your KMS key
+        /// <p>Specifies the type of KMS key to create. The default value,
+        /// <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key for encryption
+        /// and decryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How to Choose Your KMS key
         /// Configuration</a> in the <i>
         /// <i>Key Management Service Developer Guide</i>
         /// </i>.</p>
@@ -877,9 +892,9 @@ pub mod fluent_builders {
         /// <p>
         /// <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that
         /// are integrated with KMS</a> use symmetric KMS keys to protect your data. These
-        /// services do not support asymmetric KMS keys. For help determining whether a KMS key is symmetric or
-        /// asymmetric, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer
-        /// Guide</i>.</p>
+        /// services do not support asymmetric KMS keys. For help determining whether a KMS key is
+        /// symmetric or asymmetric, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying Symmetric and Asymmetric
+        /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// </important>
         /// <p>KMS supports the following key specs for KMS keys:</p>
         /// <ul>
@@ -948,15 +963,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_key_spec(input);
             self
         }
-        /// <p>The source of the key material for the KMS key. You cannot change the origin after you create
-        /// the KMS key. The default is <code>AWS_KMS</code>, which means that KMS creates the key
-        /// material.</p>
+        /// <p>The source of the key material for the KMS key. You cannot change the origin after you
+        /// create the KMS key. The default is <code>AWS_KMS</code>, which means that KMS creates the
+        /// key material.</p>
         /// <p>To create a KMS key with no key material (for imported key material), set the value to
         /// <code>EXTERNAL</code>. For more information about importing key material into KMS, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key
-        /// Material</a> in the <i>Key Management Service Developer Guide</i>. This value is valid only for symmetric KMS keys.</p>
-        /// <p>To create a KMS key in an KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and create its key material in the associated
-        /// CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>. You must also use the
+        /// Material</a> in the <i>Key Management Service Developer Guide</i>. This value is valid only for symmetric KMS
+        /// keys.</p>
+        /// <p>To create a KMS key in an KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and create its key material in the
+        /// associated CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>. You must also use the
         /// <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is
         /// valid only for symmetric KMS keys.</p>
         pub fn origin(mut self, inp: crate::model::OriginType) -> Self {
@@ -967,13 +983,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_origin(input);
             self
         }
-        /// <p>Creates the KMS key in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and the key material in its associated
-        /// CloudHSM cluster. To create a KMS key in a custom key store, you must also specify the
+        /// <p>Creates the KMS key in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and the key material in its
+        /// associated CloudHSM cluster. To create a KMS key in a custom key store, you must also specify the
         /// <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster
         /// that is associated with the custom key store must have at least two active HSMs, each in a
         /// different Availability Zone in the Region.</p>
-        /// <p>This parameter is valid only for symmetric KMS keys and regional KMS keys. You cannot create an
-        /// asymmetric KMS key or a multi-Region key in a custom key store.</p>
+        /// <p>This parameter is valid only for symmetric KMS keys and regional KMS keys. You cannot
+        /// create an asymmetric KMS key or a multi-Region key in a custom key store.</p>
         /// <p>To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
         /// <p>The response includes the custom key store ID and the ID of the CloudHSM cluster.</p>
         /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in KMS, which
@@ -992,8 +1008,8 @@ pub mod fluent_builders {
         }
         /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
         /// <important>
-        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not
-        /// set this value to true indiscriminately.</p>
+        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do
+        /// not set this value to true indiscriminately.</p>
         /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>
         /// <i>Key Management Service Developer Guide</i>
         /// </i>.</p>
@@ -1015,16 +1031,16 @@ pub mod fluent_builders {
         /// Appends an item to `Tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created.
-        /// To tag an existing KMS key, use the <a>TagResource</a> operation.</p>
+        /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is
+        /// created. To tag an existing KMS key, use the <a>TagResource</a> operation.</p>
         /// <note>
         /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// </note>
         /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
         /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
         /// required, but the tag value can be an empty (null) string. You cannot have more than one tag
-        /// on a KMS key with the same tag key. If you specify an existing tag key with a different tag value,
-        /// KMS replaces the current tag value with the specified one.</p>
+        /// on a KMS key with the same tag key. If you specify an existing tag key with a different tag
+        /// value, KMS replaces the current tag value with the specified one.</p>
         /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation
         /// report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
@@ -1041,8 +1057,8 @@ pub mod fluent_builders {
         }
         /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You
         /// cannot change this value after you create the KMS key. </p>
-        /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region KMS key,
-        /// omit this parameter or set it to <code>False</code>. The default value is
+        /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region KMS
+        /// key, omit this parameter or set it to <code>False</code>. The default value is
         /// <code>False</code>.</p>
         /// <p>This operation supports <i>multi-Region keys</i>, an KMS feature that lets you create multiple
         /// interoperable KMS keys in different Amazon Web Services Regions. Because these KMS keys have the same key ID, key
@@ -1161,12 +1177,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_grant_tokens(input);
             self
         }
-        /// <p>Specifies the KMS key that KMS uses to decrypt the ciphertext. Enter a
-        /// key ID of the KMS key that was used to encrypt the ciphertext. </p>
-        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.
-        /// If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to the
-        /// symmetric ciphertext blob. However, it is always recommended as a best practice. This practice
-        /// ensures that you use the KMS key that you intend.</p>
+        /// <p>Specifies the KMS key that KMS uses to decrypt the ciphertext. Enter a key ID of the KMS
+        /// key that was used to encrypt the ciphertext. </p>
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
+        /// key. If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to
+        /// the symmetric ciphertext blob. However, it is always recommended as a best practice. This
+        /// practice ensures that you use the KMS key that you intend.</p>
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -1199,9 +1215,9 @@ pub mod fluent_builders {
         /// <p>Specifies the encryption algorithm that will be used to decrypt the ciphertext. Specify
         /// the same algorithm that was used to encrypt the data. If you specify a different algorithm,
         /// the <code>Decrypt</code> operation fails.</p>
-        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.
-        /// The default value, <code>SYMMETRIC_DEFAULT</code>, represents the only supported algorithm
-        /// that is valid for symmetric KMS keys.</p>
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
+        /// key. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the only supported
+        /// algorithm that is valid for symmetric KMS keys.</p>
         pub fn encryption_algorithm(mut self, inp: crate::model::EncryptionAlgorithmSpec) -> Self {
             self.inner = self.inner.encryption_algorithm(inp);
             self
@@ -1539,9 +1555,9 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Describes the specified KMS key. </p>
-        /// <p>If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the
-        /// alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
-        /// response.</p>
+        /// <p>If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates
+        /// the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its
+        /// <code>KeyId</code> and <code>Arn</code> in the response.</p>
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -1700,10 +1716,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifies a symmetric KMS key. You cannot enable or disable automatic
-        /// rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric KMS keys</a>, KMS keys
-        /// with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key
-        /// material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p>
+        /// <p>Identifies a symmetric KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
+        /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p>
         /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -2046,8 +2061,8 @@ pub mod fluent_builders {
         /// <p>Specifies the encryption algorithm that KMS will use to encrypt the plaintext message.
         /// The algorithm must be compatible with the KMS key that you specify.</p>
         /// <p>This parameter is required only for asymmetric KMS keys. The default value,
-        /// <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric KMS keys. If you are using
-        /// an asymmetric KMS key, we recommend RSAES_OAEP_SHA_256.</p>
+        /// <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric KMS keys. If you are
+        /// using an asymmetric KMS key, we recommend RSAES_OAEP_SHA_256.</p>
         pub fn encryption_algorithm(mut self, inp: crate::model::EncryptionAlgorithmSpec) -> Self {
             self.inner = self.inner.encryption_algorithm(inp);
             self
@@ -2275,8 +2290,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_context(input);
             self
         }
-        /// <p>Specifies the symmetric KMS key that encrypts the private key in the data key pair. You cannot
-        /// specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a> operation.</p>
+        /// <p>Specifies the symmetric KMS key that encrypts the private key in the data key pair. You
+        /// cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and
+        /// origin of your KMS key, use the <a>DescribeKey</a> operation.</p>
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -2407,9 +2423,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_context(input);
             self
         }
-        /// <p>Specifies the KMS key that encrypts the private key in the data key pair. You must specify a
-        /// symmetric KMS key. You cannot use an asymmetric KMS key or a KMS key in a custom key store. To get the
-        /// type and origin of your KMS key, use the <a>DescribeKey</a> operation. </p>
+        /// <p>Specifies the KMS key that encrypts the private key in the data key pair. You must specify
+        /// a symmetric KMS key. You cannot use an asymmetric KMS key or a KMS key in a custom key store.
+        /// To get the type and origin of your KMS key, use the <a>DescribeKey</a> operation.
+        /// </p>
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -2514,8 +2531,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the symmetric KMS key that encrypts the data
-        /// key.</p>
+        /// <p>The identifier of the symmetric KMS key that encrypts the data key.</p>
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -3054,10 +3070,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the symmetric KMS key that receives the imported key material. The KMS key's
-        /// <code>Origin</code> must be <code>EXTERNAL</code>. This must be the same KMS key specified in
-        /// the <code>KeyID</code> parameter of the corresponding <a>GetParametersForImport</a>
-        /// request.</p>
+        /// <p>The identifier of the symmetric KMS key that receives the imported key material. The KMS
+        /// key's <code>Origin</code> must be <code>EXTERNAL</code>. This must be the same KMS key
+        /// specified in the <code>KeyID</code> parameter of the corresponding <a>GetParametersForImport</a> request.</p>
         /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -3104,9 +3119,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time at which the imported key material expires. When the key material expires, KMS
-        /// deletes the key material and the KMS key becomes unusable. You must omit this parameter when the
-        /// <code>ExpirationModel</code> parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>.
-        /// Otherwise it is required.</p>
+        /// deletes the key material and the KMS key becomes unusable. You must omit this parameter when
+        /// the <code>ExpirationModel</code> parameter is set to
+        /// <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
         pub fn valid_to(mut self, inp: smithy_types::Instant) -> Self {
             self.inner = self.inner.valid_to(inp);
             self
@@ -3175,7 +3190,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account. </p>
+        /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your
+        /// Amazon Web Services account. </p>
         /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases
         /// in the account and Region.</p>
         /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -3292,8 +3308,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>Returns only grants for the specified KMS key. This parameter is
-        /// required.</p>
+        /// <p>Returns only grants for the specified KMS key. This parameter is required.</p>
         /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
         /// different Amazon Web Services account, you must use the key ARN.</p>
         /// <p>For example:</p>
@@ -3662,9 +3677,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
-        /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated users, and
-        /// assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the
+        /// <p>The retiring principal for which to list grants. Enter a principal in your
+        /// Amazon Web Services account.</p>
+        /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an
+        /// Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated
+        /// users, and assumed role users. For examples of the ARN syntax for specifying a principal, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the
         /// <i>Amazon Web Services General Reference</i>.</p>
         pub fn retiring_principal(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.retiring_principal(inp);
@@ -3759,14 +3777,17 @@ pub mod fluent_builders {
         /// <li>
         /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
         /// must allow the principal that is making the <code>PutKeyPolicy</code> request to make a
-        /// subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>.</p>
+        /// subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that
+        /// the KMS key becomes unmanageable. For more information, refer to the scenario in the
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>.</p>
         /// </li>
         /// <li>
         /// <p>Each statement in the key policy must contain one or more principals. The principals
-        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal
-        /// (for example, an IAM user or role), you might need to enforce a delay before including the
-        /// new principal in a key policy because the new principal might not be immediately visible
-        /// to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services
+        /// principal (for example, an IAM user or role), you might need to enforce a delay before
+        /// including the new principal in a key policy because the new principal might not be
+        /// immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services
+        /// Identity and Access Management User Guide</i>.</p>
         /// </li>
         /// </ul>
         /// <p>The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource Quotas</a> in the
@@ -3781,8 +3802,8 @@ pub mod fluent_builders {
         }
         /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
         /// <important>
-        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not
-        /// set this value to true indiscriminately.</p>
+        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do
+        /// not set this value to true indiscriminately.</p>
         /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.</p>
         /// </important>
         /// <p>Use this parameter only when you intend to prevent the principal that is making the
@@ -3882,13 +3903,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_encryption_context(input);
             self
         }
-        /// <p>Specifies the KMS key that
-        /// KMS will use to decrypt the ciphertext before it is re-encrypted. Enter a key ID of the KMS key
-        /// that was used to encrypt the ciphertext.</p>
-        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.
-        /// If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to the
-        /// symmetric ciphertext blob. However, it is always recommended as a best practice. This practice
-        /// ensures that you use the KMS key that you intend.</p>
+        /// <p>Specifies the KMS key that KMS will use to decrypt the ciphertext before it is
+        /// re-encrypted. Enter a key ID of the KMS key that was used to encrypt the ciphertext.</p>
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
+        /// key. If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to
+        /// the symmetric ciphertext blob. However, it is always recommended as a best practice. This
+        /// practice ensures that you use the KMS key that you intend.</p>
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -3921,10 +3941,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_key_id(input);
             self
         }
-        /// <p>A unique identifier for the KMS key that is used to reencrypt the data. Specify a symmetric or
-        /// asymmetric KMS key with a <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the
-        /// <code>KeyUsage</code> value of a KMS key, use the <a>DescribeKey</a>
-        /// operation.</p>
+        /// <p>A unique identifier for the KMS key that is used to reencrypt the data. Specify a
+        /// symmetric or asymmetric KMS key with a <code>KeyUsage</code> value of
+        /// <code>ENCRYPT_DECRYPT</code>. To find the <code>KeyUsage</code> value of a KMS key, use the
+        /// <a>DescribeKey</a> operation.</p>
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -3961,7 +3981,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_destination_encryption_context`](Self::set_destination_encryption_context).
         /// <p>Specifies that encryption context to use when the reencrypting the data.</p>
-        /// <p>A destination encryption context is valid only when the destination KMS key is a symmetric KMS key. The standard ciphertext format for asymmetric KMS keys does not include fields for
+        /// <p>A destination encryption context is valid only when the destination KMS key is a symmetric
+        /// KMS key. The standard ciphertext format for asymmetric KMS keys does not include fields for
         /// metadata.</p>
         /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
         /// <p>For more information, see
@@ -3989,7 +4010,8 @@ pub mod fluent_builders {
         /// used for symmetric KMS keys.</p>
         /// <p>Specify the same algorithm that was used to encrypt the ciphertext. If you specify a
         /// different algorithm, the decrypt attempt fails.</p>
-        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.</p>
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
+        /// key.</p>
         pub fn source_encryption_algorithm(
             mut self,
             inp: crate::model::EncryptionAlgorithmSpec,
@@ -4007,7 +4029,8 @@ pub mod fluent_builders {
         /// <p>Specifies the encryption algorithm that KMS will use to reecrypt the data after it has
         /// decrypted it. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption
         /// algorithm used for symmetric KMS keys.</p>
-        /// <p>This parameter is required only when the destination KMS key is an asymmetric KMS key.</p>
+        /// <p>This parameter is required only when the destination KMS key is an asymmetric KMS
+        /// key.</p>
         pub fn destination_encryption_algorithm(
             mut self,
             inp: crate::model::EncryptionAlgorithmSpec,
@@ -4084,8 +4107,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a KMS key is a multi-Region primary key, use the <a>DescribeKey</a> operation to check
-        /// the value of the <code>MultiRegionKeyType</code> property.</p>
+        /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a
+        /// KMS key is a multi-Region primary key, use the <a>DescribeKey</a> operation to
+        /// check the value of the <code>MultiRegionKeyType</code> property.</p>
         /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -4130,7 +4154,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replica_region(input);
             self
         }
-        /// <p>The key policy to attach to the KMS key. This parameter is optional. If you do not provide a key policy, KMS attaches the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">default key policy</a> to the KMS key.</p>
+        /// <p>The key policy to attach to the KMS key. This parameter is optional. If you do not provide
+        /// a key policy, KMS attaches the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">default key policy</a> to the
+        /// KMS key.</p>
         /// <p>The key policy is not a shared property of multi-Region keys. You can specify the same key
         /// policy or a different key policy for each key in a set of related multi-Region keys. KMS
         /// does not synchronize this property.</p>
@@ -4138,18 +4164,19 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
-        /// must give the caller <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the
-        /// risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
+        /// must give the caller <code>kms:PutKeyPolicy</code> permission on the replica key. This
+        /// reduces the risk that the KMS key becomes unmanageable. For more information, refer to the
+        /// scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
         /// <i>Key Management Service Developer Guide</i>
         /// </i>.</p>
         /// </li>
         /// <li>
         /// <p>Each statement in the key policy must contain one or more principals. The principals
-        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal
-        /// (for example, an IAM user or role), you might need to enforce a delay before including the
-        /// new principal in a key policy because the new principal might not be immediately visible
-        /// to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>
+        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services
+        /// principal (for example, an IAM user or role), you might need to enforce a delay before
+        /// including the new principal in a key policy because the new principal might not be
+        /// immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the
+        /// <i>
         /// <i>Identity and Access Management User Guide</i>
         /// </i>.</p>
         /// </li>
@@ -4167,8 +4194,8 @@ pub mod fluent_builders {
         }
         /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
         /// <important>
-        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not
-        /// set this value to true indiscriminately.</p>
+        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do
+        /// not set this value to true indiscriminately.</p>
         /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.</p>
         /// </important>
         /// <p>Use this parameter only when you intend to prevent the principal that is making the
@@ -4185,9 +4212,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bypass_policy_lockout_safety_check(input);
             self
         }
-        /// <p>A description of the KMS key. The default value is an empty string (no description).</p>
+        /// <p>A description of the KMS key. The default value is an empty string (no
+        /// description).</p>
         /// <p>The description is not a shared property of multi-Region keys. You can specify the same
-        /// description or a different description for each key in a set of related multi-Region keys. KMS does not synchronize this property.</p>
+        /// description or a different description for each key in a set of related multi-Region keys.
+        /// KMS does not synchronize this property.</p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
@@ -4199,19 +4228,20 @@ pub mod fluent_builders {
         /// Appends an item to `Tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        /// <p>Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it is created.
-        /// To tag an existing KMS key, use the <a>TagResource</a> operation.</p>
+        /// <p>Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it
+        /// is created. To tag an existing KMS key, use the <a>TagResource</a>
+        /// operation.</p>
         /// <note>
         /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// </note>
         /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
         /// <p>Tags are not a shared property of multi-Region keys. You can specify the same tags or
-        /// different tags for each key in a set of related multi-Region keys. KMS does not
-        /// synchronize this property.</p>
+        /// different tags for each key in a set of related multi-Region keys. KMS does not synchronize
+        /// this property.</p>
         /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
         /// required, but the tag value can be an empty (null) string. You cannot have more than one tag
-        /// on a KMS key with the same tag key. If you specify an existing tag key with a different tag value,
-        /// KMS replaces the current tag value with the specified one.</p>
+        /// on a KMS key with the same tag key. If you specify an existing tag key with a different tag
+        /// value, KMS replaces the current tag value with the specified one.</p>
         /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation
         /// report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
@@ -4356,8 +4386,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the KMS key associated with the grant. To get
-        /// the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>A unique identifier for the KMS key associated with the grant. To get the key ID and key
+        /// ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
         /// different Amazon Web Services account, you must use the key ARN.</p>
         /// <p>For example:</p>
@@ -4459,8 +4489,9 @@ pub mod fluent_builders {
         }
         /// <p>The waiting period, specified in number of days. After the waiting period ends, KMS
         /// deletes the KMS key.</p>
-        /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the
-        /// last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
+        /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when
+        /// the last of its replica keys is deleted. Otherwise, the waiting period begins
+        /// immediately.</p>
         /// <p>This value is optional. If you include a value, it must be between 7 and 30, inclusive. If
         /// you do not include a value, it defaults to 30.</p>
         pub fn pending_window_in_days(mut self, inp: i32) -> Self {
@@ -4516,9 +4547,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifies an asymmetric KMS key. KMS uses the private key in the asymmetric KMS key to sign the
-        /// message. The <code>KeyUsage</code> type of the KMS key must be <code>SIGN_VERIFY</code>. To find
-        /// the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.</p>
+        /// <p>Identifies an asymmetric KMS key. KMS uses the private key in the asymmetric KMS key to
+        /// sign the message. The <code>KeyUsage</code> type of the KMS key must be
+        /// <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.</p>
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -4592,7 +4623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the signing algorithm to use when signing the message. </p>
-        /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key.</p>
+        /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric
+        /// KMS key.</p>
         pub fn signing_algorithm(mut self, inp: crate::model::SigningAlgorithmSpec) -> Self {
             self.inner = self.inner.signing_algorithm(inp);
             self
@@ -4829,11 +4861,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias_name(input);
             self
         }
-        /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission
-        /// to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>.</p>
-        /// <p>The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key
-        /// must be the same type as the current target KMS key (both symmetric or both asymmetric) and they
-        /// must have the same key usage. </p>
+        /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to
+        /// associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>.</p>
+        /// <p>The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new
+        /// target KMS key must be the same type as the current target KMS key (both symmetric or both
+        /// asymmetric) and they must have the same key usage. </p>
         /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -4847,8 +4879,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        /// <p>To verify that the alias
-        /// is mapped to the correct KMS key, use <a>ListAliases</a>.</p>
+        /// <p>To
+        /// verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</p>
         pub fn target_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_key_id(inp);
             self
@@ -5108,8 +5140,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_key_id(input);
             self
         }
-        /// <p>The Amazon Web Services Region of the new primary key. Enter the Region ID, such as <code>us-east-1</code>
-        /// or <code>ap-southeast-2</code>. There must be an existing replica key in this Region. </p>
+        /// <p>The Amazon Web Services Region of the new primary key. Enter the Region ID, such as
+        /// <code>us-east-1</code> or <code>ap-southeast-2</code>. There must be an existing replica key
+        /// in this Region. </p>
         /// <p>When the operation completes, the multi-Region key in this Region will be the primary
         /// key.</p>
         pub fn primary_region(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -5168,9 +5201,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifies the asymmetric KMS key that will be used to verify the signature. This must be the
-        /// same KMS key that was used to generate the signature. If you specify a different KMS key, the
-        /// signature verification fails.</p>
+        /// <p>Identifies the asymmetric KMS key that will be used to verify the signature. This must be
+        /// the same KMS key that was used to generate the signature. If you specify a different KMS key,
+        /// the signature verification fails.</p>
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>

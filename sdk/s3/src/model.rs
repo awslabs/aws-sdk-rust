@@ -2858,8 +2858,8 @@ pub struct Encryption {
     /// AES256, aws:kms).</p>
     pub encryption_type: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of
-    /// the symmetric customer managed Amazon Web Services KMS CMK to use for encryption of job results. Amazon S3 only
-    /// supports symmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+    /// the symmetric customer managed key to use for encryption of job results. Amazon S3 only
+    /// supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
     /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to
@@ -2900,8 +2900,8 @@ pub mod encryption {
             self
         }
         /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of
-        /// the symmetric customer managed Amazon Web Services KMS CMK to use for encryption of job results. Amazon S3 only
-        /// supports symmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+        /// the symmetric customer managed key to use for encryption of job results. Amazon S3 only
+        /// supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
         /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -4948,7 +4948,7 @@ pub struct ReplicationRule {
     /// <p>A container that describes additional filters for identifying the source objects that
     /// you want to replicate. You can choose to enable or disable the replication of these
     /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
-    /// with server-side encryption using a customer master key (CMK) stored in Amazon Web Services Key Management
+    /// with server-side encryption using a customer managed key stored in Amazon Web Services Key Management
     /// Service (SSE-KMS).</p>
     pub source_selection_criteria: std::option::Option<crate::model::SourceSelectionCriteria>,
     /// <p></p>
@@ -5077,7 +5077,7 @@ pub mod replication_rule {
         /// <p>A container that describes additional filters for identifying the source objects that
         /// you want to replicate. You can choose to enable or disable the replication of these
         /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
-        /// with server-side encryption using a customer master key (CMK) stored in Amazon Web Services Key Management
+        /// with server-side encryption using a customer managed key stored in Amazon Web Services Key Management
         /// Service (SSE-KMS).</p>
         pub fn source_selection_criteria(
             mut self,
@@ -6024,7 +6024,7 @@ impl AsRef<str> for ExistingObjectReplicationStatus {
 /// <p>A container that describes additional filters for identifying the source objects that
 /// you want to replicate. You can choose to enable or disable the replication of these
 /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
-/// with server-side encryption using a customer master key (CMK) stored in Amazon Web Services Key Management
+/// with server-side encryption using a customer managed key stored in Amazon Web Services Key Management
 /// Service (SSE-KMS).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7382,15 +7382,14 @@ impl TopicConfiguration {
 /// metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics
 /// configuration, note that this is a full replacement of the existing metrics configuration.
 /// If you don't include the elements you want to keep, they are erased. For more information,
-/// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html"> PUT Bucket
-/// metrics</a> in the <i>Amazon S3 API Reference</i>.</p>
+/// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">PutBucketMetricsConfiguration</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricsConfiguration {
     /// <p>The ID used to identify the metrics configuration.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies a metrics configuration filter. The metrics configuration will only include
-    /// objects that meet the filter's criteria. A filter must be a prefix, a tag, or a conjunction
+    /// objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction
     /// (MetricsAndOperator).</p>
     pub filter: std::option::Option<crate::model::MetricsFilter>,
 }
@@ -7422,7 +7421,7 @@ pub mod metrics_configuration {
             self
         }
         /// <p>Specifies a metrics configuration filter. The metrics configuration will only include
-        /// objects that meet the filter's criteria. A filter must be a prefix, a tag, or a conjunction
+        /// objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction
         /// (MetricsAndOperator).</p>
         pub fn filter(mut self, input: crate::model::MetricsFilter) -> Self {
             self.filter = Some(input);
@@ -7454,6 +7453,8 @@ impl MetricsConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum MetricsFilter {
+    /// <p>The access point ARN used when evaluating a metrics filter.</p>
+    AccessPointArn(std::string::String),
     /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
     /// The operator must have at least two predicates, and an object must match all of the
     /// predicates in order for the filter to apply.</p>
@@ -7464,6 +7465,16 @@ pub enum MetricsFilter {
     Tag(crate::model::Tag),
 }
 impl MetricsFilter {
+    pub fn as_access_point_arn(&self) -> std::result::Result<&std::string::String, &Self> {
+        if let MetricsFilter::AccessPointArn(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_access_point_arn(&self) -> bool {
+        self.as_access_point_arn().is_ok()
+    }
     pub fn as_and(&self) -> std::result::Result<&crate::model::MetricsAndOperator, &Self> {
         if let MetricsFilter::And(val) = &self {
             Ok(&val)
@@ -7506,12 +7517,15 @@ pub struct MetricsAndOperator {
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The list of tags used when evaluating an AND predicate.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The access point ARN used when evaluating an AND predicate.</p>
+    pub access_point_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MetricsAndOperator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MetricsAndOperator");
         formatter.field("prefix", &self.prefix);
         formatter.field("tags", &self.tags);
+        formatter.field("access_point_arn", &self.access_point_arn);
         formatter.finish()
     }
 }
@@ -7523,6 +7537,7 @@ pub mod metrics_and_operator {
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) access_point_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The prefix used when evaluating an AND predicate.</p>
@@ -7547,11 +7562,24 @@ pub mod metrics_and_operator {
             self.tags = input;
             self
         }
+        /// <p>The access point ARN used when evaluating an AND predicate.</p>
+        pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_point_arn = Some(input.into());
+            self
+        }
+        pub fn set_access_point_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_point_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MetricsAndOperator`](crate::model::MetricsAndOperator)
         pub fn build(self) -> crate::model::MetricsAndOperator {
             crate::model::MetricsAndOperator {
                 prefix: self.prefix,
                 tags: self.tags,
+                access_point_arn: self.access_point_arn,
             }
         }
     }
@@ -9426,8 +9454,8 @@ impl InventoryEncryption {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ssekms {
-    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed
-    /// customer master key (CMK) to use for encrypting inventory reports.</p>
+    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key
+    /// to use for encrypting inventory reports.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Ssekms {
@@ -9446,8 +9474,8 @@ pub mod ssekms {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed
-        /// customer master key (CMK) to use for encrypting inventory reports.</p>
+        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key
+        /// to use for encrypting inventory reports.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self

@@ -2512,6 +2512,40 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "NextSigningKeyLength" => {
+                                builder = builder.set_next_signing_key_length(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DkimSigningKeyLength::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "CurrentSigningKeyLength" => {
+                                builder = builder.set_current_signing_key_length(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DkimSigningKeyLength::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "LastKeyGenerationTimestamp" => {
+                                builder = builder.set_last_key_generation_timestamp(
+                                    smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        smithy_types::instant::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

@@ -209,7 +209,7 @@ impl Builder {
     /// builder, this function will panic.
     pub fn build(self) -> WebIdentityTokenCredentialsProvider {
         let conf = self.config.unwrap_or_default();
-        let connector = expect_connector(conf.connector().cloned());
+        let connector = expect_connector(conf.default_connector());
         let client = aws_hyper::Client::new(connector);
         let source = self.source.unwrap_or_else(|| Source::Env(conf.env()));
         WebIdentityTokenCredentialsProvider {

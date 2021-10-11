@@ -360,6 +360,34 @@ impl smithy_http::response::ParseStrictResponse for DeleteMailboxPermissions {
     }
 }
 
+/// <p>Deletes the mobile device access override for the given WorkMail organization, user, and device.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteMobileDeviceAccessOverride {
+    _private: (),
+}
+impl DeleteMobileDeviceAccessOverride {
+    /// Creates a new builder-style object to manufacture [`DeleteMobileDeviceAccessOverrideInput`](crate::input::DeleteMobileDeviceAccessOverrideInput)
+    pub fn builder() -> crate::input::delete_mobile_device_access_override_input::Builder {
+        crate::input::delete_mobile_device_access_override_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteMobileDeviceAccessOverride {
+    type Output = std::result::Result<
+        crate::output::DeleteMobileDeviceAccessOverrideOutput,
+        crate::error::DeleteMobileDeviceAccessOverrideError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_mobile_device_access_override_error(response)
+        } else {
+            crate::operation_deser::parse_delete_mobile_device_access_override_response(response)
+        }
+    }
+}
+
 /// <p>Deletes a mobile device access rule for the specified Amazon WorkMail organization.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessRule {
@@ -553,6 +581,34 @@ impl smithy_http::response::ParseStrictResponse for DescribeGroup {
             crate::operation_deser::parse_describe_group_error(response)
         } else {
             crate::operation_deser::parse_describe_group_response(response)
+        }
+    }
+}
+
+/// <p>Lists the settings in a DMARC policy for a specified organization.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeInboundDmarcSettings {
+    _private: (),
+}
+impl DescribeInboundDmarcSettings {
+    /// Creates a new builder-style object to manufacture [`DescribeInboundDmarcSettingsInput`](crate::input::DescribeInboundDmarcSettingsInput)
+    pub fn builder() -> crate::input::describe_inbound_dmarc_settings_input::Builder {
+        crate::input::describe_inbound_dmarc_settings_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeInboundDmarcSettings {
+    type Output = std::result::Result<
+        crate::output::DescribeInboundDmarcSettingsOutput,
+        crate::error::DescribeInboundDmarcSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_inbound_dmarc_settings_error(response)
+        } else {
+            crate::operation_deser::parse_describe_inbound_dmarc_settings_response(response)
         }
     }
 }
@@ -838,6 +894,34 @@ impl smithy_http::response::ParseStrictResponse for GetMobileDeviceAccessEffect 
     }
 }
 
+/// <p>Gets the mobile device access override for the given WorkMail organization, user, and device.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMobileDeviceAccessOverride {
+    _private: (),
+}
+impl GetMobileDeviceAccessOverride {
+    /// Creates a new builder-style object to manufacture [`GetMobileDeviceAccessOverrideInput`](crate::input::GetMobileDeviceAccessOverrideInput)
+    pub fn builder() -> crate::input::get_mobile_device_access_override_input::Builder {
+        crate::input::get_mobile_device_access_override_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetMobileDeviceAccessOverride {
+    type Output = std::result::Result<
+        crate::output::GetMobileDeviceAccessOverrideOutput,
+        crate::error::GetMobileDeviceAccessOverrideError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_mobile_device_access_override_error(response)
+        } else {
+            crate::operation_deser::parse_get_mobile_device_access_override_response(response)
+        }
+    }
+}
+
 /// <p>Lists the access control rules for the specified organization.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccessControlRules {
@@ -1002,6 +1086,34 @@ impl smithy_http::response::ParseStrictResponse for ListMailboxPermissions {
             crate::operation_deser::parse_list_mailbox_permissions_error(response)
         } else {
             crate::operation_deser::parse_list_mailbox_permissions_response(response)
+        }
+    }
+}
+
+/// <p>Lists all the mobile device access overrides for any given combination of WorkMail organization, user, or device.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMobileDeviceAccessOverrides {
+    _private: (),
+}
+impl ListMobileDeviceAccessOverrides {
+    /// Creates a new builder-style object to manufacture [`ListMobileDeviceAccessOverridesInput`](crate::input::ListMobileDeviceAccessOverridesInput)
+    pub fn builder() -> crate::input::list_mobile_device_access_overrides_input::Builder {
+        crate::input::list_mobile_device_access_overrides_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListMobileDeviceAccessOverrides {
+    type Output = std::result::Result<
+        crate::output::ListMobileDeviceAccessOverridesOutput,
+        crate::error::ListMobileDeviceAccessOverridesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_mobile_device_access_overrides_error(response)
+        } else {
+            crate::operation_deser::parse_list_mobile_device_access_overrides_response(response)
         }
     }
 }
@@ -1201,6 +1313,34 @@ impl smithy_http::response::ParseStrictResponse for PutAccessControlRule {
     }
 }
 
+/// <p>Enables or disables a DMARC policy for a given organization.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutInboundDmarcSettings {
+    _private: (),
+}
+impl PutInboundDmarcSettings {
+    /// Creates a new builder-style object to manufacture [`PutInboundDmarcSettingsInput`](crate::input::PutInboundDmarcSettingsInput)
+    pub fn builder() -> crate::input::put_inbound_dmarc_settings_input::Builder {
+        crate::input::put_inbound_dmarc_settings_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for PutInboundDmarcSettings {
+    type Output = std::result::Result<
+        crate::output::PutInboundDmarcSettingsOutput,
+        crate::error::PutInboundDmarcSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_inbound_dmarc_settings_error(response)
+        } else {
+            crate::operation_deser::parse_put_inbound_dmarc_settings_response(response)
+        }
+    }
+}
+
 /// <p>Sets permissions for a user, group, or resource. This replaces any pre-existing
 /// permissions.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1226,6 +1366,34 @@ impl smithy_http::response::ParseStrictResponse for PutMailboxPermissions {
             crate::operation_deser::parse_put_mailbox_permissions_error(response)
         } else {
             crate::operation_deser::parse_put_mailbox_permissions_response(response)
+        }
+    }
+}
+
+/// <p>Creates or updates a mobile device access override for the given WorkMail organization, user, and device.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutMobileDeviceAccessOverride {
+    _private: (),
+}
+impl PutMobileDeviceAccessOverride {
+    /// Creates a new builder-style object to manufacture [`PutMobileDeviceAccessOverrideInput`](crate::input::PutMobileDeviceAccessOverrideInput)
+    pub fn builder() -> crate::input::put_mobile_device_access_override_input::Builder {
+        crate::input::put_mobile_device_access_override_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for PutMobileDeviceAccessOverride {
+    type Output = std::result::Result<
+        crate::output::PutMobileDeviceAccessOverrideOutput,
+        crate::error::PutMobileDeviceAccessOverrideError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_mobile_device_access_override_error(response)
+        } else {
+            crate::operation_deser::parse_put_mobile_device_access_override_response(response)
         }
     }
 }

@@ -28,6 +28,16 @@ where
     }
 }
 
+impl<T> AsyncSleep for Arc<T>
+where
+    T: AsyncSleep,
+    T: ?Sized,
+{
+    fn sleep(&self, duration: Duration) -> Sleep {
+        T::sleep(&self, duration)
+    }
+}
+
 /// Returns a default sleep implementation based on the features enabled, or `None` if
 /// there isn't one available from this crate.
 pub fn default_async_sleep() -> Option<Arc<dyn AsyncSleep>> {

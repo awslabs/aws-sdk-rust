@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Systems Manager Incident Manager is an incident management console designed to help users
 //! mitigate and recover from incidents affecting their Amazon Web Services-hosted applications.
 //! An incident is any unplanned interruption or reduction in quality of services. </p>

@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Cloud Directory</fullname>
 //! <p>Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the
 //! development and management of cloud-scale web, mobile, and IoT applications. This guide

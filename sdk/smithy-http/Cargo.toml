@@ -35,7 +35,7 @@ async-stream = "0.3"
 futures-util = "0.3"
 hyper = { version = "0.14.5", features = ["stream"] }
 proptest = "1"
-tokio = {version = "1.6", features = ["macros", "rt", "fs", "io-util"]}
+tokio = {version = "1.6", features = ["macros", "rt", "rt-multi-thread", "fs", "io-util"]}
 tokio-stream = "0.1.5"
 tempfile = "3.2.0"
 

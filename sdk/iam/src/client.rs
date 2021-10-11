@@ -1081,14 +1081,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_old_password(input);
             self
         }
-        /// <p>The new password. The new password must conform to the account's password
+        /// <p>The new password. The new password must conform to the Amazon Web Services account's password
         /// policy, if one exists.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// that is used to validate this parameter is a string of characters. That string can include almost any printable
         /// ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>).
         /// You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)
         /// characters. Any of these characters are valid in a password. However, many tools, such
-        /// as the Management Console, might restrict the ability to type certain characters because they have
+        /// as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have
         /// special meaning within that tool.</p>
         pub fn new_password(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.new_password(inp);
@@ -1444,7 +1444,7 @@ pub mod fluent_builders {
         /// ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>).
         /// You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)
         /// characters. Any of these characters are valid in a password. However, many tools, such
-        /// as the Management Console, might restrict the ability to type certain characters because they have
+        /// as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have
         /// special meaning within that tool.</p>
         pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(inp);
@@ -1512,10 +1512,11 @@ pub mod fluent_builders {
         /// should correspond to the <code>iss</code> claim in the provider's OpenID Connect ID
         /// tokens. Per the OIDC standard, path components are allowed but query parameters are not.
         /// Typically the URL consists of only a hostname, like
-        /// <code>https://server.example.org</code> or <code>https://example.com</code>.</p>
-        /// <p>You cannot register the same provider multiple times in a single account. If you
+        /// <code>https://server.example.org</code> or <code>https://example.com</code>. The URL
+        /// should not contain a port number. </p>
+        /// <p>You cannot register the same provider multiple times in a single Amazon Web Services account. If you
         /// try to submit a URL that has already been used for an OpenID Connect provider in the
-        /// account, you will get an error.</p>
+        /// Amazon Web Services account, you will get an error.</p>
         pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.url(inp);
             self
@@ -1527,10 +1528,10 @@ pub mod fluent_builders {
         /// Appends an item to `ClientIDList`.
         ///
         /// To override the contents of this collection use [`set_client_id_list`](Self::set_client_id_list).
-        /// <p>A list of client IDs (also known as audiences). When a mobile or web app registers
+        /// <p>Provides a list of client IDs, also known as audiences. When a mobile or web app registers
         /// with an OpenID Connect provider, they establish a value that identifies the application.
-        /// (This is the value that's sent as the <code>client_id</code> parameter on OAuth
-        /// requests.)</p>
+        /// This is the value that's sent as the <code>client_id</code> parameter on OAuth
+        /// requests.</p>
         /// <p>You can register multiple client IDs with the same provider. For example, you might
         /// have multiple applications that use the same OIDC provider. You cannot register more
         /// than 100 client IDs with a single IAM OIDC provider.</p>
@@ -1562,8 +1563,9 @@ pub mod fluent_builders {
         /// example, assume that the OIDC provider is <code>server.example.com</code> and the
         /// provider stores its keys at https://keys.server.example.com/openid-connect. In that
         /// case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate
-        /// used by https://keys.server.example.com.</p>
-        /// <p>For more information about obtaining the OIDC provider's thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the
+        /// used by <code>https://keys.server.example.com.</code>
+        /// </p>
+        /// <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the
         /// thumbprint for an OpenID Connect provider</a> in the <i>IAM User
         /// Guide</i>.</p>
         pub fn thumbprint_list(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1663,6 +1665,9 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
+        /// <note>
+        /// <p>You cannot use an asterisk (*) in the path name.</p>
+        /// </note>
         pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path(inp);
             self
@@ -7605,7 +7610,7 @@ pub mod fluent_builders {
         }
         /// <p>The scope to use for filtering the results.</p>
         /// <p>To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To
-        /// list only the customer managed policies in your account, set <code>Scope</code> to
+        /// list only the customer managed policies in your Amazon Web Services account, set <code>Scope</code> to
         /// <code>Local</code>.</p>
         /// <p>This parameter is optional. If it is not included, or if it is set to
         /// <code>All</code>, all policies are returned.</p>
@@ -10017,12 +10022,12 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The version of the global endpoint token. Version 1 tokens are valid only in Regions that are available by default. These tokens do not work in
+        /// <p>The version of the global endpoint token. Version 1 tokens are valid only in Amazon Web Services Regions that are available by default. These tokens do not work in
         /// manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are valid
         /// in all Regions. However, version 2 tokens are longer and might affect systems where you
         /// temporarily store tokens.</p>
         /// <p>For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-        /// deactivating STS in an Region</a> in the
+        /// deactivating STS in an Amazon Web Services Region</a> in the
         /// <i>IAM User Guide</i>.</p>
         pub fn global_endpoint_token_version(
             mut self,
@@ -10240,7 +10245,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_policy(input);
             self
         }
-        /// <p>An ARN representing the account ID that specifies the owner of any simulated
+        /// <p>An ARN representing the Amazon Web Services account ID that specifies the owner of any simulated
         /// resource that does not identify its owner in the resource ARN. Examples of resource ARNs
         /// include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
         /// used as the account owner of any <code>ResourcePolicy</code> included in the simulation.
@@ -10600,7 +10605,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_policy(input);
             self
         }
-        /// <p>An account ID that specifies the owner of any simulated resource that does not
+        /// <p>An Amazon Web Services account ID that specifies the owner of any simulated resource that does not
         /// identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket
         /// or object. If <code>ResourceOwner</code> is specified, it is also used as the account
         /// owner of any <code>ResourcePolicy</code> included in the simulation. If the
@@ -12130,7 +12135,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_require_lowercase_characters(input);
             self
         }
-        /// <p> Allows all IAM users in your account to use the Management Console to change their own
+        /// <p> Allows all IAM users in your account to use the Amazon Web Services Management Console to change their own
         /// passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM users change their own
         /// passwords</a> in the <i>IAM User Guide</i>.</p>
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
@@ -12430,7 +12435,7 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>However, the format can be further restricted by the account administrator by setting
-        /// a password policy on the account. For more information, see <a>UpdateAccountPasswordPolicy</a>.</p>
+        /// a password policy on the Amazon Web Services account. For more information, see <a>UpdateAccountPasswordPolicy</a>.</p>
         pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(inp);
             self

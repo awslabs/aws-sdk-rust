@@ -308,6 +308,35 @@ impl PutRetentionPolicyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutMobileDeviceAccessOverrideOutput {}
+impl std::fmt::Debug for PutMobileDeviceAccessOverrideOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutMobileDeviceAccessOverrideOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutMobileDeviceAccessOverrideOutput`](crate::output::PutMobileDeviceAccessOverrideOutput)
+pub mod put_mobile_device_access_override_output {
+    /// A builder for [`PutMobileDeviceAccessOverrideOutput`](crate::output::PutMobileDeviceAccessOverrideOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutMobileDeviceAccessOverrideOutput`](crate::output::PutMobileDeviceAccessOverrideOutput)
+        pub fn build(self) -> crate::output::PutMobileDeviceAccessOverrideOutput {
+            crate::output::PutMobileDeviceAccessOverrideOutput {}
+        }
+    }
+}
+impl PutMobileDeviceAccessOverrideOutput {
+    /// Creates a new builder-style object to manufacture [`PutMobileDeviceAccessOverrideOutput`](crate::output::PutMobileDeviceAccessOverrideOutput)
+    pub fn builder() -> crate::output::put_mobile_device_access_override_output::Builder {
+        crate::output::put_mobile_device_access_override_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMailboxPermissionsOutput {}
 impl std::fmt::Debug for PutMailboxPermissionsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -332,6 +361,35 @@ impl PutMailboxPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`PutMailboxPermissionsOutput`](crate::output::PutMailboxPermissionsOutput)
     pub fn builder() -> crate::output::put_mailbox_permissions_output::Builder {
         crate::output::put_mailbox_permissions_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutInboundDmarcSettingsOutput {}
+impl std::fmt::Debug for PutInboundDmarcSettingsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutInboundDmarcSettingsOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutInboundDmarcSettingsOutput`](crate::output::PutInboundDmarcSettingsOutput)
+pub mod put_inbound_dmarc_settings_output {
+    /// A builder for [`PutInboundDmarcSettingsOutput`](crate::output::PutInboundDmarcSettingsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutInboundDmarcSettingsOutput`](crate::output::PutInboundDmarcSettingsOutput)
+        pub fn build(self) -> crate::output::PutInboundDmarcSettingsOutput {
+            crate::output::PutInboundDmarcSettingsOutput {}
+        }
+    }
+}
+impl PutInboundDmarcSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`PutInboundDmarcSettingsOutput`](crate::output::PutInboundDmarcSettingsOutput)
+    pub fn builder() -> crate::output::put_inbound_dmarc_settings_output::Builder {
+        crate::output::put_inbound_dmarc_settings_output::Builder::default()
     }
 }
 
@@ -736,6 +794,74 @@ impl ListMobileDeviceAccessRulesOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMobileDeviceAccessOverridesOutput {
+    /// <p>The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.</p>
+    pub overrides: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessOverride>>,
+    /// <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListMobileDeviceAccessOverridesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMobileDeviceAccessOverridesOutput");
+        formatter.field("overrides", &self.overrides);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListMobileDeviceAccessOverridesOutput`](crate::output::ListMobileDeviceAccessOverridesOutput)
+pub mod list_mobile_device_access_overrides_output {
+    /// A builder for [`ListMobileDeviceAccessOverridesOutput`](crate::output::ListMobileDeviceAccessOverridesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) overrides:
+            std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessOverride>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn overrides(
+            mut self,
+            input: impl Into<crate::model::MobileDeviceAccessOverride>,
+        ) -> Self {
+            let mut v = self.overrides.unwrap_or_default();
+            v.push(input.into());
+            self.overrides = Some(v);
+            self
+        }
+        pub fn set_overrides(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessOverride>>,
+        ) -> Self {
+            self.overrides = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMobileDeviceAccessOverridesOutput`](crate::output::ListMobileDeviceAccessOverridesOutput)
+        pub fn build(self) -> crate::output::ListMobileDeviceAccessOverridesOutput {
+            crate::output::ListMobileDeviceAccessOverridesOutput {
+                overrides: self.overrides,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMobileDeviceAccessOverridesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMobileDeviceAccessOverridesOutput`](crate::output::ListMobileDeviceAccessOverridesOutput)
+    pub fn builder() -> crate::output::list_mobile_device_access_overrides_output::Builder {
+        crate::output::list_mobile_device_access_overrides_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailboxPermissionsOutput {
     /// <p>One page of the user, group, or resource mailbox permissions.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -1107,6 +1233,131 @@ impl ListAccessControlRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessControlRulesOutput`](crate::output::ListAccessControlRulesOutput)
     pub fn builder() -> crate::output::list_access_control_rules_output::Builder {
         crate::output::list_access_control_rules_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMobileDeviceAccessOverrideOutput {
+    /// <p>The WorkMail user to which the access override applies.</p>
+    pub user_id: std::option::Option<std::string::String>,
+    /// <p>The device to which the access override applies.</p>
+    pub device_id: std::option::Option<std::string::String>,
+    /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
+    /// <p>A description of the override.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The date the override was first created.</p>
+    pub date_created: std::option::Option<smithy_types::Instant>,
+    /// <p>The date the description was last modified.</p>
+    pub date_modified: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for GetMobileDeviceAccessOverrideOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMobileDeviceAccessOverrideOutput");
+        formatter.field("user_id", &self.user_id);
+        formatter.field("device_id", &self.device_id);
+        formatter.field("effect", &self.effect);
+        formatter.field("description", &self.description);
+        formatter.field("date_created", &self.date_created);
+        formatter.field("date_modified", &self.date_modified);
+        formatter.finish()
+    }
+}
+/// See [`GetMobileDeviceAccessOverrideOutput`](crate::output::GetMobileDeviceAccessOverrideOutput)
+pub mod get_mobile_device_access_override_output {
+    /// A builder for [`GetMobileDeviceAccessOverrideOutput`](crate::output::GetMobileDeviceAccessOverrideOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_id: std::option::Option<std::string::String>,
+        pub(crate) device_id: std::option::Option<std::string::String>,
+        pub(crate) effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) date_created: std::option::Option<smithy_types::Instant>,
+        pub(crate) date_modified: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The WorkMail user to which the access override applies.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        /// <p>The device to which the access override applies.</p>
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_id = Some(input.into());
+            self
+        }
+        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_id = input;
+            self
+        }
+        /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+        pub fn effect(mut self, input: crate::model::MobileDeviceAccessRuleEffect) -> Self {
+            self.effect = Some(input);
+            self
+        }
+        pub fn set_effect(
+            mut self,
+            input: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
+        ) -> Self {
+            self.effect = input;
+            self
+        }
+        /// <p>A description of the override.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The date the override was first created.</p>
+        pub fn date_created(mut self, input: smithy_types::Instant) -> Self {
+            self.date_created = Some(input);
+            self
+        }
+        pub fn set_date_created(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.date_created = input;
+            self
+        }
+        /// <p>The date the description was last modified.</p>
+        pub fn date_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.date_modified = Some(input);
+            self
+        }
+        pub fn set_date_modified(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.date_modified = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMobileDeviceAccessOverrideOutput`](crate::output::GetMobileDeviceAccessOverrideOutput)
+        pub fn build(self) -> crate::output::GetMobileDeviceAccessOverrideOutput {
+            crate::output::GetMobileDeviceAccessOverrideOutput {
+                user_id: self.user_id,
+                device_id: self.device_id,
+                effect: self.effect,
+                description: self.description,
+                date_created: self.date_created,
+                date_modified: self.date_modified,
+            }
+        }
+    }
+}
+impl GetMobileDeviceAccessOverrideOutput {
+    /// Creates a new builder-style object to manufacture [`GetMobileDeviceAccessOverrideOutput`](crate::output::GetMobileDeviceAccessOverrideOutput)
+    pub fn builder() -> crate::output::get_mobile_device_access_override_output::Builder {
+        crate::output::get_mobile_device_access_override_output::Builder::default()
     }
 }
 
@@ -2180,6 +2431,52 @@ impl DescribeMailboxExportJobOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeInboundDmarcSettingsOutput {
+    /// <p>Lists the enforcement setting of the applied policy.</p>
+    pub enforced: bool,
+}
+impl std::fmt::Debug for DescribeInboundDmarcSettingsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeInboundDmarcSettingsOutput");
+        formatter.field("enforced", &self.enforced);
+        formatter.finish()
+    }
+}
+/// See [`DescribeInboundDmarcSettingsOutput`](crate::output::DescribeInboundDmarcSettingsOutput)
+pub mod describe_inbound_dmarc_settings_output {
+    /// A builder for [`DescribeInboundDmarcSettingsOutput`](crate::output::DescribeInboundDmarcSettingsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enforced: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Lists the enforcement setting of the applied policy.</p>
+        pub fn enforced(mut self, input: bool) -> Self {
+            self.enforced = Some(input);
+            self
+        }
+        pub fn set_enforced(mut self, input: std::option::Option<bool>) -> Self {
+            self.enforced = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeInboundDmarcSettingsOutput`](crate::output::DescribeInboundDmarcSettingsOutput)
+        pub fn build(self) -> crate::output::DescribeInboundDmarcSettingsOutput {
+            crate::output::DescribeInboundDmarcSettingsOutput {
+                enforced: self.enforced.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DescribeInboundDmarcSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInboundDmarcSettingsOutput`](crate::output::DescribeInboundDmarcSettingsOutput)
+    pub fn builder() -> crate::output::describe_inbound_dmarc_settings_output::Builder {
+        crate::output::describe_inbound_dmarc_settings_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGroupOutput {
     /// <p>The identifier of the described group.</p>
     pub group_id: std::option::Option<std::string::String>,
@@ -2511,6 +2808,35 @@ impl DeleteMobileDeviceAccessRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMobileDeviceAccessRuleOutput`](crate::output::DeleteMobileDeviceAccessRuleOutput)
     pub fn builder() -> crate::output::delete_mobile_device_access_rule_output::Builder {
         crate::output::delete_mobile_device_access_rule_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMobileDeviceAccessOverrideOutput {}
+impl std::fmt::Debug for DeleteMobileDeviceAccessOverrideOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteMobileDeviceAccessOverrideOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteMobileDeviceAccessOverrideOutput`](crate::output::DeleteMobileDeviceAccessOverrideOutput)
+pub mod delete_mobile_device_access_override_output {
+    /// A builder for [`DeleteMobileDeviceAccessOverrideOutput`](crate::output::DeleteMobileDeviceAccessOverrideOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteMobileDeviceAccessOverrideOutput`](crate::output::DeleteMobileDeviceAccessOverrideOutput)
+        pub fn build(self) -> crate::output::DeleteMobileDeviceAccessOverrideOutput {
+            crate::output::DeleteMobileDeviceAccessOverrideOutput {}
+        }
+    }
+}
+impl DeleteMobileDeviceAccessOverrideOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMobileDeviceAccessOverrideOutput`](crate::output::DeleteMobileDeviceAccessOverrideOutput)
+    pub fn builder() -> crate::output::delete_mobile_device_access_override_output::Builder {
+        crate::output::delete_mobile_device_access_override_output::Builder::default()
     }
 }
 

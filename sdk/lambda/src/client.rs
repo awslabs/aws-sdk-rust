@@ -507,6 +507,7 @@ pub mod fluent_builders {
         }
         /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or
         /// Amazon SNS topic.</p>
+        /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
         pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_arn(inp);
             self
@@ -867,7 +868,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_function_name(input);
             self
         }
-        /// <p>If true, the event source mapping is active. Set to false to pause polling and invocation.</p>
+        /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
+        /// <p>Default: True</p>
         pub fn enabled(mut self, inp: bool) -> Self {
             self.inner = self.inner.enabled(inp);
             self
@@ -876,7 +878,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enabled(input);
             self
         }
-        /// <p>The maximum number of items to retrieve in a single batch.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
+        /// (6 MB).</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -907,7 +910,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_batch_size(input);
             self
         }
-        /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds.</p>
+        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+        /// <p>Default: 0</p>
+        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, inp: i32) -> Self {
             self.inner = self.inner.maximum_batching_window_in_seconds(inp);
             self
@@ -928,8 +933,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parallelization_factor(input);
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
-        /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+        /// MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, inp: crate::model::EventSourcePosition) -> Self {
             self.inner = self.inner.starting_position(inp);
             self
@@ -1026,9 +1031,7 @@ pub mod fluent_builders {
         /// Appends an item to `Queues`.
         ///
         /// To override the contents of this collection use [`set_queues`](Self::set_queues).
-        /// <p>
-        /// (MQ) The name of the Amazon MQ broker destination queue to consume.
-        /// </p>
+        /// <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
         pub fn queues(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.queues(inp);
             self
@@ -1397,6 +1400,22 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_code_signing_config_arn(input);
+            self
+        }
+        /// Appends an item to `Architectures`.
+        ///
+        /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
+        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+        /// The default value is <code>x86_64</code>.</p>
+        pub fn architectures(mut self, inp: impl Into<crate::model::Architecture>) -> Self {
+            self.inner = self.inner.architectures(inp);
+            self
+        }
+        pub fn set_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        ) -> Self {
+            self.inner = self.inner.set_architectures(input);
             self
         }
     }
@@ -3169,7 +3188,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_invocation_type(input);
             self
         }
-        /// <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+        /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
         pub fn log_type(mut self, inp: crate::model::LogType) -> Self {
             self.inner = self.inner.log_type(inp);
             self
@@ -3585,8 +3604,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns
-        /// a maximum of 100 items in each response, even if you set the number higher.</p>
+        /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of
+        /// 100 items in each response, even if you set the number higher.</p>
         pub fn max_items(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_items(inp);
             self
@@ -3929,6 +3948,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_items(input);
             self
         }
+        /// <p>The compatible
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+        pub fn compatible_architecture(mut self, inp: crate::model::Architecture) -> Self {
+            self.inner = self.inner.compatible_architecture(inp);
+            self
+        }
+        pub fn set_compatible_architecture(
+            mut self,
+            input: std::option::Option<crate::model::Architecture>,
+        ) -> Self {
+            self.inner = self.inner.set_compatible_architecture(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct ListLayerVersions<
@@ -4011,6 +4043,19 @@ pub mod fluent_builders {
         }
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_items(input);
+            self
+        }
+        /// <p>The compatible
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+        pub fn compatible_architecture(mut self, inp: crate::model::Architecture) -> Self {
+            self.inner = self.inner.compatible_architecture(inp);
+            self
+        }
+        pub fn set_compatible_architecture(
+            mut self,
+            input: std::option::Option<crate::model::Architecture>,
+        ) -> Self {
+            self.inner = self.inner.set_compatible_architecture(input);
             self
         }
     }
@@ -4152,7 +4197,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The function's Amazon Resource Name (ARN).</p>
+        /// <p>The function's Amazon Resource Name (ARN).
+        /// Note: Lambda does not support adding tags to aliases or versions.</p>
         pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource(inp);
             self
@@ -4367,6 +4413,25 @@ pub mod fluent_builders {
         }
         pub fn set_license_info(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_license_info(input);
+            self
+        }
+        /// Appends an item to `CompatibleArchitectures`.
+        ///
+        /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).
+        /// <p>A list of compatible  
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+        pub fn compatible_architectures(
+            mut self,
+            inp: impl Into<crate::model::Architecture>,
+        ) -> Self {
+            self.inner = self.inner.compatible_architectures(inp);
+            self
+        }
+        pub fn set_compatible_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        ) -> Self {
+            self.inner = self.inner.set_compatible_architectures(input);
             self
         }
     }
@@ -5522,7 +5587,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_function_name(input);
             self
         }
-        /// <p>If true, the event source mapping is active. Set to false to pause polling and invocation.</p>
+        /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
+        /// <p>Default: True</p>
         pub fn enabled(mut self, inp: bool) -> Self {
             self.inner = self.inner.enabled(inp);
             self
@@ -5531,7 +5597,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enabled(input);
             self
         }
-        /// <p>The maximum number of items to retrieve in a single batch.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
+        /// (6 MB).</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -5562,7 +5629,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_batch_size(input);
             self
         }
-        /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds.</p>
+        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
+        /// <p>Default: 0</p>
+        /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, inp: i32) -> Self {
             self.inner = self.inner.maximum_batching_window_in_seconds(inp);
             self
@@ -5828,6 +5897,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_revision_id(input);
             self
         }
+        /// Appends an item to `Architectures`.
+        ///
+        /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
+        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values.
+        /// The default value is <code>x86_64</code>.</p>
+        pub fn architectures(mut self, inp: impl Into<crate::model::Architecture>) -> Self {
+            self.inner = self.inner.architectures(inp);
+            self
+        }
+        pub fn set_architectures(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        ) -> Self {
+            self.inner = self.inner.set_architectures(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct UpdateFunctionConfiguration<
@@ -6070,7 +6155,7 @@ pub mod fluent_builders {
         }
         /// <p>
         /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
-        /// values</a> that override the values in the container image Dockerfile.</p>
+        /// values</a> that override the values in the container image Docker file.</p>
         pub fn image_config(mut self, inp: crate::model::ImageConfig) -> Self {
             self.inner = self.inner.image_config(inp);
             self

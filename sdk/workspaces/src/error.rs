@@ -858,6 +858,163 @@ impl std::error::Error for CreateTagsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CreateUpdatedWorkspaceImageError {
+    pub kind: CreateUpdatedWorkspaceImageErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateUpdatedWorkspaceImageErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    InvalidResourceStateException(crate::error::InvalidResourceStateException),
+    OperationNotSupportedException(crate::error::OperationNotSupportedException),
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateUpdatedWorkspaceImageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateUpdatedWorkspaceImageErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateUpdatedWorkspaceImageErrorKind::InvalidParameterValuesException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateUpdatedWorkspaceImageErrorKind::InvalidResourceStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateUpdatedWorkspaceImageErrorKind::OperationNotSupportedException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateUpdatedWorkspaceImageErrorKind::ResourceAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateUpdatedWorkspaceImageErrorKind::ResourceLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateUpdatedWorkspaceImageErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateUpdatedWorkspaceImageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateUpdatedWorkspaceImageError {
+    fn code(&self) -> Option<&str> {
+        CreateUpdatedWorkspaceImageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateUpdatedWorkspaceImageError {
+    pub fn new(kind: CreateUpdatedWorkspaceImageErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateUpdatedWorkspaceImageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateUpdatedWorkspaceImageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUpdatedWorkspaceImageErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUpdatedWorkspaceImageErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    pub fn is_invalid_resource_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUpdatedWorkspaceImageErrorKind::InvalidResourceStateException(_)
+        )
+    }
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUpdatedWorkspaceImageErrorKind::OperationNotSupportedException(_)
+        )
+    }
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUpdatedWorkspaceImageErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUpdatedWorkspaceImageErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUpdatedWorkspaceImageErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateUpdatedWorkspaceImageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateUpdatedWorkspaceImageErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateUpdatedWorkspaceImageErrorKind::InvalidParameterValuesException(_inner) => {
+                Some(_inner)
+            }
+            CreateUpdatedWorkspaceImageErrorKind::InvalidResourceStateException(_inner) => {
+                Some(_inner)
+            }
+            CreateUpdatedWorkspaceImageErrorKind::OperationNotSupportedException(_inner) => {
+                Some(_inner)
+            }
+            CreateUpdatedWorkspaceImageErrorKind::ResourceAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            CreateUpdatedWorkspaceImageErrorKind::ResourceLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateUpdatedWorkspaceImageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateUpdatedWorkspaceImageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct CreateWorkspaceBundleError {
     pub kind: CreateWorkspaceBundleErrorKind,
     pub(crate) meta: smithy_types::Error,

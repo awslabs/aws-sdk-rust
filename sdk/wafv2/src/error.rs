@@ -6016,9 +6016,7 @@ impl WafInvalidResourceException {
 /// example: </p>
 /// <ul>
 /// <li>
-/// <p>You specified
-/// a
-/// parameter name or value that isn't valid.</p>
+/// <p>You specified a parameter name or value that isn't valid.</p>
 /// </li>
 /// <li>
 /// <p>Your nested statement isn't valid. You might have tried to nest a statement that

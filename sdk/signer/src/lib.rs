@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>AWS Signer is a fully managed code signing service to help you ensure the trust and
 //! integrity of your code. </p>
 //! <p>AWS Signer supports the following applications:</p>

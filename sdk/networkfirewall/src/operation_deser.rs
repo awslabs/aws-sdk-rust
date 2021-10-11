@@ -1014,6 +1014,24 @@ pub fn parse_delete_resource_policy_error(
                 tmp
             }),
         },
+        "InvalidResourcePolicyException" => crate::error::DeleteResourcePolicyError {
+            meta: generic,
+            kind: crate::error::DeleteResourcePolicyErrorKind::InvalidResourcePolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_resource_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_resource_policy_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::DeleteResourcePolicyError {
             meta: generic,
             kind: crate::error::DeleteResourcePolicyErrorKind::ResourceNotFoundException({

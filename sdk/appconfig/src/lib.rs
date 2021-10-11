@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>AWS AppConfig</fullname>
 //! <p>Use AWS AppConfig, a capability of AWS Systems Manager, to create, manage, and quickly deploy
 //! application configurations. AppConfig supports controlled deployments to applications of any

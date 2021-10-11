@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>EC2 Image Builder is a fully managed Amazon Web Services service that makes it easier to automate the
 //! creation, management, and deployment of customized, secure, and up-to-date "golden" server
 //! images that are pre-installed and pre-configured with software and settings to meet specific

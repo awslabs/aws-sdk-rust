@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Batch</fullname>
 //! <p>Using Batch, you can run batch computing workloads on the Cloud. Batch computing is a common means for
 //! developers, scientists, and engineers to access large amounts of compute resources. Batch uses the advantages of

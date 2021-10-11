@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>AWS Snow Family is a petabyte-scale data transport solution that uses secure devices to
 //! transfer large amounts of data between your on-premises data centers and Amazon Simple Storage
 //! Service (Amazon S3). The Snow commands described here provide access to the same

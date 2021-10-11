@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>This is the Amazon Lookout for Vision API Reference. It provides descriptions of actions,
 //! data types, common parameters, and common errors.</p>
 //! <p>Amazon Lookout for Vision enables you to find visual defects in industrial products,

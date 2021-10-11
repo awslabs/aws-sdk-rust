@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>An AWS Elemental MediaStore container is a namespace that holds folders and objects.
 //! You use a container endpoint to create, read, and delete objects. </p>
 

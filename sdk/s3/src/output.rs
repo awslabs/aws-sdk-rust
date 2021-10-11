@@ -47,7 +47,7 @@ pub struct UploadPartCopyOutput {
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
     /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed customer master key (CMK) that was used for the object.</p>
+    /// customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
@@ -151,7 +151,7 @@ pub mod upload_part_copy_output {
             self
         }
         /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed customer master key (CMK) that was used for the object.</p>
+        /// customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
@@ -223,7 +223,7 @@ pub struct UploadPartOutput {
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
     /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed customer master key (CMK) was used for the object.</p>
+    /// customer managed key was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
@@ -309,7 +309,7 @@ pub mod upload_part_output {
             self
         }
         /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed customer master key (CMK) was used for the object.</p>
+        /// customer managed key was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
@@ -800,7 +800,7 @@ pub struct PutObjectOutput {
     pub expiration: std::option::Option<std::string::String>,
     /// <p>Entity tag for the uploaded object.</p>
     pub e_tag: std::option::Option<std::string::String>,
-    /// <p>If you specified server-side encryption either with an Amazon Web Services KMS customer master key (CMK)
+    /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key
     /// or Amazon S3-managed encryption key in your PUT request, the response includes this header. It
     /// confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
@@ -815,7 +815,7 @@ pub struct PutObjectOutput {
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
     /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
     /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
-    /// (Amazon Web Services KMS) symmetric customer managed customer master key (CMK) that was used for the
+    /// (Amazon Web Services KMS) symmetric customer managed key that was used for the
     /// object. </p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
@@ -885,7 +885,7 @@ pub mod put_object_output {
             self.e_tag = input;
             self
         }
-        /// <p>If you specified server-side encryption either with an Amazon Web Services KMS customer master key (CMK)
+        /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key
         /// or Amazon S3-managed encryption key in your PUT request, the response includes this header. It
         /// confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
@@ -937,7 +937,7 @@ pub mod put_object_output {
         }
         /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
         /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
-        /// (Amazon Web Services KMS) symmetric customer managed customer master key (CMK) that was used for the
+        /// (Amazon Web Services KMS) symmetric customer managed key that was used for the
         /// object. </p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
@@ -3429,8 +3429,8 @@ pub struct HeadObjectOutput {
     /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
     /// the object metadata.</p>
     pub website_redirect_location: std::option::Option<std::string::String>,
-    /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS customer
-    /// master key (CMK) or an Amazon S3-managed encryption key, the response includes this header with
+    /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or
+    /// an Amazon S3-managed encryption key, the response includes this header with
     /// the value of the server-side encryption algorithm used when storing this object in Amazon
     /// S3 (for example, AES256, aws:kms).</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
@@ -3445,7 +3445,7 @@ pub struct HeadObjectOutput {
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
     /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed customer master key (CMK) that was used for the object.</p>
+    /// customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
@@ -3791,8 +3791,8 @@ pub mod head_object_output {
             self.website_redirect_location = input;
             self
         }
-        /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS customer
-        /// master key (CMK) or an Amazon S3-managed encryption key, the response includes this header with
+        /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or
+        /// an Amazon S3-managed encryption key, the response includes this header with
         /// the value of the server-side encryption algorithm used when storing this object in Amazon
         /// S3 (for example, AES256, aws:kms).</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
@@ -3853,7 +3853,7 @@ pub mod head_object_output {
             self
         }
         /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed customer master key (CMK) that was used for the object.</p>
+        /// customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
@@ -4565,7 +4565,7 @@ pub struct GetObjectOutput {
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
     /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed customer master key (CMK) that was used for the object.</p>
+    /// customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
@@ -4938,7 +4938,7 @@ pub mod get_object_output {
             self
         }
         /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed customer master key (CMK) that was used for the object.</p>
+        /// customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
@@ -6935,7 +6935,7 @@ pub struct CreateMultipartUploadOutput {
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
     /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed customer master key (CMK) that was used for the object.</p>
+    /// customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
     /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
@@ -7087,7 +7087,7 @@ pub mod create_multipart_upload_output {
             self
         }
         /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed customer master key (CMK) that was used for the object.</p>
+        /// customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
@@ -7233,7 +7233,7 @@ pub struct CopyObjectOutput {
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
     /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed customer master key (CMK) that was used for the object.</p>
+    /// customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
     /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
@@ -7367,7 +7367,7 @@ pub mod copy_object_output {
             self
         }
         /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed customer master key (CMK) that was used for the object.</p>
+        /// customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
@@ -7461,7 +7461,7 @@ pub struct CompleteMultipartUploadOutput {
     /// will consist of less than 32 or more than 32 hexadecimal digits.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an
-    /// Amazon Web Services KMS customer master key (CMK) in your initiate multipart upload request, the response
+    /// Amazon Web Services KMS key in your initiate multipart upload request, the response
     /// includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the
     /// object.</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
@@ -7469,7 +7469,7 @@ pub struct CompleteMultipartUploadOutput {
     /// on.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed customer master key (CMK) that was used for the object.</p>
+    /// customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
@@ -7564,7 +7564,7 @@ pub mod complete_multipart_upload_output {
             self
         }
         /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an
-        /// Amazon Web Services KMS customer master key (CMK) in your initiate multipart upload request, the response
+        /// Amazon Web Services KMS key in your initiate multipart upload request, the response
         /// includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the
         /// object.</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
@@ -7589,7 +7589,7 @@ pub mod complete_multipart_upload_output {
             self
         }
         /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed customer master key (CMK) that was used for the object.</p>
+        /// customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self

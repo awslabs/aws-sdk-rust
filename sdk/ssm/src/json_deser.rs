@@ -6441,6 +6441,19 @@ pub fn deser_operation_crate_operation_get_maintenance_window_task(
                                 .transpose()?,
                         );
                     }
+                    "CutoffBehavior" => {
+                        builder = builder.set_cutoff_behavior(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| {
+                                    s.to_unescaped().map(|u| {
+                                        crate::model::MaintenanceWindowTaskCutoffBehavior::from(
+                                            u.as_ref(),
+                                        )
+                                    })
+                                })
+                                .transpose()?,
+                        );
+                    }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -10845,6 +10858,19 @@ pub fn deser_operation_crate_operation_update_maintenance_window_task(
                         builder = builder.set_description(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "CutoffBehavior" => {
+                        builder = builder.set_cutoff_behavior(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| {
+                                    s.to_unescaped().map(|u| {
+                                        crate::model::MaintenanceWindowTaskCutoffBehavior::from(
+                                            u.as_ref(),
+                                        )
+                                    })
+                                })
                                 .transpose()?,
                         );
                     }
@@ -18951,6 +18977,21 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "CutoffBehavior" => {
+                                builder = builder.set_cutoff_behavior(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::MaintenanceWindowTaskCutoffBehavior::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
                                     .transpose()?,
                                 );
                             }

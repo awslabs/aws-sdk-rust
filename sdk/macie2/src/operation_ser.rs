@@ -229,6 +229,19 @@ pub fn serialize_operation_crate_operation_list_findings(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_list_managed_data_identifiers(
+    input: &crate::input::ListManagedDataIdentifiersInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_managed_data_identifiers_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_put_classification_export_configuration(
     input: &crate::input::PutClassificationExportConfigurationInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

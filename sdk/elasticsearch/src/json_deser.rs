@@ -5756,6 +5756,18 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "EngineType" => {
+                                builder = builder.set_engine_type(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::EngineType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

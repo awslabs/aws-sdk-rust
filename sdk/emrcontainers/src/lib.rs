@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you to run
 //! open-source big data frameworks on Amazon Elastic Kubernetes Service (Amazon EKS). With
 //! this deployment option, you can focus on running analytics workloads while Amazon EMR on

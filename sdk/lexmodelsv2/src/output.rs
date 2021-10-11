@@ -3077,6 +3077,277 @@ impl ListBotAliasesOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAggregatedUtterancesOutput {
+    /// <p>The identifier of the bot that contains the utterances.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the bot alias that contains the utterances. If you
+    /// specified the bot version, the bot alias ID isn't returned.</p>
+    pub bot_alias_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the bot version that contains the utterances. If
+    /// you specified the bot alias, the bot version isn't returned.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The identifier of the language and locale that the utterances are
+    /// in.</p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The time period used to aggregate the utterance data.</p>
+    pub aggregation_duration: std::option::Option<crate::model::UtteranceAggregationDuration>,
+    /// <p>The date and time that the aggregation window begins. Only data
+    /// collected after this time is returned in the results.</p>
+    pub aggregation_window_start_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The date and time that the aggregation window ends. Only data
+    /// collected between the start time and the end time are returned in the
+    /// results. </p>
+    pub aggregation_window_end_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The last date and time that the aggregated data was collected. The
+    /// time period depends on the length of the aggregation window.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>Hours</b> - for 1 hour time
+    /// window, every half hour; otherwise every hour.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Days</b> - every 6 hours</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>Weeks</b> - for a one week time
+    /// window, every 12 hours; otherwise, every day</p>
+    /// </li>
+    /// </ul>
+    pub aggregation_last_refreshed_date_time: std::option::Option<smithy_types::Instant>,
+    /// <p>Summaries of the aggregated utterance data. Each response contains
+    /// information about the number of times that the utterance was seen
+    /// during the time period, whether it was detected or missed, and when it
+    /// was seen during the time period.</p>
+    pub aggregated_utterances_summaries:
+        std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesSummary>>,
+    /// <p>A token that indicates whether there are more results to return in a
+    /// response to the <code>ListAggregatedUtterances</code> operation. If the
+    /// <code>nextToken</code> field is present, you send the contents as
+    /// the <code>nextToken</code> parameter of a
+    /// <code>ListAggregatedUtterances</code> operation request to get the
+    /// next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListAggregatedUtterancesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAggregatedUtterancesOutput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_alias_id", &self.bot_alias_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("aggregation_duration", &self.aggregation_duration);
+        formatter.field(
+            "aggregation_window_start_time",
+            &self.aggregation_window_start_time,
+        );
+        formatter.field(
+            "aggregation_window_end_time",
+            &self.aggregation_window_end_time,
+        );
+        formatter.field(
+            "aggregation_last_refreshed_date_time",
+            &self.aggregation_last_refreshed_date_time,
+        );
+        formatter.field(
+            "aggregated_utterances_summaries",
+            &self.aggregated_utterances_summaries,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListAggregatedUtterancesOutput`](crate::output::ListAggregatedUtterancesOutput)
+pub mod list_aggregated_utterances_output {
+    /// A builder for [`ListAggregatedUtterancesOutput`](crate::output::ListAggregatedUtterancesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_alias_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) aggregation_duration:
+            std::option::Option<crate::model::UtteranceAggregationDuration>,
+        pub(crate) aggregation_window_start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) aggregation_window_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) aggregation_last_refreshed_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) aggregated_utterances_summaries:
+            std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the bot that contains the utterances.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The identifier of the bot alias that contains the utterances. If you
+        /// specified the bot version, the bot alias ID isn't returned.</p>
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_alias_id = Some(input.into());
+            self
+        }
+        pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_alias_id = input;
+            self
+        }
+        /// <p>The identifier of the bot version that contains the utterances. If
+        /// you specified the bot alias, the bot version isn't returned.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The identifier of the language and locale that the utterances are
+        /// in.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The time period used to aggregate the utterance data.</p>
+        pub fn aggregation_duration(
+            mut self,
+            input: crate::model::UtteranceAggregationDuration,
+        ) -> Self {
+            self.aggregation_duration = Some(input);
+            self
+        }
+        pub fn set_aggregation_duration(
+            mut self,
+            input: std::option::Option<crate::model::UtteranceAggregationDuration>,
+        ) -> Self {
+            self.aggregation_duration = input;
+            self
+        }
+        /// <p>The date and time that the aggregation window begins. Only data
+        /// collected after this time is returned in the results.</p>
+        pub fn aggregation_window_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.aggregation_window_start_time = Some(input);
+            self
+        }
+        pub fn set_aggregation_window_start_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.aggregation_window_start_time = input;
+            self
+        }
+        /// <p>The date and time that the aggregation window ends. Only data
+        /// collected between the start time and the end time are returned in the
+        /// results. </p>
+        pub fn aggregation_window_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.aggregation_window_end_time = Some(input);
+            self
+        }
+        pub fn set_aggregation_window_end_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.aggregation_window_end_time = input;
+            self
+        }
+        /// <p>The last date and time that the aggregated data was collected. The
+        /// time period depends on the length of the aggregation window.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Hours</b> - for 1 hour time
+        /// window, every half hour; otherwise every hour.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Days</b> - every 6 hours</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Weeks</b> - for a one week time
+        /// window, every 12 hours; otherwise, every day</p>
+        /// </li>
+        /// </ul>
+        pub fn aggregation_last_refreshed_date_time(
+            mut self,
+            input: smithy_types::Instant,
+        ) -> Self {
+            self.aggregation_last_refreshed_date_time = Some(input);
+            self
+        }
+        pub fn set_aggregation_last_refreshed_date_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.aggregation_last_refreshed_date_time = input;
+            self
+        }
+        pub fn aggregated_utterances_summaries(
+            mut self,
+            input: impl Into<crate::model::AggregatedUtterancesSummary>,
+        ) -> Self {
+            let mut v = self.aggregated_utterances_summaries.unwrap_or_default();
+            v.push(input.into());
+            self.aggregated_utterances_summaries = Some(v);
+            self
+        }
+        pub fn set_aggregated_utterances_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesSummary>>,
+        ) -> Self {
+            self.aggregated_utterances_summaries = input;
+            self
+        }
+        /// <p>A token that indicates whether there are more results to return in a
+        /// response to the <code>ListAggregatedUtterances</code> operation. If the
+        /// <code>nextToken</code> field is present, you send the contents as
+        /// the <code>nextToken</code> parameter of a
+        /// <code>ListAggregatedUtterances</code> operation request to get the
+        /// next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAggregatedUtterancesOutput`](crate::output::ListAggregatedUtterancesOutput)
+        pub fn build(self) -> crate::output::ListAggregatedUtterancesOutput {
+            crate::output::ListAggregatedUtterancesOutput {
+                bot_id: self.bot_id,
+                bot_alias_id: self.bot_alias_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                aggregation_duration: self.aggregation_duration,
+                aggregation_window_start_time: self.aggregation_window_start_time,
+                aggregation_window_end_time: self.aggregation_window_end_time,
+                aggregation_last_refreshed_date_time: self.aggregation_last_refreshed_date_time,
+                aggregated_utterances_summaries: self.aggregated_utterances_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAggregatedUtterancesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAggregatedUtterancesOutput`](crate::output::ListAggregatedUtterancesOutput)
+    pub fn builder() -> crate::output::list_aggregated_utterances_output::Builder {
+        crate::output::list_aggregated_utterances_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSlotTypeOutput {
     /// <p>The unique identifier for the slot type.</p>
     pub slot_type_id: std::option::Option<std::string::String>,
@@ -5308,6 +5579,35 @@ impl DescribeBotOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotOutput`](crate::output::DescribeBotOutput)
     pub fn builder() -> crate::output::describe_bot_output::Builder {
         crate::output::describe_bot_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteUtterancesOutput {}
+impl std::fmt::Debug for DeleteUtterancesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteUtterancesOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput)
+pub mod delete_utterances_output {
+    /// A builder for [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput)
+        pub fn build(self) -> crate::output::DeleteUtterancesOutput {
+            crate::output::DeleteUtterancesOutput {}
+        }
+    }
+}
+impl DeleteUtterancesOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput)
+    pub fn builder() -> crate::output::delete_utterances_output::Builder {
+        crate::output::delete_utterances_output::Builder::default()
     }
 }
 

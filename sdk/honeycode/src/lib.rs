@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>
 //! Amazon Honeycode is a fully managed service that allows you to quickly build mobile and web apps for teams—without
 //! programming. Build Honeycode apps for managing almost anything, like projects, customers, operations, approvals,

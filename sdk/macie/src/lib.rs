@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Macie Classic</fullname>
 //! <p>Amazon Macie Classic is a security service that uses machine learning to automatically
 //! discover, classify, and protect sensitive data in AWS. Macie Classic recognizes sensitive data

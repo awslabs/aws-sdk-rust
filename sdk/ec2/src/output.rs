@@ -5090,6 +5090,52 @@ impl ModifyClientVpnEndpointOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyCapacityReservationFleetOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub r#return: std::option::Option<bool>,
+}
+impl std::fmt::Debug for ModifyCapacityReservationFleetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyCapacityReservationFleetOutput");
+        formatter.field("r#return", &self.r#return);
+        formatter.finish()
+    }
+}
+/// See [`ModifyCapacityReservationFleetOutput`](crate::output::ModifyCapacityReservationFleetOutput)
+pub mod modify_capacity_reservation_fleet_output {
+    /// A builder for [`ModifyCapacityReservationFleetOutput`](crate::output::ModifyCapacityReservationFleetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#return: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
+            self
+        }
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyCapacityReservationFleetOutput`](crate::output::ModifyCapacityReservationFleetOutput)
+        pub fn build(self) -> crate::output::ModifyCapacityReservationFleetOutput {
+            crate::output::ModifyCapacityReservationFleetOutput {
+                r#return: self.r#return,
+            }
+        }
+    }
+}
+impl ModifyCapacityReservationFleetOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyCapacityReservationFleetOutput`](crate::output::ModifyCapacityReservationFleetOutput)
+    pub fn builder() -> crate::output::modify_capacity_reservation_fleet_output::Builder {
+        crate::output::modify_capacity_reservation_fleet_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyCapacityReservationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
@@ -5851,6 +5897,145 @@ impl ImportClientVpnClientCertificateRevocationListOutput {
     ) -> crate::output::import_client_vpn_client_certificate_revocation_list_output::Builder {
         crate::output::import_client_vpn_client_certificate_revocation_list_output::Builder::default(
         )
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetVpnConnectionDeviceTypesOutput {
+    /// <p>List of customer gateway devices that have a sample configuration file available for
+    /// use.</p>
+    pub vpn_connection_device_types:
+        std::option::Option<std::vec::Vec<crate::model::VpnConnectionDeviceType>>,
+    /// <p>The <code>NextToken</code> value to include in a future
+    /// <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
+    /// <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
+    /// this value can be used to retrieve the next page of results. This value is null when
+    /// there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetVpnConnectionDeviceTypesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetVpnConnectionDeviceTypesOutput");
+        formatter.field(
+            "vpn_connection_device_types",
+            &self.vpn_connection_device_types,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetVpnConnectionDeviceTypesOutput`](crate::output::GetVpnConnectionDeviceTypesOutput)
+pub mod get_vpn_connection_device_types_output {
+    /// A builder for [`GetVpnConnectionDeviceTypesOutput`](crate::output::GetVpnConnectionDeviceTypesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpn_connection_device_types:
+            std::option::Option<std::vec::Vec<crate::model::VpnConnectionDeviceType>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn vpn_connection_device_types(
+            mut self,
+            input: impl Into<crate::model::VpnConnectionDeviceType>,
+        ) -> Self {
+            let mut v = self.vpn_connection_device_types.unwrap_or_default();
+            v.push(input.into());
+            self.vpn_connection_device_types = Some(v);
+            self
+        }
+        pub fn set_vpn_connection_device_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VpnConnectionDeviceType>>,
+        ) -> Self {
+            self.vpn_connection_device_types = input;
+            self
+        }
+        /// <p>The <code>NextToken</code> value to include in a future
+        /// <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
+        /// <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
+        /// this value can be used to retrieve the next page of results. This value is null when
+        /// there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetVpnConnectionDeviceTypesOutput`](crate::output::GetVpnConnectionDeviceTypesOutput)
+        pub fn build(self) -> crate::output::GetVpnConnectionDeviceTypesOutput {
+            crate::output::GetVpnConnectionDeviceTypesOutput {
+                vpn_connection_device_types: self.vpn_connection_device_types,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetVpnConnectionDeviceTypesOutput {
+    /// Creates a new builder-style object to manufacture [`GetVpnConnectionDeviceTypesOutput`](crate::output::GetVpnConnectionDeviceTypesOutput)
+    pub fn builder() -> crate::output::get_vpn_connection_device_types_output::Builder {
+        crate::output::get_vpn_connection_device_types_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetVpnConnectionDeviceSampleConfigurationOutput {
+    /// <p>Sample configuration file for the specified customer gateway device.</p>
+    pub vpn_connection_device_sample_configuration: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetVpnConnectionDeviceSampleConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetVpnConnectionDeviceSampleConfigurationOutput");
+        formatter.field(
+            "vpn_connection_device_sample_configuration",
+            &"*** Sensitive Data Redacted ***",
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetVpnConnectionDeviceSampleConfigurationOutput`](crate::output::GetVpnConnectionDeviceSampleConfigurationOutput)
+pub mod get_vpn_connection_device_sample_configuration_output {
+    /// A builder for [`GetVpnConnectionDeviceSampleConfigurationOutput`](crate::output::GetVpnConnectionDeviceSampleConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpn_connection_device_sample_configuration:
+            std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Sample configuration file for the specified customer gateway device.</p>
+        pub fn vpn_connection_device_sample_configuration(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.vpn_connection_device_sample_configuration = Some(input.into());
+            self
+        }
+        pub fn set_vpn_connection_device_sample_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpn_connection_device_sample_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetVpnConnectionDeviceSampleConfigurationOutput`](crate::output::GetVpnConnectionDeviceSampleConfigurationOutput)
+        pub fn build(self) -> crate::output::GetVpnConnectionDeviceSampleConfigurationOutput {
+            crate::output::GetVpnConnectionDeviceSampleConfigurationOutput {
+                vpn_connection_device_sample_configuration: self
+                    .vpn_connection_device_sample_configuration,
+            }
+        }
+    }
+}
+impl GetVpnConnectionDeviceSampleConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetVpnConnectionDeviceSampleConfigurationOutput`](crate::output::GetVpnConnectionDeviceSampleConfigurationOutput)
+    pub fn builder() -> crate::output::get_vpn_connection_device_sample_configuration_output::Builder
+    {
+        crate::output::get_vpn_connection_device_sample_configuration_output::Builder::default()
     }
 }
 
@@ -18336,6 +18521,78 @@ impl DescribeCapacityReservationsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeCapacityReservationFleetsOutput {
+    /// <p>Information about the Capacity Reservation Fleets.</p>
+    pub capacity_reservation_fleets:
+        std::option::Option<std::vec::Vec<crate::model::CapacityReservationFleet>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeCapacityReservationFleetsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeCapacityReservationFleetsOutput");
+        formatter.field(
+            "capacity_reservation_fleets",
+            &self.capacity_reservation_fleets,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeCapacityReservationFleetsOutput`](crate::output::DescribeCapacityReservationFleetsOutput)
+pub mod describe_capacity_reservation_fleets_output {
+    /// A builder for [`DescribeCapacityReservationFleetsOutput`](crate::output::DescribeCapacityReservationFleetsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) capacity_reservation_fleets:
+            std::option::Option<std::vec::Vec<crate::model::CapacityReservationFleet>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn capacity_reservation_fleets(
+            mut self,
+            input: impl Into<crate::model::CapacityReservationFleet>,
+        ) -> Self {
+            let mut v = self.capacity_reservation_fleets.unwrap_or_default();
+            v.push(input.into());
+            self.capacity_reservation_fleets = Some(v);
+            self
+        }
+        pub fn set_capacity_reservation_fleets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CapacityReservationFleet>>,
+        ) -> Self {
+            self.capacity_reservation_fleets = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeCapacityReservationFleetsOutput`](crate::output::DescribeCapacityReservationFleetsOutput)
+        pub fn build(self) -> crate::output::DescribeCapacityReservationFleetsOutput {
+            crate::output::DescribeCapacityReservationFleetsOutput {
+                capacity_reservation_fleets: self.capacity_reservation_fleets,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeCapacityReservationFleetsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCapacityReservationFleetsOutput`](crate::output::DescribeCapacityReservationFleetsOutput)
+    pub fn builder() -> crate::output::describe_capacity_reservation_fleets_output::Builder {
+        crate::output::describe_capacity_reservation_fleets_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeByoipCidrsOutput {
     /// <p>Information about your address ranges.</p>
     pub byoip_cidrs: std::option::Option<std::vec::Vec<crate::model::ByoipCidr>>,
@@ -25494,6 +25751,236 @@ impl CreateCarrierGatewayOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateCapacityReservationFleetOutput {
+    /// <p>The ID of the Capacity Reservation Fleet.</p>
+    pub capacity_reservation_fleet_id: std::option::Option<std::string::String>,
+    /// <p>The status of the Capacity Reservation Fleet.</p>
+    pub state: std::option::Option<crate::model::CapacityReservationFleetState>,
+    /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity.</p>
+    pub total_target_capacity: std::option::Option<i32>,
+    /// <p>The requested capacity units that have been successfully reserved.</p>
+    pub total_fulfilled_capacity: std::option::Option<f64>,
+    /// <p>The instance matching criteria for the Capacity Reservation Fleet.</p>
+    pub instance_match_criteria: std::option::Option<crate::model::FleetInstanceMatchCriteria>,
+    /// <p>The allocation strategy used by the Capacity Reservation Fleet.</p>
+    pub allocation_strategy: std::option::Option<std::string::String>,
+    /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
+    pub create_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
+    pub end_date: std::option::Option<smithy_types::Instant>,
+    /// <p>Indicates the tenancy of Capacity Reservation Fleet.</p>
+    pub tenancy: std::option::Option<crate::model::FleetCapacityReservationTenancy>,
+    /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
+    pub fleet_capacity_reservations:
+        std::option::Option<std::vec::Vec<crate::model::FleetCapacityReservation>>,
+    /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for CreateCapacityReservationFleetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateCapacityReservationFleetOutput");
+        formatter.field(
+            "capacity_reservation_fleet_id",
+            &self.capacity_reservation_fleet_id,
+        );
+        formatter.field("state", &self.state);
+        formatter.field("total_target_capacity", &self.total_target_capacity);
+        formatter.field("total_fulfilled_capacity", &self.total_fulfilled_capacity);
+        formatter.field("instance_match_criteria", &self.instance_match_criteria);
+        formatter.field("allocation_strategy", &self.allocation_strategy);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("end_date", &self.end_date);
+        formatter.field("tenancy", &self.tenancy);
+        formatter.field(
+            "fleet_capacity_reservations",
+            &self.fleet_capacity_reservations,
+        );
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`CreateCapacityReservationFleetOutput`](crate::output::CreateCapacityReservationFleetOutput)
+pub mod create_capacity_reservation_fleet_output {
+    /// A builder for [`CreateCapacityReservationFleetOutput`](crate::output::CreateCapacityReservationFleetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) capacity_reservation_fleet_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::CapacityReservationFleetState>,
+        pub(crate) total_target_capacity: std::option::Option<i32>,
+        pub(crate) total_fulfilled_capacity: std::option::Option<f64>,
+        pub(crate) instance_match_criteria:
+            std::option::Option<crate::model::FleetInstanceMatchCriteria>,
+        pub(crate) allocation_strategy: std::option::Option<std::string::String>,
+        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) tenancy: std::option::Option<crate::model::FleetCapacityReservationTenancy>,
+        pub(crate) fleet_capacity_reservations:
+            std::option::Option<std::vec::Vec<crate::model::FleetCapacityReservation>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The ID of the Capacity Reservation Fleet.</p>
+        pub fn capacity_reservation_fleet_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_id = Some(input.into());
+            self
+        }
+        pub fn set_capacity_reservation_fleet_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_id = input;
+            self
+        }
+        /// <p>The status of the Capacity Reservation Fleet.</p>
+        pub fn state(mut self, input: crate::model::CapacityReservationFleetState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::CapacityReservationFleetState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity.</p>
+        pub fn total_target_capacity(mut self, input: i32) -> Self {
+            self.total_target_capacity = Some(input);
+            self
+        }
+        pub fn set_total_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_target_capacity = input;
+            self
+        }
+        /// <p>The requested capacity units that have been successfully reserved.</p>
+        pub fn total_fulfilled_capacity(mut self, input: f64) -> Self {
+            self.total_fulfilled_capacity = Some(input);
+            self
+        }
+        pub fn set_total_fulfilled_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.total_fulfilled_capacity = input;
+            self
+        }
+        /// <p>The instance matching criteria for the Capacity Reservation Fleet.</p>
+        pub fn instance_match_criteria(
+            mut self,
+            input: crate::model::FleetInstanceMatchCriteria,
+        ) -> Self {
+            self.instance_match_criteria = Some(input);
+            self
+        }
+        pub fn set_instance_match_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FleetInstanceMatchCriteria>,
+        ) -> Self {
+            self.instance_match_criteria = input;
+            self
+        }
+        /// <p>The allocation strategy used by the Capacity Reservation Fleet.</p>
+        pub fn allocation_strategy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.allocation_strategy = Some(input.into());
+            self
+        }
+        pub fn set_allocation_strategy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.allocation_strategy = input;
+            self
+        }
+        /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
+        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.create_time = Some(input);
+            self
+        }
+        pub fn set_create_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_time = input;
+            self
+        }
+        /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
+        pub fn end_date(mut self, input: smithy_types::Instant) -> Self {
+            self.end_date = Some(input);
+            self
+        }
+        pub fn set_end_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_date = input;
+            self
+        }
+        /// <p>Indicates the tenancy of Capacity Reservation Fleet.</p>
+        pub fn tenancy(mut self, input: crate::model::FleetCapacityReservationTenancy) -> Self {
+            self.tenancy = Some(input);
+            self
+        }
+        pub fn set_tenancy(
+            mut self,
+            input: std::option::Option<crate::model::FleetCapacityReservationTenancy>,
+        ) -> Self {
+            self.tenancy = input;
+            self
+        }
+        pub fn fleet_capacity_reservations(
+            mut self,
+            input: impl Into<crate::model::FleetCapacityReservation>,
+        ) -> Self {
+            let mut v = self.fleet_capacity_reservations.unwrap_or_default();
+            v.push(input.into());
+            self.fleet_capacity_reservations = Some(v);
+            self
+        }
+        pub fn set_fleet_capacity_reservations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FleetCapacityReservation>>,
+        ) -> Self {
+            self.fleet_capacity_reservations = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateCapacityReservationFleetOutput`](crate::output::CreateCapacityReservationFleetOutput)
+        pub fn build(self) -> crate::output::CreateCapacityReservationFleetOutput {
+            crate::output::CreateCapacityReservationFleetOutput {
+                capacity_reservation_fleet_id: self.capacity_reservation_fleet_id,
+                state: self.state,
+                total_target_capacity: self.total_target_capacity,
+                total_fulfilled_capacity: self.total_fulfilled_capacity,
+                instance_match_criteria: self.instance_match_criteria,
+                allocation_strategy: self.allocation_strategy,
+                create_time: self.create_time,
+                end_date: self.end_date,
+                tenancy: self.tenancy,
+                fleet_capacity_reservations: self.fleet_capacity_reservations,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl CreateCapacityReservationFleetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCapacityReservationFleetOutput`](crate::output::CreateCapacityReservationFleetOutput)
+    pub fn builder() -> crate::output::create_capacity_reservation_fleet_output::Builder {
+        crate::output::create_capacity_reservation_fleet_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCapacityReservationOutput {
     /// <p>Information about the Capacity Reservation.</p>
     pub capacity_reservation: std::option::Option<crate::model::CapacityReservation>,
@@ -26104,6 +26591,97 @@ impl CancelConversionTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelConversionTaskOutput`](crate::output::CancelConversionTaskOutput)
     pub fn builder() -> crate::output::cancel_conversion_task_output::Builder {
         crate::output::cancel_conversion_task_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelCapacityReservationFleetsOutput {
+    /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
+    pub successful_fleet_cancellations:
+        std::option::Option<std::vec::Vec<crate::model::CapacityReservationFleetCancellationState>>,
+    /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
+    pub failed_fleet_cancellations: std::option::Option<
+        std::vec::Vec<crate::model::FailedCapacityReservationFleetCancellationResult>,
+    >,
+}
+impl std::fmt::Debug for CancelCapacityReservationFleetsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelCapacityReservationFleetsOutput");
+        formatter.field(
+            "successful_fleet_cancellations",
+            &self.successful_fleet_cancellations,
+        );
+        formatter.field(
+            "failed_fleet_cancellations",
+            &self.failed_fleet_cancellations,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CancelCapacityReservationFleetsOutput`](crate::output::CancelCapacityReservationFleetsOutput)
+pub mod cancel_capacity_reservation_fleets_output {
+    /// A builder for [`CancelCapacityReservationFleetsOutput`](crate::output::CancelCapacityReservationFleetsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) successful_fleet_cancellations: std::option::Option<
+            std::vec::Vec<crate::model::CapacityReservationFleetCancellationState>,
+        >,
+        pub(crate) failed_fleet_cancellations: std::option::Option<
+            std::vec::Vec<crate::model::FailedCapacityReservationFleetCancellationResult>,
+        >,
+    }
+    impl Builder {
+        pub fn successful_fleet_cancellations(
+            mut self,
+            input: impl Into<crate::model::CapacityReservationFleetCancellationState>,
+        ) -> Self {
+            let mut v = self.successful_fleet_cancellations.unwrap_or_default();
+            v.push(input.into());
+            self.successful_fleet_cancellations = Some(v);
+            self
+        }
+        pub fn set_successful_fleet_cancellations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::CapacityReservationFleetCancellationState>,
+            >,
+        ) -> Self {
+            self.successful_fleet_cancellations = input;
+            self
+        }
+        pub fn failed_fleet_cancellations(
+            mut self,
+            input: impl Into<crate::model::FailedCapacityReservationFleetCancellationResult>,
+        ) -> Self {
+            let mut v = self.failed_fleet_cancellations.unwrap_or_default();
+            v.push(input.into());
+            self.failed_fleet_cancellations = Some(v);
+            self
+        }
+        pub fn set_failed_fleet_cancellations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::FailedCapacityReservationFleetCancellationResult>,
+            >,
+        ) -> Self {
+            self.failed_fleet_cancellations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelCapacityReservationFleetsOutput`](crate::output::CancelCapacityReservationFleetsOutput)
+        pub fn build(self) -> crate::output::CancelCapacityReservationFleetsOutput {
+            crate::output::CancelCapacityReservationFleetsOutput {
+                successful_fleet_cancellations: self.successful_fleet_cancellations,
+                failed_fleet_cancellations: self.failed_fleet_cancellations,
+            }
+        }
+    }
+}
+impl CancelCapacityReservationFleetsOutput {
+    /// Creates a new builder-style object to manufacture [`CancelCapacityReservationFleetsOutput`](crate::output::CancelCapacityReservationFleetsOutput)
+    pub fn builder() -> crate::output::cancel_capacity_reservation_fleets_output::Builder {
+        crate::output::cancel_capacity_reservation_fleets_output::Builder::default()
     }
 }
 

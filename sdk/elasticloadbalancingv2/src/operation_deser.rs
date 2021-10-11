@@ -126,6 +126,23 @@ pub fn parse_add_tags_error(
                 tmp
             }),
         },
+        "ListenerNotFound" => crate::error::AddTagsError {
+            meta: generic,
+            kind: crate::error::AddTagsErrorKind::ListenerNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::listener_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "LoadBalancerNotFound" => crate::error::AddTagsError {
             meta: generic,
             kind: crate::error::AddTagsErrorKind::LoadBalancerNotFoundException({
@@ -136,6 +153,23 @@ pub fn parse_add_tags_error(
                         crate::error::load_balancer_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_load_balancer_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "RuleNotFound" => crate::error::AddTagsError {
+            meta: generic,
+            kind: crate::error::AddTagsErrorKind::RuleNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::rule_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_rule_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1178,6 +1212,23 @@ pub fn parse_delete_listener_error(
                     let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteListenerError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceInUse" => crate::error::DeleteListenerError {
+            meta: generic,
+            kind: crate::error::DeleteListenerErrorKind::ResourceInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_in_use_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteListenerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

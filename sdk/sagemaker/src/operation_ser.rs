@@ -2228,6 +2228,19 @@ pub fn serialize_operation_crate_operation_render_ui_template(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_retry_pipeline_execution(
+    input: &crate::input::RetryPipelineExecutionInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_retry_pipeline_execution_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_search(
     input: &crate::input::SearchInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

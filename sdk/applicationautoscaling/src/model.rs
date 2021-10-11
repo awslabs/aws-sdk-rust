@@ -130,6 +130,7 @@ pub enum ScalableDimension {
     EmrInstanceGroupInstanceCount,
     KafkaBrokerStorageVolumeSize,
     LambdaFunctionProvisionedConcurrency,
+    NeptuneClusterReadReplicaCount,
     RdsClusterReadReplicaCount,
     SageMakerVariantDesiredInstanceCount,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -179,6 +180,7 @@ impl std::convert::From<&str> for ScalableDimension {
             "lambda:function:ProvisionedConcurrency" => {
                 ScalableDimension::LambdaFunctionProvisionedConcurrency
             }
+            "neptune:cluster:ReadReplicaCount" => ScalableDimension::NeptuneClusterReadReplicaCount,
             "rds:cluster:ReadReplicaCount" => ScalableDimension::RdsClusterReadReplicaCount,
             "sagemaker:variant:DesiredInstanceCount" => {
                 ScalableDimension::SageMakerVariantDesiredInstanceCount
@@ -238,6 +240,7 @@ impl ScalableDimension {
             ScalableDimension::LambdaFunctionProvisionedConcurrency => {
                 "lambda:function:ProvisionedConcurrency"
             }
+            ScalableDimension::NeptuneClusterReadReplicaCount => "neptune:cluster:ReadReplicaCount",
             ScalableDimension::RdsClusterReadReplicaCount => "rds:cluster:ReadReplicaCount",
             ScalableDimension::SageMakerVariantDesiredInstanceCount => {
                 "sagemaker:variant:DesiredInstanceCount"
@@ -264,6 +267,7 @@ impl ScalableDimension {
             "elasticmapreduce:instancegroup:InstanceCount",
             "kafka:broker-storage:VolumeSize",
             "lambda:function:ProvisionedConcurrency",
+            "neptune:cluster:ReadReplicaCount",
             "rds:cluster:ReadReplicaCount",
             "sagemaker:variant:DesiredInstanceCount",
         ]
@@ -297,6 +301,7 @@ pub enum ServiceNamespace {
     Emr,
     Kafka,
     Lambda,
+    Neptune,
     Rds,
     Sagemaker,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -316,6 +321,7 @@ impl std::convert::From<&str> for ServiceNamespace {
             "elasticmapreduce" => ServiceNamespace::Emr,
             "kafka" => ServiceNamespace::Kafka,
             "lambda" => ServiceNamespace::Lambda,
+            "neptune" => ServiceNamespace::Neptune,
             "rds" => ServiceNamespace::Rds,
             "sagemaker" => ServiceNamespace::Sagemaker,
             other => ServiceNamespace::Unknown(other.to_owned()),
@@ -343,6 +349,7 @@ impl ServiceNamespace {
             ServiceNamespace::Emr => "elasticmapreduce",
             ServiceNamespace::Kafka => "kafka",
             ServiceNamespace::Lambda => "lambda",
+            ServiceNamespace::Neptune => "neptune",
             ServiceNamespace::Rds => "rds",
             ServiceNamespace::Sagemaker => "sagemaker",
             ServiceNamespace::Unknown(s) => s.as_ref(),
@@ -361,6 +368,7 @@ impl ServiceNamespace {
             "elasticmapreduce",
             "kafka",
             "lambda",
+            "neptune",
             "rds",
             "sagemaker",
         ]
@@ -543,22 +551,25 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// and a default value of 300 for the following scalable targets:</p>
     /// <ul>
     /// <li>
-    /// <p>ECS services</p>
-    /// </li>
-    /// <li>
-    /// <p>Spot Fleet requests</p>
-    /// </li>
-    /// <li>
-    /// <p>EMR clusters</p>
-    /// </li>
-    /// <li>
     /// <p>AppStream 2.0 fleets</p>
     /// </li>
     /// <li>
     /// <p>Aurora DB clusters</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variants</p>
+    /// <p>ECS services</p>
+    /// </li>
+    /// <li>
+    /// <p>EMR clusters</p>
+    /// </li>
+    /// <li>
+    /// <p> Neptune clusters</p>
+    /// </li>
+    /// <li>
+    /// <p>SageMaker endpoint variants</p>
+    /// </li>
+    /// <li>
+    /// <p>Spot Fleets</p>
     /// </li>
     /// <li>
     /// <p>Custom resources</p>
@@ -567,19 +578,16 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// <p>For all other scalable targets, the default value is 0:</p>
     /// <ul>
     /// <li>
-    /// <p>DynamoDB tables</p>
-    /// </li>
-    /// <li>
-    /// <p>DynamoDB global secondary indexes</p>
-    /// </li>
-    /// <li>
     /// <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
     /// </li>
     /// <li>
-    /// <p>Lambda provisioned concurrency</p>
+    /// <p>DynamoDB tables and global secondary indexes</p>
     /// </li>
     /// <li>
     /// <p>Amazon Keyspaces tables</p>
+    /// </li>
+    /// <li>
+    /// <p>Lambda provisioned concurrency</p>
     /// </li>
     /// <li>
     /// <p>Amazon MSK broker storage</p>
@@ -597,22 +605,25 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// and a default value of 300 for the following scalable targets:</p>
     /// <ul>
     /// <li>
-    /// <p>ECS services</p>
-    /// </li>
-    /// <li>
-    /// <p>Spot Fleet requests</p>
-    /// </li>
-    /// <li>
-    /// <p>EMR clusters</p>
-    /// </li>
-    /// <li>
     /// <p>AppStream 2.0 fleets</p>
     /// </li>
     /// <li>
     /// <p>Aurora DB clusters</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variants</p>
+    /// <p>ECS services</p>
+    /// </li>
+    /// <li>
+    /// <p>EMR clusters</p>
+    /// </li>
+    /// <li>
+    /// <p> Neptune clusters</p>
+    /// </li>
+    /// <li>
+    /// <p>SageMaker endpoint variants</p>
+    /// </li>
+    /// <li>
+    /// <p>Spot Fleets</p>
     /// </li>
     /// <li>
     /// <p>Custom resources</p>
@@ -621,19 +632,16 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// <p>For all other scalable targets, the default value is 0:</p>
     /// <ul>
     /// <li>
-    /// <p>DynamoDB tables</p>
-    /// </li>
-    /// <li>
-    /// <p>DynamoDB global secondary indexes</p>
-    /// </li>
-    /// <li>
     /// <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
     /// </li>
     /// <li>
-    /// <p>Lambda provisioned concurrency</p>
+    /// <p>DynamoDB tables and global secondary indexes</p>
     /// </li>
     /// <li>
     /// <p>Amazon Keyspaces tables</p>
+    /// </li>
+    /// <li>
+    /// <p>Lambda provisioned concurrency</p>
     /// </li>
     /// <li>
     /// <p>Amazon MSK broker storage</p>
@@ -739,22 +747,25 @@ pub mod target_tracking_scaling_policy_configuration {
         /// and a default value of 300 for the following scalable targets:</p>
         /// <ul>
         /// <li>
-        /// <p>ECS services</p>
-        /// </li>
-        /// <li>
-        /// <p>Spot Fleet requests</p>
-        /// </li>
-        /// <li>
-        /// <p>EMR clusters</p>
-        /// </li>
-        /// <li>
         /// <p>AppStream 2.0 fleets</p>
         /// </li>
         /// <li>
         /// <p>Aurora DB clusters</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variants</p>
+        /// <p>ECS services</p>
+        /// </li>
+        /// <li>
+        /// <p>EMR clusters</p>
+        /// </li>
+        /// <li>
+        /// <p> Neptune clusters</p>
+        /// </li>
+        /// <li>
+        /// <p>SageMaker endpoint variants</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleets</p>
         /// </li>
         /// <li>
         /// <p>Custom resources</p>
@@ -763,19 +774,16 @@ pub mod target_tracking_scaling_policy_configuration {
         /// <p>For all other scalable targets, the default value is 0:</p>
         /// <ul>
         /// <li>
-        /// <p>DynamoDB tables</p>
-        /// </li>
-        /// <li>
-        /// <p>DynamoDB global secondary indexes</p>
-        /// </li>
-        /// <li>
         /// <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
         /// </li>
         /// <li>
-        /// <p>Lambda provisioned concurrency</p>
+        /// <p>DynamoDB tables and global secondary indexes</p>
         /// </li>
         /// <li>
         /// <p>Amazon Keyspaces tables</p>
+        /// </li>
+        /// <li>
+        /// <p>Lambda provisioned concurrency</p>
         /// </li>
         /// <li>
         /// <p>Amazon MSK broker storage</p>
@@ -800,22 +808,25 @@ pub mod target_tracking_scaling_policy_configuration {
         /// and a default value of 300 for the following scalable targets:</p>
         /// <ul>
         /// <li>
-        /// <p>ECS services</p>
-        /// </li>
-        /// <li>
-        /// <p>Spot Fleet requests</p>
-        /// </li>
-        /// <li>
-        /// <p>EMR clusters</p>
-        /// </li>
-        /// <li>
         /// <p>AppStream 2.0 fleets</p>
         /// </li>
         /// <li>
         /// <p>Aurora DB clusters</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variants</p>
+        /// <p>ECS services</p>
+        /// </li>
+        /// <li>
+        /// <p>EMR clusters</p>
+        /// </li>
+        /// <li>
+        /// <p> Neptune clusters</p>
+        /// </li>
+        /// <li>
+        /// <p>SageMaker endpoint variants</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleets</p>
         /// </li>
         /// <li>
         /// <p>Custom resources</p>
@@ -824,19 +835,16 @@ pub mod target_tracking_scaling_policy_configuration {
         /// <p>For all other scalable targets, the default value is 0:</p>
         /// <ul>
         /// <li>
-        /// <p>DynamoDB tables</p>
-        /// </li>
-        /// <li>
-        /// <p>DynamoDB global secondary indexes</p>
-        /// </li>
-        /// <li>
         /// <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
         /// </li>
         /// <li>
-        /// <p>Lambda provisioned concurrency</p>
+        /// <p>DynamoDB tables and global secondary indexes</p>
         /// </li>
         /// <li>
         /// <p>Amazon Keyspaces tables</p>
+        /// </li>
+        /// <li>
+        /// <p>Lambda provisioned concurrency</p>
         /// </li>
         /// <li>
         /// <p>Amazon MSK broker storage</p>
@@ -1278,6 +1286,7 @@ pub enum MetricType {
     ElastiCacheReplicaEngineCpuUtilization,
     KafkaBrokerStorageUtilization,
     LambdaProvisionedConcurrencyUtilization,
+    NeptuneReaderAverageCpuUtilization,
     RdsReaderAverageCpuUtilization,
     RdsReaderAverageDatabaseConnections,
     SageMakerVariantInvocationsPerInstance,
@@ -1320,6 +1329,7 @@ impl std::convert::From<&str> for MetricType {
             "LambdaProvisionedConcurrencyUtilization" => {
                 MetricType::LambdaProvisionedConcurrencyUtilization
             }
+            "NeptuneReaderAverageCPUUtilization" => MetricType::NeptuneReaderAverageCpuUtilization,
             "RDSReaderAverageCPUUtilization" => MetricType::RdsReaderAverageCpuUtilization,
             "RDSReaderAverageDatabaseConnections" => {
                 MetricType::RdsReaderAverageDatabaseConnections
@@ -1374,6 +1384,7 @@ impl MetricType {
             MetricType::LambdaProvisionedConcurrencyUtilization => {
                 "LambdaProvisionedConcurrencyUtilization"
             }
+            MetricType::NeptuneReaderAverageCpuUtilization => "NeptuneReaderAverageCPUUtilization",
             MetricType::RdsReaderAverageCpuUtilization => "RDSReaderAverageCPUUtilization",
             MetricType::RdsReaderAverageDatabaseConnections => {
                 "RDSReaderAverageDatabaseConnections"
@@ -1403,6 +1414,7 @@ impl MetricType {
             "ElastiCacheReplicaEngineCPUUtilization",
             "KafkaBrokerStorageUtilization",
             "LambdaProvisionedConcurrencyUtilization",
+            "NeptuneReaderAverageCPUUtilization",
             "RDSReaderAverageCPUUtilization",
             "RDSReaderAverageDatabaseConnections",
             "SageMakerVariantInvocationsPerInstance",
@@ -1459,22 +1471,25 @@ pub struct StepScalingPolicyConfiguration {
     /// and a default value of 300 for the following scalable targets:</p>
     /// <ul>
     /// <li>
-    /// <p>ECS services</p>
-    /// </li>
-    /// <li>
-    /// <p>Spot Fleet requests</p>
-    /// </li>
-    /// <li>
-    /// <p>EMR clusters</p>
-    /// </li>
-    /// <li>
     /// <p>AppStream 2.0 fleets</p>
     /// </li>
     /// <li>
     /// <p>Aurora DB clusters</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variants</p>
+    /// <p>ECS services</p>
+    /// </li>
+    /// <li>
+    /// <p>EMR clusters</p>
+    /// </li>
+    /// <li>
+    /// <p> Neptune clusters</p>
+    /// </li>
+    /// <li>
+    /// <p>SageMaker endpoint variants</p>
+    /// </li>
+    /// <li>
+    /// <p>Spot Fleets</p>
     /// </li>
     /// <li>
     /// <p>Custom resources</p>
@@ -1483,19 +1498,16 @@ pub struct StepScalingPolicyConfiguration {
     /// <p>For all other scalable targets, the default value is 0:</p>
     /// <ul>
     /// <li>
-    /// <p>DynamoDB tables</p>
-    /// </li>
-    /// <li>
-    /// <p>DynamoDB global secondary indexes</p>
-    /// </li>
-    /// <li>
     /// <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
     /// </li>
     /// <li>
-    /// <p>Lambda provisioned concurrency</p>
+    /// <p>DynamoDB tables and global secondary indexes</p>
     /// </li>
     /// <li>
     /// <p>Amazon Keyspaces tables</p>
+    /// </li>
+    /// <li>
+    /// <p>Lambda provisioned concurrency</p>
     /// </li>
     /// <li>
     /// <p>Amazon MSK broker storage</p>
@@ -1598,22 +1610,25 @@ pub mod step_scaling_policy_configuration {
         /// and a default value of 300 for the following scalable targets:</p>
         /// <ul>
         /// <li>
-        /// <p>ECS services</p>
-        /// </li>
-        /// <li>
-        /// <p>Spot Fleet requests</p>
-        /// </li>
-        /// <li>
-        /// <p>EMR clusters</p>
-        /// </li>
-        /// <li>
         /// <p>AppStream 2.0 fleets</p>
         /// </li>
         /// <li>
         /// <p>Aurora DB clusters</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variants</p>
+        /// <p>ECS services</p>
+        /// </li>
+        /// <li>
+        /// <p>EMR clusters</p>
+        /// </li>
+        /// <li>
+        /// <p> Neptune clusters</p>
+        /// </li>
+        /// <li>
+        /// <p>SageMaker endpoint variants</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleets</p>
         /// </li>
         /// <li>
         /// <p>Custom resources</p>
@@ -1622,19 +1637,16 @@ pub mod step_scaling_policy_configuration {
         /// <p>For all other scalable targets, the default value is 0:</p>
         /// <ul>
         /// <li>
-        /// <p>DynamoDB tables</p>
-        /// </li>
-        /// <li>
-        /// <p>DynamoDB global secondary indexes</p>
-        /// </li>
-        /// <li>
         /// <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
         /// </li>
         /// <li>
-        /// <p>Lambda provisioned concurrency</p>
+        /// <p>DynamoDB tables and global secondary indexes</p>
         /// </li>
         /// <li>
         /// <p>Amazon Keyspaces tables</p>
+        /// </li>
+        /// <li>
+        /// <p>Lambda provisioned concurrency</p>
         /// </li>
         /// <li>
         /// <p>Amazon MSK broker storage</p>
@@ -2025,7 +2037,7 @@ pub struct ScheduledAction {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -2049,7 +2061,7 @@ pub struct ScheduledAction {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -2079,6 +2091,9 @@ pub struct ScheduledAction {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -2093,7 +2108,7 @@ pub struct ScheduledAction {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2121,7 +2136,7 @@ pub struct ScheduledAction {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2158,6 +2173,10 @@ pub struct ScheduledAction {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -2294,7 +2313,7 @@ pub mod scheduled_action {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -2318,7 +2337,7 @@ pub mod scheduled_action {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -2348,6 +2367,9 @@ pub mod scheduled_action {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -2369,7 +2391,7 @@ pub mod scheduled_action {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2397,7 +2419,7 @@ pub mod scheduled_action {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2434,6 +2456,10 @@ pub mod scheduled_action {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -2539,7 +2565,7 @@ pub struct ScalingPolicy {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -2563,7 +2589,7 @@ pub struct ScalingPolicy {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -2593,6 +2619,9 @@ pub struct ScalingPolicy {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -2607,7 +2636,7 @@ pub struct ScalingPolicy {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2635,7 +2664,7 @@ pub struct ScalingPolicy {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2672,6 +2701,10 @@ pub struct ScalingPolicy {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -2769,7 +2802,7 @@ pub mod scaling_policy {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -2793,7 +2826,7 @@ pub mod scaling_policy {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -2823,6 +2856,9 @@ pub mod scaling_policy {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -2844,7 +2880,7 @@ pub mod scaling_policy {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2872,7 +2908,7 @@ pub mod scaling_policy {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2909,6 +2945,10 @@ pub mod scaling_policy {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -3031,7 +3071,7 @@ pub struct ScalingActivity {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -3055,7 +3095,7 @@ pub struct ScalingActivity {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -3085,6 +3125,9 @@ pub struct ScalingActivity {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -3099,7 +3142,7 @@ pub struct ScalingActivity {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3127,7 +3170,7 @@ pub struct ScalingActivity {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3164,6 +3207,10 @@ pub struct ScalingActivity {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -3248,7 +3295,7 @@ pub mod scaling_activity {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -3272,7 +3319,7 @@ pub mod scaling_activity {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -3302,6 +3349,9 @@ pub mod scaling_activity {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -3323,7 +3373,7 @@ pub mod scaling_activity {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3351,7 +3401,7 @@ pub mod scaling_activity {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3388,6 +3438,10 @@ pub mod scaling_activity {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
@@ -3579,7 +3633,7 @@ pub struct ScalableTarget {
     /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+    /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
     /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
     /// </li>
     /// <li>
@@ -3603,7 +3657,7 @@ pub struct ScalableTarget {
     /// Example: <code>cluster:my-db-cluster</code>.</p>
     /// </li>
     /// <li>
-    /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+    /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
     /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
     /// </li>
     /// <li>
@@ -3633,6 +3687,9 @@ pub struct ScalableTarget {
     /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
     /// Example: <code>replication-group/mycluster</code>.</p>
     /// </li>
+    /// <li>
+    /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+    /// </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The scalable dimension associated with the scalable target.
@@ -3648,7 +3705,7 @@ pub struct ScalableTarget {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+    /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3676,7 +3733,7 @@ pub struct ScalableTarget {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+    /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3713,6 +3770,10 @@ pub struct ScalableTarget {
     /// <li>
     /// <p>
     /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
     /// </li>
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
@@ -3780,7 +3841,7 @@ pub mod scalable_target {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -3804,7 +3865,7 @@ pub mod scalable_target {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -3834,6 +3895,9 @@ pub mod scalable_target {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -3856,7 +3920,7 @@ pub mod scalable_target {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3884,7 +3948,7 @@ pub mod scalable_target {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3921,6 +3985,10 @@ pub mod scalable_target {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {

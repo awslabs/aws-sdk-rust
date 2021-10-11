@@ -13,6 +13,28 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::ConfigureLogsForPlaybackConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<
+            crate::error::ConfigureLogsForPlaybackConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ConfigureLogsForPlaybackConfigurationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::CreateChannelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

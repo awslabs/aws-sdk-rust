@@ -11,6 +11,7 @@ use aws_types::region::Region;
 use smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 use smithy_client::erase::DynConnector;
 
+use smithy_client::timeout;
 use std::fmt::{Debug, Formatter};
 use std::sync::Arc;
 
@@ -27,9 +28,41 @@ pub struct ProviderConfig {
     env: Env,
     fs: Fs,
     time_source: TimeSource,
-    connector: Option<DynConnector>,
+    connector: Connector,
     sleep: Option<Arc<dyn AsyncSleep>>,
     region: Option<Region>,
+}
+
+type MakeConnectorFn =
+    dyn Fn(&HttpSettings, Option<Arc<dyn AsyncSleep>>) -> Option<DynConnector> + Send + Sync;
+
+#[derive(Clone)]
+enum Connector {
+    Prebuilt(Option<DynConnector>),
+    MakeConnector(Arc<MakeConnectorFn>),
+}
+
+impl Default for Connector {
+    fn default() -> Self {
+        Self::MakeConnector(Arc::new(
+            |settings: &HttpSettings, sleep: Option<Arc<dyn AsyncSleep>>| {
+                default_connector(&settings, sleep)
+            },
+        ))
+    }
+}
+
+impl Connector {
+    fn make_connector(
+        &self,
+        settings: &HttpSettings,
+        sleep: Option<Arc<dyn AsyncSleep>>,
+    ) -> Option<DynConnector> {
+        match self {
+            Connector::Prebuilt(conn) => conn.clone(),
+            Connector::MakeConnector(func) => func(&settings, sleep),
+        }
+    }
 }
 
 impl Debug for ProviderConfig {
@@ -49,7 +82,7 @@ impl Default for ProviderConfig {
             env: Env::default(),
             fs: Fs::default(),
             time_source: TimeSource::default(),
-            connector: default_connector(),
+            connector: Connector::default(),
             sleep: default_async_sleep(),
             region: None,
         }
@@ -70,11 +103,22 @@ impl ProviderConfig {
             env: Env::from_slice(&[]),
             fs: Fs::from_raw_map(HashMap::new()),
             time_source: TimeSource::manual(&ManualTimeSource::new(UNIX_EPOCH)),
-            connector: None,
+            connector: Connector::Prebuilt(None),
             sleep: None,
             region: None,
         }
     }
+}
+
+/// HttpSettings for HTTP connectors
+///
+/// # Stabilility
+/// As HTTP settings stabilize, they will move to `aws-types::config::Config` so that they
+/// can be used to configure HTTP connectors for service clients.
+#[non_exhaustive]
+#[derive(Default)]
+pub(crate) struct HttpSettings {
+    pub(crate) timeout_config: timeout::Settings,
 }
 
 impl ProviderConfig {
@@ -108,7 +152,7 @@ impl ProviderConfig {
             env: Env::default(),
             fs: Fs::default(),
             time_source: TimeSource::default(),
-            connector: None,
+            connector: Connector::Prebuilt(None),
             sleep: None,
             region: None,
         }
@@ -149,8 +193,14 @@ impl ProviderConfig {
     }
 
     #[allow(dead_code)]
-    pub(crate) fn connector(&self) -> Option<&DynConnector> {
-        self.connector.as_ref()
+    pub(crate) fn default_connector(&self) -> Option<DynConnector> {
+        self.connector
+            .make_connector(&HttpSettings::default(), self.sleep.clone())
+    }
+
+    #[allow(dead_code)]
+    pub(crate) fn connector(&self, settings: &HttpSettings) -> Option<DynConnector> {
+        self.connector.make_connector(settings, self.sleep.clone())
     }
 
     #[allow(dead_code)]
@@ -206,7 +256,7 @@ impl ProviderConfig {
     /// This method is expected to change to support HTTP configuration
     pub fn with_connector(self, connector: DynConnector) -> Self {
         ProviderConfig {
-            connector: Some(connector),
+            connector: Connector::Prebuilt(Some(connector)),
             ..self
         }
     }

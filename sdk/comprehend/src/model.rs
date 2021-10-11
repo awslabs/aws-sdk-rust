@@ -340,7 +340,7 @@ impl OutputDataConfig {
     }
 }
 
-/// <p>The input properties for a topic detection job.</p>
+/// <p>The input properties for an inference job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDataConfig {
@@ -367,12 +367,17 @@ pub struct InputDataConfig {
     /// </li>
     /// </ul>
     pub input_format: std::option::Option<crate::model::InputFormat>,
+    /// <p>The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob. </p>
+    /// <p>Use DocumentReaderConfig to provide specifications about how you want your inference documents read.
+    /// Currently it applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+    pub document_reader_config: std::option::Option<crate::model::DocumentReaderConfig>,
 }
 impl std::fmt::Debug for InputDataConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InputDataConfig");
         formatter.field("s3_uri", &self.s3_uri);
         formatter.field("input_format", &self.input_format);
+        formatter.field("document_reader_config", &self.document_reader_config);
         formatter.finish()
     }
 }
@@ -384,6 +389,7 @@ pub mod input_data_config {
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
         pub(crate) input_format: std::option::Option<crate::model::InputFormat>,
+        pub(crate) document_reader_config: std::option::Option<crate::model::DocumentReaderConfig>,
     }
     impl Builder {
         /// <p>The Amazon S3 URI for the input data. The URI must be in same region as the API
@@ -426,11 +432,26 @@ pub mod input_data_config {
             self.input_format = input;
             self
         }
+        /// <p>The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob. </p>
+        /// <p>Use DocumentReaderConfig to provide specifications about how you want your inference documents read.
+        /// Currently it applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+        pub fn document_reader_config(mut self, input: crate::model::DocumentReaderConfig) -> Self {
+            self.document_reader_config = Some(input);
+            self
+        }
+        pub fn set_document_reader_config(
+            mut self,
+            input: std::option::Option<crate::model::DocumentReaderConfig>,
+        ) -> Self {
+            self.document_reader_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InputDataConfig`](crate::model::InputDataConfig)
         pub fn build(self) -> crate::model::InputDataConfig {
             crate::model::InputDataConfig {
                 s3_uri: self.s3_uri,
                 input_format: self.input_format,
+                document_reader_config: self.document_reader_config,
             }
         }
     }
@@ -439,6 +460,300 @@ impl InputDataConfig {
     /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig)
     pub fn builder() -> crate::model::input_data_config::Builder {
         crate::model::input_data_config::Builder::default()
+    }
+}
+
+/// <p>The input properties for a topic detection job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DocumentReaderConfig {
+    /// <p>This enum field will start with two values which will apply to PDFs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>TEXTRACT_DETECT_DOCUMENT_TEXT</code> - The service calls DetectDocumentText for PDF documents per page.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The service calls AnalyzeDocument for PDF documents per page.</p>
+    /// </li>
+    /// </ul>
+    pub document_read_action: std::option::Option<crate::model::DocumentReadAction>,
+    /// <p>This enum field provides two values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SERVICE_DEFAULT</code> - use service defaults for Document reading. For Digital PDF it would mean using an internal parser instead of Textract APIs</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FORCE_DOCUMENT_READ_ACTION</code> - Always use specified action for DocumentReadAction, including Digital PDF.
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub document_read_mode: std::option::Option<crate::model::DocumentReadMode>,
+    /// <p>Specifies how the text in an input file should be processed:</p>
+    pub feature_types: std::option::Option<std::vec::Vec<crate::model::DocumentReadFeatureTypes>>,
+}
+impl std::fmt::Debug for DocumentReaderConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DocumentReaderConfig");
+        formatter.field("document_read_action", &self.document_read_action);
+        formatter.field("document_read_mode", &self.document_read_mode);
+        formatter.field("feature_types", &self.feature_types);
+        formatter.finish()
+    }
+}
+/// See [`DocumentReaderConfig`](crate::model::DocumentReaderConfig)
+pub mod document_reader_config {
+    /// A builder for [`DocumentReaderConfig`](crate::model::DocumentReaderConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) document_read_action: std::option::Option<crate::model::DocumentReadAction>,
+        pub(crate) document_read_mode: std::option::Option<crate::model::DocumentReadMode>,
+        pub(crate) feature_types:
+            std::option::Option<std::vec::Vec<crate::model::DocumentReadFeatureTypes>>,
+    }
+    impl Builder {
+        /// <p>This enum field will start with two values which will apply to PDFs:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TEXTRACT_DETECT_DOCUMENT_TEXT</code> - The service calls DetectDocumentText for PDF documents per page.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The service calls AnalyzeDocument for PDF documents per page.</p>
+        /// </li>
+        /// </ul>
+        pub fn document_read_action(mut self, input: crate::model::DocumentReadAction) -> Self {
+            self.document_read_action = Some(input);
+            self
+        }
+        pub fn set_document_read_action(
+            mut self,
+            input: std::option::Option<crate::model::DocumentReadAction>,
+        ) -> Self {
+            self.document_read_action = input;
+            self
+        }
+        /// <p>This enum field provides two values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SERVICE_DEFAULT</code> - use service defaults for Document reading. For Digital PDF it would mean using an internal parser instead of Textract APIs</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FORCE_DOCUMENT_READ_ACTION</code> - Always use specified action for DocumentReadAction, including Digital PDF.
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn document_read_mode(mut self, input: crate::model::DocumentReadMode) -> Self {
+            self.document_read_mode = Some(input);
+            self
+        }
+        pub fn set_document_read_mode(
+            mut self,
+            input: std::option::Option<crate::model::DocumentReadMode>,
+        ) -> Self {
+            self.document_read_mode = input;
+            self
+        }
+        pub fn feature_types(
+            mut self,
+            input: impl Into<crate::model::DocumentReadFeatureTypes>,
+        ) -> Self {
+            let mut v = self.feature_types.unwrap_or_default();
+            v.push(input.into());
+            self.feature_types = Some(v);
+            self
+        }
+        pub fn set_feature_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentReadFeatureTypes>>,
+        ) -> Self {
+            self.feature_types = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DocumentReaderConfig`](crate::model::DocumentReaderConfig)
+        pub fn build(self) -> crate::model::DocumentReaderConfig {
+            crate::model::DocumentReaderConfig {
+                document_read_action: self.document_read_action,
+                document_read_mode: self.document_read_mode,
+                feature_types: self.feature_types,
+            }
+        }
+    }
+}
+impl DocumentReaderConfig {
+    /// Creates a new builder-style object to manufacture [`DocumentReaderConfig`](crate::model::DocumentReaderConfig)
+    pub fn builder() -> crate::model::document_reader_config::Builder {
+        crate::model::document_reader_config::Builder::default()
+    }
+}
+
+/// <p>A list of the types of analyses to perform. This field specifies what feature types need to be extracted from the document where entity recognition is
+/// expected.</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <code>TABLES</code> - Add TABLES to the list to return information about the tables
+/// that are detected in the input document. </p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>FORMS</code> - Add FORMS to return detected form data. </p>
+/// </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DocumentReadFeatureTypes {
+    Forms,
+    Tables,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DocumentReadFeatureTypes {
+    fn from(s: &str) -> Self {
+        match s {
+            "FORMS" => DocumentReadFeatureTypes::Forms,
+            "TABLES" => DocumentReadFeatureTypes::Tables,
+            other => DocumentReadFeatureTypes::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DocumentReadFeatureTypes {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DocumentReadFeatureTypes::from(s))
+    }
+}
+impl DocumentReadFeatureTypes {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DocumentReadFeatureTypes::Forms => "FORMS",
+            DocumentReadFeatureTypes::Tables => "TABLES",
+            DocumentReadFeatureTypes::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FORMS", "TABLES"]
+    }
+}
+impl AsRef<str> for DocumentReadFeatureTypes {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DocumentReadMode {
+    ForceDocumentReadAction,
+    ServiceDefault,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DocumentReadMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "FORCE_DOCUMENT_READ_ACTION" => DocumentReadMode::ForceDocumentReadAction,
+            "SERVICE_DEFAULT" => DocumentReadMode::ServiceDefault,
+            other => DocumentReadMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DocumentReadMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DocumentReadMode::from(s))
+    }
+}
+impl DocumentReadMode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DocumentReadMode::ForceDocumentReadAction => "FORCE_DOCUMENT_READ_ACTION",
+            DocumentReadMode::ServiceDefault => "SERVICE_DEFAULT",
+            DocumentReadMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FORCE_DOCUMENT_READ_ACTION", "SERVICE_DEFAULT"]
+    }
+}
+impl AsRef<str> for DocumentReadMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DocumentReadAction {
+    TextractAnalyzeDocument,
+    TextractDetectDocumentText,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DocumentReadAction {
+    fn from(s: &str) -> Self {
+        match s {
+            "TEXTRACT_ANALYZE_DOCUMENT" => DocumentReadAction::TextractAnalyzeDocument,
+            "TEXTRACT_DETECT_DOCUMENT_TEXT" => DocumentReadAction::TextractDetectDocumentText,
+            other => DocumentReadAction::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DocumentReadAction {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DocumentReadAction::from(s))
+    }
+}
+impl DocumentReadAction {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DocumentReadAction::TextractAnalyzeDocument => "TEXTRACT_ANALYZE_DOCUMENT",
+            DocumentReadAction::TextractDetectDocumentText => "TEXTRACT_DETECT_DOCUMENT_TEXT",
+            DocumentReadAction::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["TEXTRACT_ANALYZE_DOCUMENT", "TEXTRACT_DETECT_DOCUMENT_TEXT"]
+    }
+}
+impl AsRef<str> for DocumentReadAction {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2914,6 +3229,194 @@ impl EventsDetectionJobFilter {
     }
 }
 
+/// <p> Describes the information about an entity recognizer and its versions.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EntityRecognizerSummary {
+    /// <p> The name that you assigned the entity recognizer.</p>
+    pub recognizer_name: std::option::Option<std::string::String>,
+    /// <p> The number of versions you created.</p>
+    pub number_of_versions: std::option::Option<i32>,
+    /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
+    pub latest_version_created_at: std::option::Option<smithy_types::Instant>,
+    /// <p> The version name you assigned to the latest entity recognizer version.</p>
+    pub latest_version_name: std::option::Option<std::string::String>,
+    /// <p> Provides the status of the latest entity recognizer version.</p>
+    pub latest_version_status: std::option::Option<crate::model::ModelStatus>,
+}
+impl std::fmt::Debug for EntityRecognizerSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EntityRecognizerSummary");
+        formatter.field("recognizer_name", &self.recognizer_name);
+        formatter.field("number_of_versions", &self.number_of_versions);
+        formatter.field("latest_version_created_at", &self.latest_version_created_at);
+        formatter.field("latest_version_name", &self.latest_version_name);
+        formatter.field("latest_version_status", &self.latest_version_status);
+        formatter.finish()
+    }
+}
+/// See [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary)
+pub mod entity_recognizer_summary {
+    /// A builder for [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) recognizer_name: std::option::Option<std::string::String>,
+        pub(crate) number_of_versions: std::option::Option<i32>,
+        pub(crate) latest_version_created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) latest_version_name: std::option::Option<std::string::String>,
+        pub(crate) latest_version_status: std::option::Option<crate::model::ModelStatus>,
+    }
+    impl Builder {
+        /// <p> The name that you assigned the entity recognizer.</p>
+        pub fn recognizer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recognizer_name = Some(input.into());
+            self
+        }
+        pub fn set_recognizer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recognizer_name = input;
+            self
+        }
+        /// <p> The number of versions you created.</p>
+        pub fn number_of_versions(mut self, input: i32) -> Self {
+            self.number_of_versions = Some(input);
+            self
+        }
+        pub fn set_number_of_versions(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_versions = input;
+            self
+        }
+        /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
+        pub fn latest_version_created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.latest_version_created_at = Some(input);
+            self
+        }
+        pub fn set_latest_version_created_at(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.latest_version_created_at = input;
+            self
+        }
+        /// <p> The version name you assigned to the latest entity recognizer version.</p>
+        pub fn latest_version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.latest_version_name = Some(input.into());
+            self
+        }
+        pub fn set_latest_version_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.latest_version_name = input;
+            self
+        }
+        /// <p> Provides the status of the latest entity recognizer version.</p>
+        pub fn latest_version_status(mut self, input: crate::model::ModelStatus) -> Self {
+            self.latest_version_status = Some(input);
+            self
+        }
+        pub fn set_latest_version_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelStatus>,
+        ) -> Self {
+            self.latest_version_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary)
+        pub fn build(self) -> crate::model::EntityRecognizerSummary {
+            crate::model::EntityRecognizerSummary {
+                recognizer_name: self.recognizer_name,
+                number_of_versions: self.number_of_versions,
+                latest_version_created_at: self.latest_version_created_at,
+                latest_version_name: self.latest_version_name,
+                latest_version_status: self.latest_version_status,
+            }
+        }
+    }
+}
+impl EntityRecognizerSummary {
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary)
+    pub fn builder() -> crate::model::entity_recognizer_summary::Builder {
+        crate::model::entity_recognizer_summary::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ModelStatus {
+    Deleting,
+    InError,
+    Stopped,
+    StopRequested,
+    Submitted,
+    Trained,
+    Training,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ModelStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DELETING" => ModelStatus::Deleting,
+            "IN_ERROR" => ModelStatus::InError,
+            "STOPPED" => ModelStatus::Stopped,
+            "STOP_REQUESTED" => ModelStatus::StopRequested,
+            "SUBMITTED" => ModelStatus::Submitted,
+            "TRAINED" => ModelStatus::Trained,
+            "TRAINING" => ModelStatus::Training,
+            other => ModelStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ModelStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ModelStatus::from(s))
+    }
+}
+impl ModelStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ModelStatus::Deleting => "DELETING",
+            ModelStatus::InError => "IN_ERROR",
+            ModelStatus::Stopped => "STOPPED",
+            ModelStatus::StopRequested => "STOP_REQUESTED",
+            ModelStatus::Submitted => "SUBMITTED",
+            ModelStatus::Trained => "TRAINED",
+            ModelStatus::Training => "TRAINING",
+            ModelStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DELETING",
+            "IN_ERROR",
+            "STOPPED",
+            "STOP_REQUESTED",
+            "SUBMITTED",
+            "TRAINED",
+            "TRAINING",
+        ]
+    }
+}
+impl AsRef<str> for ModelStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Describes information about an entity recognizer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2975,6 +3478,8 @@ pub struct EntityRecognizerProperties {
     /// </li>
     /// </ul>
     pub model_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The version name you assigned to the entity recognizer.</p>
+    pub version_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntityRecognizerProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2993,6 +3498,7 @@ impl std::fmt::Debug for EntityRecognizerProperties {
         formatter.field("volume_kms_key_id", &self.volume_kms_key_id);
         formatter.field("vpc_config", &self.vpc_config);
         formatter.field("model_kms_key_id", &self.model_kms_key_id);
+        formatter.field("version_name", &self.version_name);
         formatter.finish()
     }
 }
@@ -3017,6 +3523,7 @@ pub mod entity_recognizer_properties {
         pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
         pub(crate) model_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) version_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
@@ -3213,6 +3720,15 @@ pub mod entity_recognizer_properties {
             self.model_kms_key_id = input;
             self
         }
+        /// <p>The version name you assigned to the entity recognizer.</p>
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_name = Some(input.into());
+            self
+        }
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties)
         pub fn build(self) -> crate::model::EntityRecognizerProperties {
             crate::model::EntityRecognizerProperties {
@@ -3230,6 +3746,7 @@ pub mod entity_recognizer_properties {
                 volume_kms_key_id: self.volume_kms_key_id,
                 vpc_config: self.vpc_config,
                 model_kms_key_id: self.model_kms_key_id,
+                version_name: self.version_name,
             }
         }
     }
@@ -3830,6 +4347,10 @@ impl EntityRecognizerInputDataConfig {
 pub struct AugmentedManifestsListItem {
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
     pub s3_uri: std::option::Option<std::string::String>,
+    /// <p>The purpose of the data you've provided in the augmented manifest. You can either train or test this data. If you don't specify, the default is train.</p>
+    /// <p>TRAIN - all of the documents in the manifest will be used for training. If no test documents are provided, Amazon Comprehend will automatically reserve a portion of the training documents for testing.</p>
+    /// <p> TEST - all of the documents in the manifest will be used for testing.</p>
+    pub split: std::option::Option<crate::model::Split>,
     /// <p>The JSON attribute that contains the annotations for your training documents. The number
     /// of attribute names that you specify depends on whether your augmented manifest file is the
     /// output of a single labeling job or a chained labeling job.</p>
@@ -3839,12 +4360,33 @@ pub struct AugmentedManifestsListItem {
     /// for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from
     /// an individual job.</p>
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
+    pub annotation_data_s3_uri: std::option::Option<std::string::String>,
+    /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
+    pub source_documents_s3_uri: std::option::Option<std::string::String>,
+    /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported.
+    /// For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p>
+    /// </li>
+    /// </ul>
+    pub document_type: std::option::Option<crate::model::AugmentedManifestsDocumentTypeFormat>,
 }
 impl std::fmt::Debug for AugmentedManifestsListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AugmentedManifestsListItem");
         formatter.field("s3_uri", &self.s3_uri);
+        formatter.field("split", &self.split);
         formatter.field("attribute_names", &self.attribute_names);
+        formatter.field("annotation_data_s3_uri", &self.annotation_data_s3_uri);
+        formatter.field("source_documents_s3_uri", &self.source_documents_s3_uri);
+        formatter.field("document_type", &self.document_type);
         formatter.finish()
     }
 }
@@ -3855,7 +4397,12 @@ pub mod augmented_manifests_list_item {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
+        pub(crate) split: std::option::Option<crate::model::Split>,
         pub(crate) attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) annotation_data_s3_uri: std::option::Option<std::string::String>,
+        pub(crate) source_documents_s3_uri: std::option::Option<std::string::String>,
+        pub(crate) document_type:
+            std::option::Option<crate::model::AugmentedManifestsDocumentTypeFormat>,
     }
     impl Builder {
         /// <p>The Amazon S3 location of the augmented manifest file.</p>
@@ -3865,6 +4412,17 @@ pub mod augmented_manifests_list_item {
         }
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
+            self
+        }
+        /// <p>The purpose of the data you've provided in the augmented manifest. You can either train or test this data. If you don't specify, the default is train.</p>
+        /// <p>TRAIN - all of the documents in the manifest will be used for training. If no test documents are provided, Amazon Comprehend will automatically reserve a portion of the training documents for testing.</p>
+        /// <p> TEST - all of the documents in the manifest will be used for testing.</p>
+        pub fn split(mut self, input: crate::model::Split) -> Self {
+            self.split = Some(input);
+            self
+        }
+        pub fn set_split(mut self, input: std::option::Option<crate::model::Split>) -> Self {
+            self.split = input;
             self
         }
         pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3880,11 +4438,65 @@ pub mod augmented_manifests_list_item {
             self.attribute_names = input;
             self
         }
+        /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
+        pub fn annotation_data_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.annotation_data_s3_uri = Some(input.into());
+            self
+        }
+        pub fn set_annotation_data_s3_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.annotation_data_s3_uri = input;
+            self
+        }
+        /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
+        pub fn source_documents_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_documents_s3_uri = Some(input.into());
+            self
+        }
+        pub fn set_source_documents_s3_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_documents_s3_uri = input;
+            self
+        }
+        /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported.
+        /// For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p>
+        /// </li>
+        /// </ul>
+        pub fn document_type(
+            mut self,
+            input: crate::model::AugmentedManifestsDocumentTypeFormat,
+        ) -> Self {
+            self.document_type = Some(input);
+            self
+        }
+        pub fn set_document_type(
+            mut self,
+            input: std::option::Option<crate::model::AugmentedManifestsDocumentTypeFormat>,
+        ) -> Self {
+            self.document_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem)
         pub fn build(self) -> crate::model::AugmentedManifestsListItem {
             crate::model::AugmentedManifestsListItem {
                 s3_uri: self.s3_uri,
+                split: self.split,
                 attribute_names: self.attribute_names,
+                annotation_data_s3_uri: self.annotation_data_s3_uri,
+                source_documents_s3_uri: self.source_documents_s3_uri,
+                document_type: self.document_type,
             }
         }
     }
@@ -3893,6 +4505,110 @@ impl AugmentedManifestsListItem {
     /// Creates a new builder-style object to manufacture [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem)
     pub fn builder() -> crate::model::augmented_manifests_list_item::Builder {
         crate::model::augmented_manifests_list_item::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AugmentedManifestsDocumentTypeFormat {
+    PlainTextDocument,
+    SemiStructuredDocument,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AugmentedManifestsDocumentTypeFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "PLAIN_TEXT_DOCUMENT" => AugmentedManifestsDocumentTypeFormat::PlainTextDocument,
+            "SEMI_STRUCTURED_DOCUMENT" => {
+                AugmentedManifestsDocumentTypeFormat::SemiStructuredDocument
+            }
+            other => AugmentedManifestsDocumentTypeFormat::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AugmentedManifestsDocumentTypeFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AugmentedManifestsDocumentTypeFormat::from(s))
+    }
+}
+impl AugmentedManifestsDocumentTypeFormat {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AugmentedManifestsDocumentTypeFormat::PlainTextDocument => "PLAIN_TEXT_DOCUMENT",
+            AugmentedManifestsDocumentTypeFormat::SemiStructuredDocument => {
+                "SEMI_STRUCTURED_DOCUMENT"
+            }
+            AugmentedManifestsDocumentTypeFormat::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PLAIN_TEXT_DOCUMENT", "SEMI_STRUCTURED_DOCUMENT"]
+    }
+}
+impl AsRef<str> for AugmentedManifestsDocumentTypeFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Split {
+    Test,
+    Train,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Split {
+    fn from(s: &str) -> Self {
+        match s {
+            "TEST" => Split::Test,
+            "TRAIN" => Split::Train,
+            other => Split::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Split {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Split::from(s))
+    }
+}
+impl Split {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Split::Test => "TEST",
+            Split::Train => "TRAIN",
+            Split::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["TEST", "TRAIN"]
+    }
+}
+impl AsRef<str> for Split {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3952,11 +4668,15 @@ pub struct EntityRecognizerAnnotations {
     /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are
     /// located. The URI must be in the same region as the API endpoint that you are calling.</p>
     pub s3_uri: std::option::Option<std::string::String>,
+    /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located.
+    /// The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
+    pub test_s3_uri: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntityRecognizerAnnotations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityRecognizerAnnotations");
         formatter.field("s3_uri", &self.s3_uri);
+        formatter.field("test_s3_uri", &self.test_s3_uri);
         formatter.finish()
     }
 }
@@ -3967,6 +4687,7 @@ pub mod entity_recognizer_annotations {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
+        pub(crate) test_s3_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are
@@ -3979,10 +4700,21 @@ pub mod entity_recognizer_annotations {
             self.s3_uri = input;
             self
         }
+        /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located.
+        /// The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
+        pub fn test_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.test_s3_uri = Some(input.into());
+            self
+        }
+        pub fn set_test_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.test_s3_uri = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations)
         pub fn build(self) -> crate::model::EntityRecognizerAnnotations {
             crate::model::EntityRecognizerAnnotations {
                 s3_uri: self.s3_uri,
+                test_s3_uri: self.test_s3_uri,
             }
         }
     }
@@ -4002,11 +4734,20 @@ pub struct EntityRecognizerDocuments {
     /// are located. The URI must be in the same region as the API endpoint that you are
     /// calling.</p>
     pub s3_uri: std::option::Option<std::string::String>,
+    /// <p> Specifies the Amazon S3 location where the test documents for an entity recognizer are located.
+    /// The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
+    pub test_s3_uri: std::option::Option<std::string::String>,
+    /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE.
+    /// ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.
+    /// ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
+    pub input_format: std::option::Option<crate::model::InputFormat>,
 }
 impl std::fmt::Debug for EntityRecognizerDocuments {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityRecognizerDocuments");
         formatter.field("s3_uri", &self.s3_uri);
+        formatter.field("test_s3_uri", &self.test_s3_uri);
+        formatter.field("input_format", &self.input_format);
         formatter.finish()
     }
 }
@@ -4017,6 +4758,8 @@ pub mod entity_recognizer_documents {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
+        pub(crate) test_s3_uri: std::option::Option<std::string::String>,
+        pub(crate) input_format: std::option::Option<crate::model::InputFormat>,
     }
     impl Builder {
         /// <p> Specifies the Amazon S3 location where the training documents for an entity recognizer
@@ -4030,10 +4773,36 @@ pub mod entity_recognizer_documents {
             self.s3_uri = input;
             self
         }
+        /// <p> Specifies the Amazon S3 location where the test documents for an entity recognizer are located.
+        /// The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
+        pub fn test_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.test_s3_uri = Some(input.into());
+            self
+        }
+        pub fn set_test_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.test_s3_uri = input;
+            self
+        }
+        /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE.
+        /// ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.
+        /// ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
+        pub fn input_format(mut self, input: crate::model::InputFormat) -> Self {
+            self.input_format = Some(input);
+            self
+        }
+        pub fn set_input_format(
+            mut self,
+            input: std::option::Option<crate::model::InputFormat>,
+        ) -> Self {
+            self.input_format = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments)
         pub fn build(self) -> crate::model::EntityRecognizerDocuments {
             crate::model::EntityRecognizerDocuments {
                 s3_uri: self.s3_uri,
+                test_s3_uri: self.test_s3_uri,
+                input_format: self.input_format,
             }
         }
     }
@@ -4151,79 +4920,6 @@ impl AsRef<str> for EntityRecognizerDataFormat {
     }
 }
 
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ModelStatus {
-    Deleting,
-    InError,
-    Stopped,
-    StopRequested,
-    Submitted,
-    Trained,
-    Training,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ModelStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELETING" => ModelStatus::Deleting,
-            "IN_ERROR" => ModelStatus::InError,
-            "STOPPED" => ModelStatus::Stopped,
-            "STOP_REQUESTED" => ModelStatus::StopRequested,
-            "SUBMITTED" => ModelStatus::Submitted,
-            "TRAINED" => ModelStatus::Trained,
-            "TRAINING" => ModelStatus::Training,
-            other => ModelStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ModelStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ModelStatus::from(s))
-    }
-}
-impl ModelStatus {
-    pub fn as_str(&self) -> &str {
-        match self {
-            ModelStatus::Deleting => "DELETING",
-            ModelStatus::InError => "IN_ERROR",
-            ModelStatus::Stopped => "STOPPED",
-            ModelStatus::StopRequested => "STOP_REQUESTED",
-            ModelStatus::Submitted => "SUBMITTED",
-            ModelStatus::Trained => "TRAINED",
-            ModelStatus::Training => "TRAINING",
-            ModelStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "DELETING",
-            "IN_ERROR",
-            "STOPPED",
-            "STOP_REQUESTED",
-            "SUBMITTED",
-            "TRAINED",
-            "TRAINING",
-        ]
-    }
-}
-impl AsRef<str> for ModelStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Provides information for filtering a list of entity recognizers. You can only specify one
 /// filtering parameter in a request. For more information, see the  operation./></p>
 #[non_exhaustive]
@@ -4231,6 +4927,8 @@ impl AsRef<str> for ModelStatus {
 pub struct EntityRecognizerFilter {
     /// <p>The status of an entity recognizer.</p>
     pub status: std::option::Option<crate::model::ModelStatus>,
+    /// <p>The name that you assigned the entity recognizer.</p>
+    pub recognizer_name: std::option::Option<std::string::String>,
     /// <p>Filters the list of entities based on the time that the list was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
@@ -4244,6 +4942,7 @@ impl std::fmt::Debug for EntityRecognizerFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityRecognizerFilter");
         formatter.field("status", &self.status);
+        formatter.field("recognizer_name", &self.recognizer_name);
         formatter.field("submit_time_before", &self.submit_time_before);
         formatter.field("submit_time_after", &self.submit_time_after);
         formatter.finish()
@@ -4256,6 +4955,7 @@ pub mod entity_recognizer_filter {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
+        pub(crate) recognizer_name: std::option::Option<std::string::String>,
         pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
         pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
     }
@@ -4267,6 +4967,18 @@ pub mod entity_recognizer_filter {
         }
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
             self.status = input;
+            self
+        }
+        /// <p>The name that you assigned the entity recognizer.</p>
+        pub fn recognizer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recognizer_name = Some(input.into());
+            self
+        }
+        pub fn set_recognizer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recognizer_name = input;
             self
         }
         /// <p>Filters the list of entities based on the time that the list was submitted for processing.
@@ -4301,6 +5013,7 @@ pub mod entity_recognizer_filter {
         pub fn build(self) -> crate::model::EntityRecognizerFilter {
             crate::model::EntityRecognizerFilter {
                 status: self.status,
+                recognizer_name: self.recognizer_name,
                 submit_time_before: self.submit_time_before,
                 submit_time_after: self.submit_time_after,
             }
@@ -4749,6 +5462,8 @@ pub struct EndpointProperties {
     pub message: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
     pub model_arn: std::option::Option<std::string::String>,
+    /// <p>ARN of the new model to use for updating an existing endpoint. This ARN is going to be different from the model ARN when the update is in progress</p>
+    pub desired_model_arn: std::option::Option<std::string::String>,
     /// <p>The desired number of inference units to be used by the model using this endpoint.
     /// Each inference unit represents of a throughput of 100 characters per second.</p>
     pub desired_inference_units: std::option::Option<i32>,
@@ -4762,6 +5477,8 @@ pub struct EndpointProperties {
     /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
     /// managed key (ModelKmsKeyId).</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
+    pub desired_data_access_role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EndpointProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4770,11 +5487,16 @@ impl std::fmt::Debug for EndpointProperties {
         formatter.field("status", &self.status);
         formatter.field("message", &self.message);
         formatter.field("model_arn", &self.model_arn);
+        formatter.field("desired_model_arn", &self.desired_model_arn);
         formatter.field("desired_inference_units", &self.desired_inference_units);
         formatter.field("current_inference_units", &self.current_inference_units);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("data_access_role_arn", &self.data_access_role_arn);
+        formatter.field(
+            "desired_data_access_role_arn",
+            &self.desired_data_access_role_arn,
+        );
         formatter.finish()
     }
 }
@@ -4788,11 +5510,13 @@ pub mod endpoint_properties {
         pub(crate) status: std::option::Option<crate::model::EndpointStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) model_arn: std::option::Option<std::string::String>,
+        pub(crate) desired_model_arn: std::option::Option<std::string::String>,
         pub(crate) desired_inference_units: std::option::Option<i32>,
         pub(crate) current_inference_units: std::option::Option<i32>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
         pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) desired_data_access_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
@@ -4834,6 +5558,18 @@ pub mod endpoint_properties {
         }
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_arn = input;
+            self
+        }
+        /// <p>ARN of the new model to use for updating an existing endpoint. This ARN is going to be different from the model ARN when the update is in progress</p>
+        pub fn desired_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.desired_model_arn = Some(input.into());
+            self
+        }
+        pub fn set_desired_model_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.desired_model_arn = input;
             self
         }
         /// <p>The desired number of inference units to be used by the model using this endpoint.
@@ -4893,6 +5629,21 @@ pub mod endpoint_properties {
             self.data_access_role_arn = input;
             self
         }
+        /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
+        pub fn desired_data_access_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.desired_data_access_role_arn = Some(input.into());
+            self
+        }
+        pub fn set_desired_data_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.desired_data_access_role_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EndpointProperties`](crate::model::EndpointProperties)
         pub fn build(self) -> crate::model::EndpointProperties {
             crate::model::EndpointProperties {
@@ -4900,11 +5651,13 @@ pub mod endpoint_properties {
                 status: self.status,
                 message: self.message,
                 model_arn: self.model_arn,
+                desired_model_arn: self.desired_model_arn,
                 desired_inference_units: self.desired_inference_units,
                 current_inference_units: self.current_inference_units,
                 creation_time: self.creation_time,
                 last_modified_time: self.last_modified_time,
                 data_access_role_arn: self.data_access_role_arn,
+                desired_data_access_role_arn: self.desired_data_access_role_arn,
             }
         }
     }
@@ -5466,6 +6219,121 @@ impl DominantLanguageDetectionJobFilter {
     }
 }
 
+/// <p>Describes information about a document classifier and its versions.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DocumentClassifierSummary {
+    /// <p>The name that you assigned the document classifier.</p>
+    pub document_classifier_name: std::option::Option<std::string::String>,
+    /// <p>The number of versions you created.</p>
+    pub number_of_versions: std::option::Option<i32>,
+    /// <p>The time that the latest document classifier version was submitted for processing.</p>
+    pub latest_version_created_at: std::option::Option<smithy_types::Instant>,
+    /// <p>The version name you assigned to the latest document classifier version.</p>
+    pub latest_version_name: std::option::Option<std::string::String>,
+    /// <p>Provides the status of the latest document classifier version.</p>
+    pub latest_version_status: std::option::Option<crate::model::ModelStatus>,
+}
+impl std::fmt::Debug for DocumentClassifierSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DocumentClassifierSummary");
+        formatter.field("document_classifier_name", &self.document_classifier_name);
+        formatter.field("number_of_versions", &self.number_of_versions);
+        formatter.field("latest_version_created_at", &self.latest_version_created_at);
+        formatter.field("latest_version_name", &self.latest_version_name);
+        formatter.field("latest_version_status", &self.latest_version_status);
+        formatter.finish()
+    }
+}
+/// See [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary)
+pub mod document_classifier_summary {
+    /// A builder for [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) document_classifier_name: std::option::Option<std::string::String>,
+        pub(crate) number_of_versions: std::option::Option<i32>,
+        pub(crate) latest_version_created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) latest_version_name: std::option::Option<std::string::String>,
+        pub(crate) latest_version_status: std::option::Option<crate::model::ModelStatus>,
+    }
+    impl Builder {
+        /// <p>The name that you assigned the document classifier.</p>
+        pub fn document_classifier_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_classifier_name = Some(input.into());
+            self
+        }
+        pub fn set_document_classifier_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_classifier_name = input;
+            self
+        }
+        /// <p>The number of versions you created.</p>
+        pub fn number_of_versions(mut self, input: i32) -> Self {
+            self.number_of_versions = Some(input);
+            self
+        }
+        pub fn set_number_of_versions(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_versions = input;
+            self
+        }
+        /// <p>The time that the latest document classifier version was submitted for processing.</p>
+        pub fn latest_version_created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.latest_version_created_at = Some(input);
+            self
+        }
+        pub fn set_latest_version_created_at(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.latest_version_created_at = input;
+            self
+        }
+        /// <p>The version name you assigned to the latest document classifier version.</p>
+        pub fn latest_version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.latest_version_name = Some(input.into());
+            self
+        }
+        pub fn set_latest_version_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.latest_version_name = input;
+            self
+        }
+        /// <p>Provides the status of the latest document classifier version.</p>
+        pub fn latest_version_status(mut self, input: crate::model::ModelStatus) -> Self {
+            self.latest_version_status = Some(input);
+            self
+        }
+        pub fn set_latest_version_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelStatus>,
+        ) -> Self {
+            self.latest_version_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary)
+        pub fn build(self) -> crate::model::DocumentClassifierSummary {
+            crate::model::DocumentClassifierSummary {
+                document_classifier_name: self.document_classifier_name,
+                number_of_versions: self.number_of_versions,
+                latest_version_created_at: self.latest_version_created_at,
+                latest_version_name: self.latest_version_name,
+                latest_version_status: self.latest_version_status,
+            }
+        }
+    }
+}
+impl DocumentClassifierSummary {
+    /// Creates a new builder-style object to manufacture [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary)
+    pub fn builder() -> crate::model::document_classifier_summary::Builder {
+        crate::model::document_classifier_summary::Builder::default()
+    }
+}
+
 /// <p>Provides information about a document classifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5541,6 +6409,8 @@ pub struct DocumentClassifierProperties {
     /// </li>
     /// </ul>
     pub model_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The version name that you assigned to the document classifier.</p>
+    pub version_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DocumentClassifierProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5561,6 +6431,7 @@ impl std::fmt::Debug for DocumentClassifierProperties {
         formatter.field("vpc_config", &self.vpc_config);
         formatter.field("mode", &self.mode);
         formatter.field("model_kms_key_id", &self.model_kms_key_id);
+        formatter.field("version_name", &self.version_name);
         formatter.finish()
     }
 }
@@ -5588,6 +6459,7 @@ pub mod document_classifier_properties {
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
         pub(crate) mode: std::option::Option<crate::model::DocumentClassifierMode>,
         pub(crate) model_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) version_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
@@ -5818,6 +6690,15 @@ pub mod document_classifier_properties {
             self.model_kms_key_id = input;
             self
         }
+        /// <p>The version name that you assigned to the document classifier.</p>
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_name = Some(input.into());
+            self
+        }
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties)
         pub fn build(self) -> crate::model::DocumentClassifierProperties {
             crate::model::DocumentClassifierProperties {
@@ -5837,6 +6718,7 @@ pub mod document_classifier_properties {
                 vpc_config: self.vpc_config,
                 mode: self.mode,
                 model_kms_key_id: self.model_kms_key_id,
+                version_name: self.version_name,
             }
         }
     }
@@ -6340,6 +7222,10 @@ pub struct DocumentClassifierInputDataConfig {
     /// <p>This parameter is required if you set <code>DataFormat</code> to
     /// <code>COMPREHEND_CSV</code>.</p>
     pub s3_uri: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI for the input data.
+    /// The Amazon S3 bucket must be in the same AWS Region as the API endpoint that you are calling.
+    /// The URI can point to a single input file or it can provide the prefix for a collection of input files. </p>
+    pub test_s3_uri: std::option::Option<std::string::String>,
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier.
     /// The default delimiter between labels is a pipe (|). You can use a different character as a
     /// delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the
@@ -6360,6 +7246,7 @@ impl std::fmt::Debug for DocumentClassifierInputDataConfig {
         let mut formatter = f.debug_struct("DocumentClassifierInputDataConfig");
         formatter.field("data_format", &self.data_format);
         formatter.field("s3_uri", &self.s3_uri);
+        formatter.field("test_s3_uri", &self.test_s3_uri);
         formatter.field("label_delimiter", &self.label_delimiter);
         formatter.field("augmented_manifests", &self.augmented_manifests);
         formatter.finish()
@@ -6373,6 +7260,7 @@ pub mod document_classifier_input_data_config {
     pub struct Builder {
         pub(crate) data_format: std::option::Option<crate::model::DocumentClassifierDataFormat>,
         pub(crate) s3_uri: std::option::Option<std::string::String>,
+        pub(crate) test_s3_uri: std::option::Option<std::string::String>,
         pub(crate) label_delimiter: std::option::Option<std::string::String>,
         pub(crate) augmented_manifests:
             std::option::Option<std::vec::Vec<crate::model::AugmentedManifestsListItem>>,
@@ -6424,6 +7312,17 @@ pub mod document_classifier_input_data_config {
             self.s3_uri = input;
             self
         }
+        /// <p>The Amazon S3 URI for the input data.
+        /// The Amazon S3 bucket must be in the same AWS Region as the API endpoint that you are calling.
+        /// The URI can point to a single input file or it can provide the prefix for a collection of input files. </p>
+        pub fn test_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.test_s3_uri = Some(input.into());
+            self
+        }
+        pub fn set_test_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.test_s3_uri = input;
+            self
+        }
         /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier.
         /// The default delimiter between labels is a pipe (|). You can use a different character as a
         /// delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the
@@ -6462,6 +7361,7 @@ pub mod document_classifier_input_data_config {
             crate::model::DocumentClassifierInputDataConfig {
                 data_format: self.data_format,
                 s3_uri: self.s3_uri,
+                test_s3_uri: self.test_s3_uri,
                 label_delimiter: self.label_delimiter,
                 augmented_manifests: self.augmented_manifests,
             }
@@ -6532,6 +7432,8 @@ impl AsRef<str> for DocumentClassifierDataFormat {
 pub struct DocumentClassifierFilter {
     /// <p>Filters the list of classifiers based on status.</p>
     pub status: std::option::Option<crate::model::ModelStatus>,
+    /// <p>The name that you assigned to the document classifier</p>
+    pub document_classifier_name: std::option::Option<std::string::String>,
     /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
     /// processing. Returns only classifiers submitted before the specified time. Classifiers are
     /// returned in ascending order, oldest to newest.</p>
@@ -6545,6 +7447,7 @@ impl std::fmt::Debug for DocumentClassifierFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentClassifierFilter");
         formatter.field("status", &self.status);
+        formatter.field("document_classifier_name", &self.document_classifier_name);
         formatter.field("submit_time_before", &self.submit_time_before);
         formatter.field("submit_time_after", &self.submit_time_after);
         formatter.finish()
@@ -6557,6 +7460,7 @@ pub mod document_classifier_filter {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
+        pub(crate) document_classifier_name: std::option::Option<std::string::String>,
         pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
         pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
     }
@@ -6568,6 +7472,18 @@ pub mod document_classifier_filter {
         }
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
             self.status = input;
+            self
+        }
+        /// <p>The name that you assigned to the document classifier</p>
+        pub fn document_classifier_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document_classifier_name = Some(input.into());
+            self
+        }
+        pub fn set_document_classifier_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.document_classifier_name = input;
             self
         }
         /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
@@ -6602,6 +7518,7 @@ pub mod document_classifier_filter {
         pub fn build(self) -> crate::model::DocumentClassifierFilter {
             crate::model::DocumentClassifierFilter {
                 status: self.status,
+                document_classifier_name: self.document_classifier_name,
                 submit_time_before: self.submit_time_before,
                 submit_time_after: self.submit_time_after,
             }

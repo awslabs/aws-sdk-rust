@@ -69,14 +69,31 @@ where
     M: smithy_client::bounds::SmithyMiddleware<C>,
     R: smithy_client::retry::NewRequestPolicy,
 {
+    pub fn create_data_integration(&self) -> fluent_builders::CreateDataIntegration<C, M, R> {
+        fluent_builders::CreateDataIntegration::new(self.handle.clone())
+    }
     pub fn create_event_integration(&self) -> fluent_builders::CreateEventIntegration<C, M, R> {
         fluent_builders::CreateEventIntegration::new(self.handle.clone())
+    }
+    pub fn delete_data_integration(&self) -> fluent_builders::DeleteDataIntegration<C, M, R> {
+        fluent_builders::DeleteDataIntegration::new(self.handle.clone())
     }
     pub fn delete_event_integration(&self) -> fluent_builders::DeleteEventIntegration<C, M, R> {
         fluent_builders::DeleteEventIntegration::new(self.handle.clone())
     }
+    pub fn get_data_integration(&self) -> fluent_builders::GetDataIntegration<C, M, R> {
+        fluent_builders::GetDataIntegration::new(self.handle.clone())
+    }
     pub fn get_event_integration(&self) -> fluent_builders::GetEventIntegration<C, M, R> {
         fluent_builders::GetEventIntegration::new(self.handle.clone())
+    }
+    pub fn list_data_integration_associations(
+        &self,
+    ) -> fluent_builders::ListDataIntegrationAssociations<C, M, R> {
+        fluent_builders::ListDataIntegrationAssociations::new(self.handle.clone())
+    }
+    pub fn list_data_integrations(&self) -> fluent_builders::ListDataIntegrations<C, M, R> {
+        fluent_builders::ListDataIntegrations::new(self.handle.clone())
     }
     pub fn list_event_integration_associations(
         &self,
@@ -95,11 +112,138 @@ where
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
+    pub fn update_data_integration(&self) -> fluent_builders::UpdateDataIntegration<C, M, R> {
+        fluent_builders::UpdateDataIntegration::new(self.handle.clone())
+    }
     pub fn update_event_integration(&self) -> fluent_builders::UpdateEventIntegration<C, M, R> {
         fluent_builders::UpdateEventIntegration::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
+    #[derive(std::fmt::Debug)]
+    pub struct CreateDataIntegration<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_data_integration_input::Builder,
+    }
+    impl<C, M, R> CreateDataIntegration<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateDataIntegrationOutput,
+            smithy_http::result::SdkError<crate::error::CreateDataIntegrationError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateDataIntegrationInputOperationOutputAlias,
+                crate::output::CreateDataIntegrationOutput,
+                crate::error::CreateDataIntegrationError,
+                crate::input::CreateDataIntegrationInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the DataIntegration.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A description of the DataIntegration.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The KMS key for the DataIntegration.</p>
+        pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(inp);
+            self
+        }
+        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_kms_key(input);
+            self
+        }
+        /// <p>The URI of the data source.</p>
+        pub fn source_uri(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_uri(inp);
+            self
+        }
+        pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_uri(input);
+            self
+        }
+        /// <p>The name of the data and how often it should be pulled from the source.</p>
+        pub fn schedule_config(mut self, inp: crate::model::ScheduleConfiguration) -> Self {
+            self.inner = self.inner.schedule_config(inp);
+            self
+        }
+        pub fn set_schedule_config(
+            mut self,
+            input: std::option::Option<crate::model::ScheduleConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_schedule_config(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// <p>One or more tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     #[derive(std::fmt::Debug)]
     pub struct CreateEventIntegration<
         C = smithy_client::erase::DynConnector,
@@ -219,6 +363,63 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeleteDataIntegration<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_data_integration_input::Builder,
+    }
+    impl<C, M, R> DeleteDataIntegration<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteDataIntegrationOutput,
+            smithy_http::result::SdkError<crate::error::DeleteDataIntegrationError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteDataIntegrationInputOperationOutputAlias,
+                crate::output::DeleteDataIntegrationOutput,
+                crate::error::DeleteDataIntegrationError,
+                crate::input::DeleteDataIntegrationInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the DataIntegration.</p>
+        pub fn data_integration_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_integration_identifier(inp);
+            self
+        }
+        pub fn set_data_integration_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_integration_identifier(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DeleteEventIntegration<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -273,6 +474,60 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetDataIntegration<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_data_integration_input::Builder,
+    }
+    impl<C, M, R> GetDataIntegration<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDataIntegrationOutput,
+            smithy_http::result::SdkError<crate::error::GetDataIntegrationError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetDataIntegrationInputOperationOutputAlias,
+                crate::output::GetDataIntegrationOutput,
+                crate::error::GetDataIntegrationError,
+                crate::input::GetDataIntegrationInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier.</p>
+        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(inp);
+            self
+        }
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_identifier(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetEventIntegration<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -323,6 +578,146 @@ pub mod fluent_builders {
         }
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListDataIntegrationAssociations<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_data_integration_associations_input::Builder,
+    }
+    impl<C, M, R> ListDataIntegrationAssociations<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDataIntegrationAssociationsOutput,
+            smithy_http::result::SdkError<crate::error::ListDataIntegrationAssociationsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListDataIntegrationAssociationsInputOperationOutputAlias,
+                crate::output::ListDataIntegrationAssociationsOutput,
+                crate::error::ListDataIntegrationAssociationsError,
+                crate::input::ListDataIntegrationAssociationsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the DataIntegration.</p>
+        pub fn data_integration_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_integration_identifier(inp);
+            self
+        }
+        pub fn set_data_integration_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_integration_identifier(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListDataIntegrations<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_data_integrations_input::Builder,
+    }
+    impl<C, M, R> ListDataIntegrations<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDataIntegrationsOutput,
+            smithy_http::result::SdkError<crate::error::ListDataIntegrationsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListDataIntegrationsInputOperationOutputAlias,
+                crate::output::ListDataIntegrationsOutput,
+                crate::error::ListDataIntegrationsError,
+                crate::input::ListDataIntegrationsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -661,6 +1056,78 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateDataIntegration<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_data_integration_input::Builder,
+    }
+    impl<C, M, R> UpdateDataIntegration<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateDataIntegrationOutput,
+            smithy_http::result::SdkError<crate::error::UpdateDataIntegrationError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateDataIntegrationInputOperationOutputAlias,
+                crate::output::UpdateDataIntegrationOutput,
+                crate::error::UpdateDataIntegrationError,
+                crate::input::UpdateDataIntegrationInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique identifier for the DataIntegration.</p>
+        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(inp);
+            self
+        }
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_identifier(input);
+            self
+        }
+        /// <p>The name of the DataIntegration.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A description of the DataIntegration.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }

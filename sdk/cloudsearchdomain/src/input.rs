@@ -397,131 +397,133 @@ impl SearchInput {
         smithy_http::operation::Operation<crate::operation::Search, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::SearchInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/2013-01-01/search").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::SearchInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            query.push_kv("format", "sdk");
+            query.push_kv("pretty", "true");
+            if let Some(inner_1) = &_input.cursor {
+                query.push_kv("cursor", &smithy_http::query::fmt_string(&inner_1));
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
+            if let Some(inner_2) = &_input.expr {
+                query.push_kv("expr", &smithy_http::query::fmt_string(&inner_2));
+            }
+            if let Some(inner_3) = &_input.facet {
+                query.push_kv("facet", &smithy_http::query::fmt_string(&inner_3));
+            }
+            if let Some(inner_4) = &_input.filter_query {
+                query.push_kv("fq", &smithy_http::query::fmt_string(&inner_4));
+            }
+            if let Some(inner_5) = &_input.highlight {
+                query.push_kv("highlight", &smithy_http::query::fmt_string(&inner_5));
+            }
+            if _input.partial {
+                query.push_kv(
+                    "partial",
+                    &smithy_types::primitive::Encoder::from(_input.partial).encode(),
+                );
+            }
+            if let Some(inner_6) = &_input.query {
+                query.push_kv("q", &smithy_http::query::fmt_string(&inner_6));
+            }
+            if let Some(inner_7) = &_input.query_options {
+                query.push_kv("q.options", &smithy_http::query::fmt_string(&inner_7));
+            }
+            if let Some(inner_8) = &_input.query_parser {
+                query.push_kv("q.parser", &smithy_http::query::fmt_string(&inner_8));
+            }
+            if let Some(inner_9) = &_input.r#return {
+                query.push_kv("return", &smithy_http::query::fmt_string(&inner_9));
+            }
+            if _input.size != 0 {
+                query.push_kv(
+                    "size",
+                    &smithy_types::primitive::Encoder::from(_input.size).encode(),
+                );
+            }
+            if let Some(inner_10) = &_input.sort {
+                query.push_kv("sort", &smithy_http::query::fmt_string(&inner_10));
+            }
+            if _input.start != 0 {
+                query.push_kv(
+                    "start",
+                    &smithy_types::primitive::Encoder::from(_input.start).encode(),
+                );
+            }
+            if let Some(inner_11) = &_input.stats {
+                query.push_kv("stats", &smithy_http::query::fmt_string(&inner_11));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::SearchInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::SearchInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let op =
-                smithy_http::operation::Operation::new(request, crate::operation::Search::new())
-                    .with_metadata(smithy_http::operation::Metadata::new(
-                        "Search",
-                        "cloudsearchdomain",
-                    ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/2013-01-01/search").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        query.push_kv("format", "sdk");
-        query.push_kv("pretty", "true");
-        if let Some(inner_1) = &self.cursor {
-            query.push_kv("cursor", &smithy_http::query::fmt_string(&inner_1));
+            Ok(builder)
         }
-        if let Some(inner_2) = &self.expr {
-            query.push_kv("expr", &smithy_http::query::fmt_string(&inner_2));
-        }
-        if let Some(inner_3) = &self.facet {
-            query.push_kv("facet", &smithy_http::query::fmt_string(&inner_3));
-        }
-        if let Some(inner_4) = &self.filter_query {
-            query.push_kv("fq", &smithy_http::query::fmt_string(&inner_4));
-        }
-        if let Some(inner_5) = &self.highlight {
-            query.push_kv("highlight", &smithy_http::query::fmt_string(&inner_5));
-        }
-        if self.partial {
-            query.push_kv(
-                "partial",
-                &smithy_types::primitive::Encoder::from(self.partial).encode(),
-            );
-        }
-        if let Some(inner_6) = &self.query {
-            query.push_kv("q", &smithy_http::query::fmt_string(&inner_6));
-        }
-        if let Some(inner_7) = &self.query_options {
-            query.push_kv("q.options", &smithy_http::query::fmt_string(&inner_7));
-        }
-        if let Some(inner_8) = &self.query_parser {
-            query.push_kv("q.parser", &smithy_http::query::fmt_string(&inner_8));
-        }
-        if let Some(inner_9) = &self.r#return {
-            query.push_kv("return", &smithy_http::query::fmt_string(&inner_9));
-        }
-        if self.size != 0 {
-            query.push_kv(
-                "size",
-                &smithy_types::primitive::Encoder::from(self.size).encode(),
-            );
-        }
-        if let Some(inner_10) = &self.sort {
-            query.push_kv("sort", &smithy_http::query::fmt_string(&inner_10));
-        }
-        if self.start != 0 {
-            query.push_kv(
-                "start",
-                &smithy_types::primitive::Encoder::from(self.start).encode(),
-            );
-        }
-        if let Some(inner_11) = &self.stats {
-            query.push_kv("stats", &smithy_http::query::fmt_string(&inner_11));
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(request, crate::operation::Search::new())
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "Search",
+                "cloudsearchdomain",
+            ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -607,92 +609,94 @@ impl SuggestInput {
         smithy_http::operation::Operation<crate::operation::Suggest, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::SuggestInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/2013-01-01/suggest").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::SuggestInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            query.push_kv("format", "sdk");
+            query.push_kv("pretty", "true");
+            if let Some(inner_12) = &_input.query {
+                query.push_kv("q", &smithy_http::query::fmt_string(&inner_12));
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
+            if let Some(inner_13) = &_input.suggester {
+                query.push_kv("suggester", &smithy_http::query::fmt_string(&inner_13));
+            }
+            if _input.size != 0 {
+                query.push_kv(
+                    "size",
+                    &smithy_types::primitive::Encoder::from(_input.size).encode(),
+                );
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::SuggestInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::SuggestInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
             );
-            let op =
-                smithy_http::operation::Operation::new(request, crate::operation::Suggest::new())
-                    .with_metadata(smithy_http::operation::Metadata::new(
-                        "Suggest",
-                        "cloudsearchdomain",
-                    ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/2013-01-01/suggest").expect("formatting should succeed");
-        Ok(())
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        query.push_kv("format", "sdk");
-        query.push_kv("pretty", "true");
-        if let Some(inner_12) = &self.query {
-            query.push_kv("q", &smithy_http::query::fmt_string(&inner_12));
+            Ok(builder)
         }
-        if let Some(inner_13) = &self.suggester {
-            query.push_kv("suggester", &smithy_http::query::fmt_string(&inner_13));
-        }
-        if self.size != 0 {
-            query.push_kv(
-                "size",
-                &smithy_types::primitive::Encoder::from(self.size).encode(),
-            );
-        }
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(request, crate::operation::Suggest::new())
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "Suggest",
+                "cloudsearchdomain",
+            ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -782,106 +786,108 @@ impl UploadDocumentsInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = crate::operation_ser::ser_payload_upload_documents_input(self.documents)?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::UploadDocuments::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "UploadDocuments",
-                "cloudsearchdomain",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        write!(output, "/2013-01-01/documents/batch").expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_14) = &self.content_type {
-            let formatted_15 = AsRef::<str>::as_ref(inner_14);
-            if !formatted_15.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_15;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn uri_base(
+            _input: &crate::input::UploadDocumentsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/2013-01-01/documents/batch").expect("formatting should succeed");
+            Ok(())
+        }
+        fn add_headers(
+            _input: &crate::input::UploadDocumentsInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_14) = &_input.content_type {
+                let formatted_15 = AsRef::<str>::as_ref(inner_14);
+                if !formatted_15.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_15;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "content_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("Content-Type", header_value);
+                        })?;
+                    builder = builder.header("Content-Type", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    fn uri_query(&self, mut output: &mut String) {
-        let mut query = smithy_http::query::Writer::new(&mut output);
-        query.push_kv("format", "sdk");
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        self.uri_query(&mut uri);
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/octet-stream",
+        fn uri_query(_input: &crate::input::UploadDocumentsInput, mut output: &mut String) {
+            let mut query = smithy_http::query::Writer::new(&mut output);
+            query.push_kv("format", "sdk");
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UploadDocumentsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UploadDocumentsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/octet-stream",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::ser_payload_upload_documents_input(self.documents)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UploadDocuments::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UploadDocuments",
+            "cloudsearchdomain",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,

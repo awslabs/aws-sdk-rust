@@ -236,6 +236,128 @@ pub fn parse_create_data_set_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_event_action_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateEventActionOutput, crate::error::CreateEventActionError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateEventActionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateEventActionError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateEventActionError {
+            meta: generic,
+            kind: crate::error::CreateEventActionErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::CreateEventActionError {
+            meta: generic,
+            kind: crate::error::CreateEventActionErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceLimitExceededException" => crate::error::CreateEventActionError {
+            meta: generic,
+            kind: crate::error::CreateEventActionErrorKind::ServiceLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::CreateEventActionError {
+            meta: generic,
+            kind: crate::error::CreateEventActionErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::CreateEventActionError {
+            meta: generic,
+            kind: crate::error::CreateEventActionErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateEventActionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_event_action_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateEventActionOutput, crate::error::CreateEventActionError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_event_action_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_event_action(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateEventActionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateJobOutput, crate::error::CreateJobError> {
@@ -740,6 +862,105 @@ pub fn parse_delete_data_set_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_event_action_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteEventActionOutput, crate::error::DeleteEventActionError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteEventActionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteEventActionError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::DeleteEventActionError {
+            meta: generic,
+            kind: crate::error::DeleteEventActionErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DeleteEventActionError {
+            meta: generic,
+            kind: crate::error::DeleteEventActionErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DeleteEventActionError {
+            meta: generic,
+            kind: crate::error::DeleteEventActionErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::DeleteEventActionError {
+            meta: generic,
+            kind: crate::error::DeleteEventActionErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteEventActionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_event_action_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteEventActionOutput, crate::error::DeleteEventActionError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_event_action_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_revision_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRevisionOutput, crate::error::DeleteRevisionError> {
@@ -1072,6 +1293,108 @@ pub fn parse_get_data_set_response(
             output,
         )
         .map_err(crate::error::GetDataSetError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_event_action_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetEventActionOutput, crate::error::GetEventActionError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetEventActionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetEventActionError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::GetEventActionError {
+            meta: generic,
+            kind: crate::error::GetEventActionErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::GetEventActionError {
+            meta: generic,
+            kind: crate::error::GetEventActionErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::GetEventActionError {
+            meta: generic,
+            kind: crate::error::GetEventActionErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::GetEventActionError {
+            meta: generic,
+            kind: crate::error::GetEventActionErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetEventActionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_event_action_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetEventActionOutput, crate::error::GetEventActionError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_event_action_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_event_action(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetEventActionError::unhandled)?;
         output.build()
     })
 }
@@ -1486,6 +1809,110 @@ pub fn parse_list_data_sets_response(
             output,
         )
         .map_err(crate::error::ListDataSetsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_event_actions_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListEventActionsOutput, crate::error::ListEventActionsError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListEventActionsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListEventActionsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::ListEventActionsError {
+            meta: generic,
+            kind: crate::error::ListEventActionsErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventActionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::ListEventActionsError {
+            meta: generic,
+            kind: crate::error::ListEventActionsErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventActionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::ListEventActionsError {
+            meta: generic,
+            kind: crate::error::ListEventActionsErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventActionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::ListEventActionsError {
+            meta: generic,
+            kind: crate::error::ListEventActionsErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventActionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListEventActionsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_event_actions_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListEventActionsOutput, crate::error::ListEventActionsError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_event_actions_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_event_actions(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListEventActionsError::unhandled)?;
         output.build()
     })
 }
@@ -2160,6 +2587,127 @@ pub fn parse_update_data_set_response(
             output,
         )
         .map_err(crate::error::UpdateDataSetError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_event_action_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateEventActionOutput, crate::error::UpdateEventActionError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateEventActionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateEventActionError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::UpdateEventActionError {
+            meta: generic,
+            kind: crate::error::UpdateEventActionErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::UpdateEventActionError {
+            meta: generic,
+            kind: crate::error::UpdateEventActionErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateEventActionError {
+            meta: generic,
+            kind: crate::error::UpdateEventActionErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::UpdateEventActionError {
+            meta: generic,
+            kind: crate::error::UpdateEventActionErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::UpdateEventActionError {
+            meta: generic,
+            kind: crate::error::UpdateEventActionErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventActionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateEventActionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_event_action_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateEventActionOutput, crate::error::UpdateEventActionError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_event_action_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_event_action(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateEventActionError::unhandled)?;
         output.build()
     })
 }

@@ -784,7 +784,7 @@ pub struct RoleLastUsed {
     /// <p>This field is null if the role has not been used within the IAM tracking period. For
     /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
     pub last_used_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The name of the Region in which the role was last used.</p>
+    /// <p>The name of the Amazon Web Services Region in which the role was last used.</p>
     pub region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RoleLastUsed {
@@ -820,7 +820,7 @@ pub mod role_last_used {
             self.last_used_date = input;
             self
         }
-        /// <p>The name of the Region in which the role was last used.</p>
+        /// <p>The name of the Amazon Web Services Region in which the role was last used.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -5930,7 +5930,7 @@ impl AsRef<str> for SortKeyType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoginProfile {
-    /// <p>The name of the user, which can be used for signing in to the Management Console.</p>
+    /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The date when the password for the user was created.</p>
     pub create_date: std::option::Option<smithy_types::Instant>,
@@ -5957,7 +5957,7 @@ pub mod login_profile {
         pub(crate) password_reset_required: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the user, which can be used for signing in to the Management Console.</p>
+        /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
@@ -7434,7 +7434,7 @@ pub struct AccessKeyLastUsed {
     /// </li>
     /// </ul>
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>The Region where this access key was most recently used. The value for this field is
+    /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is
     /// "N/A" in the following situations:</p>
     /// <ul>
     /// <li>
@@ -7448,7 +7448,7 @@ pub struct AccessKeyLastUsed {
     /// <p>There is no sign-in data associated with the user.</p>
     /// </li>
     /// </ul>
-    /// <p>For more information about Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services
+    /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services
     /// General Reference.</p>
     pub region: std::option::Option<std::string::String>,
 }
@@ -7520,7 +7520,7 @@ pub mod access_key_last_used {
             self.service_name = input;
             self
         }
-        /// <p>The Region where this access key was most recently used. The value for this field is
+        /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is
         /// "N/A" in the following situations:</p>
         /// <ul>
         /// <li>
@@ -7534,7 +7534,7 @@ pub mod access_key_last_used {
         /// <p>There is no sign-in data associated with the user.</p>
         /// </li>
         /// </ul>
-        /// <p>For more information about Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services
+        /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services
         /// General Reference.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());

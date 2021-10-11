@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew
 //! simplifies data preparation tasks, targeting data issues that are hard to spot and
 //! time-consuming to fix. DataBrew empowers users of all technical levels to visualize the

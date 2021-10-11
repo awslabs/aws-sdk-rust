@@ -824,6 +824,23 @@ pub fn parse_delete_registry_policy_error(
                 }),
             }
         }
+        "ValidationException" => crate::error::DeleteRegistryPolicyError {
+            meta: generic,
+            kind: crate::error::DeleteRegistryPolicyErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegistryPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteRegistryPolicyError::generic(generic),
     })
 }
@@ -1091,6 +1108,142 @@ pub fn parse_delete_repository_policy_response(
             output,
         )
         .map_err(crate::error::DeleteRepositoryPolicyError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_image_replication_status_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeImageReplicationStatusOutput,
+    crate::error::DescribeImageReplicationStatusError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeImageReplicationStatusError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeImageReplicationStatusError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ImageNotFoundException" => crate::error::DescribeImageReplicationStatusError {
+            meta: generic,
+            kind: crate::error::DescribeImageReplicationStatusErrorKind::ImageNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::image_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_image_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeImageReplicationStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::DescribeImageReplicationStatusError {
+            meta: generic,
+            kind: crate::error::DescribeImageReplicationStatusErrorKind::InvalidParameterException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeImageReplicationStatusError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "RepositoryNotFoundException" => crate::error::DescribeImageReplicationStatusError {
+            meta: generic,
+            kind:
+                crate::error::DescribeImageReplicationStatusErrorKind::RepositoryNotFoundException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::repository_not_found_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_repository_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeImageReplicationStatusError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ServerException" => {
+            crate::error::DescribeImageReplicationStatusError {
+                meta: generic,
+                kind: crate::error::DescribeImageReplicationStatusErrorKind::ServerException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeImageReplicationStatusError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ValidationException" => crate::error::DescribeImageReplicationStatusError {
+            meta: generic,
+            kind: crate::error::DescribeImageReplicationStatusErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeImageReplicationStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeImageReplicationStatusError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_image_replication_status_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeImageReplicationStatusOutput,
+    crate::error::DescribeImageReplicationStatusError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_image_replication_status_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_image_replication_status(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeImageReplicationStatusError::unhandled)?;
         output.build()
     })
 }
@@ -2003,6 +2156,23 @@ pub fn parse_get_registry_policy_error(
                 }),
             }
         }
+        "ValidationException" => crate::error::GetRegistryPolicyError {
+            meta: generic,
+            kind: crate::error::GetRegistryPolicyErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRegistryPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetRegistryPolicyError::generic(generic),
     })
 }
@@ -2991,6 +3161,23 @@ pub fn parse_put_registry_policy_error(
                 }),
             }
         }
+        "ValidationException" => crate::error::PutRegistryPolicyError {
+            meta: generic,
+            kind: crate::error::PutRegistryPolicyErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutRegistryPolicyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::PutRegistryPolicyError::generic(generic),
     })
 }

@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Database Migration Service</fullname>
 //! <p>Database Migration Service (DMS) can migrate your data to and from the most
 //! widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL

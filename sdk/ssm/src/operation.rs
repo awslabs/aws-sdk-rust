@@ -71,8 +71,8 @@ impl smithy_http::response::ParseStrictResponse for AddTagsToResource {
     }
 }
 
-/// <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can associate
-/// an Incident Manager incident or analysis with an OpsItem. Incident Manager is a capability of
+/// <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you can associate an
+/// Incident Manager incident or analysis with an OpsItem. Incident Manager and OpsCenter are capabilities of
 /// Amazon Web Services Systems Manager.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateOpsItemRelatedItem {
@@ -1671,6 +1671,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeOpsItems {
 /// reaches an internal limit while processing the results, it stops the operation and returns the
 /// matching values up to that point and a <code>NextToken</code>. You can specify the
 /// <code>NextToken</code> in a subsequent call to get the next set of results.</p>
+/// <important>
+/// <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must
+/// also update the key alias the parameter uses to reference KMS. Otherwise,
+/// <code>DescribeParameters</code> retrieves whatever the original key alias was
+/// referencing.</p>
+/// </important>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeParameters {
     _private: (),
@@ -1902,7 +1908,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeSessions {
     }
 }
 
-/// <p>Deletes the association between an OpsItem and a related resource. For example, this API
+/// <p>Deletes the association between an OpsItem and a related item. For example, this API
 /// operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability of
 /// Amazon Web Services Systems Manager.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -2477,6 +2483,12 @@ impl smithy_http::response::ParseStrictResponse for GetParameter {
 }
 
 /// <p>Retrieves the history of all changes to a parameter.</p>
+/// <important>
+/// <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must
+/// also update the key alias the parameter uses to reference KMS. Otherwise,
+/// <code>GetParameterHistory</code> retrieves whatever the original key alias was
+/// referencing.</p>
+/// </important>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetParameterHistory {
     _private: (),
@@ -3045,7 +3057,8 @@ impl smithy_http::response::ParseStrictResponse for ListOpsItemEvents {
     }
 }
 
-/// <p>Lists all related-item resources associated with an OpsItem.</p>
+/// <p>Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem. OpsCenter is a
+/// capability of Amazon Web Services Systems Manager.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListOpsItemRelatedItems {
     _private: (),

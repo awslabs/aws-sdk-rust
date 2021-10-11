@@ -11,14 +11,17 @@
 )]
 pub enum ParameterExceptionField {
     AndStatement,
+    AssociableResource,
     BodyParsingFallbackBehavior,
     ByteMatchStatement,
+    ChangePropagationStatus,
     CustomRequestHandling,
     CustomResponse,
     CustomResponseBody,
     DefaultAction,
     EntityLimit,
     ExcludedRule,
+    ExpireTimestamp,
     FallbackBehavior,
     FieldToMatch,
     FilterCondition,
@@ -70,16 +73,19 @@ impl std::convert::From<&str> for ParameterExceptionField {
     fn from(s: &str) -> Self {
         match s {
             "AND_STATEMENT" => ParameterExceptionField::AndStatement,
+            "ASSOCIABLE_RESOURCE" => ParameterExceptionField::AssociableResource,
             "BODY_PARSING_FALLBACK_BEHAVIOR" => {
                 ParameterExceptionField::BodyParsingFallbackBehavior
             }
             "BYTE_MATCH_STATEMENT" => ParameterExceptionField::ByteMatchStatement,
+            "CHANGE_PROPAGATION_STATUS" => ParameterExceptionField::ChangePropagationStatus,
             "CUSTOM_REQUEST_HANDLING" => ParameterExceptionField::CustomRequestHandling,
             "CUSTOM_RESPONSE" => ParameterExceptionField::CustomResponse,
             "CUSTOM_RESPONSE_BODY" => ParameterExceptionField::CustomResponseBody,
             "DEFAULT_ACTION" => ParameterExceptionField::DefaultAction,
             "ENTITY_LIMIT" => ParameterExceptionField::EntityLimit,
             "EXCLUDED_RULE" => ParameterExceptionField::ExcludedRule,
+            "EXPIRE_TIMESTAMP" => ParameterExceptionField::ExpireTimestamp,
             "FALLBACK_BEHAVIOR" => ParameterExceptionField::FallbackBehavior,
             "FIELD_TO_MATCH" => ParameterExceptionField::FieldToMatch,
             "FILTER_CONDITION" => ParameterExceptionField::FilterCondition,
@@ -143,16 +149,19 @@ impl ParameterExceptionField {
     pub fn as_str(&self) -> &str {
         match self {
             ParameterExceptionField::AndStatement => "AND_STATEMENT",
+            ParameterExceptionField::AssociableResource => "ASSOCIABLE_RESOURCE",
             ParameterExceptionField::BodyParsingFallbackBehavior => {
                 "BODY_PARSING_FALLBACK_BEHAVIOR"
             }
             ParameterExceptionField::ByteMatchStatement => "BYTE_MATCH_STATEMENT",
+            ParameterExceptionField::ChangePropagationStatus => "CHANGE_PROPAGATION_STATUS",
             ParameterExceptionField::CustomRequestHandling => "CUSTOM_REQUEST_HANDLING",
             ParameterExceptionField::CustomResponse => "CUSTOM_RESPONSE",
             ParameterExceptionField::CustomResponseBody => "CUSTOM_RESPONSE_BODY",
             ParameterExceptionField::DefaultAction => "DEFAULT_ACTION",
             ParameterExceptionField::EntityLimit => "ENTITY_LIMIT",
             ParameterExceptionField::ExcludedRule => "EXCLUDED_RULE",
+            ParameterExceptionField::ExpireTimestamp => "EXPIRE_TIMESTAMP",
             ParameterExceptionField::FallbackBehavior => "FALLBACK_BEHAVIOR",
             ParameterExceptionField::FieldToMatch => "FIELD_TO_MATCH",
             ParameterExceptionField::FilterCondition => "FILTER_CONDITION",
@@ -207,14 +216,17 @@ impl ParameterExceptionField {
     pub fn values() -> &'static [&'static str] {
         &[
             "AND_STATEMENT",
+            "ASSOCIABLE_RESOURCE",
             "BODY_PARSING_FALLBACK_BEHAVIOR",
             "BYTE_MATCH_STATEMENT",
+            "CHANGE_PROPAGATION_STATUS",
             "CUSTOM_REQUEST_HANDLING",
             "CUSTOM_RESPONSE",
             "CUSTOM_RESPONSE_BODY",
             "DEFAULT_ACTION",
             "ENTITY_LIMIT",
             "EXCLUDED_RULE",
+            "EXPIRE_TIMESTAMP",
             "FALLBACK_BEHAVIOR",
             "FIELD_TO_MATCH",
             "FILTER_CONDITION",
@@ -830,6 +842,8 @@ impl OverrideAction {
 /// <p>Specifies that WAF should do nothing. This is generally used to try out a rule
 /// without performing any actions. You set the <code>OverrideAction</code> on the <a>Rule</a>. </p>
 /// <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p>
+/// <p>JSON specification: <code>"None": {}</code>
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoneAction {}
@@ -1342,8 +1356,7 @@ impl CustomResponse {
     }
 }
 
-/// <p>The processing guidance for a <a>Rule</a>, used by WAF to determine
-/// whether a web request matches the rule. </p>
+/// <p>The processing guidance for a <a>Rule</a>, used by WAF to determine whether a web request matches the rule. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statement {
@@ -1364,7 +1377,8 @@ pub struct Statement {
     /// <p>A rule statement used to identify web requests based on country of origin.  </p>
     pub geo_match_statement: std::option::Option<crate::model::GeoMatchStatement>,
     /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
+    /// can only use a rule group reference statement at the top level inside a web ACL. </p>
     pub rule_group_reference_statement:
         std::option::Option<crate::model::RuleGroupReferenceStatement>,
     /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.</p>
@@ -1374,7 +1388,8 @@ pub struct Statement {
     /// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
     pub regex_pattern_set_reference_statement:
         std::option::Option<crate::model::RegexPatternSetReferenceStatement>,
-    /// <p>A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests.</p>
+    /// <p>A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests. </p>
+    /// <p>WAF tracks and manages web requests separately for each instance of a rate-based rule that you use. For example, if you provide the same rate-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate-based rule and gets its own tracking and management by WAF. If you define a rate-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate-based rule that gets its own tracking and management by WAF. </p>
     /// <p>When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below the limit.</p>
     /// <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p>
     /// <ul>
@@ -1386,7 +1401,7 @@ pub struct Statement {
     /// </li>
     /// </ul>
     /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
-    /// <p>You cannot nest a <code>RateBasedStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+    /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
     pub rate_based_statement: std::option::Option<crate::model::RateBasedStatement>,
     /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <a>Statement</a> within the <code>AndStatement</code>. </p>
     pub and_statement: std::option::Option<crate::model::AndStatement>,
@@ -1400,6 +1415,8 @@ pub struct Statement {
     /// <p>A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. </p>
     /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
     pub label_match_statement: std::option::Option<crate::model::LabelMatchStatement>,
+    /// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
+    pub regex_match_statement: std::option::Option<crate::model::RegexMatchStatement>,
 }
 impl std::fmt::Debug for Statement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1430,6 +1447,7 @@ impl std::fmt::Debug for Statement {
             &self.managed_rule_group_statement,
         );
         formatter.field("label_match_statement", &self.label_match_statement);
+        formatter.field("regex_match_statement", &self.regex_match_statement);
         formatter.finish()
     }
 }
@@ -1458,6 +1476,7 @@ pub mod statement {
         pub(crate) managed_rule_group_statement:
             std::option::Option<crate::model::ManagedRuleGroupStatement>,
         pub(crate) label_match_statement: std::option::Option<crate::model::LabelMatchStatement>,
+        pub(crate) regex_match_statement: std::option::Option<crate::model::RegexMatchStatement>,
     }
     impl Builder {
         /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is refered to as a string match statement.</p>
@@ -1530,7 +1549,8 @@ pub mod statement {
             self
         }
         /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
+        /// can only use a rule group reference statement at the top level inside a web ACL. </p>
         pub fn rule_group_reference_statement(
             mut self,
             input: crate::model::RuleGroupReferenceStatement,
@@ -1577,7 +1597,8 @@ pub mod statement {
             self.regex_pattern_set_reference_statement = input;
             self
         }
-        /// <p>A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests.</p>
+        /// <p>A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests. </p>
+        /// <p>WAF tracks and manages web requests separately for each instance of a rate-based rule that you use. For example, if you provide the same rate-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate-based rule and gets its own tracking and management by WAF. If you define a rate-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate-based rule that gets its own tracking and management by WAF. </p>
         /// <p>When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below the limit.</p>
         /// <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p>
         /// <ul>
@@ -1589,7 +1610,7 @@ pub mod statement {
         /// </li>
         /// </ul>
         /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
-        /// <p>You cannot nest a <code>RateBasedStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+        /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
         pub fn rate_based_statement(mut self, input: crate::model::RateBasedStatement) -> Self {
             self.rate_based_statement = Some(input);
             self
@@ -1666,6 +1687,18 @@ pub mod statement {
             self.label_match_statement = input;
             self
         }
+        /// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
+        pub fn regex_match_statement(mut self, input: crate::model::RegexMatchStatement) -> Self {
+            self.regex_match_statement = Some(input);
+            self
+        }
+        pub fn set_regex_match_statement(
+            mut self,
+            input: std::option::Option<crate::model::RegexMatchStatement>,
+        ) -> Self {
+            self.regex_match_statement = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Statement`](crate::model::Statement)
         pub fn build(self) -> crate::model::Statement {
             crate::model::Statement {
@@ -1683,6 +1716,7 @@ pub mod statement {
                 not_statement: self.not_statement,
                 managed_rule_group_statement: self.managed_rule_group_statement,
                 label_match_statement: self.label_match_statement,
+                regex_match_statement: self.regex_match_statement,
             }
         }
     }
@@ -1694,862 +1728,12 @@ impl Statement {
     }
 }
 
-/// <p>A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. </p>
-/// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
+/// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LabelMatchStatement {
-    /// <p>Specify whether you want to match using the label name or just the namespace. </p>
-    pub scope: std::option::Option<crate::model::LabelMatchScope>,
-    /// <p>The string to match against. The setting you provide for this depends on the match
-    /// statement's <code>Scope</code> setting: </p>
-    /// <ul>
-    /// <li>
-    /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification
-    /// must include the name and can include any number of preceding namespace
-    /// specifications and prefix up to providing the fully qualified label name. </p>
-    /// </li>
-    /// <li>
-    /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this
-    /// specification can include any number of contiguous namespace strings, and can include
-    /// the entire label namespace prefix from the rule group or web ACL where the label
-    /// originates.</p>
-    /// </li>
-    /// </ul>
-    /// <p>Labels are case sensitive and components of a label must be separated by colon, for
-    /// example <code>NS1:NS2:name</code>.</p>
-    pub key: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LabelMatchStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LabelMatchStatement");
-        formatter.field("scope", &self.scope);
-        formatter.field("key", &self.key);
-        formatter.finish()
-    }
-}
-/// See [`LabelMatchStatement`](crate::model::LabelMatchStatement)
-pub mod label_match_statement {
-    /// A builder for [`LabelMatchStatement`](crate::model::LabelMatchStatement)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) scope: std::option::Option<crate::model::LabelMatchScope>,
-        pub(crate) key: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Specify whether you want to match using the label name or just the namespace. </p>
-        pub fn scope(mut self, input: crate::model::LabelMatchScope) -> Self {
-            self.scope = Some(input);
-            self
-        }
-        pub fn set_scope(
-            mut self,
-            input: std::option::Option<crate::model::LabelMatchScope>,
-        ) -> Self {
-            self.scope = input;
-            self
-        }
-        /// <p>The string to match against. The setting you provide for this depends on the match
-        /// statement's <code>Scope</code> setting: </p>
-        /// <ul>
-        /// <li>
-        /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification
-        /// must include the name and can include any number of preceding namespace
-        /// specifications and prefix up to providing the fully qualified label name. </p>
-        /// </li>
-        /// <li>
-        /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this
-        /// specification can include any number of contiguous namespace strings, and can include
-        /// the entire label namespace prefix from the rule group or web ACL where the label
-        /// originates.</p>
-        /// </li>
-        /// </ul>
-        /// <p>Labels are case sensitive and components of a label must be separated by colon, for
-        /// example <code>NS1:NS2:name</code>.</p>
-        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.key = Some(input.into());
-            self
-        }
-        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LabelMatchStatement`](crate::model::LabelMatchStatement)
-        pub fn build(self) -> crate::model::LabelMatchStatement {
-            crate::model::LabelMatchStatement {
-                scope: self.scope,
-                key: self.key,
-            }
-        }
-    }
-}
-impl LabelMatchStatement {
-    /// Creates a new builder-style object to manufacture [`LabelMatchStatement`](crate::model::LabelMatchStatement)
-    pub fn builder() -> crate::model::label_match_statement::Builder {
-        crate::model::label_match_statement::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum LabelMatchScope {
-    Label,
-    Namespace,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for LabelMatchScope {
-    fn from(s: &str) -> Self {
-        match s {
-            "LABEL" => LabelMatchScope::Label,
-            "NAMESPACE" => LabelMatchScope::Namespace,
-            other => LabelMatchScope::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for LabelMatchScope {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LabelMatchScope::from(s))
-    }
-}
-impl LabelMatchScope {
-    pub fn as_str(&self) -> &str {
-        match self {
-            LabelMatchScope::Label => "LABEL",
-            LabelMatchScope::Namespace => "NAMESPACE",
-            LabelMatchScope::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["LABEL", "NAMESPACE"]
-    }
-}
-impl AsRef<str> for LabelMatchScope {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p>
-/// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ManagedRuleGroupStatement {
-    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
-    pub vendor_name: std::option::Option<std::string::String>,
-    /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>The version of the managed rule group to use. If you specify this, the version setting
-    /// is fixed until you change it.
-    /// If you don't specify this, WAF uses the vendor's default version, and then keeps the version
-    /// at the vendor's default when the vendor updates the managed rule group settings. </p>
-    pub version: std::option::Option<std::string::String>,
-    /// <p>The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the
-    /// action that is set on the rule. This effectively excludes the rule from acting on web
-    /// requests. </p>
-    pub excluded_rules: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
-    /// <p>An optional nested statement that narrows the scope of the web requests that are
-    /// evaluated by the managed rule group. Requests are only evaluated by the rule group if they
-    /// match the scope-down statement. You can use any nestable <a>Statement</a> in the
-    /// scope-down statement, and you can nest statements at any level, the same as you can for a
-    /// rule statement. </p>
-    pub scope_down_statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
-}
-impl std::fmt::Debug for ManagedRuleGroupStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManagedRuleGroupStatement");
-        formatter.field("vendor_name", &self.vendor_name);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("excluded_rules", &self.excluded_rules);
-        formatter.field("scope_down_statement", &self.scope_down_statement);
-        formatter.finish()
-    }
-}
-/// See [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement)
-pub mod managed_rule_group_statement {
-    /// A builder for [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) vendor_name: std::option::Option<std::string::String>,
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) version: std::option::Option<std::string::String>,
-        pub(crate) excluded_rules: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
-        pub(crate) scope_down_statement:
-            std::option::Option<std::boxed::Box<crate::model::Statement>>,
-    }
-    impl Builder {
-        /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
-        pub fn vendor_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.vendor_name = Some(input.into());
-            self
-        }
-        pub fn set_vendor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vendor_name = input;
-            self
-        }
-        /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>The version of the managed rule group to use. If you specify this, the version setting
-        /// is fixed until you change it.
-        /// If you don't specify this, WAF uses the vendor's default version, and then keeps the version
-        /// at the vendor's default when the vendor updates the managed rule group settings. </p>
-        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-            self.version = Some(input.into());
-            self
-        }
-        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
-        }
-        pub fn excluded_rules(mut self, input: impl Into<crate::model::ExcludedRule>) -> Self {
-            let mut v = self.excluded_rules.unwrap_or_default();
-            v.push(input.into());
-            self.excluded_rules = Some(v);
-            self
-        }
-        pub fn set_excluded_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
-        ) -> Self {
-            self.excluded_rules = input;
-            self
-        }
-        /// <p>An optional nested statement that narrows the scope of the web requests that are
-        /// evaluated by the managed rule group. Requests are only evaluated by the rule group if they
-        /// match the scope-down statement. You can use any nestable <a>Statement</a> in the
-        /// scope-down statement, and you can nest statements at any level, the same as you can for a
-        /// rule statement. </p>
-        pub fn scope_down_statement(
-            mut self,
-            input: impl Into<std::boxed::Box<crate::model::Statement>>,
-        ) -> Self {
-            self.scope_down_statement = Some(input.into());
-            self
-        }
-        pub fn set_scope_down_statement(
-            mut self,
-            input: std::option::Option<std::boxed::Box<crate::model::Statement>>,
-        ) -> Self {
-            self.scope_down_statement = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement)
-        pub fn build(self) -> crate::model::ManagedRuleGroupStatement {
-            crate::model::ManagedRuleGroupStatement {
-                vendor_name: self.vendor_name,
-                name: self.name,
-                version: self.version,
-                excluded_rules: self.excluded_rules,
-                scope_down_statement: self.scope_down_statement,
-            }
-        }
-    }
-}
-impl ManagedRuleGroupStatement {
-    /// Creates a new builder-style object to manufacture [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement)
-    pub fn builder() -> crate::model::managed_rule_group_statement::Builder {
-        crate::model::managed_rule_group_statement::Builder::default()
-    }
-}
-
-/// <p>Specifies a single rule to exclude from the rule group. Excluding a rule overrides its
-/// action setting for the rule group in the web ACL, setting it to <code>COUNT</code>. This
-/// effectively excludes the rule from acting on web requests. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExcludedRule {
-    /// <p>The name of the rule to exclude.</p>
-    pub name: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ExcludedRule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExcludedRule");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
-/// See [`ExcludedRule`](crate::model::ExcludedRule)
-pub mod excluded_rule {
-    /// A builder for [`ExcludedRule`](crate::model::ExcludedRule)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the rule to exclude.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ExcludedRule`](crate::model::ExcludedRule)
-        pub fn build(self) -> crate::model::ExcludedRule {
-            crate::model::ExcludedRule { name: self.name }
-        }
-    }
-}
-impl ExcludedRule {
-    /// Creates a new builder-style object to manufacture [`ExcludedRule`](crate::model::ExcludedRule)
-    pub fn builder() -> crate::model::excluded_rule::Builder {
-        crate::model::excluded_rule::Builder::default()
-    }
-}
-
-/// <p>A logical rule statement used to negate the results of another rule statement. You provide one <a>Statement</a> within the <code>NotStatement</code>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotStatement {
-    /// <p>The statement to negate. You can use any statement that can be nested.</p>
-    pub statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
-}
-impl std::fmt::Debug for NotStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotStatement");
-        formatter.field("statement", &self.statement);
-        formatter.finish()
-    }
-}
-/// See [`NotStatement`](crate::model::NotStatement)
-pub mod not_statement {
-    /// A builder for [`NotStatement`](crate::model::NotStatement)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
-    }
-    impl Builder {
-        /// <p>The statement to negate. You can use any statement that can be nested.</p>
-        pub fn statement(
-            mut self,
-            input: impl Into<std::boxed::Box<crate::model::Statement>>,
-        ) -> Self {
-            self.statement = Some(input.into());
-            self
-        }
-        pub fn set_statement(
-            mut self,
-            input: std::option::Option<std::boxed::Box<crate::model::Statement>>,
-        ) -> Self {
-            self.statement = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`NotStatement`](crate::model::NotStatement)
-        pub fn build(self) -> crate::model::NotStatement {
-            crate::model::NotStatement {
-                statement: self.statement,
-            }
-        }
-    }
-}
-impl NotStatement {
-    /// Creates a new builder-style object to manufacture [`NotStatement`](crate::model::NotStatement)
-    pub fn builder() -> crate::model::not_statement::Builder {
-        crate::model::not_statement::Builder::default()
-    }
-}
-
-/// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <a>Statement</a> within the <code>OrStatement</code>. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OrStatement {
-    /// <p>The statements to combine with OR logic. You can use any statements that can be
-    /// nested.</p>
-    pub statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
-}
-impl std::fmt::Debug for OrStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrStatement");
-        formatter.field("statements", &self.statements);
-        formatter.finish()
-    }
-}
-/// See [`OrStatement`](crate::model::OrStatement)
-pub mod or_statement {
-    /// A builder for [`OrStatement`](crate::model::OrStatement)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
-    }
-    impl Builder {
-        pub fn statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
-            let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
-            self.statements = Some(v);
-            self
-        }
-        pub fn set_statements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Statement>>,
-        ) -> Self {
-            self.statements = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`OrStatement`](crate::model::OrStatement)
-        pub fn build(self) -> crate::model::OrStatement {
-            crate::model::OrStatement {
-                statements: self.statements,
-            }
-        }
-    }
-}
-impl OrStatement {
-    /// Creates a new builder-style object to manufacture [`OrStatement`](crate::model::OrStatement)
-    pub fn builder() -> crate::model::or_statement::Builder {
-        crate::model::or_statement::Builder::default()
-    }
-}
-
-/// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <a>Statement</a> within the <code>AndStatement</code>. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AndStatement {
-    /// <p>The statements to combine with AND logic. You can use any statements that can be nested.
-    /// </p>
-    pub statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
-}
-impl std::fmt::Debug for AndStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AndStatement");
-        formatter.field("statements", &self.statements);
-        formatter.finish()
-    }
-}
-/// See [`AndStatement`](crate::model::AndStatement)
-pub mod and_statement {
-    /// A builder for [`AndStatement`](crate::model::AndStatement)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
-    }
-    impl Builder {
-        pub fn statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
-            let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
-            self.statements = Some(v);
-            self
-        }
-        pub fn set_statements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Statement>>,
-        ) -> Self {
-            self.statements = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AndStatement`](crate::model::AndStatement)
-        pub fn build(self) -> crate::model::AndStatement {
-            crate::model::AndStatement {
-                statements: self.statements,
-            }
-        }
-    }
-}
-impl AndStatement {
-    /// Creates a new builder-style object to manufacture [`AndStatement`](crate::model::AndStatement)
-    pub fn builder() -> crate::model::and_statement::Builder {
-        crate::model::and_statement::Builder::default()
-    }
-}
-
-/// <p>A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests.</p>
-/// <p>When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below the limit.</p>
-/// <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p>
-/// <ul>
-/// <li>
-/// <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p>
-/// </li>
-/// <li>
-/// <p>A string match statement that searches in the User-Agent header for the string BadBot.</p>
-/// </li>
-/// </ul>
-/// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
-/// <p>You cannot nest a <code>RateBasedStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RateBasedStatement {
-    /// <p>The limit on requests per 5-minute period for a single originating IP address. If the
-    /// statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the
-    /// requests that match the statement.</p>
-    pub limit: i64,
-    /// <p>Setting that indicates how to aggregate the request counts. The options are the
-    /// following:</p>
-    /// <ul>
-    /// <li>
-    /// <p>IP - Aggregate the request counts on the IP address from the web request
-    /// origin.</p>
-    /// </li>
-    /// <li>
-    /// <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an
-    /// HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to
-    /// specify the header to use. </p>
-    /// </li>
-    /// </ul>
-    pub aggregate_key_type: std::option::Option<crate::model::RateBasedStatementAggregateKeyType>,
-    /// <p>An optional nested statement that narrows the scope of the web requests that are
-    /// evaluated by the rate-based statement. Requests are only tracked by the rate-based
-    /// statement if they match the scope-down statement. You can use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any
-    /// level, the same as you can for a rule statement. </p>
-    pub scope_down_statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-    /// <note>
-    /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
-    /// </note>
-    /// <p>This is required if <code>AggregateKeyType</code> is set to
-    /// <code>FORWARDED_IP</code>.</p>
-    pub forwarded_ip_config: std::option::Option<crate::model::ForwardedIpConfig>,
-}
-impl std::fmt::Debug for RateBasedStatement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RateBasedStatement");
-        formatter.field("limit", &self.limit);
-        formatter.field("aggregate_key_type", &self.aggregate_key_type);
-        formatter.field("scope_down_statement", &self.scope_down_statement);
-        formatter.field("forwarded_ip_config", &self.forwarded_ip_config);
-        formatter.finish()
-    }
-}
-/// See [`RateBasedStatement`](crate::model::RateBasedStatement)
-pub mod rate_based_statement {
-    /// A builder for [`RateBasedStatement`](crate::model::RateBasedStatement)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) limit: std::option::Option<i64>,
-        pub(crate) aggregate_key_type:
-            std::option::Option<crate::model::RateBasedStatementAggregateKeyType>,
-        pub(crate) scope_down_statement:
-            std::option::Option<std::boxed::Box<crate::model::Statement>>,
-        pub(crate) forwarded_ip_config: std::option::Option<crate::model::ForwardedIpConfig>,
-    }
-    impl Builder {
-        /// <p>The limit on requests per 5-minute period for a single originating IP address. If the
-        /// statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the
-        /// requests that match the statement.</p>
-        pub fn limit(mut self, input: i64) -> Self {
-            self.limit = Some(input);
-            self
-        }
-        pub fn set_limit(mut self, input: std::option::Option<i64>) -> Self {
-            self.limit = input;
-            self
-        }
-        /// <p>Setting that indicates how to aggregate the request counts. The options are the
-        /// following:</p>
-        /// <ul>
-        /// <li>
-        /// <p>IP - Aggregate the request counts on the IP address from the web request
-        /// origin.</p>
-        /// </li>
-        /// <li>
-        /// <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an
-        /// HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to
-        /// specify the header to use. </p>
-        /// </li>
-        /// </ul>
-        pub fn aggregate_key_type(
-            mut self,
-            input: crate::model::RateBasedStatementAggregateKeyType,
-        ) -> Self {
-            self.aggregate_key_type = Some(input);
-            self
-        }
-        pub fn set_aggregate_key_type(
-            mut self,
-            input: std::option::Option<crate::model::RateBasedStatementAggregateKeyType>,
-        ) -> Self {
-            self.aggregate_key_type = input;
-            self
-        }
-        /// <p>An optional nested statement that narrows the scope of the web requests that are
-        /// evaluated by the rate-based statement. Requests are only tracked by the rate-based
-        /// statement if they match the scope-down statement. You can use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any
-        /// level, the same as you can for a rule statement. </p>
-        pub fn scope_down_statement(
-            mut self,
-            input: impl Into<std::boxed::Box<crate::model::Statement>>,
-        ) -> Self {
-            self.scope_down_statement = Some(input.into());
-            self
-        }
-        pub fn set_scope_down_statement(
-            mut self,
-            input: std::option::Option<std::boxed::Box<crate::model::Statement>>,
-        ) -> Self {
-            self.scope_down_statement = input;
-            self
-        }
-        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-        /// <note>
-        /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
-        /// </note>
-        /// <p>This is required if <code>AggregateKeyType</code> is set to
-        /// <code>FORWARDED_IP</code>.</p>
-        pub fn forwarded_ip_config(mut self, input: crate::model::ForwardedIpConfig) -> Self {
-            self.forwarded_ip_config = Some(input);
-            self
-        }
-        pub fn set_forwarded_ip_config(
-            mut self,
-            input: std::option::Option<crate::model::ForwardedIpConfig>,
-        ) -> Self {
-            self.forwarded_ip_config = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`RateBasedStatement`](crate::model::RateBasedStatement)
-        pub fn build(self) -> crate::model::RateBasedStatement {
-            crate::model::RateBasedStatement {
-                limit: self.limit.unwrap_or_default(),
-                aggregate_key_type: self.aggregate_key_type,
-                scope_down_statement: self.scope_down_statement,
-                forwarded_ip_config: self.forwarded_ip_config,
-            }
-        }
-    }
-}
-impl RateBasedStatement {
-    /// Creates a new builder-style object to manufacture [`RateBasedStatement`](crate::model::RateBasedStatement)
-    pub fn builder() -> crate::model::rate_based_statement::Builder {
-        crate::model::rate_based_statement::Builder::default()
-    }
-}
-
-/// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-/// <note>
-/// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
-/// </note>
-/// <p>This configuration is used for <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead. </p>
-/// <p>WAF only evaluates the first IP address found in the specified HTTP header.
-/// </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ForwardedIpConfig {
-    /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-    /// <note>
-    /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
-    /// </note>
-    pub header_name: std::option::Option<std::string::String>,
-    /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
-    /// <note>
-    /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
-    /// </note>
-    /// <p>You can specify the following fallback behaviors:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
-    /// </li>
-    /// </ul>
-    pub fallback_behavior: std::option::Option<crate::model::FallbackBehavior>,
-}
-impl std::fmt::Debug for ForwardedIpConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForwardedIpConfig");
-        formatter.field("header_name", &self.header_name);
-        formatter.field("fallback_behavior", &self.fallback_behavior);
-        formatter.finish()
-    }
-}
-/// See [`ForwardedIpConfig`](crate::model::ForwardedIpConfig)
-pub mod forwarded_ip_config {
-    /// A builder for [`ForwardedIpConfig`](crate::model::ForwardedIpConfig)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) header_name: std::option::Option<std::string::String>,
-        pub(crate) fallback_behavior: std::option::Option<crate::model::FallbackBehavior>,
-    }
-    impl Builder {
-        /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-        /// <note>
-        /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
-        /// </note>
-        pub fn header_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.header_name = Some(input.into());
-            self
-        }
-        pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.header_name = input;
-            self
-        }
-        /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
-        /// <note>
-        /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
-        /// </note>
-        /// <p>You can specify the following fallback behaviors:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
-        /// </li>
-        /// </ul>
-        pub fn fallback_behavior(mut self, input: crate::model::FallbackBehavior) -> Self {
-            self.fallback_behavior = Some(input);
-            self
-        }
-        pub fn set_fallback_behavior(
-            mut self,
-            input: std::option::Option<crate::model::FallbackBehavior>,
-        ) -> Self {
-            self.fallback_behavior = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ForwardedIpConfig`](crate::model::ForwardedIpConfig)
-        pub fn build(self) -> crate::model::ForwardedIpConfig {
-            crate::model::ForwardedIpConfig {
-                header_name: self.header_name,
-                fallback_behavior: self.fallback_behavior,
-            }
-        }
-    }
-}
-impl ForwardedIpConfig {
-    /// Creates a new builder-style object to manufacture [`ForwardedIpConfig`](crate::model::ForwardedIpConfig)
-    pub fn builder() -> crate::model::forwarded_ip_config::Builder {
-        crate::model::forwarded_ip_config::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum FallbackBehavior {
-    Match,
-    NoMatch,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for FallbackBehavior {
-    fn from(s: &str) -> Self {
-        match s {
-            "MATCH" => FallbackBehavior::Match,
-            "NO_MATCH" => FallbackBehavior::NoMatch,
-            other => FallbackBehavior::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for FallbackBehavior {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FallbackBehavior::from(s))
-    }
-}
-impl FallbackBehavior {
-    pub fn as_str(&self) -> &str {
-        match self {
-            FallbackBehavior::Match => "MATCH",
-            FallbackBehavior::NoMatch => "NO_MATCH",
-            FallbackBehavior::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["MATCH", "NO_MATCH"]
-    }
-}
-impl AsRef<str> for FallbackBehavior {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum RateBasedStatementAggregateKeyType {
-    ForwardedIp,
-    Ip,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for RateBasedStatementAggregateKeyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "FORWARDED_IP" => RateBasedStatementAggregateKeyType::ForwardedIp,
-            "IP" => RateBasedStatementAggregateKeyType::Ip,
-            other => RateBasedStatementAggregateKeyType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for RateBasedStatementAggregateKeyType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RateBasedStatementAggregateKeyType::from(s))
-    }
-}
-impl RateBasedStatementAggregateKeyType {
-    pub fn as_str(&self) -> &str {
-        match self {
-            RateBasedStatementAggregateKeyType::ForwardedIp => "FORWARDED_IP",
-            RateBasedStatementAggregateKeyType::Ip => "IP",
-            RateBasedStatementAggregateKeyType::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["FORWARDED_IP", "IP"]
-    }
-}
-impl AsRef<str> for RateBasedStatementAggregateKeyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p>
-/// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RegexPatternSetReferenceStatement {
-    /// <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
-    /// statement references.</p>
-    pub arn: std::option::Option<std::string::String>,
+pub struct RegexMatchStatement {
+    /// <p>The string representing the regular expression.</p>
+    pub regex_string: std::option::Option<std::string::String>,
     /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
@@ -2557,35 +1741,34 @@ pub struct RegexPatternSetReferenceStatement {
     /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
 }
-impl std::fmt::Debug for RegexPatternSetReferenceStatement {
+impl std::fmt::Debug for RegexMatchStatement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegexPatternSetReferenceStatement");
-        formatter.field("arn", &self.arn);
+        let mut formatter = f.debug_struct("RegexMatchStatement");
+        formatter.field("regex_string", &self.regex_string);
         formatter.field("field_to_match", &self.field_to_match);
         formatter.field("text_transformations", &self.text_transformations);
         formatter.finish()
     }
 }
-/// See [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement)
-pub mod regex_pattern_set_reference_statement {
-    /// A builder for [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement)
+/// See [`RegexMatchStatement`](crate::model::RegexMatchStatement)
+pub mod regex_match_statement {
+    /// A builder for [`RegexMatchStatement`](crate::model::RegexMatchStatement)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) regex_string: std::option::Option<std::string::String>,
         pub(crate) field_to_match: std::option::Option<crate::model::FieldToMatch>,
         pub(crate) text_transformations:
             std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
-        /// statement references.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
+        /// <p>The string representing the regular expression.</p>
+        pub fn regex_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regex_string = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
+        pub fn set_regex_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex_string = input;
             self
         }
         /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
@@ -2616,20 +1799,20 @@ pub mod regex_pattern_set_reference_statement {
             self.text_transformations = input;
             self
         }
-        /// Consumes the builder and constructs a [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement)
-        pub fn build(self) -> crate::model::RegexPatternSetReferenceStatement {
-            crate::model::RegexPatternSetReferenceStatement {
-                arn: self.arn,
+        /// Consumes the builder and constructs a [`RegexMatchStatement`](crate::model::RegexMatchStatement)
+        pub fn build(self) -> crate::model::RegexMatchStatement {
+            crate::model::RegexMatchStatement {
+                regex_string: self.regex_string,
                 field_to_match: self.field_to_match,
                 text_transformations: self.text_transformations,
             }
         }
     }
 }
-impl RegexPatternSetReferenceStatement {
-    /// Creates a new builder-style object to manufacture [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement)
-    pub fn builder() -> crate::model::regex_pattern_set_reference_statement::Builder {
-        crate::model::regex_pattern_set_reference_statement::Builder::default()
+impl RegexMatchStatement {
+    /// Creates a new builder-style object to manufacture [`RegexMatchStatement`](crate::model::RegexMatchStatement)
+    pub fn builder() -> crate::model::regex_match_statement::Builder {
+        crate::model::regex_match_statement::Builder::default()
     }
 }
 
@@ -3129,11 +2312,15 @@ impl AsRef<str> for TextTransformationType {
     }
 }
 
-/// <p>The part of a web request that you want WAF to inspect. Include the single
-/// <code>FieldToMatch</code> type that you want to inspect, with additional specifications
-/// as needed, according to the type. You specify a single request component in
-/// <code>FieldToMatch</code> for each rule statement that requires it. To inspect more than
-/// one component of a web request, create a separate rule statement for each component.</p>
+/// <p>The part of a web request that you want WAF to inspect. Include the single <code>FieldToMatch</code> type that you want to inspect, with additional specifications as needed, according to the type. You specify a single request component in <code>FieldToMatch</code> for each rule statement that requires it. To inspect more than one component of a web request, create a separate rule statement for each component.</p>
+/// <p>JSON specification for a <code>QueryString</code> field to match: </p>
+/// <p>
+/// <code>    "FieldToMatch": { "QueryString": {} }</code>
+/// </p>
+/// <p>Example JSON for a <code>Method</code> field to match specification:</p>
+/// <p>
+/// <code>    "FieldToMatch": { "Method": { "Name": "DELETE" } }</code>
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldToMatch {
@@ -3356,6 +2543,8 @@ impl FieldToMatch {
 /// inspect using the rule's inspection criteria. WAF inspects only the parts of the JSON
 /// that result from the matches that you
 /// indicate.
+/// </p>
+/// <p>Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL" }</code>
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3724,6 +2913,8 @@ impl JsonMatchPattern {
 /// <code>JsonBody</code>.
 /// </p>
 /// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
+/// <p>JSON specification: <code>"All": {}</code>
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct All {}
@@ -3753,9 +2944,10 @@ impl All {
     }
 }
 
-/// <p>The HTTP method of a web request. The method indicates the type of operation that the
-/// request is asking the origin to perform. </p>
+/// <p>The HTTP method of a web request. The method indicates the type of operation that the request is asking the origin to perform. </p>
 /// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
+/// <p>JSON specification: <code>"Method": {}</code>
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Method {}
@@ -3787,6 +2979,8 @@ impl Method {
 
 /// <p>The body of a web request. This immediately follows the request headers.</p>
 /// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
+/// <p>JSON specification: <code>"Body": {}</code>
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Body {}
@@ -3816,9 +3010,10 @@ impl Body {
     }
 }
 
-/// <p>The query string of a web request. This is the part of a URL that appears after a
-/// <code>?</code> character, if any.</p>
+/// <p>The query string of a web request. This is the part of a URL that appears after a <code>?</code> character, if any.</p>
 /// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
+/// <p>JSON specification: <code>"QueryString": {}</code>
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryString {}
@@ -3850,6 +3045,8 @@ impl QueryString {
 
 /// <p>The path component of the URI of a web request. This is the part of a web request that identifies a resource. For example, <code>/images/daily-ad.jpg</code>.</p>
 /// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
+/// <p>JSON specification: <code>"UriPath": {}</code>
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UriPath {}
@@ -3881,6 +3078,8 @@ impl UriPath {
 
 /// <p>All query arguments of a web request. </p>
 /// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
+/// <p>JSON specification: <code>"AllQueryArguments": {}</code>
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllQueryArguments {}
@@ -3913,6 +3112,8 @@ impl AllQueryArguments {
 /// <p>One query argument in a web request, identified by name, for example
 /// <i>UserName</i> or <i>SalesRegion</i>. The name can be up to
 /// 30 characters long and isn't case sensitive. </p>
+/// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingleQueryArgument {
@@ -3961,6 +3162,8 @@ impl SingleQueryArgument {
 /// <code>User-Agent</code> or <code>Referer</code>. This setting isn't case
 /// sensitive.</p>
 /// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
+/// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
+/// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingleHeader {
@@ -4002,6 +3205,946 @@ impl SingleHeader {
     /// Creates a new builder-style object to manufacture [`SingleHeader`](crate::model::SingleHeader)
     pub fn builder() -> crate::model::single_header::Builder {
         crate::model::single_header::Builder::default()
+    }
+}
+
+/// <p>A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. </p>
+/// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LabelMatchStatement {
+    /// <p>Specify whether you want to match using the label name or just the namespace. </p>
+    pub scope: std::option::Option<crate::model::LabelMatchScope>,
+    /// <p>The string to match against. The setting you provide for this depends on the match
+    /// statement's <code>Scope</code> setting: </p>
+    /// <ul>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification
+    /// must include the name and can include any number of preceding namespace
+    /// specifications and prefix up to providing the fully qualified label name. </p>
+    /// </li>
+    /// <li>
+    /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this
+    /// specification can include any number of contiguous namespace strings, and can include
+    /// the entire label namespace prefix from the rule group or web ACL where the label
+    /// originates.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Labels are case sensitive and components of a label must be separated by colon, for
+    /// example <code>NS1:NS2:name</code>.</p>
+    pub key: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LabelMatchStatement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LabelMatchStatement");
+        formatter.field("scope", &self.scope);
+        formatter.field("key", &self.key);
+        formatter.finish()
+    }
+}
+/// See [`LabelMatchStatement`](crate::model::LabelMatchStatement)
+pub mod label_match_statement {
+    /// A builder for [`LabelMatchStatement`](crate::model::LabelMatchStatement)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scope: std::option::Option<crate::model::LabelMatchScope>,
+        pub(crate) key: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Specify whether you want to match using the label name or just the namespace. </p>
+        pub fn scope(mut self, input: crate::model::LabelMatchScope) -> Self {
+            self.scope = Some(input);
+            self
+        }
+        pub fn set_scope(
+            mut self,
+            input: std::option::Option<crate::model::LabelMatchScope>,
+        ) -> Self {
+            self.scope = input;
+            self
+        }
+        /// <p>The string to match against. The setting you provide for this depends on the match
+        /// statement's <code>Scope</code> setting: </p>
+        /// <ul>
+        /// <li>
+        /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification
+        /// must include the name and can include any number of preceding namespace
+        /// specifications and prefix up to providing the fully qualified label name. </p>
+        /// </li>
+        /// <li>
+        /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this
+        /// specification can include any number of contiguous namespace strings, and can include
+        /// the entire label namespace prefix from the rule group or web ACL where the label
+        /// originates.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Labels are case sensitive and components of a label must be separated by colon, for
+        /// example <code>NS1:NS2:name</code>.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LabelMatchStatement`](crate::model::LabelMatchStatement)
+        pub fn build(self) -> crate::model::LabelMatchStatement {
+            crate::model::LabelMatchStatement {
+                scope: self.scope,
+                key: self.key,
+            }
+        }
+    }
+}
+impl LabelMatchStatement {
+    /// Creates a new builder-style object to manufacture [`LabelMatchStatement`](crate::model::LabelMatchStatement)
+    pub fn builder() -> crate::model::label_match_statement::Builder {
+        crate::model::label_match_statement::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LabelMatchScope {
+    Label,
+    Namespace,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LabelMatchScope {
+    fn from(s: &str) -> Self {
+        match s {
+            "LABEL" => LabelMatchScope::Label,
+            "NAMESPACE" => LabelMatchScope::Namespace,
+            other => LabelMatchScope::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LabelMatchScope {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LabelMatchScope::from(s))
+    }
+}
+impl LabelMatchScope {
+    pub fn as_str(&self) -> &str {
+        match self {
+            LabelMatchScope::Label => "LABEL",
+            LabelMatchScope::Namespace => "NAMESPACE",
+            LabelMatchScope::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["LABEL", "NAMESPACE"]
+    }
+}
+impl AsRef<str> for LabelMatchScope {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p>
+/// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ManagedRuleGroupStatement {
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    pub vendor_name: std::option::Option<std::string::String>,
+    /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The version of the managed rule group to use. If you specify this, the version setting
+    /// is fixed until you change it.
+    /// If you don't specify this, WAF uses the vendor's default version, and then keeps the version
+    /// at the vendor's default when the vendor updates the managed rule group settings. </p>
+    pub version: std::option::Option<std::string::String>,
+    /// <p>The rules whose actions are set to <code>COUNT</code> by the web ACL, regardless of the
+    /// action that is set on the rule. This effectively excludes the rule from acting on web
+    /// requests. </p>
+    pub excluded_rules: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
+    /// <p>An optional nested statement that narrows the scope of the web requests that are
+    /// evaluated by the managed rule group. Requests are only evaluated by the rule group if they
+    /// match the scope-down statement. You can use any nestable <a>Statement</a> in the
+    /// scope-down statement, and you can nest statements at any level, the same as you can for a
+    /// rule statement. </p>
+    pub scope_down_statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
+}
+impl std::fmt::Debug for ManagedRuleGroupStatement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ManagedRuleGroupStatement");
+        formatter.field("vendor_name", &self.vendor_name);
+        formatter.field("name", &self.name);
+        formatter.field("version", &self.version);
+        formatter.field("excluded_rules", &self.excluded_rules);
+        formatter.field("scope_down_statement", &self.scope_down_statement);
+        formatter.finish()
+    }
+}
+/// See [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement)
+pub mod managed_rule_group_statement {
+    /// A builder for [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vendor_name: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) excluded_rules: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
+        pub(crate) scope_down_statement:
+            std::option::Option<std::boxed::Box<crate::model::Statement>>,
+    }
+    impl Builder {
+        /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+        pub fn vendor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vendor_name = Some(input.into());
+            self
+        }
+        pub fn set_vendor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vendor_name = input;
+            self
+        }
+        /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The version of the managed rule group to use. If you specify this, the version setting
+        /// is fixed until you change it.
+        /// If you don't specify this, WAF uses the vendor's default version, and then keeps the version
+        /// at the vendor's default when the vendor updates the managed rule group settings. </p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        pub fn excluded_rules(mut self, input: impl Into<crate::model::ExcludedRule>) -> Self {
+            let mut v = self.excluded_rules.unwrap_or_default();
+            v.push(input.into());
+            self.excluded_rules = Some(v);
+            self
+        }
+        pub fn set_excluded_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
+        ) -> Self {
+            self.excluded_rules = input;
+            self
+        }
+        /// <p>An optional nested statement that narrows the scope of the web requests that are
+        /// evaluated by the managed rule group. Requests are only evaluated by the rule group if they
+        /// match the scope-down statement. You can use any nestable <a>Statement</a> in the
+        /// scope-down statement, and you can nest statements at any level, the same as you can for a
+        /// rule statement. </p>
+        pub fn scope_down_statement(
+            mut self,
+            input: impl Into<std::boxed::Box<crate::model::Statement>>,
+        ) -> Self {
+            self.scope_down_statement = Some(input.into());
+            self
+        }
+        pub fn set_scope_down_statement(
+            mut self,
+            input: std::option::Option<std::boxed::Box<crate::model::Statement>>,
+        ) -> Self {
+            self.scope_down_statement = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement)
+        pub fn build(self) -> crate::model::ManagedRuleGroupStatement {
+            crate::model::ManagedRuleGroupStatement {
+                vendor_name: self.vendor_name,
+                name: self.name,
+                version: self.version,
+                excluded_rules: self.excluded_rules,
+                scope_down_statement: self.scope_down_statement,
+            }
+        }
+    }
+}
+impl ManagedRuleGroupStatement {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement)
+    pub fn builder() -> crate::model::managed_rule_group_statement::Builder {
+        crate::model::managed_rule_group_statement::Builder::default()
+    }
+}
+
+/// <p>Specifies a single rule to exclude from the rule group. Excluding a rule overrides its
+/// action setting for the rule group in the web ACL, setting it to <code>COUNT</code>. This
+/// effectively excludes the rule from acting on web requests. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExcludedRule {
+    /// <p>The name of the rule to exclude.</p>
+    pub name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ExcludedRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExcludedRule");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`ExcludedRule`](crate::model::ExcludedRule)
+pub mod excluded_rule {
+    /// A builder for [`ExcludedRule`](crate::model::ExcludedRule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the rule to exclude.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExcludedRule`](crate::model::ExcludedRule)
+        pub fn build(self) -> crate::model::ExcludedRule {
+            crate::model::ExcludedRule { name: self.name }
+        }
+    }
+}
+impl ExcludedRule {
+    /// Creates a new builder-style object to manufacture [`ExcludedRule`](crate::model::ExcludedRule)
+    pub fn builder() -> crate::model::excluded_rule::Builder {
+        crate::model::excluded_rule::Builder::default()
+    }
+}
+
+/// <p>A logical rule statement used to negate the results of another rule statement. You provide one <a>Statement</a> within the <code>NotStatement</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NotStatement {
+    /// <p>The statement to negate. You can use any statement that can be nested.</p>
+    pub statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
+}
+impl std::fmt::Debug for NotStatement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NotStatement");
+        formatter.field("statement", &self.statement);
+        formatter.finish()
+    }
+}
+/// See [`NotStatement`](crate::model::NotStatement)
+pub mod not_statement {
+    /// A builder for [`NotStatement`](crate::model::NotStatement)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
+    }
+    impl Builder {
+        /// <p>The statement to negate. You can use any statement that can be nested.</p>
+        pub fn statement(
+            mut self,
+            input: impl Into<std::boxed::Box<crate::model::Statement>>,
+        ) -> Self {
+            self.statement = Some(input.into());
+            self
+        }
+        pub fn set_statement(
+            mut self,
+            input: std::option::Option<std::boxed::Box<crate::model::Statement>>,
+        ) -> Self {
+            self.statement = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NotStatement`](crate::model::NotStatement)
+        pub fn build(self) -> crate::model::NotStatement {
+            crate::model::NotStatement {
+                statement: self.statement,
+            }
+        }
+    }
+}
+impl NotStatement {
+    /// Creates a new builder-style object to manufacture [`NotStatement`](crate::model::NotStatement)
+    pub fn builder() -> crate::model::not_statement::Builder {
+        crate::model::not_statement::Builder::default()
+    }
+}
+
+/// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <a>Statement</a> within the <code>OrStatement</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OrStatement {
+    /// <p>The statements to combine with OR logic. You can use any statements that can be
+    /// nested.</p>
+    pub statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
+}
+impl std::fmt::Debug for OrStatement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OrStatement");
+        formatter.field("statements", &self.statements);
+        formatter.finish()
+    }
+}
+/// See [`OrStatement`](crate::model::OrStatement)
+pub mod or_statement {
+    /// A builder for [`OrStatement`](crate::model::OrStatement)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
+    }
+    impl Builder {
+        pub fn statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
+            let mut v = self.statements.unwrap_or_default();
+            v.push(input.into());
+            self.statements = Some(v);
+            self
+        }
+        pub fn set_statements(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Statement>>,
+        ) -> Self {
+            self.statements = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OrStatement`](crate::model::OrStatement)
+        pub fn build(self) -> crate::model::OrStatement {
+            crate::model::OrStatement {
+                statements: self.statements,
+            }
+        }
+    }
+}
+impl OrStatement {
+    /// Creates a new builder-style object to manufacture [`OrStatement`](crate::model::OrStatement)
+    pub fn builder() -> crate::model::or_statement::Builder {
+        crate::model::or_statement::Builder::default()
+    }
+}
+
+/// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <a>Statement</a> within the <code>AndStatement</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AndStatement {
+    /// <p>The statements to combine with AND logic. You can use any statements that can be nested.
+    /// </p>
+    pub statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
+}
+impl std::fmt::Debug for AndStatement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AndStatement");
+        formatter.field("statements", &self.statements);
+        formatter.finish()
+    }
+}
+/// See [`AndStatement`](crate::model::AndStatement)
+pub mod and_statement {
+    /// A builder for [`AndStatement`](crate::model::AndStatement)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
+    }
+    impl Builder {
+        pub fn statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
+            let mut v = self.statements.unwrap_or_default();
+            v.push(input.into());
+            self.statements = Some(v);
+            self
+        }
+        pub fn set_statements(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Statement>>,
+        ) -> Self {
+            self.statements = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AndStatement`](crate::model::AndStatement)
+        pub fn build(self) -> crate::model::AndStatement {
+            crate::model::AndStatement {
+                statements: self.statements,
+            }
+        }
+    }
+}
+impl AndStatement {
+    /// Creates a new builder-style object to manufacture [`AndStatement`](crate::model::AndStatement)
+    pub fn builder() -> crate::model::and_statement::Builder {
+        crate::model::and_statement::Builder::default()
+    }
+}
+
+/// <p>A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests. </p>
+/// <p>WAF tracks and manages web requests separately for each instance of a rate-based rule that you use. For example, if you provide the same rate-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate-based rule and gets its own tracking and management by WAF. If you define a rate-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate-based rule that gets its own tracking and management by WAF. </p>
+/// <p>When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below the limit.</p>
+/// <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p>
+/// <ul>
+/// <li>
+/// <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p>
+/// </li>
+/// <li>
+/// <p>A string match statement that searches in the User-Agent header for the string BadBot.</p>
+/// </li>
+/// </ul>
+/// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
+/// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RateBasedStatement {
+    /// <p>The limit on requests per 5-minute period for a single originating IP address. If the
+    /// statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the
+    /// requests that match the statement.</p>
+    pub limit: i64,
+    /// <p>Setting that indicates how to aggregate the request counts. The options are the
+    /// following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>IP - Aggregate the request counts on the IP address from the web request
+    /// origin.</p>
+    /// </li>
+    /// <li>
+    /// <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an
+    /// HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to
+    /// specify the header to use. </p>
+    /// </li>
+    /// </ul>
+    pub aggregate_key_type: std::option::Option<crate::model::RateBasedStatementAggregateKeyType>,
+    /// <p>An optional nested statement that narrows the scope of the web requests that are
+    /// evaluated by the rate-based statement. Requests are only tracked by the rate-based
+    /// statement if they match the scope-down statement. You can use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any
+    /// level, the same as you can for a rule statement. </p>
+    pub scope_down_statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
+    /// <note>
+    /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
+    /// </note>
+    /// <p>This is required if <code>AggregateKeyType</code> is set to
+    /// <code>FORWARDED_IP</code>.</p>
+    pub forwarded_ip_config: std::option::Option<crate::model::ForwardedIpConfig>,
+}
+impl std::fmt::Debug for RateBasedStatement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RateBasedStatement");
+        formatter.field("limit", &self.limit);
+        formatter.field("aggregate_key_type", &self.aggregate_key_type);
+        formatter.field("scope_down_statement", &self.scope_down_statement);
+        formatter.field("forwarded_ip_config", &self.forwarded_ip_config);
+        formatter.finish()
+    }
+}
+/// See [`RateBasedStatement`](crate::model::RateBasedStatement)
+pub mod rate_based_statement {
+    /// A builder for [`RateBasedStatement`](crate::model::RateBasedStatement)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) limit: std::option::Option<i64>,
+        pub(crate) aggregate_key_type:
+            std::option::Option<crate::model::RateBasedStatementAggregateKeyType>,
+        pub(crate) scope_down_statement:
+            std::option::Option<std::boxed::Box<crate::model::Statement>>,
+        pub(crate) forwarded_ip_config: std::option::Option<crate::model::ForwardedIpConfig>,
+    }
+    impl Builder {
+        /// <p>The limit on requests per 5-minute period for a single originating IP address. If the
+        /// statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the
+        /// requests that match the statement.</p>
+        pub fn limit(mut self, input: i64) -> Self {
+            self.limit = Some(input);
+            self
+        }
+        pub fn set_limit(mut self, input: std::option::Option<i64>) -> Self {
+            self.limit = input;
+            self
+        }
+        /// <p>Setting that indicates how to aggregate the request counts. The options are the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>IP - Aggregate the request counts on the IP address from the web request
+        /// origin.</p>
+        /// </li>
+        /// <li>
+        /// <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an
+        /// HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to
+        /// specify the header to use. </p>
+        /// </li>
+        /// </ul>
+        pub fn aggregate_key_type(
+            mut self,
+            input: crate::model::RateBasedStatementAggregateKeyType,
+        ) -> Self {
+            self.aggregate_key_type = Some(input);
+            self
+        }
+        pub fn set_aggregate_key_type(
+            mut self,
+            input: std::option::Option<crate::model::RateBasedStatementAggregateKeyType>,
+        ) -> Self {
+            self.aggregate_key_type = input;
+            self
+        }
+        /// <p>An optional nested statement that narrows the scope of the web requests that are
+        /// evaluated by the rate-based statement. Requests are only tracked by the rate-based
+        /// statement if they match the scope-down statement. You can use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any
+        /// level, the same as you can for a rule statement. </p>
+        pub fn scope_down_statement(
+            mut self,
+            input: impl Into<std::boxed::Box<crate::model::Statement>>,
+        ) -> Self {
+            self.scope_down_statement = Some(input.into());
+            self
+        }
+        pub fn set_scope_down_statement(
+            mut self,
+            input: std::option::Option<std::boxed::Box<crate::model::Statement>>,
+        ) -> Self {
+            self.scope_down_statement = input;
+            self
+        }
+        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
+        /// <note>
+        /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
+        /// </note>
+        /// <p>This is required if <code>AggregateKeyType</code> is set to
+        /// <code>FORWARDED_IP</code>.</p>
+        pub fn forwarded_ip_config(mut self, input: crate::model::ForwardedIpConfig) -> Self {
+            self.forwarded_ip_config = Some(input);
+            self
+        }
+        pub fn set_forwarded_ip_config(
+            mut self,
+            input: std::option::Option<crate::model::ForwardedIpConfig>,
+        ) -> Self {
+            self.forwarded_ip_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RateBasedStatement`](crate::model::RateBasedStatement)
+        pub fn build(self) -> crate::model::RateBasedStatement {
+            crate::model::RateBasedStatement {
+                limit: self.limit.unwrap_or_default(),
+                aggregate_key_type: self.aggregate_key_type,
+                scope_down_statement: self.scope_down_statement,
+                forwarded_ip_config: self.forwarded_ip_config,
+            }
+        }
+    }
+}
+impl RateBasedStatement {
+    /// Creates a new builder-style object to manufacture [`RateBasedStatement`](crate::model::RateBasedStatement)
+    pub fn builder() -> crate::model::rate_based_statement::Builder {
+        crate::model::rate_based_statement::Builder::default()
+    }
+}
+
+/// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
+/// <note>
+/// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
+/// </note>
+/// <p>This configuration is used for <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead. </p>
+/// <p>WAF only evaluates the first IP address found in the specified HTTP header.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ForwardedIpConfig {
+    /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
+    /// <note>
+    /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
+    /// </note>
+    pub header_name: std::option::Option<std::string::String>,
+    /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
+    /// <note>
+    /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
+    /// </note>
+    /// <p>You can specify the following fallback behaviors:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
+    /// </li>
+    /// </ul>
+    pub fallback_behavior: std::option::Option<crate::model::FallbackBehavior>,
+}
+impl std::fmt::Debug for ForwardedIpConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ForwardedIpConfig");
+        formatter.field("header_name", &self.header_name);
+        formatter.field("fallback_behavior", &self.fallback_behavior);
+        formatter.finish()
+    }
+}
+/// See [`ForwardedIpConfig`](crate::model::ForwardedIpConfig)
+pub mod forwarded_ip_config {
+    /// A builder for [`ForwardedIpConfig`](crate::model::ForwardedIpConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) header_name: std::option::Option<std::string::String>,
+        pub(crate) fallback_behavior: std::option::Option<crate::model::FallbackBehavior>,
+    }
+    impl Builder {
+        /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
+        /// <note>
+        /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
+        /// </note>
+        pub fn header_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.header_name = Some(input.into());
+            self
+        }
+        pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.header_name = input;
+            self
+        }
+        /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
+        /// <note>
+        /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
+        /// </note>
+        /// <p>You can specify the following fallback behaviors:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
+        /// </li>
+        /// </ul>
+        pub fn fallback_behavior(mut self, input: crate::model::FallbackBehavior) -> Self {
+            self.fallback_behavior = Some(input);
+            self
+        }
+        pub fn set_fallback_behavior(
+            mut self,
+            input: std::option::Option<crate::model::FallbackBehavior>,
+        ) -> Self {
+            self.fallback_behavior = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ForwardedIpConfig`](crate::model::ForwardedIpConfig)
+        pub fn build(self) -> crate::model::ForwardedIpConfig {
+            crate::model::ForwardedIpConfig {
+                header_name: self.header_name,
+                fallback_behavior: self.fallback_behavior,
+            }
+        }
+    }
+}
+impl ForwardedIpConfig {
+    /// Creates a new builder-style object to manufacture [`ForwardedIpConfig`](crate::model::ForwardedIpConfig)
+    pub fn builder() -> crate::model::forwarded_ip_config::Builder {
+        crate::model::forwarded_ip_config::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FallbackBehavior {
+    Match,
+    NoMatch,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FallbackBehavior {
+    fn from(s: &str) -> Self {
+        match s {
+            "MATCH" => FallbackBehavior::Match,
+            "NO_MATCH" => FallbackBehavior::NoMatch,
+            other => FallbackBehavior::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FallbackBehavior {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FallbackBehavior::from(s))
+    }
+}
+impl FallbackBehavior {
+    pub fn as_str(&self) -> &str {
+        match self {
+            FallbackBehavior::Match => "MATCH",
+            FallbackBehavior::NoMatch => "NO_MATCH",
+            FallbackBehavior::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MATCH", "NO_MATCH"]
+    }
+}
+impl AsRef<str> for FallbackBehavior {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RateBasedStatementAggregateKeyType {
+    ForwardedIp,
+    Ip,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RateBasedStatementAggregateKeyType {
+    fn from(s: &str) -> Self {
+        match s {
+            "FORWARDED_IP" => RateBasedStatementAggregateKeyType::ForwardedIp,
+            "IP" => RateBasedStatementAggregateKeyType::Ip,
+            other => RateBasedStatementAggregateKeyType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RateBasedStatementAggregateKeyType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RateBasedStatementAggregateKeyType::from(s))
+    }
+}
+impl RateBasedStatementAggregateKeyType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            RateBasedStatementAggregateKeyType::ForwardedIp => "FORWARDED_IP",
+            RateBasedStatementAggregateKeyType::Ip => "IP",
+            RateBasedStatementAggregateKeyType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FORWARDED_IP", "IP"]
+    }
+}
+impl AsRef<str> for RateBasedStatementAggregateKeyType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p>
+/// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegexPatternSetReferenceStatement {
+    /// <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
+    /// statement references.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
+    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
+    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
+}
+impl std::fmt::Debug for RegexPatternSetReferenceStatement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegexPatternSetReferenceStatement");
+        formatter.field("arn", &self.arn);
+        formatter.field("field_to_match", &self.field_to_match);
+        formatter.field("text_transformations", &self.text_transformations);
+        formatter.finish()
+    }
+}
+/// See [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement)
+pub mod regex_pattern_set_reference_statement {
+    /// A builder for [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) field_to_match: std::option::Option<crate::model::FieldToMatch>,
+        pub(crate) text_transformations:
+            std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
+        /// statement references.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
+            self.field_to_match = Some(input);
+            self
+        }
+        pub fn set_field_to_match(
+            mut self,
+            input: std::option::Option<crate::model::FieldToMatch>,
+        ) -> Self {
+            self.field_to_match = input;
+            self
+        }
+        pub fn text_transformations(
+            mut self,
+            input: impl Into<crate::model::TextTransformation>,
+        ) -> Self {
+            let mut v = self.text_transformations.unwrap_or_default();
+            v.push(input.into());
+            self.text_transformations = Some(v);
+            self
+        }
+        pub fn set_text_transformations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
+        ) -> Self {
+            self.text_transformations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement)
+        pub fn build(self) -> crate::model::RegexPatternSetReferenceStatement {
+            crate::model::RegexPatternSetReferenceStatement {
+                arn: self.arn,
+                field_to_match: self.field_to_match,
+                text_transformations: self.text_transformations,
+            }
+        }
+    }
+}
+impl RegexPatternSetReferenceStatement {
+    /// Creates a new builder-style object to manufacture [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement)
+    pub fn builder() -> crate::model::regex_pattern_set_reference_statement::Builder {
+        crate::model::regex_pattern_set_reference_statement::Builder::default()
     }
 }
 
@@ -4294,7 +4437,8 @@ impl AsRef<str> for ForwardedIpPosition {
 }
 
 /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-/// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+/// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
+/// can only use a rule group reference statement at the top level inside a web ACL. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleGroupReferenceStatement {
@@ -6127,7 +6271,7 @@ impl Tag {
 /// <p>A version of the named managed rule group, that the rule group's vendor publishes for
 /// use by customers. </p>
 /// <note>
-/// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Marketplace sellers. </p>
+/// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
 #[non_exhaustive]
@@ -6210,12 +6354,10 @@ pub struct LoggingConfiguration {
     /// <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to associate
     /// with the web ACL.</p>
     pub log_destination_configs: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The parts of the request that you want to keep out of the logs. For example, if you
-    /// redact the <code>HEADER</code> field, the <code>HEADER</code> field in the firehose will be
-    /// <code>xxx</code>. </p>
+    /// <p>The parts of the request that you want to keep out of the logs. For
+    /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>. </p>
     /// <note>
-    /// <p>You must use one of the following values: <code>URI</code>,
-    /// <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
+    /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
     /// </note>
     pub redacted_fields: std::option::Option<std::vec::Vec<crate::model::FieldToMatch>>,
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an
@@ -7251,7 +7393,7 @@ impl RegexPatternSetSummary {
 
 /// <p>High-level information for a managed rule set. </p>
 /// <note>
-/// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Marketplace sellers. </p>
+/// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
 #[non_exhaustive]
@@ -7570,7 +7712,7 @@ impl ManagedRuleGroupVersion {
     }
 }
 
-/// <p>High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides information like the name and vendor name, that you provide when you add a <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups, which are free of charge to WAF customers, and Marketplace managed rule groups, which you can subscribe to through Marketplace. </p>
+/// <p>High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides information like the name and vendor name, that you provide when you add a <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups, which are free of charge to WAF customers, and Amazon Web Services Marketplace managed rule groups, which you can subscribe to through Amazon Web Services Marketplace. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedRuleGroupSummary {
@@ -7578,7 +7720,7 @@ pub struct ManagedRuleGroupSummary {
     pub vendor_name: std::option::Option<std::string::String>,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Marketplace seller who manages it.</p>
+    /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ManagedRuleGroupSummary {
@@ -7619,7 +7761,7 @@ pub mod managed_rule_group_summary {
             self.name = input;
             self
         }
-        /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Marketplace seller who manages it.</p>
+        /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
@@ -8146,7 +8288,8 @@ pub struct FirewallManagerStatement {
     /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
     pub managed_rule_group_statement: std::option::Option<crate::model::ManagedRuleGroupStatement>,
     /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
+    /// can only use a rule group reference statement at the top level inside a web ACL. </p>
     pub rule_group_reference_statement:
         std::option::Option<crate::model::RuleGroupReferenceStatement>,
 }
@@ -8193,7 +8336,8 @@ pub mod firewall_manager_statement {
             self
         }
         /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
+        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
+        /// can only use a rule group reference statement at the top level inside a web ACL. </p>
         pub fn rule_group_reference_statement(
             mut self,
             input: crate::model::RuleGroupReferenceStatement,
@@ -9177,7 +9321,7 @@ impl RegexPatternSet {
     }
 }
 
-/// <p>The set of IP addresses that are currently blocked for a rate-based statement.</p>
+/// <p>The set of IP addresses that are currently blocked for a <a>RateBasedStatement</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RateBasedStatementManagedKeysIpSet {
@@ -9295,10 +9439,10 @@ impl AsRef<str> for IpAddressVersion {
     }
 }
 
-/// <p>A set of rules that is managed by Amazon Web Services and Marketplace sellers to provide versioned managed
+/// <p>A set of rules that is managed by Amazon Web Services and Amazon Web Services Marketplace sellers to provide versioned managed
 /// rule groups for customers of WAF.</p>
 /// <note>
-/// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Marketplace sellers. </p>
+/// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
 #[non_exhaustive]
@@ -9481,7 +9625,7 @@ impl ManagedRuleSet {
 
 /// <p>Information for a single version of a managed rule set. </p>
 /// <note>
-/// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Marketplace sellers. </p>
+/// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
 #[non_exhaustive]

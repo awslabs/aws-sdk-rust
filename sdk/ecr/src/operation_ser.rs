@@ -97,6 +97,19 @@ pub fn serialize_operation_crate_operation_delete_repository_policy(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_describe_image_replication_status(
+    input: &crate::input::DescribeImageReplicationStatusInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_describe_image_replication_status_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_describe_images(
     input: &crate::input::DescribeImagesInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

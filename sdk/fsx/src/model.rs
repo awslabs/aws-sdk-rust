@@ -2025,7 +2025,7 @@ pub struct SelfManagedActiveDirectoryAttributes {
     /// <p>The user name for the service account on your self-managed AD domain that FSx uses to
     /// join to your AD domain.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>A list of up to two IP addresses of DNS servers or domain controllers in the
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
     /// self-managed AD directory.</p>
     pub dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -2219,7 +2219,7 @@ pub struct SelfManagedActiveDirectoryConfigurationUpdates {
     /// <p>The password for the service account on your self-managed AD domain that Amazon FSx will use to join to
     /// your AD domain.</p>
     pub password: std::option::Option<std::string::String>,
-    /// <p>A list of up to two IP addresses of DNS servers or domain controllers in the
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
     /// self-managed AD directory.</p>
     pub dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -2485,6 +2485,9 @@ pub struct FileSystem {
         std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
     /// <p>The configuration for this FSx for NetApp ONTAP file system.</p>
     pub ontap_configuration: std::option::Option<crate::model::OntapFileSystemConfiguration>,
+    /// <p>The version of your Amazon FSx for Lustre file system, either
+    /// <code>2.10</code> or <code>2.12</code>.</p>
+    pub file_system_type_version: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileSystem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2508,6 +2511,7 @@ impl std::fmt::Debug for FileSystem {
         formatter.field("lustre_configuration", &self.lustre_configuration);
         formatter.field("administrative_actions", &self.administrative_actions);
         formatter.field("ontap_configuration", &self.ontap_configuration);
+        formatter.field("file_system_type_version", &self.file_system_type_version);
         formatter.finish()
     }
 }
@@ -2540,6 +2544,7 @@ pub mod file_system {
             std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
         pub(crate) ontap_configuration:
             std::option::Option<crate::model::OntapFileSystemConfiguration>,
+        pub(crate) file_system_type_version: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Web Services account that created the file system. If the file system was created by an
@@ -2809,6 +2814,19 @@ pub mod file_system {
             self.ontap_configuration = input;
             self
         }
+        /// <p>The version of your Amazon FSx for Lustre file system, either
+        /// <code>2.10</code> or <code>2.12</code>.</p>
+        pub fn file_system_type_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_system_type_version = Some(input.into());
+            self
+        }
+        pub fn set_file_system_type_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_system_type_version = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FileSystem`](crate::model::FileSystem)
         pub fn build(self) -> crate::model::FileSystem {
             crate::model::FileSystem {
@@ -2831,6 +2849,7 @@ pub mod file_system {
                 lustre_configuration: self.lustre_configuration,
                 administrative_actions: self.administrative_actions,
                 ontap_configuration: self.ontap_configuration,
+                file_system_type_version: self.file_system_type_version,
             }
         }
     }
@@ -9494,7 +9513,7 @@ impl AsRef<str> for ActiveDirectoryErrorType {
 pub struct CreateSvmActiveDirectoryConfiguration {
     /// <p>The NetBIOS name of the Active Directory computer object that will be created for your SVM.</p>
     pub net_bios_name: std::option::Option<std::string::String>,
-    /// <p>The configuration that Amazon FSx uses to join a Amazon FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
+    /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
     /// a self-managed (including on-premises) Microsoft Active Directory (AD)
     /// directory. For more information, see
     /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">
@@ -9537,7 +9556,7 @@ pub mod create_svm_active_directory_configuration {
             self.net_bios_name = input;
             self
         }
-        /// <p>The configuration that Amazon FSx uses to join a Amazon FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
+        /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
         /// a self-managed (including on-premises) Microsoft Active Directory (AD)
         /// directory. For more information, see
         /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">
@@ -9574,7 +9593,7 @@ impl CreateSvmActiveDirectoryConfiguration {
     }
 }
 
-/// <p>The configuration that Amazon FSx uses to join a Amazon FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
+/// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
 /// a self-managed (including on-premises) Microsoft Active Directory (AD)
 /// directory. For more information, see
 /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">
@@ -9612,7 +9631,7 @@ pub struct SelfManagedActiveDirectoryConfiguration {
     /// <p>The password for the service account on your self-managed AD domain that Amazon FSx
     /// will use to join to your AD domain.</p>
     pub password: std::option::Option<std::string::String>,
-    /// <p>A list of up to two IP addresses of DNS servers or domain controllers in the
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
     /// self-managed AD directory. </p>
     pub dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -10213,7 +10232,7 @@ pub struct CreateFileSystemWindowsConfiguration {
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory (AD) instance that the
     /// file system should join when it's created.</p>
     pub active_directory_id: std::option::Option<std::string::String>,
-    /// <p>The configuration that Amazon FSx uses to join a Amazon FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
+    /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
     /// a self-managed (including on-premises) Microsoft Active Directory (AD)
     /// directory. For more information, see
     /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">
@@ -10365,7 +10384,7 @@ pub mod create_file_system_windows_configuration {
             self.active_directory_id = input;
             self
         }
-        /// <p>The configuration that Amazon FSx uses to join a Amazon FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
+        /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
         /// a self-managed (including on-premises) Microsoft Active Directory (AD)
         /// directory. For more information, see
         /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">

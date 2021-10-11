@@ -3154,6 +3154,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_options(input);
             self
         }
+        /// <p>Add subtitles to your batch transcription job.</p>
+        pub fn subtitles(mut self, inp: crate::model::Subtitles) -> Self {
+            self.inner = self.inner.subtitles(inp);
+            self
+        }
+        pub fn set_subtitles(
+            mut self,
+            input: std::option::Option<crate::model::Subtitles>,
+        ) -> Self {
+            self.inner = self.inner.set_subtitles(input);
+            self
+        }
         /// Appends an item to `Tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -6,10 +6,11 @@
 use crate::SendOperationError;
 use smithy_http::body::SdkBody;
 use smithy_http::operation;
+use smithy_http::result::ConnectorError;
 use std::future::Future;
 use std::pin::Pin;
 use std::task::{Context, Poll};
-use tower::{BoxError, Layer, Service};
+use tower::{Layer, Service};
 use tracing::trace;
 
 /// Connects Operation driven middleware to an HTTP implementation.
@@ -26,7 +27,7 @@ type BoxedResultFuture<T, E> = Pin<Box<dyn Future<Output = Result<T, E>> + Send>
 impl<S> Service<operation::Request> for DispatchService<S>
 where
     S: Service<http::Request<SdkBody>, Response = http::Response<SdkBody>> + Clone + Send + 'static,
-    S::Error: Into<BoxError>,
+    S::Error: Into<ConnectorError>,
     S::Future: Send + 'static,
 {
     type Response = operation::Response;

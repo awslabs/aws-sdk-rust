@@ -752,6 +752,132 @@ pub fn parse_create_import_job_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_in_app_template_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateInAppTemplateOutput,
+    crate::error::CreateInAppTemplateError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateInAppTemplateError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateInAppTemplateError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::CreateInAppTemplateError {
+            meta: generic,
+            kind: crate::error::CreateInAppTemplateErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => {
+            crate::error::CreateInAppTemplateError {
+                meta: generic,
+                kind: crate::error::CreateInAppTemplateErrorKind::ForbiddenException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::forbidden_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateInAppTemplateError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalServerErrorException" => crate::error::CreateInAppTemplateError {
+            meta: generic,
+            kind: crate::error::CreateInAppTemplateErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MethodNotAllowedException" => crate::error::CreateInAppTemplateError {
+            meta: generic,
+            kind: crate::error::CreateInAppTemplateErrorKind::MethodNotAllowedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::method_not_allowed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_method_not_allowed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::CreateInAppTemplateError {
+            meta: generic,
+            kind: crate::error::CreateInAppTemplateErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateInAppTemplateError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_in_app_template_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateInAppTemplateOutput,
+    crate::error::CreateInAppTemplateError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_in_app_template_output::Builder::default();
+        let _ = response;
+        output = output.set_template_create_message_body(
+            crate::http_serde::deser_payload_create_in_app_template_create_in_app_template_output_template_create_message_body(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_journey_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateJourneyOutput, crate::error::CreateJourneyError> {
@@ -3694,6 +3820,168 @@ pub fn parse_delete_gcm_channel_response(
         let _ = response;
         output = output.set_gcm_channel_response(
             crate::http_serde::deser_payload_delete_gcm_channel_delete_gcm_channel_output_gcm_channel_response(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_in_app_template_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteInAppTemplateOutput,
+    crate::error::DeleteInAppTemplateError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteInAppTemplateError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteInAppTemplateError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::DeleteInAppTemplateError {
+            meta: generic,
+            kind: crate::error::DeleteInAppTemplateErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => {
+            crate::error::DeleteInAppTemplateError {
+                meta: generic,
+                kind: crate::error::DeleteInAppTemplateErrorKind::ForbiddenException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::forbidden_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteInAppTemplateError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalServerErrorException" => crate::error::DeleteInAppTemplateError {
+            meta: generic,
+            kind: crate::error::DeleteInAppTemplateErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MethodNotAllowedException" => crate::error::DeleteInAppTemplateError {
+            meta: generic,
+            kind: crate::error::DeleteInAppTemplateErrorKind::MethodNotAllowedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::method_not_allowed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_method_not_allowed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => {
+            crate::error::DeleteInAppTemplateError {
+                meta: generic,
+                kind: crate::error::DeleteInAppTemplateErrorKind::NotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteInAppTemplateError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "PayloadTooLargeException" => crate::error::DeleteInAppTemplateError {
+            meta: generic,
+            kind: crate::error::DeleteInAppTemplateErrorKind::PayloadTooLargeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::payload_too_large_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_payload_too_large_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::DeleteInAppTemplateError {
+            meta: generic,
+            kind: crate::error::DeleteInAppTemplateErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteInAppTemplateError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_in_app_template_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteInAppTemplateOutput,
+    crate::error::DeleteInAppTemplateError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_in_app_template_output::Builder::default();
+        let _ = response;
+        output = output.set_message_body(
+            crate::http_serde::deser_payload_delete_in_app_template_delete_in_app_template_output_message_body(response.body().as_ref())?
         );
         output.build()
     })
@@ -9292,6 +9580,322 @@ pub fn parse_get_import_jobs_response(
         let _ = response;
         output = output.set_import_jobs_response(
             crate::http_serde::deser_payload_get_import_jobs_get_import_jobs_output_import_jobs_response(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_in_app_messages_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetInAppMessagesOutput, crate::error::GetInAppMessagesError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetInAppMessagesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetInAppMessagesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::GetInAppMessagesError {
+            meta: generic,
+            kind: crate::error::GetInAppMessagesErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppMessagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => {
+            crate::error::GetInAppMessagesError {
+                meta: generic,
+                kind: crate::error::GetInAppMessagesErrorKind::ForbiddenException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::forbidden_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppMessagesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalServerErrorException" => crate::error::GetInAppMessagesError {
+            meta: generic,
+            kind: crate::error::GetInAppMessagesErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppMessagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MethodNotAllowedException" => crate::error::GetInAppMessagesError {
+            meta: generic,
+            kind: crate::error::GetInAppMessagesErrorKind::MethodNotAllowedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::method_not_allowed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_method_not_allowed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppMessagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => {
+            crate::error::GetInAppMessagesError {
+                meta: generic,
+                kind: crate::error::GetInAppMessagesErrorKind::NotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppMessagesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "PayloadTooLargeException" => crate::error::GetInAppMessagesError {
+            meta: generic,
+            kind: crate::error::GetInAppMessagesErrorKind::PayloadTooLargeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::payload_too_large_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_payload_too_large_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppMessagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::GetInAppMessagesError {
+            meta: generic,
+            kind: crate::error::GetInAppMessagesErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppMessagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetInAppMessagesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_in_app_messages_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetInAppMessagesOutput, crate::error::GetInAppMessagesError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_in_app_messages_output::Builder::default();
+        let _ = response;
+        output = output.set_in_app_messages_response(
+            crate::http_serde::deser_payload_get_in_app_messages_get_in_app_messages_output_in_app_messages_response(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_in_app_template_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetInAppTemplateOutput, crate::error::GetInAppTemplateError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetInAppTemplateError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetInAppTemplateError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::GetInAppTemplateError {
+            meta: generic,
+            kind: crate::error::GetInAppTemplateErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => {
+            crate::error::GetInAppTemplateError {
+                meta: generic,
+                kind: crate::error::GetInAppTemplateErrorKind::ForbiddenException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::forbidden_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppTemplateError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalServerErrorException" => crate::error::GetInAppTemplateError {
+            meta: generic,
+            kind: crate::error::GetInAppTemplateErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MethodNotAllowedException" => crate::error::GetInAppTemplateError {
+            meta: generic,
+            kind: crate::error::GetInAppTemplateErrorKind::MethodNotAllowedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::method_not_allowed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_method_not_allowed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => {
+            crate::error::GetInAppTemplateError {
+                meta: generic,
+                kind: crate::error::GetInAppTemplateErrorKind::NotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppTemplateError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "PayloadTooLargeException" => crate::error::GetInAppTemplateError {
+            meta: generic,
+            kind: crate::error::GetInAppTemplateErrorKind::PayloadTooLargeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::payload_too_large_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_payload_too_large_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::GetInAppTemplateError {
+            meta: generic,
+            kind: crate::error::GetInAppTemplateErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetInAppTemplateError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_in_app_template_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetInAppTemplateOutput, crate::error::GetInAppTemplateError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_in_app_template_output::Builder::default();
+        let _ = response;
+        output = output.set_in_app_template_response(
+            crate::http_serde::deser_payload_get_in_app_template_get_in_app_template_output_in_app_template_response(response.body().as_ref())?
         );
         output.build()
     })
@@ -15721,6 +16325,168 @@ pub fn parse_update_gcm_channel_response(
         let _ = response;
         output = output.set_gcm_channel_response(
             crate::http_serde::deser_payload_update_gcm_channel_update_gcm_channel_output_gcm_channel_response(response.body().as_ref())?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_in_app_template_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateInAppTemplateOutput,
+    crate::error::UpdateInAppTemplateError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateInAppTemplateError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateInAppTemplateError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::UpdateInAppTemplateError {
+            meta: generic,
+            kind: crate::error::UpdateInAppTemplateErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => {
+            crate::error::UpdateInAppTemplateError {
+                meta: generic,
+                kind: crate::error::UpdateInAppTemplateErrorKind::ForbiddenException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::forbidden_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateInAppTemplateError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalServerErrorException" => crate::error::UpdateInAppTemplateError {
+            meta: generic,
+            kind: crate::error::UpdateInAppTemplateErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MethodNotAllowedException" => crate::error::UpdateInAppTemplateError {
+            meta: generic,
+            kind: crate::error::UpdateInAppTemplateErrorKind::MethodNotAllowedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::method_not_allowed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_method_not_allowed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => {
+            crate::error::UpdateInAppTemplateError {
+                meta: generic,
+                kind: crate::error::UpdateInAppTemplateErrorKind::NotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateInAppTemplateError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "PayloadTooLargeException" => crate::error::UpdateInAppTemplateError {
+            meta: generic,
+            kind: crate::error::UpdateInAppTemplateErrorKind::PayloadTooLargeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::payload_too_large_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_payload_too_large_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::UpdateInAppTemplateError {
+            meta: generic,
+            kind: crate::error::UpdateInAppTemplateErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateInAppTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateInAppTemplateError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_in_app_template_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateInAppTemplateOutput,
+    crate::error::UpdateInAppTemplateError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_in_app_template_output::Builder::default();
+        let _ = response;
+        output = output.set_message_body(
+            crate::http_serde::deser_payload_update_in_app_template_update_in_app_template_output_message_body(response.body().as_ref())?
         );
         output.build()
     })

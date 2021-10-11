@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon DynamoDB</fullname>
 //! <p>Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 //! predictable performance with seamless scalability. DynamoDB lets you offload the

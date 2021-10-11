@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon Web Services Single Sign On (SSO) is a cloud SSO service that makes it easy to centrally manage SSO
 //! access to multiple Amazon Web Services accounts and business applications. This guide provides information on
 //! SSO operations which could be used for access management of Amazon Web Services accounts. For information about

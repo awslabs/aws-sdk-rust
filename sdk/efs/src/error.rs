@@ -2178,6 +2178,7 @@ pub struct PutAccountPreferencesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccountPreferencesErrorKind {
+    BadRequest(crate::error::BadRequest),
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2185,6 +2186,7 @@ pub enum PutAccountPreferencesErrorKind {
 impl std::fmt::Display for PutAccountPreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            PutAccountPreferencesErrorKind::BadRequest(_inner) => _inner.fmt(f),
             PutAccountPreferencesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
             PutAccountPreferencesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2234,6 +2236,9 @@ impl PutAccountPreferencesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, PutAccountPreferencesErrorKind::BadRequest(_))
+    }
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -2244,6 +2249,7 @@ impl PutAccountPreferencesError {
 impl std::error::Error for PutAccountPreferencesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            PutAccountPreferencesErrorKind::BadRequest(_inner) => Some(_inner),
             PutAccountPreferencesErrorKind::InternalServerError(_inner) => Some(_inner),
             PutAccountPreferencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }

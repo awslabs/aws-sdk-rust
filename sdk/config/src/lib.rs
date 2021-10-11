@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Config</fullname>
 //! <p>Config provides a way to keep track of the configurations
 //! of all the Amazon Web Services resources associated with your Amazon Web Services account. You can

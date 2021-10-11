@@ -61,6 +61,15 @@ where
         let (err, response) = match err {
             Ok(_) => return RetryKind::NotRetryable,
             Err(SdkError::ServiceError { err, raw }) => (err, raw),
+            Err(SdkError::DispatchFailure(err)) => {
+                return if err.is_timeout() || err.is_io() {
+                    RetryKind::Error(ErrorKind::TransientError)
+                } else if let Some(ek) = err.is_other() {
+                    RetryKind::Error(ek)
+                } else {
+                    RetryKind::NotRetryable
+                }
+            }
             Err(_) => return RetryKind::NotRetryable,
         };
         if let Some(retry_after_delay) = response

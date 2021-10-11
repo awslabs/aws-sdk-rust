@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Alexa for Business helps you use Alexa in your organization. Alexa for Business provides you with the tools
 //! to manage Alexa devices, enroll your users, and assign skills, at scale. You can build your
 //! own context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations.

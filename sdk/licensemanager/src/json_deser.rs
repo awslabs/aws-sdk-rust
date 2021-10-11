@@ -731,6 +731,13 @@ pub fn deser_operation_crate_operation_checkout_license(
                                 .transpose()?,
                         );
                     }
+                    "LicenseArn" => {
+                        builder = builder.set_license_arn(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -936,6 +943,48 @@ pub fn deser_operation_crate_operation_create_license_configuration(
                 match key.to_unescaped()?.as_ref() {
                     "LicenseConfigurationArn" => {
                         builder = builder.set_license_configuration_arn(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_create_license_conversion_task_for_resource(
+    input: &[u8],
+    mut builder: crate::output::create_license_conversion_task_for_resource_output::Builder,
+) -> Result<
+    crate::output::create_license_conversion_task_for_resource_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "LicenseConversionTaskId" => {
+                        builder = builder.set_license_conversion_task_id(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -1524,6 +1573,107 @@ pub fn deser_operation_crate_operation_get_license_configuration(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_get_license_conversion_task(
+    input: &[u8],
+    mut builder: crate::output::get_license_conversion_task_output::Builder,
+) -> Result<
+    crate::output::get_license_conversion_task_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "LicenseConversionTaskId" => {
+                        builder = builder.set_license_conversion_task_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "ResourceArn" => {
+                        builder = builder.set_resource_arn(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "SourceLicenseContext" => {
+                        builder = builder.set_source_license_context(
+                            crate::json_deser::deser_structure_crate_model_license_conversion_context(tokens)?
+                        );
+                    }
+                    "DestinationLicenseContext" => {
+                        builder = builder.set_destination_license_context(
+                            crate::json_deser::deser_structure_crate_model_license_conversion_context(tokens)?
+                        );
+                    }
+                    "StatusMessage" => {
+                        builder = builder.set_status_message(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "Status" => {
+                        builder = builder.set_status(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| {
+                                    s.to_unescaped().map(|u| {
+                                        crate::model::LicenseConversionTaskStatus::from(u.as_ref())
+                                    })
+                                })
+                                .transpose()?,
+                        );
+                    }
+                    "StartTime" => {
+                        builder = builder.set_start_time(
+                            smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                smithy_types::instant::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
+                    "LicenseConversionTime" => {
+                        builder = builder.set_license_conversion_time(
+                            smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                smithy_types::instant::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
+                    "EndTime" => {
+                        builder = builder.set_end_time(
+                            smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                smithy_types::instant::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_get_license_manager_report_generator(
     input: &[u8],
     mut builder: crate::output::get_license_manager_report_generator_output::Builder,
@@ -1867,6 +2017,53 @@ pub fn deser_operation_crate_operation_list_license_configurations(
                     "LicenseConfigurations" => {
                         builder = builder.set_license_configurations(
                             crate::json_deser::deser_list_com_amazonaws_licensemanager_license_configurations(tokens)?
+                        );
+                    }
+                    "NextToken" => {
+                        builder = builder.set_next_token(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_list_license_conversion_tasks(
+    input: &[u8],
+    mut builder: crate::output::list_license_conversion_tasks_output::Builder,
+) -> Result<
+    crate::output::list_license_conversion_tasks_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "LicenseConversionTasks" => {
+                        builder = builder.set_license_conversion_tasks(
+                            crate::json_deser::deser_list_com_amazonaws_licensemanager_license_conversion_tasks(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -3117,6 +3314,51 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_license_conversion_context<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::LicenseConversionContext>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::LicenseConversionContext::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "UsageOperation" => {
+                                builder = builder.set_usage_operation(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_report_generator<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::ReportGenerator>, smithy_json::deserialize::Error>
@@ -3478,6 +3720,47 @@ where
                     _ => {
                         let value =
                             crate::json_deser::deser_structure_crate_model_license_configuration(
+                                tokens,
+                            )?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_licensemanager_license_conversion_tasks<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::LicenseConversionTask>>,
+    smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_license_conversion_task(
                                 tokens,
                             )?;
                         if let Some(value) = value {
@@ -4905,6 +5188,118 @@ where
                             "AutomatedDiscoveryInformation" => {
                                 builder = builder.set_automated_discovery_information(
                                     crate::json_deser::deser_structure_crate_model_automated_discovery_information(tokens)?
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_license_conversion_task<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::LicenseConversionTask>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::LicenseConversionTask::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "LicenseConversionTaskId" => {
+                                builder = builder.set_license_conversion_task_id(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ResourceArn" => {
+                                builder = builder.set_resource_arn(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SourceLicenseContext" => {
+                                builder = builder.set_source_license_context(
+                                    crate::json_deser::deser_structure_crate_model_license_conversion_context(tokens)?
+                                );
+                            }
+                            "DestinationLicenseContext" => {
+                                builder = builder.set_destination_license_context(
+                                    crate::json_deser::deser_structure_crate_model_license_conversion_context(tokens)?
+                                );
+                            }
+                            "Status" => {
+                                builder = builder.set_status(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::LicenseConversionTaskStatus::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "StatusMessage" => {
+                                builder = builder.set_status_message(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "StartTime" => {
+                                builder = builder.set_start_time(
+                                    smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        smithy_types::instant::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            "LicenseConversionTime" => {
+                                builder = builder.set_license_conversion_time(
+                                    smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        smithy_types::instant::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            "EndTime" => {
+                                builder = builder.set_end_time(
+                                    smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        smithy_types::instant::Format::EpochSeconds,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

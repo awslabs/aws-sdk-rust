@@ -1547,7 +1547,10 @@ impl KinesisVideoStreamConfig {
 pub struct EncryptionConfig {
     /// <p>The type of encryption.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The identifier of the encryption key.</p>
+    /// <p>The full ARN of the encryption key. </p>
+    /// <note>
+    /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
+    /// </note>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EncryptionConfig {
@@ -1580,7 +1583,10 @@ pub mod encryption_config {
             self.encryption_type = input;
             self
         }
-        /// <p>The identifier of the encryption key.</p>
+        /// <p>The full ARN of the encryption key. </p>
+        /// <note>
+        /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
+        /// </note>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -2362,6 +2368,132 @@ impl AsRef<str> for ReferenceType {
     }
 }
 
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TrafficType {
+    Campaign,
+    General,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TrafficType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CAMPAIGN" => TrafficType::Campaign,
+            "GENERAL" => TrafficType::General,
+            other => TrafficType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TrafficType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TrafficType::from(s))
+    }
+}
+impl TrafficType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TrafficType::Campaign => "CAMPAIGN",
+            TrafficType::General => "GENERAL",
+            TrafficType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CAMPAIGN", "GENERAL"]
+    }
+}
+impl AsRef<str> for TrafficType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Configuration of the answering machine detection.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnswerMachineDetectionConfig {
+    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice
+    /// call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.
+    /// </p>
+    pub enable_answer_machine_detection: bool,
+    /// <p>Wait for the answering machine prompt.</p>
+    pub await_answer_machine_prompt: bool,
+}
+impl std::fmt::Debug for AnswerMachineDetectionConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnswerMachineDetectionConfig");
+        formatter.field(
+            "enable_answer_machine_detection",
+            &self.enable_answer_machine_detection,
+        );
+        formatter.field(
+            "await_answer_machine_prompt",
+            &self.await_answer_machine_prompt,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig)
+pub mod answer_machine_detection_config {
+    /// A builder for [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enable_answer_machine_detection: std::option::Option<bool>,
+        pub(crate) await_answer_machine_prompt: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice
+        /// call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.
+        /// </p>
+        pub fn enable_answer_machine_detection(mut self, input: bool) -> Self {
+            self.enable_answer_machine_detection = Some(input);
+            self
+        }
+        pub fn set_enable_answer_machine_detection(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.enable_answer_machine_detection = input;
+            self
+        }
+        /// <p>Wait for the answering machine prompt.</p>
+        pub fn await_answer_machine_prompt(mut self, input: bool) -> Self {
+            self.await_answer_machine_prompt = Some(input);
+            self
+        }
+        pub fn set_await_answer_machine_prompt(mut self, input: std::option::Option<bool>) -> Self {
+            self.await_answer_machine_prompt = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig)
+        pub fn build(self) -> crate::model::AnswerMachineDetectionConfig {
+            crate::model::AnswerMachineDetectionConfig {
+                enable_answer_machine_detection: self
+                    .enable_answer_machine_detection
+                    .unwrap_or_default(),
+                await_answer_machine_prompt: self.await_answer_machine_prompt.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AnswerMachineDetectionConfig {
+    /// Creates a new builder-style object to manufacture [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig)
+    pub fn builder() -> crate::model::answer_machine_detection_config::Builder {
+        crate::model::answer_machine_detection_config::Builder::default()
+    }
+}
+
 /// <p>Contains information about the recording configuration settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2733,7 +2865,7 @@ pub struct UseCase {
     pub use_case_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the use case.</p>
     pub use_case_arn: std::option::Option<std::string::String>,
-    /// <p>The type of use case to associate to the AppIntegration association. Each AppIntegration
+    /// <p>The type of use case to associate to the integration association. Each integration
     /// association can have only one of each use case type.</p>
     pub use_case_type: std::option::Option<crate::model::UseCaseType>,
 }
@@ -2775,7 +2907,7 @@ pub mod use_case {
             self.use_case_arn = input;
             self
         }
-        /// <p>The type of use case to associate to the AppIntegration association. Each AppIntegration
+        /// <p>The type of use case to associate to the integration association. Each integration
         /// association can have only one of each use case type.</p>
         pub fn use_case_type(mut self, input: crate::model::UseCaseType) -> Self {
             self.use_case_type = Some(input);
@@ -2816,6 +2948,7 @@ impl UseCase {
     std::hash::Hash,
 )]
 pub enum UseCaseType {
+    ConnectCampaigns,
     RulesEvaluation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2823,6 +2956,7 @@ pub enum UseCaseType {
 impl std::convert::From<&str> for UseCaseType {
     fn from(s: &str) -> Self {
         match s {
+            "CONNECT_CAMPAIGNS" => UseCaseType::ConnectCampaigns,
             "RULES_EVALUATION" => UseCaseType::RulesEvaluation,
             other => UseCaseType::Unknown(other.to_owned()),
         }
@@ -2838,12 +2972,13 @@ impl std::str::FromStr for UseCaseType {
 impl UseCaseType {
     pub fn as_str(&self) -> &str {
         match self {
+            UseCaseType::ConnectCampaigns => "CONNECT_CAMPAIGNS",
             UseCaseType::RulesEvaluation => "RULES_EVALUATION",
             UseCaseType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["RULES_EVALUATION"]
+        &["CONNECT_CAMPAIGNS", "RULES_EVALUATION"]
     }
 }
 impl AsRef<str> for UseCaseType {
@@ -4753,6 +4888,10 @@ impl AsRef<str> for SourceType {
 )]
 pub enum IntegrationType {
     Event,
+    PinpointApp,
+    VoiceId,
+    WisdomAssistant,
+    WisdomKnowledgeBase,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -4760,6 +4899,10 @@ impl std::convert::From<&str> for IntegrationType {
     fn from(s: &str) -> Self {
         match s {
             "EVENT" => IntegrationType::Event,
+            "PINPOINT_APP" => IntegrationType::PinpointApp,
+            "VOICE_ID" => IntegrationType::VoiceId,
+            "WISDOM_ASSISTANT" => IntegrationType::WisdomAssistant,
+            "WISDOM_KNOWLEDGE_BASE" => IntegrationType::WisdomKnowledgeBase,
             other => IntegrationType::Unknown(other.to_owned()),
         }
     }
@@ -4775,11 +4918,21 @@ impl IntegrationType {
     pub fn as_str(&self) -> &str {
         match self {
             IntegrationType::Event => "EVENT",
+            IntegrationType::PinpointApp => "PINPOINT_APP",
+            IntegrationType::VoiceId => "VOICE_ID",
+            IntegrationType::WisdomAssistant => "WISDOM_ASSISTANT",
+            IntegrationType::WisdomKnowledgeBase => "WISDOM_KNOWLEDGE_BASE",
             IntegrationType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["EVENT"]
+        &[
+            "EVENT",
+            "PINPOINT_APP",
+            "VOICE_ID",
+            "WISDOM_ASSISTANT",
+            "WISDOM_KNOWLEDGE_BASE",
+        ]
     }
 }
 impl AsRef<str> for IntegrationType {

@@ -477,8 +477,8 @@ impl smithy_http::response::ParseStrictResponse for CreateDeviceFleet {
 /// domain. Each user receives a private home directory within the EFS volume for notebooks,
 /// Git repositories, and data files.</p>
 /// <p>SageMaker uses the Amazon Web Services Key Management Service (Amazon Web Services KMS) to encrypt the EFS volume attached to the domain with
-/// an Amazon Web Services managed customer master key (CMK) by default. For more control, you can specify a
-/// customer managed CMK. For more information, see
+/// an Amazon Web Services managed key by default. For more control, you can specify a
+/// customer managed key. For more information, see
 /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect Data at
 /// Rest Using Encryption</a>.</p>
 /// <p>
@@ -611,7 +611,7 @@ impl smithy_http::response::ParseStrictResponse for CreateEdgePackagingJob {
 /// the role. </p>
 /// <ul>
 /// <li>
-/// <p>Option 1: For a full Amazon SageMaker access, search and attach the
+/// <p>Option 1: For a full SageMaker access, search and attach the
 /// <code>AmazonSageMakerFullAccess</code> policy.</p>
 /// </li>
 /// <li>
@@ -633,7 +633,7 @@ impl smithy_http::response::ParseStrictResponse for CreateEdgePackagingJob {
 /// <p>
 /// <code>]</code>
 /// </p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">Amazon SageMaker API
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">SageMaker API
 /// Permissions: Actions, Permissions, and Resources
 /// Reference</a>.</p>
 /// </li>
@@ -6222,6 +6222,34 @@ impl smithy_http::response::ParseStrictResponse for RenderUiTemplate {
             crate::operation_deser::parse_render_ui_template_error(response)
         } else {
             crate::operation_deser::parse_render_ui_template_response(response)
+        }
+    }
+}
+
+/// <p>Retry the execution of the pipeline.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RetryPipelineExecution {
+    _private: (),
+}
+impl RetryPipelineExecution {
+    /// Creates a new builder-style object to manufacture [`RetryPipelineExecutionInput`](crate::input::RetryPipelineExecutionInput)
+    pub fn builder() -> crate::input::retry_pipeline_execution_input::Builder {
+        crate::input::retry_pipeline_execution_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for RetryPipelineExecution {
+    type Output = std::result::Result<
+        crate::output::RetryPipelineExecutionOutput,
+        crate::error::RetryPipelineExecutionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_retry_pipeline_execution_error(response)
+        } else {
+            crate::operation_deser::parse_retry_pipeline_execution_response(response)
         }
     }
 }

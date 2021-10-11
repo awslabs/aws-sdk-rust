@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Identity and Access Management Access Analyzer helps identify potential resource-access risks by enabling you to
 //! identify any policies that grant access to an external principal. It does this by using
 //! logic-based reasoning to analyze resource-based policies in your Amazon Web Services environment. An

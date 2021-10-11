@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Connect Customer Profiles</fullname>
 //! <p>Welcome to the Amazon Connect Customer Profiles API Reference. This guide provides information
 //! about the Amazon Connect Customer Profiles API, including supported operations, data types,

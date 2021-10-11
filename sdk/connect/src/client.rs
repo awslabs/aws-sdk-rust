@@ -1562,7 +1562,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_arn(input);
             self
         }
-        /// <p>The URL for the external application.</p>
+        /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
         pub fn source_application_url(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_application_url(inp);
             self
@@ -1574,7 +1574,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_application_url(input);
             self
         }
-        /// <p>The name of the external application.</p>
+        /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
         pub fn source_application_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_application_name(inp);
             self
@@ -1586,7 +1586,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_application_name(input);
             self
         }
-        /// <p>The type of the data source.</p>
+        /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
         pub fn source_type(mut self, inp: crate::model::SourceType) -> Self {
             self.inner = self.inner.source_type(inp);
             self
@@ -2062,7 +2062,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier for the AppIntegration association.</p>
+        /// <p>The identifier for the integration association.</p>
         pub fn integration_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.integration_association_id(inp);
             self
@@ -2074,7 +2074,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_association_id(input);
             self
         }
-        /// <p>The type of use case to associate to the AppIntegration association. Each AppIntegration
+        /// <p>The type of use case to associate to the integration association. Each integration
         /// association can have only one of each use case type.</p>
         pub fn use_case_type(mut self, inp: crate::model::UseCaseType) -> Self {
             self.inner = self.inner.use_case_type(inp);
@@ -2535,7 +2535,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier for the AppIntegration association.</p>
+        /// <p>The identifier for the integration association.</p>
         pub fn integration_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.integration_association_id(inp);
             self
@@ -2667,7 +2667,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier for the AppIntegration association.</p>
+        /// <p>The identifier for the integration association.</p>
         pub fn integration_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.integration_association_id(inp);
             self
@@ -4394,7 +4394,8 @@ pub mod fluent_builders {
         /// <dt>OLDEST_CONTACT_AGE</dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
-        /// <p>When you use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
+        /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
+        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
         /// example, if you get a response like this:</p>
         /// <p>
         /// <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
@@ -5469,6 +5470,18 @@ pub mod fluent_builders {
         }
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p></p>
+        pub fn integration_type(mut self, inp: crate::model::IntegrationType) -> Self {
+            self.inner = self.inner.integration_type(inp);
+            self
+        }
+        pub fn set_integration_type(
+            mut self,
+            input: std::option::Option<crate::model::IntegrationType>,
+        ) -> Self {
+            self.inner = self.inner.set_integration_type(input);
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -7109,6 +7122,45 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attributes(input);
             self
         }
+        /// <p>Configuration of the answering machine detection for this outbound call. </p>
+        pub fn answer_machine_detection_config(
+            mut self,
+            inp: crate::model::AnswerMachineDetectionConfig,
+        ) -> Self {
+            self.inner = self.inner.answer_machine_detection_config(inp);
+            self
+        }
+        pub fn set_answer_machine_detection_config(
+            mut self,
+            input: std::option::Option<crate::model::AnswerMachineDetectionConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_answer_machine_detection_config(input);
+            self
+        }
+        /// <p>The campaign identifier of the outbound communication.</p>
+        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(inp);
+            self
+        }
+        pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_campaign_id(input);
+            self
+        }
+        /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by
+        /// Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if
+        /// <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use
+        /// <code>GENERAL</code>. </p>
+        pub fn traffic_type(mut self, inp: crate::model::TrafficType) -> Self {
+            self.inner = self.inner.traffic_type(inp);
+            self
+        }
+        pub fn set_traffic_type(
+            mut self,
+            input: std::option::Option<crate::model::TrafficType>,
+        ) -> Self {
+            self.inner = self.inner.set_traffic_type(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct StartTaskContact<
@@ -8155,6 +8207,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of attribute.</p>
+        /// <note>
+        /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
+        /// </note>
         pub fn attribute_type(mut self, inp: crate::model::InstanceAttributeType) -> Self {
             self.inner = self.inner.attribute_type(inp);
             self

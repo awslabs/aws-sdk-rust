@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>The AWS Migration Hub home region APIs are available specifically for working with your
 //! Migration Hub home region. You can use these APIs to determine a home region, as well as to
 //! create and work with controls that describe the home region.</p>

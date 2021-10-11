@@ -201,6 +201,8 @@ impl smithy_http::response::ParseStrictResponse for CreateReplicationInstance {
 }
 
 /// <p>Creates a replication subnet group given a list of the subnet IDs in a VPC.</p>
+/// <p>The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region, otherwise the
+/// service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateReplicationSubnetGroup {
     _private: (),
@@ -1479,6 +1481,8 @@ impl smithy_http::response::ParseStrictResponse for RefreshSchemas {
 }
 
 /// <p>Reloads the target database table with the source data. </p>
+/// <p>You can only use this operation with a task in the <code>RUNNING</code> state, otherwise the service
+/// will throw an <code>InvalidResourceStateFault</code> exception.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ReloadTables {
     _private: (),

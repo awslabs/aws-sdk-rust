@@ -954,7 +954,8 @@ impl smithy_http::response::ParseStrictResponse for AttachVolume {
 
 /// <p>Attaches a virtual private gateway to a VPC. You can attach one virtual private
 /// gateway to one VPC at a time.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+/// User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AttachVpnGateway {
     _private: (),
@@ -984,7 +985,7 @@ impl smithy_http::response::ParseStrictResponse for AttachVpnGateway {
 
 /// <p>Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization rules act as
 /// firewall rules that grant access to networks. You must configure ingress authorization rules to
-/// enable clients to access resources in AWS or on-premises networks.</p>
+/// enable clients to access resources in Amazon Web Services or on-premises networks.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeClientVpnIngress {
     _private: (),
@@ -1173,6 +1174,48 @@ impl smithy_http::response::ParseStrictResponse for CancelCapacityReservation {
             crate::operation_deser::parse_cancel_capacity_reservation_error(response)
         } else {
             crate::operation_deser::parse_cancel_capacity_reservation_response(response)
+        }
+    }
+}
+
+/// <p>Cancels one or more Capacity Reservation Fleets. When you cancel a Capacity Reservation
+/// Fleet, the following happens:</p>
+/// <ul>
+/// <li>
+/// <p>The Capacity Reservation Fleet's status changes to <code>cancelled</code>.</p>
+/// </li>
+/// <li>
+/// <p>The individual Capacity Reservations in the Fleet are cancelled. Instances running
+/// in the Capacity Reservations at the time of cancelling the Fleet continue to run in
+/// shared capacity.</p>
+/// </li>
+/// <li>
+/// <p>The Fleet stops creating new Capacity Reservations.</p>
+/// </li>
+/// </ul>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CancelCapacityReservationFleets {
+    _private: (),
+}
+impl CancelCapacityReservationFleets {
+    /// Creates a new builder-style object to manufacture [`CancelCapacityReservationFleetsInput`](crate::input::CancelCapacityReservationFleetsInput)
+    pub fn builder() -> crate::input::cancel_capacity_reservation_fleets_input::Builder {
+        crate::input::cancel_capacity_reservation_fleets_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CancelCapacityReservationFleets {
+    type Output = std::result::Result<
+        crate::output::CancelCapacityReservationFleetsOutput,
+        crate::error::CancelCapacityReservationFleetsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_cancel_capacity_reservation_fleets_error(response)
+        } else {
+            crate::operation_deser::parse_cancel_capacity_reservation_fleets_response(response)
         }
     }
 }
@@ -1550,6 +1593,35 @@ impl smithy_http::response::ParseStrictResponse for CreateCapacityReservation {
     }
 }
 
+/// <p>Creates a Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create a Capacity
+/// Reservation Fleet</a> in the Amazon EC2 User Guide.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateCapacityReservationFleet {
+    _private: (),
+}
+impl CreateCapacityReservationFleet {
+    /// Creates a new builder-style object to manufacture [`CreateCapacityReservationFleetInput`](crate::input::CreateCapacityReservationFleetInput)
+    pub fn builder() -> crate::input::create_capacity_reservation_fleet_input::Builder {
+        crate::input::create_capacity_reservation_fleet_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateCapacityReservationFleet {
+    type Output = std::result::Result<
+        crate::output::CreateCapacityReservationFleetOutput,
+        crate::error::CreateCapacityReservationFleetError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_capacity_reservation_fleet_error(response)
+        } else {
+            crate::operation_deser::parse_create_capacity_reservation_fleet_response(response)
+        }
+    }
+}
+
 /// <p>Creates a carrier gateway.   For more information about carrier gateways, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier gateways</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCarrierGateway {
@@ -1637,19 +1709,19 @@ impl smithy_http::response::ParseStrictResponse for CreateClientVpnRoute {
     }
 }
 
-/// <p>Provides information to AWS about your VPN customer gateway device. The customer
-/// gateway is the appliance at your end of the VPN connection. (The device on the AWS side
-/// of the VPN connection is the virtual private gateway.) You must provide the
-/// internet-routable IP address of the customer gateway's external interface. The IP
-/// address must be static and can be behind a device performing network address translation
-/// (NAT).</p>
+/// <p>Provides information to Amazon Web Services about your VPN customer gateway device. The
+/// customer gateway is the appliance at your end of the VPN connection. (The device on the
+/// Amazon Web Services side of the VPN connection is the virtual private gateway.) You
+/// must provide the internet-routable IP address of the customer gateway's external
+/// interface. The IP address must be static and can be behind a device performing network
+/// address translation (NAT).</p>
 /// <p>For devices that use Border Gateway Protocol (BGP), you can also provide the device's
 /// BGP Autonomous System Number (ASN). You can use an existing ASN assigned to your
 /// network. If you don't have an ASN already, you can use a private ASN (in the 64512 -
 /// 65534 range).</p>
 /// <note>
-/// <p>Amazon EC2 supports all 4-byte ASN numbers in the range of 1 - 2147483647, with the
-/// exception of the following:</p>
+/// <p>Amazon EC2 supports all 4-byte ASN numbers in the range of 1 - 2147483647, with
+/// the exception of the following:</p>
 /// <ul>
 /// <li>
 /// <p>7224 - reserved in the <code>us-east-1</code> Region</p>
@@ -1665,7 +1737,7 @@ impl smithy_http::response::ParseStrictResponse for CreateClientVpnRoute {
 /// </li>
 /// </ul>
 /// </note>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
 /// User Guide</i>.</p>
 /// <important>
 /// <p>To create more than one customer gateway with the same VPN type, IP address, and
@@ -3671,8 +3743,9 @@ impl smithy_http::response::ParseStrictResponse for CreateVpcPeeringConnection {
     }
 }
 
-/// <p>Creates a VPN connection between an existing virtual private gateway or transit gateway and a
-/// customer gateway. The supported connection type is <code>ipsec.1</code>.</p>
+/// <p>Creates a VPN connection between an existing virtual private gateway or transit
+/// gateway and a customer gateway. The supported connection type is
+/// <code>ipsec.1</code>.</p>
 /// <p>The response includes information that you need to give to your network administrator
 /// to configure your customer gateway.</p>
 /// <important>
@@ -3685,7 +3758,7 @@ impl smithy_http::response::ParseStrictResponse for CreateVpcPeeringConnection {
 /// returned from this call.</p>
 /// <p>This is an idempotent operation. If you perform the operation more than once, Amazon
 /// EC2 doesn't return an error.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
 /// User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVpnConnection {
@@ -3714,8 +3787,11 @@ impl smithy_http::response::ParseStrictResponse for CreateVpnConnection {
     }
 }
 
-/// <p>Creates a static route associated with a VPN connection between an existing virtual private gateway and a VPN customer gateway. The static route allows traffic to be routed from the virtual private gateway to the VPN customer gateway.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
+/// <p>Creates a static route associated with a VPN connection between an existing virtual
+/// private gateway and a VPN customer gateway. The static route allows traffic to be routed
+/// from the virtual private gateway to the VPN customer gateway.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+/// User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVpnConnectionRoute {
     _private: (),
@@ -3743,8 +3819,11 @@ impl smithy_http::response::ParseStrictResponse for CreateVpnConnectionRoute {
     }
 }
 
-/// <p>Creates a virtual private gateway. A virtual private gateway is the endpoint on the VPC side of your VPN connection. You can create a virtual private gateway before creating the VPC itself.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
+/// <p>Creates a virtual private gateway. A virtual private gateway is the endpoint on the
+/// VPC side of your VPN connection. You can create a virtual private gateway before
+/// creating the VPC itself.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+/// User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVpnGateway {
     _private: (),
@@ -3865,7 +3944,8 @@ impl smithy_http::response::ParseStrictResponse for DeleteClientVpnRoute {
     }
 }
 
-/// <p>Deletes the specified customer gateway. You must delete the VPN connection before you can delete the customer gateway.</p>
+/// <p>Deletes the specified customer gateway. You must delete the VPN connection before you
+/// can delete the customer gateway.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCustomerGateway {
     _private: (),
@@ -5357,8 +5437,16 @@ impl smithy_http::response::ParseStrictResponse for DeleteVpcPeeringConnection {
 }
 
 /// <p>Deletes the specified VPN connection.</p>
-/// <p>If you're deleting the VPC and its associated components, we recommend that you detach the virtual private gateway from the VPC and delete the VPC before deleting the VPN connection. If you believe that the tunnel credentials for your VPN connection have been compromised, you can delete the VPN connection and create a new one that has new keys, without needing to delete the VPC or virtual private gateway. If you create a new VPN connection, you must reconfigure the customer gateway device using the new configuration information returned with the new VPN connection ID.</p>
-/// <p>For certificate-based authentication, delete all AWS Certificate Manager (ACM) private certificates used for the AWS-side tunnel endpoints for the VPN connection before deleting the VPN connection.</p>
+/// <p>If you're deleting the VPC and its associated components, we recommend that you detach
+/// the virtual private gateway from the VPC and delete the VPC before deleting the VPN
+/// connection. If you believe that the tunnel credentials for your VPN connection have been
+/// compromised, you can delete the VPN connection and create a new one that has new keys,
+/// without needing to delete the VPC or virtual private gateway. If you create a new VPN
+/// connection, you must reconfigure the customer gateway device using the new configuration
+/// information returned with the new VPN connection ID.</p>
+/// <p>For certificate-based authentication, delete all Certificate Manager (ACM) private
+/// certificates used for the Amazon Web Services-side tunnel endpoints for the VPN
+/// connection before deleting the VPN connection.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVpnConnection {
     _private: (),
@@ -5386,7 +5474,10 @@ impl smithy_http::response::ParseStrictResponse for DeleteVpnConnection {
     }
 }
 
-/// <p>Deletes the specified static route associated with a VPN connection between an existing virtual private gateway and a VPN customer gateway. The static route allows traffic to be routed from the virtual private gateway to the VPN customer gateway.</p>
+/// <p>Deletes the specified static route associated with a VPN connection between an
+/// existing virtual private gateway and a VPN customer gateway. The static route allows
+/// traffic to be routed from the virtual private gateway to the VPN customer
+/// gateway.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVpnConnectionRoute {
     _private: (),
@@ -5414,7 +5505,10 @@ impl smithy_http::response::ParseStrictResponse for DeleteVpnConnectionRoute {
     }
 }
 
-/// <p>Deletes the specified virtual private gateway. You must first detach the virtual private gateway from the VPC. Note that you don't need to delete the virtual private gateway if you plan to delete and recreate the VPN connection between your VPC and your network.</p>
+/// <p>Deletes the specified virtual private gateway. You must first detach the virtual
+/// private gateway from the VPC. Note that you don't need to delete the virtual private
+/// gateway if you plan to delete and recreate the VPN connection between your VPC and your
+/// network.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVpnGateway {
     _private: (),
@@ -5863,6 +5957,34 @@ impl smithy_http::response::ParseStrictResponse for DescribeByoipCidrs {
     }
 }
 
+/// <p>Describes one or more Capacity Reservation Fleets.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeCapacityReservationFleets {
+    _private: (),
+}
+impl DescribeCapacityReservationFleets {
+    /// Creates a new builder-style object to manufacture [`DescribeCapacityReservationFleetsInput`](crate::input::DescribeCapacityReservationFleetsInput)
+    pub fn builder() -> crate::input::describe_capacity_reservation_fleets_input::Builder {
+        crate::input::describe_capacity_reservation_fleets_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeCapacityReservationFleets {
+    type Output = std::result::Result<
+        crate::output::DescribeCapacityReservationFleetsOutput,
+        crate::error::DescribeCapacityReservationFleetsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_capacity_reservation_fleets_error(response)
+        } else {
+            crate::operation_deser::parse_describe_capacity_reservation_fleets_response(response)
+        }
+    }
+}
+
 /// <p>Describes one or more of your Capacity Reservations. The results describe only the Capacity Reservations in the
 /// Amazon Web Services Region that you're currently using.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -6150,7 +6272,8 @@ impl smithy_http::response::ParseStrictResponse for DescribeConversionTasks {
 }
 
 /// <p>Describes one or more of your VPN customer gateways.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+/// User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCustomerGateways {
     _private: (),
@@ -9511,7 +9634,8 @@ impl smithy_http::response::ParseStrictResponse for DescribeVpcs {
 }
 
 /// <p>Describes one or more of your VPN connections.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+/// User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVpnConnections {
     _private: (),
@@ -9540,7 +9664,8 @@ impl smithy_http::response::ParseStrictResponse for DescribeVpnConnections {
 }
 
 /// <p>Describes one or more of your virtual private gateways.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN
+/// User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVpnGateways {
     _private: (),
@@ -9690,9 +9815,12 @@ impl smithy_http::response::ParseStrictResponse for DetachVolume {
     }
 }
 
-/// <p>Detaches a virtual private gateway from a VPC. You do this if you're planning to turn off the VPC and not use it anymore. You can confirm a virtual private gateway has been completely detached from a VPC by describing the virtual private gateway (any attachments to the virtual private gateway are also described).</p>
-/// <p>You must wait for the attachment's state to switch to <code>detached</code> before
-/// you can delete the VPC or attach a different VPC to the virtual private gateway.</p>
+/// <p>Detaches a virtual private gateway from a VPC. You do this if you're planning to turn
+/// off the VPC and not use it anymore. You can confirm a virtual private gateway has been
+/// completely detached from a VPC by describing the virtual private gateway (any
+/// attachments to the virtual private gateway are also described).</p>
+/// <p>You must wait for the attachment's state to switch to <code>detached</code> before you
+/// can delete the VPC or attach a different VPC to the virtual private gateway.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DetachVpnGateway {
     _private: (),
@@ -9877,7 +10005,8 @@ impl smithy_http::response::ParseStrictResponse for DisableTransitGatewayRouteTa
     }
 }
 
-/// <p>Disables a virtual private gateway (VGW) from propagating routes to a specified route table of a VPC.</p>
+/// <p>Disables a virtual private gateway (VGW) from propagating routes to a specified route
+/// table of a VPC.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisableVgwRoutePropagation {
     _private: (),
@@ -10487,7 +10616,8 @@ impl smithy_http::response::ParseStrictResponse for EnableTransitGatewayRouteTab
     }
 }
 
-/// <p>Enables a virtual private gateway (VGW) to propagate routes to the specified route table of a VPC.</p>
+/// <p>Enables a virtual private gateway (VGW) to propagate routes to the specified route
+/// table of a VPC.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct EnableVgwRoutePropagation {
     _private: (),
@@ -11496,6 +11626,71 @@ impl smithy_http::response::ParseStrictResponse for GetTransitGatewayRouteTableP
     }
 }
 
+/// <p>Download an AWS-provided sample configuration file to be used with the customer
+/// gateway device specified for your Site-to-Site VPN connection.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetVpnConnectionDeviceSampleConfiguration {
+    _private: (),
+}
+impl GetVpnConnectionDeviceSampleConfiguration {
+    /// Creates a new builder-style object to manufacture [`GetVpnConnectionDeviceSampleConfigurationInput`](crate::input::GetVpnConnectionDeviceSampleConfigurationInput)
+    pub fn builder() -> crate::input::get_vpn_connection_device_sample_configuration_input::Builder
+    {
+        crate::input::get_vpn_connection_device_sample_configuration_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetVpnConnectionDeviceSampleConfiguration {
+    type Output = std::result::Result<
+        crate::output::GetVpnConnectionDeviceSampleConfigurationOutput,
+        crate::error::GetVpnConnectionDeviceSampleConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_vpn_connection_device_sample_configuration_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_get_vpn_connection_device_sample_configuration_response(
+                response,
+            )
+        }
+    }
+}
+
+/// <p>Obtain a list of customer gateway devices for which sample configuration
+/// files can be provided. The request has no additional parameters. You can also see the
+/// list of device types with sample configuration files available under <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html">Your customer gateway
+/// device</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetVpnConnectionDeviceTypes {
+    _private: (),
+}
+impl GetVpnConnectionDeviceTypes {
+    /// Creates a new builder-style object to manufacture [`GetVpnConnectionDeviceTypesInput`](crate::input::GetVpnConnectionDeviceTypesInput)
+    pub fn builder() -> crate::input::get_vpn_connection_device_types_input::Builder {
+        crate::input::get_vpn_connection_device_types_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetVpnConnectionDeviceTypes {
+    type Output = std::result::Result<
+        crate::output::GetVpnConnectionDeviceTypesOutput,
+        crate::error::GetVpnConnectionDeviceTypesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_vpn_connection_device_types_error(response)
+        } else {
+            crate::operation_deser::parse_get_vpn_connection_device_types_response(response)
+        }
+    }
+}
+
 /// <p>Uploads a client certificate revocation list to the specified Client VPN endpoint. Uploading a client certificate revocation list overwrites the existing client certificate revocation list.</p>
 /// <p>Uploading a client certificate revocation list resets existing client connections.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -11766,6 +11961,38 @@ impl smithy_http::response::ParseStrictResponse for ModifyCapacityReservation {
             crate::operation_deser::parse_modify_capacity_reservation_error(response)
         } else {
             crate::operation_deser::parse_modify_capacity_reservation_response(response)
+        }
+    }
+}
+
+/// <p>Modifies a Capacity Reservation Fleet.</p>
+/// <p>When you modify the total target capacity of a Capacity Reservation Fleet, the Fleet automatically
+/// creates new Capacity Reservations, or modifies or cancels existing Capacity Reservations in the Fleet
+/// to meet the new total target capacity. When you modify the end date for the Fleet, the end dates for
+/// all of the individual Capacity Reservations in the Fleet are updated accordingly.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyCapacityReservationFleet {
+    _private: (),
+}
+impl ModifyCapacityReservationFleet {
+    /// Creates a new builder-style object to manufacture [`ModifyCapacityReservationFleetInput`](crate::input::ModifyCapacityReservationFleetInput)
+    pub fn builder() -> crate::input::modify_capacity_reservation_fleet_input::Builder {
+        crate::input::modify_capacity_reservation_fleet_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ModifyCapacityReservationFleet {
+    type Output = std::result::Result<
+        crate::output::ModifyCapacityReservationFleetOutput,
+        crate::error::ModifyCapacityReservationFleetError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_capacity_reservation_fleet_error(response)
+        } else {
+            crate::operation_deser::parse_modify_capacity_reservation_fleet_response(response)
         }
     }
 }
@@ -12327,9 +12554,7 @@ impl smithy_http::response::ParseStrictResponse for ModifyInstanceMetadataOption
 /// <p>Change the Dedicated Host with which an instance is associated.</p>
 /// </li>
 /// <li>
-/// <p>Change the instance tenancy of an instance from <code>host</code> to
-/// <code>dedicated</code>, or from <code>dedicated</code> to
-/// <code>host</code>.</p>
+/// <p>Change the instance tenancy of an instance.</p>
 /// </li>
 /// <li>
 /// <p>Move an instance to or from a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
@@ -13140,8 +13365,8 @@ impl smithy_http::response::ParseStrictResponse for ModifyVpcTenancy {
     }
 }
 
-/// <p>Modifies the customer gateway or the target gateway of an AWS Site-to-Site VPN connection. To modify the target gateway, the following migration
-/// options are available:</p>
+/// <p>Modifies the customer gateway or the target gateway of an Amazon Web Services Site-to-Site VPN connection. To
+/// modify the target gateway, the following migration options are available:</p>
 /// <ul>
 /// <li>
 /// <p>An existing virtual private gateway to a new virtual private gateway</p>
@@ -13156,20 +13381,26 @@ impl smithy_http::response::ParseStrictResponse for ModifyVpcTenancy {
 /// <p>An existing transit gateway to a virtual private gateway</p>
 /// </li>
 /// </ul>
-/// <p>Before you perform the migration to the new gateway, you must configure the new gateway. Use <a>CreateVpnGateway</a> to create a virtual private gateway, or <a>CreateTransitGateway</a> to create a transit gateway.</p>
-/// <p>This step is required when you migrate from a virtual private gateway with static routes to
-/// a transit gateway. </p>
+/// <p>Before you perform the migration to the new gateway, you must configure the new
+/// gateway. Use <a>CreateVpnGateway</a> to create a virtual private gateway, or
+/// <a>CreateTransitGateway</a> to create a transit gateway.</p>
+/// <p>This step is required when you migrate from a virtual private gateway with static
+/// routes to a transit gateway. </p>
 /// <p>You must delete the static routes before you migrate to the new gateway.</p>
 /// <p>Keep a copy of the static route before you delete it. You will need to add back these
 /// routes to the transit gateway after the VPN connection migration is complete.</p>
-/// <p>After you migrate to the new gateway, you might need to modify your VPC route table. Use <a>CreateRoute</a> and <a>DeleteRoute</a> to make the changes described in <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">VPN Gateway Target Modification Required VPC Route Table Updates</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
-/// <p>
-/// When the new gateway is a transit gateway, modify the transit gateway route table to allow traffic between the VPC and the  AWS Site-to-Site VPN connection. Use <a>CreateTransitGatewayRoute</a> to add the routes.</p>
-/// <p> If you deleted VPN static routes, you must add the static routes to the transit gateway
-/// route table.</p>
-/// <p>After you perform this operation, the AWS VPN endpoint's IP addresses on the AWS side and
-/// the tunnel options remain intact. Your AWS Site-to-Site VPN connection will be temporarily unavailable
-/// for a brief period while we provision the new endpoints.</p>
+/// <p>After you migrate to the new gateway, you might need to modify your VPC route table.
+/// Use <a>CreateRoute</a> and <a>DeleteRoute</a> to make the changes
+/// described in <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">Update VPC route
+/// tables</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>
+/// <p>When the new gateway is a transit gateway, modify the transit gateway route table to
+/// allow traffic between the VPC and the Amazon Web Services Site-to-Site VPN connection.
+/// Use <a>CreateTransitGatewayRoute</a> to add the routes.</p>
+/// <p> If you deleted VPN static routes, you must add the static routes to the transit
+/// gateway route table.</p>
+/// <p>After you perform this operation, the VPN endpoint's IP addresses on the Amazon Web Services side and the tunnel options remain intact. Your Amazon Web Services Site-to-Site VPN connection will
+/// be temporarily unavailable for a brief period while we provision the new
+/// endpoints.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpnConnection {
     _private: (),
@@ -13198,7 +13429,10 @@ impl smithy_http::response::ParseStrictResponse for ModifyVpnConnection {
 }
 
 /// <p>Modifies the connection options for your Site-to-Site VPN connection.</p>
-/// <p>When you modify the VPN connection options, the VPN endpoint IP addresses on the AWS side do not change, and the tunnel options do not change. Your VPN connection will be temporarily unavailable for a brief period while the VPN connection is updated.</p>
+/// <p>When you modify the VPN connection options, the VPN endpoint IP addresses on the
+/// Amazon Web Services side do not change, and the tunnel options do not change. Your
+/// VPN connection will be temporarily unavailable for a brief period while the VPN
+/// connection is updated.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpnConnectionOptions {
     _private: (),
@@ -13254,10 +13488,10 @@ impl smithy_http::response::ParseStrictResponse for ModifyVpnTunnelCertificate {
     }
 }
 
-/// <p>Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection. You can modify
+/// <p>Modifies the options for a VPN tunnel in an Amazon Web Services Site-to-Site VPN connection. You can modify
 /// multiple options for a tunnel in a single request, but you can only modify one tunnel at
-/// a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site VPN Tunnel Options for Your Site-to-Site VPN
-/// Connection</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
+/// a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site VPN tunnel options for your Site-to-Site VPN
+/// connection</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpnTunnelOptions {
     _private: (),

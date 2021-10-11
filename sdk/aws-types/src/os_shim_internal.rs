@@ -261,7 +261,6 @@ impl Default for TimeSource {
 /// let client = Client::with_timesource(TimeSource::manual(&time));
 /// time.advance(Duration::from_secs(100));
 /// ```
-/// ```
 #[derive(Clone, Debug)]
 pub struct ManualTimeSource {
     queries: Arc<Mutex<Vec<SystemTime>>>,

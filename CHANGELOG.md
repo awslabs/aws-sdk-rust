@@ -1,3 +1,33 @@
+v0.0.20-alpha (October, 7, 2021)
+================================
+
+**Breaking changes**
+
+- :warning: MSRV increased from 1.52.1 to 1.53.0 per our 3-behind MSRV policy.
+- `SmithyConnector` and `DynConnector` now return `ConnectorError` instead of `Box<dyn Error>`. If you have written a custom connector, it will need to be updated to return the new error type. (#744)
+- The `DispatchError` variant of `SdkError` now contains `ConnectorError` instead of `Box<dyn Error>` (#744).
+
+**New This Week**
+
+- :tada: Add presigned request support and examples for S3 GetObject and PutObject (smithy-rs#731, aws-sdk-rust#139)
+- :tada: Add presigned request support and example for Polly SynthesizeSpeech (smithy-rs#735, aws-sdk-rust#139)
+- Add connect & HTTP read timeouts to IMDS, defaulting to 1 second
+- IO and timeout errors from Hyper can now be retried (#744)
+- :bug: Fix error when receiving `Cont` event from S3 SelectObjectContent (smithy-rs#736)
+- :bug: Fix bug in event stream receiver that could cause the last events in the response stream to be lost when using S3 SelectObjectContent (smithy-rs#736)
+- Updated EC2 code examples to include readme; refactored operations from main into separate functions.
+- Updated Transcribe code example to take an audio file as a command-line option and added readme.
+- Refactored API Gateway code example by moving operation out of main and into a separate function; added readme.
+- Updated Auto Scaling code example to move operation from main to separate function; added readme.
+- Updated AWS Config code examples to include a readme; added command-line options; added DeleteConfigurationRecorder, DeleteDeliveryChannel, ListConfigurationRecorders, ListDeliveryChannels, ListResources, ShowResourceHistory, and EnableConfig code examples.
+- :tada: Add support for 6 new AWS services:
+  - Wisdom
+  - VoiceId
+  - Account
+  - KafkaConnect
+  - OpenSearch
+  - CloudControl
+
 v0.0.19-alpha (September 24th, 2021)
 ====================================
 
@@ -13,6 +43,7 @@ v0.0.19-alpha (September 24th, 2021)
 - Add query param signing to the `aws-sigv4` crate (smithy-rs#707)
 - :bug: Update event stream `Receiver`s to be `Send` (smithy-rs#702, #aws-sdk-rust#224)
 - :bug: Fix panic when signing non-ASCII header values (smithy-rs#708, aws-sdk-rust#226)
+- Add an example that uses Polly, Transcribe, and S3 called [telephone-game](sdk/examples/telephone-game/src/main.rs)
 
 **Contributions**
 
@@ -20,13 +51,16 @@ Thank you for your contributions! :heart:
 
 - @jonhoo (smithy-rs#703)
 
-
 v0.0.18-alpha (September 14th, 2021)
-===================================
+=======================
+
+- :tada: Add support for `OpenSearch` service & bring in other model updates (#todo)
+- Cleanup docs in `aws-config`
+
 **New This Week**
-- :tada: Add support for `OpenSearch` service & bring in other model updates (smithy-rs#698)
-- Cleanup docs in `aws-config` (smithy-rs#693)
 - :bug: Fixes issue where `Content-Length` header could be duplicated leading to signing failure (aws-sdk-rust#220, smithy-rs#697)
+
+- Updated AutoScaling code examples to use asynchronous config; added readme file; tested on 0.0.17 bits
 
 v0.0.17-alpha (September 2nd, 2021)
 ===================================

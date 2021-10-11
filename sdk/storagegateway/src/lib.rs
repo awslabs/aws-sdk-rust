@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Storage Gateway Service</fullname>
 //! <p>Storage Gateway is the service that connects an on-premises software appliance with
 //! cloud-based storage to provide seamless and secure integration between an

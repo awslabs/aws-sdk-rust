@@ -174,229 +174,220 @@ impl InvokeEndpointInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = crate::operation_ser::ser_payload_invoke_endpoint_input(self.body)?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::InvokeEndpointInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_1 = &_input.endpoint_name;
+            let input_1 =
+                input_1
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "endpoint_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let endpoint_name = smithy_http::label::fmt_string(input_1, false);
+            if endpoint_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "endpoint_name",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::InvokeEndpoint::new(),
+            write!(
+                output,
+                "/endpoints/{EndpointName}/invocations",
+                EndpointName = endpoint_name
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "InvokeEndpoint",
-                "sagemakerruntime",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_1 = &self.endpoint_name;
-        let input_1 = input_1
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "endpoint_name",
-                details: "cannot be empty or unset",
-            })?;
-        let endpoint_name = smithy_http::label::fmt_string(input_1, false);
-        if endpoint_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "endpoint_name",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/endpoints/{EndpointName}/invocations",
-            EndpointName = endpoint_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_2) = &self.content_type {
-            let formatted_3 = AsRef::<str>::as_ref(inner_2);
-            if !formatted_3.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_3;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::InvokeEndpointInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_2) = &_input.content_type {
+                let formatted_3 = AsRef::<str>::as_ref(inner_2);
+                if !formatted_3.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_3;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "content_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("Content-Type", header_value);
+                        })?;
+                    builder = builder.header("Content-Type", header_value);
+                }
             }
-        }
-        if let Some(inner_4) = &self.accept {
-            let formatted_5 = AsRef::<str>::as_ref(inner_4);
-            if !formatted_5.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_5;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_4) = &_input.accept {
+                let formatted_5 = AsRef::<str>::as_ref(inner_4);
+                if !formatted_5.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_5;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "accept",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("Accept", header_value);
+                        })?;
+                    builder = builder.header("Accept", header_value);
+                }
             }
-        }
-        if let Some(inner_6) = &self.custom_attributes {
-            let formatted_7 = AsRef::<str>::as_ref(inner_6);
-            if !formatted_7.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_7;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_6) = &_input.custom_attributes {
+                let formatted_7 = AsRef::<str>::as_ref(inner_6);
+                if !formatted_7.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_7;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "custom_attributes",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &"*** Sensitive Data Redacted ***", err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amzn-SageMaker-Custom-Attributes", header_value);
+                        })?;
+                    builder = builder.header("X-Amzn-SageMaker-Custom-Attributes", header_value);
+                }
             }
-        }
-        if let Some(inner_8) = &self.target_model {
-            let formatted_9 = AsRef::<str>::as_ref(inner_8);
-            if !formatted_9.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_9;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_8) = &_input.target_model {
+                let formatted_9 = AsRef::<str>::as_ref(inner_8);
+                if !formatted_9.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_9;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "target_model",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amzn-SageMaker-Target-Model", header_value);
+                        })?;
+                    builder = builder.header("X-Amzn-SageMaker-Target-Model", header_value);
+                }
             }
-        }
-        if let Some(inner_10) = &self.target_variant {
-            let formatted_11 = AsRef::<str>::as_ref(inner_10);
-            if !formatted_11.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_11;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_10) = &_input.target_variant {
+                let formatted_11 = AsRef::<str>::as_ref(inner_10);
+                if !formatted_11.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_11;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "target_variant",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amzn-SageMaker-Target-Variant", header_value);
+                        })?;
+                    builder = builder.header("X-Amzn-SageMaker-Target-Variant", header_value);
+                }
             }
-        }
-        if let Some(inner_12) = &self.target_container_hostname {
-            let formatted_13 = AsRef::<str>::as_ref(inner_12);
-            if !formatted_13.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_13;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_12) = &_input.target_container_hostname {
+                let formatted_13 = AsRef::<str>::as_ref(inner_12);
+                if !formatted_13.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_13;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "target_container_hostname",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder =
-                    builder.header("X-Amzn-SageMaker-Target-Container-Hostname", header_value);
+                        })?;
+                    builder =
+                        builder.header("X-Amzn-SageMaker-Target-Container-Hostname", header_value);
+                }
             }
-        }
-        if let Some(inner_14) = &self.inference_id {
-            let formatted_15 = AsRef::<str>::as_ref(inner_14);
-            if !formatted_15.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_15;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_14) = &_input.inference_id {
+                let formatted_15 = AsRef::<str>::as_ref(inner_14);
+                if !formatted_15.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_15;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "inference_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amzn-SageMaker-Inference-Id", header_value);
+                        })?;
+                    builder = builder.header("X-Amzn-SageMaker-Inference-Id", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/octet-stream",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::InvokeEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::InvokeEndpointInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/octet-stream",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::ser_payload_invoke_endpoint_input(self.body)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::InvokeEndpoint::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "InvokeEndpoint",
+            "sagemakerruntime",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -556,212 +547,204 @@ impl InvokeEndpointAsyncInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::InvokeEndpointAsync::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "InvokeEndpointAsync",
-                "sagemakerruntime",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_16 = &self.endpoint_name;
-        let input_16 =
-            input_16
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::InvokeEndpointAsyncInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_16 = &_input.endpoint_name;
+            let input_16 =
+                input_16
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "endpoint_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let endpoint_name = smithy_http::label::fmt_string(input_16, false);
+            if endpoint_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "endpoint_name",
                     details: "cannot be empty or unset",
-                })?;
-        let endpoint_name = smithy_http::label::fmt_string(input_16, false);
-        if endpoint_name.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "endpoint_name",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/endpoints/{EndpointName}/async-invocations",
+                EndpointName = endpoint_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/endpoints/{EndpointName}/async-invocations",
-            EndpointName = endpoint_name
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_17) = &self.content_type {
-            let formatted_18 = AsRef::<str>::as_ref(inner_17);
-            if !formatted_18.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_18;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::InvokeEndpointAsyncInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_17) = &_input.content_type {
+                let formatted_18 = AsRef::<str>::as_ref(inner_17);
+                if !formatted_18.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_18;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "content_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amzn-SageMaker-Content-Type", header_value);
+                        })?;
+                    builder = builder.header("X-Amzn-SageMaker-Content-Type", header_value);
+                }
             }
-        }
-        if let Some(inner_19) = &self.accept {
-            let formatted_20 = AsRef::<str>::as_ref(inner_19);
-            if !formatted_20.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_20;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_19) = &_input.accept {
+                let formatted_20 = AsRef::<str>::as_ref(inner_19);
+                if !formatted_20.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_20;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "accept",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amzn-SageMaker-Accept", header_value);
+                        })?;
+                    builder = builder.header("X-Amzn-SageMaker-Accept", header_value);
+                }
             }
-        }
-        if let Some(inner_21) = &self.custom_attributes {
-            let formatted_22 = AsRef::<str>::as_ref(inner_21);
-            if !formatted_22.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_22;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_21) = &_input.custom_attributes {
+                let formatted_22 = AsRef::<str>::as_ref(inner_21);
+                if !formatted_22.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_22;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "custom_attributes",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &"*** Sensitive Data Redacted ***", err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amzn-SageMaker-Custom-Attributes", header_value);
+                        })?;
+                    builder = builder.header("X-Amzn-SageMaker-Custom-Attributes", header_value);
+                }
             }
-        }
-        if let Some(inner_23) = &self.inference_id {
-            let formatted_24 = AsRef::<str>::as_ref(inner_23);
-            if !formatted_24.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_24;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_23) = &_input.inference_id {
+                let formatted_24 = AsRef::<str>::as_ref(inner_23);
+                if !formatted_24.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_24;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "inference_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amzn-SageMaker-Inference-Id", header_value);
+                        })?;
+                    builder = builder.header("X-Amzn-SageMaker-Inference-Id", header_value);
+                }
             }
-        }
-        if let Some(inner_25) = &self.input_location {
-            let formatted_26 = AsRef::<str>::as_ref(inner_25);
-            if !formatted_26.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_26;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_25) = &_input.input_location {
+                let formatted_26 = AsRef::<str>::as_ref(inner_25);
+                if !formatted_26.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_26;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "input_location",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amzn-SageMaker-InputLocation", header_value);
+                        })?;
+                    builder = builder.header("X-Amzn-SageMaker-InputLocation", header_value);
+                }
             }
-        }
-        if let Some(inner_27) = &self.request_ttl_seconds {
-            let mut encoder = smithy_types::primitive::Encoder::from(*inner_27);
-            let formatted_28 = encoder.encode();
-            if !formatted_28.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_28;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_27) = &_input.request_ttl_seconds {
+                let mut encoder = smithy_types::primitive::Encoder::from(*inner_27);
+                let formatted_28 = encoder.encode();
+                if !formatted_28.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_28;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "request_ttl_seconds",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("X-Amzn-SageMaker-RequestTTLSeconds", header_value);
+                        })?;
+                    builder = builder.header("X-Amzn-SageMaker-RequestTTLSeconds", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::InvokeEndpointAsyncInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::InvokeEndpointAsyncInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::InvokeEndpointAsync::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "InvokeEndpointAsync",
+            "sagemakerruntime",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,

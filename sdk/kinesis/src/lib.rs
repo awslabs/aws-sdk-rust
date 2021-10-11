@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Kinesis Data Streams Service API Reference</fullname>
 //! <p>Amazon Kinesis Data Streams is a managed service that scales elastically for
 //! real-time processing of streaming big data.</p>

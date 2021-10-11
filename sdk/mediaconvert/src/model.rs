@@ -22149,6 +22149,8 @@ impl EmbeddedDestinationSettings {
 pub struct DvbSubDestinationSettings {
     /// If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub alignment: std::option::Option<crate::model::DvbSubtitleAlignment>,
+    /// Ignore this setting unless your input captions are STL, any type of 608, teletext, or TTML, and your output captions are DVB-SUB. Specify how the service applies the color specified in the setting Font color (DvbSubtitleFontColor). By default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses the specified font color only for text that is white in the input. When you choose ALL_TEXT, the service uses the specified font color for all output captions text. If you leave both settings at their default value, your output font color is the same as your input font color.
+    pub apply_font_color: std::option::Option<crate::model::DvbSubtitleApplyFontColor>,
     /// Specifies the color of the rectangle behind the captions.
     /// All burn-in and DVB-Sub font settings must match.
     pub background_color: std::option::Option<crate::model::DvbSubtitleBackgroundColor>,
@@ -22160,6 +22162,8 @@ pub struct DvbSubDestinationSettings {
     pub dds_x_coordinate: i32,
     /// Use this setting, along with DDS x-coordinate (ddsXCoordinate), to specify the upper left corner of the display definition segment (DDS) display window. With this setting, specify the distance, in pixels, between the top of the frame and the top of the DDS display window. Keep the default value, 0, to have MediaConvert automatically choose this offset. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). MediaConvert uses these values to determine whether to write page position data to the DDS or to the page composition segment (PCS). All burn-in and DVB-Sub font settings must match.
     pub dds_y_coordinate: i32,
+    /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+    pub fallback_font: std::option::Option<crate::model::DvbSubSubtitleFallbackFont>,
     /// Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub font_color: std::option::Option<crate::model::DvbSubtitleFontColor>,
     /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
@@ -22174,6 +22178,8 @@ pub struct DvbSubDestinationSettings {
     pub font_size: i32,
     /// Specify the height, in pixels, of this set of DVB-Sub captions. The default value is 576 pixels. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and DVB-Sub font settings must match.
     pub height: i32,
+    /// Ignore this setting unless your DvbSubtitleFontColor setting is HEX. Format is six or eight hexidecimal digits, representing the red, green, and blue components, with the two extra digits used for an optional alpha value. For example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue value of 0xAA, and an alpha value of 0xBB.
+    pub hex_font_color: std::option::Option<std::string::String>,
     /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub outline_color: std::option::Option<crate::model::DvbSubtitleOutlineColor>,
     /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
@@ -22187,6 +22193,8 @@ pub struct DvbSubDestinationSettings {
     pub shadow_x_offset: i32,
     /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
     pub shadow_y_offset: i32,
+    /// Choose which set of style and position values the service applies to your output captions. When you choose ENABLED, the service uses the input style and position information from your input. When you choose DISABLED, the service uses any style values that you specify in your output settings. If you don't specify values, the service uses default style and position values. When you choose DISABLED, the service ignores all style and position values from your input.
+    pub style_passthrough: std::option::Option<crate::model::DvbSubtitleStylePassthrough>,
     /// Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
     pub subtitling_type: std::option::Option<crate::model::DvbSubtitlingType>,
     /// Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the captions are closed caption.
@@ -22202,23 +22210,27 @@ impl std::fmt::Debug for DvbSubDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DvbSubDestinationSettings");
         formatter.field("alignment", &self.alignment);
+        formatter.field("apply_font_color", &self.apply_font_color);
         formatter.field("background_color", &self.background_color);
         formatter.field("background_opacity", &self.background_opacity);
         formatter.field("dds_handling", &self.dds_handling);
         formatter.field("dds_x_coordinate", &self.dds_x_coordinate);
         formatter.field("dds_y_coordinate", &self.dds_y_coordinate);
+        formatter.field("fallback_font", &self.fallback_font);
         formatter.field("font_color", &self.font_color);
         formatter.field("font_opacity", &self.font_opacity);
         formatter.field("font_resolution", &self.font_resolution);
         formatter.field("font_script", &self.font_script);
         formatter.field("font_size", &self.font_size);
         formatter.field("height", &self.height);
+        formatter.field("hex_font_color", &self.hex_font_color);
         formatter.field("outline_color", &self.outline_color);
         formatter.field("outline_size", &self.outline_size);
         formatter.field("shadow_color", &self.shadow_color);
         formatter.field("shadow_opacity", &self.shadow_opacity);
         formatter.field("shadow_x_offset", &self.shadow_x_offset);
         formatter.field("shadow_y_offset", &self.shadow_y_offset);
+        formatter.field("style_passthrough", &self.style_passthrough);
         formatter.field("subtitling_type", &self.subtitling_type);
         formatter.field("teletext_spacing", &self.teletext_spacing);
         formatter.field("width", &self.width);
@@ -22234,23 +22246,28 @@ pub mod dvb_sub_destination_settings {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alignment: std::option::Option<crate::model::DvbSubtitleAlignment>,
+        pub(crate) apply_font_color: std::option::Option<crate::model::DvbSubtitleApplyFontColor>,
         pub(crate) background_color: std::option::Option<crate::model::DvbSubtitleBackgroundColor>,
         pub(crate) background_opacity: std::option::Option<i32>,
         pub(crate) dds_handling: std::option::Option<crate::model::DvbddsHandling>,
         pub(crate) dds_x_coordinate: std::option::Option<i32>,
         pub(crate) dds_y_coordinate: std::option::Option<i32>,
+        pub(crate) fallback_font: std::option::Option<crate::model::DvbSubSubtitleFallbackFont>,
         pub(crate) font_color: std::option::Option<crate::model::DvbSubtitleFontColor>,
         pub(crate) font_opacity: std::option::Option<i32>,
         pub(crate) font_resolution: std::option::Option<i32>,
         pub(crate) font_script: std::option::Option<crate::model::FontScript>,
         pub(crate) font_size: std::option::Option<i32>,
         pub(crate) height: std::option::Option<i32>,
+        pub(crate) hex_font_color: std::option::Option<std::string::String>,
         pub(crate) outline_color: std::option::Option<crate::model::DvbSubtitleOutlineColor>,
         pub(crate) outline_size: std::option::Option<i32>,
         pub(crate) shadow_color: std::option::Option<crate::model::DvbSubtitleShadowColor>,
         pub(crate) shadow_opacity: std::option::Option<i32>,
         pub(crate) shadow_x_offset: std::option::Option<i32>,
         pub(crate) shadow_y_offset: std::option::Option<i32>,
+        pub(crate) style_passthrough:
+            std::option::Option<crate::model::DvbSubtitleStylePassthrough>,
         pub(crate) subtitling_type: std::option::Option<crate::model::DvbSubtitlingType>,
         pub(crate) teletext_spacing: std::option::Option<crate::model::DvbSubtitleTeletextSpacing>,
         pub(crate) width: std::option::Option<i32>,
@@ -22268,6 +22285,18 @@ pub mod dvb_sub_destination_settings {
             input: std::option::Option<crate::model::DvbSubtitleAlignment>,
         ) -> Self {
             self.alignment = input;
+            self
+        }
+        /// Ignore this setting unless your input captions are STL, any type of 608, teletext, or TTML, and your output captions are DVB-SUB. Specify how the service applies the color specified in the setting Font color (DvbSubtitleFontColor). By default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses the specified font color only for text that is white in the input. When you choose ALL_TEXT, the service uses the specified font color for all output captions text. If you leave both settings at their default value, your output font color is the same as your input font color.
+        pub fn apply_font_color(mut self, input: crate::model::DvbSubtitleApplyFontColor) -> Self {
+            self.apply_font_color = Some(input);
+            self
+        }
+        pub fn set_apply_font_color(
+            mut self,
+            input: std::option::Option<crate::model::DvbSubtitleApplyFontColor>,
+        ) -> Self {
+            self.apply_font_color = input;
             self
         }
         /// Specifies the color of the rectangle behind the captions.
@@ -22320,6 +22349,18 @@ pub mod dvb_sub_destination_settings {
         }
         pub fn set_dds_y_coordinate(mut self, input: std::option::Option<i32>) -> Self {
             self.dds_y_coordinate = input;
+            self
+        }
+        /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+        pub fn fallback_font(mut self, input: crate::model::DvbSubSubtitleFallbackFont) -> Self {
+            self.fallback_font = Some(input);
+            self
+        }
+        pub fn set_fallback_font(
+            mut self,
+            input: std::option::Option<crate::model::DvbSubSubtitleFallbackFont>,
+        ) -> Self {
+            self.fallback_font = input;
             self
         }
         /// Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
@@ -22384,6 +22425,18 @@ pub mod dvb_sub_destination_settings {
             self.height = input;
             self
         }
+        /// Ignore this setting unless your DvbSubtitleFontColor setting is HEX. Format is six or eight hexidecimal digits, representing the red, green, and blue components, with the two extra digits used for an optional alpha value. For example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue value of 0xAA, and an alpha value of 0xBB.
+        pub fn hex_font_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hex_font_color = Some(input.into());
+            self
+        }
+        pub fn set_hex_font_color(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hex_font_color = input;
+            self
+        }
         /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn outline_color(mut self, input: crate::model::DvbSubtitleOutlineColor) -> Self {
             self.outline_color = Some(input);
@@ -22445,6 +22498,21 @@ pub mod dvb_sub_destination_settings {
             self.shadow_y_offset = input;
             self
         }
+        /// Choose which set of style and position values the service applies to your output captions. When you choose ENABLED, the service uses the input style and position information from your input. When you choose DISABLED, the service uses any style values that you specify in your output settings. If you don't specify values, the service uses default style and position values. When you choose DISABLED, the service ignores all style and position values from your input.
+        pub fn style_passthrough(
+            mut self,
+            input: crate::model::DvbSubtitleStylePassthrough,
+        ) -> Self {
+            self.style_passthrough = Some(input);
+            self
+        }
+        pub fn set_style_passthrough(
+            mut self,
+            input: std::option::Option<crate::model::DvbSubtitleStylePassthrough>,
+        ) -> Self {
+            self.style_passthrough = input;
+            self
+        }
         /// Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
         pub fn subtitling_type(mut self, input: crate::model::DvbSubtitlingType) -> Self {
             self.subtitling_type = Some(input);
@@ -22500,23 +22568,27 @@ pub mod dvb_sub_destination_settings {
         pub fn build(self) -> crate::model::DvbSubDestinationSettings {
             crate::model::DvbSubDestinationSettings {
                 alignment: self.alignment,
+                apply_font_color: self.apply_font_color,
                 background_color: self.background_color,
                 background_opacity: self.background_opacity.unwrap_or_default(),
                 dds_handling: self.dds_handling,
                 dds_x_coordinate: self.dds_x_coordinate.unwrap_or_default(),
                 dds_y_coordinate: self.dds_y_coordinate.unwrap_or_default(),
+                fallback_font: self.fallback_font,
                 font_color: self.font_color,
                 font_opacity: self.font_opacity.unwrap_or_default(),
                 font_resolution: self.font_resolution.unwrap_or_default(),
                 font_script: self.font_script,
                 font_size: self.font_size.unwrap_or_default(),
                 height: self.height.unwrap_or_default(),
+                hex_font_color: self.hex_font_color,
                 outline_color: self.outline_color,
                 outline_size: self.outline_size.unwrap_or_default(),
                 shadow_color: self.shadow_color,
                 shadow_opacity: self.shadow_opacity.unwrap_or_default(),
                 shadow_x_offset: self.shadow_x_offset.unwrap_or_default(),
                 shadow_y_offset: self.shadow_y_offset.unwrap_or_default(),
+                style_passthrough: self.style_passthrough,
                 subtitling_type: self.subtitling_type,
                 teletext_spacing: self.teletext_spacing,
                 width: self.width.unwrap_or_default(),
@@ -22545,6 +22617,7 @@ impl DvbSubDestinationSettings {
     std::hash::Hash,
 )]
 pub enum DvbSubtitleTeletextSpacing {
+    Auto,
     FixedGrid,
     Proportional,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -22553,6 +22626,7 @@ pub enum DvbSubtitleTeletextSpacing {
 impl std::convert::From<&str> for DvbSubtitleTeletextSpacing {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => DvbSubtitleTeletextSpacing::Auto,
             "FIXED_GRID" => DvbSubtitleTeletextSpacing::FixedGrid,
             "PROPORTIONAL" => DvbSubtitleTeletextSpacing::Proportional,
             other => DvbSubtitleTeletextSpacing::Unknown(other.to_owned()),
@@ -22569,13 +22643,14 @@ impl std::str::FromStr for DvbSubtitleTeletextSpacing {
 impl DvbSubtitleTeletextSpacing {
     pub fn as_str(&self) -> &str {
         match self {
+            DvbSubtitleTeletextSpacing::Auto => "AUTO",
             DvbSubtitleTeletextSpacing::FixedGrid => "FIXED_GRID",
             DvbSubtitleTeletextSpacing::Proportional => "PROPORTIONAL",
             DvbSubtitleTeletextSpacing::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["FIXED_GRID", "PROPORTIONAL"]
+        &["AUTO", "FIXED_GRID", "PROPORTIONAL"]
     }
 }
 impl AsRef<str> for DvbSubtitleTeletextSpacing {
@@ -22635,6 +22710,57 @@ impl AsRef<str> for DvbSubtitlingType {
     }
 }
 
+/// Choose which set of style and position values the service applies to your output captions. When you choose ENABLED, the service uses the input style and position information from your input. When you choose DISABLED, the service uses any style values that you specify in your output settings. If you don't specify values, the service uses default style and position values. When you choose DISABLED, the service ignores all style and position values from your input.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DvbSubtitleStylePassthrough {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DvbSubtitleStylePassthrough {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => DvbSubtitleStylePassthrough::Disabled,
+            "ENABLED" => DvbSubtitleStylePassthrough::Enabled,
+            other => DvbSubtitleStylePassthrough::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DvbSubtitleStylePassthrough {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DvbSubtitleStylePassthrough::from(s))
+    }
+}
+impl DvbSubtitleStylePassthrough {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DvbSubtitleStylePassthrough::Disabled => "DISABLED",
+            DvbSubtitleStylePassthrough::Enabled => "ENABLED",
+            DvbSubtitleStylePassthrough::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for DvbSubtitleStylePassthrough {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// Specifies the color of the shadow cast by the captions.
 /// All burn-in and DVB-Sub font settings must match.
 #[non_exhaustive]
@@ -22648,6 +22774,7 @@ impl AsRef<str> for DvbSubtitlingType {
     std::hash::Hash,
 )]
 pub enum DvbSubtitleShadowColor {
+    Auto,
     Black,
     None,
     White,
@@ -22657,6 +22784,7 @@ pub enum DvbSubtitleShadowColor {
 impl std::convert::From<&str> for DvbSubtitleShadowColor {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => DvbSubtitleShadowColor::Auto,
             "BLACK" => DvbSubtitleShadowColor::Black,
             "NONE" => DvbSubtitleShadowColor::None,
             "WHITE" => DvbSubtitleShadowColor::White,
@@ -22674,6 +22802,7 @@ impl std::str::FromStr for DvbSubtitleShadowColor {
 impl DvbSubtitleShadowColor {
     pub fn as_str(&self) -> &str {
         match self {
+            DvbSubtitleShadowColor::Auto => "AUTO",
             DvbSubtitleShadowColor::Black => "BLACK",
             DvbSubtitleShadowColor::None => "NONE",
             DvbSubtitleShadowColor::White => "WHITE",
@@ -22681,7 +22810,7 @@ impl DvbSubtitleShadowColor {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["BLACK", "NONE", "WHITE"]
+        &["AUTO", "BLACK", "NONE", "WHITE"]
     }
 }
 impl AsRef<str> for DvbSubtitleShadowColor {
@@ -22702,6 +22831,7 @@ impl AsRef<str> for DvbSubtitleShadowColor {
     std::hash::Hash,
 )]
 pub enum DvbSubtitleOutlineColor {
+    Auto,
     Black,
     Blue,
     Green,
@@ -22714,6 +22844,7 @@ pub enum DvbSubtitleOutlineColor {
 impl std::convert::From<&str> for DvbSubtitleOutlineColor {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => DvbSubtitleOutlineColor::Auto,
             "BLACK" => DvbSubtitleOutlineColor::Black,
             "BLUE" => DvbSubtitleOutlineColor::Blue,
             "GREEN" => DvbSubtitleOutlineColor::Green,
@@ -22734,6 +22865,7 @@ impl std::str::FromStr for DvbSubtitleOutlineColor {
 impl DvbSubtitleOutlineColor {
     pub fn as_str(&self) -> &str {
         match self {
+            DvbSubtitleOutlineColor::Auto => "AUTO",
             DvbSubtitleOutlineColor::Black => "BLACK",
             DvbSubtitleOutlineColor::Blue => "BLUE",
             DvbSubtitleOutlineColor::Green => "GREEN",
@@ -22744,7 +22876,7 @@ impl DvbSubtitleOutlineColor {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
+        &["AUTO", "BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
     }
 }
 impl AsRef<str> for DvbSubtitleOutlineColor {
@@ -22819,9 +22951,11 @@ impl AsRef<str> for FontScript {
     std::hash::Hash,
 )]
 pub enum DvbSubtitleFontColor {
+    Auto,
     Black,
     Blue,
     Green,
+    Hex,
     Red,
     White,
     Yellow,
@@ -22831,9 +22965,11 @@ pub enum DvbSubtitleFontColor {
 impl std::convert::From<&str> for DvbSubtitleFontColor {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => DvbSubtitleFontColor::Auto,
             "BLACK" => DvbSubtitleFontColor::Black,
             "BLUE" => DvbSubtitleFontColor::Blue,
             "GREEN" => DvbSubtitleFontColor::Green,
+            "HEX" => DvbSubtitleFontColor::Hex,
             "RED" => DvbSubtitleFontColor::Red,
             "WHITE" => DvbSubtitleFontColor::White,
             "YELLOW" => DvbSubtitleFontColor::Yellow,
@@ -22851,9 +22987,11 @@ impl std::str::FromStr for DvbSubtitleFontColor {
 impl DvbSubtitleFontColor {
     pub fn as_str(&self) -> &str {
         match self {
+            DvbSubtitleFontColor::Auto => "AUTO",
             DvbSubtitleFontColor::Black => "BLACK",
             DvbSubtitleFontColor::Blue => "BLUE",
             DvbSubtitleFontColor::Green => "GREEN",
+            DvbSubtitleFontColor::Hex => "HEX",
             DvbSubtitleFontColor::Red => "RED",
             DvbSubtitleFontColor::White => "WHITE",
             DvbSubtitleFontColor::Yellow => "YELLOW",
@@ -22861,10 +22999,78 @@ impl DvbSubtitleFontColor {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
+        &[
+            "AUTO", "BLACK", "BLUE", "GREEN", "HEX", "RED", "WHITE", "YELLOW",
+        ]
     }
 }
 impl AsRef<str> for DvbSubtitleFontColor {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DvbSubSubtitleFallbackFont {
+    BestMatch,
+    MonospacedSansserif,
+    MonospacedSerif,
+    ProportionalSansserif,
+    ProportionalSerif,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DvbSubSubtitleFallbackFont {
+    fn from(s: &str) -> Self {
+        match s {
+            "BEST_MATCH" => DvbSubSubtitleFallbackFont::BestMatch,
+            "MONOSPACED_SANSSERIF" => DvbSubSubtitleFallbackFont::MonospacedSansserif,
+            "MONOSPACED_SERIF" => DvbSubSubtitleFallbackFont::MonospacedSerif,
+            "PROPORTIONAL_SANSSERIF" => DvbSubSubtitleFallbackFont::ProportionalSansserif,
+            "PROPORTIONAL_SERIF" => DvbSubSubtitleFallbackFont::ProportionalSerif,
+            other => DvbSubSubtitleFallbackFont::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DvbSubSubtitleFallbackFont {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DvbSubSubtitleFallbackFont::from(s))
+    }
+}
+impl DvbSubSubtitleFallbackFont {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DvbSubSubtitleFallbackFont::BestMatch => "BEST_MATCH",
+            DvbSubSubtitleFallbackFont::MonospacedSansserif => "MONOSPACED_SANSSERIF",
+            DvbSubSubtitleFallbackFont::MonospacedSerif => "MONOSPACED_SERIF",
+            DvbSubSubtitleFallbackFont::ProportionalSansserif => "PROPORTIONAL_SANSSERIF",
+            DvbSubSubtitleFallbackFont::ProportionalSerif => "PROPORTIONAL_SERIF",
+            DvbSubSubtitleFallbackFont::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BEST_MATCH",
+            "MONOSPACED_SANSSERIF",
+            "MONOSPACED_SERIF",
+            "PROPORTIONAL_SANSSERIF",
+            "PROPORTIONAL_SERIF",
+        ]
+    }
+}
+impl AsRef<str> for DvbSubSubtitleFallbackFont {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -22937,6 +23143,7 @@ impl AsRef<str> for DvbddsHandling {
     std::hash::Hash,
 )]
 pub enum DvbSubtitleBackgroundColor {
+    Auto,
     Black,
     None,
     White,
@@ -22946,6 +23153,7 @@ pub enum DvbSubtitleBackgroundColor {
 impl std::convert::From<&str> for DvbSubtitleBackgroundColor {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => DvbSubtitleBackgroundColor::Auto,
             "BLACK" => DvbSubtitleBackgroundColor::Black,
             "NONE" => DvbSubtitleBackgroundColor::None,
             "WHITE" => DvbSubtitleBackgroundColor::White,
@@ -22963,6 +23171,7 @@ impl std::str::FromStr for DvbSubtitleBackgroundColor {
 impl DvbSubtitleBackgroundColor {
     pub fn as_str(&self) -> &str {
         match self {
+            DvbSubtitleBackgroundColor::Auto => "AUTO",
             DvbSubtitleBackgroundColor::Black => "BLACK",
             DvbSubtitleBackgroundColor::None => "NONE",
             DvbSubtitleBackgroundColor::White => "WHITE",
@@ -22970,10 +23179,61 @@ impl DvbSubtitleBackgroundColor {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["BLACK", "NONE", "WHITE"]
+        &["AUTO", "BLACK", "NONE", "WHITE"]
     }
 }
 impl AsRef<str> for DvbSubtitleBackgroundColor {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Ignore this setting unless your input captions are STL, any type of 608, teletext, or TTML, and your output captions are DVB-SUB. Specify how the service applies the color specified in the setting Font color (DvbSubtitleFontColor). By default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses the specified font color only for text that is white in the input. When you choose ALL_TEXT, the service uses the specified font color for all output captions text. If you leave both settings at their default value, your output font color is the same as your input font color.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DvbSubtitleApplyFontColor {
+    AllText,
+    WhiteTextOnly,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DvbSubtitleApplyFontColor {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL_TEXT" => DvbSubtitleApplyFontColor::AllText,
+            "WHITE_TEXT_ONLY" => DvbSubtitleApplyFontColor::WhiteTextOnly,
+            other => DvbSubtitleApplyFontColor::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DvbSubtitleApplyFontColor {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DvbSubtitleApplyFontColor::from(s))
+    }
+}
+impl DvbSubtitleApplyFontColor {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DvbSubtitleApplyFontColor::AllText => "ALL_TEXT",
+            DvbSubtitleApplyFontColor::WhiteTextOnly => "WHITE_TEXT_ONLY",
+            DvbSubtitleApplyFontColor::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ALL_TEXT", "WHITE_TEXT_ONLY"]
+    }
+}
+impl AsRef<str> for DvbSubtitleApplyFontColor {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -22991,6 +23251,7 @@ impl AsRef<str> for DvbSubtitleBackgroundColor {
     std::hash::Hash,
 )]
 pub enum DvbSubtitleAlignment {
+    Auto,
     Centered,
     Left,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -22999,6 +23260,7 @@ pub enum DvbSubtitleAlignment {
 impl std::convert::From<&str> for DvbSubtitleAlignment {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => DvbSubtitleAlignment::Auto,
             "CENTERED" => DvbSubtitleAlignment::Centered,
             "LEFT" => DvbSubtitleAlignment::Left,
             other => DvbSubtitleAlignment::Unknown(other.to_owned()),
@@ -23015,13 +23277,14 @@ impl std::str::FromStr for DvbSubtitleAlignment {
 impl DvbSubtitleAlignment {
     pub fn as_str(&self) -> &str {
         match self {
+            DvbSubtitleAlignment::Auto => "AUTO",
             DvbSubtitleAlignment::Centered => "CENTERED",
             DvbSubtitleAlignment::Left => "LEFT",
             DvbSubtitleAlignment::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["CENTERED", "LEFT"]
+        &["AUTO", "CENTERED", "LEFT"]
     }
 }
 impl AsRef<str> for DvbSubtitleAlignment {
@@ -23130,11 +23393,15 @@ impl AsRef<str> for CaptionDestinationType {
 pub struct BurninDestinationSettings {
     /// If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub alignment: std::option::Option<crate::model::BurninSubtitleAlignment>,
+    /// Ignore this setting unless your input captions are STL, any type of 608, teletext, or TTML, and your output captions are burned in. Specify how the service applies the color specified in the setting Font color (BurninSubtitleFontColor). By default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses the specified font color only for text that is white in the input. When you choose ALL_TEXT, the service uses the specified font color for all output captions text. If you leave both settings at their default value, your output font color is the same as your input font color.
+    pub apply_font_color: std::option::Option<crate::model::BurninSubtitleApplyFontColor>,
     /// Specifies the color of the rectangle behind the captions.
     /// All burn-in and DVB-Sub font settings must match.
     pub background_color: std::option::Option<crate::model::BurninSubtitleBackgroundColor>,
     /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     pub background_opacity: i32,
+    /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+    pub fallback_font: std::option::Option<crate::model::BurninSubtitleFallbackFont>,
     /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub font_color: std::option::Option<crate::model::BurninSubtitleFontColor>,
     /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
@@ -23147,6 +23414,8 @@ pub struct BurninDestinationSettings {
     pub font_script: std::option::Option<crate::model::FontScript>,
     /// A positive integer indicates the exact font size in points. Set to 0 for automatic font size selection. All burn-in and DVB-Sub font settings must match.
     pub font_size: i32,
+    /// Ignore this setting unless your BurninSubtitleFontColor setting is HEX. Format is six or eight hexidecimal digits, representing the red, green, and blue components, with the two extra digits used for an optional alpha value. For example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue value of 0xAA, and an alpha value of 0xBB.
+    pub hex_font_color: std::option::Option<std::string::String>,
     /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub outline_color: std::option::Option<crate::model::BurninSubtitleOutlineColor>,
     /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
@@ -23160,6 +23429,8 @@ pub struct BurninDestinationSettings {
     pub shadow_x_offset: i32,
     /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
     pub shadow_y_offset: i32,
+    /// Ignore this setting unless your output captions are burned in. Choose which set of style and position values the service applies to your output captions. When you choose ENABLED, the service uses the input style and position information from your input. When you choose DISABLED, the service uses any style values that you specify in your output settings. If you don't specify values, the service uses default style and position values. When you choose DISABLED, the service ignores all style and position values from your input.
+    pub style_passthrough: std::option::Option<crate::model::BurnInSubtitleStylePassthrough>,
     /// Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the captions are closed caption.
     pub teletext_spacing: std::option::Option<crate::model::BurninSubtitleTeletextSpacing>,
     /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit x_position is provided, the horizontal caption position will be determined by the alignment parameter. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
@@ -23171,19 +23442,23 @@ impl std::fmt::Debug for BurninDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BurninDestinationSettings");
         formatter.field("alignment", &self.alignment);
+        formatter.field("apply_font_color", &self.apply_font_color);
         formatter.field("background_color", &self.background_color);
         formatter.field("background_opacity", &self.background_opacity);
+        formatter.field("fallback_font", &self.fallback_font);
         formatter.field("font_color", &self.font_color);
         formatter.field("font_opacity", &self.font_opacity);
         formatter.field("font_resolution", &self.font_resolution);
         formatter.field("font_script", &self.font_script);
         formatter.field("font_size", &self.font_size);
+        formatter.field("hex_font_color", &self.hex_font_color);
         formatter.field("outline_color", &self.outline_color);
         formatter.field("outline_size", &self.outline_size);
         formatter.field("shadow_color", &self.shadow_color);
         formatter.field("shadow_opacity", &self.shadow_opacity);
         formatter.field("shadow_x_offset", &self.shadow_x_offset);
         formatter.field("shadow_y_offset", &self.shadow_y_offset);
+        formatter.field("style_passthrough", &self.style_passthrough);
         formatter.field("teletext_spacing", &self.teletext_spacing);
         formatter.field("x_position", &self.x_position);
         formatter.field("y_position", &self.y_position);
@@ -23197,20 +23472,26 @@ pub mod burnin_destination_settings {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alignment: std::option::Option<crate::model::BurninSubtitleAlignment>,
+        pub(crate) apply_font_color:
+            std::option::Option<crate::model::BurninSubtitleApplyFontColor>,
         pub(crate) background_color:
             std::option::Option<crate::model::BurninSubtitleBackgroundColor>,
         pub(crate) background_opacity: std::option::Option<i32>,
+        pub(crate) fallback_font: std::option::Option<crate::model::BurninSubtitleFallbackFont>,
         pub(crate) font_color: std::option::Option<crate::model::BurninSubtitleFontColor>,
         pub(crate) font_opacity: std::option::Option<i32>,
         pub(crate) font_resolution: std::option::Option<i32>,
         pub(crate) font_script: std::option::Option<crate::model::FontScript>,
         pub(crate) font_size: std::option::Option<i32>,
+        pub(crate) hex_font_color: std::option::Option<std::string::String>,
         pub(crate) outline_color: std::option::Option<crate::model::BurninSubtitleOutlineColor>,
         pub(crate) outline_size: std::option::Option<i32>,
         pub(crate) shadow_color: std::option::Option<crate::model::BurninSubtitleShadowColor>,
         pub(crate) shadow_opacity: std::option::Option<i32>,
         pub(crate) shadow_x_offset: std::option::Option<i32>,
         pub(crate) shadow_y_offset: std::option::Option<i32>,
+        pub(crate) style_passthrough:
+            std::option::Option<crate::model::BurnInSubtitleStylePassthrough>,
         pub(crate) teletext_spacing:
             std::option::Option<crate::model::BurninSubtitleTeletextSpacing>,
         pub(crate) x_position: std::option::Option<i32>,
@@ -23227,6 +23508,21 @@ pub mod burnin_destination_settings {
             input: std::option::Option<crate::model::BurninSubtitleAlignment>,
         ) -> Self {
             self.alignment = input;
+            self
+        }
+        /// Ignore this setting unless your input captions are STL, any type of 608, teletext, or TTML, and your output captions are burned in. Specify how the service applies the color specified in the setting Font color (BurninSubtitleFontColor). By default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses the specified font color only for text that is white in the input. When you choose ALL_TEXT, the service uses the specified font color for all output captions text. If you leave both settings at their default value, your output font color is the same as your input font color.
+        pub fn apply_font_color(
+            mut self,
+            input: crate::model::BurninSubtitleApplyFontColor,
+        ) -> Self {
+            self.apply_font_color = Some(input);
+            self
+        }
+        pub fn set_apply_font_color(
+            mut self,
+            input: std::option::Option<crate::model::BurninSubtitleApplyFontColor>,
+        ) -> Self {
+            self.apply_font_color = input;
             self
         }
         /// Specifies the color of the rectangle behind the captions.
@@ -23252,6 +23548,18 @@ pub mod burnin_destination_settings {
         }
         pub fn set_background_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.background_opacity = input;
+            self
+        }
+        /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+        pub fn fallback_font(mut self, input: crate::model::BurninSubtitleFallbackFont) -> Self {
+            self.fallback_font = Some(input);
+            self
+        }
+        pub fn set_fallback_font(
+            mut self,
+            input: std::option::Option<crate::model::BurninSubtitleFallbackFont>,
+        ) -> Self {
+            self.fallback_font = input;
             self
         }
         /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
@@ -23305,6 +23613,18 @@ pub mod burnin_destination_settings {
         }
         pub fn set_font_size(mut self, input: std::option::Option<i32>) -> Self {
             self.font_size = input;
+            self
+        }
+        /// Ignore this setting unless your BurninSubtitleFontColor setting is HEX. Format is six or eight hexidecimal digits, representing the red, green, and blue components, with the two extra digits used for an optional alpha value. For example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue value of 0xAA, and an alpha value of 0xBB.
+        pub fn hex_font_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hex_font_color = Some(input.into());
+            self
+        }
+        pub fn set_hex_font_color(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hex_font_color = input;
             self
         }
         /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
@@ -23368,6 +23688,21 @@ pub mod burnin_destination_settings {
             self.shadow_y_offset = input;
             self
         }
+        /// Ignore this setting unless your output captions are burned in. Choose which set of style and position values the service applies to your output captions. When you choose ENABLED, the service uses the input style and position information from your input. When you choose DISABLED, the service uses any style values that you specify in your output settings. If you don't specify values, the service uses default style and position values. When you choose DISABLED, the service ignores all style and position values from your input.
+        pub fn style_passthrough(
+            mut self,
+            input: crate::model::BurnInSubtitleStylePassthrough,
+        ) -> Self {
+            self.style_passthrough = Some(input);
+            self
+        }
+        pub fn set_style_passthrough(
+            mut self,
+            input: std::option::Option<crate::model::BurnInSubtitleStylePassthrough>,
+        ) -> Self {
+            self.style_passthrough = input;
+            self
+        }
         /// Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the captions are closed caption.
         pub fn teletext_spacing(
             mut self,
@@ -23405,19 +23740,23 @@ pub mod burnin_destination_settings {
         pub fn build(self) -> crate::model::BurninDestinationSettings {
             crate::model::BurninDestinationSettings {
                 alignment: self.alignment,
+                apply_font_color: self.apply_font_color,
                 background_color: self.background_color,
                 background_opacity: self.background_opacity.unwrap_or_default(),
+                fallback_font: self.fallback_font,
                 font_color: self.font_color,
                 font_opacity: self.font_opacity.unwrap_or_default(),
                 font_resolution: self.font_resolution.unwrap_or_default(),
                 font_script: self.font_script,
                 font_size: self.font_size.unwrap_or_default(),
+                hex_font_color: self.hex_font_color,
                 outline_color: self.outline_color,
                 outline_size: self.outline_size.unwrap_or_default(),
                 shadow_color: self.shadow_color,
                 shadow_opacity: self.shadow_opacity.unwrap_or_default(),
                 shadow_x_offset: self.shadow_x_offset.unwrap_or_default(),
                 shadow_y_offset: self.shadow_y_offset.unwrap_or_default(),
+                style_passthrough: self.style_passthrough,
                 teletext_spacing: self.teletext_spacing,
                 x_position: self.x_position.unwrap_or_default(),
                 y_position: self.y_position.unwrap_or_default(),
@@ -23444,6 +23783,7 @@ impl BurninDestinationSettings {
     std::hash::Hash,
 )]
 pub enum BurninSubtitleTeletextSpacing {
+    Auto,
     FixedGrid,
     Proportional,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -23452,6 +23792,7 @@ pub enum BurninSubtitleTeletextSpacing {
 impl std::convert::From<&str> for BurninSubtitleTeletextSpacing {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => BurninSubtitleTeletextSpacing::Auto,
             "FIXED_GRID" => BurninSubtitleTeletextSpacing::FixedGrid,
             "PROPORTIONAL" => BurninSubtitleTeletextSpacing::Proportional,
             other => BurninSubtitleTeletextSpacing::Unknown(other.to_owned()),
@@ -23468,16 +23809,68 @@ impl std::str::FromStr for BurninSubtitleTeletextSpacing {
 impl BurninSubtitleTeletextSpacing {
     pub fn as_str(&self) -> &str {
         match self {
+            BurninSubtitleTeletextSpacing::Auto => "AUTO",
             BurninSubtitleTeletextSpacing::FixedGrid => "FIXED_GRID",
             BurninSubtitleTeletextSpacing::Proportional => "PROPORTIONAL",
             BurninSubtitleTeletextSpacing::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["FIXED_GRID", "PROPORTIONAL"]
+        &["AUTO", "FIXED_GRID", "PROPORTIONAL"]
     }
 }
 impl AsRef<str> for BurninSubtitleTeletextSpacing {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Ignore this setting unless your output captions are burned in. Choose which set of style and position values the service applies to your output captions. When you choose ENABLED, the service uses the input style and position information from your input. When you choose DISABLED, the service uses any style values that you specify in your output settings. If you don't specify values, the service uses default style and position values. When you choose DISABLED, the service ignores all style and position values from your input.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BurnInSubtitleStylePassthrough {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BurnInSubtitleStylePassthrough {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => BurnInSubtitleStylePassthrough::Disabled,
+            "ENABLED" => BurnInSubtitleStylePassthrough::Enabled,
+            other => BurnInSubtitleStylePassthrough::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BurnInSubtitleStylePassthrough {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BurnInSubtitleStylePassthrough::from(s))
+    }
+}
+impl BurnInSubtitleStylePassthrough {
+    pub fn as_str(&self) -> &str {
+        match self {
+            BurnInSubtitleStylePassthrough::Disabled => "DISABLED",
+            BurnInSubtitleStylePassthrough::Enabled => "ENABLED",
+            BurnInSubtitleStylePassthrough::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for BurnInSubtitleStylePassthrough {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -23496,6 +23889,7 @@ impl AsRef<str> for BurninSubtitleTeletextSpacing {
     std::hash::Hash,
 )]
 pub enum BurninSubtitleShadowColor {
+    Auto,
     Black,
     None,
     White,
@@ -23505,6 +23899,7 @@ pub enum BurninSubtitleShadowColor {
 impl std::convert::From<&str> for BurninSubtitleShadowColor {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => BurninSubtitleShadowColor::Auto,
             "BLACK" => BurninSubtitleShadowColor::Black,
             "NONE" => BurninSubtitleShadowColor::None,
             "WHITE" => BurninSubtitleShadowColor::White,
@@ -23522,6 +23917,7 @@ impl std::str::FromStr for BurninSubtitleShadowColor {
 impl BurninSubtitleShadowColor {
     pub fn as_str(&self) -> &str {
         match self {
+            BurninSubtitleShadowColor::Auto => "AUTO",
             BurninSubtitleShadowColor::Black => "BLACK",
             BurninSubtitleShadowColor::None => "NONE",
             BurninSubtitleShadowColor::White => "WHITE",
@@ -23529,7 +23925,7 @@ impl BurninSubtitleShadowColor {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["BLACK", "NONE", "WHITE"]
+        &["AUTO", "BLACK", "NONE", "WHITE"]
     }
 }
 impl AsRef<str> for BurninSubtitleShadowColor {
@@ -23550,6 +23946,7 @@ impl AsRef<str> for BurninSubtitleShadowColor {
     std::hash::Hash,
 )]
 pub enum BurninSubtitleOutlineColor {
+    Auto,
     Black,
     Blue,
     Green,
@@ -23562,6 +23959,7 @@ pub enum BurninSubtitleOutlineColor {
 impl std::convert::From<&str> for BurninSubtitleOutlineColor {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => BurninSubtitleOutlineColor::Auto,
             "BLACK" => BurninSubtitleOutlineColor::Black,
             "BLUE" => BurninSubtitleOutlineColor::Blue,
             "GREEN" => BurninSubtitleOutlineColor::Green,
@@ -23582,6 +23980,7 @@ impl std::str::FromStr for BurninSubtitleOutlineColor {
 impl BurninSubtitleOutlineColor {
     pub fn as_str(&self) -> &str {
         match self {
+            BurninSubtitleOutlineColor::Auto => "AUTO",
             BurninSubtitleOutlineColor::Black => "BLACK",
             BurninSubtitleOutlineColor::Blue => "BLUE",
             BurninSubtitleOutlineColor::Green => "GREEN",
@@ -23592,7 +23991,7 @@ impl BurninSubtitleOutlineColor {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
+        &["AUTO", "BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
     }
 }
 impl AsRef<str> for BurninSubtitleOutlineColor {
@@ -23613,9 +24012,11 @@ impl AsRef<str> for BurninSubtitleOutlineColor {
     std::hash::Hash,
 )]
 pub enum BurninSubtitleFontColor {
+    Auto,
     Black,
     Blue,
     Green,
+    Hex,
     Red,
     White,
     Yellow,
@@ -23625,9 +24026,11 @@ pub enum BurninSubtitleFontColor {
 impl std::convert::From<&str> for BurninSubtitleFontColor {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => BurninSubtitleFontColor::Auto,
             "BLACK" => BurninSubtitleFontColor::Black,
             "BLUE" => BurninSubtitleFontColor::Blue,
             "GREEN" => BurninSubtitleFontColor::Green,
+            "HEX" => BurninSubtitleFontColor::Hex,
             "RED" => BurninSubtitleFontColor::Red,
             "WHITE" => BurninSubtitleFontColor::White,
             "YELLOW" => BurninSubtitleFontColor::Yellow,
@@ -23645,9 +24048,11 @@ impl std::str::FromStr for BurninSubtitleFontColor {
 impl BurninSubtitleFontColor {
     pub fn as_str(&self) -> &str {
         match self {
+            BurninSubtitleFontColor::Auto => "AUTO",
             BurninSubtitleFontColor::Black => "BLACK",
             BurninSubtitleFontColor::Blue => "BLUE",
             BurninSubtitleFontColor::Green => "GREEN",
+            BurninSubtitleFontColor::Hex => "HEX",
             BurninSubtitleFontColor::Red => "RED",
             BurninSubtitleFontColor::White => "WHITE",
             BurninSubtitleFontColor::Yellow => "YELLOW",
@@ -23655,10 +24060,78 @@ impl BurninSubtitleFontColor {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
+        &[
+            "AUTO", "BLACK", "BLUE", "GREEN", "HEX", "RED", "WHITE", "YELLOW",
+        ]
     }
 }
 impl AsRef<str> for BurninSubtitleFontColor {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you keep the default value, Best match (BEST_MATCH), MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BurninSubtitleFallbackFont {
+    BestMatch,
+    MonospacedSansserif,
+    MonospacedSerif,
+    ProportionalSansserif,
+    ProportionalSerif,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BurninSubtitleFallbackFont {
+    fn from(s: &str) -> Self {
+        match s {
+            "BEST_MATCH" => BurninSubtitleFallbackFont::BestMatch,
+            "MONOSPACED_SANSSERIF" => BurninSubtitleFallbackFont::MonospacedSansserif,
+            "MONOSPACED_SERIF" => BurninSubtitleFallbackFont::MonospacedSerif,
+            "PROPORTIONAL_SANSSERIF" => BurninSubtitleFallbackFont::ProportionalSansserif,
+            "PROPORTIONAL_SERIF" => BurninSubtitleFallbackFont::ProportionalSerif,
+            other => BurninSubtitleFallbackFont::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BurninSubtitleFallbackFont {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BurninSubtitleFallbackFont::from(s))
+    }
+}
+impl BurninSubtitleFallbackFont {
+    pub fn as_str(&self) -> &str {
+        match self {
+            BurninSubtitleFallbackFont::BestMatch => "BEST_MATCH",
+            BurninSubtitleFallbackFont::MonospacedSansserif => "MONOSPACED_SANSSERIF",
+            BurninSubtitleFallbackFont::MonospacedSerif => "MONOSPACED_SERIF",
+            BurninSubtitleFallbackFont::ProportionalSansserif => "PROPORTIONAL_SANSSERIF",
+            BurninSubtitleFallbackFont::ProportionalSerif => "PROPORTIONAL_SERIF",
+            BurninSubtitleFallbackFont::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BEST_MATCH",
+            "MONOSPACED_SANSSERIF",
+            "MONOSPACED_SERIF",
+            "PROPORTIONAL_SANSSERIF",
+            "PROPORTIONAL_SERIF",
+        ]
+    }
+}
+impl AsRef<str> for BurninSubtitleFallbackFont {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -23677,6 +24150,7 @@ impl AsRef<str> for BurninSubtitleFontColor {
     std::hash::Hash,
 )]
 pub enum BurninSubtitleBackgroundColor {
+    Auto,
     Black,
     None,
     White,
@@ -23686,6 +24160,7 @@ pub enum BurninSubtitleBackgroundColor {
 impl std::convert::From<&str> for BurninSubtitleBackgroundColor {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => BurninSubtitleBackgroundColor::Auto,
             "BLACK" => BurninSubtitleBackgroundColor::Black,
             "NONE" => BurninSubtitleBackgroundColor::None,
             "WHITE" => BurninSubtitleBackgroundColor::White,
@@ -23703,6 +24178,7 @@ impl std::str::FromStr for BurninSubtitleBackgroundColor {
 impl BurninSubtitleBackgroundColor {
     pub fn as_str(&self) -> &str {
         match self {
+            BurninSubtitleBackgroundColor::Auto => "AUTO",
             BurninSubtitleBackgroundColor::Black => "BLACK",
             BurninSubtitleBackgroundColor::None => "NONE",
             BurninSubtitleBackgroundColor::White => "WHITE",
@@ -23710,10 +24186,61 @@ impl BurninSubtitleBackgroundColor {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["BLACK", "NONE", "WHITE"]
+        &["AUTO", "BLACK", "NONE", "WHITE"]
     }
 }
 impl AsRef<str> for BurninSubtitleBackgroundColor {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Ignore this setting unless your input captions are STL, any type of 608, teletext, or TTML, and your output captions are burned in. Specify how the service applies the color specified in the setting Font color (BurninSubtitleFontColor). By default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses the specified font color only for text that is white in the input. When you choose ALL_TEXT, the service uses the specified font color for all output captions text. If you leave both settings at their default value, your output font color is the same as your input font color.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BurninSubtitleApplyFontColor {
+    AllText,
+    WhiteTextOnly,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BurninSubtitleApplyFontColor {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL_TEXT" => BurninSubtitleApplyFontColor::AllText,
+            "WHITE_TEXT_ONLY" => BurninSubtitleApplyFontColor::WhiteTextOnly,
+            other => BurninSubtitleApplyFontColor::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BurninSubtitleApplyFontColor {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BurninSubtitleApplyFontColor::from(s))
+    }
+}
+impl BurninSubtitleApplyFontColor {
+    pub fn as_str(&self) -> &str {
+        match self {
+            BurninSubtitleApplyFontColor::AllText => "ALL_TEXT",
+            BurninSubtitleApplyFontColor::WhiteTextOnly => "WHITE_TEXT_ONLY",
+            BurninSubtitleApplyFontColor::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ALL_TEXT", "WHITE_TEXT_ONLY"]
+    }
+}
+impl AsRef<str> for BurninSubtitleApplyFontColor {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -23731,6 +24258,7 @@ impl AsRef<str> for BurninSubtitleBackgroundColor {
     std::hash::Hash,
 )]
 pub enum BurninSubtitleAlignment {
+    Auto,
     Centered,
     Left,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -23739,6 +24267,7 @@ pub enum BurninSubtitleAlignment {
 impl std::convert::From<&str> for BurninSubtitleAlignment {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => BurninSubtitleAlignment::Auto,
             "CENTERED" => BurninSubtitleAlignment::Centered,
             "LEFT" => BurninSubtitleAlignment::Left,
             other => BurninSubtitleAlignment::Unknown(other.to_owned()),
@@ -23755,13 +24284,14 @@ impl std::str::FromStr for BurninSubtitleAlignment {
 impl BurninSubtitleAlignment {
     pub fn as_str(&self) -> &str {
         match self {
+            BurninSubtitleAlignment::Auto => "AUTO",
             BurninSubtitleAlignment::Centered => "CENTERED",
             BurninSubtitleAlignment::Left => "LEFT",
             BurninSubtitleAlignment::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["CENTERED", "LEFT"]
+        &["AUTO", "CENTERED", "LEFT"]
     }
 }
 impl AsRef<str> for BurninSubtitleAlignment {
@@ -29350,7 +29880,7 @@ pub struct JobTemplateSettings {
     pub avail_blanking: std::option::Option<crate::model::AvailBlanking>,
     /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
     pub esam: std::option::Option<crate::model::EsamSettings>,
-    /// Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h Content Advisory.
+    /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
     pub extended_data_services: std::option::Option<crate::model::ExtendedDataServices>,
     /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template.  Using the API, you can include multiple inputs when referencing a job template.
     pub inputs: std::option::Option<std::vec::Vec<crate::model::InputTemplate>>,
@@ -29443,7 +29973,7 @@ pub mod job_template_settings {
             self.esam = input;
             self
         }
-        /// Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h Content Advisory.
+        /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
         pub fn extended_data_services(mut self, input: crate::model::ExtendedDataServices) -> Self {
             self.extended_data_services = Some(input);
             self
@@ -31836,6 +32366,9 @@ pub struct HlsGroupSettings {
     pub encryption: std::option::Option<crate::model::HlsEncryptionSettings>,
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub image_based_trick_play: std::option::Option<crate::model::HlsImageBasedTrickPlay>,
+    /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+    pub image_based_trick_play_settings:
+        std::option::Option<crate::model::HlsImageBasedTrickPlaySettings>,
     /// When set to GZIP, compresses HLS playlist.
     pub manifest_compression: std::option::Option<crate::model::HlsManifestCompression>,
     /// Indicates whether the output manifest should use floating point values for segment duration.
@@ -31886,6 +32419,10 @@ impl std::fmt::Debug for HlsGroupSettings {
         formatter.field("directory_structure", &self.directory_structure);
         formatter.field("encryption", &self.encryption);
         formatter.field("image_based_trick_play", &self.image_based_trick_play);
+        formatter.field(
+            "image_based_trick_play_settings",
+            &self.image_based_trick_play_settings,
+        );
         formatter.field("manifest_compression", &self.manifest_compression);
         formatter.field("manifest_duration_format", &self.manifest_duration_format);
         formatter.field("min_final_segment_length", &self.min_final_segment_length);
@@ -31934,6 +32471,8 @@ pub mod hls_group_settings {
         pub(crate) encryption: std::option::Option<crate::model::HlsEncryptionSettings>,
         pub(crate) image_based_trick_play:
             std::option::Option<crate::model::HlsImageBasedTrickPlay>,
+        pub(crate) image_based_trick_play_settings:
+            std::option::Option<crate::model::HlsImageBasedTrickPlaySettings>,
         pub(crate) manifest_compression: std::option::Option<crate::model::HlsManifestCompression>,
         pub(crate) manifest_duration_format:
             std::option::Option<crate::model::HlsManifestDurationFormat>,
@@ -32119,6 +32658,21 @@ pub mod hls_group_settings {
             input: std::option::Option<crate::model::HlsImageBasedTrickPlay>,
         ) -> Self {
             self.image_based_trick_play = input;
+            self
+        }
+        /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+        pub fn image_based_trick_play_settings(
+            mut self,
+            input: crate::model::HlsImageBasedTrickPlaySettings,
+        ) -> Self {
+            self.image_based_trick_play_settings = Some(input);
+            self
+        }
+        pub fn set_image_based_trick_play_settings(
+            mut self,
+            input: std::option::Option<crate::model::HlsImageBasedTrickPlaySettings>,
+        ) -> Self {
+            self.image_based_trick_play_settings = input;
             self
         }
         /// When set to GZIP, compresses HLS playlist.
@@ -32323,6 +32877,7 @@ pub mod hls_group_settings {
                 directory_structure: self.directory_structure,
                 encryption: self.encryption,
                 image_based_trick_play: self.image_based_trick_play,
+                image_based_trick_play_settings: self.image_based_trick_play_settings,
                 manifest_compression: self.manifest_compression,
                 manifest_duration_format: self.manifest_duration_format,
                 min_final_segment_length: self.min_final_segment_length.unwrap_or_default(),
@@ -32812,6 +33367,177 @@ impl AsRef<str> for HlsManifestCompression {
     }
 }
 
+/// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HlsImageBasedTrickPlaySettings {
+    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    pub interval_cadence: std::option::Option<crate::model::HlsIntervalCadence>,
+    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    pub thumbnail_height: i32,
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    pub thumbnail_interval: f64,
+    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    pub thumbnail_width: i32,
+    /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+    pub tile_height: i32,
+    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    pub tile_width: i32,
+}
+impl std::fmt::Debug for HlsImageBasedTrickPlaySettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HlsImageBasedTrickPlaySettings");
+        formatter.field("interval_cadence", &self.interval_cadence);
+        formatter.field("thumbnail_height", &self.thumbnail_height);
+        formatter.field("thumbnail_interval", &self.thumbnail_interval);
+        formatter.field("thumbnail_width", &self.thumbnail_width);
+        formatter.field("tile_height", &self.tile_height);
+        formatter.field("tile_width", &self.tile_width);
+        formatter.finish()
+    }
+}
+/// See [`HlsImageBasedTrickPlaySettings`](crate::model::HlsImageBasedTrickPlaySettings)
+pub mod hls_image_based_trick_play_settings {
+    /// A builder for [`HlsImageBasedTrickPlaySettings`](crate::model::HlsImageBasedTrickPlaySettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) interval_cadence: std::option::Option<crate::model::HlsIntervalCadence>,
+        pub(crate) thumbnail_height: std::option::Option<i32>,
+        pub(crate) thumbnail_interval: std::option::Option<f64>,
+        pub(crate) thumbnail_width: std::option::Option<i32>,
+        pub(crate) tile_height: std::option::Option<i32>,
+        pub(crate) tile_width: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+        pub fn interval_cadence(mut self, input: crate::model::HlsIntervalCadence) -> Self {
+            self.interval_cadence = Some(input);
+            self
+        }
+        pub fn set_interval_cadence(
+            mut self,
+            input: std::option::Option<crate::model::HlsIntervalCadence>,
+        ) -> Self {
+            self.interval_cadence = input;
+            self
+        }
+        /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+        pub fn thumbnail_height(mut self, input: i32) -> Self {
+            self.thumbnail_height = Some(input);
+            self
+        }
+        pub fn set_thumbnail_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.thumbnail_height = input;
+            self
+        }
+        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+        pub fn thumbnail_interval(mut self, input: f64) -> Self {
+            self.thumbnail_interval = Some(input);
+            self
+        }
+        pub fn set_thumbnail_interval(mut self, input: std::option::Option<f64>) -> Self {
+            self.thumbnail_interval = input;
+            self
+        }
+        /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+        pub fn thumbnail_width(mut self, input: i32) -> Self {
+            self.thumbnail_width = Some(input);
+            self
+        }
+        pub fn set_thumbnail_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.thumbnail_width = input;
+            self
+        }
+        /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+        pub fn tile_height(mut self, input: i32) -> Self {
+            self.tile_height = Some(input);
+            self
+        }
+        pub fn set_tile_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.tile_height = input;
+            self
+        }
+        /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+        pub fn tile_width(mut self, input: i32) -> Self {
+            self.tile_width = Some(input);
+            self
+        }
+        pub fn set_tile_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.tile_width = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HlsImageBasedTrickPlaySettings`](crate::model::HlsImageBasedTrickPlaySettings)
+        pub fn build(self) -> crate::model::HlsImageBasedTrickPlaySettings {
+            crate::model::HlsImageBasedTrickPlaySettings {
+                interval_cadence: self.interval_cadence,
+                thumbnail_height: self.thumbnail_height.unwrap_or_default(),
+                thumbnail_interval: self.thumbnail_interval.unwrap_or_default(),
+                thumbnail_width: self.thumbnail_width.unwrap_or_default(),
+                tile_height: self.tile_height.unwrap_or_default(),
+                tile_width: self.tile_width.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl HlsImageBasedTrickPlaySettings {
+    /// Creates a new builder-style object to manufacture [`HlsImageBasedTrickPlaySettings`](crate::model::HlsImageBasedTrickPlaySettings)
+    pub fn builder() -> crate::model::hls_image_based_trick_play_settings::Builder {
+        crate::model::hls_image_based_trick_play_settings::Builder::default()
+    }
+}
+
+/// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HlsIntervalCadence {
+    FollowCustom,
+    FollowIframe,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HlsIntervalCadence {
+    fn from(s: &str) -> Self {
+        match s {
+            "FOLLOW_CUSTOM" => HlsIntervalCadence::FollowCustom,
+            "FOLLOW_IFRAME" => HlsIntervalCadence::FollowIframe,
+            other => HlsIntervalCadence::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HlsIntervalCadence {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HlsIntervalCadence::from(s))
+    }
+}
+impl HlsIntervalCadence {
+    pub fn as_str(&self) -> &str {
+        match self {
+            HlsIntervalCadence::FollowCustom => "FOLLOW_CUSTOM",
+            HlsIntervalCadence::FollowIframe => "FOLLOW_IFRAME",
+            HlsIntervalCadence::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW_CUSTOM", "FOLLOW_IFRAME"]
+    }
+}
+impl AsRef<str> for HlsIntervalCadence {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
 #[non_exhaustive]
 #[derive(
@@ -32824,6 +33550,7 @@ impl AsRef<str> for HlsManifestCompression {
     std::hash::Hash,
 )]
 pub enum HlsImageBasedTrickPlay {
+    Advanced,
     None,
     Thumbnail,
     ThumbnailAndFullframe,
@@ -32833,6 +33560,7 @@ pub enum HlsImageBasedTrickPlay {
 impl std::convert::From<&str> for HlsImageBasedTrickPlay {
     fn from(s: &str) -> Self {
         match s {
+            "ADVANCED" => HlsImageBasedTrickPlay::Advanced,
             "NONE" => HlsImageBasedTrickPlay::None,
             "THUMBNAIL" => HlsImageBasedTrickPlay::Thumbnail,
             "THUMBNAIL_AND_FULLFRAME" => HlsImageBasedTrickPlay::ThumbnailAndFullframe,
@@ -32850,6 +33578,7 @@ impl std::str::FromStr for HlsImageBasedTrickPlay {
 impl HlsImageBasedTrickPlay {
     pub fn as_str(&self) -> &str {
         match self {
+            HlsImageBasedTrickPlay::Advanced => "ADVANCED",
             HlsImageBasedTrickPlay::None => "NONE",
             HlsImageBasedTrickPlay::Thumbnail => "THUMBNAIL",
             HlsImageBasedTrickPlay::ThumbnailAndFullframe => "THUMBNAIL_AND_FULLFRAME",
@@ -32857,7 +33586,7 @@ impl HlsImageBasedTrickPlay {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["NONE", "THUMBNAIL", "THUMBNAIL_AND_FULLFRAME"]
+        &["ADVANCED", "NONE", "THUMBNAIL", "THUMBNAIL_AND_FULLFRAME"]
     }
 }
 impl AsRef<str> for HlsImageBasedTrickPlay {
@@ -33893,6 +34622,9 @@ pub struct DashIsoGroupSettings {
     pub hbbtv_compliance: std::option::Option<crate::model::DashIsoHbbtvCompliance>,
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub image_based_trick_play: std::option::Option<crate::model::DashIsoImageBasedTrickPlay>,
+    /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+    pub image_based_trick_play_settings:
+        std::option::Option<crate::model::DashIsoImageBasedTrickPlaySettings>,
     /// Minimum time of initially buffered media that is needed to ensure smooth playout.
     pub min_buffer_time: i32,
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
@@ -33927,6 +34659,10 @@ impl std::fmt::Debug for DashIsoGroupSettings {
         formatter.field("fragment_length", &self.fragment_length);
         formatter.field("hbbtv_compliance", &self.hbbtv_compliance);
         formatter.field("image_based_trick_play", &self.image_based_trick_play);
+        formatter.field(
+            "image_based_trick_play_settings",
+            &self.image_based_trick_play_settings,
+        );
         formatter.field("min_buffer_time", &self.min_buffer_time);
         formatter.field("min_final_segment_length", &self.min_final_segment_length);
         formatter.field("mpd_profile", &self.mpd_profile);
@@ -33962,6 +34698,8 @@ pub mod dash_iso_group_settings {
         pub(crate) hbbtv_compliance: std::option::Option<crate::model::DashIsoHbbtvCompliance>,
         pub(crate) image_based_trick_play:
             std::option::Option<crate::model::DashIsoImageBasedTrickPlay>,
+        pub(crate) image_based_trick_play_settings:
+            std::option::Option<crate::model::DashIsoImageBasedTrickPlaySettings>,
         pub(crate) min_buffer_time: std::option::Option<i32>,
         pub(crate) min_final_segment_length: std::option::Option<f64>,
         pub(crate) mpd_profile: std::option::Option<crate::model::DashIsoMpdProfile>,
@@ -34084,6 +34822,21 @@ pub mod dash_iso_group_settings {
             self.image_based_trick_play = input;
             self
         }
+        /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+        pub fn image_based_trick_play_settings(
+            mut self,
+            input: crate::model::DashIsoImageBasedTrickPlaySettings,
+        ) -> Self {
+            self.image_based_trick_play_settings = Some(input);
+            self
+        }
+        pub fn set_image_based_trick_play_settings(
+            mut self,
+            input: std::option::Option<crate::model::DashIsoImageBasedTrickPlaySettings>,
+        ) -> Self {
+            self.image_based_trick_play_settings = input;
+            self
+        }
         /// Minimum time of initially buffered media that is needed to ensure smooth playout.
         pub fn min_buffer_time(mut self, input: i32) -> Self {
             self.min_buffer_time = Some(input);
@@ -34192,6 +34945,7 @@ pub mod dash_iso_group_settings {
                 fragment_length: self.fragment_length.unwrap_or_default(),
                 hbbtv_compliance: self.hbbtv_compliance,
                 image_based_trick_play: self.image_based_trick_play,
+                image_based_trick_play_settings: self.image_based_trick_play_settings,
                 min_buffer_time: self.min_buffer_time.unwrap_or_default(),
                 min_final_segment_length: self.min_final_segment_length.unwrap_or_default(),
                 mpd_profile: self.mpd_profile,
@@ -34467,6 +35221,177 @@ impl AsRef<str> for DashIsoMpdProfile {
     }
 }
 
+/// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DashIsoImageBasedTrickPlaySettings {
+    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    pub interval_cadence: std::option::Option<crate::model::DashIsoIntervalCadence>,
+    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    pub thumbnail_height: i32,
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    pub thumbnail_interval: f64,
+    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    pub thumbnail_width: i32,
+    /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+    pub tile_height: i32,
+    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    pub tile_width: i32,
+}
+impl std::fmt::Debug for DashIsoImageBasedTrickPlaySettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DashIsoImageBasedTrickPlaySettings");
+        formatter.field("interval_cadence", &self.interval_cadence);
+        formatter.field("thumbnail_height", &self.thumbnail_height);
+        formatter.field("thumbnail_interval", &self.thumbnail_interval);
+        formatter.field("thumbnail_width", &self.thumbnail_width);
+        formatter.field("tile_height", &self.tile_height);
+        formatter.field("tile_width", &self.tile_width);
+        formatter.finish()
+    }
+}
+/// See [`DashIsoImageBasedTrickPlaySettings`](crate::model::DashIsoImageBasedTrickPlaySettings)
+pub mod dash_iso_image_based_trick_play_settings {
+    /// A builder for [`DashIsoImageBasedTrickPlaySettings`](crate::model::DashIsoImageBasedTrickPlaySettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) interval_cadence: std::option::Option<crate::model::DashIsoIntervalCadence>,
+        pub(crate) thumbnail_height: std::option::Option<i32>,
+        pub(crate) thumbnail_interval: std::option::Option<f64>,
+        pub(crate) thumbnail_width: std::option::Option<i32>,
+        pub(crate) tile_height: std::option::Option<i32>,
+        pub(crate) tile_width: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+        pub fn interval_cadence(mut self, input: crate::model::DashIsoIntervalCadence) -> Self {
+            self.interval_cadence = Some(input);
+            self
+        }
+        pub fn set_interval_cadence(
+            mut self,
+            input: std::option::Option<crate::model::DashIsoIntervalCadence>,
+        ) -> Self {
+            self.interval_cadence = input;
+            self
+        }
+        /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+        pub fn thumbnail_height(mut self, input: i32) -> Self {
+            self.thumbnail_height = Some(input);
+            self
+        }
+        pub fn set_thumbnail_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.thumbnail_height = input;
+            self
+        }
+        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+        pub fn thumbnail_interval(mut self, input: f64) -> Self {
+            self.thumbnail_interval = Some(input);
+            self
+        }
+        pub fn set_thumbnail_interval(mut self, input: std::option::Option<f64>) -> Self {
+            self.thumbnail_interval = input;
+            self
+        }
+        /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+        pub fn thumbnail_width(mut self, input: i32) -> Self {
+            self.thumbnail_width = Some(input);
+            self
+        }
+        pub fn set_thumbnail_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.thumbnail_width = input;
+            self
+        }
+        /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+        pub fn tile_height(mut self, input: i32) -> Self {
+            self.tile_height = Some(input);
+            self
+        }
+        pub fn set_tile_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.tile_height = input;
+            self
+        }
+        /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+        pub fn tile_width(mut self, input: i32) -> Self {
+            self.tile_width = Some(input);
+            self
+        }
+        pub fn set_tile_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.tile_width = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DashIsoImageBasedTrickPlaySettings`](crate::model::DashIsoImageBasedTrickPlaySettings)
+        pub fn build(self) -> crate::model::DashIsoImageBasedTrickPlaySettings {
+            crate::model::DashIsoImageBasedTrickPlaySettings {
+                interval_cadence: self.interval_cadence,
+                thumbnail_height: self.thumbnail_height.unwrap_or_default(),
+                thumbnail_interval: self.thumbnail_interval.unwrap_or_default(),
+                thumbnail_width: self.thumbnail_width.unwrap_or_default(),
+                tile_height: self.tile_height.unwrap_or_default(),
+                tile_width: self.tile_width.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DashIsoImageBasedTrickPlaySettings {
+    /// Creates a new builder-style object to manufacture [`DashIsoImageBasedTrickPlaySettings`](crate::model::DashIsoImageBasedTrickPlaySettings)
+    pub fn builder() -> crate::model::dash_iso_image_based_trick_play_settings::Builder {
+        crate::model::dash_iso_image_based_trick_play_settings::Builder::default()
+    }
+}
+
+/// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DashIsoIntervalCadence {
+    FollowCustom,
+    FollowIframe,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DashIsoIntervalCadence {
+    fn from(s: &str) -> Self {
+        match s {
+            "FOLLOW_CUSTOM" => DashIsoIntervalCadence::FollowCustom,
+            "FOLLOW_IFRAME" => DashIsoIntervalCadence::FollowIframe,
+            other => DashIsoIntervalCadence::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DashIsoIntervalCadence {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DashIsoIntervalCadence::from(s))
+    }
+}
+impl DashIsoIntervalCadence {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DashIsoIntervalCadence::FollowCustom => "FOLLOW_CUSTOM",
+            DashIsoIntervalCadence::FollowIframe => "FOLLOW_IFRAME",
+            DashIsoIntervalCadence::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW_CUSTOM", "FOLLOW_IFRAME"]
+    }
+}
+impl AsRef<str> for DashIsoIntervalCadence {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
 #[non_exhaustive]
 #[derive(
@@ -34479,6 +35404,7 @@ impl AsRef<str> for DashIsoMpdProfile {
     std::hash::Hash,
 )]
 pub enum DashIsoImageBasedTrickPlay {
+    Advanced,
     None,
     Thumbnail,
     ThumbnailAndFullframe,
@@ -34488,6 +35414,7 @@ pub enum DashIsoImageBasedTrickPlay {
 impl std::convert::From<&str> for DashIsoImageBasedTrickPlay {
     fn from(s: &str) -> Self {
         match s {
+            "ADVANCED" => DashIsoImageBasedTrickPlay::Advanced,
             "NONE" => DashIsoImageBasedTrickPlay::None,
             "THUMBNAIL" => DashIsoImageBasedTrickPlay::Thumbnail,
             "THUMBNAIL_AND_FULLFRAME" => DashIsoImageBasedTrickPlay::ThumbnailAndFullframe,
@@ -34505,6 +35432,7 @@ impl std::str::FromStr for DashIsoImageBasedTrickPlay {
 impl DashIsoImageBasedTrickPlay {
     pub fn as_str(&self) -> &str {
         match self {
+            DashIsoImageBasedTrickPlay::Advanced => "ADVANCED",
             DashIsoImageBasedTrickPlay::None => "NONE",
             DashIsoImageBasedTrickPlay::Thumbnail => "THUMBNAIL",
             DashIsoImageBasedTrickPlay::ThumbnailAndFullframe => "THUMBNAIL_AND_FULLFRAME",
@@ -34512,7 +35440,7 @@ impl DashIsoImageBasedTrickPlay {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["NONE", "THUMBNAIL", "THUMBNAIL_AND_FULLFRAME"]
+        &["ADVANCED", "NONE", "THUMBNAIL", "THUMBNAIL_AND_FULLFRAME"]
     }
 }
 impl AsRef<str> for DashIsoImageBasedTrickPlay {
@@ -34848,6 +35776,9 @@ pub struct CmafGroupSettings {
     pub fragment_length: i32,
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest (WriteHlsManifest), MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub image_based_trick_play: std::option::Option<crate::model::CmafImageBasedTrickPlay>,
+    /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+    pub image_based_trick_play_settings:
+        std::option::Option<crate::model::CmafImageBasedTrickPlaySettings>,
     /// When set to GZIP, compresses HLS playlist.
     pub manifest_compression: std::option::Option<crate::model::CmafManifestCompression>,
     /// Indicates whether the output manifest should use floating point values for segment duration.
@@ -34892,6 +35823,10 @@ impl std::fmt::Debug for CmafGroupSettings {
         formatter.field("encryption", &self.encryption);
         formatter.field("fragment_length", &self.fragment_length);
         formatter.field("image_based_trick_play", &self.image_based_trick_play);
+        formatter.field(
+            "image_based_trick_play_settings",
+            &self.image_based_trick_play_settings,
+        );
         formatter.field("manifest_compression", &self.manifest_compression);
         formatter.field("manifest_duration_format", &self.manifest_duration_format);
         formatter.field("min_buffer_time", &self.min_buffer_time);
@@ -34935,6 +35870,8 @@ pub mod cmaf_group_settings {
         pub(crate) fragment_length: std::option::Option<i32>,
         pub(crate) image_based_trick_play:
             std::option::Option<crate::model::CmafImageBasedTrickPlay>,
+        pub(crate) image_based_trick_play_settings:
+            std::option::Option<crate::model::CmafImageBasedTrickPlaySettings>,
         pub(crate) manifest_compression: std::option::Option<crate::model::CmafManifestCompression>,
         pub(crate) manifest_duration_format:
             std::option::Option<crate::model::CmafManifestDurationFormat>,
@@ -35061,6 +35998,21 @@ pub mod cmaf_group_settings {
             input: std::option::Option<crate::model::CmafImageBasedTrickPlay>,
         ) -> Self {
             self.image_based_trick_play = input;
+            self
+        }
+        /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+        pub fn image_based_trick_play_settings(
+            mut self,
+            input: crate::model::CmafImageBasedTrickPlaySettings,
+        ) -> Self {
+            self.image_based_trick_play_settings = Some(input);
+            self
+        }
+        pub fn set_image_based_trick_play_settings(
+            mut self,
+            input: std::option::Option<crate::model::CmafImageBasedTrickPlaySettings>,
+        ) -> Self {
+            self.image_based_trick_play_settings = input;
             self
         }
         /// When set to GZIP, compresses HLS playlist.
@@ -35255,6 +36207,7 @@ pub mod cmaf_group_settings {
                 encryption: self.encryption,
                 fragment_length: self.fragment_length.unwrap_or_default(),
                 image_based_trick_play: self.image_based_trick_play,
+                image_based_trick_play_settings: self.image_based_trick_play_settings,
                 manifest_compression: self.manifest_compression,
                 manifest_duration_format: self.manifest_duration_format,
                 min_buffer_time: self.min_buffer_time.unwrap_or_default(),
@@ -35842,6 +36795,177 @@ impl AsRef<str> for CmafManifestCompression {
     }
 }
 
+/// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CmafImageBasedTrickPlaySettings {
+    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    pub interval_cadence: std::option::Option<crate::model::CmafIntervalCadence>,
+    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    pub thumbnail_height: i32,
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    pub thumbnail_interval: f64,
+    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    pub thumbnail_width: i32,
+    /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+    pub tile_height: i32,
+    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    pub tile_width: i32,
+}
+impl std::fmt::Debug for CmafImageBasedTrickPlaySettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CmafImageBasedTrickPlaySettings");
+        formatter.field("interval_cadence", &self.interval_cadence);
+        formatter.field("thumbnail_height", &self.thumbnail_height);
+        formatter.field("thumbnail_interval", &self.thumbnail_interval);
+        formatter.field("thumbnail_width", &self.thumbnail_width);
+        formatter.field("tile_height", &self.tile_height);
+        formatter.field("tile_width", &self.tile_width);
+        formatter.finish()
+    }
+}
+/// See [`CmafImageBasedTrickPlaySettings`](crate::model::CmafImageBasedTrickPlaySettings)
+pub mod cmaf_image_based_trick_play_settings {
+    /// A builder for [`CmafImageBasedTrickPlaySettings`](crate::model::CmafImageBasedTrickPlaySettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) interval_cadence: std::option::Option<crate::model::CmafIntervalCadence>,
+        pub(crate) thumbnail_height: std::option::Option<i32>,
+        pub(crate) thumbnail_interval: std::option::Option<f64>,
+        pub(crate) thumbnail_width: std::option::Option<i32>,
+        pub(crate) tile_height: std::option::Option<i32>,
+        pub(crate) tile_width: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+        pub fn interval_cadence(mut self, input: crate::model::CmafIntervalCadence) -> Self {
+            self.interval_cadence = Some(input);
+            self
+        }
+        pub fn set_interval_cadence(
+            mut self,
+            input: std::option::Option<crate::model::CmafIntervalCadence>,
+        ) -> Self {
+            self.interval_cadence = input;
+            self
+        }
+        /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+        pub fn thumbnail_height(mut self, input: i32) -> Self {
+            self.thumbnail_height = Some(input);
+            self
+        }
+        pub fn set_thumbnail_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.thumbnail_height = input;
+            self
+        }
+        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+        pub fn thumbnail_interval(mut self, input: f64) -> Self {
+            self.thumbnail_interval = Some(input);
+            self
+        }
+        pub fn set_thumbnail_interval(mut self, input: std::option::Option<f64>) -> Self {
+            self.thumbnail_interval = input;
+            self
+        }
+        /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+        pub fn thumbnail_width(mut self, input: i32) -> Self {
+            self.thumbnail_width = Some(input);
+            self
+        }
+        pub fn set_thumbnail_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.thumbnail_width = input;
+            self
+        }
+        /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
+        pub fn tile_height(mut self, input: i32) -> Self {
+            self.tile_height = Some(input);
+            self
+        }
+        pub fn set_tile_height(mut self, input: std::option::Option<i32>) -> Self {
+            self.tile_height = input;
+            self
+        }
+        /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+        pub fn tile_width(mut self, input: i32) -> Self {
+            self.tile_width = Some(input);
+            self
+        }
+        pub fn set_tile_width(mut self, input: std::option::Option<i32>) -> Self {
+            self.tile_width = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CmafImageBasedTrickPlaySettings`](crate::model::CmafImageBasedTrickPlaySettings)
+        pub fn build(self) -> crate::model::CmafImageBasedTrickPlaySettings {
+            crate::model::CmafImageBasedTrickPlaySettings {
+                interval_cadence: self.interval_cadence,
+                thumbnail_height: self.thumbnail_height.unwrap_or_default(),
+                thumbnail_interval: self.thumbnail_interval.unwrap_or_default(),
+                thumbnail_width: self.thumbnail_width.unwrap_or_default(),
+                tile_height: self.tile_height.unwrap_or_default(),
+                tile_width: self.tile_width.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl CmafImageBasedTrickPlaySettings {
+    /// Creates a new builder-style object to manufacture [`CmafImageBasedTrickPlaySettings`](crate::model::CmafImageBasedTrickPlaySettings)
+    pub fn builder() -> crate::model::cmaf_image_based_trick_play_settings::Builder {
+        crate::model::cmaf_image_based_trick_play_settings::Builder::default()
+    }
+}
+
+/// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CmafIntervalCadence {
+    FollowCustom,
+    FollowIframe,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CmafIntervalCadence {
+    fn from(s: &str) -> Self {
+        match s {
+            "FOLLOW_CUSTOM" => CmafIntervalCadence::FollowCustom,
+            "FOLLOW_IFRAME" => CmafIntervalCadence::FollowIframe,
+            other => CmafIntervalCadence::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CmafIntervalCadence {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CmafIntervalCadence::from(s))
+    }
+}
+impl CmafIntervalCadence {
+    pub fn as_str(&self) -> &str {
+        match self {
+            CmafIntervalCadence::FollowCustom => "FOLLOW_CUSTOM",
+            CmafIntervalCadence::FollowIframe => "FOLLOW_IFRAME",
+            CmafIntervalCadence::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW_CUSTOM", "FOLLOW_IFRAME"]
+    }
+}
+impl AsRef<str> for CmafIntervalCadence {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest (WriteHlsManifest), MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
 #[non_exhaustive]
 #[derive(
@@ -35854,6 +36978,7 @@ impl AsRef<str> for CmafManifestCompression {
     std::hash::Hash,
 )]
 pub enum CmafImageBasedTrickPlay {
+    Advanced,
     None,
     Thumbnail,
     ThumbnailAndFullframe,
@@ -35863,6 +36988,7 @@ pub enum CmafImageBasedTrickPlay {
 impl std::convert::From<&str> for CmafImageBasedTrickPlay {
     fn from(s: &str) -> Self {
         match s {
+            "ADVANCED" => CmafImageBasedTrickPlay::Advanced,
             "NONE" => CmafImageBasedTrickPlay::None,
             "THUMBNAIL" => CmafImageBasedTrickPlay::Thumbnail,
             "THUMBNAIL_AND_FULLFRAME" => CmafImageBasedTrickPlay::ThumbnailAndFullframe,
@@ -35880,6 +37006,7 @@ impl std::str::FromStr for CmafImageBasedTrickPlay {
 impl CmafImageBasedTrickPlay {
     pub fn as_str(&self) -> &str {
         match self {
+            CmafImageBasedTrickPlay::Advanced => "ADVANCED",
             CmafImageBasedTrickPlay::None => "NONE",
             CmafImageBasedTrickPlay::Thumbnail => "THUMBNAIL",
             CmafImageBasedTrickPlay::ThumbnailAndFullframe => "THUMBNAIL_AND_FULLFRAME",
@@ -35887,7 +37014,7 @@ impl CmafImageBasedTrickPlay {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["NONE", "THUMBNAIL", "THUMBNAIL_AND_FULLFRAME"]
+        &["ADVANCED", "NONE", "THUMBNAIL", "THUMBNAIL_AND_FULLFRAME"]
     }
 }
 impl AsRef<str> for CmafImageBasedTrickPlay {
@@ -40461,7 +41588,7 @@ impl AudioSelectorGroup {
     }
 }
 
-/// Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h Content Advisory.
+/// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedDataServices {
@@ -41983,7 +43110,7 @@ pub struct JobSettings {
     pub avail_blanking: std::option::Option<crate::model::AvailBlanking>,
     /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
     pub esam: std::option::Option<crate::model::EsamSettings>,
-    /// Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h Content Advisory.
+    /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
     pub extended_data_services: std::option::Option<crate::model::ExtendedDataServices>,
     /// Use Inputs (inputs) to define source file used in the transcode job. There can be multiple inputs add in a job. These inputs will be concantenated together to create the output.
     pub inputs: std::option::Option<std::vec::Vec<crate::model::Input>>,
@@ -42076,7 +43203,7 @@ pub mod job_settings {
             self.esam = input;
             self
         }
-        /// Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h Content Advisory.
+        /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
         pub fn extended_data_services(mut self, input: crate::model::ExtendedDataServices) -> Self {
             self.extended_data_services = Some(input);
             self

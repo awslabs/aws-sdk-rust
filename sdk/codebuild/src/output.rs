@@ -1145,7 +1145,7 @@ impl ListCuratedEnvironmentImagesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildsForProjectOutput {
-    /// <p>A list of build IDs for the specified build project, with each build ID representing a
+    /// <p>A list of build identifiers for the specified build project, with each build ID representing a
     /// single build.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned,

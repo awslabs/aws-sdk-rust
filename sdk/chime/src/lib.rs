@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>The Amazon Chime API (application programming interface) is designed for developers to
 //! perform key tasks, such as creating and managing Amazon Chime accounts, users, and Voice
 //! Connectors. This guide provides detailed information about the Amazon Chime API,

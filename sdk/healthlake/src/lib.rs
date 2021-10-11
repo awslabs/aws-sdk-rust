@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon HealthLake is a HIPAA eligibile service that allows customers to store,
 //! transform, query, and analyze their FHIR-formatted data in a consistent fashion in the cloud.</p>
 

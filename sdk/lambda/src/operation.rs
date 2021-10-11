@@ -34,7 +34,8 @@ impl smithy_http::response::ParseStrictResponse for AddLayerVersionPermission {
 
 /// <p>Grants an Amazon Web Services service or another account permission to use a function. You can apply the policy at the
 /// function level, or specify a qualifier to restrict access to a single version or alias. If you use a qualifier,
-/// the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the function.</p>
+/// the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the function.
+/// Note: Lambda does not support adding policies to version $LATEST.</p>
 /// <p>To grant permission to another account, specify the account ID as the <code>Principal</code>. For Amazon Web Services
 /// services, the principal is a domain-style identifier defined by the service, like <code>s3.amazonaws.com</code> or
 /// <code>sns.amazonaws.com</code>. For Amazon Web Services services, you can also specify the ARN of the associated resource as the
@@ -128,10 +129,9 @@ impl smithy_http::response::ParseStrictResponse for CreateCodeSigningConfig {
     }
 }
 
-/// <p>Creates a mapping between an event source and an Lambda function. Lambda reads items from the event source
-/// and triggers the function.</p>
-/// <p>For details about each event source type, see the following topics. In particular, each of the topics
-/// describes the required and optional parameters for the specific event source. </p>
+/// <p>Creates a mapping between an event source and an Lambda function. Lambda reads items from the
+/// event source and triggers the function.</p>
+/// <p>For details about each event source type, see the following topics. </p>
 /// <ul>
 /// <li>
 /// <p>
@@ -147,8 +147,8 @@ impl smithy_http::response::ParseStrictResponse for CreateCodeSigningConfig {
 /// </li>
 /// <li>
 /// <p>
-/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
-/// Configuring an SQS queue as an event source</a>
+/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource"> Configuring an
+/// Amazon SQS queue as an event source</a>
 /// </p>
 /// </li>
 /// <li>
@@ -159,14 +159,14 @@ impl smithy_http::response::ParseStrictResponse for CreateCodeSigningConfig {
 /// </li>
 /// <li>
 /// <p>
-/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">
-/// Configuring MSK as an event source</a>
+/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Configuring MSK as an event
+/// source</a>
 /// </p>
 /// </li>
 /// <li>
 /// <p>
-/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">
-/// Configuring Self-Managed Apache Kafka as an event source</a>
+/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Configuring Self-Managed Apache Kafka
+/// as an event source</a>
 /// </p>
 /// </li>
 /// </ul>
@@ -227,10 +227,12 @@ impl smithy_http::response::ParseStrictResponse for CreateEventSourceMapping {
 /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a>. For a container image,
 /// the code property must include the URI of a container image in the Amazon ECR registry.
 /// You do not need to specify the handler and runtime properties. </p>
-/// <p>You set the package type to <code>Zip</code> if the deployment package is a
-/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip file archive</a>.
-/// For a .zip file archive, the code property specifies the location of the .zip file. You must also specify the handler and
-/// runtime properties.</p>
+/// <p>You set the package type to <code>Zip</code> if the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip file
+/// archive</a>. For a .zip file archive, the code property specifies the location of the
+/// .zip file. You must also specify the handler and runtime properties. The code in the
+/// deployment package must be compatible with the target instruction set architecture of the
+/// function (<code>x86-64</code> or <code>arm64</code>). If you do not specify the architecture, the default value is
+/// <code>x86-64</code>.</p>
 /// <p>When you create a function, Lambda provisions an instance of the function and its supporting resources. If
 /// your function connects to a VPC, this process can take a minute or so. During this time, you can't invoke or
 /// modify the function. The <code>State</code>, <code>StateReason</code>, and <code>StateReasonCode</code> fields in
@@ -339,7 +341,8 @@ impl smithy_http::response::ParseStrictResponse for DeleteCodeSigningConfig {
 
 /// <p>Deletes an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event source
 /// mapping</a>. You can get the identifier of a mapping from the output of <a>ListEventSourceMappings</a>.</p>
-/// <p>When you delete an event source mapping, it enters a <code>Deleting</code> state and might not be completely deleted for several seconds.</p>
+/// <p>When you delete an event source mapping, it enters a <code>Deleting</code> state and might not be completely
+/// deleted for several seconds.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEventSourceMapping {
     _private: (),
@@ -621,7 +624,8 @@ impl smithy_http::response::ParseStrictResponse for GetCodeSigningConfig {
     }
 }
 
-/// <p>Returns details about an event source mapping. You can get the identifier of a mapping from the output of <a>ListEventSourceMappings</a>.</p>
+/// <p>Returns details about an event source mapping. You can get the identifier of a mapping from the output of
+/// <a>ListEventSourceMappings</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetEventSourceMapping {
     _private: (),
@@ -1187,9 +1191,12 @@ impl smithy_http::response::ParseStrictResponse for ListFunctionsByCodeSigningCo
     }
 }
 
-/// <p>Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
-/// layers</a> and shows information about the latest version of each. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only layers
-/// that indicate that they're compatible with that runtime.</p>
+/// <p>Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html">Lambda
+/// layers</a> and shows information about the latest version of each. Specify a
+/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+/// identifier</a> to list only layers that indicate that they're compatible with that
+/// runtime. Specify a compatible architecture to include only layers that are compatible with
+/// that  <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListLayers {
     _private: (),
@@ -1217,7 +1224,8 @@ impl smithy_http::response::ParseStrictResponse for ListLayers {
 
 /// <p>Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
 /// layer</a>. Versions that have been deleted aren't listed. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
-/// versions that indicate that they're compatible with that runtime.</p>
+/// versions that indicate that they're compatible with that runtime. Specify a compatible architecture to include only
+/// layer versions that are compatible with that architecture.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListLayerVersions {
     _private: (),
@@ -1688,7 +1696,8 @@ impl smithy_http::response::ParseStrictResponse for UpdateCodeSigningConfig {
     }
 }
 
-/// <p>Updates an event source mapping. You can change the function that Lambda invokes, or pause invocation and resume later from the same location.</p>
+/// <p>Updates an event source mapping. You can change the function that Lambda invokes, or pause
+/// invocation and resume later from the same location.</p>
 /// <p>The following error handling options are only available for stream sources (DynamoDB and Kinesis):</p>
 /// <ul>
 /// <li>

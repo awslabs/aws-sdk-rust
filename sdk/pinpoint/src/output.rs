@@ -499,6 +499,55 @@ impl UpdateJourneyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateInAppTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub message_body: std::option::Option<crate::model::MessageBody>,
+}
+impl std::fmt::Debug for UpdateInAppTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateInAppTemplateOutput");
+        formatter.field("message_body", &self.message_body);
+        formatter.finish()
+    }
+}
+/// See [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput)
+pub mod update_in_app_template_output {
+    /// A builder for [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+    }
+    impl Builder {
+        /// <p>Provides information about an API request or response.</p>
+        pub fn message_body(mut self, input: crate::model::MessageBody) -> Self {
+            self.message_body = Some(input);
+            self
+        }
+        pub fn set_message_body(
+            mut self,
+            input: std::option::Option<crate::model::MessageBody>,
+        ) -> Self {
+            self.message_body = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput)
+        pub fn build(self) -> crate::output::UpdateInAppTemplateOutput {
+            crate::output::UpdateInAppTemplateOutput {
+                message_body: self.message_body,
+            }
+        }
+    }
+}
+impl UpdateInAppTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateInAppTemplateOutput`](crate::output::UpdateInAppTemplateOutput)
+    pub fn builder() -> crate::output::update_in_app_template_output::Builder {
+        crate::output::update_in_app_template_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
@@ -2669,6 +2718,112 @@ impl GetJourneyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetInAppTemplateOutput {
+    /// <p>In-App Template Response.</p>
+    pub in_app_template_response: std::option::Option<crate::model::InAppTemplateResponse>,
+}
+impl std::fmt::Debug for GetInAppTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetInAppTemplateOutput");
+        formatter.field("in_app_template_response", &self.in_app_template_response);
+        formatter.finish()
+    }
+}
+/// See [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput)
+pub mod get_in_app_template_output {
+    /// A builder for [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) in_app_template_response:
+            std::option::Option<crate::model::InAppTemplateResponse>,
+    }
+    impl Builder {
+        /// <p>In-App Template Response.</p>
+        pub fn in_app_template_response(
+            mut self,
+            input: crate::model::InAppTemplateResponse,
+        ) -> Self {
+            self.in_app_template_response = Some(input);
+            self
+        }
+        pub fn set_in_app_template_response(
+            mut self,
+            input: std::option::Option<crate::model::InAppTemplateResponse>,
+        ) -> Self {
+            self.in_app_template_response = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput)
+        pub fn build(self) -> crate::output::GetInAppTemplateOutput {
+            crate::output::GetInAppTemplateOutput {
+                in_app_template_response: self.in_app_template_response,
+            }
+        }
+    }
+}
+impl GetInAppTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`GetInAppTemplateOutput`](crate::output::GetInAppTemplateOutput)
+    pub fn builder() -> crate::output::get_in_app_template_output::Builder {
+        crate::output::get_in_app_template_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetInAppMessagesOutput {
+    /// <p>Get in-app messages response object.</p>
+    pub in_app_messages_response: std::option::Option<crate::model::InAppMessagesResponse>,
+}
+impl std::fmt::Debug for GetInAppMessagesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetInAppMessagesOutput");
+        formatter.field("in_app_messages_response", &self.in_app_messages_response);
+        formatter.finish()
+    }
+}
+/// See [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput)
+pub mod get_in_app_messages_output {
+    /// A builder for [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) in_app_messages_response:
+            std::option::Option<crate::model::InAppMessagesResponse>,
+    }
+    impl Builder {
+        /// <p>Get in-app messages response object.</p>
+        pub fn in_app_messages_response(
+            mut self,
+            input: crate::model::InAppMessagesResponse,
+        ) -> Self {
+            self.in_app_messages_response = Some(input);
+            self
+        }
+        pub fn set_in_app_messages_response(
+            mut self,
+            input: std::option::Option<crate::model::InAppMessagesResponse>,
+        ) -> Self {
+            self.in_app_messages_response = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput)
+        pub fn build(self) -> crate::output::GetInAppMessagesOutput {
+            crate::output::GetInAppMessagesOutput {
+                in_app_messages_response: self.in_app_messages_response,
+            }
+        }
+    }
+}
+impl GetInAppMessagesOutput {
+    /// Creates a new builder-style object to manufacture [`GetInAppMessagesOutput`](crate::output::GetInAppMessagesOutput)
+    pub fn builder() -> crate::output::get_in_app_messages_output::Builder {
+        crate::output::get_in_app_messages_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportJobsOutput {
     /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
     pub import_jobs_response: std::option::Option<crate::model::ImportJobsResponse>,
@@ -4443,6 +4598,55 @@ impl DeleteJourneyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteInAppTemplateOutput {
+    /// <p>Provides information about an API request or response.</p>
+    pub message_body: std::option::Option<crate::model::MessageBody>,
+}
+impl std::fmt::Debug for DeleteInAppTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteInAppTemplateOutput");
+        formatter.field("message_body", &self.message_body);
+        formatter.finish()
+    }
+}
+/// See [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput)
+pub mod delete_in_app_template_output {
+    /// A builder for [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message_body: std::option::Option<crate::model::MessageBody>,
+    }
+    impl Builder {
+        /// <p>Provides information about an API request or response.</p>
+        pub fn message_body(mut self, input: crate::model::MessageBody) -> Self {
+            self.message_body = Some(input);
+            self
+        }
+        pub fn set_message_body(
+            mut self,
+            input: std::option::Option<crate::model::MessageBody>,
+        ) -> Self {
+            self.message_body = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput)
+        pub fn build(self) -> crate::output::DeleteInAppTemplateOutput {
+            crate::output::DeleteInAppTemplateOutput {
+                message_body: self.message_body,
+            }
+        }
+    }
+}
+impl DeleteInAppTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInAppTemplateOutput`](crate::output::DeleteInAppTemplateOutput)
+    pub fn builder() -> crate::output::delete_in_app_template_output::Builder {
+        crate::output::delete_in_app_template_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     pub gcm_channel_response: std::option::Option<crate::model::GcmChannelResponse>,
@@ -5421,6 +5625,62 @@ impl CreateJourneyOutput {
     /// Creates a new builder-style object to manufacture [`CreateJourneyOutput`](crate::output::CreateJourneyOutput)
     pub fn builder() -> crate::output::create_journey_output::Builder {
         crate::output::create_journey_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateInAppTemplateOutput {
+    /// <p>Provides information about a request to create a message template.</p>
+    pub template_create_message_body: std::option::Option<crate::model::TemplateCreateMessageBody>,
+}
+impl std::fmt::Debug for CreateInAppTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateInAppTemplateOutput");
+        formatter.field(
+            "template_create_message_body",
+            &self.template_create_message_body,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput)
+pub mod create_in_app_template_output {
+    /// A builder for [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) template_create_message_body:
+            std::option::Option<crate::model::TemplateCreateMessageBody>,
+    }
+    impl Builder {
+        /// <p>Provides information about a request to create a message template.</p>
+        pub fn template_create_message_body(
+            mut self,
+            input: crate::model::TemplateCreateMessageBody,
+        ) -> Self {
+            self.template_create_message_body = Some(input);
+            self
+        }
+        pub fn set_template_create_message_body(
+            mut self,
+            input: std::option::Option<crate::model::TemplateCreateMessageBody>,
+        ) -> Self {
+            self.template_create_message_body = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput)
+        pub fn build(self) -> crate::output::CreateInAppTemplateOutput {
+            crate::output::CreateInAppTemplateOutput {
+                template_create_message_body: self.template_create_message_body,
+            }
+        }
+    }
+}
+impl CreateInAppTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`CreateInAppTemplateOutput`](crate::output::CreateInAppTemplateOutput)
+    pub fn builder() -> crate::output::create_in_app_template_output::Builder {
+        crate::output::create_in_app_template_output::Builder::default()
     }
 }
 

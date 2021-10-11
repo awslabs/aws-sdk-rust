@@ -447,7 +447,7 @@ pub struct ListThesauriOutput {
     /// retrieve the next set of thesauri.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of summary information for one or more thesauruses.</p>
+    /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
     pub thesaurus_summary_items: std::option::Option<std::vec::Vec<crate::model::ThesaurusSummary>>,
 }
 impl std::fmt::Debug for ListThesauriOutput {
@@ -725,7 +725,9 @@ pub struct ListGroupsOlderThanOrderingIdOutput {
     /// </p>
     pub groups_summaries: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
     /// <p>
-    /// The next items in the list of groups that go beyond the maximum.
+    /// If the response is truncated, Amazon Kendra returns this token that you can use
+    /// in the subsequent request to retrieve the next set of groups that are
+    /// mapped to users before a given ordering or timestamp identifier.
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -761,7 +763,9 @@ pub mod list_groups_older_than_ordering_id_output {
             self
         }
         /// <p>
-        /// The next items in the list of groups that go beyond the maximum.
+        /// If the response is truncated, Amazon Kendra returns this token that you can use
+        /// in the subsequent request to retrieve the next set of groups that are
+        /// mapped to users before a given ordering or timestamp identifier.
         /// </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
@@ -790,11 +794,8 @@ impl ListGroupsOlderThanOrderingIdOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFaqsOutput {
-    /// <p>The <code>ListFaqs</code> operation returns a page of FAQs at a time. The maximum size
-    /// of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in
-    /// the list than the page size, Amazon Kendra returns the <code>NextPage</code> token.
-    /// Include the token in the next request to the <code>ListFaqs</code> operation to return
-    /// the next page of FAQs.</p>
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use
+    /// in the subsequent request to retrieve the next set of FAQs.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>information about the FAQs associated with the specified index.</p>
     pub faq_summary_items: std::option::Option<std::vec::Vec<crate::model::FaqSummary>>,
@@ -817,11 +818,8 @@ pub mod list_faqs_output {
         pub(crate) faq_summary_items: std::option::Option<std::vec::Vec<crate::model::FaqSummary>>,
     }
     impl Builder {
-        /// <p>The <code>ListFaqs</code> operation returns a page of FAQs at a time. The maximum size
-        /// of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in
-        /// the list than the page size, Amazon Kendra returns the <code>NextPage</code> token.
-        /// Include the token in the next request to the <code>ListFaqs</code> operation to return
-        /// the next page of FAQs.</p>
+        /// <p>If the response is truncated, Amazon Kendra returns this token that you can use
+        /// in the subsequent request to retrieve the next set of FAQs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -864,12 +862,8 @@ impl ListFaqsOutput {
 pub struct ListDataSourceSyncJobsOutput {
     /// <p>A history of synchronization jobs for the data source.</p>
     pub history: std::option::Option<std::vec::Vec<crate::model::DataSourceSyncJob>>,
-    /// <p>The <code>GetDataSourceSyncJobHistory</code> operation returns a page
-    /// of vocabularies at a time. The maximum size of the page is set by the
-    /// <code>MaxResults</code> parameter. If there are more jobs in the list
-    /// than the page size, Amazon Kendra returns the NextPage token. Include the
-    /// token in the next request to the <code>GetDataSourceSyncJobHistory</code>
-    /// operation to return in the next page of jobs.</p>
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you
+    /// can use in the subsequent request to retrieve the next set of jobs.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListDataSourceSyncJobsOutput {
@@ -903,12 +897,8 @@ pub mod list_data_source_sync_jobs_output {
             self.history = input;
             self
         }
-        /// <p>The <code>GetDataSourceSyncJobHistory</code> operation returns a page
-        /// of vocabularies at a time. The maximum size of the page is set by the
-        /// <code>MaxResults</code> parameter. If there are more jobs in the list
-        /// than the page size, Amazon Kendra returns the NextPage token. Include the
-        /// token in the next request to the <code>GetDataSourceSyncJobHistory</code>
-        /// operation to return in the next page of jobs.</p>
+        /// <p>If the response is truncated, Amazon Kendra returns this token that you
+        /// can use in the subsequent request to retrieve the next set of jobs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -1568,7 +1558,7 @@ pub struct DescribeQuerySuggestionsBlockListOutput {
     /// <p>Shows the error message with details when there are issues in
     /// processing the block list.</p>
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>Shows the date-time a block list for query suggestions was last created.</p>
+    /// <p>Shows the date-time a block list for query suggestions was created.</p>
     pub created_at: std::option::Option<smithy_types::Instant>,
     /// <p>Shows the date-time a block list for query suggestions was last updated.</p>
     pub updated_at: std::option::Option<smithy_types::Instant>,
@@ -1690,7 +1680,7 @@ pub mod describe_query_suggestions_block_list_output {
             self.error_message = input;
             self
         }
-        /// <p>Shows the date-time a block list for query suggestions was last created.</p>
+        /// <p>Shows the date-time a block list for query suggestions was created.</p>
         pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
@@ -1969,6 +1959,10 @@ pub struct DescribeIndexOutput {
         std::option::Option<std::vec::Vec<crate::model::UserTokenConfiguration>>,
     /// <p>The user context policy for the Amazon Kendra index.</p>
     pub user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
+    /// <p>Shows whether you have enabled the configuration for fetching access
+    /// levels of groups and users from an AWS Single Sign-On identity source.</p>
+    pub user_group_resolution_configuration:
+        std::option::Option<crate::model::UserGroupResolutionConfiguration>,
 }
 impl std::fmt::Debug for DescribeIndexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1994,6 +1988,10 @@ impl std::fmt::Debug for DescribeIndexOutput {
         formatter.field("capacity_units", &self.capacity_units);
         formatter.field("user_token_configurations", &self.user_token_configurations);
         formatter.field("user_context_policy", &self.user_context_policy);
+        formatter.field(
+            "user_group_resolution_configuration",
+            &self.user_group_resolution_configuration,
+        );
         formatter.finish()
     }
 }
@@ -2021,6 +2019,8 @@ pub mod describe_index_output {
         pub(crate) user_token_configurations:
             std::option::Option<std::vec::Vec<crate::model::UserTokenConfiguration>>,
         pub(crate) user_context_policy: std::option::Option<crate::model::UserContextPolicy>,
+        pub(crate) user_group_resolution_configuration:
+            std::option::Option<crate::model::UserGroupResolutionConfiguration>,
     }
     impl Builder {
         /// <p>The name of the index.</p>
@@ -2207,6 +2207,22 @@ pub mod describe_index_output {
             self.user_context_policy = input;
             self
         }
+        /// <p>Shows whether you have enabled the configuration for fetching access
+        /// levels of groups and users from an AWS Single Sign-On identity source.</p>
+        pub fn user_group_resolution_configuration(
+            mut self,
+            input: crate::model::UserGroupResolutionConfiguration,
+        ) -> Self {
+            self.user_group_resolution_configuration = Some(input);
+            self
+        }
+        pub fn set_user_group_resolution_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,
+        ) -> Self {
+            self.user_group_resolution_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeIndexOutput`](crate::output::DescribeIndexOutput)
         pub fn build(self) -> crate::output::DescribeIndexOutput {
             crate::output::DescribeIndexOutput {
@@ -2225,6 +2241,7 @@ pub mod describe_index_output {
                 capacity_units: self.capacity_units,
                 user_token_configurations: self.user_token_configurations,
                 user_context_policy: self.user_context_policy,
+                user_group_resolution_configuration: self.user_group_resolution_configuration,
             }
         }
     }

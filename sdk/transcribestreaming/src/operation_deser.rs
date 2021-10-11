@@ -195,6 +195,14 @@ pub fn parse_start_stream_transcription(
         #[allow(unused_mut)]
         let mut output = crate::output::start_stream_transcription_output::Builder::default();
         let _ = response;
+        output = output.set_content_identification_type(
+            crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_content_identification_type(response.headers())
+                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse ContentIdentificationType from header `x-amzn-transcribe-content-identification-type"))?
+        );
+        output = output.set_content_redaction_type(
+            crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_content_redaction_type(response.headers())
+                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse ContentRedactionType from header `x-amzn-transcribe-content-redaction-type"))?
+        );
         output = output.set_enable_channel_identification(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_enable_channel_identification(response.headers())
                                         .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse EnableChannelIdentification from header `x-amzn-transcribe-enable-channel-identification"))?
@@ -222,6 +230,10 @@ pub fn parse_start_stream_transcription(
         output = output.set_partial_results_stability(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_partial_results_stability(response.headers())
                                         .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse PartialResultsStability from header `x-amzn-transcribe-partial-results-stability"))?
+        );
+        output = output.set_pii_entity_types(
+            crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_pii_entity_types(response.headers())
+                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse PiiEntityTypes from header `x-amzn-transcribe-pii-entity-types"))?
         );
         output = output.set_request_id(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_request_id(response.headers())

@@ -2446,19 +2446,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>The order to list results in. The results are sorted by build number, not the build
-        /// identifier.</p>
+        /// <p>The order to sort the results in. The results are sorted by build number, not the build
+        /// identifier. If this is not specified, the results are sorted in descending order.</p>
         /// <p>Valid values include:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ASCENDING</code>: List the build IDs in ascending order by build
-        /// ID.</p>
+        /// <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>DESCENDING</code>: List the build IDs in descending order by build
-        /// ID.</p>
+        /// <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p>
         /// </li>
         /// </ul>
         /// <p>If the project has more than 100 builds, setting the sort order will result in an
@@ -4831,7 +4829,7 @@ pub mod fluent_builders {
         /// Appends an item to `secondaryArtifacts`.
         ///
         /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
-        /// <p> An array of <code>ProjectSource</code> objects. </p>
+        /// <p> An array of <code>ProjectArtifact</code> objects. </p>
         pub fn secondary_artifacts(
             mut self,
             inp: impl Into<crate::model::ProjectArtifacts>,

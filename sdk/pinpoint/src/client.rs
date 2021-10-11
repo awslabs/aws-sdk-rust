@@ -84,6 +84,9 @@ where
     pub fn create_import_job(&self) -> fluent_builders::CreateImportJob<C, M, R> {
         fluent_builders::CreateImportJob::new(self.handle.clone())
     }
+    pub fn create_in_app_template(&self) -> fluent_builders::CreateInAppTemplate<C, M, R> {
+        fluent_builders::CreateInAppTemplate::new(self.handle.clone())
+    }
     pub fn create_journey(&self) -> fluent_builders::CreateJourney<C, M, R> {
         fluent_builders::CreateJourney::new(self.handle.clone())
     }
@@ -146,6 +149,9 @@ where
     }
     pub fn delete_gcm_channel(&self) -> fluent_builders::DeleteGcmChannel<C, M, R> {
         fluent_builders::DeleteGcmChannel::new(self.handle.clone())
+    }
+    pub fn delete_in_app_template(&self) -> fluent_builders::DeleteInAppTemplate<C, M, R> {
+        fluent_builders::DeleteInAppTemplate::new(self.handle.clone())
     }
     pub fn delete_journey(&self) -> fluent_builders::DeleteJourney<C, M, R> {
         fluent_builders::DeleteJourney::new(self.handle.clone())
@@ -257,6 +263,12 @@ where
     }
     pub fn get_import_jobs(&self) -> fluent_builders::GetImportJobs<C, M, R> {
         fluent_builders::GetImportJobs::new(self.handle.clone())
+    }
+    pub fn get_in_app_messages(&self) -> fluent_builders::GetInAppMessages<C, M, R> {
+        fluent_builders::GetInAppMessages::new(self.handle.clone())
+    }
+    pub fn get_in_app_template(&self) -> fluent_builders::GetInAppTemplate<C, M, R> {
+        fluent_builders::GetInAppTemplate::new(self.handle.clone())
     }
     pub fn get_journey(&self) -> fluent_builders::GetJourney<C, M, R> {
         fluent_builders::GetJourney::new(self.handle.clone())
@@ -400,6 +412,9 @@ where
     }
     pub fn update_gcm_channel(&self) -> fluent_builders::UpdateGcmChannel<C, M, R> {
         fluent_builders::UpdateGcmChannel::new(self.handle.clone())
+    }
+    pub fn update_in_app_template(&self) -> fluent_builders::UpdateInAppTemplate<C, M, R> {
+        fluent_builders::UpdateInAppTemplate::new(self.handle.clone())
     }
     pub fn update_journey(&self) -> fluent_builders::UpdateJourney<C, M, R> {
         fluent_builders::UpdateJourney::new(self.handle.clone())
@@ -770,6 +785,75 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ImportJobRequest>,
         ) -> Self {
             self.inner = self.inner.set_import_job_request(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateInAppTemplate<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_in_app_template_input::Builder,
+    }
+    impl<C, M, R> CreateInAppTemplate<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateInAppTemplateOutput,
+            smithy_http::result::SdkError<crate::error::CreateInAppTemplateError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateInAppTemplateInputOperationOutputAlias,
+                crate::output::CreateInAppTemplateOutput,
+                crate::error::CreateInAppTemplateError,
+                crate::input::CreateInAppTemplateInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>InApp Template Request.</p>
+        pub fn in_app_template_request(mut self, inp: crate::model::InAppTemplateRequest) -> Self {
+            self.inner = self.inner.in_app_template_request(inp);
+            self
+        }
+        pub fn set_in_app_template_request(
+            mut self,
+            input: std::option::Option<crate::model::InAppTemplateRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_in_app_template_request(input);
+            self
+        }
+        /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(inp);
+            self
+        }
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
             self
         }
     }
@@ -1946,6 +2030,72 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_application_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteInAppTemplate<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_in_app_template_input::Builder,
+    }
+    impl<C, M, R> DeleteInAppTemplate<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteInAppTemplateOutput,
+            smithy_http::result::SdkError<crate::error::DeleteInAppTemplateError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteInAppTemplateInputOperationOutputAlias,
+                crate::output::DeleteInAppTemplateOutput,
+                crate::error::DeleteInAppTemplateError,
+                crate::input::DeleteInAppTemplateInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(inp);
+            self
+        }
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
+            self
+        }
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(inp);
+            self
+        }
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version(input);
             self
         }
     }
@@ -4271,6 +4421,138 @@ pub mod fluent_builders {
         }
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetInAppMessages<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_in_app_messages_input::Builder,
+    }
+    impl<C, M, R> GetInAppMessages<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetInAppMessagesOutput,
+            smithy_http::result::SdkError<crate::error::GetInAppMessagesError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetInAppMessagesInputOperationOutputAlias,
+                crate::output::GetInAppMessagesOutput,
+                crate::error::GetInAppMessagesError,
+                crate::input::GetInAppMessagesInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(inp);
+            self
+        }
+        pub fn set_application_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_id(input);
+            self
+        }
+        /// <p>The unique identifier for the endpoint.</p>
+        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(inp);
+            self
+        }
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_endpoint_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetInAppTemplate<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_in_app_template_input::Builder,
+    }
+    impl<C, M, R> GetInAppTemplate<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetInAppTemplateOutput,
+            smithy_http::result::SdkError<crate::error::GetInAppTemplateError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetInAppTemplateInputOperationOutputAlias,
+                crate::output::GetInAppTemplateOutput,
+                crate::error::GetInAppTemplateError,
+                crate::input::GetInAppTemplateInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(inp);
+            self
+        }
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
+            self
+        }
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(inp);
+            self
+        }
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version(input);
             self
         }
     }
@@ -7394,6 +7676,93 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::GcmChannelRequest>,
         ) -> Self {
             self.inner = self.inner.set_gcm_channel_request(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateInAppTemplate<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_in_app_template_input::Builder,
+    }
+    impl<C, M, R> UpdateInAppTemplate<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateInAppTemplateOutput,
+            smithy_http::result::SdkError<crate::error::UpdateInAppTemplateError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateInAppTemplateInputOperationOutputAlias,
+                crate::output::UpdateInAppTemplateOutput,
+                crate::error::UpdateInAppTemplateError,
+                crate::input::UpdateInAppTemplateInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        pub fn create_new_version(mut self, inp: bool) -> Self {
+            self.inner = self.inner.create_new_version(inp);
+            self
+        }
+        pub fn set_create_new_version(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_create_new_version(input);
+            self
+        }
+        /// <p>InApp Template Request.</p>
+        pub fn in_app_template_request(mut self, inp: crate::model::InAppTemplateRequest) -> Self {
+            self.inner = self.inner.in_app_template_request(inp);
+            self
+        }
+        pub fn set_in_app_template_request(
+            mut self,
+            input: std::option::Option<crate::model::InAppTemplateRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_in_app_template_request(input);
+            self
+        }
+        /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(inp);
+            self
+        }
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
+            self
+        }
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(inp);
+            self
+        }
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version(input);
             self
         }
     }

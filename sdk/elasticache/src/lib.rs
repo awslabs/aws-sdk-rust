@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon ElastiCache</fullname>
 //! <p>Amazon ElastiCache is a web service that makes it easier to set up, operate,
 //! and scale a distributed cache in the cloud.</p>

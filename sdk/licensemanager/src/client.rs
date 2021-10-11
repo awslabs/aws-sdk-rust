@@ -95,6 +95,11 @@ where
     ) -> fluent_builders::CreateLicenseConfiguration<C, M, R> {
         fluent_builders::CreateLicenseConfiguration::new(self.handle.clone())
     }
+    pub fn create_license_conversion_task_for_resource(
+        &self,
+    ) -> fluent_builders::CreateLicenseConversionTaskForResource<C, M, R> {
+        fluent_builders::CreateLicenseConversionTaskForResource::new(self.handle.clone())
+    }
     pub fn create_license_manager_report_generator(
         &self,
     ) -> fluent_builders::CreateLicenseManagerReportGenerator<C, M, R> {
@@ -140,6 +145,11 @@ where
     pub fn get_license_configuration(&self) -> fluent_builders::GetLicenseConfiguration<C, M, R> {
         fluent_builders::GetLicenseConfiguration::new(self.handle.clone())
     }
+    pub fn get_license_conversion_task(
+        &self,
+    ) -> fluent_builders::GetLicenseConversionTask<C, M, R> {
+        fluent_builders::GetLicenseConversionTask::new(self.handle.clone())
+    }
     pub fn get_license_manager_report_generator(
         &self,
     ) -> fluent_builders::GetLicenseManagerReportGenerator<C, M, R> {
@@ -168,6 +178,11 @@ where
         &self,
     ) -> fluent_builders::ListLicenseConfigurations<C, M, R> {
         fluent_builders::ListLicenseConfigurations::new(self.handle.clone())
+    }
+    pub fn list_license_conversion_tasks(
+        &self,
+    ) -> fluent_builders::ListLicenseConversionTasks<C, M, R> {
+        fluent_builders::ListLicenseConversionTasks::new(self.handle.clone())
     }
     pub fn list_license_manager_report_generators(
         &self,
@@ -804,6 +819,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
+        /// <p>Grant status reason.</p>
         pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.status_reason(inp);
             self
@@ -1183,6 +1199,93 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct CreateLicenseConversionTaskForResource<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_license_conversion_task_for_resource_input::Builder,
+    }
+    impl<C, M, R> CreateLicenseConversionTaskForResource<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateLicenseConversionTaskForResourceOutput,
+            smithy_http::result::SdkError<
+                crate::error::CreateLicenseConversionTaskForResourceError,
+            >,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateLicenseConversionTaskForResourceInputOperationOutputAlias,
+                crate::output::CreateLicenseConversionTaskForResourceOutput,
+                crate::error::CreateLicenseConversionTaskForResourceError,
+                crate::input::CreateLicenseConversionTaskForResourceInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
+        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(inp);
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>Information that identifies the license type you are converting from.
+        /// For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        pub fn source_license_context(
+            mut self,
+            inp: crate::model::LicenseConversionContext,
+        ) -> Self {
+            self.inner = self.inner.source_license_context(inp);
+            self
+        }
+        pub fn set_source_license_context(
+            mut self,
+            input: std::option::Option<crate::model::LicenseConversionContext>,
+        ) -> Self {
+            self.inner = self.inner.set_source_license_context(input);
+            self
+        }
+        /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        pub fn destination_license_context(
+            mut self,
+            inp: crate::model::LicenseConversionContext,
+        ) -> Self {
+            self.inner = self.inner.destination_license_context(inp);
+            self
+        }
+        pub fn set_destination_license_context(
+            mut self,
+            input: std::option::Option<crate::model::LicenseConversionContext>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_license_context(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct CreateLicenseManagerReportGenerator<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -1244,10 +1347,10 @@ pub mod fluent_builders {
         /// <p>Type of reports to generate. The following report types an be generated:</p>
         /// <ul>
         /// <li>
-        /// <p>License configuration report - Reports on the number and details of consumed licenses for a license configuration.</p>
+        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
         /// </li>
         /// <li>
-        /// <p>Resource report - Reports on the tracked licenses and resource consumption for a license configuration.</p>
+        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, inp: impl Into<crate::model::ReportType>) -> Self {
@@ -1659,6 +1762,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_grant_arn(input);
             self
         }
+        /// <p>The Status reason for the delete request.</p>
         pub fn status_reason(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.status_reason(inp);
             self
@@ -1847,7 +1951,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Amazon Resource Number (ARN) of the report generator that will be deleted.</p>
+        /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
         pub fn license_manager_report_generator_arn(
             mut self,
             inp: impl Into<std::string::String>,
@@ -2236,6 +2340,63 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetLicenseConversionTask<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_license_conversion_task_input::Builder,
+    }
+    impl<C, M, R> GetLicenseConversionTask<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetLicenseConversionTaskOutput,
+            smithy_http::result::SdkError<crate::error::GetLicenseConversionTaskError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetLicenseConversionTaskInputOperationOutputAlias,
+                crate::output::GetLicenseConversionTaskOutput,
+                crate::error::GetLicenseConversionTaskError,
+                crate::input::GetLicenseConversionTaskInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>ID of the license type conversion task to retrieve information on.</p>
+        pub fn license_conversion_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_conversion_task_id(inp);
+            self
+        }
+        pub fn set_license_conversion_task_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_license_conversion_task_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetLicenseManagerReportGenerator<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -2279,7 +2440,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>mazon Resource Number (ARN) of the report generator to retrieve information on.</p>
+        /// <p>Amazon Resource Name (ARN) of the report generator.</p>
         pub fn license_manager_report_generator_arn(
             mut self,
             inp: impl Into<std::string::String>,
@@ -2744,7 +2905,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>licenseCountingType</code> - The dimension on which licenses are counted.
+        /// <code>licenseCountingType</code> - The dimension for which licenses are counted.
         /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.
         /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
         /// </li>
@@ -2759,6 +2920,86 @@ pub mod fluent_builders {
         /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
         /// </li>
         /// </ul>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListLicenseConversionTasks<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_license_conversion_tasks_input::Builder,
+    }
+    impl<C, M, R> ListLicenseConversionTasks<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListLicenseConversionTasksOutput,
+            smithy_http::result::SdkError<crate::error::ListLicenseConversionTasksError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListLicenseConversionTasksInputOperationOutputAlias,
+                crate::output::ListLicenseConversionTasksOutput,
+                crate::error::ListLicenseConversionTasksError,
+                crate::input::ListLicenseConversionTasksInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Token for the next set of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Maximum number of results to return in a single call.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        /// <p>
+        /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
+        /// </p>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
@@ -3425,7 +3666,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>account_id</code> - The ID of the AWS account that owns the resource.
+        /// <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource.
         /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
         /// </li>
         /// <li>
@@ -4120,7 +4361,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Amazon Resource Number (ARN) of the report generator to update.</p>
+        /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
         pub fn license_manager_report_generator_arn(
             mut self,
             inp: impl Into<std::string::String>,
@@ -4150,13 +4391,13 @@ pub mod fluent_builders {
         /// Appends an item to `Type`.
         ///
         /// To override the contents of this collection use [`set_type`](Self::set_type).
-        /// <p>Type of reports to generate. The following report types an be generated:</p>
+        /// <p>Type of reports to generate. The following report types are supported:</p>
         /// <ul>
         /// <li>
-        /// <p>License configuration report - Reports on the number and details of consumed licenses for a license configuration.</p>
+        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
         /// </li>
         /// <li>
-        /// <p>Resource report - Reports on the tracked licenses and resource consumption for a license configuration.</p>
+        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, inp: impl Into<crate::model::ReportType>) -> Self {
@@ -4170,7 +4411,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>?</p>
+        /// <p>The report context.</p>
         pub fn report_context(mut self, inp: crate::model::ReportContext) -> Self {
             self.inner = self.inner.report_context(inp);
             self
@@ -4182,8 +4423,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_context(input);
             self
         }
-        /// <p>Frequency by which reports are generated.  The following options are avaiable:</p>
-        /// <p>??? What are the APi value options?</p>
+        /// <p>Frequency by which reports are generated.</p>
         pub fn report_frequency(mut self, inp: crate::model::ReportFrequency) -> Self {
             self.inner = self.inner.report_frequency(inp);
             self
@@ -4260,7 +4500,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Amazon Resource Name (ARN) of the AWS resource.</p>
+        /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
@@ -4374,7 +4614,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sns_topic_arn(input);
             self
         }
-        /// <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+        /// <p>Enables integration with Organizations for cross-account discovery.</p>
         pub fn organization_configuration(
             mut self,
             inp: crate::model::OrganizationConfiguration,

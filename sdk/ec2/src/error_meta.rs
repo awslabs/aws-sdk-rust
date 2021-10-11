@@ -628,6 +628,24 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::CancelCapacityReservationFleetsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CancelCapacityReservationFleetsError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CancelCapacityReservationFleetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::CancelConversionTaskError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -795,6 +813,24 @@ where
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateCapacityReservationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateCapacityReservationFleetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateCapacityReservationFleetError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateCapacityReservationFleetErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -3045,6 +3081,24 @@ where
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeByoipCidrsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeCapacityReservationFleetsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeCapacityReservationFleetsError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeCapacityReservationFleetsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -6327,6 +6381,50 @@ where
 impl<R>
     From<
         smithy_http::result::SdkError<
+            crate::error::GetVpnConnectionDeviceSampleConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<
+            crate::error::GetVpnConnectionDeviceSampleConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetVpnConnectionDeviceSampleConfigurationErrorKind::Unhandled(
+                    inner,
+                ) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::GetVpnConnectionDeviceTypesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetVpnConnectionDeviceTypesError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetVpnConnectionDeviceTypesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        smithy_http::result::SdkError<
             crate::error::ImportClientVpnClientCertificateRevocationListError,
             R,
         >,
@@ -6459,6 +6557,24 @@ where
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ModifyCapacityReservationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyCapacityReservationFleetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ModifyCapacityReservationFleetError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ModifyCapacityReservationFleetErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

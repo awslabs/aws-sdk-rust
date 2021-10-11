@@ -9868,6 +9868,105 @@ pub fn parse_render_ui_template_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_retry_pipeline_execution_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RetryPipelineExecutionOutput,
+    crate::error::RetryPipelineExecutionError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RetryPipelineExecutionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::RetryPipelineExecutionError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::RetryPipelineExecutionError {
+                meta: generic,
+                kind: crate::error::RetryPipelineExecutionErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RetryPipelineExecutionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ResourceLimitExceeded" => crate::error::RetryPipelineExecutionError {
+            meta: generic,
+            kind: crate::error::RetryPipelineExecutionErrorKind::ResourceLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_limit_exceeded::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceededjson_err(response.body().as_ref(), output).map_err(crate::error::RetryPipelineExecutionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFound" => {
+            crate::error::RetryPipelineExecutionError {
+                meta: generic,
+                kind: crate::error::RetryPipelineExecutionErrorKind::ResourceNotFound({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::resource_not_found::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::RetryPipelineExecutionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::RetryPipelineExecutionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_retry_pipeline_execution_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RetryPipelineExecutionOutput,
+    crate::error::RetryPipelineExecutionError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::retry_pipeline_execution_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_retry_pipeline_execution(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RetryPipelineExecutionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_search_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SearchOutput, crate::error::SearchError> {

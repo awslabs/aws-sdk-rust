@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Detective uses machine learning and purpose-built visualizations to help you analyze and
 //! investigate security issues across your Amazon Web Services (AWS) workloads. Detective automatically
 //! extracts time-based events such as login attempts, API calls, and network traffic from

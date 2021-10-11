@@ -990,6 +990,53 @@ impl AdMarkerPassthrough {
     }
 }
 
+/// <p>Returns Amazon CloudWatch log settings for a playback configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LogConfiguration {
+    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
+    pub percent_enabled: i32,
+}
+impl std::fmt::Debug for LogConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LogConfiguration");
+        formatter.field("percent_enabled", &self.percent_enabled);
+        formatter.finish()
+    }
+}
+/// See [`LogConfiguration`](crate::model::LogConfiguration)
+pub mod log_configuration {
+    /// A builder for [`LogConfiguration`](crate::model::LogConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) percent_enabled: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
+        pub fn percent_enabled(mut self, input: i32) -> Self {
+            self.percent_enabled = Some(input);
+            self
+        }
+        pub fn set_percent_enabled(mut self, input: std::option::Option<i32>) -> Self {
+            self.percent_enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LogConfiguration`](crate::model::LogConfiguration)
+        pub fn build(self) -> crate::model::LogConfiguration {
+            crate::model::LogConfiguration {
+                percent_enabled: self.percent_enabled.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl LogConfiguration {
+    /// Creates a new builder-style object to manufacture [`LogConfiguration`](crate::model::LogConfiguration)
+    pub fn builder() -> crate::model::log_configuration::Builder {
+        crate::model::log_configuration::Builder::default()
+    }
+}
+
 /// <p>The configuration for pre-roll ad insertion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1918,6 +1965,8 @@ pub struct PlaybackConfiguration {
     pub hls_configuration: std::option::Option<crate::model::HlsConfiguration>,
     /// <p>The configuration for pre-roll ad insertion.</p>
     pub live_pre_roll_configuration: std::option::Option<crate::model::LivePreRollConfiguration>,
+    /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    pub log_configuration: std::option::Option<crate::model::LogConfiguration>,
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
     pub manifest_processing_rules: std::option::Option<crate::model::ManifestProcessingRules>,
     /// <p>The identifier for the playback configuration.</p>
@@ -1954,6 +2003,7 @@ impl std::fmt::Debug for PlaybackConfiguration {
             "live_pre_roll_configuration",
             &self.live_pre_roll_configuration,
         );
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.field("manifest_processing_rules", &self.manifest_processing_rules);
         formatter.field("name", &self.name);
         formatter.field(
@@ -1996,6 +2046,7 @@ pub mod playback_configuration {
         pub(crate) hls_configuration: std::option::Option<crate::model::HlsConfiguration>,
         pub(crate) live_pre_roll_configuration:
             std::option::Option<crate::model::LivePreRollConfiguration>,
+        pub(crate) log_configuration: std::option::Option<crate::model::LogConfiguration>,
         pub(crate) manifest_processing_rules:
             std::option::Option<crate::model::ManifestProcessingRules>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2115,6 +2166,18 @@ pub mod playback_configuration {
             input: std::option::Option<crate::model::LivePreRollConfiguration>,
         ) -> Self {
             self.live_pre_roll_configuration = input;
+            self
+        }
+        /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+        pub fn log_configuration(mut self, input: crate::model::LogConfiguration) -> Self {
+            self.log_configuration = Some(input);
+            self
+        }
+        pub fn set_log_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LogConfiguration>,
+        ) -> Self {
+            self.log_configuration = input;
             self
         }
         /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
@@ -2255,6 +2318,7 @@ pub mod playback_configuration {
                 dash_configuration: self.dash_configuration,
                 hls_configuration: self.hls_configuration,
                 live_pre_roll_configuration: self.live_pre_roll_configuration,
+                log_configuration: self.log_configuration,
                 manifest_processing_rules: self.manifest_processing_rules,
                 name: self.name,
                 personalization_threshold_seconds: self

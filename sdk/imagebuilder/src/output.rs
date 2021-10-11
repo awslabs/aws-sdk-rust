@@ -792,11 +792,10 @@ pub struct ListImagesOutput {
     /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
     /// You can assign values for the first three, and can filter on all of them.</p>
     /// <p>
-    /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
-    /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
-    /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
-    /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
-    /// automatically uses a wildcard for that, if applicable.</p>
+    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+    /// to specify the most recent versions or nodes when selecting the base image or components for your
+    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+    /// wildcards.</p>
     /// </note>
     pub image_version_list: std::option::Option<std::vec::Vec<crate::model::ImageVersion>>,
     /// <p>The next token used for paginated responses. When this is not empty, there are additional
@@ -2627,7 +2626,7 @@ impl DeleteImagePipelineOutput {
 pub struct DeleteImageOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the image that was deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteImageOutput {
@@ -2657,7 +2656,7 @@ pub mod delete_image_output {
             self.request_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image that was deleted.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
         pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_build_version_arn = Some(input.into());
             self

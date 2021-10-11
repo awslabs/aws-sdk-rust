@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon WorkLink is a cloud-based service that provides secure access
 //! to internal websites and web apps from iOS and Android phones. In a single step, your users, such as
 //! employees, can access internal websites as efficiently as they access any other public website.

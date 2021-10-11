@@ -2123,7 +2123,7 @@ impl ListLambdaFunctionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIntegrationAssociationsOutput {
-    /// <p>The AppIntegration associations.</p>
+    /// <p>The associations.</p>
     pub integration_association_summary_list:
         std::option::Option<std::vec::Vec<crate::model::IntegrationAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -4400,7 +4400,7 @@ impl CreateQueueOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIntegrationAssociationOutput {
-    /// <p>The identifier for the association.</p>
+    /// <p>The identifier for the integration association.</p>
     pub integration_association_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the association.</p>
     pub integration_association_arn: std::option::Option<std::string::String>,
@@ -4429,7 +4429,7 @@ pub mod create_integration_association_output {
         pub(crate) integration_association_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the association.</p>
+        /// <p>The identifier for the integration association.</p>
         pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.integration_association_id = Some(input.into());
             self

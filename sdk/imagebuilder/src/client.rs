@@ -372,7 +372,7 @@ pub mod fluent_builders {
         /// <p>
         /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
         /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number, and that is not open for updates.</p>
+        /// build number to the fourth node.</p>
         /// <p>
         /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
         /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
@@ -424,7 +424,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
         /// <p> The operating system (OS) version supported by the component. If the OS information is
-        /// available, a prefix match is performed against the parent image OS version during image recipe
+        /// available, a prefix match is performed against the base image OS version during image recipe
         /// creation.</p>
         pub fn supported_os_versions(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.supported_os_versions(inp);
@@ -580,7 +580,7 @@ pub mod fluent_builders {
         /// <p>
         /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
         /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number, and that is not open for updates.</p>
+        /// build number to the fourth node.</p>
         /// <p>
         /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
         /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
@@ -648,7 +648,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dockerfile_template_uri(input);
             self
         }
-        /// <p>Specifies the operating system platform when you use a custom source image.</p>
+        /// <p>Specifies the operating system platform when you use a custom base image.</p>
         pub fn platform_override(mut self, inp: crate::model::Platform) -> Self {
             self.inner = self.inner.platform_override(inp);
             self
@@ -660,7 +660,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform_override(input);
             self
         }
-        /// <p>Specifies the operating system version for the source image.</p>
+        /// <p>Specifies the operating system version for the base image.</p>
         pub fn image_os_version_override(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_os_version_override(inp);
             self
@@ -672,7 +672,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_os_version_override(input);
             self
         }
-        /// <p>The source image for the container recipe.</p>
+        /// <p>The base image for the container recipe.</p>
         pub fn parent_image(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parent_image(inp);
             self
@@ -1283,7 +1283,7 @@ pub mod fluent_builders {
         /// <p>
         /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
         /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number, and that is not open for updates.</p>
+        /// build number to the fourth node.</p>
         /// <p>
         /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
         /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
@@ -1315,7 +1315,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_components(input);
             self
         }
-        /// <p>The parent image of the image recipe. The value of the string can be the ARN of the parent
+        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base
         /// image or an AMI ID. The format for the ARN follows this example:
         /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
         /// You can provide the specific version that you want to use, or you can use a wildcard in
@@ -1529,7 +1529,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging(input);
             self
         }
-        /// <p>The key pair of the infrastructure configuration. This can be used to log on to and debug
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
         /// the instance used to create your image.</p>
         pub fn key_pair(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_pair(inp);
@@ -1584,6 +1584,22 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_resource_tags(input);
+            self
+        }
+        /// <p>The instance metadata options that you can set for the HTTP requests that
+        /// pipeline builds use to launch EC2 build and test instances.</p>
+        pub fn instance_metadata_options(
+            mut self,
+            inp: crate::model::InstanceMetadataOptions,
+        ) -> Self {
+            self.inner = self.inner.instance_metadata_options(inp);
+            self
+        }
+        pub fn set_instance_metadata_options(
+            mut self,
+            input: std::option::Option<crate::model::InstanceMetadataOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_instance_metadata_options(input);
             self
         }
         /// Adds a key-value pair to `tags`.
@@ -1835,7 +1851,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the image to delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
         pub fn image_build_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_build_version_arn(inp);
             self
@@ -2713,11 +2729,10 @@ pub mod fluent_builders {
         /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
         /// You can assign values for the first three, and can filter on all of them.</p>
         /// <p>
-        /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
-        /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
-        /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
-        /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
-        /// automatically uses a wildcard for that, if applicable.</p>
+        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+        /// to specify the most recent versions or nodes when selecting the base image or components for your
+        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+        /// wildcards.</p>
         /// </note>
         pub fn semantic_version(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.semantic_version(inp);
@@ -4902,7 +4917,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging(input);
             self
         }
-        /// <p>The key pair of the infrastructure configuration. This can be used to log on to and debug
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
         /// the instance used to create your image.</p>
         pub fn key_pair(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_pair(inp);
@@ -4966,6 +4981,41 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_resource_tags(input);
+            self
+        }
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds
+        /// use to launch EC2 build and test instances. For more information about instance metadata
+        /// options, see one of the following links:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+        /// the instance metadata options</a> in the <i>
+        /// <i>Amazon EC2 User Guide</i>
+        /// </i>
+        /// for Linux instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
+        /// the instance metadata options</a> in the <i>
+        /// <i>Amazon EC2 Windows Guide</i>
+        /// </i>
+        /// for Windows instances.</p>
+        /// </li>
+        /// </ul>
+        pub fn instance_metadata_options(
+            mut self,
+            inp: crate::model::InstanceMetadataOptions,
+        ) -> Self {
+            self.inner = self.inner.instance_metadata_options(inp);
+            self
+        }
+        pub fn set_instance_metadata_options(
+            mut self,
+            input: std::option::Option<crate::model::InstanceMetadataOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_instance_metadata_options(input);
             self
         }
     }

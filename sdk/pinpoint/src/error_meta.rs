@@ -193,6 +193,36 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateInAppTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateInAppTemplateError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateInAppTemplateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::CreateInAppTemplateErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::CreateInAppTemplateErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::CreateInAppTemplateErrorKind::MethodNotAllowedException(inner) => {
+                    Error::MethodNotAllowedException(inner)
+                }
+                crate::error::CreateInAppTemplateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::CreateInAppTemplateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::CreateJourneyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -821,6 +851,42 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteGcmChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteInAppTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteInAppTemplateError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteInAppTemplateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::DeleteInAppTemplateErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::DeleteInAppTemplateErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::DeleteInAppTemplateErrorKind::MethodNotAllowedException(inner) => {
+                    Error::MethodNotAllowedException(inner)
+                }
+                crate::error::DeleteInAppTemplateErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::DeleteInAppTemplateErrorKind::PayloadTooLargeException(inner) => {
+                    Error::PayloadTooLargeException(inner)
+                }
+                crate::error::DeleteInAppTemplateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::DeleteInAppTemplateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -2048,6 +2114,78 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetImportJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::GetInAppMessagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetInAppMessagesError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetInAppMessagesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::GetInAppMessagesErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::GetInAppMessagesErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::GetInAppMessagesErrorKind::MethodNotAllowedException(inner) => {
+                    Error::MethodNotAllowedException(inner)
+                }
+                crate::error::GetInAppMessagesErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetInAppMessagesErrorKind::PayloadTooLargeException(inner) => {
+                    Error::PayloadTooLargeException(inner)
+                }
+                crate::error::GetInAppMessagesErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::GetInAppMessagesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::GetInAppTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetInAppTemplateError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetInAppTemplateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::GetInAppTemplateErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::GetInAppTemplateErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::GetInAppTemplateErrorKind::MethodNotAllowedException(inner) => {
+                    Error::MethodNotAllowedException(inner)
+                }
+                crate::error::GetInAppTemplateErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetInAppTemplateErrorKind::PayloadTooLargeException(inner) => {
+                    Error::PayloadTooLargeException(inner)
+                }
+                crate::error::GetInAppTemplateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::GetInAppTemplateErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -3466,6 +3604,42 @@ where
                     Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateGcmChannelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateInAppTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateInAppTemplateError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateInAppTemplateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::UpdateInAppTemplateErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::UpdateInAppTemplateErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::UpdateInAppTemplateErrorKind::MethodNotAllowedException(inner) => {
+                    Error::MethodNotAllowedException(inner)
+                }
+                crate::error::UpdateInAppTemplateErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::UpdateInAppTemplateErrorKind::PayloadTooLargeException(inner) => {
+                    Error::PayloadTooLargeException(inner)
+                }
+                crate::error::UpdateInAppTemplateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::UpdateInAppTemplateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

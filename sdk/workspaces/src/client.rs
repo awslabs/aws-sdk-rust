@@ -90,6 +90,11 @@ where
     pub fn create_tags(&self) -> fluent_builders::CreateTags<C, M, R> {
         fluent_builders::CreateTags::new(self.handle.clone())
     }
+    pub fn create_updated_workspace_image(
+        &self,
+    ) -> fluent_builders::CreateUpdatedWorkspaceImage<C, M, R> {
+        fluent_builders::CreateUpdatedWorkspaceImage::new(self.handle.clone())
+    }
     pub fn create_workspace_bundle(&self) -> fluent_builders::CreateWorkspaceBundle<C, M, R> {
         fluent_builders::CreateWorkspaceBundle::new(self.handle.clone())
     }
@@ -613,7 +618,7 @@ pub mod fluent_builders {
         }
         /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
         /// <important>
-        /// <p>After you create a connection string, it is always associated to your AWS account. You cannot recreate the same
+        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
         /// connection string with a different account, even if you delete all instances of it from the original account. The
         /// connection string is globally reserved for your account.</p>
         /// </important>
@@ -795,6 +800,100 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateUpdatedWorkspaceImage<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_updated_workspace_image_input::Builder,
+    }
+    impl<C, M, R> CreateUpdatedWorkspaceImage<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateUpdatedWorkspaceImageOutput,
+            smithy_http::result::SdkError<crate::error::CreateUpdatedWorkspaceImageError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateUpdatedWorkspaceImageInputOperationOutputAlias,
+                crate::output::CreateUpdatedWorkspaceImageOutput,
+                crate::error::CreateUpdatedWorkspaceImageError,
+                crate::input::CreateUpdatedWorkspaceImageInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the new updated WorkSpace image.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>A description of whether updates for the WorkSpace image are available.</p>
+        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(inp);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The identifier of the source WorkSpace image.</p>
+        pub fn source_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_image_id(inp);
+            self
+        }
+        pub fn set_source_image_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_image_id(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
+        /// <note>
+        /// <p>To add tags at the same time when you're creating the updated image, you must create
+        /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// </note>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -1854,8 +1953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
-        /// <p>To describe the bundles provided by AWS, specify <code>AMAZON</code>. To describe the
-        /// bundles that belong to your account, don't specify a value.</p>
+        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
+        /// To describe the bundles that belong to your account, don't specify a value.</p>
         pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner(inp);
             self
@@ -3462,7 +3561,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
-        /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your AWS account must be
+        /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
         /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
         /// InvalidParameterValuesException error. For more information about BYOL images, see
         /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
@@ -3855,7 +3954,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias_id(input);
             self
         }
-        /// <p>Indicates whether to share or unshare the connection alias with the specified AWS account.</p>
+        /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
         pub fn connection_alias_permission(
             mut self,
             inp: crate::model::ConnectionAliasPermission,
@@ -4066,9 +4165,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_allow_copy_image(input);
             self
         }
-        /// <p>The identifier of the AWS account to share or unshare the image with.</p>
+        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
         /// <important>
-        /// <p>Before sharing the image, confirm that you are sharing to the correct AWS account ID.</p>
+        /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
         /// </important>
         pub fn shared_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.shared_account_id(inp);

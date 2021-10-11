@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Cognito Federated Identities</fullname>
 //! <p>Amazon Cognito Federated Identities is a web service that delivers scoped temporary
 //! credentials to mobile devices and other untrusted environments. It uniquely identifies a

@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Elastic File System</fullname>
 //! <p>Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for use
 //! with Amazon EC2 instances in the Amazon Web Services Cloud. With Amazon EFS, storage capacity is elastic,

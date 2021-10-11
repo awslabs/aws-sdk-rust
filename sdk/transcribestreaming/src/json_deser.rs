@@ -811,6 +811,11 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_transcribestreaming_item_list(tokens)?
                                 );
                             }
+                            "Entities" => {
+                                builder = builder.set_entities(
+                                    crate::json_deser::deser_list_com_amazonaws_transcribestreaming_entity_list(tokens)?
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -922,6 +927,41 @@ where
                     }
                     _ => {
                         let value = crate::json_deser::deser_structure_crate_model_item(tokens)?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_transcribestreaming_entity_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<std::vec::Vec<crate::model::Entity>>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value = crate::json_deser::deser_structure_crate_model_entity(tokens)?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -1188,6 +1228,93 @@ where
                                     smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_entity<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::Entity>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::Entity::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "StartTime" => {
+                                builder = builder.set_start_time(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64()),
+                                );
+                            }
+                            "EndTime" => {
+                                builder = builder.set_end_time(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64()),
+                                );
+                            }
+                            "Category" => {
+                                builder = builder.set_category(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Type" => {
+                                builder = builder.set_type(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Content" => {
+                                builder = builder.set_content(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Confidence" => {
+                                builder = builder.set_confidence(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64()),
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

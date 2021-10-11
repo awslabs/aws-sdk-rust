@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>This reference provides descriptions of the AWS Application Cost Profiler API.</p>
 //! <p>The AWS Application Cost Profiler API provides programmatic access to view, create, update, and delete
 //! application cost report definitions, as well as to import your usage data into the Application Cost Profiler

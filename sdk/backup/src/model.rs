@@ -6,14 +6,21 @@ pub struct ReportSetting {
     /// <p>Identifies the report template for the report. Reports are built using a report
     /// template. The report templates are:</p>
     /// <p>
-    /// <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+    /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+    /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
     /// </p>
     pub report_template: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
+    pub framework_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The number of frameworks a report covers.</p>
+    pub number_of_frameworks: i32,
 }
 impl std::fmt::Debug for ReportSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReportSetting");
         formatter.field("report_template", &self.report_template);
+        formatter.field("framework_arns", &self.framework_arns);
+        formatter.field("number_of_frameworks", &self.number_of_frameworks);
         formatter.finish()
     }
 }
@@ -24,12 +31,15 @@ pub mod report_setting {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_template: std::option::Option<std::string::String>,
+        pub(crate) framework_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) number_of_frameworks: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Identifies the report template for the report. Reports are built using a report
         /// template. The report templates are:</p>
         /// <p>
-        /// <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
         /// </p>
         pub fn report_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.report_template = Some(input.into());
@@ -42,10 +52,34 @@ pub mod report_setting {
             self.report_template = input;
             self
         }
+        pub fn framework_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.framework_arns.unwrap_or_default();
+            v.push(input.into());
+            self.framework_arns = Some(v);
+            self
+        }
+        pub fn set_framework_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.framework_arns = input;
+            self
+        }
+        /// <p>The number of frameworks a report covers.</p>
+        pub fn number_of_frameworks(mut self, input: i32) -> Self {
+            self.number_of_frameworks = Some(input);
+            self
+        }
+        pub fn set_number_of_frameworks(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_frameworks = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReportSetting`](crate::model::ReportSetting)
         pub fn build(self) -> crate::model::ReportSetting {
             crate::model::ReportSetting {
                 report_template: self.report_template,
+                framework_arns: self.framework_arns,
+                number_of_frameworks: self.number_of_frameworks.unwrap_or_default(),
             }
         }
     }
@@ -403,8 +437,8 @@ impl FrameworkControl {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ControlScope {
-    /// <p>Describes whether the control scope includes a specific resource identified by its
-    /// unique Amazon Resource Name (ARN).</p>
+    /// <p>The ID of the only Amazon Web Services resource that you want your control scope to
+    /// contain.</p>
     pub compliance_resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes whether the control scope includes one or more types of resources, such as
     /// <code>EFS</code> or <code>RDS</code>.</p>
@@ -666,8 +700,7 @@ impl AdvancedBackupSetting {
 
 /// <p>Contains an optional backup plan display name and an array of <code>BackupRule</code>
 /// objects, each of which specifies a backup rule. Each rule in a backup plan is a separate
-/// scheduled task and can back up a different selection of Amazon Web Services resources.
-/// </p>
+/// scheduled task. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupPlanInput {
@@ -1519,8 +1552,12 @@ pub struct ReportPlan {
     /// <p>Identifies the report template for the report. Reports are built using a report
     /// template. The report templates are:</p>
     /// <p>
-    /// <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+    /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+    /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
     /// </p>
+    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
+    /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
+    /// coverage by Amazon Web Services Regions and frameworks.</p>
     pub report_setting: std::option::Option<crate::model::ReportSetting>,
     /// <p>Contains information about where and how to deliver your reports, specifically your
     /// Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
@@ -1628,8 +1665,12 @@ pub mod report_plan {
         /// <p>Identifies the report template for the report. Reports are built using a report
         /// template. The report templates are:</p>
         /// <p>
-        /// <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
         /// </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
+        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
+        /// coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn report_setting(mut self, input: crate::model::ReportSetting) -> Self {
             self.report_setting = Some(input);
             self
@@ -1755,7 +1796,8 @@ pub struct ReportJob {
     /// <p>Identifies the report template for the report. Reports are built using a report
     /// template. The report templates are: </p>
     /// <p>
-    /// <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+    /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+    /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
     /// </p>
     pub report_template: std::option::Option<std::string::String>,
     /// <p>The date and time that a report job is created, in Unix format and Coordinated Universal
@@ -1842,7 +1884,8 @@ pub mod report_job {
         /// <p>Identifies the report template for the report. Reports are built using a report
         /// template. The report templates are: </p>
         /// <p>
-        /// <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
         /// </p>
         pub fn report_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.report_template = Some(input.into());

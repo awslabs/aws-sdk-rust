@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Elastic Container Registry</fullname>
 //! <p>Amazon Elastic Container Registry (Amazon ECR) is a managed container image registry service. Customers can use the
 //! familiar Docker CLI, or their preferred client, to push, pull, and manage images. Amazon ECR

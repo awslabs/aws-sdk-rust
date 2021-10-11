@@ -85,6 +85,16 @@ pub fn serialize_operation_crate_operation_create_license_configuration(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_create_license_conversion_task_for_resource(
+    input: &crate::input::CreateLicenseConversionTaskForResourceInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_license_conversion_task_for_resource_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_create_license_manager_report_generator(
     input: &crate::input::CreateLicenseManagerReportGeneratorInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -233,6 +243,19 @@ pub fn serialize_operation_crate_operation_get_license_configuration(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_get_license_conversion_task(
+    input: &crate::input::GetLicenseConversionTaskInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_get_license_conversion_task_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_get_license_manager_report_generator(
     input: &crate::input::GetLicenseManagerReportGeneratorInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -301,6 +324,19 @@ pub fn serialize_operation_crate_operation_list_license_configurations(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_list_license_configurations_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_license_conversion_tasks(
+    input: &crate::input::ListLicenseConversionTasksInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_license_conversion_tasks_input(
         &mut object,
         input,
     );

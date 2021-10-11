@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon EC2 Instance Connect enables system administrators to publish one-time use SSH
 //! public keys to EC2, providing users a simple and secure way to connect to their
 //! instances.</p>

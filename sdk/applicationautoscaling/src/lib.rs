@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>With Application Auto Scaling, you can configure automatic scaling for the following
 //! resources:</p>
 //! <ul>
@@ -39,10 +40,13 @@
 //! <p>Amazon Managed Streaming for Apache Kafka broker storage</p>
 //! </li>
 //! <li>
+//! <p>Amazon Neptune clusters</p>
+//! </li>
+//! <li>
 //! <p>Amazon SageMaker endpoint variants</p>
 //! </li>
 //! <li>
-//! <p>Spot Fleet (Amazon EC2) requests</p>
+//! <p>Spot Fleets (Amazon EC2)</p>
 //! </li>
 //! <li>
 //! <p>Custom resources provided by your own applications or services</p>

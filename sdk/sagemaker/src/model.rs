@@ -1321,7 +1321,7 @@ pub struct ResourceSpec {
     pub sage_maker_image_version_arn: std::option::Option<std::string::String>,
     /// <p>The instance type that the image version runs on.</p>
     pub instance_type: std::option::Option<crate::model::AppInstanceType>,
-    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the Resource.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
     pub lifecycle_config_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceSpec {
@@ -1388,7 +1388,7 @@ pub mod resource_spec {
             self.instance_type = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the Resource.</p>
+        /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
         pub fn lifecycle_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.lifecycle_config_arn = Some(input.into());
             self
@@ -1667,7 +1667,7 @@ pub struct KernelGatewayAppSettings {
     pub default_resource_spec: std::option::Option<crate::model::ResourceSpec>,
     /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
     pub custom_images: std::option::Option<std::vec::Vec<crate::model::CustomImage>>,
-    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the KernelGatewayApp.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p>
     pub lifecycle_config_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for KernelGatewayAppSettings {
@@ -4461,7 +4461,7 @@ pub struct EndpointInput {
     /// <p>Path to the filesystem where the endpoint data is available to the container.</p>
     pub local_path: std::option::Option<std::string::String>,
     /// <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode for
-    /// transfering data for the monitoring job. <code>Pipe</code> mode is recommended for large
+    /// transferring data for the monitoring job. <code>Pipe</code> mode is recommended for large
     /// datasets. <code>File</code> mode is useful for small files that fit in memory. Defaults to
     /// <code>File</code>.</p>
     pub s3_input_mode: std::option::Option<crate::model::ProcessingS3InputMode>,
@@ -4548,7 +4548,7 @@ pub mod endpoint_input {
             self
         }
         /// <p>Whether the <code>Pipe</code> or <code>File</code> is used as the input mode for
-        /// transfering data for the monitoring job. <code>Pipe</code> mode is recommended for large
+        /// transferring data for the monitoring job. <code>Pipe</code> mode is recommended for large
         /// datasets. <code>File</code> mode is useful for small files that fit in memory. Defaults to
         /// <code>File</code>.</p>
         pub fn s3_input_mode(mut self, input: crate::model::ProcessingS3InputMode) -> Self {
@@ -6700,6 +6700,8 @@ pub struct SearchRecord {
     /// with a unique identifier for each row where each column in the table is a feature.
     /// In principle, a Feature Group is composed of features and values per features.</p>
     pub feature_group: std::option::Option<crate::model::FeatureGroup>,
+    /// <p>The properties of a project.</p>
+    pub project: std::option::Option<crate::model::Project>,
 }
 impl std::fmt::Debug for SearchRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6714,6 +6716,7 @@ impl std::fmt::Debug for SearchRecord {
         formatter.field("pipeline", &self.pipeline);
         formatter.field("pipeline_execution", &self.pipeline_execution);
         formatter.field("feature_group", &self.feature_group);
+        formatter.field("project", &self.project);
         formatter.finish()
     }
 }
@@ -6733,6 +6736,7 @@ pub mod search_record {
         pub(crate) pipeline: std::option::Option<crate::model::Pipeline>,
         pub(crate) pipeline_execution: std::option::Option<crate::model::PipelineExecution>,
         pub(crate) feature_group: std::option::Option<crate::model::FeatureGroup>,
+        pub(crate) project: std::option::Option<crate::model::Project>,
     }
     impl Builder {
         /// <p>The properties of a training job.</p>
@@ -6849,6 +6853,15 @@ pub mod search_record {
             self.feature_group = input;
             self
         }
+        /// <p>The properties of a project.</p>
+        pub fn project(mut self, input: crate::model::Project) -> Self {
+            self.project = Some(input);
+            self
+        }
+        pub fn set_project(mut self, input: std::option::Option<crate::model::Project>) -> Self {
+            self.project = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchRecord`](crate::model::SearchRecord)
         pub fn build(self) -> crate::model::SearchRecord {
             crate::model::SearchRecord {
@@ -6862,6 +6875,7 @@ pub mod search_record {
                 pipeline: self.pipeline,
                 pipeline_execution: self.pipeline_execution,
                 feature_group: self.feature_group,
+                project: self.project,
             }
         }
     }
@@ -6870,6 +6884,739 @@ impl SearchRecord {
     /// Creates a new builder-style object to manufacture [`SearchRecord`](crate::model::SearchRecord)
     pub fn builder() -> crate::model::search_record::Builder {
         crate::model::search_record::Builder::default()
+    }
+}
+
+/// <p>The properties of a project as returned by the Search API.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Project {
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub project_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the project.</p>
+    pub project_name: std::option::Option<std::string::String>,
+    /// <p>The ID of the project.</p>
+    pub project_id: std::option::Option<std::string::String>,
+    /// <p>The description of the project.</p>
+    pub project_description: std::option::Option<std::string::String>,
+    /// <p>Details that you specify to provision a service catalog product. For information about
+    /// service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
+    /// Catalog</a>.</p>
+    pub service_catalog_provisioning_details:
+        std::option::Option<crate::model::ServiceCatalogProvisioningDetails>,
+    /// <p>Details of a provisioned service catalog product. For information about service catalog,
+    /// see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
+    /// Catalog</a>.</p>
+    pub service_catalog_provisioned_product_details:
+        std::option::Option<crate::model::ServiceCatalogProvisionedProductDetails>,
+    /// <p>The status of the project.</p>
+    pub project_status: std::option::Option<crate::model::ProjectStatus>,
+    /// <p>Who created the project.</p>
+    pub created_by: std::option::Option<crate::model::UserContext>,
+    /// <p>A timestamp specifying when the project was created.</p>
+    pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+    /// different ways, for example, by purpose, owner, or environment. For more information,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// Resources</a>.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for Project {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Project");
+        formatter.field("project_arn", &self.project_arn);
+        formatter.field("project_name", &self.project_name);
+        formatter.field("project_id", &self.project_id);
+        formatter.field("project_description", &self.project_description);
+        formatter.field(
+            "service_catalog_provisioning_details",
+            &self.service_catalog_provisioning_details,
+        );
+        formatter.field(
+            "service_catalog_provisioned_product_details",
+            &self.service_catalog_provisioned_product_details,
+        );
+        formatter.field("project_status", &self.project_status);
+        formatter.field("created_by", &self.created_by);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`Project`](crate::model::Project)
+pub mod project {
+    /// A builder for [`Project`](crate::model::Project)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) project_arn: std::option::Option<std::string::String>,
+        pub(crate) project_name: std::option::Option<std::string::String>,
+        pub(crate) project_id: std::option::Option<std::string::String>,
+        pub(crate) project_description: std::option::Option<std::string::String>,
+        pub(crate) service_catalog_provisioning_details:
+            std::option::Option<crate::model::ServiceCatalogProvisioningDetails>,
+        pub(crate) service_catalog_provisioned_product_details:
+            std::option::Option<crate::model::ServiceCatalogProvisionedProductDetails>,
+        pub(crate) project_status: std::option::Option<crate::model::ProjectStatus>,
+        pub(crate) created_by: std::option::Option<crate::model::UserContext>,
+        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the project.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_arn = Some(input.into());
+            self
+        }
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_arn = input;
+            self
+        }
+        /// <p>The name of the project.</p>
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_name = Some(input.into());
+            self
+        }
+        pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_name = input;
+            self
+        }
+        /// <p>The ID of the project.</p>
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_id = Some(input.into());
+            self
+        }
+        pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_id = input;
+            self
+        }
+        /// <p>The description of the project.</p>
+        pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_description = Some(input.into());
+            self
+        }
+        pub fn set_project_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.project_description = input;
+            self
+        }
+        /// <p>Details that you specify to provision a service catalog product. For information about
+        /// service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
+        /// Catalog</a>.</p>
+        pub fn service_catalog_provisioning_details(
+            mut self,
+            input: crate::model::ServiceCatalogProvisioningDetails,
+        ) -> Self {
+            self.service_catalog_provisioning_details = Some(input);
+            self
+        }
+        pub fn set_service_catalog_provisioning_details(
+            mut self,
+            input: std::option::Option<crate::model::ServiceCatalogProvisioningDetails>,
+        ) -> Self {
+            self.service_catalog_provisioning_details = input;
+            self
+        }
+        /// <p>Details of a provisioned service catalog product. For information about service catalog,
+        /// see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
+        /// Catalog</a>.</p>
+        pub fn service_catalog_provisioned_product_details(
+            mut self,
+            input: crate::model::ServiceCatalogProvisionedProductDetails,
+        ) -> Self {
+            self.service_catalog_provisioned_product_details = Some(input);
+            self
+        }
+        pub fn set_service_catalog_provisioned_product_details(
+            mut self,
+            input: std::option::Option<crate::model::ServiceCatalogProvisionedProductDetails>,
+        ) -> Self {
+            self.service_catalog_provisioned_product_details = input;
+            self
+        }
+        /// <p>The status of the project.</p>
+        pub fn project_status(mut self, input: crate::model::ProjectStatus) -> Self {
+            self.project_status = Some(input);
+            self
+        }
+        pub fn set_project_status(
+            mut self,
+            input: std::option::Option<crate::model::ProjectStatus>,
+        ) -> Self {
+            self.project_status = input;
+            self
+        }
+        /// <p>Who created the project.</p>
+        pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
+            self.created_by = Some(input);
+            self
+        }
+        pub fn set_created_by(
+            mut self,
+            input: std::option::Option<crate::model::UserContext>,
+        ) -> Self {
+            self.created_by = input;
+            self
+        }
+        /// <p>A timestamp specifying when the project was created.</p>
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Project`](crate::model::Project)
+        pub fn build(self) -> crate::model::Project {
+            crate::model::Project {
+                project_arn: self.project_arn,
+                project_name: self.project_name,
+                project_id: self.project_id,
+                project_description: self.project_description,
+                service_catalog_provisioning_details: self.service_catalog_provisioning_details,
+                service_catalog_provisioned_product_details: self
+                    .service_catalog_provisioned_product_details,
+                project_status: self.project_status,
+                created_by: self.created_by,
+                creation_time: self.creation_time,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl Project {
+    /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project)
+    pub fn builder() -> crate::model::project::Builder {
+        crate::model::project::Builder::default()
+    }
+}
+
+/// <p>A tag object that consists of a key and an optional value, used to manage metadata
+/// for SageMaker Amazon Web Services resources.</p>
+/// <p>You can add tags to notebook instances, training jobs, hyperparameter tuning jobs,
+/// batch transform jobs, models, labeling jobs, work teams, endpoint configurations, and
+/// endpoints. For more information on adding tags to SageMaker resources, see <a>AddTags</a>.</p>
+/// <p>For more information on adding metadata to your Amazon Web Services resources with tagging, see
+/// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+/// resources</a>. For advice on best practices for managing Amazon Web Services resources with
+/// tagging, see <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+/// Best Practices: Implement an Effective Amazon Web Services Resource Tagging Strategy</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Tag {
+    /// <p>The tag key. Tag keys must be unique per resource.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The tag value.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Tag {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Tag");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`Tag`](crate::model::Tag)
+pub mod tag {
+    /// A builder for [`Tag`](crate::model::Tag)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The tag key. Tag keys must be unique per resource.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The tag value.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        pub fn build(self) -> crate::model::Tag {
+            crate::model::Tag {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
+/// <p>Information about the user who created or modified an experiment, trial, trial
+/// component, or project.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserContext {
+    /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
+    pub user_profile_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the user's profile.</p>
+    pub user_profile_name: std::option::Option<std::string::String>,
+    /// <p>The domain associated with the user.</p>
+    pub domain_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UserContext {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserContext");
+        formatter.field("user_profile_arn", &self.user_profile_arn);
+        formatter.field("user_profile_name", &self.user_profile_name);
+        formatter.field("domain_id", &self.domain_id);
+        formatter.finish()
+    }
+}
+/// See [`UserContext`](crate::model::UserContext)
+pub mod user_context {
+    /// A builder for [`UserContext`](crate::model::UserContext)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_profile_arn: std::option::Option<std::string::String>,
+        pub(crate) user_profile_name: std::option::Option<std::string::String>,
+        pub(crate) domain_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
+        pub fn user_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_profile_arn = Some(input.into());
+            self
+        }
+        pub fn set_user_profile_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_profile_arn = input;
+            self
+        }
+        /// <p>The name of the user's profile.</p>
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_profile_name = Some(input.into());
+            self
+        }
+        pub fn set_user_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_profile_name = input;
+            self
+        }
+        /// <p>The domain associated with the user.</p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_id = Some(input.into());
+            self
+        }
+        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserContext`](crate::model::UserContext)
+        pub fn build(self) -> crate::model::UserContext {
+            crate::model::UserContext {
+                user_profile_arn: self.user_profile_arn,
+                user_profile_name: self.user_profile_name,
+                domain_id: self.domain_id,
+            }
+        }
+    }
+}
+impl UserContext {
+    /// Creates a new builder-style object to manufacture [`UserContext`](crate::model::UserContext)
+    pub fn builder() -> crate::model::user_context::Builder {
+        crate::model::user_context::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ProjectStatus {
+    CreateCompleted,
+    CreateFailed,
+    CreateInProgress,
+    DeleteCompleted,
+    DeleteFailed,
+    DeleteInProgress,
+    Pending,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ProjectStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CreateCompleted" => ProjectStatus::CreateCompleted,
+            "CreateFailed" => ProjectStatus::CreateFailed,
+            "CreateInProgress" => ProjectStatus::CreateInProgress,
+            "DeleteCompleted" => ProjectStatus::DeleteCompleted,
+            "DeleteFailed" => ProjectStatus::DeleteFailed,
+            "DeleteInProgress" => ProjectStatus::DeleteInProgress,
+            "Pending" => ProjectStatus::Pending,
+            other => ProjectStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ProjectStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ProjectStatus::from(s))
+    }
+}
+impl ProjectStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ProjectStatus::CreateCompleted => "CreateCompleted",
+            ProjectStatus::CreateFailed => "CreateFailed",
+            ProjectStatus::CreateInProgress => "CreateInProgress",
+            ProjectStatus::DeleteCompleted => "DeleteCompleted",
+            ProjectStatus::DeleteFailed => "DeleteFailed",
+            ProjectStatus::DeleteInProgress => "DeleteInProgress",
+            ProjectStatus::Pending => "Pending",
+            ProjectStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CreateCompleted",
+            "CreateFailed",
+            "CreateInProgress",
+            "DeleteCompleted",
+            "DeleteFailed",
+            "DeleteInProgress",
+            "Pending",
+        ]
+    }
+}
+impl AsRef<str> for ProjectStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Details of a provisioned service catalog product. For information about service catalog,
+/// see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
+/// Catalog</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceCatalogProvisionedProductDetails {
+    /// <p>The ID of the provisioned product.</p>
+    pub provisioned_product_id: std::option::Option<std::string::String>,
+    /// <p>The current status of the product.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an AVAILABLE status before performing operations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an AVAILABLE status before performing operations.</p>
+    /// </li>
+    /// </ul>
+    pub provisioned_product_status_message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ServiceCatalogProvisionedProductDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceCatalogProvisionedProductDetails");
+        formatter.field("provisioned_product_id", &self.provisioned_product_id);
+        formatter.field(
+            "provisioned_product_status_message",
+            &self.provisioned_product_status_message,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ServiceCatalogProvisionedProductDetails`](crate::model::ServiceCatalogProvisionedProductDetails)
+pub mod service_catalog_provisioned_product_details {
+    /// A builder for [`ServiceCatalogProvisionedProductDetails`](crate::model::ServiceCatalogProvisionedProductDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) provisioned_product_id: std::option::Option<std::string::String>,
+        pub(crate) provisioned_product_status_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the provisioned product.</p>
+        pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.provisioned_product_id = Some(input.into());
+            self
+        }
+        pub fn set_provisioned_product_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.provisioned_product_id = input;
+            self
+        }
+        /// <p>The current status of the product.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an AVAILABLE status before performing operations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an AVAILABLE status before performing operations.</p>
+        /// </li>
+        /// </ul>
+        pub fn provisioned_product_status_message(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.provisioned_product_status_message = Some(input.into());
+            self
+        }
+        pub fn set_provisioned_product_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.provisioned_product_status_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceCatalogProvisionedProductDetails`](crate::model::ServiceCatalogProvisionedProductDetails)
+        pub fn build(self) -> crate::model::ServiceCatalogProvisionedProductDetails {
+            crate::model::ServiceCatalogProvisionedProductDetails {
+                provisioned_product_id: self.provisioned_product_id,
+                provisioned_product_status_message: self.provisioned_product_status_message,
+            }
+        }
+    }
+}
+impl ServiceCatalogProvisionedProductDetails {
+    /// Creates a new builder-style object to manufacture [`ServiceCatalogProvisionedProductDetails`](crate::model::ServiceCatalogProvisionedProductDetails)
+    pub fn builder() -> crate::model::service_catalog_provisioned_product_details::Builder {
+        crate::model::service_catalog_provisioned_product_details::Builder::default()
+    }
+}
+
+/// <p>Details that you specify to provision a service catalog product. For information about
+/// service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
+/// Catalog</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceCatalogProvisioningDetails {
+    /// <p>The ID of the product to provision.</p>
+    pub product_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the provisioning artifact.</p>
+    pub provisioning_artifact_id: std::option::Option<std::string::String>,
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. </p>
+    pub path_id: std::option::Option<std::string::String>,
+    /// <p>A list of key value pairs that you specify when you provision a product.</p>
+    pub provisioning_parameters:
+        std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
+}
+impl std::fmt::Debug for ServiceCatalogProvisioningDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceCatalogProvisioningDetails");
+        formatter.field("product_id", &self.product_id);
+        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
+        formatter.field("path_id", &self.path_id);
+        formatter.field("provisioning_parameters", &self.provisioning_parameters);
+        formatter.finish()
+    }
+}
+/// See [`ServiceCatalogProvisioningDetails`](crate::model::ServiceCatalogProvisioningDetails)
+pub mod service_catalog_provisioning_details {
+    /// A builder for [`ServiceCatalogProvisioningDetails`](crate::model::ServiceCatalogProvisioningDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) product_id: std::option::Option<std::string::String>,
+        pub(crate) provisioning_artifact_id: std::option::Option<std::string::String>,
+        pub(crate) path_id: std::option::Option<std::string::String>,
+        pub(crate) provisioning_parameters:
+            std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
+    }
+    impl Builder {
+        /// <p>The ID of the product to provision.</p>
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_id = Some(input.into());
+            self
+        }
+        pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_id = input;
+            self
+        }
+        /// <p>The ID of the provisioning artifact.</p>
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.provisioning_artifact_id = Some(input.into());
+            self
+        }
+        pub fn set_provisioning_artifact_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.provisioning_artifact_id = input;
+            self
+        }
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. </p>
+        pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_id = Some(input.into());
+            self
+        }
+        pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_id = input;
+            self
+        }
+        pub fn provisioning_parameters(
+            mut self,
+            input: impl Into<crate::model::ProvisioningParameter>,
+        ) -> Self {
+            let mut v = self.provisioning_parameters.unwrap_or_default();
+            v.push(input.into());
+            self.provisioning_parameters = Some(v);
+            self
+        }
+        pub fn set_provisioning_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
+        ) -> Self {
+            self.provisioning_parameters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceCatalogProvisioningDetails`](crate::model::ServiceCatalogProvisioningDetails)
+        pub fn build(self) -> crate::model::ServiceCatalogProvisioningDetails {
+            crate::model::ServiceCatalogProvisioningDetails {
+                product_id: self.product_id,
+                provisioning_artifact_id: self.provisioning_artifact_id,
+                path_id: self.path_id,
+                provisioning_parameters: self.provisioning_parameters,
+            }
+        }
+    }
+}
+impl ServiceCatalogProvisioningDetails {
+    /// Creates a new builder-style object to manufacture [`ServiceCatalogProvisioningDetails`](crate::model::ServiceCatalogProvisioningDetails)
+    pub fn builder() -> crate::model::service_catalog_provisioning_details::Builder {
+        crate::model::service_catalog_provisioning_details::Builder::default()
+    }
+}
+
+/// <p>A key value pair used when you provision a project as a service catalog product. For
+/// information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
+/// Catalog</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProvisioningParameter {
+    /// <p>The key that identifies a provisioning parameter.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The value of the provisioning parameter.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ProvisioningParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProvisioningParameter");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`ProvisioningParameter`](crate::model::ProvisioningParameter)
+pub mod provisioning_parameter {
+    /// A builder for [`ProvisioningParameter`](crate::model::ProvisioningParameter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The key that identifies a provisioning parameter.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The value of the provisioning parameter.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProvisioningParameter`](crate::model::ProvisioningParameter)
+        pub fn build(self) -> crate::model::ProvisioningParameter {
+            crate::model::ProvisioningParameter {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl ProvisioningParameter {
+    /// Creates a new builder-style object to manufacture [`ProvisioningParameter`](crate::model::ProvisioningParameter)
+    pub fn builder() -> crate::model::provisioning_parameter::Builder {
+        crate::model::provisioning_parameter::Builder::default()
     }
 }
 
@@ -7196,76 +7943,6 @@ impl FeatureGroup {
     /// Creates a new builder-style object to manufacture [`FeatureGroup`](crate::model::FeatureGroup)
     pub fn builder() -> crate::model::feature_group::Builder {
         crate::model::feature_group::Builder::default()
-    }
-}
-
-/// <p>A tag object that consists of a key and an optional value, used to manage metadata
-/// for Amazon SageMaker Amazon Web Services resources.</p>
-/// <p>You can add tags to notebook instances, training jobs, hyperparameter tuning jobs,
-/// batch transform jobs, models, labeling jobs, work teams, endpoint configurations, and
-/// endpoints. For more information on adding tags to Amazon SageMaker resources, see <a>AddTags</a>.</p>
-/// <p>For more information on adding metadata to your Amazon Web Services resources with tagging, see
-/// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-/// resources</a>. For advice on best practices for managing Amazon Web Services resources with
-/// tagging, see <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
-/// Best Practices: Implement an Effective Amazon Web Services Resource Tagging Strategy</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Tag {
-    /// <p>The tag key. Tag keys must be unique per resource.</p>
-    pub key: std::option::Option<std::string::String>,
-    /// <p>The tag value.</p>
-    pub value: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
-/// See [`Tag`](crate::model::Tag)
-pub mod tag {
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) key: std::option::Option<std::string::String>,
-        pub(crate) value: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The tag key. Tag keys must be unique per resource.</p>
-        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.key = Some(input.into());
-            self
-        }
-        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
-        }
-        /// <p>The tag value.</p>
-        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.value = Some(input.into());
-            self
-        }
-        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
-        pub fn build(self) -> crate::model::Tag {
-            crate::model::Tag {
-                key: self.key,
-                value: self.value,
-            }
-        }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -8136,11 +8813,11 @@ pub struct PipelineExecution {
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time that the pipeline execution was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
     pub pipeline_parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -8311,8 +8988,8 @@ pub mod pipeline_execution {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -8324,8 +9001,8 @@ pub mod pipeline_execution {
             self.created_by = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
@@ -8373,88 +9050,6 @@ impl PipelineExecution {
     /// Creates a new builder-style object to manufacture [`PipelineExecution`](crate::model::PipelineExecution)
     pub fn builder() -> crate::model::pipeline_execution::Builder {
         crate::model::pipeline_execution::Builder::default()
-    }
-}
-
-/// <p>Information about the user who created or modified an experiment, trial, or trial
-/// component.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UserContext {
-    /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-    pub user_profile_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the user's profile.</p>
-    pub user_profile_name: std::option::Option<std::string::String>,
-    /// <p>The domain associated with the user.</p>
-    pub domain_id: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UserContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserContext");
-        formatter.field("user_profile_arn", &self.user_profile_arn);
-        formatter.field("user_profile_name", &self.user_profile_name);
-        formatter.field("domain_id", &self.domain_id);
-        formatter.finish()
-    }
-}
-/// See [`UserContext`](crate::model::UserContext)
-pub mod user_context {
-    /// A builder for [`UserContext`](crate::model::UserContext)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) user_profile_arn: std::option::Option<std::string::String>,
-        pub(crate) user_profile_name: std::option::Option<std::string::String>,
-        pub(crate) domain_id: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-        pub fn user_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.user_profile_arn = Some(input.into());
-            self
-        }
-        pub fn set_user_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_profile_arn = input;
-            self
-        }
-        /// <p>The name of the user's profile.</p>
-        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.user_profile_name = Some(input.into());
-            self
-        }
-        pub fn set_user_profile_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_profile_name = input;
-            self
-        }
-        /// <p>The domain associated with the user.</p>
-        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.domain_id = Some(input.into());
-            self
-        }
-        pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UserContext`](crate::model::UserContext)
-        pub fn build(self) -> crate::model::UserContext {
-            crate::model::UserContext {
-                user_profile_arn: self.user_profile_arn,
-                user_profile_name: self.user_profile_name,
-                domain_id: self.domain_id,
-            }
-        }
-    }
-}
-impl UserContext {
-    /// Creates a new builder-style object to manufacture [`UserContext`](crate::model::UserContext)
-    pub fn builder() -> crate::model::user_context::Builder {
-        crate::model::user_context::Builder::default()
     }
 }
 
@@ -8603,11 +9198,11 @@ pub struct Pipeline {
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time when the pipeline was last run.</p>
     pub last_run_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>A list of tags that apply to the pipeline.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8752,8 +9347,8 @@ pub mod pipeline {
             self.last_run_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -8765,8 +9360,8 @@ pub mod pipeline {
             self.created_by = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
@@ -8876,8 +9471,8 @@ pub struct ModelPackageGroup {
     pub model_package_group_description: std::option::Option<std::string::String>,
     /// <p>The time that the model group was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>The status of the model group. This can be one of the following values.</p>
     /// <ul>
@@ -8998,8 +9593,8 @@ pub mod model_package_group {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -9228,8 +9823,8 @@ pub struct ModelPackage {
     /// </li>
     /// </ul>
     pub model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
@@ -9237,8 +9832,8 @@ pub struct ModelPackage {
     pub model_metrics: std::option::Option<crate::model::ModelMetrics>,
     /// <p>The last time the model package was modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>A description provided when the model approval is set.</p>
     pub approval_description: std::option::Option<std::string::String>,
@@ -9512,8 +10107,8 @@ pub mod model_package {
             self.model_approval_status = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -9561,8 +10156,8 @@ pub mod model_package {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
@@ -14035,13 +14630,12 @@ pub struct TrialComponent {
     pub end_time: std::option::Option<smithy_types::Instant>,
     /// <p>When the component was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Who created the trial component.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the component was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>The hyperparameters of the component.</p>
     pub parameters: std::option::Option<
@@ -14217,8 +14811,7 @@ pub mod trial_component {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Who created the trial component.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -14242,8 +14835,8 @@ pub mod trial_component {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
@@ -15257,13 +15850,13 @@ pub struct DataProcessing {
     /// <code>JoinSource</code> to <code>Input</code>. You can specify
     /// <code>OutputFilter</code> as an additional filter to select a portion of the joined
     /// dataset and store it in the output file.</p>
-    /// <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds the transformed data to
+    /// <p>For JSON or JSONLines objects, such as a JSON array, SageMaker adds the transformed data to
     /// the input JSON object in an attribute called <code>SageMakerOutput</code>. The joined
     /// result for JSON must be a key-value pair object. If the input is not a key-value pair
-    /// object, Amazon SageMaker creates a new JSON file. In the new JSON file, and the input data is stored
+    /// object, SageMaker creates a new JSON file. In the new JSON file, and the input data is stored
     /// under the <code>SageMakerInput</code> key and the results are stored in
     /// <code>SageMakerOutput</code>.</p>
-    /// <p>For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed data with
+    /// <p>For CSV data, SageMaker takes each row as a JSON array and joins the transformed data with
     /// the input by appending each transformed row to the end of the input. The joined data has
     /// the original input data followed by the transformed data and the output is a CSV
     /// file.</p>
@@ -15330,13 +15923,13 @@ pub mod data_processing {
         /// <code>JoinSource</code> to <code>Input</code>. You can specify
         /// <code>OutputFilter</code> as an additional filter to select a portion of the joined
         /// dataset and store it in the output file.</p>
-        /// <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds the transformed data to
+        /// <p>For JSON or JSONLines objects, such as a JSON array, SageMaker adds the transformed data to
         /// the input JSON object in an attribute called <code>SageMakerOutput</code>. The joined
         /// result for JSON must be a key-value pair object. If the input is not a key-value pair
-        /// object, Amazon SageMaker creates a new JSON file. In the new JSON file, and the input data is stored
+        /// object, SageMaker creates a new JSON file. In the new JSON file, and the input data is stored
         /// under the <code>SageMakerInput</code> key and the results are stored in
         /// <code>SageMakerOutput</code>.</p>
-        /// <p>For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed data with
+        /// <p>For CSV data, SageMaker takes each row as a JSON array and joins the transformed data with
         /// the input by appending each transformed row to the end of the input. The joined data has
         /// the original input data followed by the transformed data and the output is a CSV
         /// file.</p>
@@ -20303,8 +20896,8 @@ impl AsRef<str> for SecondaryStatus {
     }
 }
 
-/// <p>Specifies a limit to how long a model training job, model compilation job, or
-/// hyperparameter tuning job can run. It also specifies how long a managed Spot training
+/// <p>Specifies a limit to how long a model training job or model compilation job
+/// can run. It also specifies how long a managed spot training
 /// job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training or
 /// compilation job. Use this API to cap model training costs.</p>
 /// <p>To stop a training job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays
@@ -20828,7 +21421,7 @@ pub struct OutputDataConfig {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution role must
+    /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must
     /// include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID,
     /// Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side
     /// encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket
@@ -20896,7 +21489,7 @@ pub mod output_data_config {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution role must
+        /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must
         /// include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID,
         /// Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side
         /// encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket
@@ -21215,6 +21808,40 @@ impl ShuffleConfig {
     }
 }
 
+/// <p>The training input mode that the algorithm supports. For more information about input modes, see
+/// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+/// <p>
+/// <b>Pipe mode</b>
+/// </p>
+/// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly
+/// from Amazon S3 to the container.</p>
+/// <p>
+/// <b>File mode</b>
+/// </p>
+/// <p>If an algorithm supports <code>File</code> mode, SageMaker
+/// downloads the training data from S3 to the provisioned ML storage volume, and mounts the
+/// directory to the Docker volume for the training container.</p>
+/// <p>You must provision the ML storage volume with sufficient capacity
+/// to accommodate the data downloaded from S3. In addition to the training data, the ML
+/// storage volume also stores the output model. The algorithm container uses the ML storage
+/// volume to also store intermediate information, if any.</p>
+/// <p>For distributed algorithms, training data is distributed uniformly.
+/// Your training duration is predictable if the input data objects sizes are
+/// approximately the same. SageMaker does not split the files any further for model training.
+/// If the object sizes are skewed, training won't be optimal as the data distribution is also
+/// skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in
+/// training.</p>
+/// <p>
+/// <b>FastFile mode</b>
+/// </p>
+/// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly
+/// from S3 to the container with no code changes, and provides file system access to
+/// the data. Users can author their training script to interact with these files as if
+/// they were stored on disk.</p>
+/// <p>
+/// <code>FastFile</code> mode works best when the data is read sequentially.
+/// Augmented manifest files aren't supported.
+/// The startup time is lower when there are fewer files in the S3 bucket provided.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -21226,6 +21853,7 @@ impl ShuffleConfig {
     std::hash::Hash,
 )]
 pub enum TrainingInputMode {
+    Fastfile,
     File,
     Pipe,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -21234,6 +21862,7 @@ pub enum TrainingInputMode {
 impl std::convert::From<&str> for TrainingInputMode {
     fn from(s: &str) -> Self {
         match s {
+            "FastFile" => TrainingInputMode::Fastfile,
             "File" => TrainingInputMode::File,
             "Pipe" => TrainingInputMode::Pipe,
             other => TrainingInputMode::Unknown(other.to_owned()),
@@ -21250,13 +21879,14 @@ impl std::str::FromStr for TrainingInputMode {
 impl TrainingInputMode {
     pub fn as_str(&self) -> &str {
         match self {
+            TrainingInputMode::Fastfile => "FastFile",
             TrainingInputMode::File => "File",
             TrainingInputMode::Pipe => "Pipe",
             TrainingInputMode::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["File", "Pipe"]
+        &["FastFile", "File", "Pipe"]
     }
 }
 impl AsRef<str> for TrainingInputMode {
@@ -21922,21 +22552,40 @@ pub struct AlgorithmSpecification {
     /// algorithm resource that you created or subscribe to on Amazon Web Services Marketplace. If you specify a value for
     /// this parameter, you can't specify a value for <code>TrainingImage</code>.</p>
     pub algorithm_name: std::option::Option<std::string::String>,
-    /// <p>The input mode that the algorithm supports. For the input modes that Amazon SageMaker
-    /// algorithms support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
-    /// downloads the training data from S3 to the provisioned ML storage Volume, and mounts the
-    /// directory to docker volume for training container. If an algorithm supports the
-    /// <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container. </p>
-    /// <p> In File mode, make sure you provision ML storage volume with sufficient capacity
-    /// to accommodate the data download from S3. In addition to the training data, the ML
-    /// storage volume also stores the output model. The algorithm container use ML storage
-    /// volume to also store intermediate information, if any. </p>
-    /// <p> For distributed algorithms using File mode, training data is distributed
-    /// uniformly, and your training duration is predictable if the input data objects size is
-    /// approximately same. Amazon SageMaker does not split the files any further for model training. If the
-    /// object sizes are skewed, training won't be optimal as the data distribution is also
-    /// skewed where one host in a training cluster is overloaded, thus becoming bottleneck in
-    /// training. </p>
+    /// <p>The training input mode that the algorithm supports. For more information about input modes, see
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+    /// <p>
+    /// <b>Pipe mode</b>
+    /// </p>
+    /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly
+    /// from Amazon S3 to the container.</p>
+    /// <p>
+    /// <b>File mode</b>
+    /// </p>
+    /// <p>If an algorithm supports <code>File</code> mode, SageMaker
+    /// downloads the training data from S3 to the provisioned ML storage volume, and mounts the
+    /// directory to the Docker volume for the training container.</p>
+    /// <p>You must provision the ML storage volume with sufficient capacity
+    /// to accommodate the data downloaded from S3. In addition to the training data, the ML
+    /// storage volume also stores the output model. The algorithm container uses the ML storage
+    /// volume to also store intermediate information, if any.</p>
+    /// <p>For distributed algorithms, training data is distributed uniformly.
+    /// Your training duration is predictable if the input data objects sizes are
+    /// approximately the same. SageMaker does not split the files any further for model training.
+    /// If the object sizes are skewed, training won't be optimal as the data distribution is also
+    /// skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in
+    /// training.</p>
+    /// <p>
+    /// <b>FastFile mode</b>
+    /// </p>
+    /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly
+    /// from S3 to the container with no code changes, and provides file system access to
+    /// the data. Users can author their training script to interact with these files as if
+    /// they were stored on disk.</p>
+    /// <p>
+    /// <code>FastFile</code> mode works best when the data is read sequentially.
+    /// Augmented manifest files aren't supported.
+    /// The startup time is lower when there are fewer files in the S3 bucket provided.</p>
     pub training_input_mode: std::option::Option<crate::model::TrainingInputMode>,
     /// <p>A list of metric definition objects. Each object specifies the metric name and regular
     /// expressions used to parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.</p>
@@ -22029,21 +22678,40 @@ pub mod algorithm_specification {
             self.algorithm_name = input;
             self
         }
-        /// <p>The input mode that the algorithm supports. For the input modes that Amazon SageMaker
-        /// algorithms support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
-        /// downloads the training data from S3 to the provisioned ML storage Volume, and mounts the
-        /// directory to docker volume for training container. If an algorithm supports the
-        /// <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container. </p>
-        /// <p> In File mode, make sure you provision ML storage volume with sufficient capacity
-        /// to accommodate the data download from S3. In addition to the training data, the ML
-        /// storage volume also stores the output model. The algorithm container use ML storage
-        /// volume to also store intermediate information, if any. </p>
-        /// <p> For distributed algorithms using File mode, training data is distributed
-        /// uniformly, and your training duration is predictable if the input data objects size is
-        /// approximately same. Amazon SageMaker does not split the files any further for model training. If the
-        /// object sizes are skewed, training won't be optimal as the data distribution is also
-        /// skewed where one host in a training cluster is overloaded, thus becoming bottleneck in
-        /// training. </p>
+        /// <p>The training input mode that the algorithm supports. For more information about input modes, see
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+        /// <p>
+        /// <b>Pipe mode</b>
+        /// </p>
+        /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly
+        /// from Amazon S3 to the container.</p>
+        /// <p>
+        /// <b>File mode</b>
+        /// </p>
+        /// <p>If an algorithm supports <code>File</code> mode, SageMaker
+        /// downloads the training data from S3 to the provisioned ML storage volume, and mounts the
+        /// directory to the Docker volume for the training container.</p>
+        /// <p>You must provision the ML storage volume with sufficient capacity
+        /// to accommodate the data downloaded from S3. In addition to the training data, the ML
+        /// storage volume also stores the output model. The algorithm container uses the ML storage
+        /// volume to also store intermediate information, if any.</p>
+        /// <p>For distributed algorithms, training data is distributed uniformly.
+        /// Your training duration is predictable if the input data objects sizes are
+        /// approximately the same. SageMaker does not split the files any further for model training.
+        /// If the object sizes are skewed, training won't be optimal as the data distribution is also
+        /// skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in
+        /// training.</p>
+        /// <p>
+        /// <b>FastFile mode</b>
+        /// </p>
+        /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly
+        /// from S3 to the container with no code changes, and provides file system access to
+        /// the data. Users can author their training script to interact with these files as if
+        /// they were stored on disk.</p>
+        /// <p>
+        /// <code>FastFile</code> mode works best when the data is read sequentially.
+        /// Augmented manifest files aren't supported.
+        /// The startup time is lower when there are fewer files in the S3 bucket provided.</p>
         pub fn training_input_mode(mut self, input: crate::model::TrainingInputMode) -> Self {
             self.training_input_mode = Some(input);
             self
@@ -22556,13 +23224,12 @@ pub struct Trial {
     pub source: std::option::Option<crate::model::TrialSource>,
     /// <p>When the trial was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Who created the trial.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>Who last modified the trial.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: std::option::Option<crate::model::MetadataProperties>,
@@ -22674,8 +23341,7 @@ pub mod trial {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Who created the trial.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -22699,8 +23365,8 @@ pub mod trial {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
@@ -22791,8 +23457,8 @@ pub struct TrialComponentSimpleSummary {
     pub trial_component_source: std::option::Option<crate::model::TrialComponentSource>,
     /// <p>When the component was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
 }
 impl std::fmt::Debug for TrialComponentSimpleSummary {
@@ -22867,8 +23533,8 @@ pub mod trial_component_simple_summary {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -22977,13 +23643,12 @@ pub struct Experiment {
     pub description: std::option::Option<std::string::String>,
     /// <p>When the experiment was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Who created the experiment.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the experiment was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>The list of tags that are associated with the experiment. You can use <a>Search</a> API to search on the tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -23089,8 +23754,7 @@ pub mod experiment {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Who created the experiment.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -23114,8 +23778,8 @@ pub mod experiment {
             self.last_modified_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
             self.last_modified_by = Some(input);
             self
@@ -24031,6 +24695,7 @@ pub enum ResourceType {
     ModelPackageGroup,
     Pipeline,
     PipelineExecution,
+    Project,
     TrainingJob,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -24047,6 +24712,7 @@ impl std::convert::From<&str> for ResourceType {
             "ModelPackageGroup" => ResourceType::ModelPackageGroup,
             "Pipeline" => ResourceType::Pipeline,
             "PipelineExecution" => ResourceType::PipelineExecution,
+            "Project" => ResourceType::Project,
             "TrainingJob" => ResourceType::TrainingJob,
             other => ResourceType::Unknown(other.to_owned()),
         }
@@ -24071,6 +24737,7 @@ impl ResourceType {
             ResourceType::ModelPackageGroup => "ModelPackageGroup",
             ResourceType::Pipeline => "Pipeline",
             ResourceType::PipelineExecution => "PipelineExecution",
+            ResourceType::Project => "Project",
             ResourceType::TrainingJob => "TrainingJob",
             ResourceType::Unknown(s) => s.as_ref(),
         }
@@ -24086,6 +24753,7 @@ impl ResourceType {
             "ModelPackageGroup",
             "Pipeline",
             "PipelineExecution",
+            "Project",
             "TrainingJob",
         ]
     }
@@ -24856,7 +25524,7 @@ pub struct TrialComponentSummary {
     pub end_time: std::option::Option<smithy_types::Instant>,
     /// <p>When the component was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Who created the component.</p>
+    /// <p>Who created the trial component.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>When the component was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
@@ -24998,7 +25666,7 @@ pub mod trial_component_summary {
             self.creation_time = input;
             self
         }
-        /// <p>Who created the component.</p>
+        /// <p>Who created the trial component.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -26544,79 +27212,6 @@ impl ProjectSummary {
     /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary)
     pub fn builder() -> crate::model::project_summary::Builder {
         crate::model::project_summary::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ProjectStatus {
-    CreateCompleted,
-    CreateFailed,
-    CreateInProgress,
-    DeleteCompleted,
-    DeleteFailed,
-    DeleteInProgress,
-    Pending,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ProjectStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CreateCompleted" => ProjectStatus::CreateCompleted,
-            "CreateFailed" => ProjectStatus::CreateFailed,
-            "CreateInProgress" => ProjectStatus::CreateInProgress,
-            "DeleteCompleted" => ProjectStatus::DeleteCompleted,
-            "DeleteFailed" => ProjectStatus::DeleteFailed,
-            "DeleteInProgress" => ProjectStatus::DeleteInProgress,
-            "Pending" => ProjectStatus::Pending,
-            other => ProjectStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ProjectStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProjectStatus::from(s))
-    }
-}
-impl ProjectStatus {
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProjectStatus::CreateCompleted => "CreateCompleted",
-            ProjectStatus::CreateFailed => "CreateFailed",
-            ProjectStatus::CreateInProgress => "CreateInProgress",
-            ProjectStatus::DeleteCompleted => "DeleteCompleted",
-            ProjectStatus::DeleteFailed => "DeleteFailed",
-            ProjectStatus::DeleteInProgress => "DeleteInProgress",
-            ProjectStatus::Pending => "Pending",
-            ProjectStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "CreateCompleted",
-            "CreateFailed",
-            "CreateInProgress",
-            "DeleteCompleted",
-            "DeleteFailed",
-            "DeleteInProgress",
-            "Pending",
-        ]
-    }
-}
-impl AsRef<str> for ProjectStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -37373,8 +37968,8 @@ pub struct AssociationSummary {
     pub destination_name: std::option::Option<std::string::String>,
     /// <p>When the association was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the user who created or modified an experiment, trial, or trial
-    /// component.</p>
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
     pub created_by: std::option::Option<crate::model::UserContext>,
 }
 impl std::fmt::Debug for AssociationSummary {
@@ -37496,8 +38091,8 @@ pub mod association_summary {
             self.creation_time = input;
             self
         }
-        /// <p>Information about the user who created or modified an experiment, trial, or trial
-        /// component.</p>
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
         pub fn created_by(mut self, input: crate::model::UserContext) -> Self {
             self.created_by = Some(input);
             self
@@ -39695,291 +40290,6 @@ impl ProfilerConfig {
     /// Creates a new builder-style object to manufacture [`ProfilerConfig`](crate::model::ProfilerConfig)
     pub fn builder() -> crate::model::profiler_config::Builder {
         crate::model::profiler_config::Builder::default()
-    }
-}
-
-/// <p>Details of a provisioned service catalog product. For information about service catalog,
-/// see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
-/// Catalog</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceCatalogProvisionedProductDetails {
-    /// <p>The ID of the provisioned product.</p>
-    pub provisioned_product_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the product.</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an AVAILABLE status before performing operations.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an AVAILABLE status before performing operations.</p>
-    /// </li>
-    /// </ul>
-    pub provisioned_product_status_message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceCatalogProvisionedProductDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceCatalogProvisionedProductDetails");
-        formatter.field("provisioned_product_id", &self.provisioned_product_id);
-        formatter.field(
-            "provisioned_product_status_message",
-            &self.provisioned_product_status_message,
-        );
-        formatter.finish()
-    }
-}
-/// See [`ServiceCatalogProvisionedProductDetails`](crate::model::ServiceCatalogProvisionedProductDetails)
-pub mod service_catalog_provisioned_product_details {
-    /// A builder for [`ServiceCatalogProvisionedProductDetails`](crate::model::ServiceCatalogProvisionedProductDetails)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) provisioned_product_id: std::option::Option<std::string::String>,
-        pub(crate) provisioned_product_status_message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The ID of the provisioned product.</p>
-        pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.provisioned_product_id = Some(input.into());
-            self
-        }
-        pub fn set_provisioned_product_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provisioned_product_id = input;
-            self
-        }
-        /// <p>The current status of the product.</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an AVAILABLE status before performing operations.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an AVAILABLE status before performing operations.</p>
-        /// </li>
-        /// </ul>
-        pub fn provisioned_product_status_message(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            self.provisioned_product_status_message = Some(input.into());
-            self
-        }
-        pub fn set_provisioned_product_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provisioned_product_status_message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ServiceCatalogProvisionedProductDetails`](crate::model::ServiceCatalogProvisionedProductDetails)
-        pub fn build(self) -> crate::model::ServiceCatalogProvisionedProductDetails {
-            crate::model::ServiceCatalogProvisionedProductDetails {
-                provisioned_product_id: self.provisioned_product_id,
-                provisioned_product_status_message: self.provisioned_product_status_message,
-            }
-        }
-    }
-}
-impl ServiceCatalogProvisionedProductDetails {
-    /// Creates a new builder-style object to manufacture [`ServiceCatalogProvisionedProductDetails`](crate::model::ServiceCatalogProvisionedProductDetails)
-    pub fn builder() -> crate::model::service_catalog_provisioned_product_details::Builder {
-        crate::model::service_catalog_provisioned_product_details::Builder::default()
-    }
-}
-
-/// <p>Details that you specify to provision a service catalog product. For information about
-/// service catalog, see .<a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
-/// Catalog</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceCatalogProvisioningDetails {
-    /// <p>The ID of the product to provision.</p>
-    pub product_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the provisioning artifact.</p>
-    pub provisioning_artifact_id: std::option::Option<std::string::String>,
-    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. </p>
-    pub path_id: std::option::Option<std::string::String>,
-    /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    pub provisioning_parameters:
-        std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
-}
-impl std::fmt::Debug for ServiceCatalogProvisioningDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceCatalogProvisioningDetails");
-        formatter.field("product_id", &self.product_id);
-        formatter.field("provisioning_artifact_id", &self.provisioning_artifact_id);
-        formatter.field("path_id", &self.path_id);
-        formatter.field("provisioning_parameters", &self.provisioning_parameters);
-        formatter.finish()
-    }
-}
-/// See [`ServiceCatalogProvisioningDetails`](crate::model::ServiceCatalogProvisioningDetails)
-pub mod service_catalog_provisioning_details {
-    /// A builder for [`ServiceCatalogProvisioningDetails`](crate::model::ServiceCatalogProvisioningDetails)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) product_id: std::option::Option<std::string::String>,
-        pub(crate) provisioning_artifact_id: std::option::Option<std::string::String>,
-        pub(crate) path_id: std::option::Option<std::string::String>,
-        pub(crate) provisioning_parameters:
-            std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
-    }
-    impl Builder {
-        /// <p>The ID of the product to provision.</p>
-        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.product_id = Some(input.into());
-            self
-        }
-        pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.product_id = input;
-            self
-        }
-        /// <p>The ID of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.provisioning_artifact_id = Some(input.into());
-            self
-        }
-        pub fn set_provisioning_artifact_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.provisioning_artifact_id = input;
-            self
-        }
-        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. </p>
-        pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.path_id = Some(input.into());
-            self
-        }
-        pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path_id = input;
-            self
-        }
-        pub fn provisioning_parameters(
-            mut self,
-            input: impl Into<crate::model::ProvisioningParameter>,
-        ) -> Self {
-            let mut v = self.provisioning_parameters.unwrap_or_default();
-            v.push(input.into());
-            self.provisioning_parameters = Some(v);
-            self
-        }
-        pub fn set_provisioning_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
-        ) -> Self {
-            self.provisioning_parameters = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ServiceCatalogProvisioningDetails`](crate::model::ServiceCatalogProvisioningDetails)
-        pub fn build(self) -> crate::model::ServiceCatalogProvisioningDetails {
-            crate::model::ServiceCatalogProvisioningDetails {
-                product_id: self.product_id,
-                provisioning_artifact_id: self.provisioning_artifact_id,
-                path_id: self.path_id,
-                provisioning_parameters: self.provisioning_parameters,
-            }
-        }
-    }
-}
-impl ServiceCatalogProvisioningDetails {
-    /// Creates a new builder-style object to manufacture [`ServiceCatalogProvisioningDetails`](crate::model::ServiceCatalogProvisioningDetails)
-    pub fn builder() -> crate::model::service_catalog_provisioning_details::Builder {
-        crate::model::service_catalog_provisioning_details::Builder::default()
-    }
-}
-
-/// <p>A key value pair used when you provision a project as a service catalog product. For
-/// information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
-/// Catalog</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ProvisioningParameter {
-    /// <p>The key that identifies a provisioning parameter.</p>
-    pub key: std::option::Option<std::string::String>,
-    /// <p>The value of the provisioning parameter.</p>
-    pub value: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ProvisioningParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisioningParameter");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
-/// See [`ProvisioningParameter`](crate::model::ProvisioningParameter)
-pub mod provisioning_parameter {
-    /// A builder for [`ProvisioningParameter`](crate::model::ProvisioningParameter)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) key: std::option::Option<std::string::String>,
-        pub(crate) value: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The key that identifies a provisioning parameter.</p>
-        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.key = Some(input.into());
-            self
-        }
-        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
-        }
-        /// <p>The value of the provisioning parameter.</p>
-        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.value = Some(input.into());
-            self
-        }
-        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ProvisioningParameter`](crate::model::ProvisioningParameter)
-        pub fn build(self) -> crate::model::ProvisioningParameter {
-            crate::model::ProvisioningParameter {
-                key: self.key,
-                value: self.value,
-            }
-        }
-    }
-}
-impl ProvisioningParameter {
-    /// Creates a new builder-style object to manufacture [`ProvisioningParameter`](crate::model::ProvisioningParameter)
-    pub fn builder() -> crate::model::provisioning_parameter::Builder {
-        crate::model::provisioning_parameter::Builder::default()
     }
 }
 
@@ -48845,7 +49155,7 @@ pub struct LabelingJobResourceConfig {
     /// automated data labeling. </p>
     /// <p>You can only specify a <code>VolumeKmsKeyId</code> when you create a labeling job with
     /// automated data labeling enabled using the API operation <code>CreateLabelingJob</code>.
-    /// You cannot specify an Amazon Web Services KMS customer managed CMK to encrypt the storage volume used for
+    /// You cannot specify an Amazon Web Services KMS key to encrypt the storage volume used for
     /// automated data labeling model training and inference when you create a labeling job
     /// using the console. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output Data and Storage Volume
     /// Encryption</a>.</p>
@@ -48887,7 +49197,7 @@ pub mod labeling_job_resource_config {
         /// automated data labeling. </p>
         /// <p>You can only specify a <code>VolumeKmsKeyId</code> when you create a labeling job with
         /// automated data labeling enabled using the API operation <code>CreateLabelingJob</code>.
-        /// You cannot specify an Amazon Web Services KMS customer managed CMK to encrypt the storage volume used for
+        /// You cannot specify an Amazon Web Services KMS key to encrypt the storage volume used for
         /// automated data labeling model training and inference when you create a labeling job
         /// using the console. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output Data and Storage Volume
         /// Encryption</a>.</p>
@@ -49847,22 +50157,40 @@ pub struct HyperParameterAlgorithmSpecification {
     /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
     /// SageMaker</a>.</p>
     pub training_image: std::option::Option<std::string::String>,
-    /// <p>The input mode that the algorithm supports:
-    /// File
-    /// or Pipe. In File input mode, Amazon SageMaker downloads the training data from
-    /// Amazon S3 to the
-    /// storage
-    /// volume that is attached to the training instance and mounts the directory to the Docker
-    /// volume for the training container. In Pipe input mode, Amazon SageMaker streams
-    /// data directly from Amazon S3 to the container. </p>
-    /// <p>If you specify File mode, make sure that
-    /// you
-    /// provision the storage volume that is attached to the training instance with enough
-    /// capacity to accommodate the training data downloaded from Amazon S3, the model artifacts, and
-    /// intermediate
-    /// information.</p>
-    /// <p></p>
-    /// <p>For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
+    /// <p>The training input mode that the algorithm supports. For more information about input modes, see
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+    /// <p>
+    /// <b>Pipe mode</b>
+    /// </p>
+    /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly
+    /// from Amazon S3 to the container.</p>
+    /// <p>
+    /// <b>File mode</b>
+    /// </p>
+    /// <p>If an algorithm supports <code>File</code> mode, SageMaker
+    /// downloads the training data from S3 to the provisioned ML storage volume, and mounts the
+    /// directory to the Docker volume for the training container.</p>
+    /// <p>You must provision the ML storage volume with sufficient capacity
+    /// to accommodate the data downloaded from S3. In addition to the training data, the ML
+    /// storage volume also stores the output model. The algorithm container uses the ML storage
+    /// volume to also store intermediate information, if any.</p>
+    /// <p>For distributed algorithms, training data is distributed uniformly.
+    /// Your training duration is predictable if the input data objects sizes are
+    /// approximately the same. SageMaker does not split the files any further for model training.
+    /// If the object sizes are skewed, training won't be optimal as the data distribution is also
+    /// skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in
+    /// training.</p>
+    /// <p>
+    /// <b>FastFile mode</b>
+    /// </p>
+    /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly
+    /// from S3 to the container with no code changes, and provides file system access to
+    /// the data. Users can author their training script to interact with these files as if
+    /// they were stored on disk.</p>
+    /// <p>
+    /// <code>FastFile</code> mode works best when the data is read sequentially.
+    /// Augmented manifest files aren't supported.
+    /// The startup time is lower when there are fewer files in the S3 bucket provided.</p>
     pub training_input_mode: std::option::Option<crate::model::TrainingInputMode>,
     /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you
     /// specify a value for this parameter, do not specify a value for
@@ -49913,22 +50241,40 @@ pub mod hyper_parameter_algorithm_specification {
             self.training_image = input;
             self
         }
-        /// <p>The input mode that the algorithm supports:
-        /// File
-        /// or Pipe. In File input mode, Amazon SageMaker downloads the training data from
-        /// Amazon S3 to the
-        /// storage
-        /// volume that is attached to the training instance and mounts the directory to the Docker
-        /// volume for the training container. In Pipe input mode, Amazon SageMaker streams
-        /// data directly from Amazon S3 to the container. </p>
-        /// <p>If you specify File mode, make sure that
-        /// you
-        /// provision the storage volume that is attached to the training instance with enough
-        /// capacity to accommodate the training data downloaded from Amazon S3, the model artifacts, and
-        /// intermediate
-        /// information.</p>
-        /// <p></p>
-        /// <p>For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
+        /// <p>The training input mode that the algorithm supports. For more information about input modes, see
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+        /// <p>
+        /// <b>Pipe mode</b>
+        /// </p>
+        /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly
+        /// from Amazon S3 to the container.</p>
+        /// <p>
+        /// <b>File mode</b>
+        /// </p>
+        /// <p>If an algorithm supports <code>File</code> mode, SageMaker
+        /// downloads the training data from S3 to the provisioned ML storage volume, and mounts the
+        /// directory to the Docker volume for the training container.</p>
+        /// <p>You must provision the ML storage volume with sufficient capacity
+        /// to accommodate the data downloaded from S3. In addition to the training data, the ML
+        /// storage volume also stores the output model. The algorithm container uses the ML storage
+        /// volume to also store intermediate information, if any.</p>
+        /// <p>For distributed algorithms, training data is distributed uniformly.
+        /// Your training duration is predictable if the input data objects sizes are
+        /// approximately the same. SageMaker does not split the files any further for model training.
+        /// If the object sizes are skewed, training won't be optimal as the data distribution is also
+        /// skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in
+        /// training.</p>
+        /// <p>
+        /// <b>FastFile mode</b>
+        /// </p>
+        /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly
+        /// from S3 to the container with no code changes, and provides file system access to
+        /// the data. Users can author their training script to interact with these files as if
+        /// they were stored on disk.</p>
+        /// <p>
+        /// <code>FastFile</code> mode works best when the data is read sequentially.
+        /// Augmented manifest files aren't supported.
+        /// The startup time is lower when there are fewer files in the S3 bucket provided.</p>
         pub fn training_input_mode(mut self, input: crate::model::TrainingInputMode) -> Self {
             self.training_input_mode = Some(input);
             self
@@ -52953,7 +53299,7 @@ pub struct ProductionVariantCoreDumpConfig {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution role must
+    /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must
     /// include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID,
     /// Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side
     /// encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket
@@ -53028,7 +53374,7 @@ pub mod production_variant_core_dump_config {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution role must
+        /// <p>If you use a KMS key ID or an alias of your KMS key, the Amazon SageMaker execution role must
         /// include permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID,
         /// Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side
         /// encryption with KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket
@@ -55803,10 +56149,14 @@ impl ResolvedAttributes {
 pub struct AutoMlJobCompletionCriteria {
     /// <p>The maximum number of times a training job is allowed to run.</p>
     pub max_candidates: std::option::Option<i32>,
-    /// <p>The maximum time, in seconds, a training job is allowed to run as part of an AutoML
-    /// job.</p>
+    /// <p>The maximum time, in seconds, that each training job is allowed to run as part of a
+    /// hyperparameter tuning job. For more information, see the  used by the  action.</p>
     pub max_runtime_per_training_job_in_seconds: std::option::Option<i32>,
     /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
+    /// <p>If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its
+    /// processing is ended gracefully. The AutoML job identifies the best model whose training was
+    /// completed and marks it as the best-performing model. Any unfinished steps of the job, such
+    /// as automatic one-click Autopilot model deployment, will not be completed. </p>
     pub max_auto_ml_job_runtime_in_seconds: std::option::Option<i32>,
 }
 impl std::fmt::Debug for AutoMlJobCompletionCriteria {
@@ -55844,8 +56194,8 @@ pub mod auto_ml_job_completion_criteria {
             self.max_candidates = input;
             self
         }
-        /// <p>The maximum time, in seconds, a training job is allowed to run as part of an AutoML
-        /// job.</p>
+        /// <p>The maximum time, in seconds, that each training job is allowed to run as part of a
+        /// hyperparameter tuning job. For more information, see the  used by the  action.</p>
         pub fn max_runtime_per_training_job_in_seconds(mut self, input: i32) -> Self {
             self.max_runtime_per_training_job_in_seconds = Some(input);
             self
@@ -55858,6 +56208,10 @@ pub mod auto_ml_job_completion_criteria {
             self
         }
         /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
+        /// <p>If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its
+        /// processing is ended gracefully. The AutoML job identifies the best model whose training was
+        /// completed and marks it as the best-performing model. Any unfinished steps of the job, such
+        /// as automatic one-click Autopilot model deployment, will not be completed. </p>
         pub fn max_auto_ml_job_runtime_in_seconds(mut self, input: i32) -> Self {
             self.max_auto_ml_job_runtime_in_seconds = Some(input);
             self
@@ -57109,12 +57463,40 @@ impl AlgorithmValidationProfile {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrainingJobDefinition {
-    /// <p>The input mode used by the algorithm for the training job. For the input modes that
-    /// Amazon SageMaker algorithms support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-    /// <p>If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads the training
-    /// data from S3 to the provisioned ML storage Volume, and mounts the directory to docker
-    /// volume for training container. If an algorithm supports the <code>Pipe</code> input
-    /// mode, Amazon SageMaker streams data directly from S3 to the container.</p>
+    /// <p>The training input mode that the algorithm supports. For more information about input modes, see
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+    /// <p>
+    /// <b>Pipe mode</b>
+    /// </p>
+    /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly
+    /// from Amazon S3 to the container.</p>
+    /// <p>
+    /// <b>File mode</b>
+    /// </p>
+    /// <p>If an algorithm supports <code>File</code> mode, SageMaker
+    /// downloads the training data from S3 to the provisioned ML storage volume, and mounts the
+    /// directory to the Docker volume for the training container.</p>
+    /// <p>You must provision the ML storage volume with sufficient capacity
+    /// to accommodate the data downloaded from S3. In addition to the training data, the ML
+    /// storage volume also stores the output model. The algorithm container uses the ML storage
+    /// volume to also store intermediate information, if any.</p>
+    /// <p>For distributed algorithms, training data is distributed uniformly.
+    /// Your training duration is predictable if the input data objects sizes are
+    /// approximately the same. SageMaker does not split the files any further for model training.
+    /// If the object sizes are skewed, training won't be optimal as the data distribution is also
+    /// skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in
+    /// training.</p>
+    /// <p>
+    /// <b>FastFile mode</b>
+    /// </p>
+    /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly
+    /// from S3 to the container with no code changes, and provides file system access to
+    /// the data. Users can author their training script to interact with these files as if
+    /// they were stored on disk.</p>
+    /// <p>
+    /// <code>FastFile</code> mode works best when the data is read sequentially.
+    /// Augmented manifest files aren't supported.
+    /// The startup time is lower when there are fewer files in the S3 bucket provided.</p>
     pub training_input_mode: std::option::Option<crate::model::TrainingInputMode>,
     /// <p>The hyperparameters used for the training job.</p>
     pub hyper_parameters:
@@ -57164,12 +57546,40 @@ pub mod training_job_definition {
         pub(crate) stopping_condition: std::option::Option<crate::model::StoppingCondition>,
     }
     impl Builder {
-        /// <p>The input mode used by the algorithm for the training job. For the input modes that
-        /// Amazon SageMaker algorithms support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-        /// <p>If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads the training
-        /// data from S3 to the provisioned ML storage Volume, and mounts the directory to docker
-        /// volume for training container. If an algorithm supports the <code>Pipe</code> input
-        /// mode, Amazon SageMaker streams data directly from S3 to the container.</p>
+        /// <p>The training input mode that the algorithm supports. For more information about input modes, see
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+        /// <p>
+        /// <b>Pipe mode</b>
+        /// </p>
+        /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly
+        /// from Amazon S3 to the container.</p>
+        /// <p>
+        /// <b>File mode</b>
+        /// </p>
+        /// <p>If an algorithm supports <code>File</code> mode, SageMaker
+        /// downloads the training data from S3 to the provisioned ML storage volume, and mounts the
+        /// directory to the Docker volume for the training container.</p>
+        /// <p>You must provision the ML storage volume with sufficient capacity
+        /// to accommodate the data downloaded from S3. In addition to the training data, the ML
+        /// storage volume also stores the output model. The algorithm container uses the ML storage
+        /// volume to also store intermediate information, if any.</p>
+        /// <p>For distributed algorithms, training data is distributed uniformly.
+        /// Your training duration is predictable if the input data objects sizes are
+        /// approximately the same. SageMaker does not split the files any further for model training.
+        /// If the object sizes are skewed, training won't be optimal as the data distribution is also
+        /// skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in
+        /// training.</p>
+        /// <p>
+        /// <b>FastFile mode</b>
+        /// </p>
+        /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly
+        /// from S3 to the container with no code changes, and provides file system access to
+        /// the data. Users can author their training script to interact with these files as if
+        /// they were stored on disk.</p>
+        /// <p>
+        /// <code>FastFile</code> mode works best when the data is read sequentially.
+        /// Augmented manifest files aren't supported.
+        /// The startup time is lower when there are fewer files in the S3 bucket provided.</p>
         pub fn training_input_mode(mut self, input: crate::model::TrainingInputMode) -> Self {
             self.training_input_mode = Some(input);
             self

@@ -3410,7 +3410,7 @@ impl ListOpenIdConnectProviderTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpenIdConnectProvidersOutput {
-    /// <p>The list of IAM OIDC provider resource objects defined in the account.</p>
+    /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
     pub open_id_connect_provider_list:
         std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
 }
@@ -6081,7 +6081,7 @@ pub struct GetOpenIdConnectProviderOutput {
     /// provider resource object. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
     pub thumbprint_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time when the IAM OIDC provider resource object was created in the
-    /// account.</p>
+    /// Amazon Web Services account.</p>
     pub create_date: std::option::Option<smithy_types::Instant>,
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key.
     /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
@@ -6149,7 +6149,7 @@ pub mod get_open_id_connect_provider_output {
             self
         }
         /// <p>The date and time when the IAM OIDC provider resource object was created in the
-        /// account.</p>
+        /// Amazon Web Services account.</p>
         pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self

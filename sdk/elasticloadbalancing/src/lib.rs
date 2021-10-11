@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Elastic Load Balancing</fullname>
 //! <p>A load balancer can distribute incoming traffic across your EC2 instances.
 //! This enables you to increase the availability of your application. The load balancer

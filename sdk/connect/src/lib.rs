@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon Connect is a cloud-based contact center solution that you use to set up and manage a customer
 //! contact center and provide reliable customer engagement at any scale.</p>
 //! <p>Amazon Connect provides metrics and real-time reporting that enable you to optimize contact routing.

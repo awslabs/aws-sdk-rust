@@ -1,3 +1,8 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
 //! IMDS Region Provider
 //!
 //! Load region from IMDS from `/latest/meta-data/placement/region`
@@ -9,17 +14,13 @@ use crate::meta::region::{future, ProvideRegion};
 use crate::provider_config::ProviderConfig;
 use aws_types::os_shim_internal::Env;
 use aws_types::region::Region;
-use smithy_async::future::timeout::Timeout;
 use smithy_async::rt::sleep::AsyncSleep;
 use std::sync::Arc;
-use std::time::Duration;
 use tracing::Instrument;
 
 /// IMDSv2 Region Provider
 ///
 /// This provider is included in the default region chain, so it does not need to be used manually.
-///
-/// This provider has a 5 second timeout.
 #[derive(Debug)]
 pub struct ImdsRegionProvider {
     client: LazyClient,
@@ -50,24 +51,7 @@ impl ImdsRegionProvider {
             return None;
         }
         let client = self.client.client().await.ok()?;
-        // TODO: IMDS clients should use a 1 second connect timeout, we shouldn't add an external timeout.
-        // There isn't a generalized way to know when you are inside of EC2 and IMDS will work. In
-        // the case where a customer doesn't have a region provider configured, we don't want the
-        // SDK to hang forever trying to load configuration, so we need a timeout to account for
-        // the IMDS provider running when IMDS isn't available. 5 seconds is a compromise since we
-        // need to make multiple e2e requests to IMDS to actually load a region.
-        let timeout_fut = Timeout::new(
-            client.get(REGION_PATH),
-            self.sleep.sleep(Duration::from_secs(5)),
-        );
-        let imds_result = match timeout_fut.await {
-            Ok(res) => res,
-            Err(_) => {
-                tracing::warn!("imds timed out after 5 seconds");
-                return None;
-            }
-        };
-        match imds_result {
+        match client.get(REGION_PATH).await {
             Ok(region) => {
                 tracing::info!(region = % region, "loaded region from IMDS");
                 Some(Region::new(region))

@@ -95,15 +95,12 @@ impl smithy_http::response::ParseStrictResponse for AuthorizeIpRules {
 /// For more information about copying images, see
 /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
 /// Copy a Custom WorkSpaces Image</a>.</p>
-/// <note>
 /// <p>In the China (Ningxia) Region, you can copy images only within the same Region.</p>
-/// <p>In the AWS GovCloud (US-West) Region, to copy images to and from other AWS Regions,
-/// contact AWS Support.</p>
-/// </note>
+/// <p>In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact Amazon Web Services Support.</p>
 /// <important>
 /// <p>Before copying a shared image, be sure to verify that it has been shared from the
-/// correct AWS account. To determine if an image has been shared and to see the AWS
-/// account ID that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a> and <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a> API operations. </p>
+/// correct Amazon Web Services account. To determine if an image has been shared and to see the
+/// ID of the Amazon Web Services account that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a> and <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a> API operations. </p>
 /// </important>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CopyWorkspaceImage {
@@ -218,6 +215,55 @@ impl smithy_http::response::ParseStrictResponse for CreateTags {
             crate::operation_deser::parse_create_tags_error(response)
         } else {
             crate::operation_deser::parse_create_tags_response(response)
+        }
+    }
+}
+
+/// <p>Creates a new updated WorkSpace image based on the specified source image. The
+/// new updated WorkSpace image has the latest drivers and other updates required by
+/// the Amazon WorkSpaces components.</p>
+/// <p>To determine which WorkSpace images need to be updated with the latest Amazon
+/// WorkSpaces requirements, use
+/// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">
+/// DescribeWorkspaceImages</a>.</p>
+/// <note>
+/// <ul>
+/// <li>
+/// <p>Only Windows 10 WorkSpace images can be programmatically updated at this time.</p>
+/// </li>
+/// <li>
+/// <p>Microsoft Windows updates and other application updates are not included
+/// in the update process.</p>
+/// </li>
+/// <li>
+/// <p>The source WorkSpace image is not deleted. You can delete the source image after you've
+/// verified your new updated image and created a new bundle. </p>
+/// </li>
+/// </ul>
+/// </note>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateUpdatedWorkspaceImage {
+    _private: (),
+}
+impl CreateUpdatedWorkspaceImage {
+    /// Creates a new builder-style object to manufacture [`CreateUpdatedWorkspaceImageInput`](crate::input::CreateUpdatedWorkspaceImageInput)
+    pub fn builder() -> crate::input::create_updated_workspace_image_input::Builder {
+        crate::input::create_updated_workspace_image_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateUpdatedWorkspaceImage {
+    type Output = std::result::Result<
+        crate::output::CreateUpdatedWorkspaceImageOutput,
+        crate::error::CreateUpdatedWorkspaceImageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_updated_workspace_image_error(response)
+        } else {
+            crate::operation_deser::parse_create_updated_workspace_image_response(response)
         }
     }
 }
@@ -445,7 +491,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteWorkspaceImage {
 /// If there are no WorkSpaces being used with your Simple AD or AD Connector directory for 30
 /// consecutive days, this directory will be automatically deregistered for use with Amazon WorkSpaces,
 /// and you will be charged for this directory as per the
-/// <a href="http://aws.amazon.com/directoryservice/pricing/">AWS Directory Services pricing terms</a>.</p>
+/// <a href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing terms</a>.</p>
 /// <p>To delete empty directories, see
 /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
 /// Delete the Directory for Your WorkSpaces</a>. If you delete your
@@ -595,7 +641,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeConnectionAliases {
     }
 }
 
-/// <p>Describes the permissions that the owner of a connection alias has granted to another AWS account for
+/// <p>Describes the permissions that the owner of a connection alias has granted to another Amazon Web Services account for
 /// the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
 /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -738,7 +784,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorkspaceDirectories
 }
 
 /// <p>Describes the permissions that the owner of an image has granted to other
-/// AWS accounts for an image.</p>
+/// Amazon Web Services accounts for an image.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeWorkspaceImagePermissions {
     _private: (),
@@ -882,7 +928,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeWorkspaceSnapshots {
 }
 
 /// <p>Disassociates a connection alias from a directory. Disassociating a connection alias disables cross-Region
-/// redirection between two directories in different AWS Regions. For more information, see
+/// redirection between two directories in different Regions. For more information, see
 /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
 /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 /// <note>
@@ -945,8 +991,8 @@ impl smithy_http::response::ParseStrictResponse for DisassociateIpGroups {
 }
 
 /// <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon
-/// WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your AWS
-/// account, and you must own the image. For more information about creating BYOL images, see
+/// WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your
+/// Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see
 /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
 /// Bring Your Own Windows Desktop Licenses</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -978,7 +1024,7 @@ impl smithy_http::response::ParseStrictResponse for ImportWorkspaceImage {
 
 /// <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use
 /// for the network management interface when you enable Bring Your Own License (BYOL). </p>
-/// <p>This operation can be run only by AWS accounts that are enabled for BYOL. If your account
+/// <p>This operation can be run only by Amazon Web Services accounts that are enabled for BYOL. If your account
 /// isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code> error.</p>
 /// <p>The management network interface is connected to a secure Amazon WorkSpaces management
 /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
@@ -1472,7 +1518,7 @@ impl smithy_http::response::ParseStrictResponse for StopWorkspaces {
 /// <p>Terminates the specified WorkSpaces.</p>
 /// <important>
 /// <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is
-/// destroyed. If you need to archive any user data, contact AWS Support before
+/// destroyed. If you need to archive any user data, contact Amazon Web Services Support before
 /// terminating the WorkSpace.</p>
 /// </important>
 /// <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p>
@@ -1488,7 +1534,7 @@ impl smithy_http::response::ParseStrictResponse for StopWorkspaces {
 /// If there are no WorkSpaces being used with your Simple AD or AD Connector directory for 30
 /// consecutive days, this directory will be automatically deregistered for use with Amazon WorkSpaces,
 /// and you will be charged for this directory as per the
-/// <a href="http://aws.amazon.com/directoryservice/pricing/">AWS Directory Services pricing terms</a>.</p>
+/// <a href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing terms</a>.</p>
 /// <p>To delete empty directories, see
 /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
 /// Delete the Directory for Your WorkSpaces</a>. If you delete your
@@ -1632,15 +1678,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateWorkspaceBundle {
     }
 }
 
-/// <p>Shares or unshares an image with one account in the same AWS Region by specifying whether that account has
+/// <p>Shares or unshares an image with one account in the same Amazon Web Services Region by specifying whether that account has
 /// permission to copy the image. If the copy image permission is granted, the image is shared with that account.
 /// If the copy image permission is revoked, the image is unshared with the account.</p>
-/// <p>After an image has been shared, the recipient account can copy the image to other AWS Regions as needed.</p>
-/// <note>
+/// <p>After an image has been shared, the recipient account can copy the image to other Regions as needed.</p>
 /// <p>In the China (Ningxia) Region, you can copy images only within the same Region.</p>
-/// <p>In the AWS GovCloud (US-West) Region, to copy images to and from other AWS Regions,
-/// contact AWS Support.</p>
-/// </note>
+/// <p>In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact Amazon Web Services Support.</p>
 /// <p>For more information about sharing images, see
 /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
 /// Share or Unshare a Custom WorkSpaces Image</a>.</p>
@@ -1650,9 +1693,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateWorkspaceBundle {
 /// <p>To delete an image that has been shared, you must unshare the image before you delete it.</p>
 /// </li>
 /// <li>
-/// <p>Sharing Bring Your Own License (BYOL) images across AWS accounts isn't supported at
-/// this time in the AWS GovCloud (US-West) Region. To share BYOL images across accounts in
-/// the AWS GovCloud (US-West) Region, contact AWS Support.</p>
+/// <p>Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't supported at
+/// this time in Amazon Web Services GovCloud (US). To share BYOL images across accounts in
+/// Amazon Web Services GovCloud (US), contact Amazon Web Services Support.</p>
 /// </li>
 /// </ul>         
 /// </note>

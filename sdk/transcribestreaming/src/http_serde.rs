@@ -160,6 +160,30 @@ pub fn deser_header_start_medical_stream_transcription_start_medical_stream_tran
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_start_stream_transcription_start_stream_transcription_output_content_identification_type(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<crate::model::ContentIdentificationType>,
+    smithy_http::header::ParseError,
+> {
+    let headers = header_map
+        .get_all("x-amzn-transcribe-content-identification-type")
+        .iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_start_stream_transcription_start_stream_transcription_output_content_redaction_type(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<
+    std::option::Option<crate::model::ContentRedactionType>,
+    smithy_http::header::ParseError,
+> {
+    let headers = header_map
+        .get_all("x-amzn-transcribe-content-redaction-type")
+        .iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_start_stream_transcription_start_stream_transcription_output_enable_channel_identification(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, smithy_http::header::ParseError> {
@@ -260,6 +284,16 @@ pub fn deser_header_start_stream_transcription_start_stream_transcription_output
 > {
     let headers = header_map
         .get_all("x-amzn-transcribe-partial-results-stability")
+        .iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_start_stream_transcription_start_stream_transcription_output_pii_entity_types(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map
+        .get_all("x-amzn-transcribe-pii-entity-types")
         .iter();
     smithy_http::header::one_or_none(headers)
 }

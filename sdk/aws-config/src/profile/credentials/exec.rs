@@ -151,12 +151,10 @@ pub mod named {
     }
 
     fn lower_cow(mut inp: Cow<str>) -> Cow<str> {
-        if inp.chars().all(|c| c.is_ascii_lowercase()) {
-            inp
-        } else {
+        if !inp.chars().all(|c| c.is_ascii_lowercase()) {
             inp.to_mut().make_ascii_lowercase();
-            inp
         }
+        inp
     }
 
     impl NamedProviderFactory {

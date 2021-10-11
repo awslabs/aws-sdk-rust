@@ -2332,6 +2332,27 @@ pub fn parse_put_account_preferences_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "BadRequest" => crate::error::PutAccountPreferencesError {
+            meta: generic,
+            kind: crate::error::PutAccountPreferencesErrorKind::BadRequest({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_requestjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutAccountPreferencesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalServerError" => crate::error::PutAccountPreferencesError {
             meta: generic,
             kind: crate::error::PutAccountPreferencesErrorKind::InternalServerError({

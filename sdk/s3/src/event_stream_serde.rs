@@ -23,10 +23,11 @@ impl smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEventSt
             "event" => match response_headers.smithy_type.as_str() {
                 "Records" => {
                     let mut builder = crate::model::RecordsEvent::builder();
-                    if response_headers.content_type.as_str() != "application/octet-stream" {
+                    let content_type = response_headers.content_type().unwrap_or_default();
+                    if content_type != "application/octet-stream" {
                         return Err(smithy_eventstream::error::Error::Unmarshalling(format!(
                             "expected :content-type to be 'application/octet-stream', but was '{}'",
-                            response_headers.content_type.as_str()
+                            content_type
                         )));
                     }
                     builder = builder.payload(smithy_types::Blob::new(message.payload().as_ref()));
@@ -68,28 +69,16 @@ impl smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentEventSt
                         crate::model::SelectObjectContentEventStream::Progress(builder.build()),
                     ))
                 }
-                "Cont" => {
-                    let parsed =
-                            crate::xml_deser::deser_member_com_amazonaws_s3_select_object_content_event_stream_cont(&message.payload()[..])
-                                            .map_err(|err| {
-                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall Cont: {}", err))
-                                            })?
-                        ;
-                    Ok(smithy_eventstream::frame::UnmarshalledMessage::Event(
-                        crate::model::SelectObjectContentEventStream::Cont(parsed),
-                    ))
-                }
-                "End" => {
-                    let parsed =
-                            crate::xml_deser::deser_member_com_amazonaws_s3_select_object_content_event_stream_end(&message.payload()[..])
-                                            .map_err(|err| {
-                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall End: {}", err))
-                                            })?
-                        ;
-                    Ok(smithy_eventstream::frame::UnmarshalledMessage::Event(
-                        crate::model::SelectObjectContentEventStream::End(parsed),
-                    ))
-                }
+                "Cont" => Ok(smithy_eventstream::frame::UnmarshalledMessage::Event(
+                    crate::model::SelectObjectContentEventStream::Cont(
+                        crate::model::ContinuationEvent::builder().build(),
+                    ),
+                )),
+                "End" => Ok(smithy_eventstream::frame::UnmarshalledMessage::Event(
+                    crate::model::SelectObjectContentEventStream::End(
+                        crate::model::EndEvent::builder().build(),
+                    ),
+                )),
                 smithy_type => {
                     return Err(smithy_eventstream::error::Error::Unmarshalling(format!(
                         "unrecognized :event-type: {}",

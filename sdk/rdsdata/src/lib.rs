@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon RDS Data Service</fullname>
 //! <p>Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora
 //! Serverless DB cluster. To run these statements, you work with the Data Service

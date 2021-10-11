@@ -15584,6 +15584,105 @@ impl std::error::Error for RenderUiTemplateError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct RetryPipelineExecutionError {
+    pub kind: RetryPipelineExecutionErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RetryPipelineExecutionErrorKind {
+    ConflictException(crate::error::ConflictException),
+    ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
+    ResourceNotFound(crate::error::ResourceNotFound),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RetryPipelineExecutionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RetryPipelineExecutionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            RetryPipelineExecutionErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
+            RetryPipelineExecutionErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
+            RetryPipelineExecutionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for RetryPipelineExecutionError {
+    fn code(&self) -> Option<&str> {
+        RetryPipelineExecutionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RetryPipelineExecutionError {
+    pub fn new(kind: RetryPipelineExecutionErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RetryPipelineExecutionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RetryPipelineExecutionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RetryPipelineExecutionErrorKind::ConflictException(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            RetryPipelineExecutionErrorKind::ResourceLimitExceeded(_)
+        )
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            RetryPipelineExecutionErrorKind::ResourceNotFound(_)
+        )
+    }
+}
+impl std::error::Error for RetryPipelineExecutionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RetryPipelineExecutionErrorKind::ConflictException(_inner) => Some(_inner),
+            RetryPipelineExecutionErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
+            RetryPipelineExecutionErrorKind::ResourceNotFound(_inner) => Some(_inner),
+            RetryPipelineExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct SearchError {
     pub kind: SearchErrorKind,
     pub(crate) meta: smithy_types::Error,

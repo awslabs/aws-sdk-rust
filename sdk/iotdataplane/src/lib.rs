@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>IoT data</fullname>
 //! <p>IoT data enables secure, bi-directional communication between Internet-connected things (such as sensors,
 //! actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. It implements a broker for applications and

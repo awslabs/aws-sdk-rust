@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>This is the <i>Resource Access Manager API Reference</i>. This documentation provides
 //! descriptions and syntax for each of the actions and data types in RAM. RAM is a
 //! service that helps you securely share your Amazon Web Services resources across Amazon Web Services accounts and

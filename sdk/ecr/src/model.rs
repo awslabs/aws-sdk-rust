@@ -237,7 +237,7 @@ impl AsRef<str> for ScanStatus {
     }
 }
 
-/// <p>An object with identifying information for an Amazon ECR image.</p>
+/// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageIdentifier {
@@ -302,9 +302,8 @@ impl ImageIdentifier {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfiguration {
-    /// <p>An array of objects representing the replication rules for a replication
-    /// configuration. A replication configuration may contain only one replication rule but the
-    /// rule may contain one or more replication destinations.</p>
+    /// <p>An array of objects representing the replication destinations and repository filters
+    /// for a replication configuration.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
 }
 impl std::fmt::Debug for ReplicationConfiguration {
@@ -349,19 +348,23 @@ impl ReplicationConfiguration {
     }
 }
 
-/// <p>An array of objects representing the replication destinations for a replication
-/// configuration. A replication configuration may contain only one replication rule but the
-/// rule may contain one or more replication destinations.</p>
+/// <p>An array of objects representing the replication destinations and repository filters
+/// for a replication configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationRule {
-    /// <p>An array of objects representing the details of a replication destination.</p>
+    /// <p>An array of objects representing the destination for a replication rule.</p>
     pub destinations: std::option::Option<std::vec::Vec<crate::model::ReplicationDestination>>,
+    /// <p>An array of objects representing the filters for a replication rule. Specifying a
+    /// repository filter for a replication rule provides a method for controlling which
+    /// repositories in a private registry are replicated.</p>
+    pub repository_filters: std::option::Option<std::vec::Vec<crate::model::RepositoryFilter>>,
 }
 impl std::fmt::Debug for ReplicationRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicationRule");
         formatter.field("destinations", &self.destinations);
+        formatter.field("repository_filters", &self.repository_filters);
         formatter.finish()
     }
 }
@@ -373,6 +376,8 @@ pub mod replication_rule {
     pub struct Builder {
         pub(crate) destinations:
             std::option::Option<std::vec::Vec<crate::model::ReplicationDestination>>,
+        pub(crate) repository_filters:
+            std::option::Option<std::vec::Vec<crate::model::RepositoryFilter>>,
     }
     impl Builder {
         pub fn destinations(
@@ -391,10 +396,27 @@ pub mod replication_rule {
             self.destinations = input;
             self
         }
+        pub fn repository_filters(
+            mut self,
+            input: impl Into<crate::model::RepositoryFilter>,
+        ) -> Self {
+            let mut v = self.repository_filters.unwrap_or_default();
+            v.push(input.into());
+            self.repository_filters = Some(v);
+            self
+        }
+        pub fn set_repository_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RepositoryFilter>>,
+        ) -> Self {
+            self.repository_filters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReplicationRule`](crate::model::ReplicationRule)
         pub fn build(self) -> crate::model::ReplicationRule {
             crate::model::ReplicationRule {
                 destinations: self.destinations,
+                repository_filters: self.repository_filters,
             }
         }
     }
@@ -406,13 +428,136 @@ impl ReplicationRule {
     }
 }
 
-/// <p>An array of objects representing the details of a replication destination.</p>
+/// <p>The filter settings used with image replication. Specifying a repository filter to a
+/// replication rule provides a method for controlling which repositories in a private
+/// registry are replicated. If no repository filter is specified, all images in the
+/// repository are replicated.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RepositoryFilter {
+    /// <p>The repository filter details. When the <code>PREFIX_MATCH</code> filter type is
+    /// specified, this value is required and should be the repository name prefix to configure
+    /// replication for.</p>
+    pub filter: std::option::Option<std::string::String>,
+    /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>,
+    /// which is a repository name prefix specified with the <code>filter</code>
+    /// parameter.</p>
+    pub filter_type: std::option::Option<crate::model::RepositoryFilterType>,
+}
+impl std::fmt::Debug for RepositoryFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RepositoryFilter");
+        formatter.field("filter", &self.filter);
+        formatter.field("filter_type", &self.filter_type);
+        formatter.finish()
+    }
+}
+/// See [`RepositoryFilter`](crate::model::RepositoryFilter)
+pub mod repository_filter {
+    /// A builder for [`RepositoryFilter`](crate::model::RepositoryFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filter: std::option::Option<std::string::String>,
+        pub(crate) filter_type: std::option::Option<crate::model::RepositoryFilterType>,
+    }
+    impl Builder {
+        /// <p>The repository filter details. When the <code>PREFIX_MATCH</code> filter type is
+        /// specified, this value is required and should be the repository name prefix to configure
+        /// replication for.</p>
+        pub fn filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.filter = Some(input.into());
+            self
+        }
+        pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filter = input;
+            self
+        }
+        /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>,
+        /// which is a repository name prefix specified with the <code>filter</code>
+        /// parameter.</p>
+        pub fn filter_type(mut self, input: crate::model::RepositoryFilterType) -> Self {
+            self.filter_type = Some(input);
+            self
+        }
+        pub fn set_filter_type(
+            mut self,
+            input: std::option::Option<crate::model::RepositoryFilterType>,
+        ) -> Self {
+            self.filter_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RepositoryFilter`](crate::model::RepositoryFilter)
+        pub fn build(self) -> crate::model::RepositoryFilter {
+            crate::model::RepositoryFilter {
+                filter: self.filter,
+                filter_type: self.filter_type,
+            }
+        }
+    }
+}
+impl RepositoryFilter {
+    /// Creates a new builder-style object to manufacture [`RepositoryFilter`](crate::model::RepositoryFilter)
+    pub fn builder() -> crate::model::repository_filter::Builder {
+        crate::model::repository_filter::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RepositoryFilterType {
+    PrefixMatch,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RepositoryFilterType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PREFIX_MATCH" => RepositoryFilterType::PrefixMatch,
+            other => RepositoryFilterType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RepositoryFilterType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RepositoryFilterType::from(s))
+    }
+}
+impl RepositoryFilterType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            RepositoryFilterType::PrefixMatch => "PREFIX_MATCH",
+            RepositoryFilterType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PREFIX_MATCH"]
+    }
+}
+impl AsRef<str> for RepositoryFilterType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>An array of objects representing the destination for a replication rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationDestination {
-    /// <p>A Region to replicate to.</p>
+    /// <p>The Region to replicate to.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The account ID of the destination registry to replicate to.</p>
+    /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring
+    /// cross-Region replication within your own registry, specify your own account ID.</p>
     pub registry_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ReplicationDestination {
@@ -433,7 +578,7 @@ pub mod replication_destination {
         pub(crate) registry_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A Region to replicate to.</p>
+        /// <p>The Region to replicate to.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -442,7 +587,8 @@ pub mod replication_destination {
             self.region = input;
             self
         }
-        /// <p>The account ID of the destination registry to replicate to.</p>
+        /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring
+        /// cross-Region replication within your own registry, specify your own account ID.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
@@ -2257,6 +2403,151 @@ impl DescribeImagesFilter {
     /// Creates a new builder-style object to manufacture [`DescribeImagesFilter`](crate::model::DescribeImagesFilter)
     pub fn builder() -> crate::model::describe_images_filter::Builder {
         crate::model::describe_images_filter::Builder::default()
+    }
+}
+
+/// <p>The status of the replication process for an image.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImageReplicationStatus {
+    /// <p>The destination Region for the image replication.</p>
+    pub region: std::option::Option<std::string::String>,
+    /// <p>The AWS account ID associated with the registry to which the image belongs.</p>
+    pub registry_id: std::option::Option<std::string::String>,
+    /// <p>The image replication status.</p>
+    pub status: std::option::Option<crate::model::ReplicationStatus>,
+    /// <p>The failure code for a replication that has failed.</p>
+    pub failure_code: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ImageReplicationStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImageReplicationStatus");
+        formatter.field("region", &self.region);
+        formatter.field("registry_id", &self.registry_id);
+        formatter.field("status", &self.status);
+        formatter.field("failure_code", &self.failure_code);
+        formatter.finish()
+    }
+}
+/// See [`ImageReplicationStatus`](crate::model::ImageReplicationStatus)
+pub mod image_replication_status {
+    /// A builder for [`ImageReplicationStatus`](crate::model::ImageReplicationStatus)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) region: std::option::Option<std::string::String>,
+        pub(crate) registry_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ReplicationStatus>,
+        pub(crate) failure_code: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The destination Region for the image replication.</p>
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
+            self
+        }
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
+            self
+        }
+        /// <p>The AWS account ID associated with the registry to which the image belongs.</p>
+        pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry_id = Some(input.into());
+            self
+        }
+        pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_id = input;
+            self
+        }
+        /// <p>The image replication status.</p>
+        pub fn status(mut self, input: crate::model::ReplicationStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ReplicationStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The failure code for a replication that has failed.</p>
+        pub fn failure_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_code = Some(input.into());
+            self
+        }
+        pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImageReplicationStatus`](crate::model::ImageReplicationStatus)
+        pub fn build(self) -> crate::model::ImageReplicationStatus {
+            crate::model::ImageReplicationStatus {
+                region: self.region,
+                registry_id: self.registry_id,
+                status: self.status,
+                failure_code: self.failure_code,
+            }
+        }
+    }
+}
+impl ImageReplicationStatus {
+    /// Creates a new builder-style object to manufacture [`ImageReplicationStatus`](crate::model::ImageReplicationStatus)
+    pub fn builder() -> crate::model::image_replication_status::Builder {
+        crate::model::image_replication_status::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ReplicationStatus {
+    Complete,
+    Failed,
+    InProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ReplicationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETE" => ReplicationStatus::Complete,
+            "FAILED" => ReplicationStatus::Failed,
+            "IN_PROGRESS" => ReplicationStatus::InProgress,
+            other => ReplicationStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ReplicationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ReplicationStatus::from(s))
+    }
+}
+impl ReplicationStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ReplicationStatus::Complete => "COMPLETE",
+            ReplicationStatus::Failed => "FAILED",
+            ReplicationStatus::InProgress => "IN_PROGRESS",
+            ReplicationStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETE", "FAILED", "IN_PROGRESS"]
+    }
+}
+impl AsRef<str> for ReplicationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

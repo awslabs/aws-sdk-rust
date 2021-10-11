@@ -100,11 +100,11 @@ impl Instant {
     }
 
     #[cfg(feature = "chrono-conversions")]
-    pub fn to_chrono(&self) -> DateTime<Utc> {
+    pub fn to_chrono(self) -> DateTime<Utc> {
         self.to_chrono_internal()
     }
 
-    fn to_chrono_internal(&self) -> DateTime<Utc> {
+    fn to_chrono_internal(self) -> DateTime<Utc> {
         DateTime::<Utc>::from_utc(
             NaiveDateTime::from_timestamp(self.seconds, self.subsecond_nanos),
             Utc,
@@ -115,7 +115,7 @@ impl Instant {
     ///
     /// Since SystemTime cannot represent times prior to the unix epoch, if this time is before
     /// 1/1/1970, this function will return `None`.
-    pub fn to_system_time(&self) -> Option<SystemTime> {
+    pub fn to_system_time(self) -> Option<SystemTime> {
         if self.seconds < 0 {
             None
         } else {
@@ -146,7 +146,7 @@ impl Instant {
     /// Converts the `Instant` to the number of milliseconds since the Unix epoch.
     /// This is fallible since `Instant` holds more precision than an `i64`, and will
     /// return a `ConversionError` for `Instant` values that can't be converted.
-    pub fn to_epoch_millis(&self) -> Result<i64, ConversionError> {
+    pub fn to_epoch_millis(self) -> Result<i64, ConversionError> {
         let subsec_millis =
             Integer::div_floor(&i64::from(self.subsecond_nanos), &(NANOS_PER_MILLI as i64));
         if self.seconds < 0 {

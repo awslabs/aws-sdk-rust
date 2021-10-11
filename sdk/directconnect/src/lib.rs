@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Direct Connect links your internal network to an Direct Connect location over a standard Ethernet fiber-optic cable.
 //! One end of the cable is connected to your router, the other to an Direct Connect router. With this connection
 //! in place, you can create virtual interfaces directly to the Cloud (for example, to Amazon EC2

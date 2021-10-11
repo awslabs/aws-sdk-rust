@@ -1193,7 +1193,7 @@ impl DescribeWorkspaceImagesOutput {
 pub struct DescribeWorkspaceImagePermissionsOutput {
     /// <p>The identifier of the image.</p>
     pub image_id: std::option::Option<std::string::String>,
-    /// <p>The identifiers of the AWS accounts that the image has been shared with.</p>
+    /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
     pub image_permissions: std::option::Option<std::vec::Vec<crate::model::ImagePermission>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -2180,6 +2180,52 @@ impl CreateWorkspaceBundleOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceBundleOutput`](crate::output::CreateWorkspaceBundleOutput)
     pub fn builder() -> crate::output::create_workspace_bundle_output::Builder {
         crate::output::create_workspace_bundle_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateUpdatedWorkspaceImageOutput {
+    /// <p>The identifier of the new updated WorkSpace image.</p>
+    pub image_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateUpdatedWorkspaceImageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateUpdatedWorkspaceImageOutput");
+        formatter.field("image_id", &self.image_id);
+        formatter.finish()
+    }
+}
+/// See [`CreateUpdatedWorkspaceImageOutput`](crate::output::CreateUpdatedWorkspaceImageOutput)
+pub mod create_updated_workspace_image_output {
+    /// A builder for [`CreateUpdatedWorkspaceImageOutput`](crate::output::CreateUpdatedWorkspaceImageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the new updated WorkSpace image.</p>
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
+            self
+        }
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateUpdatedWorkspaceImageOutput`](crate::output::CreateUpdatedWorkspaceImageOutput)
+        pub fn build(self) -> crate::output::CreateUpdatedWorkspaceImageOutput {
+            crate::output::CreateUpdatedWorkspaceImageOutput {
+                image_id: self.image_id,
+            }
+        }
+    }
+}
+impl CreateUpdatedWorkspaceImageOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUpdatedWorkspaceImageOutput`](crate::output::CreateUpdatedWorkspaceImageOutput)
+    pub fn builder() -> crate::output::create_updated_workspace_image_output::Builder {
+        crate::output::create_updated_workspace_image_output::Builder::default()
     }
 }
 

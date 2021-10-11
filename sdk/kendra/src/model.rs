@@ -111,6 +111,132 @@ impl AsRef<str> for Mode {
     }
 }
 
+/// <p>Provides the configuration information to fetch access levels
+/// of groups and users from an AWS Single Sign-On identity
+/// source. This is useful for setting up user context filtering, where
+/// Amazon Kendra filters search results for different users based on their
+/// group's access to documents. You can also map your users to their
+/// groups for user context filtering using the
+/// <a href="https://docs.aws.amazon.com/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping
+/// operation</a>.</p>
+/// <p>To set up an AWS SSO identity source in the console to use with
+/// Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started
+/// with an AWS SSO identity source</a>. You must also grant the required
+/// permissions to use AWS SSO with Amazon Kendra. For more information, see
+/// <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM roles for
+/// AWS Single Sign-On</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UserGroupResolutionConfiguration {
+    /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and
+    /// users. AWS Single Sign-On is currently the only available mode. Your users and groups
+    /// must
+    /// exist in an AWS SSO identity source in order to use this mode.</p>
+    pub user_group_resolution_mode: std::option::Option<crate::model::UserGroupResolutionMode>,
+}
+impl std::fmt::Debug for UserGroupResolutionConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UserGroupResolutionConfiguration");
+        formatter.field(
+            "user_group_resolution_mode",
+            &self.user_group_resolution_mode,
+        );
+        formatter.finish()
+    }
+}
+/// See [`UserGroupResolutionConfiguration`](crate::model::UserGroupResolutionConfiguration)
+pub mod user_group_resolution_configuration {
+    /// A builder for [`UserGroupResolutionConfiguration`](crate::model::UserGroupResolutionConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_group_resolution_mode:
+            std::option::Option<crate::model::UserGroupResolutionMode>,
+    }
+    impl Builder {
+        /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and
+        /// users. AWS Single Sign-On is currently the only available mode. Your users and groups
+        /// must
+        /// exist in an AWS SSO identity source in order to use this mode.</p>
+        pub fn user_group_resolution_mode(
+            mut self,
+            input: crate::model::UserGroupResolutionMode,
+        ) -> Self {
+            self.user_group_resolution_mode = Some(input);
+            self
+        }
+        pub fn set_user_group_resolution_mode(
+            mut self,
+            input: std::option::Option<crate::model::UserGroupResolutionMode>,
+        ) -> Self {
+            self.user_group_resolution_mode = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UserGroupResolutionConfiguration`](crate::model::UserGroupResolutionConfiguration)
+        pub fn build(self) -> crate::model::UserGroupResolutionConfiguration {
+            crate::model::UserGroupResolutionConfiguration {
+                user_group_resolution_mode: self.user_group_resolution_mode,
+            }
+        }
+    }
+}
+impl UserGroupResolutionConfiguration {
+    /// Creates a new builder-style object to manufacture [`UserGroupResolutionConfiguration`](crate::model::UserGroupResolutionConfiguration)
+    pub fn builder() -> crate::model::user_group_resolution_configuration::Builder {
+        crate::model::user_group_resolution_configuration::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum UserGroupResolutionMode {
+    AwsSso,
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for UserGroupResolutionMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_SSO" => UserGroupResolutionMode::AwsSso,
+            "NONE" => UserGroupResolutionMode::None,
+            other => UserGroupResolutionMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for UserGroupResolutionMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UserGroupResolutionMode::from(s))
+    }
+}
+impl UserGroupResolutionMode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            UserGroupResolutionMode::AwsSso => "AWS_SSO",
+            UserGroupResolutionMode::None => "NONE",
+            UserGroupResolutionMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AWS_SSO", "NONE"]
+    }
+}
+impl AsRef<str> for UserGroupResolutionMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1637,6 +1763,9 @@ pub struct WebCrawlerConfiguration {
     /// websites or the sitemap URLs of the websites you want to crawl.</p>
     /// <p>You can include website subdomains. You can list up to 100 seed
     /// URLs and up to three sitemap URLs.</p>
+    /// <p>You can only crawl websites that use the secure communication protocol,
+    /// Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when
+    /// crawling a website, it could be that the website is blocked from crawling.</p>
     /// <p>
     /// <i>When selecting websites to index, you must adhere to
     /// the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a>
@@ -1740,6 +1869,9 @@ pub mod web_crawler_configuration {
         /// websites or the sitemap URLs of the websites you want to crawl.</p>
         /// <p>You can include website subdomains. You can list up to 100 seed
         /// URLs and up to three sitemap URLs.</p>
+        /// <p>You can only crawl websites that use the secure communication protocol,
+        /// Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when
+        /// crawling a website, it could be that the website is blocked from crawling.</p>
         /// <p>
         /// <i>When selecting websites to index, you must adhere to
         /// the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a>
@@ -2155,6 +2287,9 @@ impl ProxyConfiguration {
 }
 
 /// <p>Provides the configuration information of the URLs to crawl.</p>
+/// <p>You can only crawl websites that use the secure communication protocol,
+/// Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when
+/// crawling a website, it could be that the website is blocked from crawling.</p>
 /// <p>
 /// <i>When selecting websites to index, you must adhere to
 /// the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a>
@@ -8942,7 +9077,9 @@ impl AsRef<str> for QueryResultType {
     }
 }
 
-/// <p>Provides information about the user context for a Amazon Kendra index.</p>
+/// <p>Provides information about the user context for
+/// an
+/// Amazon Kendra index.</p>
 /// <p>This is used for filtering search results for different users based on their access
 /// to documents.</p>
 /// <p>You provide one of the following:</p>
@@ -8951,8 +9088,8 @@ impl AsRef<str> for QueryResultType {
 /// <p>User token</p>
 /// </li>
 /// <li>
-/// <p>User ID, the groups the user belongs to, and the data sources
-/// the groups can access</p>
+/// <p>User ID, the groups the user belongs to, and any data sources the groups can
+/// access.</p>
 /// </li>
 /// </ul>
 /// <p>If you provide both, an exception is thrown.</p>
@@ -9466,10 +9603,11 @@ impl Facet {
 /// </ol>
 /// <p>If you use more than 2 layers, you receive a
 /// <code>ValidationException</code> exception with the message
-/// "<code>AttributeFilter</code> cannot have a depth of more than
-/// 2."</p>
-/// <p>If you use more than 10 attribute filters, you receive a
-/// <code>ValidationException</code> exception with the message
+/// "<code>AttributeFilter</code> cannot have a depth of more
+/// than 2."</p>
+/// <p>If you use more than 10 attribute filters in a given list for
+/// <code>AndAllFilters</code> or <code>OrAllFilters</code>, you receive
+/// a <code>ValidationException</code> with the message
 /// "<code>AttributeFilter</code> cannot have a length of more than 10".</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9494,19 +9632,19 @@ pub struct AttributeFilter {
     /// <code>StringListValue</code> metadata.</p>
     pub contains_any: std::option::Option<crate::model::DocumentAttribute>,
     /// <p>Performs a greater than operation on two document attributes. Use
-    /// with a document attribute of type <code>Integer</code> or
+    /// with a document attribute of type <code>Date</code> or
     /// <code>Long</code>.</p>
     pub greater_than: std::option::Option<crate::model::DocumentAttribute>,
     /// <p>Performs a greater or equals than operation on two document
-    /// attributes. Use with a document attribute of type <code>Integer</code>
+    /// attributes. Use with a document attribute of type <code>Date</code>
     /// or <code>Long</code>.</p>
     pub greater_than_or_equals: std::option::Option<crate::model::DocumentAttribute>,
     /// <p>Performs a less than operation on two document attributes. Use with
-    /// a document attribute of type <code>Integer</code> or
+    /// a document attribute of type <code>Date</code> or
     /// <code>Long</code>.</p>
     pub less_than: std::option::Option<crate::model::DocumentAttribute>,
     /// <p>Performs a less than or equals operation on two document attributes.
-    /// Use with a document attribute of type <code>Integer</code> or
+    /// Use with a document attribute of type <code>Date</code> or
     /// <code>Long</code>.</p>
     pub less_than_or_equals: std::option::Option<crate::model::DocumentAttribute>,
 }
@@ -9629,7 +9767,7 @@ pub mod attribute_filter {
             self
         }
         /// <p>Performs a greater than operation on two document attributes. Use
-        /// with a document attribute of type <code>Integer</code> or
+        /// with a document attribute of type <code>Date</code> or
         /// <code>Long</code>.</p>
         pub fn greater_than(mut self, input: crate::model::DocumentAttribute) -> Self {
             self.greater_than = Some(input);
@@ -9643,7 +9781,7 @@ pub mod attribute_filter {
             self
         }
         /// <p>Performs a greater or equals than operation on two document
-        /// attributes. Use with a document attribute of type <code>Integer</code>
+        /// attributes. Use with a document attribute of type <code>Date</code>
         /// or <code>Long</code>.</p>
         pub fn greater_than_or_equals(mut self, input: crate::model::DocumentAttribute) -> Self {
             self.greater_than_or_equals = Some(input);
@@ -9657,7 +9795,7 @@ pub mod attribute_filter {
             self
         }
         /// <p>Performs a less than operation on two document attributes. Use with
-        /// a document attribute of type <code>Integer</code> or
+        /// a document attribute of type <code>Date</code> or
         /// <code>Long</code>.</p>
         pub fn less_than(mut self, input: crate::model::DocumentAttribute) -> Self {
             self.less_than = Some(input);
@@ -9671,7 +9809,7 @@ pub mod attribute_filter {
             self
         }
         /// <p>Performs a less than or equals operation on two document attributes.
-        /// Use with a document attribute of type <code>Integer</code> or
+        /// Use with a document attribute of type <code>Date</code> or
         /// <code>Long</code>.</p>
         pub fn less_than_or_equals(mut self, input: crate::model::DocumentAttribute) -> Self {
             self.less_than_or_equals = Some(input);
@@ -9726,6 +9864,12 @@ pub struct GroupMembers {
     /// groups for a group. Your sub groups can contain more than 1000 users, but
     /// the list of sub groups that belong to a group (and/or users) must be no
     /// more than 1000.</p>
+    /// <p>You can download this
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example
+    /// S3 file</a> that uses the correct format for listing group members. Note,
+    /// <code>dataSourceId</code> is optional. The value of <code>type</code>
+    /// for a group is always <code>GROUP</code> and for a user it is
+    /// always <code>USER</code>.</p>
     pub s3_pathfor_group_members: std::option::Option<crate::model::S3Path>,
 }
 impl std::fmt::Debug for GroupMembers {
@@ -9779,6 +9923,12 @@ pub mod group_members {
         /// groups for a group. Your sub groups can contain more than 1000 users, but
         /// the list of sub groups that belong to a group (and/or users) must be no
         /// more than 1000.</p>
+        /// <p>You can download this
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example
+        /// S3 file</a> that uses the correct format for listing group members. Note,
+        /// <code>dataSourceId</code> is optional. The value of <code>type</code>
+        /// for a group is always <code>GROUP</code> and for a user it is
+        /// always <code>USER</code>.</p>
         pub fn s3_pathfor_group_members(mut self, input: crate::model::S3Path) -> Self {
             self.s3_pathfor_group_members = Some(input);
             self
@@ -9920,7 +10070,7 @@ impl MemberGroup {
     }
 }
 
-/// <p>An array of summary information for one or more thesauruses.</p>
+/// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThesaurusSummary {

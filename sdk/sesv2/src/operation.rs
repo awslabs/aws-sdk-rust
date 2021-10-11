@@ -156,7 +156,7 @@ impl smithy_http::response::ParseStrictResponse for CreateCustomVerificationEmai
 }
 
 /// <p>Create a new pool of dedicated IP addresses. A pool can include one or more dedicated
-/// IP addresses that are associated with your AWS account. You can associate a pool with
+/// IP addresses that are associated with your Amazon Web Services account. You can associate a pool with
 /// a configuration set. When you send an email that uses that configuration set, the
 /// message is sent from one of the addresses in the associated pool.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -238,7 +238,7 @@ impl smithy_http::response::ParseStrictResponse for CreateDeliverabilityTestRepo
 /// (BYODKIM). To use BYODKIM, your call to the <code>CreateEmailIdentity</code> operation
 /// has to include the <code>DkimSigningAttributes</code> object. When you specify this
 /// object, you provide a selector (a component of the DNS record name that identifies the
-/// public key that you want to use for DKIM authentication) and a private key.</p>
+/// public key to use for DKIM authentication) and a private key.</p>
 /// <p>When you verify a domain, this operation provides a set of DKIM tokens, which you can
 /// convert into CNAME tokens. You add these CNAME tokens to the DNS configuration for your
 /// domain. Your domain is verified when Amazon SES detects these records in the DNS
@@ -311,8 +311,8 @@ impl smithy_http::response::ParseStrictResponse for CreateEmailIdentityPolicy {
 }
 
 /// <p>Creates an email template. Email templates enable you to send personalized email to
-/// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
+/// Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEmailTemplate {
@@ -493,7 +493,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteContactList {
 }
 
 /// <p>Deletes an existing custom verification email template.</p>
-/// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+/// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
 /// Guide</i>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -679,7 +679,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteSuppressedDestination 
 }
 
 /// <p>Obtain information about the email-sending status and capabilities of your Amazon SES
-/// account in the current AWS Region.</p>
+/// account in the current Amazon Web Services Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetAccount {
     _private: (),
@@ -918,7 +918,7 @@ impl smithy_http::response::ParseStrictResponse for GetDedicatedIp {
     }
 }
 
-/// <p>List the dedicated IP addresses that are associated with your AWS
+/// <p>List the dedicated IP addresses that are associated with your Amazon Web Services
 /// account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetDedicatedIps {
@@ -952,7 +952,7 @@ impl smithy_http::response::ParseStrictResponse for GetDedicatedIps {
 /// metrics for the domains that you use to send email. You also gain the ability to perform
 /// predictive inbox placement tests.</p>
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
-/// to any other fees that you accrue by using Amazon SES and other AWS services. For more
+/// to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more
 /// information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetDeliverabilityDashboardOptions {
@@ -1311,7 +1311,7 @@ impl smithy_http::response::ParseStrictResponse for ListContacts {
 }
 
 /// <p>Lists the existing custom verification email templates for your account in the current
-/// AWS Region.</p>
+/// Amazon Web Services Region.</p>
 /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
 /// Guide</i>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
@@ -1344,7 +1344,7 @@ impl smithy_http::response::ParseStrictResponse for ListCustomVerificationEmailT
     }
 }
 
-/// <p>List all of the dedicated IP pools that exist in your AWS account in the current
+/// <p>List all of the dedicated IP pools that exist in your Amazon Web Services account in the current
 /// Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListDedicatedIpPools {
@@ -1433,7 +1433,7 @@ impl smithy_http::response::ParseStrictResponse for ListDomainDeliverabilityCamp
     }
 }
 
-/// <p>Returns a list of all of the email identities that are associated with your AWS
+/// <p>Returns a list of all of the email identities that are associated with your Amazon Web Services
 /// account. An identity can be either an email address or a domain. This operation returns
 /// identities that are verified as well as those that aren't. This operation returns
 /// identities that are associated with Amazon SES and Amazon Pinpoint.</p>
@@ -1464,7 +1464,7 @@ impl smithy_http::response::ParseStrictResponse for ListEmailIdentities {
     }
 }
 
-/// <p>Lists the email templates present in your Amazon SES account in the current AWS
+/// <p>Lists the email templates present in your Amazon SES account in the current Amazon Web Services
 /// Region.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1726,7 +1726,7 @@ impl smithy_http::response::ParseStrictResponse for PutConfigurationSetDeliveryO
 }
 
 /// <p>Enable or disable collection of reputation metrics for emails that you send using a
-/// particular configuration set in a specific AWS Region.</p>
+/// particular configuration set in a specific Amazon Web Services Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutConfigurationSetReputationOptions {
     _private: (),
@@ -1757,7 +1757,7 @@ impl smithy_http::response::ParseStrictResponse for PutConfigurationSetReputatio
 }
 
 /// <p>Enable or disable email sending for messages that use a particular configuration set
-/// in a specific AWS Region.</p>
+/// in a specific Amazon Web Services Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutConfigurationSetSendingOptions {
     _private: (),
@@ -1847,7 +1847,7 @@ impl smithy_http::response::ParseStrictResponse for PutConfigurationSetTrackingO
 /// <p>Move a dedicated IP address to an existing dedicated IP pool.</p>
 /// <note>
 /// <p>The dedicated IP address that you specify must already exist, and must be
-/// associated with your AWS account.
+/// associated with your Amazon Web Services account.
 /// </p>
 /// <p>The dedicated IP pool you specify must already exist. You can create a new pool by
 /// using the <code>CreateDedicatedIpPool</code> operation.</p>
@@ -1911,7 +1911,7 @@ impl smithy_http::response::ParseStrictResponse for PutDedicatedIpWarmupAttribut
 /// access to reputation, deliverability, and other metrics for the domains that you use to
 /// send email. You also gain the ability to perform predictive inbox placement tests.</p>
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
-/// to any other fees that you accrue by using Amazon SES and other AWS services. For more
+/// to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more
 /// information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutDeliverabilityDashboardOption {
@@ -2007,6 +2007,9 @@ impl smithy_http::response::ParseStrictResponse for PutEmailIdentityDkimAttribut
 /// <li>
 /// <p>Update the signing attributes for an identity that uses Bring Your Own DKIM
 /// (BYODKIM).</p>
+/// </li>
+/// <li>
+/// <p>Update the key length that should be used for Easy DKIM.</p>
 /// </li>
 /// <li>
 /// <p>Change from using no DKIM authentication to using Easy DKIM.</p>
@@ -2171,7 +2174,7 @@ impl smithy_http::response::ParseStrictResponse for SendBulkEmail {
 }
 
 /// <p>Adds an email address to the list of identities for your Amazon SES account in the current
-/// AWS Region and attempts to verify it. As a result of executing this operation, a
+/// Amazon Web Services Region and attempts to verify it. As a result of executing this operation, a
 /// customized verification email is sent to the specified address.</p>
 /// <p>To use this operation, you must first create a custom verification email template. For
 /// more information about creating and using custom verification email templates, see
@@ -2205,7 +2208,7 @@ impl smithy_http::response::ParseStrictResponse for SendCustomVerificationEmail 
     }
 }
 
-/// <p>Sends an email message. You can use the Amazon SES API v2 to send two types of
+/// <p>Sends an email message. You can use the Amazon SES API v2 to send the following types of
 /// messages:</p>
 /// <ul>
 /// <li>
@@ -2508,8 +2511,8 @@ impl smithy_http::response::ParseStrictResponse for UpdateEmailIdentityPolicy {
 }
 
 /// <p>Updates an email template. Email templates enable you to send personalized email to
-/// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
+/// Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEmailTemplate {

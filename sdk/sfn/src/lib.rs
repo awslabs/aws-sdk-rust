@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>AWS Step Functions</fullname>
 //! <p>AWS Step Functions is a service that lets you coordinate the components of distributed applications
 //! and microservices using visual workflows.</p>

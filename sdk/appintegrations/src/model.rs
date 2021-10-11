@@ -341,3 +341,248 @@ impl EventIntegrationAssociation {
         crate::model::event_integration_association::Builder::default()
     }
 }
+
+/// <p>Summary information about the DataIntegration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataIntegrationSummary {
+    /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the DataIntegration.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The URI of the data source.</p>
+    pub source_uri: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DataIntegrationSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataIntegrationSummary");
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("source_uri", &self.source_uri);
+        formatter.finish()
+    }
+}
+/// See [`DataIntegrationSummary`](crate::model::DataIntegrationSummary)
+pub mod data_integration_summary {
+    /// A builder for [`DataIntegrationSummary`](crate::model::DataIntegrationSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) source_uri: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the DataIntegration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The URI of the data source.</p>
+        pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_uri = Some(input.into());
+            self
+        }
+        pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_uri = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataIntegrationSummary`](crate::model::DataIntegrationSummary)
+        pub fn build(self) -> crate::model::DataIntegrationSummary {
+            crate::model::DataIntegrationSummary {
+                arn: self.arn,
+                name: self.name,
+                source_uri: self.source_uri,
+            }
+        }
+    }
+}
+impl DataIntegrationSummary {
+    /// Creates a new builder-style object to manufacture [`DataIntegrationSummary`](crate::model::DataIntegrationSummary)
+    pub fn builder() -> crate::model::data_integration_summary::Builder {
+        crate::model::data_integration_summary::Builder::default()
+    }
+}
+
+/// <p>Summary information about the DataIntegration association.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataIntegrationAssociationSummary {
+    /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
+    pub data_integration_association_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN)of the DataIntegration.</p>
+    pub data_integration_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier for teh client that is associated with the DataIntegration
+    /// association.</p>
+    pub client_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DataIntegrationAssociationSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataIntegrationAssociationSummary");
+        formatter.field(
+            "data_integration_association_arn",
+            &self.data_integration_association_arn,
+        );
+        formatter.field("data_integration_arn", &self.data_integration_arn);
+        formatter.field("client_id", &self.client_id);
+        formatter.finish()
+    }
+}
+/// See [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary)
+pub mod data_integration_association_summary {
+    /// A builder for [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_integration_association_arn: std::option::Option<std::string::String>,
+        pub(crate) data_integration_arn: std::option::Option<std::string::String>,
+        pub(crate) client_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
+        pub fn data_integration_association_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.data_integration_association_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_integration_association_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_integration_association_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN)of the DataIntegration.</p>
+        pub fn data_integration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_integration_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_integration_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_integration_arn = input;
+            self
+        }
+        /// <p>The identifier for teh client that is associated with the DataIntegration
+        /// association.</p>
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_id = Some(input.into());
+            self
+        }
+        pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary)
+        pub fn build(self) -> crate::model::DataIntegrationAssociationSummary {
+            crate::model::DataIntegrationAssociationSummary {
+                data_integration_association_arn: self.data_integration_association_arn,
+                data_integration_arn: self.data_integration_arn,
+                client_id: self.client_id,
+            }
+        }
+    }
+}
+impl DataIntegrationAssociationSummary {
+    /// Creates a new builder-style object to manufacture [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary)
+    pub fn builder() -> crate::model::data_integration_association_summary::Builder {
+        crate::model::data_integration_association_summary::Builder::default()
+    }
+}
+
+/// <p>The name of the data and how often it should be pulled from the source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScheduleConfiguration {
+    /// <p>The start date for objects to import in the first flow run.</p>
+    pub first_execution_from: std::option::Option<std::string::String>,
+    /// <p>The name of the object to pull from the data source.</p>
+    pub object: std::option::Option<std::string::String>,
+    /// <p>How often the data should be pulled from data source.</p>
+    pub schedule_expression: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ScheduleConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScheduleConfiguration");
+        formatter.field("first_execution_from", &self.first_execution_from);
+        formatter.field("object", &self.object);
+        formatter.field("schedule_expression", &self.schedule_expression);
+        formatter.finish()
+    }
+}
+/// See [`ScheduleConfiguration`](crate::model::ScheduleConfiguration)
+pub mod schedule_configuration {
+    /// A builder for [`ScheduleConfiguration`](crate::model::ScheduleConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) first_execution_from: std::option::Option<std::string::String>,
+        pub(crate) object: std::option::Option<std::string::String>,
+        pub(crate) schedule_expression: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The start date for objects to import in the first flow run.</p>
+        pub fn first_execution_from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.first_execution_from = Some(input.into());
+            self
+        }
+        pub fn set_first_execution_from(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.first_execution_from = input;
+            self
+        }
+        /// <p>The name of the object to pull from the data source.</p>
+        pub fn object(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object = Some(input.into());
+            self
+        }
+        pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object = input;
+            self
+        }
+        /// <p>How often the data should be pulled from data source.</p>
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schedule_expression = Some(input.into());
+            self
+        }
+        pub fn set_schedule_expression(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schedule_expression = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScheduleConfiguration`](crate::model::ScheduleConfiguration)
+        pub fn build(self) -> crate::model::ScheduleConfiguration {
+            crate::model::ScheduleConfiguration {
+                first_execution_from: self.first_execution_from,
+                object: self.object,
+                schedule_expression: self.schedule_expression,
+            }
+        }
+    }
+}
+impl ScheduleConfiguration {
+    /// Creates a new builder-style object to manufacture [`ScheduleConfiguration`](crate::model::ScheduleConfiguration)
+    pub fn builder() -> crate::model::schedule_configuration::Builder {
+        crate::model::schedule_configuration::Builder::default()
+    }
+}

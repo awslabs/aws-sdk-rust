@@ -22956,6 +22956,99 @@ pub fn parse_list_violation_events_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_verification_state_on_violation_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutVerificationStateOnViolationOutput,
+    crate::error::PutVerificationStateOnViolationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutVerificationStateOnViolationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::PutVerificationStateOnViolationError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalFailureException" => crate::error::PutVerificationStateOnViolationError {
+            meta: generic,
+            kind: crate::error::PutVerificationStateOnViolationErrorKind::InternalFailureException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::internal_failure_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutVerificationStateOnViolationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "InvalidRequestException" => crate::error::PutVerificationStateOnViolationError {
+            meta: generic,
+            kind: crate::error::PutVerificationStateOnViolationErrorKind::InvalidRequestException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_request_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutVerificationStateOnViolationError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ThrottlingException" => crate::error::PutVerificationStateOnViolationError {
+            meta: generic,
+            kind: crate::error::PutVerificationStateOnViolationErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutVerificationStateOnViolationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::PutVerificationStateOnViolationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_verification_state_on_violation_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutVerificationStateOnViolationOutput,
+    crate::error::PutVerificationStateOnViolationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::put_verification_state_on_violation_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_ca_certificate_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

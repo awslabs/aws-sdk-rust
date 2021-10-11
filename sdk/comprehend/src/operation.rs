@@ -933,6 +933,34 @@ impl smithy_http::response::ParseStrictResponse for ListDocumentClassifiers {
     }
 }
 
+/// <p>Gets a list of summaries of the document classifiers that you have created</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListDocumentClassifierSummaries {
+    _private: (),
+}
+impl ListDocumentClassifierSummaries {
+    /// Creates a new builder-style object to manufacture [`ListDocumentClassifierSummariesInput`](crate::input::ListDocumentClassifierSummariesInput)
+    pub fn builder() -> crate::input::list_document_classifier_summaries_input::Builder {
+        crate::input::list_document_classifier_summaries_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListDocumentClassifierSummaries {
+    type Output = std::result::Result<
+        crate::output::ListDocumentClassifierSummariesOutput,
+        crate::error::ListDocumentClassifierSummariesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_document_classifier_summaries_error(response)
+        } else {
+            crate::operation_deser::parse_list_document_classifier_summaries_response(response)
+        }
+    }
+}
+
 /// <p>Gets a list of the dominant language detection jobs that you have submitted.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListDominantLanguageDetectionJobs {
@@ -1044,6 +1072,34 @@ impl smithy_http::response::ParseStrictResponse for ListEntityRecognizers {
             crate::operation_deser::parse_list_entity_recognizers_error(response)
         } else {
             crate::operation_deser::parse_list_entity_recognizers_response(response)
+        }
+    }
+}
+
+/// <p>Gets a list of summaries for the entity recognizers that you have created.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListEntityRecognizerSummaries {
+    _private: (),
+}
+impl ListEntityRecognizerSummaries {
+    /// Creates a new builder-style object to manufacture [`ListEntityRecognizerSummariesInput`](crate::input::ListEntityRecognizerSummariesInput)
+    pub fn builder() -> crate::input::list_entity_recognizer_summaries_input::Builder {
+        crate::input::list_entity_recognizer_summaries_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListEntityRecognizerSummaries {
+    type Output = std::result::Result<
+        crate::output::ListEntityRecognizerSummariesOutput,
+        crate::error::ListEntityRecognizerSummariesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_entity_recognizer_summaries_error(response)
+        } else {
+            crate::operation_deser::parse_list_entity_recognizer_summaries_response(response)
         }
     }
 }

@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p> AWS CodeArtifact is a fully managed artifact repository compatible with language-native
 //! package managers and build tools such as npm, Apache Maven, and pip. You can use CodeArtifact to
 //! share packages with development teams and pull packages. Packages can be pulled from both

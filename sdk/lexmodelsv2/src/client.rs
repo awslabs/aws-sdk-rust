@@ -142,6 +142,9 @@ where
     pub fn delete_slot_type(&self) -> fluent_builders::DeleteSlotType<C, M, R> {
         fluent_builders::DeleteSlotType::new(self.handle.clone())
     }
+    pub fn delete_utterances(&self) -> fluent_builders::DeleteUtterances<C, M, R> {
+        fluent_builders::DeleteUtterances::new(self.handle.clone())
+    }
     pub fn describe_bot(&self) -> fluent_builders::DescribeBot<C, M, R> {
         fluent_builders::DescribeBot::new(self.handle.clone())
     }
@@ -171,6 +174,9 @@ where
     }
     pub fn describe_slot_type(&self) -> fluent_builders::DescribeSlotType<C, M, R> {
         fluent_builders::DescribeSlotType::new(self.handle.clone())
+    }
+    pub fn list_aggregated_utterances(&self) -> fluent_builders::ListAggregatedUtterances<C, M, R> {
+        fluent_builders::ListAggregatedUtterances::new(self.handle.clone())
     }
     pub fn list_bot_aliases(&self) -> fluent_builders::ListBotAliases<C, M, R> {
         fluent_builders::ListBotAliases::new(self.handle.clone())
@@ -2641,6 +2647,83 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeleteUtterances<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_utterances_input::Builder,
+    }
+    impl<C, M, R> DeleteUtterances<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteUtterancesOutput,
+            smithy_http::result::SdkError<crate::error::DeleteUtterancesError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteUtterancesInputOperationOutputAlias,
+                crate::output::DeleteUtterancesOutput,
+                crate::error::DeleteUtterancesError,
+                crate::input::DeleteUtterancesInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot that contains the
+        /// utterances.</p>
+        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(inp);
+            self
+        }
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The identifier of the language and locale where the utterances were
+        /// collected. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+        /// languages</a>.</p>
+        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(inp);
+            self
+        }
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>The unique identifier of the session with the user. The ID is
+        /// returned in the response from the  and  operations.</p>
+        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(inp);
+            self
+        }
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DescribeBot<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -3314,6 +3397,165 @@ pub mod fluent_builders {
         }
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListAggregatedUtterances<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_aggregated_utterances_input::Builder,
+    }
+    impl<C, M, R> ListAggregatedUtterances<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAggregatedUtterancesOutput,
+            smithy_http::result::SdkError<crate::error::ListAggregatedUtterancesError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListAggregatedUtterancesInputOperationOutputAlias,
+                crate::output::ListAggregatedUtterancesOutput,
+                crate::error::ListAggregatedUtterancesError,
+                crate::input::ListAggregatedUtterancesInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the bot associated with this
+        /// request.</p>
+        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(inp);
+            self
+        }
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_id(input);
+            self
+        }
+        /// <p>The identifier of the bot alias associated with this request. If you
+        /// specify the bot alias, you can't specify the bot version.</p>
+        pub fn bot_alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(inp);
+            self
+        }
+        pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_alias_id(input);
+            self
+        }
+        /// <p>The identifier of the bot version associated with this request. If
+        /// you specify the bot version, you can't specify the bot alias.</p>
+        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(inp);
+            self
+        }
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bot_version(input);
+            self
+        }
+        /// <p>The identifier of the language and locale where the utterances were
+        /// collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+        /// languages</a>.</p>
+        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(inp);
+            self
+        }
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>The time window for aggregating the utterance information. You can
+        /// specify a time between one hour and two weeks.</p>
+        pub fn aggregation_duration(
+            mut self,
+            inp: crate::model::UtteranceAggregationDuration,
+        ) -> Self {
+            self.inner = self.inner.aggregation_duration(inp);
+            self
+        }
+        pub fn set_aggregation_duration(
+            mut self,
+            input: std::option::Option<crate::model::UtteranceAggregationDuration>,
+        ) -> Self {
+            self.inner = self.inner.set_aggregation_duration(input);
+            self
+        }
+        /// <p>Specifies sorting parameters for the list of utterances. You can
+        /// sort by the hit count, the missed count, or the number of distinct
+        /// sessions the utterance appeared in.</p>
+        pub fn sort_by(mut self, inp: crate::model::AggregatedUtterancesSortBy) -> Self {
+            self.inner = self.inner.sort_by(inp);
+            self
+        }
+        pub fn set_sort_by(
+            mut self,
+            input: std::option::Option<crate::model::AggregatedUtterancesSortBy>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by(input);
+            self
+        }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        /// <p>Provides the specification of a filter used to limit the utterances
+        /// in the response to only those that match the filter specification. You
+        /// can only specify one filter and one string to filter on.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::AggregatedUtterancesFilter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesFilter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The maximum number of utterances to return in each page of results.
+        /// If there are fewer results than the maximum page size, only the actual
+        /// number of results are returned. If you don't specify the
+        /// <code>maxResults</code> parameter, 1,000 results are
+        /// returned.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>If the response from the <code>ListAggregatedUtterances</code>
+        /// operation contains more results that specified in the
+        /// <code>maxResults</code> parameter, a token is returned in the
+        /// response. Use that token in the <code>nextToken</code> parameter to
+        /// return the next page of results.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }

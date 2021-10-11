@@ -1883,6 +1883,11 @@ where
                                     crate::json_deser::deser_structure_crate_model_elasticsearch_data_source_config(tokens)?
                                 );
                             }
+                            "openSearchServiceConfig" => {
+                                builder = builder.set_open_search_service_config(
+                                    crate::json_deser::deser_structure_crate_model_open_search_service_data_source_config(tokens)?
+                                );
+                            }
                             "httpConfig" => {
                                 builder = builder.set_http_config(
                                     crate::json_deser::deser_structure_crate_model_http_data_source_config(tokens)?
@@ -2759,6 +2764,60 @@ where
         Some(smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder = crate::model::ElasticsearchDataSourceConfig::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "endpoint" => {
+                                builder = builder.set_endpoint(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "awsRegion" => {
+                                builder = builder.set_aws_region(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_open_search_service_data_source_config<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::OpenSearchServiceDataSourceConfig>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::OpenSearchServiceDataSourceConfig::builder();
             loop {
                 match tokens.next().transpose()? {
                     Some(smithy_json::deserialize::Token::EndObject { .. }) => break,

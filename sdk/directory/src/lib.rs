@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Directory Service</fullname>
 //! <p>Directory Service is a web service that makes it easy for you to setup and run directories in the
 //! Amazon Web Services cloud, or connect your Amazon Web Services resources with an existing self-managed Microsoft Active

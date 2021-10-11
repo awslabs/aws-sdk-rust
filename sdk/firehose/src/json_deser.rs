@@ -1245,6 +1245,11 @@ where
                                     crate::json_deser::deser_structure_crate_model_elasticsearch_destination_description(tokens)?
                                 );
                             }
+                            "AmazonopensearchserviceDestinationDescription" => {
+                                builder = builder.set_amazonopensearchservice_destination_description(
+                                    crate::json_deser::deser_structure_crate_model_amazonopensearchservice_destination_description(tokens)?
+                                );
+                            }
                             "SplunkDestinationDescription" => {
                                 builder = builder.set_splunk_destination_description(
                                     crate::json_deser::deser_structure_crate_model_splunk_destination_description(tokens)?
@@ -1716,6 +1721,145 @@ where
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
                                             crate::model::ElasticsearchS3BackupMode::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "S3DestinationDescription" => {
+                                builder = builder.set_s3_destination_description(
+                                    crate::json_deser::deser_structure_crate_model_s3_destination_description(tokens)?
+                                );
+                            }
+                            "ProcessingConfiguration" => {
+                                builder = builder.set_processing_configuration(
+                                    crate::json_deser::deser_structure_crate_model_processing_configuration(tokens)?
+                                );
+                            }
+                            "CloudWatchLoggingOptions" => {
+                                builder = builder.set_cloud_watch_logging_options(
+                                    crate::json_deser::deser_structure_crate_model_cloud_watch_logging_options(tokens)?
+                                );
+                            }
+                            "VpcConfigurationDescription" => {
+                                builder = builder.set_vpc_configuration_description(
+                                    crate::json_deser::deser_structure_crate_model_vpc_configuration_description(tokens)?
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_amazonopensearchservice_destination_description<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AmazonopensearchserviceDestinationDescription>,
+    smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder =
+                crate::model::AmazonopensearchserviceDestinationDescription::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "RoleARN" => {
+                                builder = builder.set_role_arn(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "DomainARN" => {
+                                builder = builder.set_domain_arn(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ClusterEndpoint" => {
+                                builder = builder.set_cluster_endpoint(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "IndexName" => {
+                                builder = builder.set_index_name(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "TypeName" => {
+                                builder = builder.set_type_name(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "IndexRotationPeriod" => {
+                                builder = builder.set_index_rotation_period(
+                                    smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
+                                        s.to_unescaped().map(|u|
+                                            crate::model::AmazonopensearchserviceIndexRotationPeriod::from(u.as_ref())
+                                        )
+                                    ).transpose()?
+                                );
+                            }
+                            "BufferingHints" => {
+                                builder = builder.set_buffering_hints(
+                                    crate::json_deser::deser_structure_crate_model_amazonopensearchservice_buffering_hints(tokens)?
+                                );
+                            }
+                            "RetryOptions" => {
+                                builder = builder.set_retry_options(
+                                    crate::json_deser::deser_structure_crate_model_amazonopensearchservice_retry_options(tokens)?
+                                );
+                            }
+                            "S3BackupMode" => {
+                                builder = builder.set_s3_backup_mode(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::AmazonopensearchserviceS3BackupMode::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -2532,6 +2676,108 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_amazonopensearchservice_buffering_hints<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AmazonopensearchserviceBufferingHints>,
+    smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AmazonopensearchserviceBufferingHints::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "IntervalInSeconds" => {
+                                builder = builder.set_interval_in_seconds(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "SizeInMBs" => {
+                                builder = builder.set_size_in_m_bs(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_amazonopensearchservice_retry_options<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::AmazonopensearchserviceRetryOptions>,
+    smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AmazonopensearchserviceRetryOptions::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "DurationInSeconds" => {
+                                builder = builder.set_duration_in_seconds(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

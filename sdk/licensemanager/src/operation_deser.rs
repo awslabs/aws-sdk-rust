@@ -1358,6 +1358,131 @@ pub fn parse_create_license_configuration_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_license_conversion_task_for_resource_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLicenseConversionTaskForResourceOutput,
+    crate::error::CreateLicenseConversionTaskForResourceError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateLicenseConversionTaskForResourceError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::CreateLicenseConversionTaskForResourceError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateLicenseConversionTaskForResourceError { meta: generic, kind: crate::error::CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConversionTaskForResourceError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "AuthorizationException" => crate::error::CreateLicenseConversionTaskForResourceError { meta: generic, kind: crate::error::CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::authorization_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_authorization_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConversionTaskForResourceError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValueException" => crate::error::CreateLicenseConversionTaskForResourceError { meta: generic, kind: crate::error::CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConversionTaskForResourceError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "RateLimitExceededException" => crate::error::CreateLicenseConversionTaskForResourceError { meta: generic, kind: crate::error::CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::rate_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConversionTaskForResourceError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServerInternalException" => crate::error::CreateLicenseConversionTaskForResourceError { meta: generic, kind: crate::error::CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::server_internal_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_server_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConversionTaskForResourceError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ValidationException" => crate::error::CreateLicenseConversionTaskForResourceError { meta: generic, kind: crate::error::CreateLicenseConversionTaskForResourceErrorKind::ValidationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConversionTaskForResourceError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::CreateLicenseConversionTaskForResourceError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_license_conversion_task_for_resource_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLicenseConversionTaskForResourceOutput,
+    crate::error::CreateLicenseConversionTaskForResourceError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::create_license_conversion_task_for_resource_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_license_conversion_task_for_resource(response.body().as_ref(), output).map_err(crate::error::CreateLicenseConversionTaskForResourceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_license_manager_report_generator_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -3337,6 +3462,139 @@ pub fn parse_get_license_configuration_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_license_conversion_task_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetLicenseConversionTaskOutput,
+    crate::error::GetLicenseConversionTaskError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetLicenseConversionTaskError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetLicenseConversionTaskError {
+            meta: generic,
+            kind: crate::error::GetLicenseConversionTaskErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "AuthorizationException" => crate::error::GetLicenseConversionTaskError {
+            meta: generic,
+            kind: crate::error::GetLicenseConversionTaskErrorKind::AuthorizationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::authorization_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_authorization_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::GetLicenseConversionTaskError {
+            meta: generic,
+            kind: crate::error::GetLicenseConversionTaskErrorKind::InvalidParameterValueException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_value_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "RateLimitExceededException" => crate::error::GetLicenseConversionTaskError {
+            meta: generic,
+            kind: crate::error::GetLicenseConversionTaskErrorKind::RateLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::rate_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServerInternalException" => crate::error::GetLicenseConversionTaskError {
+            meta: generic,
+            kind: crate::error::GetLicenseConversionTaskErrorKind::ServerInternalException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_internal_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_server_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetLicenseConversionTaskError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_license_conversion_task_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetLicenseConversionTaskOutput,
+    crate::error::GetLicenseConversionTaskError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_license_conversion_task_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_license_conversion_task(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetLicenseConversionTaskError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_license_manager_report_generator_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -4279,6 +4537,139 @@ pub fn parse_list_license_configurations_response(
             output,
         )
         .map_err(crate::error::ListLicenseConfigurationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_license_conversion_tasks_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListLicenseConversionTasksOutput,
+    crate::error::ListLicenseConversionTasksError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListLicenseConversionTasksError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::ListLicenseConversionTasksError {
+            meta: generic,
+            kind: crate::error::ListLicenseConversionTasksErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "AuthorizationException" => crate::error::ListLicenseConversionTasksError {
+            meta: generic,
+            kind: crate::error::ListLicenseConversionTasksErrorKind::AuthorizationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::authorization_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_authorization_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::ListLicenseConversionTasksError {
+            meta: generic,
+            kind: crate::error::ListLicenseConversionTasksErrorKind::InvalidParameterValueException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_value_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "RateLimitExceededException" => crate::error::ListLicenseConversionTasksError {
+            meta: generic,
+            kind: crate::error::ListLicenseConversionTasksErrorKind::RateLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::rate_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_rate_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServerInternalException" => crate::error::ListLicenseConversionTasksError {
+            meta: generic,
+            kind: crate::error::ListLicenseConversionTasksErrorKind::ServerInternalException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_internal_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_server_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListLicenseConversionTasksError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_license_conversion_tasks_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListLicenseConversionTasksOutput,
+    crate::error::ListLicenseConversionTasksError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_license_conversion_tasks_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_license_conversion_tasks(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListLicenseConversionTasksError::unhandled)?;
         output.build()
     })
 }

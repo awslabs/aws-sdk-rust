@@ -25,12 +25,14 @@ pub(crate) mod header {
     pub(crate) const X_AMZ_USER_AGENT: &str = "x-amz-user-agent";
 }
 
-mod param {
+pub(crate) mod param {
     pub(crate) const X_AMZ_ALGORITHM: &str = "X-Amz-Algorithm";
     pub(crate) const X_AMZ_CREDENTIAL: &str = "X-Amz-Credential";
     pub(crate) const X_AMZ_DATE: &str = "X-Amz-Date";
     pub(crate) const X_AMZ_EXPIRES: &str = "X-Amz-Expires";
+    pub(crate) const X_AMZ_SECURITY_TOKEN: &str = "X-Amz-Security-Token";
     pub(crate) const X_AMZ_SIGNED_HEADERS: &str = "X-Amz-SignedHeaders";
+    pub(crate) const X_AMZ_SIGNATURE: &str = "X-Amz-Signature";
 }
 
 pub(crate) const HMAC_256: &str = "AWS4-HMAC-SHA256";
@@ -258,7 +260,7 @@ impl<'a> CanonicalRequest<'a> {
                 values.signed_headers.as_str(),
             );
             if let Some(security_token) = values.security_token {
-                add_param(&mut params, header::X_AMZ_SECURITY_TOKEN, security_token);
+                add_param(&mut params, param::X_AMZ_SECURITY_TOKEN, security_token);
             }
         }
         // Sort by param name, and then by param value

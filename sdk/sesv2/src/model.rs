@@ -471,8 +471,7 @@ impl EventDestinationDefinition {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PinpointDestination {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email
-    /// events to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.</p>
     pub application_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PinpointDestination {
@@ -491,8 +490,7 @@ pub mod pinpoint_destination {
         pub(crate) application_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email
-        /// events to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.</p>
         pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_arn = Some(input.into());
             self
@@ -524,9 +522,8 @@ impl PinpointDestination {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsDestination {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email
-    /// events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer
-    /// Guide</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For
+    /// more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnsDestination {
@@ -545,9 +542,8 @@ pub mod sns_destination {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email
-        /// events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer
-        /// Guide</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For
+        /// more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
         pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.topic_arn = Some(input.into());
             self
@@ -648,12 +644,11 @@ pub struct CloudWatchDimensionConfiguration {
     /// </li>
     /// </ul>
     pub dimension_name: std::option::Option<std::string::String>,
-    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. If
-    /// you want to use the message tags that you specify using an
-    /// <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>
-    /// or <code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want to use
-    /// your own email headers, choose <code>emailHeader</code>. If you want to use link tags,
-    /// choose <code>linkTags</code>.</p>
+    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To
+    /// use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or
+    /// a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose
+    /// <code>messageTag</code>. To use your own email headers, choose
+    /// <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
     pub dimension_value_source: std::option::Option<crate::model::DimensionValueSource>,
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the
     /// value of the dimension when you send an email. This value has to meet the following
@@ -711,12 +706,11 @@ pub mod cloud_watch_dimension_configuration {
             self.dimension_name = input;
             self
         }
-        /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. If
-        /// you want to use the message tags that you specify using an
-        /// <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>
-        /// or <code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want to use
-        /// your own email headers, choose <code>emailHeader</code>. If you want to use link tags,
-        /// choose <code>linkTags</code>.</p>
+        /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To
+        /// use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or
+        /// a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose
+        /// <code>messageTag</code>. To use your own email headers, choose
+        /// <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
         pub fn dimension_value_source(mut self, input: crate::model::DimensionValueSource) -> Self {
             self.dimension_value_source = Some(input);
             self
@@ -768,12 +762,11 @@ impl CloudWatchDimensionConfiguration {
     }
 }
 
-/// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. If
-/// you want to use the message tags that you specify using an
-/// <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>
-/// or <code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want to use
-/// your own email headers, choose <code>emailHeader</code>. If you want to use link tags,
-/// choose <code>linkTags</code>.</p>
+/// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To
+/// use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or
+/// a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose
+/// <code>messageTag</code>. To use your own email headers, choose
+/// <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1004,16 +997,16 @@ impl AsRef<str> for EventType {
 /// one value.</p>
 /// </li>
 /// <li>
-/// <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in
+/// <p>The <code>aws:</code> prefix is reserved for use by Amazon Web Services; you can’t use it in
 /// any tag keys or values that you define. In addition, you can't edit or remove
 /// tag keys or values that use this prefix. Tags that use this prefix don’t count
 /// against the limit of 50 tags per resource.</p>
 /// </li>
 /// <li>
 /// <p>You can associate tags with public or shared resources, but the tags are
-/// available only for your AWS account, not any other accounts that share the
+/// available only for your Amazon Web Services account, not any other accounts that share the
 /// resource. In addition, the tags are available only for resources that are
-/// located in the specified AWS Region for your AWS account.</p>
+/// located in the specified Amazon Web Services Region for your Amazon Web Services account.</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]
@@ -1786,6 +1779,14 @@ impl Content {
 }
 
 /// <p>An object that describes the recipients for an email.</p>
+/// <note>
+/// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+/// <i>local part</i> of a destination email address (the part of the
+/// email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+/// characters</a>. If the <i>domain part</i> of an address (the
+/// part after the @ sign) contains non-ASCII characters, they must be encoded using
+/// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
@@ -2513,10 +2514,10 @@ impl AsRef<str> for SuppressionListReason {
     }
 }
 
-/// <p>The action that you want to take if the required MX record can't be found when you
-/// send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
-/// using <i>amazonses.com</i> as the MAIL FROM domain. When you set this
-/// value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+/// <p>The action to take if the required MX record can't be found when you send an email.
+/// When you set this value to <code>UseDefaultValue</code>, the mail is sent using
+/// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+/// to <code>RejectMessage</code>, the Amazon SES API v2 returns a
 /// <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
 /// email.</p>
 /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
@@ -2668,18 +2669,19 @@ impl AsRef<str> for DkimStatus {
     }
 }
 
-/// <p>An object that contains information about the tokens used for setting up Bring Your
-/// Own DKIM (BYODKIM).</p>
+/// <p>An object that contains configuration for Bring Your Own DKIM (BYODKIM), or, for Easy DKIM</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DkimSigningAttributes {
-    /// <p>A string that's used to identify a public key in the DNS configuration for a
+    /// <p>[Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a
     /// domain.</p>
     pub domain_signing_selector: std::option::Option<std::string::String>,
-    /// <p>A private key that's used to generate a DKIM signature.</p>
-    /// <p>The private key must use 1024-bit RSA encryption, and must be encoded using base64
-    /// encoding.</p>
+    /// <p>[Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
+    /// <p>The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using
+    /// base64 encoding.</p>
     pub domain_signing_private_key: std::option::Option<std::string::String>,
+    /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
+    pub next_signing_key_length: std::option::Option<crate::model::DkimSigningKeyLength>,
 }
 impl std::fmt::Debug for DkimSigningAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2689,6 +2691,7 @@ impl std::fmt::Debug for DkimSigningAttributes {
             "domain_signing_private_key",
             &"*** Sensitive Data Redacted ***",
         );
+        formatter.field("next_signing_key_length", &self.next_signing_key_length);
         formatter.finish()
     }
 }
@@ -2700,9 +2703,10 @@ pub mod dkim_signing_attributes {
     pub struct Builder {
         pub(crate) domain_signing_selector: std::option::Option<std::string::String>,
         pub(crate) domain_signing_private_key: std::option::Option<std::string::String>,
+        pub(crate) next_signing_key_length: std::option::Option<crate::model::DkimSigningKeyLength>,
     }
     impl Builder {
-        /// <p>A string that's used to identify a public key in the DNS configuration for a
+        /// <p>[Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a
         /// domain.</p>
         pub fn domain_signing_selector(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_signing_selector = Some(input.into());
@@ -2715,9 +2719,9 @@ pub mod dkim_signing_attributes {
             self.domain_signing_selector = input;
             self
         }
-        /// <p>A private key that's used to generate a DKIM signature.</p>
-        /// <p>The private key must use 1024-bit RSA encryption, and must be encoded using base64
-        /// encoding.</p>
+        /// <p>[Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
+        /// <p>The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using
+        /// base64 encoding.</p>
         pub fn domain_signing_private_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_signing_private_key = Some(input.into());
             self
@@ -2729,11 +2733,27 @@ pub mod dkim_signing_attributes {
             self.domain_signing_private_key = input;
             self
         }
+        /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
+        pub fn next_signing_key_length(
+            mut self,
+            input: crate::model::DkimSigningKeyLength,
+        ) -> Self {
+            self.next_signing_key_length = Some(input);
+            self
+        }
+        pub fn set_next_signing_key_length(
+            mut self,
+            input: std::option::Option<crate::model::DkimSigningKeyLength>,
+        ) -> Self {
+            self.next_signing_key_length = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DkimSigningAttributes`](crate::model::DkimSigningAttributes)
         pub fn build(self) -> crate::model::DkimSigningAttributes {
             crate::model::DkimSigningAttributes {
                 domain_signing_selector: self.domain_signing_selector,
                 domain_signing_private_key: self.domain_signing_private_key,
+                next_signing_key_length: self.next_signing_key_length,
             }
         }
     }
@@ -2742,6 +2762,56 @@ impl DkimSigningAttributes {
     /// Creates a new builder-style object to manufacture [`DkimSigningAttributes`](crate::model::DkimSigningAttributes)
     pub fn builder() -> crate::model::dkim_signing_attributes::Builder {
         crate::model::dkim_signing_attributes::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DkimSigningKeyLength {
+    Rsa1024Bit,
+    Rsa2048Bit,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DkimSigningKeyLength {
+    fn from(s: &str) -> Self {
+        match s {
+            "RSA_1024_BIT" => DkimSigningKeyLength::Rsa1024Bit,
+            "RSA_2048_BIT" => DkimSigningKeyLength::Rsa2048Bit,
+            other => DkimSigningKeyLength::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DkimSigningKeyLength {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DkimSigningKeyLength::from(s))
+    }
+}
+impl DkimSigningKeyLength {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DkimSigningKeyLength::Rsa1024Bit => "RSA_1024_BIT",
+            DkimSigningKeyLength::Rsa2048Bit => "RSA_2048_BIT",
+            DkimSigningKeyLength::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["RSA_1024_BIT", "RSA_2048_BIT"]
+    }
+}
+impl AsRef<str> for DkimSigningKeyLength {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2802,7 +2872,7 @@ impl AsRef<str> for DkimSigningAttributesOrigin {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainDeliverabilityTrackingOption {
-    /// <p>A verified domain that’s associated with your AWS account and currently has an
+    /// <p>A verified domain that’s associated with your Amazon Web Services account and currently has an
     /// active Deliverability dashboard subscription.</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
@@ -2837,7 +2907,7 @@ pub mod domain_deliverability_tracking_option {
             std::option::Option<crate::model::InboxPlacementTrackingOption>,
     }
     impl Builder {
-        /// <p>A verified domain that’s associated with your AWS account and currently has an
+        /// <p>A verified domain that’s associated with your Amazon Web Services account and currently has an
         /// active Deliverability dashboard subscription.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
@@ -2894,7 +2964,7 @@ impl DomainDeliverabilityTrackingOption {
 }
 
 /// <p>An object that contains information about the inbox placement data settings for a
-/// verified domain that’s associated with your AWS account. This data is available only
+/// verified domain that’s associated with your Amazon Web Services account. This data is available only
 /// if you enabled the Deliverability dashboard for the domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3443,8 +3513,8 @@ impl ImportDestination {
 pub struct ContactListDestination {
     /// <p>The name of the contact list.</p>
     pub contact_list_name: std::option::Option<std::string::String>,
-    /// <p>>The type of action that you want to perform on the addresses. Acceptable
-    /// values:</p>
+    /// <p>>The type of action to perform on the addresses. The following are the
+    /// possible values:</p>
     /// <ul>
     /// <li>
     /// <p>PUT: add the addresses to the contact list. If the record already exists, it
@@ -3490,8 +3560,8 @@ pub mod contact_list_destination {
             self.contact_list_name = input;
             self
         }
-        /// <p>>The type of action that you want to perform on the addresses. Acceptable
-        /// values:</p>
+        /// <p>>The type of action to perform on the addresses. The following are the
+        /// possible values:</p>
         /// <ul>
         /// <li>
         /// <p>PUT: add the addresses to the contact list. If the record already exists, it
@@ -3585,7 +3655,7 @@ impl AsRef<str> for ContactListImportAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuppressionListDestination {
-    /// <p>The type of action that you want to perform on the address. Acceptable values:</p>
+    /// <p>The type of action to perform on the address. The following are possible values:</p>
     /// <ul>
     /// <li>
     /// <p>PUT: add the addresses to the suppression list. If the record already exists,
@@ -3618,7 +3688,7 @@ pub mod suppression_list_destination {
             std::option::Option<crate::model::SuppressionListImportAction>,
     }
     impl Builder {
-        /// <p>The type of action that you want to perform on the address. Acceptable values:</p>
+        /// <p>The type of action to perform on the address. The following are possible values:</p>
         /// <ul>
         /// <li>
         /// <p>PUT: add the addresses to the suppression list. If the record already exists,
@@ -3657,7 +3727,7 @@ impl SuppressionListDestination {
     }
 }
 
-/// <p>The type of action that you want to perform on the address. Acceptable values:</p>
+/// <p>The type of action to perform on the address. The following are possible values:</p>
 /// <ul>
 /// <li>
 /// <p>PUT: add the addresses to the suppression list.</p>
@@ -3839,22 +3909,8 @@ impl EmailTemplateMetadata {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityInfo {
-    /// <p>The email identity type. The identity type can be one of the following:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DOMAIN</code> – The identity is a domain.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed
-    /// by AWS.</p>
-    /// </li>
-    /// </ul>
+    /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported
+    /// for email identity types.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The address or domain of the identity.</p>
     pub identity_name: std::option::Option<std::string::String>,
@@ -3884,22 +3940,8 @@ pub mod identity_info {
         pub(crate) sending_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The email identity type. The identity type can be one of the following:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DOMAIN</code> – The identity is a domain.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed
-        /// by AWS.</p>
-        /// </li>
-        /// </ul>
+        /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported
+        /// for email identity types.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.identity_type = Some(input);
             self
@@ -3952,17 +3994,6 @@ impl IdentityInfo {
     }
 }
 
-/// <p>The email identity type. The identity type can be one of the following:</p>
-/// <ul>
-/// <li>
-/// <p>
-/// <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>DOMAIN</code> – The identity is a domain.</p>
-/// </li>
-/// </ul>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5328,10 +5359,10 @@ pub struct MailFromAttributes {
     /// </li>
     /// </ul>
     pub mail_from_domain_status: std::option::Option<crate::model::MailFromDomainStatus>,
-    /// <p>The action that you want to take if the required MX record can't be found when you
-    /// send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
-    /// using <i>amazonses.com</i> as the MAIL FROM domain. When you set this
-    /// value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+    /// <p>The action to take if the required MX record can't be found when you send an email.
+    /// When you set this value to <code>UseDefaultValue</code>, the mail is sent using
+    /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+    /// to <code>RejectMessage</code>, the Amazon SES API v2 returns a
     /// <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
     /// email.</p>
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
@@ -5408,10 +5439,10 @@ pub mod mail_from_attributes {
             self.mail_from_domain_status = input;
             self
         }
-        /// <p>The action that you want to take if the required MX record can't be found when you
-        /// send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
-        /// using <i>amazonses.com</i> as the MAIL FROM domain. When you set this
-        /// value to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+        /// <p>The action to take if the required MX record can't be found when you send an email.
+        /// When you set this value to <code>UseDefaultValue</code>, the mail is sent using
+        /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+        /// to <code>RejectMessage</code>, the Amazon SES API v2 returns a
         /// <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
         /// email.</p>
         /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
@@ -5582,7 +5613,7 @@ pub struct DkimAttributes {
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the
     /// appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
     pub tokens: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A string that indicates how DKIM was configured for the identity. There are two
+    /// <p>A string that indicates how DKIM was configured for the identity. These are the
     /// possible values:</p>
     /// <ul>
     /// <li>
@@ -5597,6 +5628,12 @@ pub struct DkimAttributes {
     /// </li>
     /// </ul>
     pub signing_attributes_origin: std::option::Option<crate::model::DkimSigningAttributesOrigin>,
+    /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
+    pub next_signing_key_length: std::option::Option<crate::model::DkimSigningKeyLength>,
+    /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+    pub current_signing_key_length: std::option::Option<crate::model::DkimSigningKeyLength>,
+    /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+    pub last_key_generation_timestamp: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for DkimAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5605,6 +5642,15 @@ impl std::fmt::Debug for DkimAttributes {
         formatter.field("status", &self.status);
         formatter.field("tokens", &self.tokens);
         formatter.field("signing_attributes_origin", &self.signing_attributes_origin);
+        formatter.field("next_signing_key_length", &self.next_signing_key_length);
+        formatter.field(
+            "current_signing_key_length",
+            &self.current_signing_key_length,
+        );
+        formatter.field(
+            "last_key_generation_timestamp",
+            &self.last_key_generation_timestamp,
+        );
         formatter.finish()
     }
 }
@@ -5619,6 +5665,10 @@ pub mod dkim_attributes {
         pub(crate) tokens: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) signing_attributes_origin:
             std::option::Option<crate::model::DkimSigningAttributesOrigin>,
+        pub(crate) next_signing_key_length: std::option::Option<crate::model::DkimSigningKeyLength>,
+        pub(crate) current_signing_key_length:
+            std::option::Option<crate::model::DkimSigningKeyLength>,
+        pub(crate) last_key_generation_timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>If the value is <code>true</code>, then the messages that you send from the identity
@@ -5684,7 +5734,7 @@ pub mod dkim_attributes {
             self.tokens = input;
             self
         }
-        /// <p>A string that indicates how DKIM was configured for the identity. There are two
+        /// <p>A string that indicates how DKIM was configured for the identity. These are the
         /// possible values:</p>
         /// <ul>
         /// <li>
@@ -5712,6 +5762,48 @@ pub mod dkim_attributes {
             self.signing_attributes_origin = input;
             self
         }
+        /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
+        pub fn next_signing_key_length(
+            mut self,
+            input: crate::model::DkimSigningKeyLength,
+        ) -> Self {
+            self.next_signing_key_length = Some(input);
+            self
+        }
+        pub fn set_next_signing_key_length(
+            mut self,
+            input: std::option::Option<crate::model::DkimSigningKeyLength>,
+        ) -> Self {
+            self.next_signing_key_length = input;
+            self
+        }
+        /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+        pub fn current_signing_key_length(
+            mut self,
+            input: crate::model::DkimSigningKeyLength,
+        ) -> Self {
+            self.current_signing_key_length = Some(input);
+            self
+        }
+        pub fn set_current_signing_key_length(
+            mut self,
+            input: std::option::Option<crate::model::DkimSigningKeyLength>,
+        ) -> Self {
+            self.current_signing_key_length = input;
+            self
+        }
+        /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+        pub fn last_key_generation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_key_generation_timestamp = Some(input);
+            self
+        }
+        pub fn set_last_key_generation_timestamp(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_key_generation_timestamp = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DkimAttributes`](crate::model::DkimAttributes)
         pub fn build(self) -> crate::model::DkimAttributes {
             crate::model::DkimAttributes {
@@ -5719,6 +5811,9 @@ pub mod dkim_attributes {
                 status: self.status,
                 tokens: self.tokens,
                 signing_attributes_origin: self.signing_attributes_origin,
+                next_signing_key_length: self.next_signing_key_length,
+                current_signing_key_length: self.current_signing_key_length,
+                last_key_generation_timestamp: self.last_key_generation_timestamp,
             }
         }
     }
@@ -6528,10 +6623,10 @@ impl AsRef<str> for WarmupStatus {
 }
 
 /// <p>In the Amazon SES API v2, <i>events</i> include message sends, deliveries, opens,
-/// clicks, bounces, complaints and delivery delays. <i>Event destinations</i> are places that
-/// you can send information about these events to. For example, you can send event data to
-/// Amazon SNS to receive notifications when you receive bounces or complaints, or you can use
-/// Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
+/// clicks, bounces, complaints and delivery delays. <i>Event destinations</i>
+/// are places that you can send information about these events to. For example, you can
+/// send event data to Amazon SNS to receive notifications when you receive bounces or
+/// complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventDestination {
@@ -6783,7 +6878,7 @@ impl SuppressionOptions {
 }
 
 /// <p>Used to enable or disable email sending for messages that use this configuration set
-/// in the current AWS Region.</p>
+/// in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendingOptions {
@@ -6833,7 +6928,7 @@ impl SendingOptions {
 }
 
 /// <p>Enable or disable collection of reputation metrics for emails that you send using this
-/// configuration set in the current AWS Region. </p>
+/// configuration set in the current Amazon Web Services Region. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReputationOptions {
@@ -6917,8 +7012,7 @@ pub struct DeliveryOptions {
     /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
     /// messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub tls_policy: std::option::Option<crate::model::TlsPolicy>,
-    /// <p>The name of the dedicated IP pool that you want to associate with the configuration
-    /// set.</p>
+    /// <p>The name of the dedicated IP pool to associate with the configuration set.</p>
     pub sending_pool_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeliveryOptions {
@@ -6954,8 +7048,7 @@ pub mod delivery_options {
             self.tls_policy = input;
             self
         }
-        /// <p>The name of the dedicated IP pool that you want to associate with the configuration
-        /// set.</p>
+        /// <p>The name of the dedicated IP pool to associate with the configuration set.</p>
         pub fn sending_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.sending_pool_name = Some(input.into());
             self
@@ -6987,13 +7080,13 @@ impl DeliveryOptions {
 /// Amazon SES API v2 to send an email, it contains an invisible image that's used to track when
 /// recipients open your email. If your email contains links, those links are changed
 /// slightly in order to track when recipients click them.</p>
-/// <p>These images and links include references to a domain operated by AWS. You can
+/// <p>These images and links include references to a domain operated by Amazon Web Services. You can
 /// optionally configure the Amazon SES to use a domain that you operate for these images and
 /// links.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrackingOptions {
-    /// <p>The domain that you want to use for tracking open and click events.</p>
+    /// <p>The domain to use for tracking open and click events.</p>
     pub custom_redirect_domain: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TrackingOptions {
@@ -7012,7 +7105,7 @@ pub mod tracking_options {
         pub(crate) custom_redirect_domain: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The domain that you want to use for tracking open and click events.</p>
+        /// <p>The domain to use for tracking open and click events.</p>
         pub fn custom_redirect_domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_redirect_domain = Some(input.into());
             self
@@ -7455,7 +7548,7 @@ impl AsRef<str> for ReviewStatus {
 }
 
 /// <p>An object that contains information about the email address suppression preferences
-/// for your account in the current AWS Region.</p>
+/// for your account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuppressionAttributes {
@@ -7527,19 +7620,19 @@ impl SuppressionAttributes {
 }
 
 /// <p>An object that contains information about the per-day and per-second sending limits
-/// for your Amazon SES account in the current AWS Region.</p>
+/// for your Amazon SES account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendQuota {
-    /// <p>The maximum number of emails that you can send in the current AWS Region over a
+    /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a
     /// 24-hour period. This value is also called your <i>sending
     /// quota</i>.</p>
     pub max24_hour_send: f64,
-    /// <p>The maximum number of emails that you can send per second in the current AWS Region.
+    /// <p>The maximum number of emails that you can send per second in the current Amazon Web Services Region.
     /// This value is also called your <i>maximum sending rate</i> or your
     /// <i>maximum TPS (transactions per second) rate</i>.</p>
     pub max_send_rate: f64,
-    /// <p>The number of emails sent from your Amazon SES account in the current AWS Region over the
+    /// <p>The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the
     /// past 24 hours.</p>
     pub sent_last24_hours: f64,
 }
@@ -7563,7 +7656,7 @@ pub mod send_quota {
         pub(crate) sent_last24_hours: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The maximum number of emails that you can send in the current AWS Region over a
+        /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a
         /// 24-hour period. This value is also called your <i>sending
         /// quota</i>.</p>
         pub fn max24_hour_send(mut self, input: f64) -> Self {
@@ -7574,7 +7667,7 @@ pub mod send_quota {
             self.max24_hour_send = input;
             self
         }
-        /// <p>The maximum number of emails that you can send per second in the current AWS Region.
+        /// <p>The maximum number of emails that you can send per second in the current Amazon Web Services Region.
         /// This value is also called your <i>maximum sending rate</i> or your
         /// <i>maximum TPS (transactions per second) rate</i>.</p>
         pub fn max_send_rate(mut self, input: f64) -> Self {
@@ -7585,7 +7678,7 @@ pub mod send_quota {
             self.max_send_rate = input;
             self
         }
-        /// <p>The number of emails sent from your Amazon SES account in the current AWS Region over the
+        /// <p>The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the
         /// past 24 hours.</p>
         pub fn sent_last24_hours(mut self, input: f64) -> Self {
             self.sent_last24_hours = Some(input);

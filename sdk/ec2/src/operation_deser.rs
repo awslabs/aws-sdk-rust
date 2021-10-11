@@ -1071,6 +1071,42 @@ pub fn parse_cancel_capacity_reservation_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_cancel_capacity_reservation_fleets_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CancelCapacityReservationFleetsOutput,
+    crate::error::CancelCapacityReservationFleetsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CancelCapacityReservationFleetsError::unhandled)?;
+    Err(crate::error::CancelCapacityReservationFleetsError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_cancel_capacity_reservation_fleets_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CancelCapacityReservationFleetsOutput,
+    crate::error::CancelCapacityReservationFleetsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::cancel_capacity_reservation_fleets_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_cancel_capacity_reservation_fleets(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CancelCapacityReservationFleetsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_conversion_task_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1390,6 +1426,42 @@ pub fn parse_create_capacity_reservation_response(
             output,
         )
         .map_err(crate::error::CreateCapacityReservationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_capacity_reservation_fleet_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateCapacityReservationFleetOutput,
+    crate::error::CreateCapacityReservationFleetError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateCapacityReservationFleetError::unhandled)?;
+    Err(crate::error::CreateCapacityReservationFleetError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_capacity_reservation_fleet_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateCapacityReservationFleetOutput,
+    crate::error::CreateCapacityReservationFleetError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::create_capacity_reservation_fleet_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_create_capacity_reservation_fleet(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::CreateCapacityReservationFleetError::unhandled)?;
         output.build()
     })
 }
@@ -5320,6 +5392,40 @@ pub fn parse_describe_byoip_cidrs_response(
             output,
         )
         .map_err(crate::error::DescribeByoipCidrsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_capacity_reservation_fleets_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeCapacityReservationFleetsOutput,
+    crate::error::DescribeCapacityReservationFleetsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeCapacityReservationFleetsError::unhandled)?;
+    Err(crate::error::DescribeCapacityReservationFleetsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_capacity_reservation_fleets_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeCapacityReservationFleetsOutput,
+    crate::error::DescribeCapacityReservationFleetsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_capacity_reservation_fleets_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_describe_capacity_reservation_fleets(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeCapacityReservationFleetsError::unhandled)?;
         output.build()
     })
 }
@@ -10972,6 +11078,70 @@ pub fn parse_get_transit_gateway_route_table_propagations_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_vpn_connection_device_sample_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetVpnConnectionDeviceSampleConfigurationOutput,
+    crate::error::GetVpnConnectionDeviceSampleConfigurationError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetVpnConnectionDeviceSampleConfigurationError::unhandled)?;
+    Err(crate::error::GetVpnConnectionDeviceSampleConfigurationError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_vpn_connection_device_sample_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetVpnConnectionDeviceSampleConfigurationOutput,
+    crate::error::GetVpnConnectionDeviceSampleConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_vpn_connection_device_sample_configuration_output::Builder::default(
+            );
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_vpn_connection_device_sample_configuration(response.body().as_ref(), output).map_err(crate::error::GetVpnConnectionDeviceSampleConfigurationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_vpn_connection_device_types_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetVpnConnectionDeviceTypesOutput,
+    crate::error::GetVpnConnectionDeviceTypesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetVpnConnectionDeviceTypesError::unhandled)?;
+    Err(crate::error::GetVpnConnectionDeviceTypesError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_vpn_connection_device_types_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetVpnConnectionDeviceTypesOutput,
+    crate::error::GetVpnConnectionDeviceTypesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_vpn_connection_device_types_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_vpn_connection_device_types(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetVpnConnectionDeviceTypesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_client_vpn_client_certificate_revocation_list_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -11224,6 +11394,42 @@ pub fn parse_modify_capacity_reservation_response(
             output,
         )
         .map_err(crate::error::ModifyCapacityReservationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_capacity_reservation_fleet_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyCapacityReservationFleetOutput,
+    crate::error::ModifyCapacityReservationFleetError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyCapacityReservationFleetError::unhandled)?;
+    Err(crate::error::ModifyCapacityReservationFleetError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_capacity_reservation_fleet_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyCapacityReservationFleetOutput,
+    crate::error::ModifyCapacityReservationFleetError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::modify_capacity_reservation_fleet_output::Builder::default();
+        let _ = response;
+        output =
+            crate::xml_deser::deser_operation_crate_operation_modify_capacity_reservation_fleet(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ModifyCapacityReservationFleetError::unhandled)?;
         output.build()
     })
 }

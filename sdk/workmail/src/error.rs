@@ -1670,6 +1670,130 @@ impl std::error::Error for DeleteMailboxPermissionsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeleteMobileDeviceAccessOverrideError {
+    pub kind: DeleteMobileDeviceAccessOverrideErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteMobileDeviceAccessOverrideErrorKind {
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteMobileDeviceAccessOverrideError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteMobileDeviceAccessOverrideErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteMobileDeviceAccessOverrideErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteMobileDeviceAccessOverrideError {
+    fn code(&self) -> Option<&str> {
+        DeleteMobileDeviceAccessOverrideError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteMobileDeviceAccessOverrideError {
+    pub fn new(kind: DeleteMobileDeviceAccessOverrideErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteMobileDeviceAccessOverrideErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteMobileDeviceAccessOverrideErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMobileDeviceAccessOverrideErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteMobileDeviceAccessOverrideError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            DeleteMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteMobileDeviceAccessOverrideErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            DeleteMobileDeviceAccessOverrideErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessRuleError {
     pub kind: DeleteMobileDeviceAccessRuleErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -2441,6 +2565,104 @@ impl std::error::Error for DescribeGroupError {
             DescribeGroupErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
             DescribeGroupErrorKind::OrganizationStateException(_inner) => Some(_inner),
             DescribeGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeInboundDmarcSettingsError {
+    pub kind: DescribeInboundDmarcSettingsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeInboundDmarcSettingsErrorKind {
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeInboundDmarcSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeInboundDmarcSettingsErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeInboundDmarcSettingsErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeInboundDmarcSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeInboundDmarcSettingsError {
+    fn code(&self) -> Option<&str> {
+        DescribeInboundDmarcSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeInboundDmarcSettingsError {
+    pub fn new(kind: DescribeInboundDmarcSettingsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeInboundDmarcSettingsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeInboundDmarcSettingsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInboundDmarcSettingsErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInboundDmarcSettingsErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeInboundDmarcSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeInboundDmarcSettingsErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeInboundDmarcSettingsErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            DescribeInboundDmarcSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3596,6 +3818,141 @@ impl std::error::Error for GetMobileDeviceAccessEffectError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct GetMobileDeviceAccessOverrideError {
+    pub kind: GetMobileDeviceAccessOverrideErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMobileDeviceAccessOverrideErrorKind {
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    OrganizationStateException(crate::error::OrganizationStateException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetMobileDeviceAccessOverrideError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetMobileDeviceAccessOverrideErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetMobileDeviceAccessOverrideErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetMobileDeviceAccessOverrideErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetMobileDeviceAccessOverrideError {
+    fn code(&self) -> Option<&str> {
+        GetMobileDeviceAccessOverrideError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMobileDeviceAccessOverrideError {
+    pub fn new(kind: GetMobileDeviceAccessOverrideErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMobileDeviceAccessOverrideErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMobileDeviceAccessOverrideErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMobileDeviceAccessOverrideErrorKind::OrganizationStateException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMobileDeviceAccessOverrideErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for GetMobileDeviceAccessOverrideError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            GetMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            GetMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetMobileDeviceAccessOverrideErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            GetMobileDeviceAccessOverrideErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetMobileDeviceAccessOverrideErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct ListAccessControlRulesError {
     pub kind: ListAccessControlRulesErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -4220,6 +4577,130 @@ impl std::error::Error for ListMailboxPermissionsError {
             ListMailboxPermissionsErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
             ListMailboxPermissionsErrorKind::OrganizationStateException(_inner) => Some(_inner),
             ListMailboxPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMobileDeviceAccessOverridesError {
+    pub kind: ListMobileDeviceAccessOverridesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMobileDeviceAccessOverridesErrorKind {
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListMobileDeviceAccessOverridesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMobileDeviceAccessOverridesErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListMobileDeviceAccessOverridesErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListMobileDeviceAccessOverridesErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListMobileDeviceAccessOverridesErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListMobileDeviceAccessOverridesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListMobileDeviceAccessOverridesError {
+    fn code(&self) -> Option<&str> {
+        ListMobileDeviceAccessOverridesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMobileDeviceAccessOverridesError {
+    pub fn new(kind: ListMobileDeviceAccessOverridesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMobileDeviceAccessOverridesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMobileDeviceAccessOverridesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMobileDeviceAccessOverridesErrorKind::EntityNotFoundException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMobileDeviceAccessOverridesErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMobileDeviceAccessOverridesErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMobileDeviceAccessOverridesErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for ListMobileDeviceAccessOverridesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMobileDeviceAccessOverridesErrorKind::EntityNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListMobileDeviceAccessOverridesErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            ListMobileDeviceAccessOverridesErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListMobileDeviceAccessOverridesErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            ListMobileDeviceAccessOverridesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4926,6 +5407,98 @@ impl std::error::Error for PutAccessControlRuleError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct PutInboundDmarcSettingsError {
+    pub kind: PutInboundDmarcSettingsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutInboundDmarcSettingsErrorKind {
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutInboundDmarcSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutInboundDmarcSettingsErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutInboundDmarcSettingsErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            PutInboundDmarcSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for PutInboundDmarcSettingsError {
+    fn code(&self) -> Option<&str> {
+        PutInboundDmarcSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutInboundDmarcSettingsError {
+    pub fn new(kind: PutInboundDmarcSettingsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutInboundDmarcSettingsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutInboundDmarcSettingsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInboundDmarcSettingsErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutInboundDmarcSettingsErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for PutInboundDmarcSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutInboundDmarcSettingsErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            PutInboundDmarcSettingsErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            PutInboundDmarcSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct PutMailboxPermissionsError {
     pub kind: PutMailboxPermissionsErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -5037,6 +5610,137 @@ impl std::error::Error for PutMailboxPermissionsError {
             PutMailboxPermissionsErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
             PutMailboxPermissionsErrorKind::OrganizationStateException(_inner) => Some(_inner),
             PutMailboxPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutMobileDeviceAccessOverrideError {
+    pub kind: PutMobileDeviceAccessOverrideErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutMobileDeviceAccessOverrideErrorKind {
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    EntityStateException(crate::error::EntityStateException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutMobileDeviceAccessOverrideError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutMobileDeviceAccessOverrideErrorKind::EntityStateException(_inner) => _inner.fmt(f),
+            PutMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutMobileDeviceAccessOverrideErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutMobileDeviceAccessOverrideErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for PutMobileDeviceAccessOverrideError {
+    fn code(&self) -> Option<&str> {
+        PutMobileDeviceAccessOverrideError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutMobileDeviceAccessOverrideError {
+    pub fn new(kind: PutMobileDeviceAccessOverrideErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutMobileDeviceAccessOverrideErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutMobileDeviceAccessOverrideErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_)
+        )
+    }
+    pub fn is_entity_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutMobileDeviceAccessOverrideErrorKind::EntityStateException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutMobileDeviceAccessOverrideErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for PutMobileDeviceAccessOverrideError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            PutMobileDeviceAccessOverrideErrorKind::EntityStateException(_inner) => Some(_inner),
+            PutMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            PutMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            PutMobileDeviceAccessOverrideErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            PutMobileDeviceAccessOverrideErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

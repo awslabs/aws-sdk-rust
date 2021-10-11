@@ -5,7 +5,7 @@ pub struct StartStreamTranscriptionOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The language code for the input audio stream.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate for the input audio stream. Use 8000 Hz for low quality audio and 16000 Hz
+    /// <p>The sample rate for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz
     /// for high quality audio.</p>
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio stream.</p>
@@ -34,6 +34,12 @@ pub struct StartStreamTranscriptionOutput {
     /// <p>If partial results stabilization has been enabled in the stream, shows the stability
     /// level.</p>
     pub partial_results_stability: std::option::Option<crate::model::PartialResultsStability>,
+    /// <p>Shows whether content identification was enabled in this stream.</p>
+    pub content_identification_type: std::option::Option<crate::model::ContentIdentificationType>,
+    /// <p>Shows whether content redaction was enabled in this stream.</p>
+    pub content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
+    /// <p>Lists the PII entity types you specified in your request.</p>
+    pub pii_entity_types: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StartStreamTranscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -58,6 +64,12 @@ impl std::fmt::Debug for StartStreamTranscriptionOutput {
             &self.enable_partial_results_stabilization,
         );
         formatter.field("partial_results_stability", &self.partial_results_stability);
+        formatter.field(
+            "content_identification_type",
+            &self.content_identification_type,
+        );
+        formatter.field("content_redaction_type", &self.content_redaction_type);
+        formatter.field("pii_entity_types", &self.pii_entity_types);
         formatter.finish()
     }
 }
@@ -88,6 +100,10 @@ pub mod start_stream_transcription_output {
         pub(crate) enable_partial_results_stabilization: std::option::Option<bool>,
         pub(crate) partial_results_stability:
             std::option::Option<crate::model::PartialResultsStability>,
+        pub(crate) content_identification_type:
+            std::option::Option<crate::model::ContentIdentificationType>,
+        pub(crate) content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
+        pub(crate) pii_entity_types: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An identifier for the streaming transcription.</p>
@@ -111,7 +127,7 @@ pub mod start_stream_transcription_output {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate for the input audio stream. Use 8000 Hz for low quality audio and 16000 Hz
+        /// <p>The sample rate for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz
         /// for high quality audio.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
@@ -262,6 +278,45 @@ pub mod start_stream_transcription_output {
             self.partial_results_stability = input;
             self
         }
+        /// <p>Shows whether content identification was enabled in this stream.</p>
+        pub fn content_identification_type(
+            mut self,
+            input: crate::model::ContentIdentificationType,
+        ) -> Self {
+            self.content_identification_type = Some(input);
+            self
+        }
+        pub fn set_content_identification_type(
+            mut self,
+            input: std::option::Option<crate::model::ContentIdentificationType>,
+        ) -> Self {
+            self.content_identification_type = input;
+            self
+        }
+        /// <p>Shows whether content redaction was enabled in this stream.</p>
+        pub fn content_redaction_type(mut self, input: crate::model::ContentRedactionType) -> Self {
+            self.content_redaction_type = Some(input);
+            self
+        }
+        pub fn set_content_redaction_type(
+            mut self,
+            input: std::option::Option<crate::model::ContentRedactionType>,
+        ) -> Self {
+            self.content_redaction_type = input;
+            self
+        }
+        /// <p>Lists the PII entity types you specified in your request.</p>
+        pub fn pii_entity_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pii_entity_types = Some(input.into());
+            self
+        }
+        pub fn set_pii_entity_types(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pii_entity_types = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput)
         pub fn build(
             self,
@@ -305,6 +360,12 @@ pub mod start_stream_transcription_output {
                     ,
                     partial_results_stability: self.partial_results_stability
                     ,
+                    content_identification_type: self.content_identification_type
+                    ,
+                    content_redaction_type: self.content_redaction_type
+                    ,
+                    pii_entity_types: self.pii_entity_types
+                    ,
                 }
             )
         }
@@ -324,7 +385,7 @@ pub struct StartMedicalStreamTranscriptionOutput {
     /// <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English
     /// (en-US).</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate of the input audio in Hertz. Valid value: 16000 Hz.</p>
+    /// <p>The sample rate of the input audio in Hertz.</p>
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio stream.</p>
     pub media_encoding: std::option::Option<crate::model::MediaEncoding>,
@@ -427,7 +488,7 @@ pub mod start_medical_stream_transcription_output {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate of the input audio in Hertz. Valid value: 16000 Hz.</p>
+        /// <p>The sample rate of the input audio in Hertz.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
             self

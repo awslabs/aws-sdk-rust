@@ -252,7 +252,7 @@ pub struct StartImageScanOutput {
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>An object with identifying information for an Amazon ECR image.</p>
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub image_id: std::option::Option<crate::model::ImageIdentifier>,
     /// <p>The current state of the scan.</p>
     pub image_scan_status: std::option::Option<crate::model::ImageScanStatus>,
@@ -300,7 +300,7 @@ pub mod start_image_scan_output {
             self.repository_name = input;
             self
         }
-        /// <p>An object with identifying information for an Amazon ECR image.</p>
+        /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
         pub fn image_id(mut self, input: crate::model::ImageIdentifier) -> Self {
             self.image_id = Some(input);
             self
@@ -1659,7 +1659,7 @@ pub struct DescribeImageScanFindingsOutput {
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>An object with identifying information for an Amazon ECR image.</p>
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub image_id: std::option::Option<crate::model::ImageIdentifier>,
     /// <p>The current state of the scan.</p>
     pub image_scan_status: std::option::Option<crate::model::ImageScanStatus>,
@@ -1719,7 +1719,7 @@ pub mod describe_image_scan_findings_output {
             self.repository_name = input;
             self
         }
-        /// <p>An object with identifying information for an Amazon ECR image.</p>
+        /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
         pub fn image_id(mut self, input: crate::model::ImageIdentifier) -> Self {
             self.image_id = Some(input);
             self
@@ -1858,6 +1858,95 @@ impl DescribeImagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImagesOutput`](crate::output::DescribeImagesOutput)
     pub fn builder() -> crate::output::describe_images_output::Builder {
         crate::output::describe_images_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeImageReplicationStatusOutput {
+    /// <p>The repository name associated with the request.</p>
+    pub repository_name: std::option::Option<std::string::String>,
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub image_id: std::option::Option<crate::model::ImageIdentifier>,
+    /// <p>The replication status details for the images in the specified repository.</p>
+    pub replication_statuses:
+        std::option::Option<std::vec::Vec<crate::model::ImageReplicationStatus>>,
+}
+impl std::fmt::Debug for DescribeImageReplicationStatusOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeImageReplicationStatusOutput");
+        formatter.field("repository_name", &self.repository_name);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("replication_statuses", &self.replication_statuses);
+        formatter.finish()
+    }
+}
+/// See [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput)
+pub mod describe_image_replication_status_output {
+    /// A builder for [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) repository_name: std::option::Option<std::string::String>,
+        pub(crate) image_id: std::option::Option<crate::model::ImageIdentifier>,
+        pub(crate) replication_statuses:
+            std::option::Option<std::vec::Vec<crate::model::ImageReplicationStatus>>,
+    }
+    impl Builder {
+        /// <p>The repository name associated with the request.</p>
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.repository_name = Some(input.into());
+            self
+        }
+        pub fn set_repository_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.repository_name = input;
+            self
+        }
+        /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+        pub fn image_id(mut self, input: crate::model::ImageIdentifier) -> Self {
+            self.image_id = Some(input);
+            self
+        }
+        pub fn set_image_id(
+            mut self,
+            input: std::option::Option<crate::model::ImageIdentifier>,
+        ) -> Self {
+            self.image_id = input;
+            self
+        }
+        pub fn replication_statuses(
+            mut self,
+            input: impl Into<crate::model::ImageReplicationStatus>,
+        ) -> Self {
+            let mut v = self.replication_statuses.unwrap_or_default();
+            v.push(input.into());
+            self.replication_statuses = Some(v);
+            self
+        }
+        pub fn set_replication_statuses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ImageReplicationStatus>>,
+        ) -> Self {
+            self.replication_statuses = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput)
+        pub fn build(self) -> crate::output::DescribeImageReplicationStatusOutput {
+            crate::output::DescribeImageReplicationStatusOutput {
+                repository_name: self.repository_name,
+                image_id: self.image_id,
+                replication_statuses: self.replication_statuses,
+            }
+        }
+    }
+}
+impl DescribeImageReplicationStatusOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput)
+    pub fn builder() -> crate::output::describe_image_replication_status_output::Builder {
+        crate::output::describe_image_replication_status_output::Builder::default()
     }
 }
 

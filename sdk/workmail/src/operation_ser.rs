@@ -147,6 +147,19 @@ pub fn serialize_operation_crate_operation_delete_mailbox_permissions(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_delete_mobile_device_access_override(
+    input: &crate::input::DeleteMobileDeviceAccessOverrideInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_delete_mobile_device_access_override_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_delete_mobile_device_access_rule(
     input: &crate::input::DeleteMobileDeviceAccessRuleInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -222,6 +235,19 @@ pub fn serialize_operation_crate_operation_describe_group(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_describe_group_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_describe_inbound_dmarc_settings(
+    input: &crate::input::DescribeInboundDmarcSettingsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_describe_inbound_dmarc_settings_input(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -347,6 +373,19 @@ pub fn serialize_operation_crate_operation_get_mobile_device_access_effect(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_get_mobile_device_access_override(
+    input: &crate::input::GetMobileDeviceAccessOverrideInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_get_mobile_device_access_override_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_list_access_control_rules(
     input: &crate::input::ListAccessControlRulesInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -409,6 +448,19 @@ pub fn serialize_operation_crate_operation_list_mailbox_permissions(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_list_mailbox_permissions_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_mobile_device_access_overrides(
+    input: &crate::input::ListMobileDeviceAccessOverridesInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_mobile_device_access_overrides_input(
         &mut object,
         input,
     );
@@ -498,12 +550,38 @@ pub fn serialize_operation_crate_operation_put_access_control_rule(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_put_inbound_dmarc_settings(
+    input: &crate::input::PutInboundDmarcSettingsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_put_inbound_dmarc_settings_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_put_mailbox_permissions(
     input: &crate::input::PutMailboxPermissionsInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_put_mailbox_permissions_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_put_mobile_device_access_override(
+    input: &crate::input::PutMobileDeviceAccessOverrideInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_put_mobile_device_access_override_input(
         &mut object,
         input,
     );

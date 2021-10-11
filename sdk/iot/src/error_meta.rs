@@ -5510,6 +5510,25 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::PutVerificationStateOnViolationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::PutVerificationStateOnViolationError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutVerificationStateOnViolationErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+                crate::error::PutVerificationStateOnViolationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::PutVerificationStateOnViolationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::PutVerificationStateOnViolationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::RegisterCACertificateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

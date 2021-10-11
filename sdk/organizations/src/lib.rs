@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts
 //! into an <i>organization</i> and centrally manage your accounts and their
 //! resources.</p>

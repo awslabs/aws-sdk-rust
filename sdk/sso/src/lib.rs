@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>AWS Single Sign-On Portal is a web service that makes it easy for you to assign user
 //! access to AWS SSO resources such as the user portal. Users can get AWS account applications
 //! and roles assigned to them and get federated into the application.</p>

@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Welcome to the Amazon AppFlow API reference. This guide is for developers who need
 //! detailed information about the Amazon AppFlow API operations, data types, and errors. </p>
 //! <p>Amazon AppFlow is a fully managed integration service that enables you to securely

@@ -383,6 +383,26 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteMobileDeviceAccessOverrideError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteMobileDeviceAccessOverrideError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+                crate::error::DeleteMobileDeviceAccessOverrideErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DeleteMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::DeleteMobileDeviceAccessOverrideErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::DeleteMobileDeviceAccessOverrideErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::DeleteMobileDeviceAccessRuleError, R>>
     for Error
 where
@@ -550,6 +570,24 @@ where
                 }
                 crate::error::DescribeGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeInboundDmarcSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeInboundDmarcSettingsError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeInboundDmarcSettingsErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::DescribeInboundDmarcSettingsErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::DescribeInboundDmarcSettingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -806,6 +844,27 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::GetMobileDeviceAccessOverrideError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetMobileDeviceAccessOverrideError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+                crate::error::GetMobileDeviceAccessOverrideErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::GetMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::GetMobileDeviceAccessOverrideErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::GetMobileDeviceAccessOverrideErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GetMobileDeviceAccessOverrideErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::ListAccessControlRulesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -963,6 +1022,26 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListMobileDeviceAccessOverridesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListMobileDeviceAccessOverridesError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListMobileDeviceAccessOverridesErrorKind::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+                crate::error::ListMobileDeviceAccessOverridesErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::ListMobileDeviceAccessOverridesErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::ListMobileDeviceAccessOverridesErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::ListMobileDeviceAccessOverridesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1130,6 +1209,29 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::PutInboundDmarcSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::PutInboundDmarcSettingsError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutInboundDmarcSettingsErrorKind::OrganizationNotFoundException(
+                    inner,
+                ) => Error::OrganizationNotFoundException(inner),
+                crate::error::PutInboundDmarcSettingsErrorKind::OrganizationStateException(
+                    inner,
+                ) => Error::OrganizationStateException(inner),
+                crate::error::PutInboundDmarcSettingsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::PutMailboxPermissionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1158,6 +1260,27 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::PutMobileDeviceAccessOverrideError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::PutMobileDeviceAccessOverrideError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+                crate::error::PutMobileDeviceAccessOverrideErrorKind::EntityStateException(inner) => Error::EntityStateException(inner),
+                crate::error::PutMobileDeviceAccessOverrideErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::PutMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::PutMobileDeviceAccessOverrideErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::PutMobileDeviceAccessOverrideErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

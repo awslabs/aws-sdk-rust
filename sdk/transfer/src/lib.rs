@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon Web Services Transfer Family is a fully managed service that enables the transfer of files over the
 //! File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS), or Secure Shell (SSH)
 //! File Transfer Protocol (SFTP) directly into and out of Amazon Simple Storage Service (Amazon

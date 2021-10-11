@@ -681,8 +681,7 @@ pub struct ListTrackersResponseEntry {
     /// <p>The description for the tracker resource.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The pricing plan for the specified tracker resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-    /// page</a>.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The specified data provider for the tracker resource.</p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
@@ -738,8 +737,7 @@ pub mod list_trackers_response_entry {
             self
         }
         /// <p>The pricing plan for the specified tracker resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
@@ -841,6 +839,34 @@ where
     }
 }
 
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub struct PositionFiltering(String);
+impl PositionFiltering {
+    pub fn as_str(&self) -> &str {
+        &self.0
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DistanceBased", "TimeBased"]
+    }
+}
+impl<T> std::convert::From<T> for PositionFiltering
+where
+    T: std::convert::AsRef<str>,
+{
+    fn from(s: T) -> Self {
+        PositionFiltering(s.as_ref().to_owned())
+    }
+}
+
 /// <p>A summary of the calculated route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -865,7 +891,7 @@ pub struct CalculateRouteSummary {
     /// upper northeast corner. </p>
     /// </li>
     /// <li>
-    /// <p>The fourth <code>bbox</code> position is the Y coordinate, or longitude of the
+    /// <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the
     /// upper northeast corner. </p>
     /// </li>
     /// </ul>
@@ -889,9 +915,9 @@ pub struct CalculateRouteSummary {
     /// <p>The total distance covered by the route. The sum of the distance travelled between
     /// every stop on the route.</p>
     /// <note>
-    /// <p>The route <code>distance</code> can't be greater than 250 km. If the route exceeds
-    /// 250 km, the response returns a <code>400 RoutesValidationException</code>
-    /// error.</p>
+    /// <p>If Esri is the data source for the route calculator, the route distance can’t
+    /// be greater than 400 km. If the route exceeds 400 km, the response is a
+    /// <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     pub distance: std::option::Option<f64>,
     /// <p>The total travel time for the route measured in seconds. The sum of the travel time
@@ -961,9 +987,9 @@ pub mod calculate_route_summary {
         /// <p>The total distance covered by the route. The sum of the distance travelled between
         /// every stop on the route.</p>
         /// <note>
-        /// <p>The route <code>distance</code> can't be greater than 250 km. If the route exceeds
-        /// 250 km, the response returns a <code>400 RoutesValidationException</code>
-        /// error.</p>
+        /// <p>If Esri is the data source for the route calculator, the route distance can’t
+        /// be greater than 400 km. If the route exceeds 400 km, the response is a
+        /// <code>400 RoutesValidationException</code> error.</p>
         /// </note>
         pub fn distance(mut self, input: f64) -> Self {
             self.distance = Some(input);
@@ -2405,7 +2431,7 @@ pub struct SearchPlaceIndexForTextSummary {
     /// <p>HERE</p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers page</a>.</p>
+    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SearchPlaceIndexForTextSummary {
@@ -2507,7 +2533,7 @@ pub mod search_place_index_for_text_summary {
         /// <p>HERE</p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers page</a>.</p>
+        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
@@ -2602,7 +2628,7 @@ pub struct SearchPlaceIndexForPositionSummary {
     /// <p>HERE</p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers page</a>.</p>
+    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SearchPlaceIndexForPositionSummary {
@@ -2655,7 +2681,7 @@ pub mod search_place_index_for_position_summary {
         /// <p>HERE</p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers page</a>.</p>
+        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
@@ -2702,11 +2728,10 @@ pub struct ListPlaceIndexesResponseEntry {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers page</a>.</p>
+    /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The pricing plan for the specified place index resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-    /// page</a>.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
@@ -2772,7 +2797,7 @@ pub mod list_place_indexes_response_entry {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers page</a>.</p>
+        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
@@ -2782,8 +2807,7 @@ pub mod list_place_indexes_response_entry {
             self
         }
         /// <p>The pricing plan for the specified place index resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
@@ -2973,8 +2997,7 @@ pub struct ListMapsResponseEntry {
     /// <p>Specifies the data provider for the associated map tiles.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>The pricing plan for the specified map resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-    /// page</a>.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
@@ -3037,8 +3060,7 @@ pub mod list_maps_response_entry {
             self
         }
         /// <p>The pricing plan for the specified map resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
@@ -3100,11 +3122,8 @@ impl ListMapsResponseEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MapConfiguration {
-    /// <p>Specifies the map style selected from an available data provider. For additional
-    /// information on each map style and to preview each map style, see <a href="location/latest/developerguide/esri.html#esri-map-styles">Esri map
-    /// styles</a> and <a href="location/latest/developerguide/HERE.html#HERE-map-styles">HERE map
-    /// styles</a>.</p>
-    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
+    /// <p>Specifies the map style selected from an available data provider.</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -3145,7 +3164,7 @@ pub struct MapConfiguration {
     /// </li>
     /// </ul>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-    /// Technologies</a> styles: </p>
+    /// Technologies map styles</a>:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -3177,11 +3196,8 @@ pub mod map_configuration {
         pub(crate) style: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the map style selected from an available data provider. For additional
-        /// information on each map style and to preview each map style, see <a href="location/latest/developerguide/esri.html#esri-map-styles">Esri map
-        /// styles</a> and <a href="location/latest/developerguide/HERE.html#HERE-map-styles">HERE map
-        /// styles</a>.</p>
-        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
+        /// <p>Specifies the map style selected from an available data provider.</p>
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -3222,7 +3238,7 @@ pub mod map_configuration {
         /// </li>
         /// </ul>
         /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-        /// Technologies</a> styles: </p>
+        /// Technologies map styles</a>:</p>
         /// <ul>
         /// <li>
         /// <p>

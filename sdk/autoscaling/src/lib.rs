@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon EC2 Auto Scaling</fullname>
 //! <p>Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances
 //! based on user-defined scaling policies, scheduled actions, and health checks.</p>

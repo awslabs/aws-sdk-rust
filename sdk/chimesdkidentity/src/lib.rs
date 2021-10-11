@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>The Amazon Chime SDK Identity APIs in this section allow software developers to create
 //! and manage unique instances of their messaging applications. These APIs provide the
 //! overarching framework for creating and sending messages. For more information about the

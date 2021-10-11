@@ -525,3 +525,673 @@ impl WorkspaceDescription {
         crate::model::workspace_description::Builder::default()
     }
 }
+
+/// Represents a summary of the rule groups namespace.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RuleGroupsNamespaceSummary {
+    /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    pub arn: std::option::Option<std::string::String>,
+    /// The rule groups namespace name.
+    pub name: std::option::Option<std::string::String>,
+    /// The status of rule groups namespace.
+    pub status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
+    /// The time when the rule groups namespace was created.
+    pub created_at: std::option::Option<smithy_types::Instant>,
+    /// The time when the rule groups namespace was modified.
+    pub modified_at: std::option::Option<smithy_types::Instant>,
+    /// The tags of this rule groups namespace.
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for RuleGroupsNamespaceSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RuleGroupsNamespaceSummary");
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("status", &self.status);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("modified_at", &self.modified_at);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary)
+pub mod rule_groups_namespace_summary {
+    /// A builder for [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) modified_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// The Amazon Resource Name (ARN) of this rule groups namespace.
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// The rule groups namespace name.
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// The status of rule groups namespace.
+        pub fn status(mut self, input: crate::model::RuleGroupsNamespaceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// The time when the rule groups namespace was created.
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// The time when the rule groups namespace was modified.
+        pub fn modified_at(mut self, input: smithy_types::Instant) -> Self {
+            self.modified_at = Some(input);
+            self
+        }
+        pub fn set_modified_at(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.modified_at = input;
+            self
+        }
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary)
+        pub fn build(self) -> crate::model::RuleGroupsNamespaceSummary {
+            crate::model::RuleGroupsNamespaceSummary {
+                arn: self.arn,
+                name: self.name,
+                status: self.status,
+                created_at: self.created_at,
+                modified_at: self.modified_at,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl RuleGroupsNamespaceSummary {
+    /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary)
+    pub fn builder() -> crate::model::rule_groups_namespace_summary::Builder {
+        crate::model::rule_groups_namespace_summary::Builder::default()
+    }
+}
+
+/// Represents the status of a namespace.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RuleGroupsNamespaceStatus {
+    /// Status code of this namespace.
+    pub status_code: std::option::Option<crate::model::RuleGroupsNamespaceStatusCode>,
+    /// The reason for failure if any.
+    pub status_reason: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RuleGroupsNamespaceStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RuleGroupsNamespaceStatus");
+        formatter.field("status_code", &self.status_code);
+        formatter.field("status_reason", &self.status_reason);
+        formatter.finish()
+    }
+}
+/// See [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus)
+pub mod rule_groups_namespace_status {
+    /// A builder for [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status_code: std::option::Option<crate::model::RuleGroupsNamespaceStatusCode>,
+        pub(crate) status_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Status code of this namespace.
+        pub fn status_code(mut self, input: crate::model::RuleGroupsNamespaceStatusCode) -> Self {
+            self.status_code = Some(input);
+            self
+        }
+        pub fn set_status_code(
+            mut self,
+            input: std::option::Option<crate::model::RuleGroupsNamespaceStatusCode>,
+        ) -> Self {
+            self.status_code = input;
+            self
+        }
+        /// The reason for failure if any.
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
+            self
+        }
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus)
+        pub fn build(self) -> crate::model::RuleGroupsNamespaceStatus {
+            crate::model::RuleGroupsNamespaceStatus {
+                status_code: self.status_code,
+                status_reason: self.status_reason,
+            }
+        }
+    }
+}
+impl RuleGroupsNamespaceStatus {
+    /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus)
+    pub fn builder() -> crate::model::rule_groups_namespace_status::Builder {
+        crate::model::rule_groups_namespace_status::Builder::default()
+    }
+}
+
+/// State of a namespace.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RuleGroupsNamespaceStatusCode {
+    /// Namespace has been created/updated. Update/Deletion is disallowed until namespace is ACTIVE and workspace status is ACTIVE.
+    Active,
+    /// Namespace is being created. Update/Deletion is disallowed until namespace is ACTIVE and workspace status is ACTIVE.
+    Creating,
+    /// Namespace creation failed.
+    CreationFailed,
+    /// Namespace is being deleting. Update/Deletion is disallowed until namespace is ACTIVE and workspace status is ACTIVE.
+    Deleting,
+    /// Namespace update failed.
+    UpdateFailed,
+    /// Namespace is being updated. Update/Deletion is disallowed until namespace is ACTIVE and workspace status is ACTIVE.
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RuleGroupsNamespaceStatusCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => RuleGroupsNamespaceStatusCode::Active,
+            "CREATING" => RuleGroupsNamespaceStatusCode::Creating,
+            "CREATION_FAILED" => RuleGroupsNamespaceStatusCode::CreationFailed,
+            "DELETING" => RuleGroupsNamespaceStatusCode::Deleting,
+            "UPDATE_FAILED" => RuleGroupsNamespaceStatusCode::UpdateFailed,
+            "UPDATING" => RuleGroupsNamespaceStatusCode::Updating,
+            other => RuleGroupsNamespaceStatusCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RuleGroupsNamespaceStatusCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RuleGroupsNamespaceStatusCode::from(s))
+    }
+}
+impl RuleGroupsNamespaceStatusCode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            RuleGroupsNamespaceStatusCode::Active => "ACTIVE",
+            RuleGroupsNamespaceStatusCode::Creating => "CREATING",
+            RuleGroupsNamespaceStatusCode::CreationFailed => "CREATION_FAILED",
+            RuleGroupsNamespaceStatusCode::Deleting => "DELETING",
+            RuleGroupsNamespaceStatusCode::UpdateFailed => "UPDATE_FAILED",
+            RuleGroupsNamespaceStatusCode::Updating => "UPDATING",
+            RuleGroupsNamespaceStatusCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATING",
+            "CREATION_FAILED",
+            "DELETING",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for RuleGroupsNamespaceStatusCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Represents a description of the rule groups namespace.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RuleGroupsNamespaceDescription {
+    /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    pub arn: std::option::Option<std::string::String>,
+    /// The rule groups namespace name.
+    pub name: std::option::Option<std::string::String>,
+    /// The status of rule groups namespace.
+    pub status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
+    /// The rule groups namespace data.
+    pub data: std::option::Option<smithy_types::Blob>,
+    /// The time when the rule groups namespace was created.
+    pub created_at: std::option::Option<smithy_types::Instant>,
+    /// The time when the rule groups namespace was modified.
+    pub modified_at: std::option::Option<smithy_types::Instant>,
+    /// The tags of this rule groups namespace.
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for RuleGroupsNamespaceDescription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RuleGroupsNamespaceDescription");
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("status", &self.status);
+        formatter.field("data", &self.data);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("modified_at", &self.modified_at);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription)
+pub mod rule_groups_namespace_description {
+    /// A builder for [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
+        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) modified_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// The Amazon Resource Name (ARN) of this rule groups namespace.
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// The rule groups namespace name.
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// The status of rule groups namespace.
+        pub fn status(mut self, input: crate::model::RuleGroupsNamespaceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// The rule groups namespace data.
+        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+            self.data = Some(input);
+            self
+        }
+        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.data = input;
+            self
+        }
+        /// The time when the rule groups namespace was created.
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// The time when the rule groups namespace was modified.
+        pub fn modified_at(mut self, input: smithy_types::Instant) -> Self {
+            self.modified_at = Some(input);
+            self
+        }
+        pub fn set_modified_at(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.modified_at = input;
+            self
+        }
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription)
+        pub fn build(self) -> crate::model::RuleGroupsNamespaceDescription {
+            crate::model::RuleGroupsNamespaceDescription {
+                arn: self.arn,
+                name: self.name,
+                status: self.status,
+                data: self.data,
+                created_at: self.created_at,
+                modified_at: self.modified_at,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl RuleGroupsNamespaceDescription {
+    /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription)
+    pub fn builder() -> crate::model::rule_groups_namespace_description::Builder {
+        crate::model::rule_groups_namespace_description::Builder::default()
+    }
+}
+
+/// Represents the status of a definition.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlertManagerDefinitionStatus {
+    /// Status code of this definition.
+    pub status_code: std::option::Option<crate::model::AlertManagerDefinitionStatusCode>,
+    /// The reason for failure if any.
+    pub status_reason: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AlertManagerDefinitionStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AlertManagerDefinitionStatus");
+        formatter.field("status_code", &self.status_code);
+        formatter.field("status_reason", &self.status_reason);
+        formatter.finish()
+    }
+}
+/// See [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus)
+pub mod alert_manager_definition_status {
+    /// A builder for [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status_code: std::option::Option<crate::model::AlertManagerDefinitionStatusCode>,
+        pub(crate) status_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Status code of this definition.
+        pub fn status_code(
+            mut self,
+            input: crate::model::AlertManagerDefinitionStatusCode,
+        ) -> Self {
+            self.status_code = Some(input);
+            self
+        }
+        pub fn set_status_code(
+            mut self,
+            input: std::option::Option<crate::model::AlertManagerDefinitionStatusCode>,
+        ) -> Self {
+            self.status_code = input;
+            self
+        }
+        /// The reason for failure if any.
+        pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_reason = Some(input.into());
+            self
+        }
+        pub fn set_status_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus)
+        pub fn build(self) -> crate::model::AlertManagerDefinitionStatus {
+            crate::model::AlertManagerDefinitionStatus {
+                status_code: self.status_code,
+                status_reason: self.status_reason,
+            }
+        }
+    }
+}
+impl AlertManagerDefinitionStatus {
+    /// Creates a new builder-style object to manufacture [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus)
+    pub fn builder() -> crate::model::alert_manager_definition_status::Builder {
+        crate::model::alert_manager_definition_status::Builder::default()
+    }
+}
+
+/// State of an alert manager definition.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AlertManagerDefinitionStatusCode {
+    /// Definition has been created/updated. Update/Deletion is disallowed until definition is ACTIVE and workspace status is ACTIVE.
+    Active,
+    /// Definition is being created. Update/Deletion is disallowed until definition is ACTIVE and workspace status is ACTIVE.
+    Creating,
+    /// Definition creation failed.
+    CreationFailed,
+    /// Definition is being deleting. Update/Deletion is disallowed until definition is ACTIVE and workspace status is ACTIVE.
+    Deleting,
+    /// Definition update failed.
+    UpdateFailed,
+    /// Definition is being updated. Update/Deletion is disallowed until definition is ACTIVE and workspace status is ACTIVE.
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AlertManagerDefinitionStatusCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => AlertManagerDefinitionStatusCode::Active,
+            "CREATING" => AlertManagerDefinitionStatusCode::Creating,
+            "CREATION_FAILED" => AlertManagerDefinitionStatusCode::CreationFailed,
+            "DELETING" => AlertManagerDefinitionStatusCode::Deleting,
+            "UPDATE_FAILED" => AlertManagerDefinitionStatusCode::UpdateFailed,
+            "UPDATING" => AlertManagerDefinitionStatusCode::Updating,
+            other => AlertManagerDefinitionStatusCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AlertManagerDefinitionStatusCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AlertManagerDefinitionStatusCode::from(s))
+    }
+}
+impl AlertManagerDefinitionStatusCode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AlertManagerDefinitionStatusCode::Active => "ACTIVE",
+            AlertManagerDefinitionStatusCode::Creating => "CREATING",
+            AlertManagerDefinitionStatusCode::CreationFailed => "CREATION_FAILED",
+            AlertManagerDefinitionStatusCode::Deleting => "DELETING",
+            AlertManagerDefinitionStatusCode::UpdateFailed => "UPDATE_FAILED",
+            AlertManagerDefinitionStatusCode::Updating => "UPDATING",
+            AlertManagerDefinitionStatusCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATING",
+            "CREATION_FAILED",
+            "DELETING",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for AlertManagerDefinitionStatusCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Represents the properties of an alert manager definition.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlertManagerDefinitionDescription {
+    /// The status of alert manager definition.
+    pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
+    /// The alert manager definition.
+    pub data: std::option::Option<smithy_types::Blob>,
+    /// The time when the alert manager definition was created.
+    pub created_at: std::option::Option<smithy_types::Instant>,
+    /// The time when the alert manager definition was modified.
+    pub modified_at: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for AlertManagerDefinitionDescription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AlertManagerDefinitionDescription");
+        formatter.field("status", &self.status);
+        formatter.field("data", &self.data);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("modified_at", &self.modified_at);
+        formatter.finish()
+    }
+}
+/// See [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription)
+pub mod alert_manager_definition_description {
+    /// A builder for [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
+        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) modified_at: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// The status of alert manager definition.
+        pub fn status(mut self, input: crate::model::AlertManagerDefinitionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// The alert manager definition.
+        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+            self.data = Some(input);
+            self
+        }
+        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.data = input;
+            self
+        }
+        /// The time when the alert manager definition was created.
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// The time when the alert manager definition was modified.
+        pub fn modified_at(mut self, input: smithy_types::Instant) -> Self {
+            self.modified_at = Some(input);
+            self
+        }
+        pub fn set_modified_at(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.modified_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription)
+        pub fn build(self) -> crate::model::AlertManagerDefinitionDescription {
+            crate::model::AlertManagerDefinitionDescription {
+                status: self.status,
+                data: self.data,
+                created_at: self.created_at,
+                modified_at: self.modified_at,
+            }
+        }
+    }
+}
+impl AlertManagerDefinitionDescription {
+    /// Creates a new builder-style object to manufacture [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription)
+    pub fn builder() -> crate::model::alert_manager_definition_description::Builder {
+        crate::model::alert_manager_definition_description::Builder::default()
+    }
+}

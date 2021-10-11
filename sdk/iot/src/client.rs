@@ -699,6 +699,11 @@ where
     pub fn list_violation_events(&self) -> fluent_builders::ListViolationEvents<C, M, R> {
         fluent_builders::ListViolationEvents::new(self.handle.clone())
     }
+    pub fn put_verification_state_on_violation(
+        &self,
+    ) -> fluent_builders::PutVerificationStateOnViolation<C, M, R> {
+        fluent_builders::PutVerificationStateOnViolation::new(self.handle.clone())
+    }
     pub fn register_ca_certificate(&self) -> fluent_builders::RegisterCACertificate<C, M, R> {
         fluent_builders::RegisterCACertificate::new(self.handle.clone())
     }
@@ -2119,7 +2124,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>
-        /// The epoch timestamp in seconds at which this suppression expires.
+        /// Each audit supression must have a unique client request token. If you try to create a new audit
+        /// suppression with the same token as one that already exists, an exception occurs. If you omit this
+        /// value, Amazon Web Services SDKs will automatically generate a unique client request.
         /// </p>
         pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(inp);
@@ -10534,6 +10541,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_list_suppressed_alerts(input);
             self
         }
+        /// <p>The verification state of the violation (detect alarm).</p>
+        pub fn verification_state(mut self, inp: crate::model::VerificationState) -> Self {
+            self.inner = self.inner.verification_state(inp);
+            self
+        }
+        pub fn set_verification_state(
+            mut self,
+            input: std::option::Option<crate::model::VerificationState>,
+        ) -> Self {
+            self.inner = self.inner.set_verification_state(input);
+            self
+        }
         /// <p>The token for the next set of results.</p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
@@ -14900,6 +14919,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_list_suppressed_alerts(input);
             self
         }
+        /// <p>The verification state of the violation (detect alarm).</p>
+        pub fn verification_state(mut self, inp: crate::model::VerificationState) -> Self {
+            self.inner = self.inner.verification_state(inp);
+            self
+        }
+        pub fn set_verification_state(
+            mut self,
+            input: std::option::Option<crate::model::VerificationState>,
+        ) -> Self {
+            self.inner = self.inner.set_verification_state(input);
+            self
+        }
         /// <p>The token for the next set of results.</p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
@@ -14916,6 +14947,87 @@ pub mod fluent_builders {
         }
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct PutVerificationStateOnViolation<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_verification_state_on_violation_input::Builder,
+    }
+    impl<C, M, R> PutVerificationStateOnViolation<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutVerificationStateOnViolationOutput,
+            smithy_http::result::SdkError<crate::error::PutVerificationStateOnViolationError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutVerificationStateOnViolationInputOperationOutputAlias,
+                crate::output::PutVerificationStateOnViolationOutput,
+                crate::error::PutVerificationStateOnViolationError,
+                crate::input::PutVerificationStateOnViolationInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The violation ID.</p>
+        pub fn violation_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.violation_id(inp);
+            self
+        }
+        pub fn set_violation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_violation_id(input);
+            self
+        }
+        /// <p>The verification state of the violation.</p>
+        pub fn verification_state(mut self, inp: crate::model::VerificationState) -> Self {
+            self.inner = self.inner.verification_state(inp);
+            self
+        }
+        pub fn set_verification_state(
+            mut self,
+            input: std::option::Option<crate::model::VerificationState>,
+        ) -> Self {
+            self.inner = self.inner.set_verification_state(input);
+            self
+        }
+        /// <p>The description of the verification state of the violation (detect alarm).</p>
+        pub fn verification_state_description(
+            mut self,
+            inp: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.verification_state_description(inp);
+            self
+        }
+        pub fn set_verification_state_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_verification_state_description(input);
             self
         }
     }

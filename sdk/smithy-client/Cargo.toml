@@ -8,15 +8,16 @@ license = "Apache-2.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
+rt-tokio = ["smithy-async/rt-tokio"]
 test-util = ["protocol-test-helpers", "serde/derive"]
-default = ["hyper", "rustls"]
-native-tls = ["hyper", "hyper-tls"]
-rustls = ["hyper", "hyper-rustls"]
+default = ["hyper", "rustls", "rt-tokio"]
+native-tls = ["hyper", "hyper-tls", "rt-tokio"]
+rustls = ["hyper", "hyper-rustls", "rt-tokio", "lazy_static"]
 
 [dependencies]
 hyper = { version = "0.14.2", features = ["client", "http2"], optional = true }
 tower = { version = "0.4.6", features = ["util", "retry"] }
-hyper-tls = { version ="0.5.0", optional = true }
+hyper-tls = { version = "0.5.0", optional = true }
 hyper-rustls = { version = "0.22.1", optional = true, features = ["rustls-native-certs"] }
 http = "0.2.3"
 bytes = "1"
@@ -24,8 +25,11 @@ http-body = "0.4.0"
 smithy-http = { path = "../smithy-http" }
 smithy-types = { path = "../smithy-types" }
 smithy-http-tower = { path = "../smithy-http-tower" }
+smithy-async = { path = "../smithy-async" }
 fastrand = "1.4.0"
 tokio = { version = "1", features = ["time"] }
+pin-project-lite = "0.2.7"
+lazy_static = { version = "1", optional = true }
 
 pin-project = "1"
 tracing = "0.1"

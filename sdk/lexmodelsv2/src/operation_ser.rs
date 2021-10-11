@@ -105,6 +105,19 @@ pub fn serialize_operation_crate_operation_create_slot_type(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_list_aggregated_utterances(
+    input: &crate::input::ListAggregatedUtterancesInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_aggregated_utterances_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_list_bot_aliases(
     input: &crate::input::ListBotAliasesInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

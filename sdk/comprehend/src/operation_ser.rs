@@ -385,6 +385,19 @@ pub fn serialize_operation_crate_operation_list_document_classifiers(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_list_document_classifier_summaries(
+    input: &crate::input::ListDocumentClassifierSummariesInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_document_classifier_summaries_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_list_dominant_language_detection_jobs(
     input: &crate::input::ListDominantLanguageDetectionJobsInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -427,6 +440,19 @@ pub fn serialize_operation_crate_operation_list_entity_recognizers(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_list_entity_recognizers_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_entity_recognizer_summaries(
+    input: &crate::input::ListEntityRecognizerSummariesInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_entity_recognizer_summaries_input(
         &mut object,
         input,
     );

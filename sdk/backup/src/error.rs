@@ -6564,6 +6564,7 @@ pub struct UpdateFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFrameworkErrorKind {
+    AlreadyExistsException(crate::error::AlreadyExistsException),
     ConflictException(crate::error::ConflictException),
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     LimitExceededException(crate::error::LimitExceededException),
@@ -6576,6 +6577,7 @@ pub enum UpdateFrameworkErrorKind {
 impl std::fmt::Display for UpdateFrameworkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateFrameworkErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
             UpdateFrameworkErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateFrameworkErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
             UpdateFrameworkErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
@@ -6630,6 +6632,12 @@ impl UpdateFrameworkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFrameworkErrorKind::AlreadyExistsException(_)
+        )
+    }
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateFrameworkErrorKind::ConflictException(_))
     }
@@ -6667,6 +6675,7 @@ impl UpdateFrameworkError {
 impl std::error::Error for UpdateFrameworkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateFrameworkErrorKind::AlreadyExistsException(_inner) => Some(_inner),
             UpdateFrameworkErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateFrameworkErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
             UpdateFrameworkErrorKind::LimitExceededException(_inner) => Some(_inner),
@@ -7531,7 +7540,9 @@ impl InvalidParameterValueException {
 pub struct ConflictException {
     pub code: std::option::Option<std::string::String>,
     pub message: std::option::Option<std::string::String>,
+    /// <p></p>
     pub r#type: std::option::Option<std::string::String>,
+    /// <p></p>
     pub context: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -7587,6 +7598,7 @@ pub mod conflict_exception {
             self.message = input;
             self
         }
+        /// <p></p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
@@ -7595,6 +7607,7 @@ pub mod conflict_exception {
             self.r#type = input;
             self
         }
+        /// <p></p>
         pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
             self.context = Some(input.into());
             self
@@ -7823,6 +7836,137 @@ impl LimitExceededException {
     }
 }
 
+/// <p>The required resource already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlreadyExistsException {
+    pub code: std::option::Option<std::string::String>,
+    pub message: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub creator_request_id: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p></p>
+    pub context: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AlreadyExistsException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("creator_request_id", &self.creator_request_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("context", &self.context);
+        formatter.finish()
+    }
+}
+impl AlreadyExistsException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AlreadyExistsException")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AlreadyExistsException {}
+/// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+pub mod already_exists_exception {
+    /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) creator_request_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) context: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p></p>
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.creator_request_id = Some(input.into());
+            self
+        }
+        pub fn set_creator_request_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.creator_request_id = input;
+            self
+        }
+        /// <p></p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p></p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p></p>
+        pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.context = Some(input.into());
+            self
+        }
+        pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.context = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+        pub fn build(self) -> crate::error::AlreadyExistsException {
+            crate::error::AlreadyExistsException {
+                code: self.code,
+                message: self.message,
+                creator_request_id: self.creator_request_id,
+                arn: self.arn,
+                r#type: self.r#type,
+                context: self.context,
+            }
+        }
+    }
+}
+impl AlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+    pub fn builder() -> crate::error::already_exists_exception::Builder {
+        crate::error::already_exists_exception::Builder::default()
+    }
+}
+
 /// <p>Backup is already performing an action on this recovery point. It can't
 /// perform the action you requested until the first action finishes. Try again later.</p>
 #[non_exhaustive]
@@ -7853,8 +7997,8 @@ impl InvalidResourceStateException {
 impl std::fmt::Display for InvalidResourceStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResourceStateException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -7953,8 +8097,8 @@ impl DependencyFailureException {
 impl std::fmt::Display for DependencyFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DependencyFailureException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -8021,136 +8165,5 @@ impl DependencyFailureException {
     /// Creates a new builder-style object to manufacture [`DependencyFailureException`](crate::error::DependencyFailureException)
     pub fn builder() -> crate::error::dependency_failure_exception::Builder {
         crate::error::dependency_failure_exception::Builder::default()
-    }
-}
-
-/// <p>The required resource already exists.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AlreadyExistsException {
-    pub code: std::option::Option<std::string::String>,
-    pub message: std::option::Option<std::string::String>,
-    /// <p></p>
-    pub creator_request_id: std::option::Option<std::string::String>,
-    /// <p></p>
-    pub arn: std::option::Option<std::string::String>,
-    /// <p></p>
-    pub r#type: std::option::Option<std::string::String>,
-    /// <p></p>
-    pub context: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlreadyExistsException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("creator_request_id", &self.creator_request_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("context", &self.context);
-        formatter.finish()
-    }
-}
-impl AlreadyExistsException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AlreadyExistsException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AlreadyExistsException {}
-/// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
-pub mod already_exists_exception {
-    /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) creator_request_id: std::option::Option<std::string::String>,
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) context: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// <p></p>
-        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.creator_request_id = Some(input.into());
-            self
-        }
-        pub fn set_creator_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creator_request_id = input;
-            self
-        }
-        /// <p></p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p></p>
-        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(input.into());
-            self
-        }
-        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// <p></p>
-        pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
-            self.context = Some(input.into());
-            self
-        }
-        pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.context = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException)
-        pub fn build(self) -> crate::error::AlreadyExistsException {
-            crate::error::AlreadyExistsException {
-                code: self.code,
-                message: self.message,
-                creator_request_id: self.creator_request_id,
-                arn: self.arn,
-                r#type: self.r#type,
-                context: self.context,
-            }
-        }
-    }
-}
-impl AlreadyExistsException {
-    /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException)
-    pub fn builder() -> crate::error::already_exists_exception::Builder {
-        crate::error::already_exists_exception::Builder::default()
     }
 }

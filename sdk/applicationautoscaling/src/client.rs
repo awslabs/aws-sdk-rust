@@ -177,7 +177,7 @@ pub mod fluent_builders {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -201,7 +201,7 @@ pub mod fluent_builders {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -231,6 +231,9 @@ pub mod fluent_builders {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
@@ -252,7 +255,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -280,7 +283,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -317,6 +320,10 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, inp: crate::model::ScalableDimension) -> Self {
@@ -408,7 +415,7 @@ pub mod fluent_builders {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -432,7 +439,7 @@ pub mod fluent_builders {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -462,6 +469,9 @@ pub mod fluent_builders {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
@@ -483,7 +493,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -511,7 +521,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -548,6 +558,10 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, inp: crate::model::ScalableDimension) -> Self {
@@ -627,7 +641,7 @@ pub mod fluent_builders {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -651,7 +665,7 @@ pub mod fluent_builders {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -681,6 +695,9 @@ pub mod fluent_builders {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
@@ -703,7 +720,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -731,7 +748,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -768,6 +785,10 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, inp: crate::model::ScalableDimension) -> Self {
@@ -850,7 +871,7 @@ pub mod fluent_builders {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -874,7 +895,7 @@ pub mod fluent_builders {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -904,6 +925,9 @@ pub mod fluent_builders {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_ids(inp);
@@ -929,7 +953,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -957,7 +981,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -994,6 +1018,10 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, inp: crate::model::ScalableDimension) -> Self {
@@ -1097,7 +1125,7 @@ pub mod fluent_builders {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -1121,7 +1149,7 @@ pub mod fluent_builders {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -1151,6 +1179,9 @@ pub mod fluent_builders {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
@@ -1173,7 +1204,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1201,7 +1232,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1238,6 +1269,10 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, inp: crate::model::ScalableDimension) -> Self {
@@ -1356,7 +1391,7 @@ pub mod fluent_builders {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -1380,7 +1415,7 @@ pub mod fluent_builders {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -1410,6 +1445,9 @@ pub mod fluent_builders {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
@@ -1432,7 +1470,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1460,7 +1498,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1498,6 +1536,10 @@ pub mod fluent_builders {
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
         /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
+        /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, inp: crate::model::ScalableDimension) -> Self {
             self.inner = self.inner.scalable_dimension(inp);
@@ -1510,13 +1552,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scalable_dimension(input);
             self
         }
-        /// <p>The maximum number of scalable targets. This value can be between 1 and
-        /// 50. The default value is 50.</p>
+        /// <p>The maximum number of scalable targets. This value can be between 1 and 10. The default
+        /// value is 10.</p>
         /// <p>If this parameter is used, the operation returns up to <code>MaxResults</code> results
         /// at a time, along with a <code>NextToken</code> value. To get the next set of results,
         /// include the <code>NextToken</code> value in a subsequent call. If this parameter is not
-        /// used, the operation returns up to 50 results and a
-        /// <code>NextToken</code> value, if applicable.</p>
+        /// used, the operation returns up to 10 results and a <code>NextToken</code> value, if
+        /// applicable.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
@@ -1615,7 +1657,7 @@ pub mod fluent_builders {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -1639,7 +1681,7 @@ pub mod fluent_builders {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -1669,6 +1711,9 @@ pub mod fluent_builders {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
@@ -1691,7 +1736,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1719,7 +1764,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1756,6 +1801,10 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, inp: crate::model::ScalableDimension) -> Self {
@@ -1868,7 +1917,7 @@ pub mod fluent_builders {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -1892,7 +1941,7 @@ pub mod fluent_builders {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -1922,6 +1971,9 @@ pub mod fluent_builders {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
@@ -1943,7 +1995,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -1971,7 +2023,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2009,6 +2061,10 @@ pub mod fluent_builders {
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
         /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
+        /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, inp: crate::model::ScalableDimension) -> Self {
             self.inner = self.inner.scalable_dimension(inp);
@@ -2026,8 +2082,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p>
         /// <p>
-        /// <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces (for Apache
-        /// Cassandra), Amazon MSK, or Amazon ElastiCache for Redis.</p>
+        /// <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or
+        /// Neptune.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
         /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
         pub fn policy_type(mut self, inp: crate::model::PolicyType) -> Self {
@@ -2199,7 +2255,7 @@ pub mod fluent_builders {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -2223,7 +2279,7 @@ pub mod fluent_builders {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -2253,6 +2309,9 @@ pub mod fluent_builders {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
@@ -2274,7 +2333,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2302,7 +2361,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2339,6 +2398,10 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, inp: crate::model::ScalableDimension) -> Self {
@@ -2451,7 +2514,7 @@ pub mod fluent_builders {
         /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
         /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
         /// </li>
         /// <li>
@@ -2475,7 +2538,7 @@ pub mod fluent_builders {
         /// Example: <code>cluster:my-db-cluster</code>.</p>
         /// </li>
         /// <li>
-        /// <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
         /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
         /// </li>
         /// <li>
@@ -2505,6 +2568,9 @@ pub mod fluent_builders {
         /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
         /// Example: <code>replication-group/mycluster</code>.</p>
         /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
         /// </ul>
         pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(inp);
@@ -2527,7 +2593,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2555,7 +2621,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2592,6 +2658,10 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
         pub fn scalable_dimension(mut self, inp: crate::model::ScalableDimension) -> Self {

@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon Lex provides both build and runtime endpoints. Each endpoint
 //! provides a set of operations (API). Your conversational bot uses the
 //! runtime API to understand user utterances (user input text or voice). For

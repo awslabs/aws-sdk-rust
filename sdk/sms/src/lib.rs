@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>AWS Server Migration Service</fullname>
 //! <p>AWS Server Migration Service (AWS SMS) makes it easier and faster for you to migrate your
 //! on-premises workloads to AWS. To learn more about AWS SMS, see the following

@@ -1397,6 +1397,56 @@ impl AsRef<str> for OpsItemDataType {
     }
 }
 
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MaintenanceWindowTaskCutoffBehavior {
+    CancelTask,
+    ContinueTask,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MaintenanceWindowTaskCutoffBehavior {
+    fn from(s: &str) -> Self {
+        match s {
+            "CANCEL_TASK" => MaintenanceWindowTaskCutoffBehavior::CancelTask,
+            "CONTINUE_TASK" => MaintenanceWindowTaskCutoffBehavior::ContinueTask,
+            other => MaintenanceWindowTaskCutoffBehavior::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MaintenanceWindowTaskCutoffBehavior {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MaintenanceWindowTaskCutoffBehavior::from(s))
+    }
+}
+impl MaintenanceWindowTaskCutoffBehavior {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MaintenanceWindowTaskCutoffBehavior::CancelTask => "CANCEL_TASK",
+            MaintenanceWindowTaskCutoffBehavior::ContinueTask => "CONTINUE_TASK",
+            MaintenanceWindowTaskCutoffBehavior::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CANCEL_TASK", "CONTINUE_TASK"]
+    }
+}
+impl AsRef<str> for MaintenanceWindowTaskCutoffBehavior {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Information about an Amazon Simple Storage Service (Amazon S3) bucket to write
 /// instance-level logs to.</p>
 /// <note>
@@ -5300,8 +5350,7 @@ impl InstanceAssociationOutputLocation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3OutputLocation {
-    /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
-    /// Amazon Web Services Systems Manager automatically determines the Region of the S3 bucket.</p>
+    /// <p>The Amazon Web Services Region of the S3 bucket.</p>
     pub output_s3_region: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket.</p>
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
@@ -5328,8 +5377,7 @@ pub mod s3_output_location {
         pub(crate) output_s3_key_prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
-        /// Amazon Web Services Systems Manager automatically determines the Region of the S3 bucket.</p>
+        /// <p>The Amazon Web Services Region of the S3 bucket.</p>
         pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_s3_region = Some(input.into());
             self
@@ -11348,7 +11396,8 @@ pub struct CommandFilter {
     /// <li>
     /// <p>
     /// <b>Status</b>: Specify a valid command status to see a list of
-    /// all command executions with that status. Status values you can specify include:</p>
+    /// all command executions with that status. The status choices depend on the API you call.</p>
+    /// <p>The status values you can specify for <code>ListCommands</code> are:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -11377,12 +11426,103 @@ pub struct CommandFilter {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>TimedOut</code>
+    /// <code>TimedOut</code> (this includes both Delivery and Execution time outs) </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AccessDenied</code>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Cancelling</code>
+    /// <code>DeliveryTimedOut</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ExecutionTimedOut</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Incomplete</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NoInstancesInTag</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>LimitExceeded</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>The status values you can specify for <code>ListCommandInvocations</code> are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Pending</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InProgress</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Delayed</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Success</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Cancelled</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Failed</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TimedOut</code> (this includes both Delivery and Execution time outs) </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AccessDenied</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DeliveryTimedOut</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ExecutionTimedOut</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Undeliverable</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InvalidPlatform</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Terminated</code>
     /// </p>
     /// </li>
     /// </ul>
@@ -11461,7 +11601,8 @@ pub mod command_filter {
         /// <li>
         /// <p>
         /// <b>Status</b>: Specify a valid command status to see a list of
-        /// all command executions with that status. Status values you can specify include:</p>
+        /// all command executions with that status. The status choices depend on the API you call.</p>
+        /// <p>The status values you can specify for <code>ListCommands</code> are:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -11490,12 +11631,103 @@ pub mod command_filter {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>TimedOut</code>
+        /// <code>TimedOut</code> (this includes both Delivery and Execution time outs) </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AccessDenied</code>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Cancelling</code>
+        /// <code>DeliveryTimedOut</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ExecutionTimedOut</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Incomplete</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NoInstancesInTag</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LimitExceeded</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The status values you can specify for <code>ListCommandInvocations</code> are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Pending</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InProgress</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Delayed</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Success</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Cancelled</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Failed</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TimedOut</code> (this includes both Delivery and Execution time outs) </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AccessDenied</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DeliveryTimedOut</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ExecutionTimedOut</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Undeliverable</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InvalidPlatform</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminated</code>
         /// </p>
         /// </li>
         /// </ul>
@@ -11626,8 +11858,7 @@ pub struct CommandInvocation {
     pub command_id: std::option::Option<std::string::String>,
     /// <p>The instance ID in which this invocation was requested.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The name of the invocation target. For EC2 instances this is the value for the
-    /// <code>aws:Name</code> tag. For on-premises instances, this is the name of the instance.</p>
+    /// <p>The fully qualified host name of the managed instance.</p>
     pub instance_name: std::option::Option<std::string::String>,
     /// <p>User-specified information about the command, such as a brief description of what the
     /// command should do.</p>
@@ -11781,8 +12012,7 @@ pub mod command_invocation {
             self.instance_id = input;
             self
         }
-        /// <p>The name of the invocation target. For EC2 instances this is the value for the
-        /// <code>aws:Name</code> tag. For on-premises instances, this is the name of the instance.</p>
+        /// <p>The fully qualified host name of the managed instance.</p>
         pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_name = Some(input.into());
             self
@@ -12993,7 +13223,9 @@ pub struct Association {
     pub association_version: std::option::Option<std::string::String>,
     /// <p>The version of the document used in the association.</p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>The instances targeted by the request to create an association. </p>
+    /// <p>The instances targeted by the request to create an association. You can target all instances
+    /// in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
+    /// <code>*</code>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The date on which the association was last run.</p>
     pub last_execution_date: std::option::Option<smithy_types::Instant>,
@@ -13514,10 +13746,10 @@ pub struct ParameterStringFilter {
     /// <p>The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API operations.
     /// However, not all of the pattern values listed for <code>Key</code> can be used with both
     /// operations.</p>
-    /// <p>For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception
-    /// of <code>Label</code>.</p>
+    /// <p>For <code>DescribeActions</code>, all of the listed patterns are valid except
+    /// <code>Label</code>.</p>
     /// <p>For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code>
-    /// aren't valid: <code>tag</code>, <code>Name</code>, <code>Path</code>, and
+    /// aren't valid: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and
     /// <code>Tier</code>.</p>
     /// <p>For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see
     /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -13558,10 +13790,10 @@ pub mod parameter_string_filter {
         /// <p>The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API operations.
         /// However, not all of the pattern values listed for <code>Key</code> can be used with both
         /// operations.</p>
-        /// <p>For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception
-        /// of <code>Label</code>.</p>
+        /// <p>For <code>DescribeActions</code>, all of the listed patterns are valid except
+        /// <code>Label</code>.</p>
         /// <p>For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code>
-        /// aren't valid: <code>tag</code>, <code>Name</code>, <code>Path</code>, and
+        /// aren't valid: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and
         /// <code>Tier</code>.</p>
         /// <p>For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see
         /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -19525,6 +19757,9 @@ pub struct MaintenanceWindowTask {
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the task.</p>
     pub description: std::option::Option<std::string::String>,
+    /// <p>The specification for whether tasks should continue to run after the cutoff time specified
+    /// in the maintenance windows is reached. </p>
+    pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
 impl std::fmt::Debug for MaintenanceWindowTask {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19542,6 +19777,7 @@ impl std::fmt::Debug for MaintenanceWindowTask {
         formatter.field("max_errors", &self.max_errors);
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("cutoff_behavior", &self.cutoff_behavior);
         formatter.finish()
     }
 }
@@ -19569,6 +19805,8 @@ pub mod maintenance_window_task {
         pub(crate) max_errors: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) cutoff_behavior:
+            std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
     }
     impl Builder {
         /// <p>The ID of the maintenance window where the task is registered.</p>
@@ -19732,6 +19970,22 @@ pub mod maintenance_window_task {
             self.description = input;
             self
         }
+        /// <p>The specification for whether tasks should continue to run after the cutoff time specified
+        /// in the maintenance windows is reached. </p>
+        pub fn cutoff_behavior(
+            mut self,
+            input: crate::model::MaintenanceWindowTaskCutoffBehavior,
+        ) -> Self {
+            self.cutoff_behavior = Some(input);
+            self
+        }
+        pub fn set_cutoff_behavior(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        ) -> Self {
+            self.cutoff_behavior = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MaintenanceWindowTask`](crate::model::MaintenanceWindowTask)
         pub fn build(self) -> crate::model::MaintenanceWindowTask {
             crate::model::MaintenanceWindowTask {
@@ -19748,6 +20002,7 @@ pub mod maintenance_window_task {
                 max_errors: self.max_errors,
                 name: self.name,
                 description: self.description,
+                cutoff_behavior: self.cutoff_behavior,
             }
         }
     }

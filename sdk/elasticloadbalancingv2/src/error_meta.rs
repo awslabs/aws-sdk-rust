@@ -125,8 +125,14 @@ where
                 crate::error::AddTagsErrorKind::DuplicateTagKeysException(inner) => {
                     Error::DuplicateTagKeysException(inner)
                 }
+                crate::error::AddTagsErrorKind::ListenerNotFoundException(inner) => {
+                    Error::ListenerNotFoundException(inner)
+                }
                 crate::error::AddTagsErrorKind::LoadBalancerNotFoundException(inner) => {
                     Error::LoadBalancerNotFoundException(inner)
+                }
+                crate::error::AddTagsErrorKind::RuleNotFoundException(inner) => {
+                    Error::RuleNotFoundException(inner)
                 }
                 crate::error::AddTagsErrorKind::TargetGroupNotFoundException(inner) => {
                     Error::TargetGroupNotFoundException(inner)
@@ -261,6 +267,9 @@ where
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteListenerErrorKind::ListenerNotFoundException(inner) => {
                     Error::ListenerNotFoundException(inner)
+                }
+                crate::error::DeleteListenerErrorKind::ResourceInUseException(inner) => {
+                    Error::ResourceInUseException(inner)
                 }
                 crate::error::DeleteListenerErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

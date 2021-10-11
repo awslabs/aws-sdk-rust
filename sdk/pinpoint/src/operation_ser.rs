@@ -59,6 +59,18 @@ pub fn ser_payload_create_import_job_input(
     ))
 }
 
+pub fn ser_payload_create_in_app_template_input(
+    payload: &std::option::Option<crate::model::InAppTemplateRequest>,
+) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
+    let payload = match payload.as_ref() {
+        Some(t) => t,
+        None => return Ok(smithy_http::body::SdkBody::from("")),
+    };
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_create_in_app_template_input_in_app_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+    ))
+}
+
 pub fn ser_payload_create_journey_input(
     payload: &std::option::Option<crate::model::WriteJourneyRequest>,
 ) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
@@ -371,6 +383,18 @@ pub fn ser_payload_update_gcm_channel_input(
     ))
 }
 
+pub fn ser_payload_update_in_app_template_input(
+    payload: &std::option::Option<crate::model::InAppTemplateRequest>,
+) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
+    let payload = match payload.as_ref() {
+        Some(t) => t,
+        None => return Ok(smithy_http::body::SdkBody::from("")),
+    };
+    #[allow(clippy::useless_conversion)]Ok(smithy_http::body::SdkBody::from(
+        crate::operation_ser::serialize_member_com_amazonaws_pinpoint_synthetic_update_in_app_template_input_in_app_template_request(&payload).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+    ))
+}
+
 pub fn ser_payload_update_journey_input(
     payload: &std::option::Option<crate::model::WriteJourneyRequest>,
 ) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
@@ -537,6 +561,16 @@ pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_import_job_input
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_model_import_job_request(&mut object, input);
+    object.finish();
+    Ok(out.into_bytes())
+}
+
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_create_in_app_template_input_in_app_template_request(
+    input: &crate::model::InAppTemplateRequest,
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_model_in_app_template_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }
@@ -812,6 +846,16 @@ pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_gcm_channel_inpu
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_model_gcm_channel_request(&mut object, input);
+    object.finish();
+    Ok(out.into_bytes())
+}
+
+pub fn serialize_member_com_amazonaws_pinpoint_synthetic_update_in_app_template_input_in_app_template_request(
+    input: &crate::model::InAppTemplateRequest,
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_model_in_app_template_request(&mut object, input);
     object.finish();
     Ok(out.into_bytes())
 }

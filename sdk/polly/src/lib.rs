@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon Polly is a web service that makes it easy to synthesize speech from
 //! text.</p>
 //! <p>The Amazon Polly service provides API operations for synthesizing
@@ -34,6 +35,7 @@ pub mod operation;
 mod operation_deser;
 mod operation_ser;
 pub mod output;
+pub mod presigning;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub use smithy_http::byte_stream::ByteStream;
 pub use smithy_http::result::SdkError;

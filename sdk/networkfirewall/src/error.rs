@@ -865,6 +865,7 @@ pub struct DeleteResourcePolicyError {
 pub enum DeleteResourcePolicyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidResourcePolicyException(crate::error::InvalidResourcePolicyException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -875,6 +876,7 @@ impl std::fmt::Display for DeleteResourcePolicyError {
         match &self.kind {
             DeleteResourcePolicyErrorKind::InternalServerError(_inner) => _inner.fmt(f),
             DeleteResourcePolicyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteResourcePolicyErrorKind::InvalidResourcePolicyException(_inner) => _inner.fmt(f),
             DeleteResourcePolicyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteResourcePolicyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteResourcePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -937,6 +939,12 @@ impl DeleteResourcePolicyError {
             DeleteResourcePolicyErrorKind::InvalidRequestException(_)
         )
     }
+    pub fn is_invalid_resource_policy_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::InvalidResourcePolicyException(_)
+        )
+    }
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -955,6 +963,7 @@ impl std::error::Error for DeleteResourcePolicyError {
         match &self.kind {
             DeleteResourcePolicyErrorKind::InternalServerError(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteResourcePolicyErrorKind::InvalidResourcePolicyException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteResourcePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -3383,7 +3392,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p></p>
+/// <p>Unable to change the resource because your account doesn't own it. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceOwnerCheckException {
@@ -3757,7 +3766,7 @@ impl LogDestinationPermissionException {
     }
 }
 
-/// <p></p>
+/// <p>The policy statement failed validation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourcePolicyException {

@@ -327,6 +327,13 @@ impl smithy_http::response::ParseStrictResponse for PutScheduledAction {
 /// <p>To update a scalable target, specify the parameters that you want to change. Include the
 /// parameters that identify the scalable target: resource ID, scalable dimension, and
 /// namespace. Any parameters that you don't specify are not changed by this update request. </p>
+/// <note>
+/// <p>If you call the <code>RegisterScalableTarget</code> API to update an existing
+/// scalable target, Application Auto Scaling retrieves the current capacity of the resource. If it is below
+/// the minimum capacity or above the maximum capacity, Application Auto Scaling adjusts the capacity of the
+/// scalable target to place it within these bounds, even if you don't include the
+/// <code>MinCapacity</code> or <code>MaxCapacity</code> request parameters.</p>
+/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterScalableTarget {
     _private: (),

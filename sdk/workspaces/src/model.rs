@@ -66,9 +66,9 @@ impl IpRuleItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionAliasPermission {
-    /// <p>The identifier of the AWS account that the connection alias is shared with.</p>
+    /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
     pub shared_account_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the specified AWS account is allowed to associate the connection alias with a directory.</p>
+    /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
     pub allow_association: std::option::Option<bool>,
 }
 impl std::fmt::Debug for ConnectionAliasPermission {
@@ -89,7 +89,7 @@ pub mod connection_alias_permission {
         pub(crate) allow_association: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The identifier of the AWS account that the connection alias is shared with.</p>
+        /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
         pub fn shared_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_account_id = Some(input.into());
             self
@@ -101,7 +101,7 @@ pub mod connection_alias_permission {
             self.shared_account_id = input;
             self
         }
-        /// <p>Indicates whether the specified AWS account is allowed to associate the connection alias with a directory.</p>
+        /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
         pub fn allow_association(mut self, input: bool) -> Self {
             self.allow_association = Some(input);
             self
@@ -1043,21 +1043,16 @@ impl WorkspaceCreationProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceAccessProperties {
-    /// <p>Indicates whether users can use Windows clients to access their WorkSpaces. To restrict
-    /// WorkSpaces access to trusted devices (also known as managed devices) with valid
-    /// certificates, specify a value of <code>TRUST</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-    /// WorkSpaces Access to Trusted Devices</a>. </p>
+    /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
     pub device_type_windows: std::option::Option<crate::model::AccessPropertyValue>,
-    /// <p>Indicates whether users can use macOS clients to access their WorkSpaces. To restrict
-    /// WorkSpaces access to trusted devices (also known as managed devices) with valid
-    /// certificates, specify a value of <code>TRUST</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-    /// WorkSpaces Access to Trusted Devices</a>. </p>
+    /// <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
     pub device_type_osx: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can access their WorkSpaces through a web browser.</p>
     pub device_type_web: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can use iOS devices to access their WorkSpaces.</p>
     pub device_type_ios: std::option::Option<crate::model::AccessPropertyValue>,
-    /// <p>Indicates whether users can use Android devices to access their WorkSpaces.</p>
+    /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices
+    /// to access their WorkSpaces.</p>
     pub device_type_android: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can use Chromebooks to access their WorkSpaces.</p>
     pub device_type_chrome_os: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1096,10 +1091,7 @@ pub mod workspace_access_properties {
         pub(crate) device_type_linux: std::option::Option<crate::model::AccessPropertyValue>,
     }
     impl Builder {
-        /// <p>Indicates whether users can use Windows clients to access their WorkSpaces. To restrict
-        /// WorkSpaces access to trusted devices (also known as managed devices) with valid
-        /// certificates, specify a value of <code>TRUST</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-        /// WorkSpaces Access to Trusted Devices</a>. </p>
+        /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
         pub fn device_type_windows(mut self, input: crate::model::AccessPropertyValue) -> Self {
             self.device_type_windows = Some(input);
             self
@@ -1111,10 +1103,7 @@ pub mod workspace_access_properties {
             self.device_type_windows = input;
             self
         }
-        /// <p>Indicates whether users can use macOS clients to access their WorkSpaces. To restrict
-        /// WorkSpaces access to trusted devices (also known as managed devices) with valid
-        /// certificates, specify a value of <code>TRUST</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-        /// WorkSpaces Access to Trusted Devices</a>. </p>
+        /// <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
         pub fn device_type_osx(mut self, input: crate::model::AccessPropertyValue) -> Self {
             self.device_type_osx = Some(input);
             self
@@ -1150,7 +1139,8 @@ pub mod workspace_access_properties {
             self.device_type_ios = input;
             self
         }
-        /// <p>Indicates whether users can use Android devices to access their WorkSpaces.</p>
+        /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices
+        /// to access their WorkSpaces.</p>
         pub fn device_type_android(mut self, input: crate::model::AccessPropertyValue) -> Self {
             self.device_type_android = Some(input);
             self
@@ -1874,7 +1864,7 @@ impl AsRef<str> for ConnectionState {
 pub struct Workspace {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
+    /// <p>The identifier of the Directory Service directory for the WorkSpace.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The user for the WorkSpace.</p>
     pub user_name: std::option::Option<std::string::String>,
@@ -1903,8 +1893,8 @@ pub struct Workspace {
     /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
     /// Launch a WorkSpace</a>. </p>
     pub computer_name: std::option::Option<std::string::String>,
-    /// <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace.
-    /// Amazon WorkSpaces does not support asymmetric CMKs.</p>
+    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
+    /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub volume_encryption_key: std::option::Option<std::string::String>,
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
     pub user_volume_encryption_enabled: std::option::Option<bool>,
@@ -1975,7 +1965,7 @@ pub mod workspace {
             self.workspace_id = input;
             self
         }
-        /// <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
+        /// <p>The identifier of the Directory Service directory for the WorkSpace.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
@@ -2076,8 +2066,8 @@ pub mod workspace {
             self.computer_name = input;
             self
         }
-        /// <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace.
-        /// Amazon WorkSpaces does not support asymmetric CMKs.</p>
+        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
+        /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
         pub fn volume_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_encryption_key = Some(input.into());
             self
@@ -2476,11 +2466,13 @@ pub struct WorkspaceImage {
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The text of the error message that is returned for the image.</p>
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>The date when the image was created. If the image has been shared, the AWS account
+    /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
     /// that the image has been shared with sees the original creation date of the image.</p>
     pub created: std::option::Option<smithy_types::Instant>,
-    /// <p>The identifier of the AWS account that owns the image.</p>
+    /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
     pub owner_account_id: std::option::Option<std::string::String>,
+    /// <p>The updates (if any) that are available for the specified image.</p>
+    pub updates: std::option::Option<crate::model::UpdateResult>,
 }
 impl std::fmt::Debug for WorkspaceImage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2495,6 +2487,7 @@ impl std::fmt::Debug for WorkspaceImage {
         formatter.field("error_message", &self.error_message);
         formatter.field("created", &self.created);
         formatter.field("owner_account_id", &self.owner_account_id);
+        formatter.field("updates", &self.updates);
         formatter.finish()
     }
 }
@@ -2515,6 +2508,7 @@ pub mod workspace_image {
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) created: std::option::Option<smithy_types::Instant>,
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
+        pub(crate) updates: std::option::Option<crate::model::UpdateResult>,
     }
     impl Builder {
         /// <p>The identifier of the image.</p>
@@ -2607,7 +2601,7 @@ pub mod workspace_image {
             self.error_message = input;
             self
         }
-        /// <p>The date when the image was created. If the image has been shared, the AWS account
+        /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
         /// that the image has been shared with sees the original creation date of the image.</p>
         pub fn created(mut self, input: smithy_types::Instant) -> Self {
             self.created = Some(input);
@@ -2617,7 +2611,7 @@ pub mod workspace_image {
             self.created = input;
             self
         }
-        /// <p>The identifier of the AWS account that owns the image.</p>
+        /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account_id = Some(input.into());
             self
@@ -2627,6 +2621,18 @@ pub mod workspace_image {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.owner_account_id = input;
+            self
+        }
+        /// <p>The updates (if any) that are available for the specified image.</p>
+        pub fn updates(mut self, input: crate::model::UpdateResult) -> Self {
+            self.updates = Some(input);
+            self
+        }
+        pub fn set_updates(
+            mut self,
+            input: std::option::Option<crate::model::UpdateResult>,
+        ) -> Self {
+            self.updates = input;
             self
         }
         /// Consumes the builder and constructs a [`WorkspaceImage`](crate::model::WorkspaceImage)
@@ -2642,6 +2648,7 @@ pub mod workspace_image {
                 error_message: self.error_message,
                 created: self.created,
                 owner_account_id: self.owner_account_id,
+                updates: self.updates,
             }
         }
     }
@@ -2650,6 +2657,71 @@ impl WorkspaceImage {
     /// Creates a new builder-style object to manufacture [`WorkspaceImage`](crate::model::WorkspaceImage)
     pub fn builder() -> crate::model::workspace_image::Builder {
         crate::model::workspace_image::Builder::default()
+    }
+}
+
+/// <p>Describes whether a WorkSpace image needs to be updated with the latest
+/// drivers and other components required by Amazon WorkSpaces.</p>
+/// <note>
+/// <p>Only Windows 10 WorkSpace images can be programmatically updated at this time.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateResult {
+    /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
+    pub update_available: std::option::Option<bool>,
+    /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateResult");
+        formatter.field("update_available", &self.update_available);
+        formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+/// See [`UpdateResult`](crate::model::UpdateResult)
+pub mod update_result {
+    /// A builder for [`UpdateResult`](crate::model::UpdateResult)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) update_available: std::option::Option<bool>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
+        pub fn update_available(mut self, input: bool) -> Self {
+            self.update_available = Some(input);
+            self
+        }
+        pub fn set_update_available(mut self, input: std::option::Option<bool>) -> Self {
+            self.update_available = input;
+            self
+        }
+        /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateResult`](crate::model::UpdateResult)
+        pub fn build(self) -> crate::model::UpdateResult {
+            crate::model::UpdateResult {
+                update_available: self.update_available,
+                description: self.description,
+            }
+        }
+    }
+}
+impl UpdateResult {
+    /// Creates a new builder-style object to manufacture [`UpdateResult`](crate::model::UpdateResult)
+    pub fn builder() -> crate::model::update_result::Builder {
+        crate::model::update_result::Builder::default()
     }
 }
 
@@ -2906,14 +2978,14 @@ impl AsRef<str> for ImageType {
     }
 }
 
-/// <p>Describes the AWS accounts that have been granted permission to use a shared image. For more
-/// information about sharing images, see
+/// <p>Describes the Amazon Web Services accounts that have been granted permission to use a shared image.
+/// For more information about sharing images, see
 /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
 /// Share or Unshare a Custom WorkSpaces Image</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImagePermission {
-    /// <p>The identifier of the AWS account that an image has been shared with.</p>
+    /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
     pub shared_account_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImagePermission {
@@ -2932,7 +3004,7 @@ pub mod image_permission {
         pub(crate) shared_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the AWS account that an image has been shared with.</p>
+        /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
         pub fn shared_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_account_id = Some(input.into());
             self
@@ -3574,7 +3646,7 @@ pub struct WorkspaceBundle {
     /// <p>The name of the bundle.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The owner of the bundle. This is the account identifier of the owner, or
-    /// <code>AMAZON</code> if the bundle is provided by AWS.</p>
+    /// <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The description of the bundle.</p>
     pub description: std::option::Option<std::string::String>,
@@ -3645,7 +3717,7 @@ pub mod workspace_bundle {
             self
         }
         /// <p>The owner of the bundle. This is the account identifier of the owner, or
-        /// <code>AMAZON</code> if the bundle is provided by AWS.</p>
+        /// <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
@@ -4002,7 +4074,7 @@ pub struct ConnectionAlias {
     pub alias_id: std::option::Option<std::string::String>,
     /// <p>The current state of the connection alias.</p>
     pub state: std::option::Option<crate::model::ConnectionAliasState>,
-    /// <p>The identifier of the AWS account that owns the connection alias.</p>
+    /// <p>The identifier of the Amazon Web Services account that owns the connection alias.</p>
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The association status of the connection alias.</p>
     pub associations: std::option::Option<std::vec::Vec<crate::model::ConnectionAliasAssociation>>,
@@ -4066,7 +4138,7 @@ pub mod connection_alias {
             self.state = input;
             self
         }
-        /// <p>The identifier of the AWS account that owns the connection alias.</p>
+        /// <p>The identifier of the Amazon Web Services account that owns the connection alias.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account_id = Some(input.into());
             self
@@ -4121,7 +4193,7 @@ impl ConnectionAlias {
 pub struct ConnectionAliasAssociation {
     /// <p>The association status of the connection alias.</p>
     pub association_status: std::option::Option<crate::model::AssociationStatus>,
-    /// <p>The identifier of the AWS account that associated the connection alias with a directory.</p>
+    /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
     pub associated_account_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the directory associated with a connection alias.</p>
     pub resource_id: std::option::Option<std::string::String>,
@@ -4163,7 +4235,7 @@ pub mod connection_alias_association {
             self.association_status = input;
             self
         }
-        /// <p>The identifier of the AWS account that associated the connection alias with a directory.</p>
+        /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
         pub fn associated_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.associated_account_id = Some(input.into());
             self
@@ -4739,16 +4811,16 @@ impl FailedCreateWorkspaceRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceRequest {
-    /// <p>The identifier of the AWS Directory Service directory for the WorkSpace. You can use
+    /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use
     /// <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The user name of the user for the WorkSpace. This user name must exist in the AWS
-    /// Directory Service directory for the WorkSpace.</p>
+    /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service
+    /// directory for the WorkSpace.</p>
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
     pub bundle_id: std::option::Option<std::string::String>,
-    /// <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace.
-    /// Amazon WorkSpaces does not support asymmetric CMKs.</p>
+    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
+    /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub volume_encryption_key: std::option::Option<std::string::String>,
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
     pub user_volume_encryption_enabled: std::option::Option<bool>,
@@ -4795,7 +4867,7 @@ pub mod workspace_request {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The identifier of the AWS Directory Service directory for the WorkSpace. You can use
+        /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use
         /// <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
@@ -4805,8 +4877,8 @@ pub mod workspace_request {
             self.directory_id = input;
             self
         }
-        /// <p>The user name of the user for the WorkSpace. This user name must exist in the AWS
-        /// Directory Service directory for the WorkSpace.</p>
+        /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service
+        /// directory for the WorkSpace.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
@@ -4824,8 +4896,8 @@ pub mod workspace_request {
             self.bundle_id = input;
             self
         }
-        /// <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace.
-        /// Amazon WorkSpaces does not support asymmetric CMKs.</p>
+        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
+        /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
         pub fn volume_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_encryption_key = Some(input.into());
             self

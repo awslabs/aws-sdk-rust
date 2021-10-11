@@ -488,6 +488,19 @@ pub fn serialize_operation_crate_operation_list_audit_suppressions(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_put_verification_state_on_violation(
+    input: &crate::input::PutVerificationStateOnViolationInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_put_verification_state_on_violation_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_register_ca_certificate(
     input: &crate::input::RegisterCaCertificateInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

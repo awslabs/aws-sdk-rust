@@ -580,6 +580,48 @@ pub fn deser_operation_crate_operation_create_ip_group(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_create_updated_workspace_image(
+    input: &[u8],
+    mut builder: crate::output::create_updated_workspace_image_output::Builder,
+) -> Result<
+    crate::output::create_updated_workspace_image_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ImageId" => {
+                        builder = builder.set_image_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_create_workspace_bundle(
     input: &[u8],
     mut builder: crate::output::create_workspace_bundle_output::Builder,
@@ -3789,6 +3831,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "Updates" => {
+                                builder = builder.set_updates(
+                                    crate::json_deser::deser_structure_crate_model_update_result(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4790,6 +4839,58 @@ where
                                             crate::model::OperatingSystemType::from(u.as_ref())
                                         })
                                     })
+                                    .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_update_result<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::UpdateResult>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::UpdateResult::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "UpdateAvailable" => {
+                                builder = builder.set_update_available(
+                                    smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "Description" => {
+                                builder = builder.set_description(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }

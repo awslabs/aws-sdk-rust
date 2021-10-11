@@ -616,6 +616,9 @@ where
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutAccountPreferencesErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
                 crate::error::PutAccountPreferencesErrorKind::InternalServerError(inner) => {
                     Error::InternalServerError(inner)
                 }

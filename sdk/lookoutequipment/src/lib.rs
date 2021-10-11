@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon Lookout for Equipment is a machine learning service that uses advanced analytics to identify
 //! anomalies in machines from sensor data for use in predictive maintenance. </p>
 

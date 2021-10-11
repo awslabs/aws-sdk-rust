@@ -995,16 +995,18 @@ pub mod fluent_builders {
         /// <dt>ATTRIBUTE_FILTER</dt>
         /// <dd>
         /// <p>All indexed content is searchable and displayable
-        /// for all users. If there is an access control list, it
-        /// is ignored. You can filter on user and group attributes.
+        /// for all users. If you want to filter search results on
+        /// user context, you can use the attribute filters of
+        /// <code>_user_id</code> and <code>_group_ids</code> or
+        /// you can provide user and group information in <code>UserContext</code>.
         /// </p>
         /// </dd>
         /// <dt>USER_TOKEN</dt>
         /// <dd>
-        /// <p>Enables SSO and token-based user access control.
-        /// All documents with no access control and all documents
-        /// accessible to the user will be searchable and
-        /// displayable.
+        /// <p>Enables token-based user access control to filter
+        /// search results on user context. All documents with no
+        /// access control and all documents accessible to the user
+        /// will be searchable and displayable.
         /// </p>
         /// </dd>
         /// </dl>
@@ -1017,6 +1019,23 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::UserContextPolicy>,
         ) -> Self {
             self.inner = self.inner.set_user_context_policy(input);
+            self
+        }
+        /// <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+        /// identity source. To configure this, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        pub fn user_group_resolution_configuration(
+            mut self,
+            inp: crate::model::UserGroupResolutionConfiguration,
+        ) -> Self {
+            self.inner = self.inner.user_group_resolution_configuration(inp);
+            self
+        }
+        pub fn set_user_group_resolution_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_user_group_resolution_configuration(input);
             self
         }
     }
@@ -1269,7 +1288,7 @@ pub mod fluent_builders {
         }
         /// <p>A token that you provide to identify the request to create a
         /// thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation
-        /// with the same client token will create only one index.
+        /// with the same client token will create only one thesaurus.
         /// </p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
@@ -2350,9 +2369,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>If the result of the previous request to
-        /// <code>GetDataSourceSyncJobHistory</code> was truncated, include the
-        /// <code>NextToken</code> to fetch the next set of jobs.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve),
+        /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
+        /// to retrieve the next set of jobs.</p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
@@ -2452,8 +2471,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_index_id(input);
             self
         }
-        /// <p>If the result of the previous request to <code>ListFaqs</code> was truncated, include
-        /// the <code>NextToken</code> to fetch the next set of FAQs.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve),
+        /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
+        /// to retrieve the next set of FAQs.</p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
@@ -2551,7 +2571,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>
-        /// The next items in the list of groups that go beyond the maximum.
+        /// If the previous response was incomplete (because there is more data to retrieve),
+        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of groups that are mapped to users before a
+        /// given ordering or timestamp identifier.
         /// </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
@@ -2562,7 +2585,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>
-        /// The maximum results shown for a list of groups that are mapped to users before a
+        /// The maximum number of returned groups that are mapped to users before a
         /// given ordering or timestamp identifier.
         /// </p>
         pub fn max_results(mut self, inp: i32) -> Self {
@@ -3182,7 +3205,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sorting_configuration(input);
             self
         }
-        /// <p>The user context token.</p>
+        /// <p>The user context token or user and group information.</p>
         pub fn user_context(mut self, inp: crate::model::UserContext) -> Self {
             self.inner = self.inner.user_context(inp);
             self
@@ -3827,7 +3850,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_token_configurations(input);
             self
         }
-        /// <p>The user user token context policy.</p>
+        /// <p>The user context policy.</p>
         pub fn user_context_policy(mut self, inp: crate::model::UserContextPolicy) -> Self {
             self.inner = self.inner.user_context_policy(inp);
             self
@@ -3837,6 +3860,23 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::UserContextPolicy>,
         ) -> Self {
             self.inner = self.inner.set_user_context_policy(input);
+            self
+        }
+        /// <p>Enables fetching access levels of groups and users from an AWS Single Sign-On
+        /// identity source. To configure this, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+        pub fn user_group_resolution_configuration(
+            mut self,
+            inp: crate::model::UserGroupResolutionConfiguration,
+        ) -> Self {
+            self.inner = self.inner.user_group_resolution_configuration(inp);
+            self
+        }
+        pub fn set_user_group_resolution_configuration(
+            mut self,
+            input: std::option::Option<crate::model::UserGroupResolutionConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_user_group_resolution_configuration(input);
             self
         }
     }

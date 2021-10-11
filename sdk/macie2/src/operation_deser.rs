@@ -6613,6 +6613,40 @@ pub fn parse_list_invitations_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_managed_data_identifiers_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListManagedDataIdentifiersOutput,
+    crate::error::ListManagedDataIdentifiersError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListManagedDataIdentifiersError::unhandled)?;
+    Err(crate::error::ListManagedDataIdentifiersError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_managed_data_identifiers_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListManagedDataIdentifiersOutput,
+    crate::error::ListManagedDataIdentifiersError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_managed_data_identifiers_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_managed_data_identifiers(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListManagedDataIdentifiersError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_members_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListMembersOutput, crate::error::ListMembersError> {

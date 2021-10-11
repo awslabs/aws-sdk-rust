@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon WorkSpaces Service</fullname>
 //! <p>Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows and
 //! Amazon Linux desktops for your users.</p>

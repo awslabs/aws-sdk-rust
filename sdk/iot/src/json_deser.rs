@@ -18059,6 +18059,28 @@ where
                                     crate::json_deser::deser_structure_crate_model_violation_event_additional_info(tokens)?
                                 );
                             }
+                            "verificationState" => {
+                                builder = builder.set_verification_state(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::VerificationState::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "verificationStateDescription" => {
+                                builder = builder.set_verification_state_description(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "lastViolationTime" => {
                                 builder = builder.set_last_violation_time(
                                     smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -20484,6 +20506,28 @@ where
                                             crate::model::ViolationEventType::from(u.as_ref())
                                         })
                                     })
+                                    .transpose()?,
+                                );
+                            }
+                            "verificationState" => {
+                                builder = builder.set_verification_state(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::VerificationState::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "verificationStateDescription" => {
+                                builder = builder.set_verification_state_description(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }

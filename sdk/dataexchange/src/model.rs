@@ -9,9 +9,60 @@
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum ExceptionCause {
+    InsufficientS3BucketPolicy,
+    S3AccessDenied,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ExceptionCause {
+    fn from(s: &str) -> Self {
+        match s {
+            "InsufficientS3BucketPolicy" => ExceptionCause::InsufficientS3BucketPolicy,
+            "S3AccessDenied" => ExceptionCause::S3AccessDenied,
+            other => ExceptionCause::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ExceptionCause {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExceptionCause::from(s))
+    }
+}
+impl ExceptionCause {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExceptionCause::InsufficientS3BucketPolicy => "InsufficientS3BucketPolicy",
+            ExceptionCause::S3AccessDenied => "S3AccessDenied",
+            ExceptionCause::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["InsufficientS3BucketPolicy", "S3AccessDenied"]
+    }
+}
+impl AsRef<str> for ExceptionCause {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ResourceType {
     Asset,
     DataSet,
+    EventAction,
     Job,
     Revision,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -22,6 +73,7 @@ impl std::convert::From<&str> for ResourceType {
         match s {
             "ASSET" => ResourceType::Asset,
             "DATA_SET" => ResourceType::DataSet,
+            "EVENT_ACTION" => ResourceType::EventAction,
             "JOB" => ResourceType::Job,
             "REVISION" => ResourceType::Revision,
             other => ResourceType::Unknown(other.to_owned()),
@@ -40,16 +92,411 @@ impl ResourceType {
         match self {
             ResourceType::Asset => "ASSET",
             ResourceType::DataSet => "DATA_SET",
+            ResourceType::EventAction => "EVENT_ACTION",
             ResourceType::Job => "JOB",
             ResourceType::Revision => "REVISION",
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["ASSET", "DATA_SET", "JOB", "REVISION"]
+        &["ASSET", "DATA_SET", "EVENT_ACTION", "JOB", "REVISION"]
     }
 }
 impl AsRef<str> for ResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Event {
+    pub revision_published: std::option::Option<crate::model::RevisionPublished>,
+}
+impl std::fmt::Debug for Event {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Event");
+        formatter.field("revision_published", &self.revision_published);
+        formatter.finish()
+    }
+}
+/// See [`Event`](crate::model::Event)
+pub mod event {
+    /// A builder for [`Event`](crate::model::Event)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) revision_published: std::option::Option<crate::model::RevisionPublished>,
+    }
+    impl Builder {
+        pub fn revision_published(mut self, input: crate::model::RevisionPublished) -> Self {
+            self.revision_published = Some(input);
+            self
+        }
+        pub fn set_revision_published(
+            mut self,
+            input: std::option::Option<crate::model::RevisionPublished>,
+        ) -> Self {
+            self.revision_published = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Event`](crate::model::Event)
+        pub fn build(self) -> crate::model::Event {
+            crate::model::Event {
+                revision_published: self.revision_published,
+            }
+        }
+    }
+}
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event)
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RevisionPublished {
+    /// <p>A unique identifier.</p>
+    pub data_set_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RevisionPublished {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RevisionPublished");
+        formatter.field("data_set_id", &self.data_set_id);
+        formatter.finish()
+    }
+}
+/// See [`RevisionPublished`](crate::model::RevisionPublished)
+pub mod revision_published {
+    /// A builder for [`RevisionPublished`](crate::model::RevisionPublished)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_set_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier.</p>
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_set_id = Some(input.into());
+            self
+        }
+        pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_set_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RevisionPublished`](crate::model::RevisionPublished)
+        pub fn build(self) -> crate::model::RevisionPublished {
+            crate::model::RevisionPublished {
+                data_set_id: self.data_set_id,
+            }
+        }
+    }
+}
+impl RevisionPublished {
+    /// Creates a new builder-style object to manufacture [`RevisionPublished`](crate::model::RevisionPublished)
+    pub fn builder() -> crate::model::revision_published::Builder {
+        crate::model::revision_published::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Action {
+    /// <p>Details of the operation to be performed by the job.</p>
+    pub export_revision_to_s3:
+        std::option::Option<crate::model::AutoExportRevisionToS3RequestDetails>,
+}
+impl std::fmt::Debug for Action {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Action");
+        formatter.field("export_revision_to_s3", &self.export_revision_to_s3);
+        formatter.finish()
+    }
+}
+/// See [`Action`](crate::model::Action)
+pub mod action {
+    /// A builder for [`Action`](crate::model::Action)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) export_revision_to_s3:
+            std::option::Option<crate::model::AutoExportRevisionToS3RequestDetails>,
+    }
+    impl Builder {
+        /// <p>Details of the operation to be performed by the job.</p>
+        pub fn export_revision_to_s3(
+            mut self,
+            input: crate::model::AutoExportRevisionToS3RequestDetails,
+        ) -> Self {
+            self.export_revision_to_s3 = Some(input);
+            self
+        }
+        pub fn set_export_revision_to_s3(
+            mut self,
+            input: std::option::Option<crate::model::AutoExportRevisionToS3RequestDetails>,
+        ) -> Self {
+            self.export_revision_to_s3 = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Action`](crate::model::Action)
+        pub fn build(self) -> crate::model::Action {
+            crate::model::Action {
+                export_revision_to_s3: self.export_revision_to_s3,
+            }
+        }
+    }
+}
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action)
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
+/// <p>Details of the operation to be performed by the job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AutoExportRevisionToS3RequestDetails {
+    /// <p>Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption. type.</p>
+    pub encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
+    /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
+    pub revision_destination: std::option::Option<crate::model::AutoExportRevisionDestinationEntry>,
+}
+impl std::fmt::Debug for AutoExportRevisionToS3RequestDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AutoExportRevisionToS3RequestDetails");
+        formatter.field("encryption", &self.encryption);
+        formatter.field("revision_destination", &self.revision_destination);
+        formatter.finish()
+    }
+}
+/// See [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails)
+pub mod auto_export_revision_to_s3_request_details {
+    /// A builder for [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
+        pub(crate) revision_destination:
+            std::option::Option<crate::model::AutoExportRevisionDestinationEntry>,
+    }
+    impl Builder {
+        /// <p>Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption. type.</p>
+        pub fn encryption(mut self, input: crate::model::ExportServerSideEncryption) -> Self {
+            self.encryption = Some(input);
+            self
+        }
+        pub fn set_encryption(
+            mut self,
+            input: std::option::Option<crate::model::ExportServerSideEncryption>,
+        ) -> Self {
+            self.encryption = input;
+            self
+        }
+        /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
+        pub fn revision_destination(
+            mut self,
+            input: crate::model::AutoExportRevisionDestinationEntry,
+        ) -> Self {
+            self.revision_destination = Some(input);
+            self
+        }
+        pub fn set_revision_destination(
+            mut self,
+            input: std::option::Option<crate::model::AutoExportRevisionDestinationEntry>,
+        ) -> Self {
+            self.revision_destination = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails)
+        pub fn build(self) -> crate::model::AutoExportRevisionToS3RequestDetails {
+            crate::model::AutoExportRevisionToS3RequestDetails {
+                encryption: self.encryption,
+                revision_destination: self.revision_destination,
+            }
+        }
+    }
+}
+impl AutoExportRevisionToS3RequestDetails {
+    /// Creates a new builder-style object to manufacture [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails)
+    pub fn builder() -> crate::model::auto_export_revision_to_s3_request_details::Builder {
+        crate::model::auto_export_revision_to_s3_request_details::Builder::default()
+    }
+}
+
+/// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AutoExportRevisionDestinationEntry {
+    /// <p>The S3 bucket that is the destination for the event action.</p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
+    pub key_pattern: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AutoExportRevisionDestinationEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AutoExportRevisionDestinationEntry");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("key_pattern", &self.key_pattern);
+        formatter.finish()
+    }
+}
+/// See [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry)
+pub mod auto_export_revision_destination_entry {
+    /// A builder for [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key_pattern: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The S3 bucket that is the destination for the event action.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
+        pub fn key_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_pattern = Some(input.into());
+            self
+        }
+        pub fn set_key_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_pattern = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry)
+        pub fn build(self) -> crate::model::AutoExportRevisionDestinationEntry {
+            crate::model::AutoExportRevisionDestinationEntry {
+                bucket: self.bucket,
+                key_pattern: self.key_pattern,
+            }
+        }
+    }
+}
+impl AutoExportRevisionDestinationEntry {
+    /// Creates a new builder-style object to manufacture [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry)
+    pub fn builder() -> crate::model::auto_export_revision_destination_entry::Builder {
+        crate::model::auto_export_revision_destination_entry::Builder::default()
+    }
+}
+
+/// <p>Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption. type.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExportServerSideEncryption {
+    /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
+    pub kms_key_arn: std::option::Option<std::string::String>,
+    /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
+    pub r#type: std::option::Option<crate::model::ServerSideEncryptionTypes>,
+}
+impl std::fmt::Debug for ExportServerSideEncryption {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExportServerSideEncryption");
+        formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
+pub mod export_server_side_encryption {
+    /// A builder for [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::ServerSideEncryptionTypes>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
+            self
+        }
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
+            self
+        }
+        /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
+        pub fn r#type(mut self, input: crate::model::ServerSideEncryptionTypes) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ServerSideEncryptionTypes>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
+        pub fn build(self) -> crate::model::ExportServerSideEncryption {
+            crate::model::ExportServerSideEncryption {
+                kms_key_arn: self.kms_key_arn,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl ExportServerSideEncryption {
+    /// Creates a new builder-style object to manufacture [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
+    pub fn builder() -> crate::model::export_server_side_encryption::Builder {
+        crate::model::export_server_side_encryption::Builder::default()
+    }
+}
+
+/// <p>The types of encryption supported in export jobs to Amazon S3.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ServerSideEncryptionTypes {
+    Aes256,
+    AwsKms,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ServerSideEncryptionTypes {
+    fn from(s: &str) -> Self {
+        match s {
+            "AES256" => ServerSideEncryptionTypes::Aes256,
+            "aws:kms" => ServerSideEncryptionTypes::AwsKms,
+            other => ServerSideEncryptionTypes::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ServerSideEncryptionTypes {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ServerSideEncryptionTypes::from(s))
+    }
+}
+impl ServerSideEncryptionTypes {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ServerSideEncryptionTypes::Aes256 => "AES256",
+            ServerSideEncryptionTypes::AwsKms => "aws:kms",
+            ServerSideEncryptionTypes::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AES256", "aws:kms"]
+    }
+}
+impl AsRef<str> for ServerSideEncryptionTypes {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -907,6 +1354,7 @@ impl JobError {
 )]
 pub enum JobErrorResourceTypes {
     Asset,
+    DataSet,
     Revision,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -915,6 +1363,7 @@ impl std::convert::From<&str> for JobErrorResourceTypes {
     fn from(s: &str) -> Self {
         match s {
             "ASSET" => JobErrorResourceTypes::Asset,
+            "DATA_SET" => JobErrorResourceTypes::DataSet,
             "REVISION" => JobErrorResourceTypes::Revision,
             other => JobErrorResourceTypes::Unknown(other.to_owned()),
         }
@@ -931,12 +1380,13 @@ impl JobErrorResourceTypes {
     pub fn as_str(&self) -> &str {
         match self {
             JobErrorResourceTypes::Asset => "ASSET",
+            JobErrorResourceTypes::DataSet => "DATA_SET",
             JobErrorResourceTypes::Revision => "REVISION",
             JobErrorResourceTypes::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["ASSET", "REVISION"]
+        &["ASSET", "DATA_SET", "REVISION"]
     }
 }
 impl AsRef<str> for JobErrorResourceTypes {
@@ -1770,121 +2220,6 @@ impl RevisionDestinationEntry {
     }
 }
 
-/// <p>Encryption configuration of the export job. Includes the encryption type as well as the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExportServerSideEncryption {
-    /// <p>The Amazon Resource Name (ARN) of the the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
-    pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
-    pub r#type: std::option::Option<crate::model::ServerSideEncryptionTypes>,
-}
-impl std::fmt::Debug for ExportServerSideEncryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportServerSideEncryption");
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
-/// See [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
-pub mod export_server_side_encryption {
-    /// A builder for [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
-        pub(crate) r#type: std::option::Option<crate::model::ServerSideEncryptionTypes>,
-    }
-    impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
-        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.kms_key_arn = Some(input.into());
-            self
-        }
-        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
-        }
-        /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
-        pub fn r#type(mut self, input: crate::model::ServerSideEncryptionTypes) -> Self {
-            self.r#type = Some(input);
-            self
-        }
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ServerSideEncryptionTypes>,
-        ) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
-        pub fn build(self) -> crate::model::ExportServerSideEncryption {
-            crate::model::ExportServerSideEncryption {
-                kms_key_arn: self.kms_key_arn,
-                r#type: self.r#type,
-            }
-        }
-    }
-}
-impl ExportServerSideEncryption {
-    /// Creates a new builder-style object to manufacture [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
-    pub fn builder() -> crate::model::export_server_side_encryption::Builder {
-        crate::model::export_server_side_encryption::Builder::default()
-    }
-}
-
-/// <p>The types of encryption supported in export jobs to Amazon S3.</p>
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ServerSideEncryptionTypes {
-    Aes256,
-    AwsKms,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ServerSideEncryptionTypes {
-    fn from(s: &str) -> Self {
-        match s {
-            "AES256" => ServerSideEncryptionTypes::Aes256,
-            "aws:kms" => ServerSideEncryptionTypes::AwsKms,
-            other => ServerSideEncryptionTypes::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ServerSideEncryptionTypes {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServerSideEncryptionTypes::from(s))
-    }
-}
-impl ServerSideEncryptionTypes {
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServerSideEncryptionTypes::Aes256 => "AES256",
-            ServerSideEncryptionTypes::AwsKms => "aws:kms",
-            ServerSideEncryptionTypes::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["AES256", "aws:kms"]
-    }
-}
-impl AsRef<str> for ServerSideEncryptionTypes {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Details about the export to Amazon S3 response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2163,6 +2498,123 @@ impl ExportAssetToSignedUrlResponseDetails {
     /// Creates a new builder-style object to manufacture [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails)
     pub fn builder() -> crate::model::export_asset_to_signed_url_response_details::Builder {
         crate::model::export_asset_to_signed_url_response_details::Builder::default()
+    }
+}
+
+/// <p>An event action is an object that defines the relationship between a specific event and an automated action that will be taken on behalf of the customer.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventActionEntry {
+    /// <p>What occurs after a certain event.</p>
+    pub action: std::option::Option<crate::model::Action>,
+    /// <p>The ARN for the event action.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    pub created_at: std::option::Option<smithy_types::Instant>,
+    /// <p>What occurs to start an action.</p>
+    pub event: std::option::Option<crate::model::Event>,
+    /// <p>The unique identifier for the event action.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    pub updated_at: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for EventActionEntry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventActionEntry");
+        formatter.field("action", &self.action);
+        formatter.field("arn", &self.arn);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("event", &self.event);
+        formatter.field("id", &self.id);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.finish()
+    }
+}
+/// See [`EventActionEntry`](crate::model::EventActionEntry)
+pub mod event_action_entry {
+    /// A builder for [`EventActionEntry`](crate::model::EventActionEntry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) action: std::option::Option<crate::model::Action>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) event: std::option::Option<crate::model::Event>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>What occurs after a certain event.</p>
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.action = Some(input);
+            self
+        }
+        pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
+            self.action = input;
+            self
+        }
+        /// <p>The ARN for the event action.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+            self.created_at = Some(input);
+            self
+        }
+        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.created_at = input;
+            self
+        }
+        /// <p>What occurs to start an action.</p>
+        pub fn event(mut self, input: crate::model::Event) -> Self {
+            self.event = Some(input);
+            self
+        }
+        pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
+            self.event = input;
+            self
+        }
+        /// <p>The unique identifier for the event action.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+            self.updated_at = Some(input);
+            self
+        }
+        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.updated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventActionEntry`](crate::model::EventActionEntry)
+        pub fn build(self) -> crate::model::EventActionEntry {
+            crate::model::EventActionEntry {
+                action: self.action,
+                arn: self.arn,
+                created_at: self.created_at,
+                event: self.event,
+                id: self.id,
+                updated_at: self.updated_at,
+            }
+        }
+    }
+}
+impl EventActionEntry {
+    /// Creates a new builder-style object to manufacture [`EventActionEntry`](crate::model::EventActionEntry)
+    pub fn builder() -> crate::model::event_action_entry::Builder {
+        crate::model::event_action_entry::Builder::default()
     }
 }
 
@@ -3083,12 +3535,15 @@ pub enum LimitName {
     AssetSizeInGb,
     AssetsPerImportJobFromAmazonS3,
     AssetsPerRevision,
+    AutoExportEventActionsPerDataSet,
     ConcurrentInProgressJobsToExportAssetsToAmazonS3,
     ConcurrentInProgressJobsToExportAssetsToASignedUrl,
+    ConcurrentInProgressJobsToExportRevisionsToAmazonS3,
     ConcurrentInProgressJobsToImportAssetsFromAmazonS3,
     ConcurrentInProgressJobsToImportAssetsFromASignedUrl,
     DataSetsPerAccount,
     DataSetsPerProduct,
+    EventActionsPerAccount,
     ProductsPerAccount,
     RevisionsPerDataSet,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -3101,11 +3556,15 @@ impl std::convert::From<&str> for LimitName {
             "Asset size in GB" => LimitName::AssetSizeInGb,
             "Assets per import job from Amazon S3" => LimitName::AssetsPerImportJobFromAmazonS3,
             "Assets per revision" => LimitName::AssetsPerRevision,
+            "Auto export event actions per data set" => LimitName::AutoExportEventActionsPerDataSet,
             "Concurrent in progress jobs to export assets to Amazon S3" => {
                 LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3
             }
             "Concurrent in progress jobs to export assets to a signed URL" => {
                 LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl
+            }
+            "Concurrent in progress jobs to export revisions to Amazon S3" => {
+                LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3
             }
             "Concurrent in progress jobs to import assets from Amazon S3" => {
                 LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3
@@ -3115,6 +3574,7 @@ impl std::convert::From<&str> for LimitName {
             }
             "Data sets per account" => LimitName::DataSetsPerAccount,
             "Data sets per product" => LimitName::DataSetsPerProduct,
+            "Event actions per account" => LimitName::EventActionsPerAccount,
             "Products per account" => LimitName::ProductsPerAccount,
             "Revisions per data set" => LimitName::RevisionsPerDataSet,
             other => LimitName::Unknown(other.to_owned()),
@@ -3135,11 +3595,15 @@ impl LimitName {
             LimitName::AssetSizeInGb => "Asset size in GB",
             LimitName::AssetsPerImportJobFromAmazonS3 => "Assets per import job from Amazon S3",
             LimitName::AssetsPerRevision => "Assets per revision",
+            LimitName::AutoExportEventActionsPerDataSet => "Auto export event actions per data set",
             LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3 => {
                 "Concurrent in progress jobs to export assets to Amazon S3"
             }
             LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl => {
                 "Concurrent in progress jobs to export assets to a signed URL"
+            }
+            LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3 => {
+                "Concurrent in progress jobs to export revisions to Amazon S3"
             }
             LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3 => {
                 "Concurrent in progress jobs to import assets from Amazon S3"
@@ -3149,6 +3613,7 @@ impl LimitName {
             }
             LimitName::DataSetsPerAccount => "Data sets per account",
             LimitName::DataSetsPerProduct => "Data sets per product",
+            LimitName::EventActionsPerAccount => "Event actions per account",
             LimitName::ProductsPerAccount => "Products per account",
             LimitName::RevisionsPerDataSet => "Revisions per data set",
             LimitName::Unknown(s) => s.as_ref(),
@@ -3160,12 +3625,15 @@ impl LimitName {
             "Asset size in GB",
             "Assets per import job from Amazon S3",
             "Assets per revision",
+            "Auto export event actions per data set",
             "Concurrent in progress jobs to export assets to Amazon S3",
             "Concurrent in progress jobs to export assets to a signed URL",
+            "Concurrent in progress jobs to export revisions to Amazon S3",
             "Concurrent in progress jobs to import assets from Amazon S3",
             "Concurrent in progress jobs to import assets from a signed URL",
             "Data sets per account",
             "Data sets per product",
+            "Event actions per account",
             "Products per account",
             "Revisions per data set",
         ]

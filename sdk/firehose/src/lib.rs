@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Kinesis Data Firehose API Reference</fullname>
 //! <p>Amazon Kinesis Data Firehose is a fully managed service that delivers real-time
 //! streaming data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon

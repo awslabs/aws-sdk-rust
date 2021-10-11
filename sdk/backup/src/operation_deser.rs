@@ -6430,6 +6430,23 @@ pub fn parse_update_framework_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AlreadyExistsException" => crate::error::UpdateFrameworkError {
+            meta: generic,
+            kind: crate::error::UpdateFrameworkErrorKind::AlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ConflictException" => {
             crate::error::UpdateFrameworkError {
                 meta: generic,

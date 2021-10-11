@@ -187,6 +187,11 @@ where
     pub fn list_document_classifiers(&self) -> fluent_builders::ListDocumentClassifiers<C, M, R> {
         fluent_builders::ListDocumentClassifiers::new(self.handle.clone())
     }
+    pub fn list_document_classifier_summaries(
+        &self,
+    ) -> fluent_builders::ListDocumentClassifierSummaries<C, M, R> {
+        fluent_builders::ListDocumentClassifierSummaries::new(self.handle.clone())
+    }
     pub fn list_dominant_language_detection_jobs(
         &self,
     ) -> fluent_builders::ListDominantLanguageDetectionJobs<C, M, R> {
@@ -202,6 +207,11 @@ where
     }
     pub fn list_entity_recognizers(&self) -> fluent_builders::ListEntityRecognizers<C, M, R> {
         fluent_builders::ListEntityRecognizers::new(self.handle.clone())
+    }
+    pub fn list_entity_recognizer_summaries(
+        &self,
+    ) -> fluent_builders::ListEntityRecognizerSummaries<C, M, R> {
+        fluent_builders::ListEntityRecognizerSummaries::new(self.handle.clone())
     }
     pub fn list_events_detection_jobs(&self) -> fluent_builders::ListEventsDetectionJobs<C, M, R> {
         fluent_builders::ListEventsDetectionJobs::new(self.handle.clone())
@@ -861,6 +871,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_classifier_name(input);
             self
         }
+        /// <p>The version name given to the newly created classifier.
+        /// Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
+        /// The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+        pub fn version_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(inp);
+            self
+        }
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_name(input);
+            self
+        }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
         /// Amazon Comprehend read access to your input data.</p>
         pub fn data_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1209,6 +1230,17 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_recognizer_name(input);
+            self
+        }
+        /// <p>The version name given to the newly created recognizer.
+        /// Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
+        /// The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
+        pub fn version_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(inp);
+            self
+        }
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
@@ -2689,6 +2721,69 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct ListDocumentClassifierSummaries<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_document_classifier_summaries_input::Builder,
+    }
+    impl<C, M, R> ListDocumentClassifierSummaries<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDocumentClassifierSummariesOutput,
+            smithy_http::result::SdkError<crate::error::ListDocumentClassifierSummariesError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListDocumentClassifierSummariesInputOperationOutputAlias,
+                crate::output::ListDocumentClassifierSummariesOutput,
+                crate::error::ListDocumentClassifierSummariesError,
+                crate::input::ListDocumentClassifierSummariesInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Identifies the next page of results to return.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return on each page. The default is 100.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ListDominantLanguageDetectionJobs<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -2985,6 +3080,69 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of results to return on each page. The default is 100.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListEntityRecognizerSummaries<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_entity_recognizer_summaries_input::Builder,
+    }
+    impl<C, M, R> ListEntityRecognizerSummaries<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListEntityRecognizerSummariesOutput,
+            smithy_http::result::SdkError<crate::error::ListEntityRecognizerSummariesError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListEntityRecognizerSummariesInputOperationOutputAlias,
+                crate::output::ListEntityRecognizerSummariesOutput,
+                crate::error::ListEntityRecognizerSummariesError,
+                crate::input::ListEntityRecognizerSummariesInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Identifies the next page of results to return.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return on each page. The default is 100.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
@@ -5416,6 +5574,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_arn(input);
             self
         }
+        /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
+        pub fn desired_model_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.desired_model_arn(inp);
+            self
+        }
+        pub fn set_desired_model_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_desired_model_arn(input);
+            self
+        }
         /// <p> The desired number of inference units to be used by the model using this endpoint.
         /// Each inference unit represents of a throughput of 100 characters per second.</p>
         pub fn desired_inference_units(mut self, inp: i32) -> Self {
@@ -5424,6 +5594,18 @@ pub mod fluent_builders {
         }
         pub fn set_desired_inference_units(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_inference_units(input);
+            self
+        }
+        /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
+        pub fn desired_data_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.desired_data_access_role_arn(inp);
+            self
+        }
+        pub fn set_desired_data_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_desired_data_access_role_arn(input);
             self
         }
     }

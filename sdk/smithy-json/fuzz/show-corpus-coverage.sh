@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
+#
+
 # Script that gathers coverage from the entire fuzz corpus and shows covered lines in the terminal.
 set -ex
 

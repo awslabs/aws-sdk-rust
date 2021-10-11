@@ -32,10 +32,17 @@ expect_shape_fn!(fn expect_byte_array[ByteArray] -> Blob { bytes -> Blob::new(by
 expect_shape_fn!(fn expect_string[String] -> String { value -> value.as_str().into() });
 expect_shape_fn!(fn expect_timestamp[Timestamp] -> Instant { value -> *value });
 
+#[derive(Debug)]
 pub struct ResponseHeaders<'a> {
-    pub content_type: &'a StrBytes,
+    pub content_type: Option<&'a StrBytes>,
     pub message_type: &'a StrBytes,
     pub smithy_type: &'a StrBytes,
+}
+
+impl<'a> ResponseHeaders<'a> {
+    pub fn content_type(&self) -> Option<&str> {
+        self.content_type.map(|ct| ct.as_str())
+    }
 }
 
 fn expect_header_str_value<'a>(
@@ -70,7 +77,9 @@ pub fn parse_response_headers(message: &Message) -> Result<ResponseHeaders, Erro
     }
     let message_type = expect_header_str_value(message_type, ":message-type")?;
     Ok(ResponseHeaders {
-        content_type: expect_header_str_value(content_type, ":content-type")?,
+        content_type: content_type
+            .map(|ct| expect_header_str_value(Some(ct), ":content-type"))
+            .transpose()?,
         message_type,
         smithy_type: if message_type.as_str() == "event" {
             expect_header_str_value(event_type, ":event-type")?
@@ -107,7 +116,7 @@ mod tests {
             ));
         let parsed = parse_response_headers(&message).unwrap();
         assert_eq!("Foo", parsed.smithy_type.as_str());
-        assert_eq!("application/json", parsed.content_type.as_str());
+        assert_eq!(Some("application/json"), parsed.content_type());
         assert_eq!("event", parsed.message_type.as_str());
     }
 
@@ -128,7 +137,7 @@ mod tests {
             ));
         let parsed = parse_response_headers(&message).unwrap();
         assert_eq!("BadRequestException", parsed.smithy_type.as_str());
-        assert_eq!("application/json", parsed.content_type.as_str());
+        assert_eq!(Some("application/json"), parsed.content_type());
         assert_eq!("exception", parsed.message_type.as_str());
     }
 
@@ -144,7 +153,11 @@ mod tests {
                 HeaderValue::String("exception".into()),
             ));
         let error = parse_response_headers(&message).err().unwrap().to_string();
-        assert_eq!("failed to unmarshall message: expected response to include :exception-type header, but it was missing", error);
+        assert_eq!(
+            "failed to unmarshall message: expected response to include :exception-type \
+             header, but it was missing",
+            error
+        );
     }
 
     #[test]
@@ -159,7 +172,11 @@ mod tests {
                 HeaderValue::String("event".into()),
             ));
         let error = parse_response_headers(&message).err().unwrap().to_string();
-        assert_eq!("failed to unmarshall message: expected response to include :event-type header, but it was missing", error);
+        assert_eq!(
+            "failed to unmarshall message: expected response to include :event-type \
+             header, but it was missing",
+            error
+        );
     }
 
     #[test]
@@ -173,7 +190,29 @@ mod tests {
                 ":message-type",
                 HeaderValue::String("event".into()),
             ));
+        let parsed = parse_response_headers(&message).ok().unwrap();
+        assert_eq!(None, parsed.content_type);
+        assert_eq!("Foo", parsed.smithy_type.as_str());
+        assert_eq!("event", parsed.message_type.as_str());
+    }
+
+    #[test]
+    fn content_type_wrong_type() {
+        let message = Message::new(&b"test"[..])
+            .add_header(Header::new(
+                ":event-type",
+                HeaderValue::String("Foo".into()),
+            ))
+            .add_header(Header::new(":content-type", HeaderValue::Int32(16)))
+            .add_header(Header::new(
+                ":message-type",
+                HeaderValue::String("event".into()),
+            ));
         let error = parse_response_headers(&message).err().unwrap().to_string();
-        assert_eq!("failed to unmarshall message: expected response to include :content-type header, but it was missing", error);
+        assert_eq!(
+            "failed to unmarshall message: expected response :content-type \
+             header to be string, received Int32(16)",
+            error
+        );
     }
 }

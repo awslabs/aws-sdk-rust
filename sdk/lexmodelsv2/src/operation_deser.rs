@@ -3231,6 +3231,92 @@ pub fn parse_delete_slot_type_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_utterances_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteUtterancesOutput, crate::error::DeleteUtterancesError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteUtterancesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteUtterancesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::DeleteUtterancesError {
+            meta: generic,
+            kind: crate::error::DeleteUtterancesErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteUtterancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::DeleteUtterancesError {
+            meta: generic,
+            kind: crate::error::DeleteUtterancesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteUtterancesError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_delete_utterances_throttling_exception_retry_after_seconds(response.headers())
+                                                    .map_err(|_|crate::error::DeleteUtterancesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::DeleteUtterancesError {
+            meta: generic,
+            kind: crate::error::DeleteUtterancesErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteUtterancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeleteUtterancesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_utterances_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteUtterancesOutput, crate::error::DeleteUtterancesError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_utterances_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_bot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeBotOutput, crate::error::DescribeBotError> {
@@ -4417,6 +4503,123 @@ pub fn parse_describe_slot_type_response(
             output,
         )
         .map_err(crate::error::DescribeSlotTypeError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_aggregated_utterances_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAggregatedUtterancesOutput,
+    crate::error::ListAggregatedUtterancesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListAggregatedUtterancesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListAggregatedUtterancesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::ListAggregatedUtterancesError {
+            meta: generic,
+            kind: crate::error::ListAggregatedUtterancesErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAggregatedUtterancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PreconditionFailedException" => crate::error::ListAggregatedUtterancesError {
+            meta: generic,
+            kind: crate::error::ListAggregatedUtterancesErrorKind::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAggregatedUtterancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::ListAggregatedUtterancesError {
+            meta: generic,
+            kind: crate::error::ListAggregatedUtterancesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAggregatedUtterancesError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::http_serde::deser_header_list_aggregated_utterances_throttling_exception_retry_after_seconds(response.headers())
+                                                    .map_err(|_|crate::error::ListAggregatedUtterancesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::ListAggregatedUtterancesError {
+            meta: generic,
+            kind: crate::error::ListAggregatedUtterancesErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAggregatedUtterancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListAggregatedUtterancesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_aggregated_utterances_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAggregatedUtterancesOutput,
+    crate::error::ListAggregatedUtterancesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_aggregated_utterances_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_aggregated_utterances(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListAggregatedUtterancesError::unhandled)?;
         output.build()
     })
 }

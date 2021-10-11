@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon CloudWatch Synthetics</fullname>
 //! <p>You can use Amazon CloudWatch Synthetics to continually monitor your services. You can
 //! create and manage <i>canaries</i>, which are modular, lightweight scripts

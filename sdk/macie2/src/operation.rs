@@ -1130,7 +1130,7 @@ impl smithy_http::response::ParseStrictResponse for ListFindingsFilters {
     }
 }
 
-/// <p>Retrieves information about all the Amazon Macie membership invitations that were received by an account.</p>
+/// <p>Retrieves information about the Amazon Macie membership invitations that were received by an account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListInvitations {
     _private: (),
@@ -1154,6 +1154,34 @@ impl smithy_http::response::ParseStrictResponse for ListInvitations {
             crate::operation_deser::parse_list_invitations_error(response)
         } else {
             crate::operation_deser::parse_list_invitations_response(response)
+        }
+    }
+}
+
+/// <p>Retrieves information about all the managed data identifiers that Amazon Macie currently provides.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListManagedDataIdentifiers {
+    _private: (),
+}
+impl ListManagedDataIdentifiers {
+    /// Creates a new builder-style object to manufacture [`ListManagedDataIdentifiersInput`](crate::input::ListManagedDataIdentifiersInput)
+    pub fn builder() -> crate::input::list_managed_data_identifiers_input::Builder {
+        crate::input::list_managed_data_identifiers_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListManagedDataIdentifiers {
+    type Output = std::result::Result<
+        crate::output::ListManagedDataIdentifiersOutput,
+        crate::error::ListManagedDataIdentifiersError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_managed_data_identifiers_error(response)
+        } else {
+            crate::operation_deser::parse_list_managed_data_identifiers_response(response)
         }
     }
 }

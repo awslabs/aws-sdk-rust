@@ -136,8 +136,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>The sample rate of the input audio in Hertz. Sample rates of 16000 Hz or higher are
-        /// accepted.</p>
+        /// <p>The sample rate of the input audio in Hertz.</p>
         pub fn media_sample_rate_hertz(mut self, inp: i32) -> Self {
             self.inner = self.inner.media_sample_rate_hertz(inp);
             self
@@ -331,8 +330,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8000 Hz for low
-        /// quality audio and 16000 Hz for high quality audio.</p>
+        /// <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8,000 Hz for low
+        /// quality audio and 16,000 Hz for high quality audio.</p>
         pub fn media_sample_rate_hertz(mut self, inp: i32) -> Self {
             self.inner = self.inner.media_sample_rate_hertz(inp);
             self
@@ -376,7 +375,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_id(input);
             self
         }
-        /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP2 data
+        /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data
         /// frame.</p>
         pub fn audio_stream(
             mut self,
@@ -394,7 +393,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_audio_stream(input);
             self
         }
-        /// <p>The name of the vocabulary filter you've created that is unique to your AWS account.
+        /// <p>The name of the vocabulary filter you've created that is unique to your account.
         /// Provide the name in this field to successfully use it in a stream.</p>
         pub fn vocabulary_filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_filter_name(inp);
@@ -409,7 +408,7 @@ pub mod fluent_builders {
         }
         /// <p>The manner in which you use your vocabulary filter to filter words in your transcript.
         /// <code>Remove</code> removes filtered words from your transcription results.
-        /// <code>Mask</code> masks those words with a <code>***</code> in your transcription results.
+        /// <code>Mask</code> masks filtered words with a <code>***</code> in your transcription results.
         /// <code>Tag</code> keeps the filtered words in your transcription results and tags them. The
         /// tag appears as <code>VocabularyFilterMatch</code> equal to <code>True</code>
         /// </p>
@@ -493,6 +492,57 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::PartialResultsStability>,
         ) -> Self {
             self.inner = self.inner.set_partial_results_stability(input);
+            self
+        }
+        /// <p>Set this field to PII to identify personally identifiable information (PII) in the transcription output. Content identification is performed only upon complete transcription of the audio segments.</p>
+        /// <p>You can’t set both <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+        pub fn content_identification_type(
+            mut self,
+            inp: crate::model::ContentIdentificationType,
+        ) -> Self {
+            self.inner = self.inner.content_identification_type(inp);
+            self
+        }
+        pub fn set_content_identification_type(
+            mut self,
+            input: std::option::Option<crate::model::ContentIdentificationType>,
+        ) -> Self {
+            self.inner = self.inner.set_content_identification_type(input);
+            self
+        }
+        /// <p>Set this field to PII to redact personally identifiable information (PII) in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
+        /// <p>You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
+        pub fn content_redaction_type(mut self, inp: crate::model::ContentRedactionType) -> Self {
+            self.inner = self.inner.content_redaction_type(inp);
+            self
+        }
+        pub fn set_content_redaction_type(
+            mut self,
+            input: std::option::Option<crate::model::ContentRedactionType>,
+        ) -> Self {
+            self.inner = self.inner.set_content_redaction_type(input);
+            self
+        }
+        /// <p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have
+        /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>
+        /// <p>
+        /// <code>PIIEntityTypes</code> must be comma-separated; the available values are:
+        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+        /// <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+        /// <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
+        /// <code>SSN</code>, and <code>ALL</code>.</p>
+        /// <p>
+        /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+        pub fn pii_entity_types(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pii_entity_types(inp);
+            self
+        }
+        pub fn set_pii_entity_types(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_pii_entity_types(input);
             self
         }
     }

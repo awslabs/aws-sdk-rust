@@ -1,0 +1,836 @@
+D	sdk/accessanalyzer/src/operation_deser.rs
+M	sdk/accessanalyzer/src/operation_ser.rs
+--
+A	sdk/account/src/operation.rs
+R052	sdk/s3outposts/src/operation_deser.rs	sdk/account/src/operation_ser.rs
+--
+D	sdk/acm/src/operation_deser.rs
+M	sdk/acm/src/operation_ser.rs
+--
+D	sdk/acmpca/src/operation_deser.rs
+M	sdk/acmpca/src/operation_ser.rs
+--
+D	sdk/alexaforbusiness/src/operation_deser.rs
+M	sdk/alexaforbusiness/src/operation_ser.rs
+--
+D	sdk/amp/src/operation_deser.rs
+M	sdk/amp/src/operation_ser.rs
+--
+D	sdk/amplify/src/operation_deser.rs
+M	sdk/amplify/src/operation_ser.rs
+--
+D	sdk/amplifybackend/src/operation_deser.rs
+M	sdk/amplifybackend/src/operation_ser.rs
+--
+D	sdk/apigateway/src/operation_deser.rs
+M	sdk/apigateway/src/operation_ser.rs
+--
+D	sdk/apigatewaymanagement/src/operation_deser.rs
+M	sdk/apigatewaymanagement/src/operation_ser.rs
+--
+D	sdk/apigatewayv2/src/operation_deser.rs
+M	sdk/apigatewayv2/src/operation_ser.rs
+--
+D	sdk/appconfig/src/operation_deser.rs
+M	sdk/appconfig/src/operation_ser.rs
+--
+D	sdk/appflow/src/operation_deser.rs
+M	sdk/appflow/src/operation_ser.rs
+--
+D	sdk/appintegrations/src/operation_deser.rs
+M	sdk/appintegrations/src/operation_ser.rs
+--
+D	sdk/applicationautoscaling/src/operation_deser.rs
+M	sdk/applicationautoscaling/src/operation_ser.rs
+--
+D	sdk/applicationcostprofiler/src/operation_deser.rs
+M	sdk/applicationcostprofiler/src/operation_ser.rs
+--
+D	sdk/applicationdiscovery/src/operation_deser.rs
+M	sdk/applicationdiscovery/src/operation_ser.rs
+--
+D	sdk/applicationinsights/src/operation_deser.rs
+M	sdk/applicationinsights/src/operation_ser.rs
+--
+D	sdk/appmesh/src/operation_deser.rs
+M	sdk/appmesh/src/operation_ser.rs
+--
+D	sdk/apprunner/src/operation_deser.rs
+M	sdk/apprunner/src/operation_ser.rs
+--
+D	sdk/appstream/src/operation_deser.rs
+M	sdk/appstream/src/operation_ser.rs
+--
+D	sdk/appsync/src/operation_deser.rs
+M	sdk/appsync/src/operation_ser.rs
+--
+D	sdk/athena/src/operation_deser.rs
+M	sdk/athena/src/operation_ser.rs
+--
+D	sdk/auditmanager/src/operation_deser.rs
+M	sdk/auditmanager/src/operation_ser.rs
+--
+D	sdk/autoscaling/src/operation_deser.rs
+M	sdk/autoscaling/src/operation_ser.rs
+--
+D	sdk/autoscalingplans/src/operation_deser.rs
+M	sdk/autoscalingplans/src/operation_ser.rs
+--
+D	sdk/backup/src/operation_deser.rs
+M	sdk/backup/src/operation_ser.rs
+--
+D	sdk/batch/src/operation_deser.rs
+M	sdk/batch/src/operation_ser.rs
+--
+D	sdk/braket/src/operation_deser.rs
+M	sdk/braket/src/operation_ser.rs
+--
+D	sdk/budgets/src/operation_deser.rs
+M	sdk/budgets/src/operation_ser.rs
+--
+D	sdk/chime/src/operation_deser.rs
+M	sdk/chime/src/operation_ser.rs
+--
+D	sdk/chimesdkidentity/src/operation_deser.rs
+M	sdk/chimesdkidentity/src/operation_ser.rs
+--
+D	sdk/chimesdkmessaging/src/operation_deser.rs
+M	sdk/chimesdkmessaging/src/operation_ser.rs
+--
+M	sdk/cloud9/src/operation.rs
+M	sdk/cloud9/src/operation_ser.rs
+--
+A	sdk/cloudcontrol/src/operation.rs
+R050	sdk/honeycode/src/operation_deser.rs	sdk/cloudcontrol/src/operation_ser.rs
+--
+D	sdk/clouddirectory/src/operation_deser.rs
+M	sdk/clouddirectory/src/operation_ser.rs
+--
+D	sdk/cloudformation/src/operation_deser.rs
+M	sdk/cloudformation/src/operation_ser.rs
+--
+D	sdk/cloudfront/src/operation_deser.rs
+M	sdk/cloudfront/src/operation_ser.rs
+--
+D	sdk/cloudhsm/src/operation_deser.rs
+M	sdk/cloudhsm/src/operation_ser.rs
+--
+D	sdk/cloudhsmv2/src/operation_deser.rs
+M	sdk/cloudhsmv2/src/operation_ser.rs
+--
+D	sdk/cloudsearch/src/operation_deser.rs
+M	sdk/cloudsearch/src/operation_ser.rs
+--
+D	sdk/cloudsearchdomain/src/operation_deser.rs
+M	sdk/cloudsearchdomain/src/operation_ser.rs
+--
+D	sdk/cloudtrail/src/operation_deser.rs
+M	sdk/cloudtrail/src/operation_ser.rs
+--
+D	sdk/cloudwatch/src/operation_deser.rs
+M	sdk/cloudwatch/src/operation_ser.rs
+--
+D	sdk/cloudwatchevents/src/operation_deser.rs
+M	sdk/cloudwatchevents/src/operation_ser.rs
+--
+D	sdk/cloudwatchlogs/src/operation_deser.rs
+M	sdk/cloudwatchlogs/src/operation_ser.rs
+--
+D	sdk/codeartifact/src/operation_deser.rs
+M	sdk/codeartifact/src/operation_ser.rs
+--
+D	sdk/codebuild/src/operation_deser.rs
+M	sdk/codebuild/src/operation_ser.rs
+--
+D	sdk/codecommit/src/operation_deser.rs
+M	sdk/codecommit/src/operation_ser.rs
+--
+D	sdk/codedeploy/src/operation_deser.rs
+M	sdk/codedeploy/src/operation_ser.rs
+--
+D	sdk/codeguruprofiler/src/operation_deser.rs
+M	sdk/codeguruprofiler/src/operation_ser.rs
+--
+D	sdk/codegurureviewer/src/operation_deser.rs
+M	sdk/codegurureviewer/src/operation_ser.rs
+--
+D	sdk/codepipeline/src/operation_deser.rs
+M	sdk/codepipeline/src/operation_ser.rs
+--
+D	sdk/codestar/src/operation_deser.rs
+M	sdk/codestar/src/operation_ser.rs
+--
+D	sdk/codestarconnections/src/operation_deser.rs
+M	sdk/codestarconnections/src/operation_ser.rs
+--
+D	sdk/codestarnotifications/src/operation_deser.rs
+M	sdk/codestarnotifications/src/operation_ser.rs
+--
+D	sdk/cognitoidentity/src/operation_deser.rs
+M	sdk/cognitoidentity/src/operation_ser.rs
+--
+D	sdk/cognitoidentityprovider/src/operation_deser.rs
+M	sdk/cognitoidentityprovider/src/operation_ser.rs
+--
+D	sdk/cognitosync/src/operation_deser.rs
+M	sdk/cognitosync/src/operation_ser.rs
+--
+D	sdk/comprehend/src/operation_deser.rs
+M	sdk/comprehend/src/operation_ser.rs
+--
+D	sdk/comprehendmedical/src/operation_deser.rs
+M	sdk/comprehendmedical/src/operation_ser.rs
+--
+D	sdk/computeoptimizer/src/operation_deser.rs
+M	sdk/computeoptimizer/src/operation_ser.rs
+--
+D	sdk/config/src/operation_deser.rs
+M	sdk/config/src/operation_ser.rs
+--
+D	sdk/connect/src/operation_deser.rs
+M	sdk/connect/src/operation_ser.rs
+--
+D	sdk/connectcontactlens/src/operation_deser.rs
+M	sdk/connectcontactlens/src/operation_ser.rs
+--
+D	sdk/connectparticipant/src/operation_deser.rs
+M	sdk/connectparticipant/src/operation_ser.rs
+--
+D	sdk/costandusagereport/src/operation_deser.rs
+M	sdk/costandusagereport/src/operation_ser.rs
+--
+D	sdk/costexplorer/src/operation_deser.rs
+M	sdk/costexplorer/src/operation_ser.rs
+--
+D	sdk/customerprofiles/src/operation_deser.rs
+M	sdk/customerprofiles/src/operation_ser.rs
+--
+D	sdk/databasemigration/src/operation_deser.rs
+M	sdk/databasemigration/src/operation_ser.rs
+--
+D	sdk/databrew/src/operation_deser.rs
+M	sdk/databrew/src/operation_ser.rs
+--
+D	sdk/dataexchange/src/operation_deser.rs
+M	sdk/dataexchange/src/operation_ser.rs
+--
+D	sdk/datapipeline/src/operation_deser.rs
+M	sdk/datapipeline/src/operation_ser.rs
+--
+D	sdk/datasync/src/operation_deser.rs
+M	sdk/datasync/src/operation_ser.rs
+--
+D	sdk/dax/src/operation_deser.rs
+M	sdk/dax/src/operation_ser.rs
+--
+D	sdk/detective/src/operation_deser.rs
+M	sdk/detective/src/operation_ser.rs
+--
+D	sdk/devicefarm/src/operation_deser.rs
+M	sdk/devicefarm/src/operation_ser.rs
+--
+D	sdk/devopsguru/src/operation_deser.rs
+M	sdk/devopsguru/src/operation_ser.rs
+--
+D	sdk/directconnect/src/operation_deser.rs
+M	sdk/directconnect/src/operation_ser.rs
+--
+D	sdk/directory/src/operation_deser.rs
+M	sdk/directory/src/operation_ser.rs
+--
+D	sdk/dlm/src/operation_deser.rs
+M	sdk/dlm/src/operation_ser.rs
+--
+D	sdk/docdb/src/operation_deser.rs
+M	sdk/docdb/src/operation_ser.rs
+--
+D	sdk/dynamodb/src/operation_deser.rs
+M	sdk/dynamodb/src/operation_ser.rs
+--
+D	sdk/dynamodbstreams/src/operation_deser.rs
+M	sdk/dynamodbstreams/src/operation_ser.rs
+--
+D	sdk/ebs/src/operation_deser.rs
+M	sdk/ebs/src/operation_ser.rs
+--
+D	sdk/ec2/src/operation_deser.rs
+M	sdk/ec2/src/operation_ser.rs
+--
+D	sdk/ec2instanceconnect/src/operation_deser.rs
+M	sdk/ec2instanceconnect/src/operation_ser.rs
+--
+D	sdk/ecr/src/operation_deser.rs
+M	sdk/ecr/src/operation_ser.rs
+--
+D	sdk/ecrpublic/src/operation_deser.rs
+M	sdk/ecrpublic/src/operation_ser.rs
+--
+D	sdk/ecs/src/operation_deser.rs
+M	sdk/ecs/src/operation_ser.rs
+--
+D	sdk/efs/src/operation_deser.rs
+M	sdk/efs/src/operation_ser.rs
+--
+D	sdk/eks/src/operation_deser.rs
+M	sdk/eks/src/operation_ser.rs
+--
+D	sdk/elasticache/src/operation_deser.rs
+M	sdk/elasticache/src/operation_ser.rs
+--
+D	sdk/elasticbeanstalk/src/operation_deser.rs
+M	sdk/elasticbeanstalk/src/operation_ser.rs
+--
+D	sdk/elasticinference/src/operation_deser.rs
+M	sdk/elasticinference/src/operation_ser.rs
+--
+D	sdk/elasticloadbalancing/src/operation_deser.rs
+M	sdk/elasticloadbalancing/src/operation_ser.rs
+--
+D	sdk/elasticloadbalancingv2/src/operation_deser.rs
+M	sdk/elasticloadbalancingv2/src/operation_ser.rs
+--
+M	sdk/elasticsearch/src/operation.rs
+M	sdk/elasticsearch/src/operation_ser.rs
+--
+D	sdk/elastictranscoder/src/operation_deser.rs
+M	sdk/elastictranscoder/src/operation_ser.rs
+--
+D	sdk/emr/src/operation_deser.rs
+M	sdk/emr/src/operation_ser.rs
+--
+D	sdk/emrcontainers/src/operation_deser.rs
+M	sdk/emrcontainers/src/operation_ser.rs
+--
+D	sdk/eventbridge/src/operation_deser.rs
+M	sdk/eventbridge/src/operation_ser.rs
+--
+D	sdk/finspace/src/operation_deser.rs
+M	sdk/finspace/src/operation_ser.rs
+--
+D	sdk/finspacedata/src/operation_deser.rs
+M	sdk/finspacedata/src/operation_ser.rs
+--
+D	sdk/firehose/src/operation_deser.rs
+M	sdk/firehose/src/operation_ser.rs
+--
+D	sdk/fis/src/operation_deser.rs
+M	sdk/fis/src/operation_ser.rs
+--
+D	sdk/fms/src/operation_deser.rs
+M	sdk/fms/src/operation_ser.rs
+--
+D	sdk/forecast/src/operation_deser.rs
+M	sdk/forecast/src/operation_ser.rs
+--
+D	sdk/forecastquery/src/operation_deser.rs
+M	sdk/forecastquery/src/operation_ser.rs
+--
+D	sdk/frauddetector/src/operation_deser.rs
+M	sdk/frauddetector/src/operation_ser.rs
+--
+D	sdk/fsx/src/operation_deser.rs
+M	sdk/fsx/src/operation_ser.rs
+--
+D	sdk/gamelift/src/operation_deser.rs
+M	sdk/gamelift/src/operation_ser.rs
+--
+D	sdk/globalaccelerator/src/operation_deser.rs
+M	sdk/globalaccelerator/src/operation_ser.rs
+--
+D	sdk/glue/src/operation_deser.rs
+M	sdk/glue/src/operation_ser.rs
+--
+D	sdk/greengrass/src/operation_deser.rs
+M	sdk/greengrass/src/operation_ser.rs
+--
+D	sdk/greengrassv2/src/operation_deser.rs
+M	sdk/greengrassv2/src/operation_ser.rs
+--
+D	sdk/groundstation/src/operation_deser.rs
+M	sdk/groundstation/src/operation_ser.rs
+--
+D	sdk/guardduty/src/operation_deser.rs
+M	sdk/guardduty/src/operation_ser.rs
+--
+D	sdk/health/src/operation_deser.rs
+M	sdk/health/src/operation_ser.rs
+--
+D	sdk/healthlake/src/operation_deser.rs
+M	sdk/healthlake/src/operation_ser.rs
+--
+M	sdk/honeycode/src/operation.rs
+M	sdk/honeycode/src/operation_ser.rs
+--
+D	sdk/iam/src/operation_deser.rs
+M	sdk/iam/src/operation_ser.rs
+--
+D	sdk/identitystore/src/operation_deser.rs
+M	sdk/identitystore/src/operation_ser.rs
+--
+D	sdk/imagebuilder/src/operation_deser.rs
+M	sdk/imagebuilder/src/operation_ser.rs
+--
+D	sdk/inspector/src/operation_deser.rs
+M	sdk/inspector/src/operation_ser.rs
+--
+D	sdk/iot/src/operation_deser.rs
+M	sdk/iot/src/operation_ser.rs
+--
+D	sdk/iot1clickdevices/src/operation_deser.rs
+M	sdk/iot1clickdevices/src/operation_ser.rs
+--
+D	sdk/iot1clickprojects/src/operation_deser.rs
+M	sdk/iot1clickprojects/src/operation_ser.rs
+--
+D	sdk/iotanalytics/src/operation_deser.rs
+M	sdk/iotanalytics/src/operation_ser.rs
+--
+D	sdk/iotdataplane/src/operation_deser.rs
+M	sdk/iotdataplane/src/operation_ser.rs
+--
+D	sdk/iotdeviceadvisor/src/operation_deser.rs
+M	sdk/iotdeviceadvisor/src/operation_ser.rs
+--
+D	sdk/iotevents/src/operation_deser.rs
+M	sdk/iotevents/src/operation_ser.rs
+--
+D	sdk/ioteventsdata/src/operation_deser.rs
+M	sdk/ioteventsdata/src/operation_ser.rs
+--
+D	sdk/iotfleethub/src/operation_deser.rs
+M	sdk/iotfleethub/src/operation_ser.rs
+--
+D	sdk/iotjobsdataplane/src/operation_deser.rs
+M	sdk/iotjobsdataplane/src/operation_ser.rs
+--
+D	sdk/iotsecuretunneling/src/operation_deser.rs
+M	sdk/iotsecuretunneling/src/operation_ser.rs
+--
+D	sdk/iotsitewise/src/operation_deser.rs
+M	sdk/iotsitewise/src/operation_ser.rs
+--
+D	sdk/iotthingsgraph/src/operation_deser.rs
+M	sdk/iotthingsgraph/src/operation_ser.rs
+--
+D	sdk/iotwireless/src/operation_deser.rs
+M	sdk/iotwireless/src/operation_ser.rs
+--
+M	sdk/ivs/src/operation.rs
+M	sdk/ivs/src/operation_ser.rs
+--
+D	sdk/kafka/src/operation_deser.rs
+M	sdk/kafka/src/operation_ser.rs
+--
+A	sdk/kafkaconnect/src/operation.rs
+R058	sdk/cloud9/src/operation_deser.rs	sdk/kafkaconnect/src/operation_ser.rs
+--
+D	sdk/kendra/src/operation_deser.rs
+M	sdk/kendra/src/operation_ser.rs
+--
+D	sdk/kinesis/src/operation_deser.rs
+M	sdk/kinesis/src/operation_ser.rs
+--
+D	sdk/kinesisanalytics/src/operation_deser.rs
+M	sdk/kinesisanalytics/src/operation_ser.rs
+--
+D	sdk/kinesisanalyticsv2/src/operation_deser.rs
+M	sdk/kinesisanalyticsv2/src/operation_ser.rs
+--
+D	sdk/kinesisvideo/src/operation_deser.rs
+M	sdk/kinesisvideo/src/operation_ser.rs
+--
+D	sdk/kinesisvideoarchivedmedia/src/operation_deser.rs
+M	sdk/kinesisvideoarchivedmedia/src/operation_ser.rs
+--
+D	sdk/kinesisvideomedia/src/operation_deser.rs
+M	sdk/kinesisvideomedia/src/operation_ser.rs
+--
+D	sdk/kinesisvideosignaling/src/operation_deser.rs
+M	sdk/kinesisvideosignaling/src/operation_ser.rs
+--
+D	sdk/kms/src/operation_deser.rs
+M	sdk/kms/src/operation_ser.rs
+--
+D	sdk/lakeformation/src/operation_deser.rs
+M	sdk/lakeformation/src/operation_ser.rs
+--
+D	sdk/lambda/src/operation_deser.rs
+M	sdk/lambda/src/operation_ser.rs
+--
+D	sdk/lexmodelbuilding/src/operation_deser.rs
+M	sdk/lexmodelbuilding/src/operation_ser.rs
+--
+D	sdk/lexmodelsv2/src/operation_deser.rs
+M	sdk/lexmodelsv2/src/operation_ser.rs
+--
+D	sdk/lexruntime/src/operation_deser.rs
+M	sdk/lexruntime/src/operation_ser.rs
+--
+D	sdk/lexruntimev2/src/operation_deser.rs
+M	sdk/lexruntimev2/src/operation_ser.rs
+--
+D	sdk/licensemanager/src/operation_deser.rs
+M	sdk/licensemanager/src/operation_ser.rs
+--
+D	sdk/lightsail/src/operation_deser.rs
+M	sdk/lightsail/src/operation_ser.rs
+--
+D	sdk/location/src/operation_deser.rs
+M	sdk/location/src/operation_ser.rs
+--
+M	sdk/lookoutequipment/src/operation.rs
+M	sdk/lookoutequipment/src/operation_ser.rs
+--
+D	sdk/lookoutmetrics/src/operation_deser.rs
+M	sdk/lookoutmetrics/src/operation_ser.rs
+--
+D	sdk/lookoutvision/src/operation_deser.rs
+M	sdk/lookoutvision/src/operation_ser.rs
+--
+D	sdk/machinelearning/src/operation_deser.rs
+M	sdk/machinelearning/src/operation_ser.rs
+--
+D	sdk/macie/src/operation_deser.rs
+M	sdk/macie/src/operation_ser.rs
+--
+D	sdk/macie2/src/operation_deser.rs
+M	sdk/macie2/src/operation_ser.rs
+--
+D	sdk/managedblockchain/src/operation_deser.rs
+M	sdk/managedblockchain/src/operation_ser.rs
+--
+D	sdk/marketplacecatalog/src/operation_deser.rs
+M	sdk/marketplacecatalog/src/operation_ser.rs
+--
+D	sdk/marketplacecommerceanalytics/src/operation_deser.rs
+M	sdk/marketplacecommerceanalytics/src/operation_ser.rs
+--
+D	sdk/marketplaceentitlement/src/operation_deser.rs
+M	sdk/marketplaceentitlement/src/operation_ser.rs
+--
+D	sdk/marketplacemetering/src/operation_deser.rs
+M	sdk/marketplacemetering/src/operation_ser.rs
+--
+D	sdk/mediaconnect/src/operation_deser.rs
+M	sdk/mediaconnect/src/operation_ser.rs
+--
+D	sdk/mediaconvert/src/operation_deser.rs
+M	sdk/mediaconvert/src/operation_ser.rs
+--
+D	sdk/medialive/src/operation_deser.rs
+M	sdk/medialive/src/operation_ser.rs
+--
+D	sdk/mediapackage/src/operation_deser.rs
+M	sdk/mediapackage/src/operation_ser.rs
+--
+D	sdk/mediapackagevod/src/operation_deser.rs
+M	sdk/mediapackagevod/src/operation_ser.rs
+--
+D	sdk/mediastore/src/operation_deser.rs
+M	sdk/mediastore/src/operation_ser.rs
+--
+D	sdk/mediastoredata/src/operation_deser.rs
+M	sdk/mediastoredata/src/operation_ser.rs
+--
+D	sdk/mediatailor/src/operation_deser.rs
+M	sdk/mediatailor/src/operation_ser.rs
+--
+D	sdk/memorydb/src/operation_deser.rs
+M	sdk/memorydb/src/operation_ser.rs
+--
+D	sdk/mgn/src/operation_deser.rs
+M	sdk/mgn/src/operation_ser.rs
+--
+D	sdk/migrationhub/src/operation_deser.rs
+M	sdk/migrationhub/src/operation_ser.rs
+--
+D	sdk/migrationhubconfig/src/operation_deser.rs
+M	sdk/migrationhubconfig/src/operation_ser.rs
+--
+D	sdk/mobile/src/operation_deser.rs
+M	sdk/mobile/src/operation_ser.rs
+--
+D	sdk/mq/src/operation_deser.rs
+M	sdk/mq/src/operation_ser.rs
+--
+D	sdk/mturk/src/operation_deser.rs
+M	sdk/mturk/src/operation_ser.rs
+--
+D	sdk/mwaa/src/operation_deser.rs
+M	sdk/mwaa/src/operation_ser.rs
+--
+D	sdk/neptune/src/operation_deser.rs
+M	sdk/neptune/src/operation_ser.rs
+--
+D	sdk/networkfirewall/src/operation_deser.rs
+M	sdk/networkfirewall/src/operation_ser.rs
+--
+D	sdk/networkmanager/src/operation_deser.rs
+M	sdk/networkmanager/src/operation_ser.rs
+--
+D	sdk/nimble/src/operation_deser.rs
+M	sdk/nimble/src/operation_ser.rs
+--
+A	sdk/opensearch/src/operation.rs
+R068	sdk/elasticsearch/src/operation_deser.rs	sdk/opensearch/src/operation_ser.rs
+--
+D	sdk/opsworks/src/operation_deser.rs
+M	sdk/opsworks/src/operation_ser.rs
+--
+D	sdk/opsworkscm/src/operation_deser.rs
+M	sdk/opsworkscm/src/operation_ser.rs
+--
+D	sdk/organizations/src/operation_deser.rs
+M	sdk/organizations/src/operation_ser.rs
+--
+D	sdk/outposts/src/operation_deser.rs
+M	sdk/outposts/src/operation_ser.rs
+--
+D	sdk/personalize/src/operation_deser.rs
+M	sdk/personalize/src/operation_ser.rs
+--
+D	sdk/personalizeevents/src/operation_deser.rs
+M	sdk/personalizeevents/src/operation_ser.rs
+--
+D	sdk/personalizeruntime/src/operation_deser.rs
+M	sdk/personalizeruntime/src/operation_ser.rs
+--
+D	sdk/pi/src/operation_deser.rs
+M	sdk/pi/src/operation_ser.rs
+--
+D	sdk/pinpoint/src/operation_deser.rs
+M	sdk/pinpoint/src/operation_ser.rs
+--
+D	sdk/pinpointemail/src/operation_deser.rs
+M	sdk/pinpointemail/src/operation_ser.rs
+--
+D	sdk/pinpointsmsvoice/src/operation_deser.rs
+M	sdk/pinpointsmsvoice/src/operation_ser.rs
+--
+D	sdk/polly/src/operation_deser.rs
+M	sdk/polly/src/operation_ser.rs
+--
+D	sdk/pricing/src/operation_deser.rs
+M	sdk/pricing/src/operation_ser.rs
+--
+D	sdk/proton/src/operation_deser.rs
+M	sdk/proton/src/operation_ser.rs
+--
+D	sdk/qldb/src/operation_deser.rs
+M	sdk/qldb/src/operation_ser.rs
+--
+D	sdk/qldbsession/src/operation_deser.rs
+M	sdk/qldbsession/src/operation_ser.rs
+--
+D	sdk/quicksight/src/operation_deser.rs
+M	sdk/quicksight/src/operation_ser.rs
+--
+D	sdk/ram/src/operation_deser.rs
+M	sdk/ram/src/operation_ser.rs
+--
+D	sdk/rds/src/operation_deser.rs
+M	sdk/rds/src/operation_ser.rs
+--
+D	sdk/rdsdata/src/operation_deser.rs
+M	sdk/rdsdata/src/operation_ser.rs
+--
+D	sdk/redshift/src/operation_deser.rs
+M	sdk/redshift/src/operation_ser.rs
+--
+D	sdk/redshiftdata/src/operation_deser.rs
+M	sdk/redshiftdata/src/operation_ser.rs
+--
+D	sdk/rekognition/src/operation_deser.rs
+M	sdk/rekognition/src/operation_ser.rs
+--
+D	sdk/resourcegroups/src/operation_deser.rs
+M	sdk/resourcegroups/src/operation_ser.rs
+--
+D	sdk/resourcegroupstagging/src/operation_deser.rs
+M	sdk/resourcegroupstagging/src/operation_ser.rs
+--
+D	sdk/robomaker/src/operation_deser.rs
+M	sdk/robomaker/src/operation_ser.rs
+--
+D	sdk/route53/src/operation_deser.rs
+M	sdk/route53/src/operation_ser.rs
+--
+D	sdk/route53domains/src/operation_deser.rs
+M	sdk/route53domains/src/operation_ser.rs
+--
+D	sdk/route53recoverycluster/src/operation_deser.rs
+M	sdk/route53recoverycluster/src/operation_ser.rs
+--
+D	sdk/route53recoverycontrolconfig/src/operation_deser.rs
+M	sdk/route53recoverycontrolconfig/src/operation_ser.rs
+--
+D	sdk/route53recoveryreadiness/src/operation_deser.rs
+M	sdk/route53recoveryreadiness/src/operation_ser.rs
+--
+D	sdk/route53resolver/src/operation_deser.rs
+M	sdk/route53resolver/src/operation_ser.rs
+--
+D	sdk/s3/src/operation_deser.rs
+M	sdk/s3/src/operation_ser.rs
+--
+D	sdk/s3control/src/operation_deser.rs
+M	sdk/s3control/src/operation_ser.rs
+--
+M	sdk/s3outposts/src/operation.rs
+M	sdk/s3outposts/src/operation_ser.rs
+--
+D	sdk/sagemaker/src/operation_deser.rs
+M	sdk/sagemaker/src/operation_ser.rs
+--
+D	sdk/sagemakera2iruntime/src/operation_deser.rs
+M	sdk/sagemakera2iruntime/src/operation_ser.rs
+--
+D	sdk/sagemakeredge/src/operation_deser.rs
+M	sdk/sagemakeredge/src/operation_ser.rs
+--
+D	sdk/sagemakerfeaturestoreruntime/src/operation_deser.rs
+M	sdk/sagemakerfeaturestoreruntime/src/operation_ser.rs
+--
+D	sdk/sagemakerruntime/src/operation_deser.rs
+M	sdk/sagemakerruntime/src/operation_ser.rs
+--
+D	sdk/savingsplans/src/operation_deser.rs
+M	sdk/savingsplans/src/operation_ser.rs
+--
+D	sdk/schemas/src/operation_deser.rs
+M	sdk/schemas/src/operation_ser.rs
+--
+D	sdk/secretsmanager/src/operation_deser.rs
+M	sdk/secretsmanager/src/operation_ser.rs
+--
+D	sdk/securityhub/src/operation_deser.rs
+M	sdk/securityhub/src/operation_ser.rs
+--
+D	sdk/serverlessapplicationrepository/src/operation_deser.rs
+M	sdk/serverlessapplicationrepository/src/operation_ser.rs
+--
+D	sdk/servicecatalog/src/operation_deser.rs
+M	sdk/servicecatalog/src/operation_ser.rs
+--
+D	sdk/servicecatalogappregistry/src/operation_deser.rs
+M	sdk/servicecatalogappregistry/src/operation_ser.rs
+--
+D	sdk/servicediscovery/src/operation_deser.rs
+M	sdk/servicediscovery/src/operation_ser.rs
+--
+D	sdk/servicequotas/src/operation_deser.rs
+M	sdk/servicequotas/src/operation_ser.rs
+--
+D	sdk/ses/src/operation_deser.rs
+M	sdk/ses/src/operation_ser.rs
+--
+D	sdk/sesv2/src/operation_deser.rs
+M	sdk/sesv2/src/operation_ser.rs
+--
+D	sdk/sfn/src/operation_deser.rs
+M	sdk/sfn/src/operation_ser.rs
+--
+D	sdk/shield/src/operation_deser.rs
+M	sdk/shield/src/operation_ser.rs
+--
+D	sdk/signer/src/operation_deser.rs
+M	sdk/signer/src/operation_ser.rs
+--
+D	sdk/sms/src/operation_deser.rs
+M	sdk/sms/src/operation_ser.rs
+--
+D	sdk/snowball/src/operation_deser.rs
+M	sdk/snowball/src/operation_ser.rs
+--
+D	sdk/snowdevicemanagement/src/operation_deser.rs
+M	sdk/snowdevicemanagement/src/operation_ser.rs
+--
+D	sdk/sns/src/operation_deser.rs
+M	sdk/sns/src/operation_ser.rs
+--
+D	sdk/sqs/src/operation_deser.rs
+M	sdk/sqs/src/operation_ser.rs
+--
+D	sdk/ssm/src/operation_deser.rs
+M	sdk/ssm/src/operation_ser.rs
+--
+D	sdk/ssmcontacts/src/operation_deser.rs
+M	sdk/ssmcontacts/src/operation_ser.rs
+--
+D	sdk/ssmincidents/src/operation_deser.rs
+M	sdk/ssmincidents/src/operation_ser.rs
+--
+M	sdk/sso/src/operation.rs
+R100	sdk/sso/src/operation_deser.rs	sdk/sso/src/operation_ser.rs
+--
+D	sdk/ssoadmin/src/operation_deser.rs
+M	sdk/ssoadmin/src/operation_ser.rs
+--
+D	sdk/ssooidc/src/operation_deser.rs
+M	sdk/ssooidc/src/operation_ser.rs
+--
+D	sdk/storagegateway/src/operation_deser.rs
+M	sdk/storagegateway/src/operation_ser.rs
+--
+D	sdk/sts/src/operation_deser.rs
+M	sdk/sts/src/operation_ser.rs
+--
+D	sdk/support/src/operation_deser.rs
+M	sdk/support/src/operation_ser.rs
+--
+D	sdk/swf/src/operation_deser.rs
+M	sdk/swf/src/operation_ser.rs
+--
+D	sdk/synthetics/src/operation_deser.rs
+M	sdk/synthetics/src/operation_ser.rs
+--
+D	sdk/textract/src/operation_deser.rs
+M	sdk/textract/src/operation_ser.rs
+--
+D	sdk/transcribe/src/operation_deser.rs
+M	sdk/transcribe/src/operation_ser.rs
+--
+M	sdk/transcribestreaming/src/operation.rs
+R094	sdk/transcribestreaming/src/operation_deser.rs	sdk/transcribestreaming/src/operation_ser.rs
+--
+D	sdk/transfer/src/operation_deser.rs
+M	sdk/transfer/src/operation_ser.rs
+--
+D	sdk/translate/src/operation_deser.rs
+M	sdk/translate/src/operation_ser.rs
+--
+A	sdk/voiceid/src/operation.rs
+R064	sdk/lookoutequipment/src/operation_deser.rs	sdk/voiceid/src/operation_ser.rs
+--
+D	sdk/waf/src/operation_deser.rs
+M	sdk/waf/src/operation_ser.rs
+--
+D	sdk/wafregional/src/operation_deser.rs
+M	sdk/wafregional/src/operation_ser.rs
+--
+D	sdk/wafv2/src/operation_deser.rs
+M	sdk/wafv2/src/operation_ser.rs
+--
+D	sdk/wellarchitected/src/operation_deser.rs
+M	sdk/wellarchitected/src/operation_ser.rs
+--
+A	sdk/wisdom/src/operation.rs
+R058	sdk/ivs/src/operation_deser.rs	sdk/wisdom/src/operation_ser.rs
+--
+D	sdk/workdocs/src/operation_deser.rs
+M	sdk/workdocs/src/operation_ser.rs
+--
+D	sdk/worklink/src/operation_deser.rs
+M	sdk/worklink/src/operation_ser.rs
+--
+D	sdk/workmail/src/operation_deser.rs
+M	sdk/workmail/src/operation_ser.rs
+--
+D	sdk/workmailmessageflow/src/operation_deser.rs
+M	sdk/workmailmessageflow/src/operation_ser.rs
+--
+D	sdk/workspaces/src/operation_deser.rs
+M	sdk/workspaces/src/operation_ser.rs
+--
+D	sdk/xray/src/operation_deser.rs
+M	sdk/xray/src/operation_ser.rs

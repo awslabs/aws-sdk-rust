@@ -1,5 +1,11 @@
-use crate::{bounds, erase, retry, BoxError, Client};
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+use crate::{bounds, erase, retry, Client};
 use smithy_http::body::SdkBody;
+use smithy_http::result::ConnectorError;
 
 /// A builder that provides more customization options when constructing a [`Client`].
 ///
@@ -45,8 +51,6 @@ impl<M, R> Builder<(), M, R> {
     /// sending the request to some kind of remote server, but in certain settings it's useful to
     /// be able to use a custom connector instead, such as to mock the network for tests.
     ///
-    /// If you want to use a custom hyper connector, use [`Builder::hyper`].
-    ///
     /// If you just want to specify a function from request to response instead, use
     /// [`Builder::map_connector`].
     pub fn connector<C>(self, connector: C) -> Builder<C, M, R> {
@@ -78,7 +82,7 @@ impl<M, R> Builder<(), M, R> {
     pub fn connector_fn<F, FF>(self, map: F) -> Builder<tower::util::ServiceFn<F>, M, R>
     where
         F: Fn(http::Request<SdkBody>) -> FF + Send,
-        FF: std::future::Future<Output = Result<http::Response<SdkBody>, BoxError>>,
+        FF: std::future::Future<Output = Result<http::Response<SdkBody>, ConnectorError>>,
         // NOTE: The extra bound here is to help the type checker give better errors earlier.
         tower::util::ServiceFn<F>: bounds::SmithyConnector,
     {

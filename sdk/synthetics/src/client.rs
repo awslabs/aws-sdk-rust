@@ -356,6 +356,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>A structure that contains the configuration for canary artifacts, including
+        /// the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
+        pub fn artifact_config(mut self, inp: crate::model::ArtifactConfigInput) -> Self {
+            self.inner = self.inner.artifact_config(inp);
+            self
+        }
+        pub fn set_artifact_config(
+            mut self,
+            input: std::option::Option<crate::model::ArtifactConfigInput>,
+        ) -> Self {
+            self.inner = self.inner.set_artifact_config(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct DeleteCanary<
@@ -1272,6 +1285,34 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::VisualReferenceInput>,
         ) -> Self {
             self.inner = self.inner.set_visual_reference(input);
+            self
+        }
+        /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary.
+        /// Artifacts include the log file, screenshots, and HAR files. The name of the
+        /// S3 bucket can't include a period (.).</p>
+        pub fn artifact_s3_location(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_s3_location(inp);
+            self
+        }
+        pub fn set_artifact_s3_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_artifact_s3_location(input);
+            self
+        }
+        /// <p>A structure that contains the configuration for canary artifacts,
+        /// including the encryption-at-rest settings for artifacts that
+        /// the canary uploads to Amazon S3.</p>
+        pub fn artifact_config(mut self, inp: crate::model::ArtifactConfigInput) -> Self {
+            self.inner = self.inner.artifact_config(inp);
+            self
+        }
+        pub fn set_artifact_config(
+            mut self,
+            input: std::option::Option<crate::model::ArtifactConfigInput>,
+        ) -> Self {
+            self.inner = self.inner.set_artifact_config(input);
             self
         }
     }

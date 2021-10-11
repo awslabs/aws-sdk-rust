@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon CloudFront</fullname>
 //! <p>This is the <i>Amazon CloudFront API Reference</i>. This guide
 //! is for developers who need detailed information about

@@ -926,6 +926,189 @@ pub fn parse_create_tags_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_updated_workspace_image_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateUpdatedWorkspaceImageOutput,
+    crate::error::CreateUpdatedWorkspaceImageError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateUpdatedWorkspaceImageError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateUpdatedWorkspaceImageError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateUpdatedWorkspaceImageError {
+            meta: generic,
+            kind: crate::error::CreateUpdatedWorkspaceImageErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUpdatedWorkspaceImageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValuesException" => crate::error::CreateUpdatedWorkspaceImageError {
+            meta: generic,
+            kind:
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::InvalidParameterValuesException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::invalid_parameter_values_exception::Builder::default(
+                                );
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_values_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUpdatedWorkspaceImageError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "InvalidResourceStateException" => crate::error::CreateUpdatedWorkspaceImageError {
+            meta: generic,
+            kind: crate::error::CreateUpdatedWorkspaceImageErrorKind::InvalidResourceStateException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_resource_state_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUpdatedWorkspaceImageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "OperationNotSupportedException" => crate::error::CreateUpdatedWorkspaceImageError {
+            meta: generic,
+            kind:
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::OperationNotSupportedException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::operation_not_supported_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_operation_not_supported_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUpdatedWorkspaceImageError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ResourceAlreadyExistsException" => crate::error::CreateUpdatedWorkspaceImageError {
+            meta: generic,
+            kind:
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::ResourceAlreadyExistsException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::resource_already_exists_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUpdatedWorkspaceImageError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ResourceLimitExceededException" => crate::error::CreateUpdatedWorkspaceImageError {
+            meta: generic,
+            kind:
+                crate::error::CreateUpdatedWorkspaceImageErrorKind::ResourceLimitExceededException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::resource_limit_exceeded_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUpdatedWorkspaceImageError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ResourceNotFoundException" => crate::error::CreateUpdatedWorkspaceImageError {
+            meta: generic,
+            kind: crate::error::CreateUpdatedWorkspaceImageErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateUpdatedWorkspaceImageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateUpdatedWorkspaceImageError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_updated_workspace_image_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateUpdatedWorkspaceImageOutput,
+    crate::error::CreateUpdatedWorkspaceImageError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_updated_workspace_image_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_updated_workspace_image(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateUpdatedWorkspaceImageError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_workspace_bundle_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

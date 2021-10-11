@@ -275,6 +275,34 @@ impl smithy_http::response::ParseStrictResponse for DeleteRepositoryPolicy {
     }
 }
 
+/// <p>Returns the replication status for a specified image.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeImageReplicationStatus {
+    _private: (),
+}
+impl DescribeImageReplicationStatus {
+    /// Creates a new builder-style object to manufacture [`DescribeImageReplicationStatusInput`](crate::input::DescribeImageReplicationStatusInput)
+    pub fn builder() -> crate::input::describe_image_replication_status_input::Builder {
+        crate::input::describe_image_replication_status_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeImageReplicationStatus {
+    type Output = std::result::Result<
+        crate::output::DescribeImageReplicationStatusOutput,
+        crate::error::DescribeImageReplicationStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_image_replication_status_error(response)
+        } else {
+            crate::operation_deser::parse_describe_image_replication_status_response(response)
+        }
+    }
+}
+
 /// <p>Returns metadata about the images in a repository.</p>
 /// <note>
 /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers

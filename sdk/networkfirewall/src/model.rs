@@ -29,6 +29,10 @@ pub struct RuleGroupResponse {
     pub rule_group_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The key:value pairs to associate with the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The number of capacity units currently consumed by the rule group rules. </p>
+    pub consumed_capacity: std::option::Option<i32>,
+    /// <p>The number of firewall policies that use this rule group.</p>
+    pub number_of_associations: std::option::Option<i32>,
 }
 impl std::fmt::Debug for RuleGroupResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41,6 +45,8 @@ impl std::fmt::Debug for RuleGroupResponse {
         formatter.field("capacity", &self.capacity);
         formatter.field("rule_group_status", &self.rule_group_status);
         formatter.field("tags", &self.tags);
+        formatter.field("consumed_capacity", &self.consumed_capacity);
+        formatter.field("number_of_associations", &self.number_of_associations);
         formatter.finish()
     }
 }
@@ -58,6 +64,8 @@ pub mod rule_group_response {
         pub(crate) capacity: std::option::Option<i32>,
         pub(crate) rule_group_status: std::option::Option<crate::model::ResourceStatus>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) consumed_capacity: std::option::Option<i32>,
+        pub(crate) number_of_associations: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
@@ -158,6 +166,24 @@ pub mod rule_group_response {
             self.tags = input;
             self
         }
+        /// <p>The number of capacity units currently consumed by the rule group rules. </p>
+        pub fn consumed_capacity(mut self, input: i32) -> Self {
+            self.consumed_capacity = Some(input);
+            self
+        }
+        pub fn set_consumed_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.consumed_capacity = input;
+            self
+        }
+        /// <p>The number of firewall policies that use this rule group.</p>
+        pub fn number_of_associations(mut self, input: i32) -> Self {
+            self.number_of_associations = Some(input);
+            self
+        }
+        pub fn set_number_of_associations(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_associations = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RuleGroupResponse`](crate::model::RuleGroupResponse)
         pub fn build(self) -> crate::model::RuleGroupResponse {
             crate::model::RuleGroupResponse {
@@ -169,6 +195,8 @@ pub mod rule_group_response {
                 capacity: self.capacity,
                 rule_group_status: self.rule_group_status,
                 tags: self.tags,
+                consumed_capacity: self.consumed_capacity,
+                number_of_associations: self.number_of_associations,
             }
         }
     }
@@ -364,12 +392,16 @@ pub struct RuleGroup {
     pub rule_variables: std::option::Option<crate::model::RuleVariables>,
     /// <p>The stateful rules or stateless rules for the rule group. </p>
     pub rules_source: std::option::Option<crate::model::RulesSource>,
+    /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful
+    /// rule group must have stateful rule options settings that are compatible with these settings.</p>
+    pub stateful_rule_options: std::option::Option<crate::model::StatefulRuleOptions>,
 }
 impl std::fmt::Debug for RuleGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleGroup");
         formatter.field("rule_variables", &self.rule_variables);
         formatter.field("rules_source", &self.rules_source);
+        formatter.field("stateful_rule_options", &self.stateful_rule_options);
         formatter.finish()
     }
 }
@@ -381,6 +413,7 @@ pub mod rule_group {
     pub struct Builder {
         pub(crate) rule_variables: std::option::Option<crate::model::RuleVariables>,
         pub(crate) rules_source: std::option::Option<crate::model::RulesSource>,
+        pub(crate) stateful_rule_options: std::option::Option<crate::model::StatefulRuleOptions>,
     }
     impl Builder {
         /// <p>Settings that are available for use in the rules in the rule group. You can only use
@@ -408,11 +441,25 @@ pub mod rule_group {
             self.rules_source = input;
             self
         }
+        /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful
+        /// rule group must have stateful rule options settings that are compatible with these settings.</p>
+        pub fn stateful_rule_options(mut self, input: crate::model::StatefulRuleOptions) -> Self {
+            self.stateful_rule_options = Some(input);
+            self
+        }
+        pub fn set_stateful_rule_options(
+            mut self,
+            input: std::option::Option<crate::model::StatefulRuleOptions>,
+        ) -> Self {
+            self.stateful_rule_options = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RuleGroup`](crate::model::RuleGroup)
         pub fn build(self) -> crate::model::RuleGroup {
             crate::model::RuleGroup {
                 rule_variables: self.rule_variables,
                 rules_source: self.rules_source,
+                stateful_rule_options: self.stateful_rule_options,
             }
         }
     }
@@ -421,6 +468,112 @@ impl RuleGroup {
     /// Creates a new builder-style object to manufacture [`RuleGroup`](crate::model::RuleGroup)
     pub fn builder() -> crate::model::rule_group::Builder {
         crate::model::rule_group::Builder::default()
+    }
+}
+
+/// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StatefulRuleOptions {
+    /// <p>Indicates how to manage the order of the rule evaluation for the rule group. By default, Network Firewall
+    /// leaves the rule evaluation order up to the Suricata rule processing engine. If you set
+    /// this to <code>STRICT_ORDER</code>, your rules are evaluated in the exact order that they're listed
+    /// in your Suricata rules string. </p>
+    pub rule_order: std::option::Option<crate::model::RuleOrder>,
+}
+impl std::fmt::Debug for StatefulRuleOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StatefulRuleOptions");
+        formatter.field("rule_order", &self.rule_order);
+        formatter.finish()
+    }
+}
+/// See [`StatefulRuleOptions`](crate::model::StatefulRuleOptions)
+pub mod stateful_rule_options {
+    /// A builder for [`StatefulRuleOptions`](crate::model::StatefulRuleOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rule_order: std::option::Option<crate::model::RuleOrder>,
+    }
+    impl Builder {
+        /// <p>Indicates how to manage the order of the rule evaluation for the rule group. By default, Network Firewall
+        /// leaves the rule evaluation order up to the Suricata rule processing engine. If you set
+        /// this to <code>STRICT_ORDER</code>, your rules are evaluated in the exact order that they're listed
+        /// in your Suricata rules string. </p>
+        pub fn rule_order(mut self, input: crate::model::RuleOrder) -> Self {
+            self.rule_order = Some(input);
+            self
+        }
+        pub fn set_rule_order(
+            mut self,
+            input: std::option::Option<crate::model::RuleOrder>,
+        ) -> Self {
+            self.rule_order = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StatefulRuleOptions`](crate::model::StatefulRuleOptions)
+        pub fn build(self) -> crate::model::StatefulRuleOptions {
+            crate::model::StatefulRuleOptions {
+                rule_order: self.rule_order,
+            }
+        }
+    }
+}
+impl StatefulRuleOptions {
+    /// Creates a new builder-style object to manufacture [`StatefulRuleOptions`](crate::model::StatefulRuleOptions)
+    pub fn builder() -> crate::model::stateful_rule_options::Builder {
+        crate::model::stateful_rule_options::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RuleOrder {
+    DefaultActionOrder,
+    StrictOrder,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RuleOrder {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEFAULT_ACTION_ORDER" => RuleOrder::DefaultActionOrder,
+            "STRICT_ORDER" => RuleOrder::StrictOrder,
+            other => RuleOrder::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RuleOrder {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RuleOrder::from(s))
+    }
+}
+impl RuleOrder {
+    pub fn as_str(&self) -> &str {
+        match self {
+            RuleOrder::DefaultActionOrder => "DEFAULT_ACTION_ORDER",
+            RuleOrder::StrictOrder => "STRICT_ORDER",
+            RuleOrder::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DEFAULT_ACTION_ORDER", "STRICT_ORDER"]
+    }
+}
+impl AsRef<str> for RuleOrder {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -439,8 +592,10 @@ pub struct RulesSource {
     pub rules_string: std::option::Option<std::string::String>,
     /// <p>Stateful inspection criteria for a domain list rule group. </p>
     pub rules_source_list: std::option::Option<crate::model::RulesSourceList>,
-    /// <p>The 5-tuple stateful inspection criteria. This contains an array of individual 5-tuple
-    /// stateful rules to be used together in a stateful rule group. </p>
+    /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group.
+    /// Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options.
+    /// For information about the Suricata <code>Rules</code> format, see
+    /// <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
     pub stateful_rules: std::option::Option<std::vec::Vec<crate::model::StatefulRule>>,
     /// <p>Stateless inspection criteria to be used in a stateless rule group. </p>
     pub stateless_rules_and_custom_actions:
@@ -873,7 +1028,7 @@ pub struct StatelessRule {
     /// <p>Defines the stateless 5-tuple packet inspection criteria and the action to take on a
     /// packet that matches the criteria. </p>
     pub rule_definition: std::option::Option<crate::model::RuleDefinition>,
-    /// <p>A setting that indicates the order in which to run this rule relative to all of the
+    /// <p>Indicates the order in which to run this rule relative to all of the
     /// rules that are defined for a stateless rule group. Network Firewall evaluates the rules in a
     /// rule group starting with the lowest priority setting. You must ensure that the priority
     /// settings are unique for the rule group. </p>
@@ -918,7 +1073,7 @@ pub mod stateless_rule {
             self.rule_definition = input;
             self
         }
-        /// <p>A setting that indicates the order in which to run this rule relative to all of the
+        /// <p>Indicates the order in which to run this rule relative to all of the
         /// rules that are defined for a stateless rule group. Network Firewall evaluates the rules in a
         /// rule group starting with the lowest priority setting. You must ensure that the priority
         /// settings are unique for the rule group. </p>
@@ -1073,12 +1228,12 @@ pub struct MatchAttributes {
     /// <p>The source ports to inspect for. If not specified, this matches with any source port.
     /// This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port
-    /// ranges, for example <code>1990-1994</code>. </p>
+    /// ranges, for example <code>1990:1994</code>. </p>
     pub source_ports: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
     /// <p>The destination ports to inspect for. If not specified, this matches with any
     /// destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port
-    /// ranges, for example <code>1990-1994</code>. </p>
+    /// ranges, for example <code>1990:1994</code>. </p>
     pub destination_ports: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
     /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol
     /// number (IANA). If not specified, this matches with any protocol. </p>
@@ -1494,7 +1649,10 @@ impl Address {
     }
 }
 
-/// <p>A single 5-tuple stateful rule, for use in a stateful rule group.</p>
+/// <p>A single Suricata rules specification, for use in a stateful rule group.  
+/// Use this option to specify a simple Suricata rule with protocol, source and destination, ports, direction, and rule options.
+/// For information about the Suricata <code>Rules</code> format, see
+/// <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatefulRule {
@@ -1525,10 +1683,10 @@ pub struct StatefulRule {
     /// </li>
     /// </ul>
     pub action: std::option::Option<crate::model::StatefulAction>,
-    /// <p>The stateful 5-tuple inspection criteria for this rule, used to inspect traffic flows.
+    /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows.
     /// </p>
     pub header: std::option::Option<crate::model::Header>,
-    /// <p></p>
+    /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
     pub rule_options: std::option::Option<std::vec::Vec<crate::model::RuleOption>>,
 }
 impl std::fmt::Debug for StatefulRule {
@@ -1588,7 +1746,7 @@ pub mod stateful_rule {
             self.action = input;
             self
         }
-        /// <p>The stateful 5-tuple inspection criteria for this rule, used to inspect traffic flows.
+        /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows.
         /// </p>
         pub fn header(mut self, input: crate::model::Header) -> Self {
             self.header = Some(input);
@@ -1693,7 +1851,7 @@ impl RuleOption {
     }
 }
 
-/// <p>The 5-tuple criteria for AWS Network Firewall to use to inspect packet headers in stateful
+/// <p>The basic rule criteria for AWS Network Firewall to use to inspect packet headers in stateful
 /// traffic flow inspection. Traffic flows that match the criteria are a match for the
 /// corresponding <a>StatefulRule</a>. </p>
 #[non_exhaustive]
@@ -1718,7 +1876,7 @@ pub struct Header {
     pub source: std::option::Option<std::string::String>,
     /// <p>The source port to inspect for. You can specify an individual port, for
     /// example <code>1994</code> and you can specify a port
-    /// range, for example <code>1990-1994</code>.
+    /// range, for example <code>1990:1994</code>.
     /// To match with any port, specify <code>ANY</code>. </p>
     pub source_port: std::option::Option<std::string::String>,
     /// <p>The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection
@@ -1743,7 +1901,7 @@ pub struct Header {
     pub destination: std::option::Option<std::string::String>,
     /// <p>The destination port to inspect for. You can specify an individual port, for
     /// example <code>1994</code> and you can specify
-    /// a port range, for example <code>1990-1994</code>.
+    /// a port range, for example <code>1990:1994</code>.
     /// To match with any port, specify <code>ANY</code>. </p>
     pub destination_port: std::option::Option<std::string::String>,
 }
@@ -1809,7 +1967,7 @@ pub mod header {
         }
         /// <p>The source port to inspect for. You can specify an individual port, for
         /// example <code>1994</code> and you can specify a port
-        /// range, for example <code>1990-1994</code>.
+        /// range, for example <code>1990:1994</code>.
         /// To match with any port, specify <code>ANY</code>. </p>
         pub fn source_port(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_port = Some(input.into());
@@ -1858,7 +2016,7 @@ pub mod header {
         }
         /// <p>The destination port to inspect for. You can specify an individual port, for
         /// example <code>1994</code> and you can specify
-        /// a port range, for example <code>1990-1994</code>.
+        /// a port range, for example <code>1990:1994</code>.
         /// To match with any port, specify <code>ANY</code>. </p>
         pub fn destination_port(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_port = Some(input.into());
@@ -2100,8 +2258,7 @@ impl AsRef<str> for StatefulAction {
 
 /// <p>Stateful inspection criteria for a domain list rule group. </p>
 /// <p>For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake.</p>
-/// <p>By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <a>RuleVariables</a> in this guide and <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful domain list rule groups in AWS Network Firewall</a> in the <i>Network Firewall Developer Guide</i>
-/// </p>
+/// <p>By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <a>RuleVariables</a> in this guide and <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful domain list rule groups in AWS Network Firewall</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RulesSourceList {
@@ -2116,7 +2273,7 @@ pub struct RulesSourceList {
     /// </li>
     /// </ul>
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
+    /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
     pub target_types: std::option::Option<std::vec::Vec<crate::model::TargetType>>,
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
     pub generated_rules_type: std::option::Option<crate::model::GeneratedRulesType>,
@@ -2801,6 +2958,12 @@ pub struct FirewallPolicyResponse {
     pub firewall_policy_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>The key:value pairs to associate with the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The number of capacity units currently consumed by the policy's stateless rules.</p>
+    pub consumed_stateless_rule_capacity: std::option::Option<i32>,
+    /// <p>The number of capacity units currently consumed by the policy's stateful rules.</p>
+    pub consumed_stateful_rule_capacity: std::option::Option<i32>,
+    /// <p>The number of firewalls that are associated with this firewall policy.</p>
+    pub number_of_associations: std::option::Option<i32>,
 }
 impl std::fmt::Debug for FirewallPolicyResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2811,6 +2974,15 @@ impl std::fmt::Debug for FirewallPolicyResponse {
         formatter.field("description", &self.description);
         formatter.field("firewall_policy_status", &self.firewall_policy_status);
         formatter.field("tags", &self.tags);
+        formatter.field(
+            "consumed_stateless_rule_capacity",
+            &self.consumed_stateless_rule_capacity,
+        );
+        formatter.field(
+            "consumed_stateful_rule_capacity",
+            &self.consumed_stateful_rule_capacity,
+        );
+        formatter.field("number_of_associations", &self.number_of_associations);
         formatter.finish()
     }
 }
@@ -2826,6 +2998,9 @@ pub mod firewall_policy_response {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) firewall_policy_status: std::option::Option<crate::model::ResourceStatus>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) consumed_stateless_rule_capacity: std::option::Option<i32>,
+        pub(crate) consumed_stateful_rule_capacity: std::option::Option<i32>,
+        pub(crate) number_of_associations: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -2905,6 +3080,39 @@ pub mod firewall_policy_response {
             self.tags = input;
             self
         }
+        /// <p>The number of capacity units currently consumed by the policy's stateless rules.</p>
+        pub fn consumed_stateless_rule_capacity(mut self, input: i32) -> Self {
+            self.consumed_stateless_rule_capacity = Some(input);
+            self
+        }
+        pub fn set_consumed_stateless_rule_capacity(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.consumed_stateless_rule_capacity = input;
+            self
+        }
+        /// <p>The number of capacity units currently consumed by the policy's stateful rules.</p>
+        pub fn consumed_stateful_rule_capacity(mut self, input: i32) -> Self {
+            self.consumed_stateful_rule_capacity = Some(input);
+            self
+        }
+        pub fn set_consumed_stateful_rule_capacity(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.consumed_stateful_rule_capacity = input;
+            self
+        }
+        /// <p>The number of firewalls that are associated with this firewall policy.</p>
+        pub fn number_of_associations(mut self, input: i32) -> Self {
+            self.number_of_associations = Some(input);
+            self
+        }
+        pub fn set_number_of_associations(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_associations = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FirewallPolicyResponse`](crate::model::FirewallPolicyResponse)
         pub fn build(self) -> crate::model::FirewallPolicyResponse {
             crate::model::FirewallPolicyResponse {
@@ -2914,6 +3122,9 @@ pub mod firewall_policy_response {
                 description: self.description,
                 firewall_policy_status: self.firewall_policy_status,
                 tags: self.tags,
+                consumed_stateless_rule_capacity: self.consumed_stateless_rule_capacity,
+                consumed_stateful_rule_capacity: self.consumed_stateful_rule_capacity,
+                number_of_associations: self.number_of_associations,
             }
         }
     }
@@ -2962,10 +3173,15 @@ pub struct FirewallPolicy {
     /// <code>StatelessDefaultActions</code> setting. You name each custom action that you
     /// define, and then you can use it by name in your default actions specifications.</p>
     pub stateless_custom_actions: std::option::Option<std::vec::Vec<crate::model::CustomAction>>,
-    /// <p>References to the stateless rule groups that are used in the policy. These define the
+    /// <p>References to the stateful rule groups that are used in the policy. These define the
     /// inspection criteria in stateful rules. </p>
     pub stateful_rule_group_references:
         std::option::Option<std::vec::Vec<crate::model::StatefulRuleGroupReference>>,
+    /// <p>The default actions to take on a packet that doesn't match any stateful rules.</p>
+    pub stateful_default_actions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful
+    /// rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
+    pub stateful_engine_options: std::option::Option<crate::model::StatefulEngineOptions>,
 }
 impl std::fmt::Debug for FirewallPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2984,6 +3200,8 @@ impl std::fmt::Debug for FirewallPolicy {
             "stateful_rule_group_references",
             &self.stateful_rule_group_references,
         );
+        formatter.field("stateful_default_actions", &self.stateful_default_actions);
+        formatter.field("stateful_engine_options", &self.stateful_engine_options);
         formatter.finish()
     }
 }
@@ -3003,6 +3221,10 @@ pub mod firewall_policy {
             std::option::Option<std::vec::Vec<crate::model::CustomAction>>,
         pub(crate) stateful_rule_group_references:
             std::option::Option<std::vec::Vec<crate::model::StatefulRuleGroupReference>>,
+        pub(crate) stateful_default_actions:
+            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) stateful_engine_options:
+            std::option::Option<crate::model::StatefulEngineOptions>,
     }
     impl Builder {
         pub fn stateless_rule_group_references(
@@ -3082,6 +3304,35 @@ pub mod firewall_policy {
             self.stateful_rule_group_references = input;
             self
         }
+        pub fn stateful_default_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.stateful_default_actions.unwrap_or_default();
+            v.push(input.into());
+            self.stateful_default_actions = Some(v);
+            self
+        }
+        pub fn set_stateful_default_actions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.stateful_default_actions = input;
+            self
+        }
+        /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful
+        /// rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
+        pub fn stateful_engine_options(
+            mut self,
+            input: crate::model::StatefulEngineOptions,
+        ) -> Self {
+            self.stateful_engine_options = Some(input);
+            self
+        }
+        pub fn set_stateful_engine_options(
+            mut self,
+            input: std::option::Option<crate::model::StatefulEngineOptions>,
+        ) -> Self {
+            self.stateful_engine_options = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FirewallPolicy`](crate::model::FirewallPolicy)
         pub fn build(self) -> crate::model::FirewallPolicy {
             crate::model::FirewallPolicy {
@@ -3090,6 +3341,8 @@ pub mod firewall_policy {
                 stateless_fragment_default_actions: self.stateless_fragment_default_actions,
                 stateless_custom_actions: self.stateless_custom_actions,
                 stateful_rule_group_references: self.stateful_rule_group_references,
+                stateful_default_actions: self.stateful_default_actions,
+                stateful_engine_options: self.stateful_engine_options,
             }
         }
     }
@@ -3101,6 +3354,64 @@ impl FirewallPolicy {
     }
 }
 
+/// <p>Configuration settings for the handling of the stateful rule groups in a firewall policy. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StatefulEngineOptions {
+    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. By default, Network Firewall
+    /// leaves the rule evaluation order up to the Suricata rule processing engine. If you set
+    /// this to <code>STRICT_ORDER</code>, your rules are evaluated in the exact order that you provide them
+    /// in the policy. With strict ordering, the rule groups are evaluated by order of priority, starting from the lowest number, and
+    /// the rules in each rule group are processed in the order that they're defined. </p>
+    pub rule_order: std::option::Option<crate::model::RuleOrder>,
+}
+impl std::fmt::Debug for StatefulEngineOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StatefulEngineOptions");
+        formatter.field("rule_order", &self.rule_order);
+        formatter.finish()
+    }
+}
+/// See [`StatefulEngineOptions`](crate::model::StatefulEngineOptions)
+pub mod stateful_engine_options {
+    /// A builder for [`StatefulEngineOptions`](crate::model::StatefulEngineOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rule_order: std::option::Option<crate::model::RuleOrder>,
+    }
+    impl Builder {
+        /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. By default, Network Firewall
+        /// leaves the rule evaluation order up to the Suricata rule processing engine. If you set
+        /// this to <code>STRICT_ORDER</code>, your rules are evaluated in the exact order that you provide them
+        /// in the policy. With strict ordering, the rule groups are evaluated by order of priority, starting from the lowest number, and
+        /// the rules in each rule group are processed in the order that they're defined. </p>
+        pub fn rule_order(mut self, input: crate::model::RuleOrder) -> Self {
+            self.rule_order = Some(input);
+            self
+        }
+        pub fn set_rule_order(
+            mut self,
+            input: std::option::Option<crate::model::RuleOrder>,
+        ) -> Self {
+            self.rule_order = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StatefulEngineOptions`](crate::model::StatefulEngineOptions)
+        pub fn build(self) -> crate::model::StatefulEngineOptions {
+            crate::model::StatefulEngineOptions {
+                rule_order: self.rule_order,
+            }
+        }
+    }
+}
+impl StatefulEngineOptions {
+    /// Creates a new builder-style object to manufacture [`StatefulEngineOptions`](crate::model::StatefulEngineOptions)
+    pub fn builder() -> crate::model::stateful_engine_options::Builder {
+        crate::model::stateful_engine_options::Builder::default()
+    }
+}
+
 /// <p>Identifier for a single stateful rule group, used in a firewall policy to refer to a
 /// rule group. </p>
 #[non_exhaustive]
@@ -3108,11 +3419,22 @@ impl FirewallPolicy {
 pub struct StatefulRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
     pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>An integer setting that indicates the order in which to run the stateful rule groups in
+    /// a single <a>FirewallPolicy</a>. This setting only applies to firewall policies
+    /// that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
+    /// <p>Network Firewall evalutes each stateful rule group
+    /// against a packet starting with the group that has the lowest priority setting. You must ensure
+    /// that the priority settings are unique within each policy.</p>
+    /// <p>You can change the priority settings of your rule groups at any time. To make it easier to
+    /// insert rule groups later, number them so there's a wide range in between, for example use 100,
+    /// 200, and so on. </p>
+    pub priority: std::option::Option<i32>,
 }
 impl std::fmt::Debug for StatefulRuleGroupReference {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StatefulRuleGroupReference");
         formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("priority", &self.priority);
         formatter.finish()
     }
 }
@@ -3123,6 +3445,7 @@ pub mod stateful_rule_group_reference {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) priority: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
@@ -3134,10 +3457,28 @@ pub mod stateful_rule_group_reference {
             self.resource_arn = input;
             self
         }
+        /// <p>An integer setting that indicates the order in which to run the stateful rule groups in
+        /// a single <a>FirewallPolicy</a>. This setting only applies to firewall policies
+        /// that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
+        /// <p>Network Firewall evalutes each stateful rule group
+        /// against a packet starting with the group that has the lowest priority setting. You must ensure
+        /// that the priority settings are unique within each policy.</p>
+        /// <p>You can change the priority settings of your rule groups at any time. To make it easier to
+        /// insert rule groups later, number them so there's a wide range in between, for example use 100,
+        /// 200, and so on. </p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
+            self
+        }
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StatefulRuleGroupReference`](crate::model::StatefulRuleGroupReference)
         pub fn build(self) -> crate::model::StatefulRuleGroupReference {
             crate::model::StatefulRuleGroupReference {
                 resource_arn: self.resource_arn,
+                priority: self.priority,
             }
         }
     }

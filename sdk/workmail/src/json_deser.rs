@@ -960,6 +960,46 @@ pub fn deser_operation_crate_operation_describe_group(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_describe_inbound_dmarc_settings(
+    input: &[u8],
+    mut builder: crate::output::describe_inbound_dmarc_settings_output::Builder,
+) -> Result<
+    crate::output::describe_inbound_dmarc_settings_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Enforced" => {
+                        builder = builder.set_enforced(
+                            smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_describe_mailbox_export_job(
     input: &[u8],
     mut builder: crate::output::describe_mailbox_export_job_output::Builder,
@@ -1575,6 +1615,128 @@ pub fn deser_operation_crate_operation_get_mobile_device_access_effect(
     Ok(builder)
 }
 
+pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
+    input: &[u8],
+    mut builder: crate::error::resource_not_found_exception::Builder,
+) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Message" => {
+                        builder = builder.set_message(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_get_mobile_device_access_override(
+    input: &[u8],
+    mut builder: crate::output::get_mobile_device_access_override_output::Builder,
+) -> Result<
+    crate::output::get_mobile_device_access_override_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "UserId" => {
+                        builder = builder.set_user_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "DeviceId" => {
+                        builder = builder.set_device_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "Effect" => {
+                        builder = builder.set_effect(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| {
+                                    s.to_unescaped().map(|u| {
+                                        crate::model::MobileDeviceAccessRuleEffect::from(u.as_ref())
+                                    })
+                                })
+                                .transpose()?,
+                        );
+                    }
+                    "Description" => {
+                        builder = builder.set_description(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "DateCreated" => {
+                        builder = builder.set_date_created(
+                            smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                smithy_types::instant::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
+                    "DateModified" => {
+                        builder = builder.set_date_modified(
+                            smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                smithy_types::instant::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_list_access_control_rules(
     input: &[u8],
     mut builder: crate::output::list_access_control_rules_output::Builder,
@@ -1837,6 +1999,53 @@ pub fn deser_operation_crate_operation_list_mailbox_permissions(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_list_mobile_device_access_overrides(
+    input: &[u8],
+    mut builder: crate::output::list_mobile_device_access_overrides_output::Builder,
+) -> Result<
+    crate::output::list_mobile_device_access_overrides_output::Builder,
+    smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Overrides" => {
+                        builder = builder.set_overrides(
+                            crate::json_deser::deser_list_com_amazonaws_workmail_mobile_device_access_overrides_list(tokens)?
+                        );
+                    }
+                    "NextToken" => {
+                        builder = builder.set_next_token(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_list_mobile_device_access_rules(
     input: &[u8],
     mut builder: crate::output::list_mobile_device_access_rules_output::Builder,
@@ -1987,45 +2196,6 @@ pub fn deser_operation_crate_operation_list_resources(
                     }
                     "NextToken" => {
                         builder = builder.set_next_token(
-                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
-pub fn deser_structure_crate_error_resource_not_found_exceptionjson_err(
-    input: &[u8],
-    mut builder: crate::error::resource_not_found_exception::Builder,
-) -> Result<crate::error::resource_not_found_exception::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "Message" => {
-                        builder = builder.set_message(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -2679,6 +2849,46 @@ where
                     _ => {
                         let value =
                             crate::json_deser::deser_structure_crate_model_permission(tokens)?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_workmail_mobile_device_access_overrides_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::MobileDeviceAccessOverride>>,
+    smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_mobile_device_access_override(tokens)?
+                        ;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -3494,6 +3704,100 @@ where
                             "PermissionValues" => {
                                 builder = builder.set_permission_values(
                                     crate::json_deser::deser_list_com_amazonaws_workmail_permission_values(tokens)?
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_mobile_device_access_override<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::MobileDeviceAccessOverride>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::MobileDeviceAccessOverride::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "UserId" => {
+                                builder = builder.set_user_id(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "DeviceId" => {
+                                builder = builder.set_device_id(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Effect" => {
+                                builder = builder.set_effect(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::MobileDeviceAccessRuleEffect::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "Description" => {
+                                builder = builder.set_description(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "DateCreated" => {
+                                builder = builder.set_date_created(
+                                    smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        smithy_types::instant::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            "DateModified" => {
+                                builder = builder.set_date_modified(
+                                    smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        smithy_types::instant::Format::EpochSeconds,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

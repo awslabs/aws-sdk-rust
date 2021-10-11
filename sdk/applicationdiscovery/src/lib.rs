@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>AWS Application Discovery Service</fullname>
 //! <p>AWS Application Discovery Service helps you plan application migration projects. It
 //! automatically identifies servers, virtual machines (VMs), and network dependencies in your

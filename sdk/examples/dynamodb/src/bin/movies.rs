@@ -40,7 +40,8 @@ struct Opt {
     verbose: bool,
 }
 
-/// A partial reimplementation of https://docs.amazonaws.cn/en_us/amazondynamodb/latest/developerguide/GettingStarted.Ruby.html
+/// A partial reimplementation of
+/// <https://docs.amazonaws.cn/en_us/amazondynamodb/latest/developerguide/GettingStarted.Ruby.html>
 /// in Rust
 ///
 /// - Create table

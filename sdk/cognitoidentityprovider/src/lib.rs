@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Using the Amazon Cognito User Pools API, you can create a user pool to manage
 //! directories and users. You can authenticate a user to obtain tokens related to user
 //! identity and access policies.</p>

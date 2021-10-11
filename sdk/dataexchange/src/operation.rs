@@ -50,6 +50,34 @@ impl smithy_http::response::ParseStrictResponse for CreateDataSet {
     }
 }
 
+/// <p>This operation creates an event action.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateEventAction {
+    _private: (),
+}
+impl CreateEventAction {
+    /// Creates a new builder-style object to manufacture [`CreateEventActionInput`](crate::input::CreateEventActionInput)
+    pub fn builder() -> crate::input::create_event_action_input::Builder {
+        crate::input::create_event_action_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateEventAction {
+    type Output = std::result::Result<
+        crate::output::CreateEventActionOutput,
+        crate::error::CreateEventActionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_event_action_error(response)
+        } else {
+            crate::operation_deser::parse_create_event_action_response(response)
+        }
+    }
+}
+
 /// <p>This operation creates a job.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateJob {
@@ -153,6 +181,34 @@ impl smithy_http::response::ParseStrictResponse for DeleteDataSet {
     }
 }
 
+/// <p>This operation deletes the event action.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteEventAction {
+    _private: (),
+}
+impl DeleteEventAction {
+    /// Creates a new builder-style object to manufacture [`DeleteEventActionInput`](crate::input::DeleteEventActionInput)
+    pub fn builder() -> crate::input::delete_event_action_input::Builder {
+        crate::input::delete_event_action_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteEventAction {
+    type Output = std::result::Result<
+        crate::output::DeleteEventActionOutput,
+        crate::error::DeleteEventActionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_event_action_error(response)
+        } else {
+            crate::operation_deser::parse_delete_event_action_response(response)
+        }
+    }
+}
+
 /// <p>This operation deletes a revision.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRevision {
@@ -226,6 +282,32 @@ impl smithy_http::response::ParseStrictResponse for GetDataSet {
             crate::operation_deser::parse_get_data_set_error(response)
         } else {
             crate::operation_deser::parse_get_data_set_response(response)
+        }
+    }
+}
+
+/// <p>This operation retrieves information about an event action.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetEventAction {
+    _private: (),
+}
+impl GetEventAction {
+    /// Creates a new builder-style object to manufacture [`GetEventActionInput`](crate::input::GetEventActionInput)
+    pub fn builder() -> crate::input::get_event_action_input::Builder {
+        crate::input::get_event_action_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetEventAction {
+    type Output =
+        std::result::Result<crate::output::GetEventActionOutput, crate::error::GetEventActionError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_event_action_error(response)
+        } else {
+            crate::operation_deser::parse_get_event_action_response(response)
         }
     }
 }
@@ -331,6 +413,34 @@ impl smithy_http::response::ParseStrictResponse for ListDataSets {
             crate::operation_deser::parse_list_data_sets_error(response)
         } else {
             crate::operation_deser::parse_list_data_sets_response(response)
+        }
+    }
+}
+
+/// <p>This operation lists your event actions.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListEventActions {
+    _private: (),
+}
+impl ListEventActions {
+    /// Creates a new builder-style object to manufacture [`ListEventActionsInput`](crate::input::ListEventActionsInput)
+    pub fn builder() -> crate::input::list_event_actions_input::Builder {
+        crate::input::list_event_actions_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListEventActions {
+    type Output = std::result::Result<
+        crate::output::ListEventActionsOutput,
+        crate::error::ListEventActionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_event_actions_error(response)
+        } else {
+            crate::operation_deser::parse_list_event_actions_response(response)
         }
     }
 }
@@ -541,6 +651,34 @@ impl smithy_http::response::ParseStrictResponse for UpdateDataSet {
             crate::operation_deser::parse_update_data_set_error(response)
         } else {
             crate::operation_deser::parse_update_data_set_response(response)
+        }
+    }
+}
+
+/// <p>This operation updates the event action.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateEventAction {
+    _private: (),
+}
+impl UpdateEventAction {
+    /// Creates a new builder-style object to manufacture [`UpdateEventActionInput`](crate::input::UpdateEventActionInput)
+    pub fn builder() -> crate::input::update_event_action_input::Builder {
+        crate::input::update_event_action_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UpdateEventAction {
+    type Output = std::result::Result<
+        crate::output::UpdateEventActionOutput,
+        crate::error::UpdateEventActionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_event_action_error(response)
+        } else {
+            crate::operation_deser::parse_update_event_action_response(response)
         }
     }
 }

@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Pinpoint Email Service</fullname>
 //! <p>Welcome to the <i>Amazon Pinpoint Email API Reference</i>. This guide provides
 //! information about the Amazon Pinpoint Email API (version 1.0), including supported

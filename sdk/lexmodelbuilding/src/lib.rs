@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Lex Build-Time Actions</fullname>
 //! <p> Amazon Lex is an AWS service for building conversational voice and text
 //! interfaces. Use these actions to create, update, and delete conversational

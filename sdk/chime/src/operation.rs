@@ -4941,7 +4941,7 @@ impl smithy_http::response::ParseStrictResponse for SendChannelMessage {
     }
 }
 
-/// <p>Start transcription for the specified <code>meetingId</code>. </p>
+/// <p>Starts transcription for the specified <code>meetingId</code>. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartMeetingTranscription {
     _private: (),

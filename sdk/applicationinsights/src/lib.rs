@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon CloudWatch Application Insights</fullname>
 //! <p> Amazon CloudWatch Application Insights is a service that
 //! helps you detect common problems with your applications. It

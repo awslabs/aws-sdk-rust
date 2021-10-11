@@ -69,20 +69,63 @@ where
     M: smithy_client::bounds::SmithyMiddleware<C>,
     R: smithy_client::retry::NewRequestPolicy,
 {
+    pub fn create_alert_manager_definition(
+        &self,
+    ) -> fluent_builders::CreateAlertManagerDefinition<C, M, R> {
+        fluent_builders::CreateAlertManagerDefinition::new(self.handle.clone())
+    }
+    pub fn create_rule_groups_namespace(
+        &self,
+    ) -> fluent_builders::CreateRuleGroupsNamespace<C, M, R> {
+        fluent_builders::CreateRuleGroupsNamespace::new(self.handle.clone())
+    }
     pub fn create_workspace(&self) -> fluent_builders::CreateWorkspace<C, M, R> {
         fluent_builders::CreateWorkspace::new(self.handle.clone())
+    }
+    pub fn delete_alert_manager_definition(
+        &self,
+    ) -> fluent_builders::DeleteAlertManagerDefinition<C, M, R> {
+        fluent_builders::DeleteAlertManagerDefinition::new(self.handle.clone())
+    }
+    pub fn delete_rule_groups_namespace(
+        &self,
+    ) -> fluent_builders::DeleteRuleGroupsNamespace<C, M, R> {
+        fluent_builders::DeleteRuleGroupsNamespace::new(self.handle.clone())
     }
     pub fn delete_workspace(&self) -> fluent_builders::DeleteWorkspace<C, M, R> {
         fluent_builders::DeleteWorkspace::new(self.handle.clone())
     }
+    pub fn describe_alert_manager_definition(
+        &self,
+    ) -> fluent_builders::DescribeAlertManagerDefinition<C, M, R> {
+        fluent_builders::DescribeAlertManagerDefinition::new(self.handle.clone())
+    }
+    pub fn describe_rule_groups_namespace(
+        &self,
+    ) -> fluent_builders::DescribeRuleGroupsNamespace<C, M, R> {
+        fluent_builders::DescribeRuleGroupsNamespace::new(self.handle.clone())
+    }
     pub fn describe_workspace(&self) -> fluent_builders::DescribeWorkspace<C, M, R> {
         fluent_builders::DescribeWorkspace::new(self.handle.clone())
+    }
+    pub fn list_rule_groups_namespaces(
+        &self,
+    ) -> fluent_builders::ListRuleGroupsNamespaces<C, M, R> {
+        fluent_builders::ListRuleGroupsNamespaces::new(self.handle.clone())
     }
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     pub fn list_workspaces(&self) -> fluent_builders::ListWorkspaces<C, M, R> {
         fluent_builders::ListWorkspaces::new(self.handle.clone())
+    }
+    pub fn put_alert_manager_definition(
+        &self,
+    ) -> fluent_builders::PutAlertManagerDefinition<C, M, R> {
+        fluent_builders::PutAlertManagerDefinition::new(self.handle.clone())
+    }
+    pub fn put_rule_groups_namespace(&self) -> fluent_builders::PutRuleGroupsNamespace<C, M, R> {
+        fluent_builders::PutRuleGroupsNamespace::new(self.handle.clone())
     }
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
@@ -95,6 +138,180 @@ where
     }
 }
 pub mod fluent_builders {
+    #[derive(std::fmt::Debug)]
+    pub struct CreateAlertManagerDefinition<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_alert_manager_definition_input::Builder,
+    }
+    impl<C, M, R> CreateAlertManagerDefinition<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateAlertManagerDefinitionOutput,
+            smithy_http::result::SdkError<crate::error::CreateAlertManagerDefinitionError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateAlertManagerDefinitionInputOperationOutputAlias,
+                crate::output::CreateAlertManagerDefinitionOutput,
+                crate::error::CreateAlertManagerDefinitionError,
+                crate::input::CreateAlertManagerDefinitionInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace in which to create the alert manager definition.
+        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(inp);
+            self
+        }
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// The alert manager definition data.
+        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(inp);
+            self
+        }
+        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_data(input);
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateRuleGroupsNamespace<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_rule_groups_namespace_input::Builder,
+    }
+    impl<C, M, R> CreateRuleGroupsNamespace<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateRuleGroupsNamespaceOutput,
+            smithy_http::result::SdkError<crate::error::CreateRuleGroupsNamespaceError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateRuleGroupsNamespaceInputOperationOutputAlias,
+                crate::output::CreateRuleGroupsNamespaceOutput,
+                crate::error::CreateRuleGroupsNamespaceError,
+                crate::input::CreateRuleGroupsNamespaceInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace in which to create the rule group namespace.
+        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(inp);
+            self
+        }
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// The rule groups namespace name.
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// The namespace data that define the rule groups.
+        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(inp);
+            self
+        }
+        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_data(input);
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// Optional, user-provided tags for this rule groups namespace.
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
     #[derive(std::fmt::Debug)]
     pub struct CreateWorkspace<
         C = smithy_client::erase::DynConnector,
@@ -180,6 +397,141 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeleteAlertManagerDefinition<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_alert_manager_definition_input::Builder,
+    }
+    impl<C, M, R> DeleteAlertManagerDefinition<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteAlertManagerDefinitionOutput,
+            smithy_http::result::SdkError<crate::error::DeleteAlertManagerDefinitionError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteAlertManagerDefinitionInputOperationOutputAlias,
+                crate::output::DeleteAlertManagerDefinitionOutput,
+                crate::error::DeleteAlertManagerDefinitionError,
+                crate::input::DeleteAlertManagerDefinitionInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace in which to delete the alert manager definition.
+        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(inp);
+            self
+        }
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteRuleGroupsNamespace<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_rule_groups_namespace_input::Builder,
+    }
+    impl<C, M, R> DeleteRuleGroupsNamespace<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteRuleGroupsNamespaceOutput,
+            smithy_http::result::SdkError<crate::error::DeleteRuleGroupsNamespaceError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteRuleGroupsNamespaceInputOperationOutputAlias,
+                crate::output::DeleteRuleGroupsNamespaceOutput,
+                crate::error::DeleteRuleGroupsNamespaceError,
+                crate::input::DeleteRuleGroupsNamespaceInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace to delete rule group definition.
+        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(inp);
+            self
+        }
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// The rule groups namespace name.
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DeleteWorkspace<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -243,6 +595,123 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DescribeAlertManagerDefinition<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_alert_manager_definition_input::Builder,
+    }
+    impl<C, M, R> DescribeAlertManagerDefinition<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeAlertManagerDefinitionOutput,
+            smithy_http::result::SdkError<crate::error::DescribeAlertManagerDefinitionError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeAlertManagerDefinitionInputOperationOutputAlias,
+                crate::output::DescribeAlertManagerDefinitionOutput,
+                crate::error::DescribeAlertManagerDefinitionError,
+                crate::input::DescribeAlertManagerDefinitionInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace to describe.
+        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(inp);
+            self
+        }
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeRuleGroupsNamespace<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_rule_groups_namespace_input::Builder,
+    }
+    impl<C, M, R> DescribeRuleGroupsNamespace<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeRuleGroupsNamespaceOutput,
+            smithy_http::result::SdkError<crate::error::DescribeRuleGroupsNamespaceError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeRuleGroupsNamespaceInputOperationOutputAlias,
+                crate::output::DescribeRuleGroupsNamespaceOutput,
+                crate::error::DescribeRuleGroupsNamespaceError,
+                crate::input::DescribeRuleGroupsNamespaceInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace to describe.
+        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(inp);
+            self
+        }
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// The rule groups namespace.
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DescribeWorkspace<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -293,6 +762,87 @@ pub mod fluent_builders {
         }
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListRuleGroupsNamespaces<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_rule_groups_namespaces_input::Builder,
+    }
+    impl<C, M, R> ListRuleGroupsNamespaces<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListRuleGroupsNamespacesOutput,
+            smithy_http::result::SdkError<crate::error::ListRuleGroupsNamespacesError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListRuleGroupsNamespacesInputOperationOutputAlias,
+                crate::output::ListRuleGroupsNamespacesOutput,
+                crate::error::ListRuleGroupsNamespacesError,
+                crate::input::ListRuleGroupsNamespacesInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace.
+        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(inp);
+            self
+        }
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// Maximum results to return in response (default=100, maximum=1000).
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -419,6 +969,159 @@ pub mod fluent_builders {
         }
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct PutAlertManagerDefinition<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_alert_manager_definition_input::Builder,
+    }
+    impl<C, M, R> PutAlertManagerDefinition<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutAlertManagerDefinitionOutput,
+            smithy_http::result::SdkError<crate::error::PutAlertManagerDefinitionError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutAlertManagerDefinitionInputOperationOutputAlias,
+                crate::output::PutAlertManagerDefinitionOutput,
+                crate::error::PutAlertManagerDefinitionError,
+                crate::input::PutAlertManagerDefinitionInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace in which to update the alert manager definition.
+        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(inp);
+            self
+        }
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// The alert manager definition data.
+        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(inp);
+            self
+        }
+        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_data(input);
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct PutRuleGroupsNamespace<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_rule_groups_namespace_input::Builder,
+    }
+    impl<C, M, R> PutRuleGroupsNamespace<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutRuleGroupsNamespaceOutput,
+            smithy_http::result::SdkError<crate::error::PutRuleGroupsNamespaceError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutRuleGroupsNamespaceInputOperationOutputAlias,
+                crate::output::PutRuleGroupsNamespaceOutput,
+                crate::error::PutRuleGroupsNamespaceError,
+                crate::input::PutRuleGroupsNamespaceInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// The ID of the workspace in which to update the rule group namespace.
+        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(inp);
+            self
+        }
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// The rule groups namespace name.
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// The namespace data that define the rule groups.
+        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(inp);
+            self
+        }
+        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_data(input);
+            self
+        }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
     }

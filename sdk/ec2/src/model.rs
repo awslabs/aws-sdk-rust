@@ -6472,7 +6472,7 @@ pub struct Instance {
         std::option::Option<crate::model::CapacityReservationSpecificationResponse>,
     /// <p>Indicates whether the instance is enabled for hibernation.</p>
     pub hibernation_options: std::option::Option<crate::model::HibernationOptions>,
-    /// <p>The license configurations.</p>
+    /// <p>The license configurations for the instance.</p>
     pub licenses: std::option::Option<std::vec::Vec<crate::model::LicenseConfiguration>>,
     /// <p>The metadata options for the instance.</p>
     pub metadata_options: std::option::Option<crate::model::InstanceMetadataOptionsResponse>,
@@ -6481,6 +6481,15 @@ pub struct Instance {
     /// <p>The boot mode of the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the
     /// <i>Amazon EC2 User Guide</i>.</p>
     pub boot_mode: std::option::Option<crate::model::BootModeValues>,
+    /// <p>The platform details value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+    /// billing information fields</a> in the
+    /// <i>Amazon EC2 User Guide</i>.</p>
+    pub platform_details: std::option::Option<std::string::String>,
+    /// <p>The usage operation value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a>
+    /// in the <i>Amazon EC2 User Guide</i>.</p>
+    pub usage_operation: std::option::Option<std::string::String>,
+    /// <p>The time that the usage operation was last updated.</p>
+    pub usage_operation_update_time: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for Instance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6540,6 +6549,12 @@ impl std::fmt::Debug for Instance {
         formatter.field("metadata_options", &self.metadata_options);
         formatter.field("enclave_options", &self.enclave_options);
         formatter.field("boot_mode", &self.boot_mode);
+        formatter.field("platform_details", &self.platform_details);
+        formatter.field("usage_operation", &self.usage_operation);
+        formatter.field(
+            "usage_operation_update_time",
+            &self.usage_operation_update_time,
+        );
         formatter.finish()
     }
 }
@@ -6606,6 +6621,9 @@ pub mod instance {
             std::option::Option<crate::model::InstanceMetadataOptionsResponse>,
         pub(crate) enclave_options: std::option::Option<crate::model::EnclaveOptions>,
         pub(crate) boot_mode: std::option::Option<crate::model::BootModeValues>,
+        pub(crate) platform_details: std::option::Option<std::string::String>,
+        pub(crate) usage_operation: std::option::Option<std::string::String>,
+        pub(crate) usage_operation_update_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The AMI launch index, which can be used to find this instance in the launch
@@ -7209,6 +7227,45 @@ pub mod instance {
             self.boot_mode = input;
             self
         }
+        /// <p>The platform details value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+        /// billing information fields</a> in the
+        /// <i>Amazon EC2 User Guide</i>.</p>
+        pub fn platform_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_details = Some(input.into());
+            self
+        }
+        pub fn set_platform_details(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.platform_details = input;
+            self
+        }
+        /// <p>The usage operation value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a>
+        /// in the <i>Amazon EC2 User Guide</i>.</p>
+        pub fn usage_operation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_operation = Some(input.into());
+            self
+        }
+        pub fn set_usage_operation(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_operation = input;
+            self
+        }
+        /// <p>The time that the usage operation was last updated.</p>
+        pub fn usage_operation_update_time(mut self, input: smithy_types::Instant) -> Self {
+            self.usage_operation_update_time = Some(input);
+            self
+        }
+        pub fn set_usage_operation_update_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.usage_operation_update_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Instance`](crate::model::Instance)
         pub fn build(self) -> crate::model::Instance {
             crate::model::Instance {
@@ -7262,6 +7319,9 @@ pub mod instance {
                 metadata_options: self.metadata_options,
                 enclave_options: self.enclave_options,
                 boot_mode: self.boot_mode,
+                platform_details: self.platform_details,
+                usage_operation: self.usage_operation,
+                usage_operation_update_time: self.usage_operation_update_time,
             }
         }
     }
@@ -10886,6 +10946,9 @@ pub enum InstanceType {
     U6tb1Metal,
     U9tb1112xlarge,
     U9tb1Metal,
+    Vt124xlarge,
+    Vt13xlarge,
+    Vt16xlarge,
     X116xlarge,
     X132xlarge,
     X1e16xlarge,
@@ -11309,6 +11372,9 @@ impl std::convert::From<&str> for InstanceType {
             "u-6tb1.metal" => InstanceType::U6tb1Metal,
             "u-9tb1.112xlarge" => InstanceType::U9tb1112xlarge,
             "u-9tb1.metal" => InstanceType::U9tb1Metal,
+            "vt1.24xlarge" => InstanceType::Vt124xlarge,
+            "vt1.3xlarge" => InstanceType::Vt13xlarge,
+            "vt1.6xlarge" => InstanceType::Vt16xlarge,
             "x1.16xlarge" => InstanceType::X116xlarge,
             "x1.32xlarge" => InstanceType::X132xlarge,
             "x1e.16xlarge" => InstanceType::X1e16xlarge,
@@ -11740,6 +11806,9 @@ impl InstanceType {
             InstanceType::U6tb1Metal => "u-6tb1.metal",
             InstanceType::U9tb1112xlarge => "u-9tb1.112xlarge",
             InstanceType::U9tb1Metal => "u-9tb1.metal",
+            InstanceType::Vt124xlarge => "vt1.24xlarge",
+            InstanceType::Vt13xlarge => "vt1.3xlarge",
+            InstanceType::Vt16xlarge => "vt1.6xlarge",
             InstanceType::X116xlarge => "x1.16xlarge",
             InstanceType::X132xlarge => "x1.32xlarge",
             InstanceType::X1e16xlarge => "x1e.16xlarge",
@@ -12162,6 +12231,9 @@ impl InstanceType {
             "u-6tb1.metal",
             "u-9tb1.112xlarge",
             "u-9tb1.metal",
+            "vt1.24xlarge",
+            "vt1.3xlarge",
+            "vt1.6xlarge",
             "x1.16xlarge",
             "x1.32xlarge",
             "x1e.16xlarge",
@@ -21965,15 +22037,15 @@ impl CidrAuthorizationContext {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpnConnection {
-    /// <p>The configuration information for the VPN connection's customer gateway (in the native XML
-    /// format). This element is always present in the <a>CreateVpnConnection</a> response; however,
-    /// it's present in the <a>DescribeVpnConnections</a> response only if the VPN connection is in
-    /// the <code>pending</code> or <code>available</code> state.</p>
+    /// <p>The configuration information for the VPN connection's customer gateway (in the native
+    /// XML format). This element is always present in the <a>CreateVpnConnection</a>
+    /// response; however, it's present in the <a>DescribeVpnConnections</a> response
+    /// only if the VPN connection is in the <code>pending</code> or <code>available</code>
+    /// state.</p>
     pub customer_gateway_configuration: std::option::Option<std::string::String>,
     /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
     pub customer_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN
-    /// connection. A value of <code>VPN-Classic</code> indicates an AWS Classic VPN connection.</p>
+    /// <p>The category of the VPN connection. A value of <code>VPN</code> indicates an Amazon Web Services VPN connection. A value of <code>VPN-Classic</code> indicates an Amazon Web Services Classic VPN connection.</p>
     pub category: std::option::Option<std::string::String>,
     /// <p>The current state of the VPN connection.</p>
     pub state: std::option::Option<crate::model::VpnState>,
@@ -21981,7 +22053,8 @@ pub struct VpnConnection {
     pub r#type: std::option::Option<crate::model::GatewayType>,
     /// <p>The ID of the VPN connection.</p>
     pub vpn_connection_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the virtual private gateway at the AWS side of the VPN connection.</p>
+    /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN
+    /// connection.</p>
     pub vpn_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
     pub transit_gateway_id: std::option::Option<std::string::String>,
@@ -22035,10 +22108,11 @@ pub mod vpn_connection {
         pub(crate) vgw_telemetry: std::option::Option<std::vec::Vec<crate::model::VgwTelemetry>>,
     }
     impl Builder {
-        /// <p>The configuration information for the VPN connection's customer gateway (in the native XML
-        /// format). This element is always present in the <a>CreateVpnConnection</a> response; however,
-        /// it's present in the <a>DescribeVpnConnections</a> response only if the VPN connection is in
-        /// the <code>pending</code> or <code>available</code> state.</p>
+        /// <p>The configuration information for the VPN connection's customer gateway (in the native
+        /// XML format). This element is always present in the <a>CreateVpnConnection</a>
+        /// response; however, it's present in the <a>DescribeVpnConnections</a> response
+        /// only if the VPN connection is in the <code>pending</code> or <code>available</code>
+        /// state.</p>
         pub fn customer_gateway_configuration(
             mut self,
             input: impl Into<std::string::String>,
@@ -22065,8 +22139,7 @@ pub mod vpn_connection {
             self.customer_gateway_id = input;
             self
         }
-        /// <p>The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN
-        /// connection. A value of <code>VPN-Classic</code> indicates an AWS Classic VPN connection.</p>
+        /// <p>The category of the VPN connection. A value of <code>VPN</code> indicates an Amazon Web Services VPN connection. A value of <code>VPN-Classic</code> indicates an Amazon Web Services Classic VPN connection.</p>
         pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
             self.category = Some(input.into());
             self
@@ -22105,7 +22178,8 @@ pub mod vpn_connection {
             self.vpn_connection_id = input;
             self
         }
-        /// <p>The ID of the virtual private gateway at the AWS side of the VPN connection.</p>
+        /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN
+        /// connection.</p>
         pub fn vpn_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpn_gateway_id = Some(input.into());
             self
@@ -22214,7 +22288,8 @@ pub struct VgwTelemetry {
     pub accepted_route_count: std::option::Option<i32>,
     /// <p>The date and time of the last change in status.</p>
     pub last_status_change: std::option::Option<smithy_types::Instant>,
-    /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
+    /// <p>The Internet-routable IP address of the virtual private gateway's outside
+    /// interface.</p>
     pub outside_ip_address: std::option::Option<std::string::String>,
     /// <p>The status of the VPN tunnel.</p>
     pub status: std::option::Option<crate::model::TelemetryStatus>,
@@ -22270,7 +22345,8 @@ pub mod vgw_telemetry {
             self.last_status_change = input;
             self
         }
-        /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
+        /// <p>The Internet-routable IP address of the virtual private gateway's outside
+        /// interface.</p>
         pub fn outside_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.outside_ip_address = Some(input.into());
             self
@@ -22578,15 +22654,16 @@ impl AsRef<str> for VpnStaticRouteSource {
 pub struct VpnConnectionOptions {
     /// <p>Indicates whether acceleration is enabled for the VPN connection.</p>
     pub enable_acceleration: std::option::Option<bool>,
-    /// <p>Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.</p>
+    /// <p>Indicates whether the VPN connection uses static routes only. Static routes must be
+    /// used for devices that don't support BGP.</p>
     pub static_routes_only: std::option::Option<bool>,
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     pub local_ipv4_network_cidr: std::option::Option<std::string::String>,
-    /// <p>The IPv4 CIDR on the AWS side of the VPN connection.</p>
+    /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
     pub remote_ipv4_network_cidr: std::option::Option<std::string::String>,
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     pub local_ipv6_network_cidr: std::option::Option<std::string::String>,
-    /// <p>The IPv6 CIDR on the AWS side of the VPN connection.</p>
+    /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     pub remote_ipv6_network_cidr: std::option::Option<std::string::String>,
     /// <p>Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
     pub tunnel_inside_ip_version: std::option::Option<crate::model::TunnelInsideIpVersion>,
@@ -22633,7 +22710,8 @@ pub mod vpn_connection_options {
             self.enable_acceleration = input;
             self
         }
-        /// <p>Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.</p>
+        /// <p>Indicates whether the VPN connection uses static routes only. Static routes must be
+        /// used for devices that don't support BGP.</p>
         pub fn static_routes_only(mut self, input: bool) -> Self {
             self.static_routes_only = Some(input);
             self
@@ -22654,7 +22732,7 @@ pub mod vpn_connection_options {
             self.local_ipv4_network_cidr = input;
             self
         }
-        /// <p>The IPv4 CIDR on the AWS side of the VPN connection.</p>
+        /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
         pub fn remote_ipv4_network_cidr(mut self, input: impl Into<std::string::String>) -> Self {
             self.remote_ipv4_network_cidr = Some(input.into());
             self
@@ -22678,7 +22756,7 @@ pub mod vpn_connection_options {
             self.local_ipv6_network_cidr = input;
             self
         }
-        /// <p>The IPv6 CIDR on the AWS side of the VPN connection.</p>
+        /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
         pub fn remote_ipv6_network_cidr(mut self, input: impl Into<std::string::String>) -> Self {
             self.remote_ipv6_network_cidr = Some(input.into());
             self
@@ -22757,9 +22835,11 @@ pub struct TunnelOption {
     pub phase1_lifetime_seconds: std::option::Option<i32>,
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
     pub phase2_lifetime_seconds: std::option::Option<i32>,
-    /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the AWS side of the VPN connection performs an IKE rekey.</p>
+    /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the
+    /// Amazon Web Services side of the VPN connection performs an IKE rekey.</p>
     pub rekey_margin_time_seconds: std::option::Option<i32>,
-    /// <p>The percentage of the rekey window determined by <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
+    /// <p>The percentage of the rekey window determined by <code>RekeyMarginTimeSeconds</code>
+    /// during which the rekey time is randomly selected.</p>
     pub rekey_fuzz_percentage: std::option::Option<i32>,
     /// <p>The number of packets in an IKE replay window.</p>
     pub replay_window_size: std::option::Option<i32>,
@@ -22767,22 +22847,28 @@ pub struct TunnelOption {
     pub dpd_timeout_seconds: std::option::Option<i32>,
     /// <p>The action to take after a DPD timeout occurs.</p>
     pub dpd_timeout_action: std::option::Option<std::string::String>,
-    /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
+    /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE
+    /// negotiations.</p>
     pub phase1_encryption_algorithms:
         std::option::Option<std::vec::Vec<crate::model::Phase1EncryptionAlgorithmsListValue>>,
-    /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
+    /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE
+    /// negotiations.</p>
     pub phase2_encryption_algorithms:
         std::option::Option<std::vec::Vec<crate::model::Phase2EncryptionAlgorithmsListValue>>,
-    /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
+    /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE
+    /// negotiations.</p>
     pub phase1_integrity_algorithms:
         std::option::Option<std::vec::Vec<crate::model::Phase1IntegrityAlgorithmsListValue>>,
-    /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
+    /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE
+    /// negotiations.</p>
     pub phase2_integrity_algorithms:
         std::option::Option<std::vec::Vec<crate::model::Phase2IntegrityAlgorithmsListValue>>,
-    /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
+    /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE
+    /// negotiations.</p>
     pub phase1_dh_group_numbers:
         std::option::Option<std::vec::Vec<crate::model::Phase1DhGroupNumbersListValue>>,
-    /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
+    /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE
+    /// negotiations.</p>
     pub phase2_dh_group_numbers:
         std::option::Option<std::vec::Vec<crate::model::Phase2DhGroupNumbersListValue>>,
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
@@ -22928,7 +23014,8 @@ pub mod tunnel_option {
             self.phase2_lifetime_seconds = input;
             self
         }
-        /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the AWS side of the VPN connection performs an IKE rekey.</p>
+        /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the
+        /// Amazon Web Services side of the VPN connection performs an IKE rekey.</p>
         pub fn rekey_margin_time_seconds(mut self, input: i32) -> Self {
             self.rekey_margin_time_seconds = Some(input);
             self
@@ -22937,7 +23024,8 @@ pub mod tunnel_option {
             self.rekey_margin_time_seconds = input;
             self
         }
-        /// <p>The percentage of the rekey window determined by <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
+        /// <p>The percentage of the rekey window determined by <code>RekeyMarginTimeSeconds</code>
+        /// during which the rekey time is randomly selected.</p>
         pub fn rekey_fuzz_percentage(mut self, input: i32) -> Self {
             self.rekey_fuzz_percentage = Some(input);
             self
@@ -23553,12 +23641,12 @@ impl AsRef<str> for GatewayType {
     }
 }
 
-/// <p>The AWS Site-to-Site VPN tunnel options to modify.</p>
+/// <p>The Amazon Web Services Site-to-Site VPN tunnel options to modify.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpnTunnelOptionsSpecification {
-    /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique
-    /// across all VPN connections that use the same virtual private gateway. </p>
+    /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be
+    /// unique across all VPN connections that use the same virtual private gateway. </p>
     /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The
     /// following CIDR blocks are reserved and cannot be used:</p>
     /// <ul>
@@ -23599,7 +23687,8 @@ pub struct ModifyVpnTunnelOptionsSpecification {
     /// </li>
     /// </ul>
     pub tunnel_inside_cidr: std::option::Option<std::string::String>,
-    /// <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same transit gateway.</p>
+    /// <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be
+    /// unique across all VPN connections that use the same transit gateway.</p>
     /// <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.</p>
     pub tunnel_inside_ipv6_cidr: std::option::Option<std::string::String>,
     /// <p>The pre-shared key (PSK) to establish initial authentication between the virtual
@@ -23614,16 +23703,21 @@ pub struct ModifyVpnTunnelOptionsSpecification {
     /// </p>
     pub phase1_lifetime_seconds: std::option::Option<i32>,
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
-    /// <p>Constraints: A value between 900 and 3,600. The value must be less than the value for <code>Phase1LifetimeSeconds</code>.</p>
+    /// <p>Constraints: A value between 900 and 3,600. The value must be less than the value for
+    /// <code>Phase1LifetimeSeconds</code>.</p>
     /// <p>Default: <code>3600</code>
     /// </p>
     pub phase2_lifetime_seconds: std::option::Option<i32>,
-    /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the AWS side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.</p>
+    /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the
+    /// Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time
+    /// of the rekey is randomly selected based on the value for
+    /// <code>RekeyFuzzPercentage</code>.</p>
     /// <p>Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.</p>
     /// <p>Default: <code>540</code>
     /// </p>
     pub rekey_margin_time_seconds: std::option::Option<i32>,
-    /// <p>The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>) during which the rekey time is randomly selected.</p>
+    /// <p>The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>)
+    /// during which the rekey time is randomly selected.</p>
     /// <p>Constraints: A value between 0 and 100.</p>
     /// <p>Default: <code>100</code>
     /// </p>
@@ -23638,41 +23732,57 @@ pub struct ModifyVpnTunnelOptionsSpecification {
     /// <p>Default: <code>30</code>
     /// </p>
     pub dpd_timeout_seconds: std::option::Option<i32>,
-    /// <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify <code>clear</code> to end the IKE session.</p>
+    /// <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to restart
+    /// the IKE initiation. Specify <code>clear</code> to end the IKE session.</p>
     /// <p>Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
     /// </p>
     /// <p>Default: <code>clear</code>
     /// </p>
     pub dpd_timeout_action: std::option::Option<std::string::String>,
-    /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
-    /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+    /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 1
+    /// IKE negotiations.</p>
+    /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+    /// <code>AES256-GCM-16</code>
     /// </p>
     pub phase1_encryption_algorithms: std::option::Option<
         std::vec::Vec<crate::model::Phase1EncryptionAlgorithmsRequestListValue>,
     >,
-    /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
-    /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+    /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 2
+    /// IKE negotiations.</p>
+    /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+    /// <code>AES256-GCM-16</code>
     /// </p>
     pub phase2_encryption_algorithms: std::option::Option<
         std::vec::Vec<crate::model::Phase2EncryptionAlgorithmsRequestListValue>,
     >,
-    /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
-    /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
+    /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE
+    /// negotiations.</p>
+    /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> |
+    /// <code>SHA2-512</code>
     /// </p>
     pub phase1_integrity_algorithms:
         std::option::Option<std::vec::Vec<crate::model::Phase1IntegrityAlgorithmsRequestListValue>>,
-    /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
-    /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
+    /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE
+    /// negotiations.</p>
+    /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> |
+    /// <code>SHA2-512</code>
     /// </p>
     pub phase2_integrity_algorithms:
         std::option::Option<std::vec::Vec<crate::model::Phase2IntegrityAlgorithmsRequestListValue>>,
-    /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code>
+    /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for
+    /// phase 1 IKE negotiations.</p>
+    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> |
+    /// <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> |
+    /// <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code>
     /// </p>
     pub phase1_dh_group_numbers:
         std::option::Option<std::vec::Vec<crate::model::Phase1DhGroupNumbersRequestListValue>>,
-    /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code>
+    /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for
+    /// phase 2 IKE negotiations.</p>
+    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> |
+    /// <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> |
+    /// <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> |
+    /// <code>24</code>
     /// </p>
     pub phase2_dh_group_numbers:
         std::option::Option<std::vec::Vec<crate::model::Phase2DhGroupNumbersRequestListValue>>,
@@ -23680,7 +23790,10 @@ pub struct ModifyVpnTunnelOptionsSpecification {
     /// <p>Valid values: <code>ikev1</code> | <code>ikev2</code>
     /// </p>
     pub ike_versions: std::option::Option<std::vec::Vec<crate::model::IkeVersionsRequestListValue>>,
-    /// <p>The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE negotiation.</p>
+    /// <p>The action to take when the establishing the tunnel for the VPN connection. By
+    /// default, your customer gateway device must initiate the IKE negotiation and bring up the
+    /// tunnel. Specify <code>start</code> for Amazon Web Services to initiate the IKE
+    /// negotiation.</p>
     /// <p>Valid Values: <code>add</code> | <code>start</code>
     /// </p>
     /// <p>Default: <code>add</code>
@@ -23760,8 +23873,8 @@ pub mod modify_vpn_tunnel_options_specification {
         pub(crate) startup_action: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique
-        /// across all VPN connections that use the same virtual private gateway. </p>
+        /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be
+        /// unique across all VPN connections that use the same virtual private gateway. </p>
         /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The
         /// following CIDR blocks are reserved and cannot be used:</p>
         /// <ul>
@@ -23812,7 +23925,8 @@ pub mod modify_vpn_tunnel_options_specification {
             self.tunnel_inside_cidr = input;
             self
         }
-        /// <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same transit gateway.</p>
+        /// <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be
+        /// unique across all VPN connections that use the same transit gateway.</p>
         /// <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.</p>
         pub fn tunnel_inside_ipv6_cidr(mut self, input: impl Into<std::string::String>) -> Self {
             self.tunnel_inside_ipv6_cidr = Some(input.into());
@@ -23854,7 +23968,8 @@ pub mod modify_vpn_tunnel_options_specification {
             self
         }
         /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
-        /// <p>Constraints: A value between 900 and 3,600. The value must be less than the value for <code>Phase1LifetimeSeconds</code>.</p>
+        /// <p>Constraints: A value between 900 and 3,600. The value must be less than the value for
+        /// <code>Phase1LifetimeSeconds</code>.</p>
         /// <p>Default: <code>3600</code>
         /// </p>
         pub fn phase2_lifetime_seconds(mut self, input: i32) -> Self {
@@ -23865,7 +23980,10 @@ pub mod modify_vpn_tunnel_options_specification {
             self.phase2_lifetime_seconds = input;
             self
         }
-        /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the AWS side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.</p>
+        /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the
+        /// Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time
+        /// of the rekey is randomly selected based on the value for
+        /// <code>RekeyFuzzPercentage</code>.</p>
         /// <p>Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.</p>
         /// <p>Default: <code>540</code>
         /// </p>
@@ -23877,7 +23995,8 @@ pub mod modify_vpn_tunnel_options_specification {
             self.rekey_margin_time_seconds = input;
             self
         }
-        /// <p>The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>) during which the rekey time is randomly selected.</p>
+        /// <p>The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>)
+        /// during which the rekey time is randomly selected.</p>
         /// <p>Constraints: A value between 0 and 100.</p>
         /// <p>Default: <code>100</code>
         /// </p>
@@ -23913,7 +24032,8 @@ pub mod modify_vpn_tunnel_options_specification {
             self.dpd_timeout_seconds = input;
             self
         }
-        /// <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify <code>clear</code> to end the IKE session.</p>
+        /// <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to restart
+        /// the IKE initiation. Specify <code>clear</code> to end the IKE session.</p>
         /// <p>Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
         /// </p>
         /// <p>Default: <code>clear</code>
@@ -24053,7 +24173,10 @@ pub mod modify_vpn_tunnel_options_specification {
             self.ike_versions = input;
             self
         }
-        /// <p>The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE negotiation.</p>
+        /// <p>The action to take when the establishing the tunnel for the VPN connection. By
+        /// default, your customer gateway device must initiate the IKE negotiation and bring up the
+        /// tunnel. Specify <code>start</code> for Amazon Web Services to initiate the IKE
+        /// negotiation.</p>
         /// <p>Valid Values: <code>add</code> | <code>start</code>
         /// </p>
         /// <p>Default: <code>add</code>
@@ -24146,7 +24269,8 @@ impl IkeVersionsRequestListValue {
     }
 }
 
-/// <p>Specifies a Diffie-Hellman group number for the VPN tunnel for phase 2 IKE negotiations.</p>
+/// <p>Specifies a Diffie-Hellman group number for the VPN tunnel for phase 2 IKE
+/// negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Phase2DhGroupNumbersRequestListValue {
@@ -24191,7 +24315,8 @@ impl Phase2DhGroupNumbersRequestListValue {
     }
 }
 
-/// <p>Specifies a Diffie-Hellman group number for the VPN tunnel for phase 1 IKE negotiations.</p>
+/// <p>Specifies a Diffie-Hellman group number for the VPN tunnel for phase 1 IKE
+/// negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Phase1DhGroupNumbersRequestListValue {
@@ -24236,7 +24361,8 @@ impl Phase1DhGroupNumbersRequestListValue {
     }
 }
 
-/// <p>Specifies the integrity algorithm for the VPN tunnel for phase 2 IKE negotiations.</p>
+/// <p>Specifies the integrity algorithm for the VPN tunnel for phase 2 IKE
+/// negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Phase2IntegrityAlgorithmsRequestListValue {
@@ -24281,7 +24407,8 @@ impl Phase2IntegrityAlgorithmsRequestListValue {
     }
 }
 
-/// <p>Specifies the integrity algorithm for the VPN tunnel for phase 1 IKE negotiations.</p>
+/// <p>Specifies the integrity algorithm for the VPN tunnel for phase 1 IKE
+/// negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Phase1IntegrityAlgorithmsRequestListValue {
@@ -24326,7 +24453,8 @@ impl Phase1IntegrityAlgorithmsRequestListValue {
     }
 }
 
-/// <p>Specifies the encryption algorithm for the VPN tunnel for phase 2 IKE negotiations.</p>
+/// <p>Specifies the encryption algorithm for the VPN tunnel for phase 2 IKE
+/// negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Phase2EncryptionAlgorithmsRequestListValue {
@@ -24371,7 +24499,8 @@ impl Phase2EncryptionAlgorithmsRequestListValue {
     }
 }
 
-/// <p>Specifies the encryption algorithm for the VPN tunnel for phase 1 IKE negotiations.</p>
+/// <p>Specifies the encryption algorithm for the VPN tunnel for phase 1 IKE
+/// negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Phase1EncryptionAlgorithmsRequestListValue {
@@ -30997,7 +31126,7 @@ impl AsRef<str> for UnlimitedSupportedInstanceFamily {
 pub struct ClientConnectOptions {
     /// <p>Indicates whether client connect options are enabled. The default is <code>false</code> (not enabled).</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function used for connection authorization.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClientConnectOptions {
@@ -31027,7 +31156,7 @@ pub mod client_connect_options {
             self.enabled = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function used for connection authorization.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
         pub fn lambda_function_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.lambda_function_arn = Some(input.into());
             self
@@ -33529,6 +33658,107 @@ impl ImageDiskContainer {
     /// Creates a new builder-style object to manufacture [`ImageDiskContainer`](crate::model::ImageDiskContainer)
     pub fn builder() -> crate::model::image_disk_container::Builder {
         crate::model::image_disk_container::Builder::default()
+    }
+}
+
+/// <p>List of customer gateway devices that have a sample configuration file available for
+/// use. You can also see the list of device types with sample configuration files available
+/// under <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html">Your customer
+/// gateway device</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VpnConnectionDeviceType {
+    /// <p>Customer gateway device identifier.</p>
+    pub vpn_connection_device_type_id: std::option::Option<std::string::String>,
+    /// <p>Customer gateway device vendor.</p>
+    pub vendor: std::option::Option<std::string::String>,
+    /// <p>Customer gateway device platform.</p>
+    pub platform: std::option::Option<std::string::String>,
+    /// <p>Customer gateway device software version.</p>
+    pub software: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for VpnConnectionDeviceType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VpnConnectionDeviceType");
+        formatter.field(
+            "vpn_connection_device_type_id",
+            &self.vpn_connection_device_type_id,
+        );
+        formatter.field("vendor", &self.vendor);
+        formatter.field("platform", &self.platform);
+        formatter.field("software", &self.software);
+        formatter.finish()
+    }
+}
+/// See [`VpnConnectionDeviceType`](crate::model::VpnConnectionDeviceType)
+pub mod vpn_connection_device_type {
+    /// A builder for [`VpnConnectionDeviceType`](crate::model::VpnConnectionDeviceType)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpn_connection_device_type_id: std::option::Option<std::string::String>,
+        pub(crate) vendor: std::option::Option<std::string::String>,
+        pub(crate) platform: std::option::Option<std::string::String>,
+        pub(crate) software: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Customer gateway device identifier.</p>
+        pub fn vpn_connection_device_type_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.vpn_connection_device_type_id = Some(input.into());
+            self
+        }
+        pub fn set_vpn_connection_device_type_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpn_connection_device_type_id = input;
+            self
+        }
+        /// <p>Customer gateway device vendor.</p>
+        pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vendor = Some(input.into());
+            self
+        }
+        pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vendor = input;
+            self
+        }
+        /// <p>Customer gateway device platform.</p>
+        pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform = Some(input.into());
+            self
+        }
+        pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform = input;
+            self
+        }
+        /// <p>Customer gateway device software version.</p>
+        pub fn software(mut self, input: impl Into<std::string::String>) -> Self {
+            self.software = Some(input.into());
+            self
+        }
+        pub fn set_software(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.software = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VpnConnectionDeviceType`](crate::model::VpnConnectionDeviceType)
+        pub fn build(self) -> crate::model::VpnConnectionDeviceType {
+            crate::model::VpnConnectionDeviceType {
+                vpn_connection_device_type_id: self.vpn_connection_device_type_id,
+                vendor: self.vendor,
+                platform: self.platform,
+                software: self.software,
+            }
+        }
+    }
+}
+impl VpnConnectionDeviceType {
+    /// Creates a new builder-style object to manufacture [`VpnConnectionDeviceType`](crate::model::VpnConnectionDeviceType)
+    pub fn builder() -> crate::model::vpn_connection_device_type::Builder {
+        crate::model::vpn_connection_device_type::Builder::default()
     }
 }
 
@@ -40343,7 +40573,8 @@ impl AsRef<str> for VolumeAttachmentState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpnGateway {
-    /// <p>The Availability Zone where the virtual private gateway was created, if applicable. This field may be empty or not returned.</p>
+    /// <p>The Availability Zone where the virtual private gateway was created, if applicable.
+    /// This field may be empty or not returned.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The current state of the virtual private gateway.</p>
     pub state: std::option::Option<crate::model::VpnState>,
@@ -40353,7 +40584,8 @@ pub struct VpnGateway {
     pub vpc_attachments: std::option::Option<std::vec::Vec<crate::model::VpcAttachment>>,
     /// <p>The ID of the virtual private gateway.</p>
     pub vpn_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP session.</p>
+    /// <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP
+    /// session.</p>
     pub amazon_side_asn: std::option::Option<i64>,
     /// <p>Any tags assigned to the virtual private gateway.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -40386,7 +40618,8 @@ pub mod vpn_gateway {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Availability Zone where the virtual private gateway was created, if applicable. This field may be empty or not returned.</p>
+        /// <p>The Availability Zone where the virtual private gateway was created, if applicable.
+        /// This field may be empty or not returned.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
@@ -40441,7 +40674,8 @@ pub mod vpn_gateway {
             self.vpn_gateway_id = input;
             self
         }
-        /// <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP session.</p>
+        /// <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP
+        /// session.</p>
         pub fn amazon_side_asn(mut self, input: i64) -> Self {
             self.amazon_side_asn = Some(input);
             self
@@ -69112,7 +69346,8 @@ impl DhcpConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerGateway {
-    /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+    /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+    /// (ASN).</p>
     pub bgp_asn: std::option::Option<std::string::String>,
     /// <p>The ID of the customer gateway.</p>
     pub customer_gateway_id: std::option::Option<std::string::String>,
@@ -69123,7 +69358,8 @@ pub struct CustomerGateway {
     /// <p>The current state of the customer gateway (<code>pending | available | deleting |
     /// deleted</code>).</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
+    /// <p>The type of VPN connection the customer gateway supports
+    /// (<code>ipsec.1</code>).</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The name of customer gateway device.</p>
     pub device_name: std::option::Option<std::string::String>,
@@ -69160,7 +69396,8 @@ pub mod customer_gateway {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+        /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+        /// (ASN).</p>
         pub fn bgp_asn(mut self, input: impl Into<std::string::String>) -> Self {
             self.bgp_asn = Some(input.into());
             self
@@ -69212,7 +69449,8 @@ pub mod customer_gateway {
             self.state = input;
             self
         }
-        /// <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
+        /// <p>The type of VPN connection the customer gateway supports
+        /// (<code>ipsec.1</code>).</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
@@ -69807,9 +70045,9 @@ pub struct ClientVpnEndpoint {
     pub client_cidr_block: std::option::Option<std::string::String>,
     /// <p>Information about the DNS servers to be used for DNS resolution. </p>
     pub dns_servers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates whether split-tunnel is enabled in the AWS Client VPN endpoint.</p>
-    /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS Client VPN Endpoint</a> in the <i>AWS
-    /// Client VPN Administrator Guide</i>.</p>
+    /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
+    /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel Client VPN endpoint</a>
+    /// in the <i>Client VPN Administrator Guide</i>.</p>
     pub split_tunnel: std::option::Option<bool>,
     /// <p>The protocol used by the VPN session.</p>
     pub vpn_protocol: std::option::Option<crate::model::VpnProtocol>,
@@ -69992,9 +70230,9 @@ pub mod client_vpn_endpoint {
             self.dns_servers = input;
             self
         }
-        /// <p>Indicates whether split-tunnel is enabled in the AWS Client VPN endpoint.</p>
-        /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel AWS Client VPN Endpoint</a> in the <i>AWS
-        /// Client VPN Administrator Guide</i>.</p>
+        /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
+        /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel Client VPN endpoint</a>
+        /// in the <i>Client VPN Administrator Guide</i>.</p>
         pub fn split_tunnel(mut self, input: bool) -> Self {
             self.split_tunnel = Some(input);
             self
@@ -70198,7 +70436,7 @@ impl ClientVpnEndpoint {
 pub struct ClientConnectResponseOptions {
     /// <p>Indicates whether client connect options are enabled.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function used for connection authorization.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
     /// <p>The status of any updates to the client connect options.</p>
     pub status: std::option::Option<crate::model::ClientVpnEndpointAttributeStatus>,
@@ -70232,7 +70470,7 @@ pub mod client_connect_response_options {
             self.enabled = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function used for connection authorization.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
         pub fn lambda_function_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.lambda_function_arn = Some(input.into());
             self
@@ -70469,7 +70707,7 @@ impl ConnectionLogResponseOptions {
 }
 
 /// <p>Describes the authentication methods used by a Client VPN endpoint. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/client-authentication.html">Authentication</a>
-/// in the <i>AWS Client VPN Administrator Guide</i>.</p>
+/// in the <i>Client VPN Administrator Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientVpnAuthentication {
@@ -71971,6 +72209,9 @@ pub struct CapacityReservation {
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which the Capacity
     /// Reservation was created.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs.
+    /// Only valid for Capacity Reservations that were created by a Capacity Reservation Fleet.</p>
+    pub capacity_reservation_fleet_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CapacityReservation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -71995,6 +72236,10 @@ impl std::fmt::Debug for CapacityReservation {
         formatter.field("create_date", &self.create_date);
         formatter.field("tags", &self.tags);
         formatter.field("outpost_arn", &self.outpost_arn);
+        formatter.field(
+            "capacity_reservation_fleet_id",
+            &self.capacity_reservation_fleet_id,
+        );
         formatter.finish()
     }
 }
@@ -72026,6 +72271,7 @@ pub mod capacity_reservation {
         pub(crate) create_date: std::option::Option<smithy_types::Instant>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) outpost_arn: std::option::Option<std::string::String>,
+        pub(crate) capacity_reservation_fleet_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ID of the Capacity Reservation.</p>
@@ -72321,6 +72567,22 @@ pub mod capacity_reservation {
             self.outpost_arn = input;
             self
         }
+        /// <p>The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs.
+        /// Only valid for Capacity Reservations that were created by a Capacity Reservation Fleet.</p>
+        pub fn capacity_reservation_fleet_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_id = Some(input.into());
+            self
+        }
+        pub fn set_capacity_reservation_fleet_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CapacityReservation`](crate::model::CapacityReservation)
         pub fn build(self) -> crate::model::CapacityReservation {
             crate::model::CapacityReservation {
@@ -72344,6 +72606,7 @@ pub mod capacity_reservation {
                 create_date: self.create_date,
                 tags: self.tags,
                 outpost_arn: self.outpost_arn,
+                capacity_reservation_fleet_id: self.capacity_reservation_fleet_id,
             }
         }
     }
@@ -72567,6 +72830,806 @@ impl CapacityReservationInstancePlatform {
     }
 }
 impl AsRef<str> for CapacityReservationInstancePlatform {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information about a Capacity Reservation Fleet.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CapacityReservationFleet {
+    /// <p>The ID of the Capacity Reservation Fleet.</p>
+    pub capacity_reservation_fleet_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the Capacity Reservation Fleet.</p>
+    pub capacity_reservation_fleet_arn: std::option::Option<std::string::String>,
+    /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>submitted</code> - The Capacity Reservation Fleet request has been submitted
+    /// and Amazon Elastic Compute Cloud is preparing to create the Capacity Reservations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>modifying</code> - The Capacity Reservation Fleet is being modified. The Fleet
+    /// remains in this state until the modification is complete.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>active</code> - The Capacity Reservation Fleet has fulfilled its total target
+    /// capacity and it is attempting to maintain this capacity. The Fleet remains in this
+    /// state until it is modified or deleted.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>partially_fulfilled</code> - The Capacity Reservation Fleet has partially
+    /// fulfilled its total target capacity. There is insufficient Amazon EC2 to
+    /// fulfill the total target capacity. The Fleet is attempting to asynchronously fulfill
+    /// its total target capacity.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>expiring</code> - The Capacity Reservation Fleet has reach its end date and it
+    /// is in the process of expiring. One or more of its Capacity reservations might still
+    /// be active.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>expired</code> - The Capacity Reservation Fleet has reach its end date. The Fleet
+    /// and its Capacity Reservations are expired. The Fleet can't create new Capacity
+    /// Reservations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>cancelling</code> - The Capacity Reservation Fleet is in the process of being
+    /// cancelled. One or more of its Capacity reservations might still be active.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled.
+    /// The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new
+    /// Capacity Reservations.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for
+    /// the specified instance types.</p>
+    /// </li>
+    /// </ul>
+    pub state: std::option::Option<crate::model::CapacityReservationFleetState>,
+    /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a>
+    /// in the Amazon EC2 User Guide.</p>
+    pub total_target_capacity: std::option::Option<i32>,
+    /// <p>The capacity units that have been fulfilled.</p>
+    pub total_fulfilled_capacity: std::option::Option<f64>,
+    /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>default</code> - The Capacity Reservation Fleet is created on hardware that is
+    /// shared with other Amazon Web Services accounts.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant
+    /// hardware that is dedicated to a single Amazon Web Services account.</p>
+    /// </li>
+    /// </ul>
+    pub tenancy: std::option::Option<crate::model::FleetCapacityReservationTenancy>,
+    /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
+    pub end_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
+    pub create_time: std::option::Option<smithy_types::Instant>,
+    /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All
+    /// Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
+    /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria
+    /// only. This means that instances that have matching attributes (instance type, platform, and
+    /// Availability Zone) run in the Capacity Reservations automatically. Instances do not need to
+    /// explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
+    pub instance_match_criteria: std::option::Option<crate::model::FleetInstanceMatchCriteria>,
+    /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified
+    /// instance types to use. For more information, see For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy">
+    /// Allocation strategy</a> in the Amazon EC2 User Guide.</p>
+    pub allocation_strategy: std::option::Option<std::string::String>,
+    /// <p>Information about the instance types for which to reserve the capacity.</p>
+    pub instance_type_specifications:
+        std::option::Option<std::vec::Vec<crate::model::FleetCapacityReservation>>,
+    /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for CapacityReservationFleet {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CapacityReservationFleet");
+        formatter.field(
+            "capacity_reservation_fleet_id",
+            &self.capacity_reservation_fleet_id,
+        );
+        formatter.field(
+            "capacity_reservation_fleet_arn",
+            &self.capacity_reservation_fleet_arn,
+        );
+        formatter.field("state", &self.state);
+        formatter.field("total_target_capacity", &self.total_target_capacity);
+        formatter.field("total_fulfilled_capacity", &self.total_fulfilled_capacity);
+        formatter.field("tenancy", &self.tenancy);
+        formatter.field("end_date", &self.end_date);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("instance_match_criteria", &self.instance_match_criteria);
+        formatter.field("allocation_strategy", &self.allocation_strategy);
+        formatter.field(
+            "instance_type_specifications",
+            &self.instance_type_specifications,
+        );
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`CapacityReservationFleet`](crate::model::CapacityReservationFleet)
+pub mod capacity_reservation_fleet {
+    /// A builder for [`CapacityReservationFleet`](crate::model::CapacityReservationFleet)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) capacity_reservation_fleet_id: std::option::Option<std::string::String>,
+        pub(crate) capacity_reservation_fleet_arn: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::CapacityReservationFleetState>,
+        pub(crate) total_target_capacity: std::option::Option<i32>,
+        pub(crate) total_fulfilled_capacity: std::option::Option<f64>,
+        pub(crate) tenancy: std::option::Option<crate::model::FleetCapacityReservationTenancy>,
+        pub(crate) end_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) instance_match_criteria:
+            std::option::Option<crate::model::FleetInstanceMatchCriteria>,
+        pub(crate) allocation_strategy: std::option::Option<std::string::String>,
+        pub(crate) instance_type_specifications:
+            std::option::Option<std::vec::Vec<crate::model::FleetCapacityReservation>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The ID of the Capacity Reservation Fleet.</p>
+        pub fn capacity_reservation_fleet_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_id = Some(input.into());
+            self
+        }
+        pub fn set_capacity_reservation_fleet_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_id = input;
+            self
+        }
+        /// <p>The ARN of the Capacity Reservation Fleet.</p>
+        pub fn capacity_reservation_fleet_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_arn = Some(input.into());
+            self
+        }
+        pub fn set_capacity_reservation_fleet_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_arn = input;
+            self
+        }
+        /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>submitted</code> - The Capacity Reservation Fleet request has been submitted
+        /// and Amazon Elastic Compute Cloud is preparing to create the Capacity Reservations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>modifying</code> - The Capacity Reservation Fleet is being modified. The Fleet
+        /// remains in this state until the modification is complete.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>active</code> - The Capacity Reservation Fleet has fulfilled its total target
+        /// capacity and it is attempting to maintain this capacity. The Fleet remains in this
+        /// state until it is modified or deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>partially_fulfilled</code> - The Capacity Reservation Fleet has partially
+        /// fulfilled its total target capacity. There is insufficient Amazon EC2 to
+        /// fulfill the total target capacity. The Fleet is attempting to asynchronously fulfill
+        /// its total target capacity.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>expiring</code> - The Capacity Reservation Fleet has reach its end date and it
+        /// is in the process of expiring. One or more of its Capacity reservations might still
+        /// be active.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>expired</code> - The Capacity Reservation Fleet has reach its end date. The Fleet
+        /// and its Capacity Reservations are expired. The Fleet can't create new Capacity
+        /// Reservations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cancelling</code> - The Capacity Reservation Fleet is in the process of being
+        /// cancelled. One or more of its Capacity reservations might still be active.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled.
+        /// The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new
+        /// Capacity Reservations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for
+        /// the specified instance types.</p>
+        /// </li>
+        /// </ul>
+        pub fn state(mut self, input: crate::model::CapacityReservationFleetState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::CapacityReservationFleetState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a>
+        /// in the Amazon EC2 User Guide.</p>
+        pub fn total_target_capacity(mut self, input: i32) -> Self {
+            self.total_target_capacity = Some(input);
+            self
+        }
+        pub fn set_total_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_target_capacity = input;
+            self
+        }
+        /// <p>The capacity units that have been fulfilled.</p>
+        pub fn total_fulfilled_capacity(mut self, input: f64) -> Self {
+            self.total_fulfilled_capacity = Some(input);
+            self
+        }
+        pub fn set_total_fulfilled_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.total_fulfilled_capacity = input;
+            self
+        }
+        /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>default</code> - The Capacity Reservation Fleet is created on hardware that is
+        /// shared with other Amazon Web Services accounts.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant
+        /// hardware that is dedicated to a single Amazon Web Services account.</p>
+        /// </li>
+        /// </ul>
+        pub fn tenancy(mut self, input: crate::model::FleetCapacityReservationTenancy) -> Self {
+            self.tenancy = Some(input);
+            self
+        }
+        pub fn set_tenancy(
+            mut self,
+            input: std::option::Option<crate::model::FleetCapacityReservationTenancy>,
+        ) -> Self {
+            self.tenancy = input;
+            self
+        }
+        /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
+        pub fn end_date(mut self, input: smithy_types::Instant) -> Self {
+            self.end_date = Some(input);
+            self
+        }
+        pub fn set_end_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_date = input;
+            self
+        }
+        /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
+        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.create_time = Some(input);
+            self
+        }
+        pub fn set_create_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_time = input;
+            self
+        }
+        /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All
+        /// Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
+        /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria
+        /// only. This means that instances that have matching attributes (instance type, platform, and
+        /// Availability Zone) run in the Capacity Reservations automatically. Instances do not need to
+        /// explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
+        pub fn instance_match_criteria(
+            mut self,
+            input: crate::model::FleetInstanceMatchCriteria,
+        ) -> Self {
+            self.instance_match_criteria = Some(input);
+            self
+        }
+        pub fn set_instance_match_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FleetInstanceMatchCriteria>,
+        ) -> Self {
+            self.instance_match_criteria = input;
+            self
+        }
+        /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified
+        /// instance types to use. For more information, see For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy">
+        /// Allocation strategy</a> in the Amazon EC2 User Guide.</p>
+        pub fn allocation_strategy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.allocation_strategy = Some(input.into());
+            self
+        }
+        pub fn set_allocation_strategy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.allocation_strategy = input;
+            self
+        }
+        pub fn instance_type_specifications(
+            mut self,
+            input: impl Into<crate::model::FleetCapacityReservation>,
+        ) -> Self {
+            let mut v = self.instance_type_specifications.unwrap_or_default();
+            v.push(input.into());
+            self.instance_type_specifications = Some(v);
+            self
+        }
+        pub fn set_instance_type_specifications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FleetCapacityReservation>>,
+        ) -> Self {
+            self.instance_type_specifications = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CapacityReservationFleet`](crate::model::CapacityReservationFleet)
+        pub fn build(self) -> crate::model::CapacityReservationFleet {
+            crate::model::CapacityReservationFleet {
+                capacity_reservation_fleet_id: self.capacity_reservation_fleet_id,
+                capacity_reservation_fleet_arn: self.capacity_reservation_fleet_arn,
+                state: self.state,
+                total_target_capacity: self.total_target_capacity,
+                total_fulfilled_capacity: self.total_fulfilled_capacity,
+                tenancy: self.tenancy,
+                end_date: self.end_date,
+                create_time: self.create_time,
+                instance_match_criteria: self.instance_match_criteria,
+                allocation_strategy: self.allocation_strategy,
+                instance_type_specifications: self.instance_type_specifications,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl CapacityReservationFleet {
+    /// Creates a new builder-style object to manufacture [`CapacityReservationFleet`](crate::model::CapacityReservationFleet)
+    pub fn builder() -> crate::model::capacity_reservation_fleet::Builder {
+        crate::model::capacity_reservation_fleet::Builder::default()
+    }
+}
+
+/// <p>Information about a Capacity Reservation in a Capacity Reservation Fleet.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FleetCapacityReservation {
+    /// <p>The ID of the Capacity Reservation.</p>
+    pub capacity_reservation_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the Availability Zone in which the Capacity Reservation reserves capacity.</p>
+    pub availability_zone_id: std::option::Option<std::string::String>,
+    /// <p>The instance type for which the Capacity Reservation reserves capacity.</p>
+    pub instance_type: std::option::Option<crate::model::InstanceType>,
+    /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
+    pub instance_platform: std::option::Option<crate::model::CapacityReservationInstancePlatform>,
+    /// <p>The Availability Zone in which the Capacity Reservation reserves capacity.</p>
+    pub availability_zone: std::option::Option<std::string::String>,
+    /// <p>The total number of instances for which the Capacity Reservation reserves capacity.</p>
+    pub total_instance_count: std::option::Option<i32>,
+    /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">
+    /// Total target capacity</a> in the Amazon EC2 User Guide.</p>
+    pub fulfilled_capacity: std::option::Option<f64>,
+    /// <p>Indicates whether the Capacity Reservation reserves capacity for EBS-optimized instance types.</p>
+    pub ebs_optimized: std::option::Option<bool>,
+    /// <p>The date and time at which the Capacity Reservation was created.</p>
+    pub create_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight">
+    /// Instance type weight</a> in the Amazon EC2 User Guide.</p>
+    pub weight: std::option::Option<f64>,
+    /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">
+    /// Instance type priority</a> in the Amazon EC2 User Guide.</p>
+    pub priority: std::option::Option<i32>,
+}
+impl std::fmt::Debug for FleetCapacityReservation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FleetCapacityReservation");
+        formatter.field("capacity_reservation_id", &self.capacity_reservation_id);
+        formatter.field("availability_zone_id", &self.availability_zone_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("instance_platform", &self.instance_platform);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("total_instance_count", &self.total_instance_count);
+        formatter.field("fulfilled_capacity", &self.fulfilled_capacity);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("create_date", &self.create_date);
+        formatter.field("weight", &self.weight);
+        formatter.field("priority", &self.priority);
+        formatter.finish()
+    }
+}
+/// See [`FleetCapacityReservation`](crate::model::FleetCapacityReservation)
+pub mod fleet_capacity_reservation {
+    /// A builder for [`FleetCapacityReservation`](crate::model::FleetCapacityReservation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) capacity_reservation_id: std::option::Option<std::string::String>,
+        pub(crate) availability_zone_id: std::option::Option<std::string::String>,
+        pub(crate) instance_type: std::option::Option<crate::model::InstanceType>,
+        pub(crate) instance_platform:
+            std::option::Option<crate::model::CapacityReservationInstancePlatform>,
+        pub(crate) availability_zone: std::option::Option<std::string::String>,
+        pub(crate) total_instance_count: std::option::Option<i32>,
+        pub(crate) fulfilled_capacity: std::option::Option<f64>,
+        pub(crate) ebs_optimized: std::option::Option<bool>,
+        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) weight: std::option::Option<f64>,
+        pub(crate) priority: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The ID of the Capacity Reservation.</p>
+        pub fn capacity_reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capacity_reservation_id = Some(input.into());
+            self
+        }
+        pub fn set_capacity_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_id = input;
+            self
+        }
+        /// <p>The ID of the Availability Zone in which the Capacity Reservation reserves capacity.</p>
+        pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone_id = Some(input.into());
+            self
+        }
+        pub fn set_availability_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.availability_zone_id = input;
+            self
+        }
+        /// <p>The instance type for which the Capacity Reservation reserves capacity.</p>
+        pub fn instance_type(mut self, input: crate::model::InstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::InstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
+        pub fn instance_platform(
+            mut self,
+            input: crate::model::CapacityReservationInstancePlatform,
+        ) -> Self {
+            self.instance_platform = Some(input);
+            self
+        }
+        pub fn set_instance_platform(
+            mut self,
+            input: std::option::Option<crate::model::CapacityReservationInstancePlatform>,
+        ) -> Self {
+            self.instance_platform = input;
+            self
+        }
+        /// <p>The Availability Zone in which the Capacity Reservation reserves capacity.</p>
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
+            self
+        }
+        pub fn set_availability_zone(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.availability_zone = input;
+            self
+        }
+        /// <p>The total number of instances for which the Capacity Reservation reserves capacity.</p>
+        pub fn total_instance_count(mut self, input: i32) -> Self {
+            self.total_instance_count = Some(input);
+            self
+        }
+        pub fn set_total_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_instance_count = input;
+            self
+        }
+        /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">
+        /// Total target capacity</a> in the Amazon EC2 User Guide.</p>
+        pub fn fulfilled_capacity(mut self, input: f64) -> Self {
+            self.fulfilled_capacity = Some(input);
+            self
+        }
+        pub fn set_fulfilled_capacity(mut self, input: std::option::Option<f64>) -> Self {
+            self.fulfilled_capacity = input;
+            self
+        }
+        /// <p>Indicates whether the Capacity Reservation reserves capacity for EBS-optimized instance types.</p>
+        pub fn ebs_optimized(mut self, input: bool) -> Self {
+            self.ebs_optimized = Some(input);
+            self
+        }
+        pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
+            self.ebs_optimized = input;
+            self
+        }
+        /// <p>The date and time at which the Capacity Reservation was created.</p>
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
+            self
+        }
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
+            self
+        }
+        /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight">
+        /// Instance type weight</a> in the Amazon EC2 User Guide.</p>
+        pub fn weight(mut self, input: f64) -> Self {
+            self.weight = Some(input);
+            self
+        }
+        pub fn set_weight(mut self, input: std::option::Option<f64>) -> Self {
+            self.weight = input;
+            self
+        }
+        /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">
+        /// Instance type priority</a> in the Amazon EC2 User Guide.</p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
+            self
+        }
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FleetCapacityReservation`](crate::model::FleetCapacityReservation)
+        pub fn build(self) -> crate::model::FleetCapacityReservation {
+            crate::model::FleetCapacityReservation {
+                capacity_reservation_id: self.capacity_reservation_id,
+                availability_zone_id: self.availability_zone_id,
+                instance_type: self.instance_type,
+                instance_platform: self.instance_platform,
+                availability_zone: self.availability_zone,
+                total_instance_count: self.total_instance_count,
+                fulfilled_capacity: self.fulfilled_capacity,
+                ebs_optimized: self.ebs_optimized,
+                create_date: self.create_date,
+                weight: self.weight,
+                priority: self.priority,
+            }
+        }
+    }
+}
+impl FleetCapacityReservation {
+    /// Creates a new builder-style object to manufacture [`FleetCapacityReservation`](crate::model::FleetCapacityReservation)
+    pub fn builder() -> crate::model::fleet_capacity_reservation::Builder {
+        crate::model::fleet_capacity_reservation::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FleetInstanceMatchCriteria {
+    Open,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FleetInstanceMatchCriteria {
+    fn from(s: &str) -> Self {
+        match s {
+            "open" => FleetInstanceMatchCriteria::Open,
+            other => FleetInstanceMatchCriteria::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FleetInstanceMatchCriteria {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FleetInstanceMatchCriteria::from(s))
+    }
+}
+impl FleetInstanceMatchCriteria {
+    pub fn as_str(&self) -> &str {
+        match self {
+            FleetInstanceMatchCriteria::Open => "open",
+            FleetInstanceMatchCriteria::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["open"]
+    }
+}
+impl AsRef<str> for FleetInstanceMatchCriteria {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FleetCapacityReservationTenancy {
+    Default,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FleetCapacityReservationTenancy {
+    fn from(s: &str) -> Self {
+        match s {
+            "default" => FleetCapacityReservationTenancy::Default,
+            other => FleetCapacityReservationTenancy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FleetCapacityReservationTenancy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FleetCapacityReservationTenancy::from(s))
+    }
+}
+impl FleetCapacityReservationTenancy {
+    pub fn as_str(&self) -> &str {
+        match self {
+            FleetCapacityReservationTenancy::Default => "default",
+            FleetCapacityReservationTenancy::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["default"]
+    }
+}
+impl AsRef<str> for FleetCapacityReservationTenancy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CapacityReservationFleetState {
+    Active,
+    Cancelled,
+    Cancelling,
+    Expired,
+    Expiring,
+    Failed,
+    Modifying,
+    PartiallyFulfilled,
+    Submitted,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CapacityReservationFleetState {
+    fn from(s: &str) -> Self {
+        match s {
+            "active" => CapacityReservationFleetState::Active,
+            "cancelled" => CapacityReservationFleetState::Cancelled,
+            "cancelling" => CapacityReservationFleetState::Cancelling,
+            "expired" => CapacityReservationFleetState::Expired,
+            "expiring" => CapacityReservationFleetState::Expiring,
+            "failed" => CapacityReservationFleetState::Failed,
+            "modifying" => CapacityReservationFleetState::Modifying,
+            "partially_fulfilled" => CapacityReservationFleetState::PartiallyFulfilled,
+            "submitted" => CapacityReservationFleetState::Submitted,
+            other => CapacityReservationFleetState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CapacityReservationFleetState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CapacityReservationFleetState::from(s))
+    }
+}
+impl CapacityReservationFleetState {
+    pub fn as_str(&self) -> &str {
+        match self {
+            CapacityReservationFleetState::Active => "active",
+            CapacityReservationFleetState::Cancelled => "cancelled",
+            CapacityReservationFleetState::Cancelling => "cancelling",
+            CapacityReservationFleetState::Expired => "expired",
+            CapacityReservationFleetState::Expiring => "expiring",
+            CapacityReservationFleetState::Failed => "failed",
+            CapacityReservationFleetState::Modifying => "modifying",
+            CapacityReservationFleetState::PartiallyFulfilled => "partially_fulfilled",
+            CapacityReservationFleetState::Submitted => "submitted",
+            CapacityReservationFleetState::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "active",
+            "cancelled",
+            "cancelling",
+            "expired",
+            "expiring",
+            "failed",
+            "modifying",
+            "partially_fulfilled",
+            "submitted",
+        ]
+    }
+}
+impl AsRef<str> for CapacityReservationFleetState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -75076,9 +76139,9 @@ pub struct VpnConnectionOptionsSpecification {
     /// <p>Default: <code>false</code>
     /// </p>
     pub enable_acceleration: std::option::Option<bool>,
-    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a
-    /// VPN connection for a device that does not support BGP, you must specify
-    /// <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a static route.</p>
+    /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN
+    /// connection for a device that does not support BGP, you must specify <code>true</code>.
+    /// Use <a>CreateVpnConnectionRoute</a> to create a static route.</p>
     /// <p>Default: <code>false</code>
     /// </p>
     pub static_routes_only: std::option::Option<bool>,
@@ -75093,7 +76156,7 @@ pub struct VpnConnectionOptionsSpecification {
     /// <p>Default: <code>0.0.0.0/0</code>
     /// </p>
     pub local_ipv4_network_cidr: std::option::Option<std::string::String>,
-    /// <p>The IPv4 CIDR on the AWS side of the VPN connection.</p>
+    /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code>
     /// </p>
     pub remote_ipv4_network_cidr: std::option::Option<std::string::String>,
@@ -75101,7 +76164,7 @@ pub struct VpnConnectionOptionsSpecification {
     /// <p>Default: <code>::/0</code>
     /// </p>
     pub local_ipv6_network_cidr: std::option::Option<std::string::String>,
-    /// <p>The IPv6 CIDR on the AWS side of the VPN connection.</p>
+    /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code>
     /// </p>
     pub remote_ipv6_network_cidr: std::option::Option<std::string::String>,
@@ -75149,9 +76212,9 @@ pub mod vpn_connection_options_specification {
             self.enable_acceleration = input;
             self
         }
-        /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a
-        /// VPN connection for a device that does not support BGP, you must specify
-        /// <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a static route.</p>
+        /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN
+        /// connection for a device that does not support BGP, you must specify <code>true</code>.
+        /// Use <a>CreateVpnConnectionRoute</a> to create a static route.</p>
         /// <p>Default: <code>false</code>
         /// </p>
         pub fn static_routes_only(mut self, input: bool) -> Self {
@@ -75209,7 +76272,7 @@ pub mod vpn_connection_options_specification {
             self.local_ipv4_network_cidr = input;
             self
         }
-        /// <p>The IPv4 CIDR on the AWS side of the VPN connection.</p>
+        /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
         /// <p>Default: <code>0.0.0.0/0</code>
         /// </p>
         pub fn remote_ipv4_network_cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75237,7 +76300,7 @@ pub mod vpn_connection_options_specification {
             self.local_ipv6_network_cidr = input;
             self
         }
-        /// <p>The IPv6 CIDR on the AWS side of the VPN connection.</p>
+        /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
         /// <p>Default: <code>::/0</code>
         /// </p>
         pub fn remote_ipv6_network_cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75277,8 +76340,8 @@ impl VpnConnectionOptionsSpecification {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpnTunnelOptionsSpecification {
-    /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique
-    /// across all VPN connections that use the same virtual private gateway. </p>
+    /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be
+    /// unique across all VPN connections that use the same virtual private gateway. </p>
     /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The
     /// following CIDR blocks are reserved and cannot be used:</p>
     /// <ul>
@@ -75319,14 +76382,15 @@ pub struct VpnTunnelOptionsSpecification {
     /// </li>
     /// </ul>
     pub tunnel_inside_cidr: std::option::Option<std::string::String>,
-    /// <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same transit gateway.</p>
+    /// <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be
+    /// unique across all VPN connections that use the same transit gateway.</p>
     /// <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.</p>
     pub tunnel_inside_ipv6_cidr: std::option::Option<std::string::String>,
-    /// <p>The pre-shared key (PSK) to establish initial authentication between the virtual private
-    /// gateway and customer gateway.</p>
-    /// <p>Constraints: Allowed characters are alphanumeric characters, periods (.), and underscores
-    /// (_). Must be between 8 and 64 characters in length and cannot start with zero
-    /// (0).</p>
+    /// <p>The pre-shared key (PSK) to establish initial authentication between the virtual
+    /// private gateway and customer gateway.</p>
+    /// <p>Constraints: Allowed characters are alphanumeric characters, periods (.), and
+    /// underscores (_). Must be between 8 and 64 characters in length and cannot start with
+    /// zero (0).</p>
     pub pre_shared_key: std::option::Option<std::string::String>,
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
     /// <p>Constraints: A value between 900 and 28,800.</p>
@@ -75334,16 +76398,21 @@ pub struct VpnTunnelOptionsSpecification {
     /// </p>
     pub phase1_lifetime_seconds: std::option::Option<i32>,
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
-    /// <p>Constraints: A value between 900 and 3,600. The value must be less than the value for <code>Phase1LifetimeSeconds</code>.</p>
+    /// <p>Constraints: A value between 900 and 3,600. The value must be less than the value for
+    /// <code>Phase1LifetimeSeconds</code>.</p>
     /// <p>Default: <code>3600</code>
     /// </p>
     pub phase2_lifetime_seconds: std::option::Option<i32>,
-    /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the AWS side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.</p>
+    /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the
+    /// Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time
+    /// of the rekey is randomly selected based on the value for
+    /// <code>RekeyFuzzPercentage</code>.</p>
     /// <p>Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.</p>
     /// <p>Default: <code>540</code>
     /// </p>
     pub rekey_margin_time_seconds: std::option::Option<i32>,
-    /// <p>The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>) during which the rekey time is randomly selected.</p>
+    /// <p>The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>)
+    /// during which the rekey time is randomly selected.</p>
     /// <p>Constraints: A value between 0 and 100.</p>
     /// <p>Default: <code>100</code>
     /// </p>
@@ -75358,41 +76427,57 @@ pub struct VpnTunnelOptionsSpecification {
     /// <p>Default: <code>30</code>
     /// </p>
     pub dpd_timeout_seconds: std::option::Option<i32>,
-    /// <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify <code>clear</code> to end the IKE session.</p>
+    /// <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to restart
+    /// the IKE initiation. Specify <code>clear</code> to end the IKE session.</p>
     /// <p>Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
     /// </p>
     /// <p>Default: <code>clear</code>
     /// </p>
     pub dpd_timeout_action: std::option::Option<std::string::String>,
-    /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
-    /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+    /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 1
+    /// IKE negotiations.</p>
+    /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+    /// <code>AES256-GCM-16</code>
     /// </p>
     pub phase1_encryption_algorithms: std::option::Option<
         std::vec::Vec<crate::model::Phase1EncryptionAlgorithmsRequestListValue>,
     >,
-    /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
-    /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+    /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 2
+    /// IKE negotiations.</p>
+    /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+    /// <code>AES256-GCM-16</code>
     /// </p>
     pub phase2_encryption_algorithms: std::option::Option<
         std::vec::Vec<crate::model::Phase2EncryptionAlgorithmsRequestListValue>,
     >,
-    /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
-    /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
+    /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE
+    /// negotiations.</p>
+    /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> |
+    /// <code>SHA2-512</code>
     /// </p>
     pub phase1_integrity_algorithms:
         std::option::Option<std::vec::Vec<crate::model::Phase1IntegrityAlgorithmsRequestListValue>>,
-    /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
-    /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
+    /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE
+    /// negotiations.</p>
+    /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> |
+    /// <code>SHA2-512</code>
     /// </p>
     pub phase2_integrity_algorithms:
         std::option::Option<std::vec::Vec<crate::model::Phase2IntegrityAlgorithmsRequestListValue>>,
-    /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code>
+    /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for
+    /// phase 1 IKE negotiations.</p>
+    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> |
+    /// <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> |
+    /// <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code>
     /// </p>
     pub phase1_dh_group_numbers:
         std::option::Option<std::vec::Vec<crate::model::Phase1DhGroupNumbersRequestListValue>>,
-    /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code>
+    /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for
+    /// phase 2 IKE negotiations.</p>
+    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> |
+    /// <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> |
+    /// <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> |
+    /// <code>24</code>
     /// </p>
     pub phase2_dh_group_numbers:
         std::option::Option<std::vec::Vec<crate::model::Phase2DhGroupNumbersRequestListValue>>,
@@ -75400,7 +76485,10 @@ pub struct VpnTunnelOptionsSpecification {
     /// <p>Valid values: <code>ikev1</code> | <code>ikev2</code>
     /// </p>
     pub ike_versions: std::option::Option<std::vec::Vec<crate::model::IkeVersionsRequestListValue>>,
-    /// <p>The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE negotiation.</p>
+    /// <p>The action to take when the establishing the tunnel for the VPN connection. By
+    /// default, your customer gateway device must initiate the IKE negotiation and bring up the
+    /// tunnel. Specify <code>start</code> for Amazon Web Services to initiate the IKE
+    /// negotiation.</p>
     /// <p>Valid Values: <code>add</code> | <code>start</code>
     /// </p>
     /// <p>Default: <code>add</code>
@@ -75480,8 +76568,8 @@ pub mod vpn_tunnel_options_specification {
         pub(crate) startup_action: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique
-        /// across all VPN connections that use the same virtual private gateway. </p>
+        /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be
+        /// unique across all VPN connections that use the same virtual private gateway. </p>
         /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The
         /// following CIDR blocks are reserved and cannot be used:</p>
         /// <ul>
@@ -75532,7 +76620,8 @@ pub mod vpn_tunnel_options_specification {
             self.tunnel_inside_cidr = input;
             self
         }
-        /// <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same transit gateway.</p>
+        /// <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be
+        /// unique across all VPN connections that use the same transit gateway.</p>
         /// <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.</p>
         pub fn tunnel_inside_ipv6_cidr(mut self, input: impl Into<std::string::String>) -> Self {
             self.tunnel_inside_ipv6_cidr = Some(input.into());
@@ -75545,11 +76634,11 @@ pub mod vpn_tunnel_options_specification {
             self.tunnel_inside_ipv6_cidr = input;
             self
         }
-        /// <p>The pre-shared key (PSK) to establish initial authentication between the virtual private
-        /// gateway and customer gateway.</p>
-        /// <p>Constraints: Allowed characters are alphanumeric characters, periods (.), and underscores
-        /// (_). Must be between 8 and 64 characters in length and cannot start with zero
-        /// (0).</p>
+        /// <p>The pre-shared key (PSK) to establish initial authentication between the virtual
+        /// private gateway and customer gateway.</p>
+        /// <p>Constraints: Allowed characters are alphanumeric characters, periods (.), and
+        /// underscores (_). Must be between 8 and 64 characters in length and cannot start with
+        /// zero (0).</p>
         pub fn pre_shared_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_shared_key = Some(input.into());
             self
@@ -75574,7 +76663,8 @@ pub mod vpn_tunnel_options_specification {
             self
         }
         /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
-        /// <p>Constraints: A value between 900 and 3,600. The value must be less than the value for <code>Phase1LifetimeSeconds</code>.</p>
+        /// <p>Constraints: A value between 900 and 3,600. The value must be less than the value for
+        /// <code>Phase1LifetimeSeconds</code>.</p>
         /// <p>Default: <code>3600</code>
         /// </p>
         pub fn phase2_lifetime_seconds(mut self, input: i32) -> Self {
@@ -75585,7 +76675,10 @@ pub mod vpn_tunnel_options_specification {
             self.phase2_lifetime_seconds = input;
             self
         }
-        /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the AWS side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.</p>
+        /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the
+        /// Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time
+        /// of the rekey is randomly selected based on the value for
+        /// <code>RekeyFuzzPercentage</code>.</p>
         /// <p>Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.</p>
         /// <p>Default: <code>540</code>
         /// </p>
@@ -75597,7 +76690,8 @@ pub mod vpn_tunnel_options_specification {
             self.rekey_margin_time_seconds = input;
             self
         }
-        /// <p>The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>) during which the rekey time is randomly selected.</p>
+        /// <p>The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>)
+        /// during which the rekey time is randomly selected.</p>
         /// <p>Constraints: A value between 0 and 100.</p>
         /// <p>Default: <code>100</code>
         /// </p>
@@ -75633,7 +76727,8 @@ pub mod vpn_tunnel_options_specification {
             self.dpd_timeout_seconds = input;
             self
         }
-        /// <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify <code>clear</code> to end the IKE session.</p>
+        /// <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to restart
+        /// the IKE initiation. Specify <code>clear</code> to end the IKE session.</p>
         /// <p>Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
         /// </p>
         /// <p>Default: <code>clear</code>
@@ -75773,7 +76868,10 @@ pub mod vpn_tunnel_options_specification {
             self.ike_versions = input;
             self
         }
-        /// <p>The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE negotiation.</p>
+        /// <p>The action to take when the establishing the tunnel for the VPN connection. By
+        /// default, your customer gateway device must initiate the IKE negotiation and bring up the
+        /// tunnel. Specify <code>start</code> for Amazon Web Services to initiate the IKE
+        /// negotiation.</p>
         /// <p>Valid Values: <code>add</code> | <code>start</code>
         /// </p>
         /// <p>Default: <code>add</code>
@@ -80584,7 +81682,7 @@ impl NewDhcpConfiguration {
 }
 
 /// <p>Describes the authentication method to be used by a Client VPN endpoint. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication">Authentication</a>
-/// in the <i>AWS Client VPN Administrator Guide</i>.</p>
+/// in the <i>Client VPN Administrator Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientVpnAuthenticationRequest {
@@ -80775,7 +81873,7 @@ impl FederatedAuthenticationRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateAuthenticationRequest {
     /// <p>The ARN of the client certificate. The certificate must be signed by a certificate
-    /// authority (CA) and it must be provisioned in AWS Certificate Manager (ACM).</p>
+    /// authority (CA) and it must be provisioned in Certificate Manager (ACM).</p>
     pub client_root_certificate_chain_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateAuthenticationRequest {
@@ -80798,7 +81896,7 @@ pub mod certificate_authentication_request {
     }
     impl Builder {
         /// <p>The ARN of the client certificate. The certificate must be signed by a certificate
-        /// authority (CA) and it must be provisioned in AWS Certificate Manager (ACM).</p>
+        /// authority (CA) and it must be provisioned in Certificate Manager (ACM).</p>
         pub fn client_root_certificate_chain_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -80872,6 +81970,181 @@ impl DirectoryServiceAuthenticationRequest {
     /// Creates a new builder-style object to manufacture [`DirectoryServiceAuthenticationRequest`](crate::model::DirectoryServiceAuthenticationRequest)
     pub fn builder() -> crate::model::directory_service_authentication_request::Builder {
         crate::model::directory_service_authentication_request::Builder::default()
+    }
+}
+
+/// <p>Information about an instance type to use in a Capacity Reservation Fleet.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReservationFleetInstanceSpecification {
+    /// <p>The instance type for which the Capacity Reservation Fleet reserves capacity.</p>
+    pub instance_type: std::option::Option<crate::model::InstanceType>,
+    /// <p>The type of operating system for which the Capacity Reservation Fleet reserves capacity.</p>
+    pub instance_platform: std::option::Option<crate::model::CapacityReservationInstancePlatform>,
+    /// <p>The number of capacity units provided by the specified instance type. This value, together with the
+    /// total target capacity that you specify for the Fleet determine the number of instances for which the
+    /// Fleet reserves capacity. Both values are based on units that make sense for your workload. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a>
+    /// in the Amazon EC2 User Guide.</p>
+    pub weight: std::option::Option<f64>,
+    /// <p>The Availability Zone in which the Capacity Reservation Fleet reserves the capacity. A Capacity
+    /// Reservation Fleet can't span Availability Zones. All instance type specifications that you specify
+    /// for the Fleet must use the same Availability Zone.</p>
+    pub availability_zone: std::option::Option<std::string::String>,
+    /// <p>The ID of the Availability Zone in which the Capacity Reservation Fleet reserves the capacity. A
+    /// Capacity Reservation Fleet can't span Availability Zones. All instance type specifications that you
+    /// specify for the Fleet must use the same Availability Zone.</p>
+    pub availability_zone_id: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the Capacity Reservation Fleet supports EBS-optimized instances types. This
+    /// optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack
+    /// to provide optimal I/O performance. This optimization isn't available with all instance types. Additional
+    /// usage charges apply when using EBS-optimized instance types.</p>
+    pub ebs_optimized: std::option::Option<bool>,
+    /// <p>The priority to assign to the instance type. This value is used to determine which of the instance types
+    /// specified for the Fleet should be prioritized for use. A lower value indicates a high priority. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">Instance type priority</a>
+    /// in the Amazon EC2 User Guide.</p>
+    pub priority: std::option::Option<i32>,
+}
+impl std::fmt::Debug for ReservationFleetInstanceSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReservationFleetInstanceSpecification");
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("instance_platform", &self.instance_platform);
+        formatter.field("weight", &self.weight);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("availability_zone_id", &self.availability_zone_id);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("priority", &self.priority);
+        formatter.finish()
+    }
+}
+/// See [`ReservationFleetInstanceSpecification`](crate::model::ReservationFleetInstanceSpecification)
+pub mod reservation_fleet_instance_specification {
+    /// A builder for [`ReservationFleetInstanceSpecification`](crate::model::ReservationFleetInstanceSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_type: std::option::Option<crate::model::InstanceType>,
+        pub(crate) instance_platform:
+            std::option::Option<crate::model::CapacityReservationInstancePlatform>,
+        pub(crate) weight: std::option::Option<f64>,
+        pub(crate) availability_zone: std::option::Option<std::string::String>,
+        pub(crate) availability_zone_id: std::option::Option<std::string::String>,
+        pub(crate) ebs_optimized: std::option::Option<bool>,
+        pub(crate) priority: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The instance type for which the Capacity Reservation Fleet reserves capacity.</p>
+        pub fn instance_type(mut self, input: crate::model::InstanceType) -> Self {
+            self.instance_type = Some(input);
+            self
+        }
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<crate::model::InstanceType>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>The type of operating system for which the Capacity Reservation Fleet reserves capacity.</p>
+        pub fn instance_platform(
+            mut self,
+            input: crate::model::CapacityReservationInstancePlatform,
+        ) -> Self {
+            self.instance_platform = Some(input);
+            self
+        }
+        pub fn set_instance_platform(
+            mut self,
+            input: std::option::Option<crate::model::CapacityReservationInstancePlatform>,
+        ) -> Self {
+            self.instance_platform = input;
+            self
+        }
+        /// <p>The number of capacity units provided by the specified instance type. This value, together with the
+        /// total target capacity that you specify for the Fleet determine the number of instances for which the
+        /// Fleet reserves capacity. Both values are based on units that make sense for your workload. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a>
+        /// in the Amazon EC2 User Guide.</p>
+        pub fn weight(mut self, input: f64) -> Self {
+            self.weight = Some(input);
+            self
+        }
+        pub fn set_weight(mut self, input: std::option::Option<f64>) -> Self {
+            self.weight = input;
+            self
+        }
+        /// <p>The Availability Zone in which the Capacity Reservation Fleet reserves the capacity. A Capacity
+        /// Reservation Fleet can't span Availability Zones. All instance type specifications that you specify
+        /// for the Fleet must use the same Availability Zone.</p>
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
+            self
+        }
+        pub fn set_availability_zone(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.availability_zone = input;
+            self
+        }
+        /// <p>The ID of the Availability Zone in which the Capacity Reservation Fleet reserves the capacity. A
+        /// Capacity Reservation Fleet can't span Availability Zones. All instance type specifications that you
+        /// specify for the Fleet must use the same Availability Zone.</p>
+        pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone_id = Some(input.into());
+            self
+        }
+        pub fn set_availability_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.availability_zone_id = input;
+            self
+        }
+        /// <p>Indicates whether the Capacity Reservation Fleet supports EBS-optimized instances types. This
+        /// optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack
+        /// to provide optimal I/O performance. This optimization isn't available with all instance types. Additional
+        /// usage charges apply when using EBS-optimized instance types.</p>
+        pub fn ebs_optimized(mut self, input: bool) -> Self {
+            self.ebs_optimized = Some(input);
+            self
+        }
+        pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
+            self.ebs_optimized = input;
+            self
+        }
+        /// <p>The priority to assign to the instance type. This value is used to determine which of the instance types
+        /// specified for the Fleet should be prioritized for use. A lower value indicates a high priority. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">Instance type priority</a>
+        /// in the Amazon EC2 User Guide.</p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
+            self
+        }
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReservationFleetInstanceSpecification`](crate::model::ReservationFleetInstanceSpecification)
+        pub fn build(self) -> crate::model::ReservationFleetInstanceSpecification {
+            crate::model::ReservationFleetInstanceSpecification {
+                instance_type: self.instance_type,
+                instance_platform: self.instance_platform,
+                weight: self.weight,
+                availability_zone: self.availability_zone,
+                availability_zone_id: self.availability_zone_id,
+                ebs_optimized: self.ebs_optimized,
+                priority: self.priority,
+            }
+        }
+    }
+}
+impl ReservationFleetInstanceSpecification {
+    /// Creates a new builder-style object to manufacture [`ReservationFleetInstanceSpecification`](crate::model::ReservationFleetInstanceSpecification)
+    pub fn builder() -> crate::model::reservation_fleet_instance_specification::Builder {
+        crate::model::reservation_fleet_instance_specification::Builder::default()
     }
 }
 
@@ -81287,6 +82560,248 @@ impl CancelSpotFleetRequestsSuccessItem {
     /// Creates a new builder-style object to manufacture [`CancelSpotFleetRequestsSuccessItem`](crate::model::CancelSpotFleetRequestsSuccessItem)
     pub fn builder() -> crate::model::cancel_spot_fleet_requests_success_item::Builder {
         crate::model::cancel_spot_fleet_requests_success_item::Builder::default()
+    }
+}
+
+/// <p>Describes a Capacity Reservation Fleet that could not be cancelled.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FailedCapacityReservationFleetCancellationResult {
+    /// <p>The ID of the Capacity Reservation Fleet that could not be cancelled.</p>
+    pub capacity_reservation_fleet_id: std::option::Option<std::string::String>,
+    /// <p>Information about the Capacity Reservation Fleet cancellation error.</p>
+    pub cancel_capacity_reservation_fleet_error:
+        std::option::Option<crate::model::CancelCapacityReservationFleetError>,
+}
+impl std::fmt::Debug for FailedCapacityReservationFleetCancellationResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FailedCapacityReservationFleetCancellationResult");
+        formatter.field(
+            "capacity_reservation_fleet_id",
+            &self.capacity_reservation_fleet_id,
+        );
+        formatter.field(
+            "cancel_capacity_reservation_fleet_error",
+            &self.cancel_capacity_reservation_fleet_error,
+        );
+        formatter.finish()
+    }
+}
+/// See [`FailedCapacityReservationFleetCancellationResult`](crate::model::FailedCapacityReservationFleetCancellationResult)
+pub mod failed_capacity_reservation_fleet_cancellation_result {
+    /// A builder for [`FailedCapacityReservationFleetCancellationResult`](crate::model::FailedCapacityReservationFleetCancellationResult)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) capacity_reservation_fleet_id: std::option::Option<std::string::String>,
+        pub(crate) cancel_capacity_reservation_fleet_error:
+            std::option::Option<crate::model::CancelCapacityReservationFleetError>,
+    }
+    impl Builder {
+        /// <p>The ID of the Capacity Reservation Fleet that could not be cancelled.</p>
+        pub fn capacity_reservation_fleet_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_id = Some(input.into());
+            self
+        }
+        pub fn set_capacity_reservation_fleet_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_id = input;
+            self
+        }
+        /// <p>Information about the Capacity Reservation Fleet cancellation error.</p>
+        pub fn cancel_capacity_reservation_fleet_error(
+            mut self,
+            input: crate::model::CancelCapacityReservationFleetError,
+        ) -> Self {
+            self.cancel_capacity_reservation_fleet_error = Some(input);
+            self
+        }
+        pub fn set_cancel_capacity_reservation_fleet_error(
+            mut self,
+            input: std::option::Option<crate::model::CancelCapacityReservationFleetError>,
+        ) -> Self {
+            self.cancel_capacity_reservation_fleet_error = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FailedCapacityReservationFleetCancellationResult`](crate::model::FailedCapacityReservationFleetCancellationResult)
+        pub fn build(self) -> crate::model::FailedCapacityReservationFleetCancellationResult {
+            crate::model::FailedCapacityReservationFleetCancellationResult {
+                capacity_reservation_fleet_id: self.capacity_reservation_fleet_id,
+                cancel_capacity_reservation_fleet_error: self
+                    .cancel_capacity_reservation_fleet_error,
+            }
+        }
+    }
+}
+impl FailedCapacityReservationFleetCancellationResult {
+    /// Creates a new builder-style object to manufacture [`FailedCapacityReservationFleetCancellationResult`](crate::model::FailedCapacityReservationFleetCancellationResult)
+    pub fn builder() -> crate::model::failed_capacity_reservation_fleet_cancellation_result::Builder
+    {
+        crate::model::failed_capacity_reservation_fleet_cancellation_result::Builder::default()
+    }
+}
+
+/// <p>Describes a Capacity Reservation Fleet cancellation error.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelCapacityReservationFleetError {
+    /// <p>The error code.</p>
+    pub code: std::option::Option<std::string::String>,
+    /// <p>The error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CancelCapacityReservationFleetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelCapacityReservationFleetError");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`CancelCapacityReservationFleetError`](crate::model::CancelCapacityReservationFleetError)
+pub mod cancel_capacity_reservation_fleet_error {
+    /// A builder for [`CancelCapacityReservationFleetError`](crate::model::CancelCapacityReservationFleetError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error code.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>The error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelCapacityReservationFleetError`](crate::model::CancelCapacityReservationFleetError)
+        pub fn build(self) -> crate::model::CancelCapacityReservationFleetError {
+            crate::model::CancelCapacityReservationFleetError {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl CancelCapacityReservationFleetError {
+    /// Creates a new builder-style object to manufacture [`CancelCapacityReservationFleetError`](crate::model::CancelCapacityReservationFleetError)
+    pub fn builder() -> crate::model::cancel_capacity_reservation_fleet_error::Builder {
+        crate::model::cancel_capacity_reservation_fleet_error::Builder::default()
+    }
+}
+
+/// <p>Describes a Capacity Reservation Fleet that was successfully cancelled.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CapacityReservationFleetCancellationState {
+    /// <p>The current state of the Capacity Reservation Fleet.</p>
+    pub current_fleet_state: std::option::Option<crate::model::CapacityReservationFleetState>,
+    /// <p>The previous state of the Capacity Reservation Fleet.</p>
+    pub previous_fleet_state: std::option::Option<crate::model::CapacityReservationFleetState>,
+    /// <p>The ID of the Capacity Reservation Fleet that was successfully cancelled.</p>
+    pub capacity_reservation_fleet_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CapacityReservationFleetCancellationState {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CapacityReservationFleetCancellationState");
+        formatter.field("current_fleet_state", &self.current_fleet_state);
+        formatter.field("previous_fleet_state", &self.previous_fleet_state);
+        formatter.field(
+            "capacity_reservation_fleet_id",
+            &self.capacity_reservation_fleet_id,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CapacityReservationFleetCancellationState`](crate::model::CapacityReservationFleetCancellationState)
+pub mod capacity_reservation_fleet_cancellation_state {
+    /// A builder for [`CapacityReservationFleetCancellationState`](crate::model::CapacityReservationFleetCancellationState)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) current_fleet_state:
+            std::option::Option<crate::model::CapacityReservationFleetState>,
+        pub(crate) previous_fleet_state:
+            std::option::Option<crate::model::CapacityReservationFleetState>,
+        pub(crate) capacity_reservation_fleet_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The current state of the Capacity Reservation Fleet.</p>
+        pub fn current_fleet_state(
+            mut self,
+            input: crate::model::CapacityReservationFleetState,
+        ) -> Self {
+            self.current_fleet_state = Some(input);
+            self
+        }
+        pub fn set_current_fleet_state(
+            mut self,
+            input: std::option::Option<crate::model::CapacityReservationFleetState>,
+        ) -> Self {
+            self.current_fleet_state = input;
+            self
+        }
+        /// <p>The previous state of the Capacity Reservation Fleet.</p>
+        pub fn previous_fleet_state(
+            mut self,
+            input: crate::model::CapacityReservationFleetState,
+        ) -> Self {
+            self.previous_fleet_state = Some(input);
+            self
+        }
+        pub fn set_previous_fleet_state(
+            mut self,
+            input: std::option::Option<crate::model::CapacityReservationFleetState>,
+        ) -> Self {
+            self.previous_fleet_state = input;
+            self
+        }
+        /// <p>The ID of the Capacity Reservation Fleet that was successfully cancelled.</p>
+        pub fn capacity_reservation_fleet_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_id = Some(input.into());
+            self
+        }
+        pub fn set_capacity_reservation_fleet_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.capacity_reservation_fleet_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CapacityReservationFleetCancellationState`](crate::model::CapacityReservationFleetCancellationState)
+        pub fn build(self) -> crate::model::CapacityReservationFleetCancellationState {
+            crate::model::CapacityReservationFleetCancellationState {
+                current_fleet_state: self.current_fleet_state,
+                previous_fleet_state: self.previous_fleet_state,
+                capacity_reservation_fleet_id: self.capacity_reservation_fleet_id,
+            }
+        }
+    }
+}
+impl CapacityReservationFleetCancellationState {
+    /// Creates a new builder-style object to manufacture [`CapacityReservationFleetCancellationState`](crate::model::CapacityReservationFleetCancellationState)
+    pub fn builder() -> crate::model::capacity_reservation_fleet_cancellation_state::Builder {
+        crate::model::capacity_reservation_fleet_cancellation_state::Builder::default()
     }
 }
 

@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Describes all of the AWS IoT 1-Click device-related API operations for the service.
 //! Also provides sample requests, responses, and errors for the supported web services
 //! protocols.</p>

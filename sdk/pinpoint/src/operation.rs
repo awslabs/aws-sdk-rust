@@ -134,6 +134,34 @@ impl smithy_http::response::ParseStrictResponse for CreateImportJob {
     }
 }
 
+/// <p>Creates a new message template for messages using the in-app message channel.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateInAppTemplate {
+    _private: (),
+}
+impl CreateInAppTemplate {
+    /// Creates a new builder-style object to manufacture [`CreateInAppTemplateInput`](crate::input::CreateInAppTemplateInput)
+    pub fn builder() -> crate::input::create_in_app_template_input::Builder {
+        crate::input::create_in_app_template_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateInAppTemplate {
+    type Output = std::result::Result<
+        crate::output::CreateInAppTemplateOutput,
+        crate::error::CreateInAppTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_in_app_template_error(response)
+        } else {
+            crate::operation_deser::parse_create_in_app_template_response(response)
+        }
+    }
+}
+
 /// <p>Creates a journey for an application.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateJourney {
@@ -651,6 +679,34 @@ impl smithy_http::response::ParseStrictResponse for DeleteGcmChannel {
             crate::operation_deser::parse_delete_gcm_channel_error(response)
         } else {
             crate::operation_deser::parse_delete_gcm_channel_response(response)
+        }
+    }
+}
+
+/// <p>Deletes a message template for messages sent using the in-app message channel.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteInAppTemplate {
+    _private: (),
+}
+impl DeleteInAppTemplate {
+    /// Creates a new builder-style object to manufacture [`DeleteInAppTemplateInput`](crate::input::DeleteInAppTemplateInput)
+    pub fn builder() -> crate::input::delete_in_app_template_input::Builder {
+        crate::input::delete_in_app_template_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteInAppTemplate {
+    type Output = std::result::Result<
+        crate::output::DeleteInAppTemplateOutput,
+        crate::error::DeleteInAppTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 202 {
+            crate::operation_deser::parse_delete_in_app_template_error(response)
+        } else {
+            crate::operation_deser::parse_delete_in_app_template_response(response)
         }
     }
 }
@@ -1597,6 +1653,62 @@ impl smithy_http::response::ParseStrictResponse for GetImportJobs {
             crate::operation_deser::parse_get_import_jobs_error(response)
         } else {
             crate::operation_deser::parse_get_import_jobs_response(response)
+        }
+    }
+}
+
+/// <p>Retrieves the in-app messages targeted for the provided endpoint ID.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetInAppMessages {
+    _private: (),
+}
+impl GetInAppMessages {
+    /// Creates a new builder-style object to manufacture [`GetInAppMessagesInput`](crate::input::GetInAppMessagesInput)
+    pub fn builder() -> crate::input::get_in_app_messages_input::Builder {
+        crate::input::get_in_app_messages_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetInAppMessages {
+    type Output = std::result::Result<
+        crate::output::GetInAppMessagesOutput,
+        crate::error::GetInAppMessagesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_in_app_messages_error(response)
+        } else {
+            crate::operation_deser::parse_get_in_app_messages_response(response)
+        }
+    }
+}
+
+/// <p>Retrieves the content and settings of a message template for messages sent through the in-app channel.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetInAppTemplate {
+    _private: (),
+}
+impl GetInAppTemplate {
+    /// Creates a new builder-style object to manufacture [`GetInAppTemplateInput`](crate::input::GetInAppTemplateInput)
+    pub fn builder() -> crate::input::get_in_app_template_input::Builder {
+        crate::input::get_in_app_template_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetInAppTemplate {
+    type Output = std::result::Result<
+        crate::output::GetInAppTemplateOutput,
+        crate::error::GetInAppTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_in_app_template_error(response)
+        } else {
+            crate::operation_deser::parse_get_in_app_template_response(response)
         }
     }
 }
@@ -2772,6 +2884,34 @@ impl smithy_http::response::ParseStrictResponse for UpdateGcmChannel {
             crate::operation_deser::parse_update_gcm_channel_error(response)
         } else {
             crate::operation_deser::parse_update_gcm_channel_response(response)
+        }
+    }
+}
+
+/// <p>Updates an existing message template for messages sent through the in-app message channel.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateInAppTemplate {
+    _private: (),
+}
+impl UpdateInAppTemplate {
+    /// Creates a new builder-style object to manufacture [`UpdateInAppTemplateInput`](crate::input::UpdateInAppTemplateInput)
+    pub fn builder() -> crate::input::update_in_app_template_input::Builder {
+        crate::input::update_in_app_template_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UpdateInAppTemplate {
+    type Output = std::result::Result<
+        crate::output::UpdateInAppTemplateOutput,
+        crate::error::UpdateInAppTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 202 {
+            crate::operation_deser::parse_update_in_app_template_error(response)
+        } else {
+            crate::operation_deser::parse_update_in_app_template_response(response)
         }
     }
 }

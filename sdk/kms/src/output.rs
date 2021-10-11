@@ -371,17 +371,18 @@ pub struct ScheduleKeyDeletionOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The date and time after which KMS deletes the KMS key.</p>
-    /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear.
-    /// The deletion date for the primary key isn't known until its last replica key is
+    /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not
+    /// appear. The deletion date for the primary key isn't known until its last replica key is
     /// deleted.</p>
     pub deletion_date: std::option::Option<smithy_types::Instant>,
     /// <p>The current status of the KMS key.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>
-    /// in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
+    /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub key_state: std::option::Option<crate::model::KeyState>,
     /// <p>The waiting period before the KMS key is deleted. </p>
-    /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the
-    /// last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
+    /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when
+    /// the last of its replica keys is deleted. Otherwise, the waiting period begins
+    /// immediately.</p>
     pub pending_window_in_days: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ScheduleKeyDeletionOutput {
@@ -416,8 +417,8 @@ pub mod schedule_key_deletion_output {
             self
         }
         /// <p>The date and time after which KMS deletes the KMS key.</p>
-        /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear.
-        /// The deletion date for the primary key isn't known until its last replica key is
+        /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not
+        /// appear. The deletion date for the primary key isn't known until its last replica key is
         /// deleted.</p>
         pub fn deletion_date(mut self, input: smithy_types::Instant) -> Self {
             self.deletion_date = Some(input);
@@ -431,8 +432,8 @@ pub mod schedule_key_deletion_output {
             self
         }
         /// <p>The current status of the KMS key.</p>
-        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>
-        /// in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
+        /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn key_state(mut self, input: crate::model::KeyState) -> Self {
             self.key_state = Some(input);
             self
@@ -442,8 +443,9 @@ pub mod schedule_key_deletion_output {
             self
         }
         /// <p>The waiting period before the KMS key is deleted. </p>
-        /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the
-        /// last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
+        /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when
+        /// the last of its replica keys is deleted. Otherwise, the waiting period begins
+        /// immediately.</p>
         pub fn pending_window_in_days(mut self, input: i32) -> Self {
             self.pending_window_in_days = Some(input);
             self
@@ -531,9 +533,9 @@ impl RetireGrantOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicateKeyOutput {
-    /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-    /// ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other
-    /// replica keys.</p>
+    /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also
+    /// includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
     pub replica_key_metadata: std::option::Option<crate::model::KeyMetadata>,
     /// <p>The key policy of the new replica key. The value is a key policy document in JSON
     /// format.</p>
@@ -562,9 +564,9 @@ pub mod replicate_key_output {
         pub(crate) replica_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-        /// ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other
-        /// replica keys.</p>
+        /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also
+        /// includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
         pub fn replica_key_metadata(mut self, input: crate::model::KeyMetadata) -> Self {
             self.replica_key_metadata = Some(input);
             self
@@ -1332,15 +1334,19 @@ impl ImportKeyMaterialOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was
+    /// downloaded.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The exported public key. </p>
     /// <p>The value is a DER-encoded X.509 public key, also known as
     /// <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p></p>
     pub public_key: std::option::Option<smithy_types::Blob>,
-    /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>    
-    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+    /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code>
+    /// response.</p>
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
+    /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
+    /// avoid breaking changes, KMS will support both fields.</p>
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
     /// <p>The type of the of the public key that was downloaded.</p>
     pub key_spec: std::option::Option<crate::model::KeySpec>,
@@ -1392,7 +1398,8 @@ pub mod get_public_key_output {
             std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was
+        /// downloaded.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -1413,8 +1420,11 @@ pub mod get_public_key_output {
             self.public_key = input;
             self
         }
-        /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>    
-        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
+        /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code>
+        /// response.</p>
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
+        /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
+        /// avoid breaking changes, KMS will support both fields.</p>
         pub fn customer_master_key_spec(
             mut self,
             input: crate::model::CustomerMasterKeySpec,
@@ -1509,8 +1519,7 @@ impl GetPublicKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParametersForImportOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a>
-    /// request. This is the same KMS key specified in the <code>GetParametersForImport</code>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request. This is the same KMS key specified in the <code>GetParametersForImport</code>
     /// request.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The import token to send in a subsequent <a>ImportKeyMaterial</a>
@@ -1545,8 +1554,7 @@ pub mod get_parameters_for_import_output {
         pub(crate) parameters_valid_to: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a>
-        /// request. This is the same KMS key specified in the <code>GetParametersForImport</code>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request. This is the same KMS key specified in the <code>GetParametersForImport</code>
         /// request.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());

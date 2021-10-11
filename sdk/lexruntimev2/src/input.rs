@@ -80,140 +80,145 @@ impl DeleteSessionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::DeleteSessionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_1 = &_input.bot_id;
+            let input_1 =
+                input_1
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "bot_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_id = smithy_http::label::fmt_string(input_1, false);
+            if bot_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bot_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::DeleteSession::new(),
+            let input_2 = &_input.bot_alias_id;
+            let input_2 =
+                input_2
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "bot_alias_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_alias_id = smithy_http::label::fmt_string(input_2, false);
+            if bot_alias_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bot_alias_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_3 = &_input.locale_id;
+            let input_3 =
+                input_3
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "locale_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let locale_id = smithy_http::label::fmt_string(input_3, false);
+            if locale_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "locale_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_4 = &_input.session_id;
+            let input_4 =
+                input_4
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "session_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let session_id = smithy_http::label::fmt_string(input_4, false);
+            if session_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "session_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}",
+                botId = bot_id,
+                botAliasId = bot_alias_id,
+                localeId = locale_id,
+                sessionId = session_id
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "DeleteSession",
-                "lexruntimev2",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_1 = &self.bot_id;
-        let input_1 = input_1
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "bot_id",
-                details: "cannot be empty or unset",
-            })?;
-        let bot_id = smithy_http::label::fmt_string(input_1, false);
-        if bot_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "bot_id",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        let input_2 = &self.bot_alias_id;
-        let input_2 = input_2
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "bot_alias_id",
-                details: "cannot be empty or unset",
-            })?;
-        let bot_alias_id = smithy_http::label::fmt_string(input_2, false);
-        if bot_alias_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "bot_alias_id",
-                details: "cannot be empty or unset",
-            });
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteSessionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
         }
-        let input_3 = &self.locale_id;
-        let input_3 = input_3
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "locale_id",
-                details: "cannot be empty or unset",
-            })?;
-        let locale_id = smithy_http::label::fmt_string(input_3, false);
-        if locale_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "locale_id",
-                details: "cannot be empty or unset",
-            });
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteSessionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
         }
-        let input_4 = &self.session_id;
-        let input_4 = input_4
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "session_id",
-                details: "cannot be empty or unset",
-            })?;
-        let session_id = smithy_http::label::fmt_string(input_4, false);
-        if session_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "session_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        write!(
-            output,
-            "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}",
-            botId = bot_id,
-            botAliasId = bot_alias_id,
-            localeId = locale_id,
-            sessionId = session_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("DELETE").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::DeleteSession::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "DeleteSession",
+                    "lexruntimev2",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -314,140 +319,145 @@ impl GetSessionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = smithy_http::body::SdkBody::from("");
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::GetSessionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_5 = &_input.bot_id;
+            let input_5 =
+                input_5
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "bot_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_id = smithy_http::label::fmt_string(input_5, false);
+            if bot_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bot_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::GetSession::new(),
+            let input_6 = &_input.bot_alias_id;
+            let input_6 =
+                input_6
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "bot_alias_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_alias_id = smithy_http::label::fmt_string(input_6, false);
+            if bot_alias_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bot_alias_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_7 = &_input.locale_id;
+            let input_7 =
+                input_7
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "locale_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let locale_id = smithy_http::label::fmt_string(input_7, false);
+            if locale_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "locale_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_8 = &_input.session_id;
+            let input_8 =
+                input_8
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "session_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let session_id = smithy_http::label::fmt_string(input_8, false);
+            if session_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "session_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}",
+                botId = bot_id,
+                botAliasId = bot_alias_id,
+                localeId = locale_id,
+                sessionId = session_id
             )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetSession",
-                "lexruntimev2",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_5 = &self.bot_id;
-        let input_5 = input_5
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "bot_id",
-                details: "cannot be empty or unset",
-            })?;
-        let bot_id = smithy_http::label::fmt_string(input_5, false);
-        if bot_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "bot_id",
-                details: "cannot be empty or unset",
-            });
+            .expect("formatting should succeed");
+            Ok(())
         }
-        let input_6 = &self.bot_alias_id;
-        let input_6 = input_6
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "bot_alias_id",
-                details: "cannot be empty or unset",
-            })?;
-        let bot_alias_id = smithy_http::label::fmt_string(input_6, false);
-        if bot_alias_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "bot_alias_id",
-                details: "cannot be empty or unset",
-            });
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetSessionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
         }
-        let input_7 = &self.locale_id;
-        let input_7 = input_7
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "locale_id",
-                details: "cannot be empty or unset",
-            })?;
-        let locale_id = smithy_http::label::fmt_string(input_7, false);
-        if locale_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "locale_id",
-                details: "cannot be empty or unset",
-            });
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetSessionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
         }
-        let input_8 = &self.session_id;
-        let input_8 = input_8
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "session_id",
-                details: "cannot be empty or unset",
-            })?;
-        let session_id = smithy_http::label::fmt_string(input_8, false);
-        if session_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "session_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        write!(
-            output,
-            "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}",
-            botId = bot_id,
-            botAliasId = bot_alias_id,
-            localeId = locale_id,
-            sessionId = session_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("GET").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::GetSession::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "GetSession",
+                    "lexruntimev2",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -624,171 +634,170 @@ impl PutSessionInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body = crate::operation_ser::serialize_operation_crate_operation_put_session(&self)
-                .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
-                })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
+        fn uri_base(
+            _input: &crate::input::PutSessionInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_9 = &_input.bot_id;
+            let input_9 =
+                input_9
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "bot_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_id = smithy_http::label::fmt_string(input_9, false);
+            if bot_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bot_id",
+                    details: "cannot be empty or unset",
+                });
             }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::PutSession::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PutSession",
-                "lexruntimev2",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_9 = &self.bot_id;
-        let input_9 = input_9
-            .as_ref()
-            .ok_or(smithy_http::operation::BuildError::MissingField {
-                field: "bot_id",
-                details: "cannot be empty or unset",
-            })?;
-        let bot_id = smithy_http::label::fmt_string(input_9, false);
-        if bot_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "bot_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_10 = &self.bot_alias_id;
-        let input_10 =
-            input_10
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let input_10 = &_input.bot_alias_id;
+            let input_10 =
+                input_10
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "bot_alias_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_alias_id = smithy_http::label::fmt_string(input_10, false);
+            if bot_alias_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
                     details: "cannot be empty or unset",
-                })?;
-        let bot_alias_id = smithy_http::label::fmt_string(input_10, false);
-        if bot_alias_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "bot_alias_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_11 = &self.locale_id;
-        let input_11 =
-            input_11
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_11 = &_input.locale_id;
+            let input_11 =
+                input_11
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "locale_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let locale_id = smithy_http::label::fmt_string(input_11, false);
+            if locale_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
-                })?;
-        let locale_id = smithy_http::label::fmt_string(input_11, false);
-        if locale_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "locale_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_12 = &self.session_id;
-        let input_12 =
-            input_12
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_12 = &_input.session_id;
+            let input_12 =
+                input_12
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "session_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let session_id = smithy_http::label::fmt_string(input_12, false);
+            if session_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "session_id",
                     details: "cannot be empty or unset",
-                })?;
-        let session_id = smithy_http::label::fmt_string(input_12, false);
-        if session_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "session_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(
+                output,
+                "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}",
+                botId = bot_id,
+                botAliasId = bot_alias_id,
+                localeId = locale_id,
+                sessionId = session_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}",
-            botId = bot_id,
-            botAliasId = bot_alias_id,
-            localeId = locale_id,
-            sessionId = session_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_13) = &self.response_content_type {
-            let formatted_14 = AsRef::<str>::as_ref(inner_13);
-            if !formatted_14.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_14;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::PutSessionInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_13) = &_input.response_content_type {
+                let formatted_14 = AsRef::<str>::as_ref(inner_13);
+                if !formatted_14.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_14;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "response_content_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("ResponseContentType", header_value);
+                        })?;
+                    builder = builder.header("ResponseContentType", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutSessionInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutSessionInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_put_session(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::PutSession::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "PutSession",
+                    "lexruntimev2",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -938,148 +947,138 @@ impl RecognizeTextInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::serialize_operation_crate_operation_recognize_text(&self)
-                    .map_err(|err| {
-                        smithy_http::operation::BuildError::SerializationError(err.into())
+        fn uri_base(
+            _input: &crate::input::RecognizeTextInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_15 = &_input.bot_id;
+            let input_15 =
+                input_15
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "bot_id",
+                        details: "cannot be empty or unset",
                     })?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::RecognizeText::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "RecognizeText",
-                "lexruntimev2",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_15 = &self.bot_id;
-        let input_15 =
-            input_15
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+            let bot_id = smithy_http::label::fmt_string(input_15, false);
+            if bot_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
-                })?;
-        let bot_id = smithy_http::label::fmt_string(input_15, false);
-        if bot_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "bot_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_16 = &self.bot_alias_id;
-        let input_16 =
-            input_16
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_16 = &_input.bot_alias_id;
+            let input_16 =
+                input_16
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "bot_alias_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_alias_id = smithy_http::label::fmt_string(input_16, false);
+            if bot_alias_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
                     details: "cannot be empty or unset",
-                })?;
-        let bot_alias_id = smithy_http::label::fmt_string(input_16, false);
-        if bot_alias_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "bot_alias_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_17 = &self.locale_id;
-        let input_17 =
-            input_17
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_17 = &_input.locale_id;
+            let input_17 =
+                input_17
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "locale_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let locale_id = smithy_http::label::fmt_string(input_17, false);
+            if locale_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
-                })?;
-        let locale_id = smithy_http::label::fmt_string(input_17, false);
-        if locale_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "locale_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_18 = &self.session_id;
-        let input_18 =
-            input_18
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_18 = &_input.session_id;
+            let input_18 =
+                input_18
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "session_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let session_id = smithy_http::label::fmt_string(input_18, false);
+            if session_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "session_id",
                     details: "cannot be empty or unset",
-                })?;
-        let session_id = smithy_http::label::fmt_string(input_18, false);
-        if session_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "session_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/text", botId = bot_id, botAliasId = bot_alias_id, localeId = locale_id, sessionId = session_id).expect("formatting should succeed");
+            Ok(())
         }
-        write!(
-            output,
-            "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/text",
-            botId = bot_id,
-            botAliasId = bot_alias_id,
-            localeId = locale_id,
-            sessionId = session_id
-        )
-        .expect("formatting should succeed");
-        Ok(())
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/json",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::RecognizeTextInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::RecognizeTextInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_recognize_text(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::RecognizeText::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "RecognizeText",
+                    "lexruntimev2",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1339,220 +1338,215 @@ impl RecognizeUtteranceInput {
         >,
         smithy_http::operation::BuildError,
     > {
-        Ok({
-            let properties = smithy_http::property_bag::SharedPropertyBag::new();
-            let request = self.request_builder_base()?;
-            let body =
-                crate::operation_ser::ser_payload_recognize_utterance_input(self.input_stream)?;
-            let request = Self::assemble(request, body);
-            #[allow(unused_mut)]
-            let mut request = smithy_http::operation::Request::from_parts(
-                request.map(smithy_http::body::SdkBody::from),
-                properties,
-            );
-            request.properties_mut().insert(
-                aws_http::user_agent::AwsUserAgent::new_from_environment(
-                    crate::API_METADATA.clone(),
-                ),
-            );
-            #[allow(unused_mut)]
-            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            signing_config.signing_options.content_sha256_header = true;
-            request
-                .properties_mut()
-                .insert(aws_sig_auth::signer::SignableBody::UnsignedPayload);
-            request.properties_mut().insert(signing_config);
-            request
-                .properties_mut()
-                .insert(aws_types::SigningService::from_static(
-                    _config.signing_service(),
-                ));
-            aws_endpoint::set_endpoint_resolver(
-                &mut request.properties_mut(),
-                _config.endpoint_resolver.clone(),
-            );
-            if let Some(region) = &_config.region {
-                request.properties_mut().insert(region.clone());
-            }
-            aws_auth::set_provider(
-                &mut request.properties_mut(),
-                _config.credentials_provider.clone(),
-            );
-            let op = smithy_http::operation::Operation::new(
-                request,
-                crate::operation::RecognizeUtterance::new(),
-            )
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "RecognizeUtterance",
-                "lexruntimev2",
-            ));
-            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
-            op
-        })
-    }
-    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_19 = &self.bot_id;
-        let input_19 =
-            input_19
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+        fn uri_base(
+            _input: &crate::input::RecognizeUtteranceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_19 = &_input.bot_id;
+            let input_19 =
+                input_19
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "bot_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_id = smithy_http::label::fmt_string(input_19, false);
+            if bot_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
-                })?;
-        let bot_id = smithy_http::label::fmt_string(input_19, false);
-        if bot_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "bot_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_20 = &self.bot_alias_id;
-        let input_20 =
-            input_20
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_20 = &_input.bot_alias_id;
+            let input_20 =
+                input_20
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "bot_alias_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let bot_alias_id = smithy_http::label::fmt_string(input_20, false);
+            if bot_alias_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
                     details: "cannot be empty or unset",
-                })?;
-        let bot_alias_id = smithy_http::label::fmt_string(input_20, false);
-        if bot_alias_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "bot_alias_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_21 = &self.locale_id;
-        let input_21 =
-            input_21
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_21 = &_input.locale_id;
+            let input_21 =
+                input_21
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "locale_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let locale_id = smithy_http::label::fmt_string(input_21, false);
+            if locale_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
-                })?;
-        let locale_id = smithy_http::label::fmt_string(input_21, false);
-        if locale_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "locale_id",
-                details: "cannot be empty or unset",
-            });
-        }
-        let input_22 = &self.session_id;
-        let input_22 =
-            input_22
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
+                });
+            }
+            let input_22 = &_input.session_id;
+            let input_22 =
+                input_22
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "session_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let session_id = smithy_http::label::fmt_string(input_22, false);
+            if session_id.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
                     field: "session_id",
                     details: "cannot be empty or unset",
-                })?;
-        let session_id = smithy_http::label::fmt_string(input_22, false);
-        if session_id.is_empty() {
-            return Err(smithy_http::operation::BuildError::MissingField {
-                field: "session_id",
-                details: "cannot be empty or unset",
-            });
+                });
+            }
+            write!(output, "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/utterance", botId = bot_id, botAliasId = bot_alias_id, localeId = locale_id, sessionId = session_id).expect("formatting should succeed");
+            Ok(())
         }
-        write!(output, "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/utterance", botId = bot_id, botAliasId = bot_alias_id, localeId = locale_id, sessionId = session_id).expect("formatting should succeed");
-        Ok(())
-    }
-    fn add_headers(
-        &self,
-        mut builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_23) = &self.session_state {
-            let formatted_24 = AsRef::<str>::as_ref(inner_23);
-            if !formatted_24.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_24;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+        fn add_headers(
+            _input: &crate::input::RecognizeUtteranceInput,
+            mut builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            if let Some(inner_23) = &_input.session_state {
+                let formatted_24 = AsRef::<str>::as_ref(inner_23);
+                if !formatted_24.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_24;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "session_state",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &"*** Sensitive Data Redacted ***", err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-lex-session-state", header_value);
+                        })?;
+                    builder = builder.header("x-amz-lex-session-state", header_value);
+                }
             }
-        }
-        if let Some(inner_25) = &self.request_attributes {
-            let formatted_26 = AsRef::<str>::as_ref(inner_25);
-            if !formatted_26.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_26;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_25) = &_input.request_attributes {
+                let formatted_26 = AsRef::<str>::as_ref(inner_25);
+                if !formatted_26.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_26;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "request_attributes",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &"*** Sensitive Data Redacted ***", err
                             ),
-                        }
-                    })?;
-                builder = builder.header("x-amz-lex-request-attributes", header_value);
+                        })?;
+                    builder = builder.header("x-amz-lex-request-attributes", header_value);
+                }
             }
-        }
-        if let Some(inner_27) = &self.request_content_type {
-            let formatted_28 = AsRef::<str>::as_ref(inner_27);
-            if !formatted_28.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_28;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_27) = &_input.request_content_type {
+                let formatted_28 = AsRef::<str>::as_ref(inner_27);
+                if !formatted_28.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_28;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "request_content_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("Content-Type", header_value);
+                        })?;
+                    builder = builder.header("Content-Type", header_value);
+                }
             }
-        }
-        if let Some(inner_29) = &self.response_content_type {
-            let formatted_30 = AsRef::<str>::as_ref(inner_29);
-            if !formatted_30.is_empty() {
-                use std::convert::TryFrom;
-                let header_value = formatted_30;
-                let header_value =
-                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
-                        smithy_http::operation::BuildError::InvalidField {
+            if let Some(inner_29) = &_input.response_content_type {
+                let formatted_30 = AsRef::<str>::as_ref(inner_29);
+                if !formatted_30.is_empty() {
+                    use std::convert::TryFrom;
+                    let header_value = formatted_30;
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
                             field: "response_content_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
                                 &header_value, err
                             ),
-                        }
-                    })?;
-                builder = builder.header("Response-Content-Type", header_value);
+                        })?;
+                    builder = builder.header("Response-Content-Type", header_value);
+                }
             }
+            Ok(builder)
         }
-        Ok(builder)
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn update_http_builder(
-        &self,
-        builder: http::request::Builder,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut uri = String::new();
-        self.uri_base(&mut uri)?;
-        let builder = self.add_headers(builder)?;
-        Ok(builder.method("POST").uri(uri))
-    }
-    #[allow(clippy::unnecessary_wraps)]
-    fn request_builder_base(
-        &self,
-    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        builder = smithy_http::header::set_header_if_absent(
-            builder,
-            http::header::HeaderName::from_static("content-type"),
-            "application/octet-stream",
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::RecognizeUtteranceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            let builder = add_headers(input, builder)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::RecognizeUtteranceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/octet-stream",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::ser_payload_recognize_utterance_input(self.input_stream)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
         );
-        Ok(builder)
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        signing_config.signing_options.content_sha256_header = true;
+        request
+            .properties_mut()
+            .insert(aws_sig_auth::signer::SignableBody::UnsignedPayload);
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RecognizeUtterance::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "RecognizeUtterance",
+            "lexruntimev2",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,

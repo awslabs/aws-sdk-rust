@@ -114,6 +114,8 @@ pub struct UpdateSimulationApplicationOutput {
     pub last_updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The revision id of the simulation application.</p>
     pub revision_id: std::option::Option<std::string::String>,
+    /// <p>The object that contains the Docker image URI used for your simulation application.</p>
+    pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for UpdateSimulationApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -127,6 +129,7 @@ impl std::fmt::Debug for UpdateSimulationApplicationOutput {
         formatter.field("rendering_engine", &self.rendering_engine);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("revision_id", &self.revision_id);
+        formatter.field("environment", &self.environment);
         formatter.finish()
     }
 }
@@ -146,6 +149,7 @@ pub mod update_simulation_application_output {
         pub(crate) rendering_engine: std::option::Option<crate::model::RenderingEngine>,
         pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
+        pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the updated simulation application.</p>
@@ -249,6 +253,18 @@ pub mod update_simulation_application_output {
             self.revision_id = input;
             self
         }
+        /// <p>The object that contains the Docker image URI used for your simulation application.</p>
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.environment = Some(input);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput)
         pub fn build(self) -> crate::output::UpdateSimulationApplicationOutput {
             crate::output::UpdateSimulationApplicationOutput {
@@ -261,6 +277,7 @@ pub mod update_simulation_application_output {
                 rendering_engine: self.rendering_engine,
                 last_updated_at: self.last_updated_at,
                 revision_id: self.revision_id,
+                environment: self.environment,
             }
         }
     }
@@ -290,6 +307,8 @@ pub struct UpdateRobotApplicationOutput {
     pub last_updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The revision id of the robot application.</p>
     pub revision_id: std::option::Option<std::string::String>,
+    /// <p>The object that contains the Docker image URI for your robot application.</p>
+    pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for UpdateRobotApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -301,6 +320,7 @@ impl std::fmt::Debug for UpdateRobotApplicationOutput {
         formatter.field("robot_software_suite", &self.robot_software_suite);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("revision_id", &self.revision_id);
+        formatter.field("environment", &self.environment);
         formatter.finish()
     }
 }
@@ -317,6 +337,7 @@ pub mod update_robot_application_output {
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
         pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
+        pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the updated robot application.</p>
@@ -393,6 +414,18 @@ pub mod update_robot_application_output {
             self.revision_id = input;
             self
         }
+        /// <p>The object that contains the Docker image URI for your robot application.</p>
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.environment = Some(input);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput)
         pub fn build(self) -> crate::output::UpdateRobotApplicationOutput {
             crate::output::UpdateRobotApplicationOutput {
@@ -403,6 +436,7 @@ pub mod update_robot_application_output {
                 robot_software_suite: self.robot_software_suite,
                 last_updated_at: self.last_updated_at,
                 revision_id: self.revision_id,
+                environment: self.environment,
             }
         }
     }
@@ -4016,6 +4050,10 @@ pub struct DescribeSimulationApplicationOutput {
     /// <p>The list of all tags added to the specified simulation application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
+    pub environment: std::option::Option<crate::model::Environment>,
+    /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
+    pub image_digest: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeSimulationApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4030,6 +4068,8 @@ impl std::fmt::Debug for DescribeSimulationApplicationOutput {
         formatter.field("revision_id", &self.revision_id);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("tags", &self.tags);
+        formatter.field("environment", &self.environment);
+        formatter.field("image_digest", &self.image_digest);
         formatter.finish()
     }
 }
@@ -4052,6 +4092,8 @@ pub mod describe_simulation_application_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) environment: std::option::Option<crate::model::Environment>,
+        pub(crate) image_digest: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the robot simulation application.</p>
@@ -4174,6 +4216,27 @@ pub mod describe_simulation_application_output {
             self.tags = input;
             self
         }
+        /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.environment = Some(input);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
+        }
+        /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
+        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_digest = Some(input.into());
+            self
+        }
+        pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_digest = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput)
         pub fn build(self) -> crate::output::DescribeSimulationApplicationOutput {
             crate::output::DescribeSimulationApplicationOutput {
@@ -4187,6 +4250,8 @@ pub mod describe_simulation_application_output {
                 revision_id: self.revision_id,
                 last_updated_at: self.last_updated_at,
                 tags: self.tags,
+                environment: self.environment,
+                image_digest: self.image_digest,
             }
         }
     }
@@ -4219,6 +4284,10 @@ pub struct DescribeRobotApplicationOutput {
     /// <p>The list of all tags added to the specified robot application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The object that contains the Docker image URI used to create the robot application.</p>
+    pub environment: std::option::Option<crate::model::Environment>,
+    /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
+    pub image_digest: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeRobotApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4231,6 +4300,8 @@ impl std::fmt::Debug for DescribeRobotApplicationOutput {
         formatter.field("revision_id", &self.revision_id);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("tags", &self.tags);
+        formatter.field("environment", &self.environment);
+        formatter.field("image_digest", &self.image_digest);
         formatter.finish()
     }
 }
@@ -4250,6 +4321,8 @@ pub mod describe_robot_application_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) environment: std::option::Option<crate::model::Environment>,
+        pub(crate) image_digest: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
@@ -4345,6 +4418,27 @@ pub mod describe_robot_application_output {
             self.tags = input;
             self
         }
+        /// <p>The object that contains the Docker image URI used to create the robot application.</p>
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.environment = Some(input);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
+        }
+        /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
+        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_digest = Some(input.into());
+            self
+        }
+        pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_digest = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput)
         pub fn build(self) -> crate::output::DescribeRobotApplicationOutput {
             crate::output::DescribeRobotApplicationOutput {
@@ -4356,6 +4450,8 @@ pub mod describe_robot_application_output {
                 revision_id: self.revision_id,
                 last_updated_at: self.last_updated_at,
                 tags: self.tags,
+                environment: self.environment,
+                image_digest: self.image_digest,
             }
         }
     }
@@ -6377,6 +6473,8 @@ pub struct CreateSimulationApplicationVersionOutput {
     pub last_updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The revision ID of the simulation application.</p>
     pub revision_id: std::option::Option<std::string::String>,
+    /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
+    pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for CreateSimulationApplicationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6390,6 +6488,7 @@ impl std::fmt::Debug for CreateSimulationApplicationVersionOutput {
         formatter.field("rendering_engine", &self.rendering_engine);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("revision_id", &self.revision_id);
+        formatter.field("environment", &self.environment);
         formatter.finish()
     }
 }
@@ -6409,6 +6508,7 @@ pub mod create_simulation_application_version_output {
         pub(crate) rendering_engine: std::option::Option<crate::model::RenderingEngine>,
         pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
+        pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
@@ -6512,6 +6612,18 @@ pub mod create_simulation_application_version_output {
             self.revision_id = input;
             self
         }
+        /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.environment = Some(input);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput)
         pub fn build(self) -> crate::output::CreateSimulationApplicationVersionOutput {
             crate::output::CreateSimulationApplicationVersionOutput {
@@ -6524,6 +6636,7 @@ pub mod create_simulation_application_version_output {
                 rendering_engine: self.rendering_engine,
                 last_updated_at: self.last_updated_at,
                 revision_id: self.revision_id,
+                environment: self.environment,
             }
         }
     }
@@ -6560,6 +6673,8 @@ pub struct CreateSimulationApplicationOutput {
     /// <p>The list of all tags added to the simulation application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The object that contains the Docker image URI that you used to create your simulation application.</p>
+    pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for CreateSimulationApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6574,6 +6689,7 @@ impl std::fmt::Debug for CreateSimulationApplicationOutput {
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("revision_id", &self.revision_id);
         formatter.field("tags", &self.tags);
+        formatter.field("environment", &self.environment);
         formatter.finish()
     }
 }
@@ -6596,6 +6712,7 @@ pub mod create_simulation_application_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
@@ -6718,6 +6835,18 @@ pub mod create_simulation_application_output {
             self.tags = input;
             self
         }
+        /// <p>The object that contains the Docker image URI that you used to create your simulation application.</p>
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.environment = Some(input);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput)
         pub fn build(self) -> crate::output::CreateSimulationApplicationOutput {
             crate::output::CreateSimulationApplicationOutput {
@@ -6731,6 +6860,7 @@ pub mod create_simulation_application_output {
                 last_updated_at: self.last_updated_at,
                 revision_id: self.revision_id,
                 tags: self.tags,
+                environment: self.environment,
             }
         }
     }
@@ -6760,6 +6890,8 @@ pub struct CreateRobotApplicationVersionOutput {
     pub last_updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The revision id of the robot application.</p>
     pub revision_id: std::option::Option<std::string::String>,
+    /// <p>The object that contains the Docker image URI used to create your robot application.</p>
+    pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for CreateRobotApplicationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6771,6 +6903,7 @@ impl std::fmt::Debug for CreateRobotApplicationVersionOutput {
         formatter.field("robot_software_suite", &self.robot_software_suite);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("revision_id", &self.revision_id);
+        formatter.field("environment", &self.environment);
         formatter.finish()
     }
 }
@@ -6787,6 +6920,7 @@ pub mod create_robot_application_version_output {
         pub(crate) robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
         pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
         pub(crate) revision_id: std::option::Option<std::string::String>,
+        pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
@@ -6863,6 +6997,18 @@ pub mod create_robot_application_version_output {
             self.revision_id = input;
             self
         }
+        /// <p>The object that contains the Docker image URI used to create your robot application.</p>
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.environment = Some(input);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput)
         pub fn build(self) -> crate::output::CreateRobotApplicationVersionOutput {
             crate::output::CreateRobotApplicationVersionOutput {
@@ -6873,6 +7019,7 @@ pub mod create_robot_application_version_output {
                 robot_software_suite: self.robot_software_suite,
                 last_updated_at: self.last_updated_at,
                 revision_id: self.revision_id,
+                environment: self.environment,
             }
         }
     }
@@ -6905,6 +7052,8 @@ pub struct CreateRobotApplicationOutput {
     /// <p>The list of all tags added to the robot application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
+    pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for CreateRobotApplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6917,6 +7066,7 @@ impl std::fmt::Debug for CreateRobotApplicationOutput {
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("revision_id", &self.revision_id);
         formatter.field("tags", &self.tags);
+        formatter.field("environment", &self.environment);
         formatter.finish()
     }
 }
@@ -6936,6 +7086,7 @@ pub mod create_robot_application_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) environment: std::option::Option<crate::model::Environment>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
@@ -7031,6 +7182,18 @@ pub mod create_robot_application_output {
             self.tags = input;
             self
         }
+        /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.environment = Some(input);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<crate::model::Environment>,
+        ) -> Self {
+            self.environment = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput)
         pub fn build(self) -> crate::output::CreateRobotApplicationOutput {
             crate::output::CreateRobotApplicationOutput {
@@ -7042,6 +7205,7 @@ pub mod create_robot_application_output {
                 last_updated_at: self.last_updated_at,
                 revision_id: self.revision_id,
                 tags: self.tags,
+                environment: self.environment,
             }
         }
     }

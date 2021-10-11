@@ -1805,6 +1805,100 @@ pub fn parse_delete_mailbox_permissions_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_mobile_device_access_override_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteMobileDeviceAccessOverrideOutput,
+    crate::error::DeleteMobileDeviceAccessOverrideError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteMobileDeviceAccessOverrideError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteMobileDeviceAccessOverrideError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EntityNotFoundException" => crate::error::DeleteMobileDeviceAccessOverrideError { meta: generic, kind: crate::error::DeleteMobileDeviceAccessOverrideErrorKind::EntityNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMobileDeviceAccessOverrideError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::DeleteMobileDeviceAccessOverrideError { meta: generic, kind: crate::error::DeleteMobileDeviceAccessOverrideErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMobileDeviceAccessOverrideError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotFoundException" => crate::error::DeleteMobileDeviceAccessOverrideError { meta: generic, kind: crate::error::DeleteMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMobileDeviceAccessOverrideError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationStateException" => crate::error::DeleteMobileDeviceAccessOverrideError { meta: generic, kind: crate::error::DeleteMobileDeviceAccessOverrideErrorKind::OrganizationStateException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMobileDeviceAccessOverrideError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DeleteMobileDeviceAccessOverrideError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_mobile_device_access_override_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteMobileDeviceAccessOverrideOutput,
+    crate::error::DeleteMobileDeviceAccessOverrideError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::delete_mobile_device_access_override_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_mobile_device_access_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2554,6 +2648,92 @@ pub fn parse_describe_group_response(
             output,
         )
         .map_err(crate::error::DescribeGroupError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_inbound_dmarc_settings_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeInboundDmarcSettingsOutput,
+    crate::error::DescribeInboundDmarcSettingsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeInboundDmarcSettingsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeInboundDmarcSettingsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "OrganizationNotFoundException" => crate::error::DescribeInboundDmarcSettingsError {
+            meta: generic,
+            kind:
+                crate::error::DescribeInboundDmarcSettingsErrorKind::OrganizationNotFoundException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::organization_not_found_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_organization_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInboundDmarcSettingsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "OrganizationStateException" => crate::error::DescribeInboundDmarcSettingsError {
+            meta: generic,
+            kind: crate::error::DescribeInboundDmarcSettingsErrorKind::OrganizationStateException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::organization_state_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_organization_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeInboundDmarcSettingsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::DescribeInboundDmarcSettingsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_inbound_dmarc_settings_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeInboundDmarcSettingsOutput,
+    crate::error::DescribeInboundDmarcSettingsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_inbound_dmarc_settings_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_inbound_dmarc_settings(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeInboundDmarcSettingsError::unhandled)?;
         output.build()
     })
 }
@@ -3629,6 +3809,150 @@ pub fn parse_get_mobile_device_access_effect_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_mobile_device_access_override_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMobileDeviceAccessOverrideOutput,
+    crate::error::GetMobileDeviceAccessOverrideError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetMobileDeviceAccessOverrideError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetMobileDeviceAccessOverrideError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EntityNotFoundException" => crate::error::GetMobileDeviceAccessOverrideError {
+            meta: generic,
+            kind: crate::error::GetMobileDeviceAccessOverrideErrorKind::EntityNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMobileDeviceAccessOverrideError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::GetMobileDeviceAccessOverrideError {
+            meta: generic,
+            kind: crate::error::GetMobileDeviceAccessOverrideErrorKind::InvalidParameterException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMobileDeviceAccessOverrideError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "OrganizationNotFoundException" => crate::error::GetMobileDeviceAccessOverrideError {
+            meta: generic,
+            kind:
+                crate::error::GetMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::organization_not_found_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_organization_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMobileDeviceAccessOverrideError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "OrganizationStateException" => crate::error::GetMobileDeviceAccessOverrideError {
+            meta: generic,
+            kind: crate::error::GetMobileDeviceAccessOverrideErrorKind::OrganizationStateException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::organization_state_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_organization_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMobileDeviceAccessOverrideError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ResourceNotFoundException" => crate::error::GetMobileDeviceAccessOverrideError {
+            meta: generic,
+            kind: crate::error::GetMobileDeviceAccessOverrideErrorKind::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMobileDeviceAccessOverrideError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::GetMobileDeviceAccessOverrideError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_mobile_device_access_override_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMobileDeviceAccessOverrideOutput,
+    crate::error::GetMobileDeviceAccessOverrideError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_mobile_device_access_override_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_get_mobile_device_access_override(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetMobileDeviceAccessOverrideError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_access_control_rules_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -4253,6 +4577,104 @@ pub fn parse_list_mailbox_permissions_response(
             output,
         )
         .map_err(crate::error::ListMailboxPermissionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_mobile_device_access_overrides_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMobileDeviceAccessOverridesOutput,
+    crate::error::ListMobileDeviceAccessOverridesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListMobileDeviceAccessOverridesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListMobileDeviceAccessOverridesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EntityNotFoundException" => crate::error::ListMobileDeviceAccessOverridesError { meta: generic, kind: crate::error::ListMobileDeviceAccessOverridesErrorKind::EntityNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListMobileDeviceAccessOverridesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::ListMobileDeviceAccessOverridesError { meta: generic, kind: crate::error::ListMobileDeviceAccessOverridesErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListMobileDeviceAccessOverridesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotFoundException" => crate::error::ListMobileDeviceAccessOverridesError { meta: generic, kind: crate::error::ListMobileDeviceAccessOverridesErrorKind::OrganizationNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListMobileDeviceAccessOverridesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationStateException" => crate::error::ListMobileDeviceAccessOverridesError { meta: generic, kind: crate::error::ListMobileDeviceAccessOverridesErrorKind::OrganizationStateException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListMobileDeviceAccessOverridesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ListMobileDeviceAccessOverridesError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_mobile_device_access_overrides_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMobileDeviceAccessOverridesOutput,
+    crate::error::ListMobileDeviceAccessOverridesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_mobile_device_access_overrides_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_list_mobile_device_access_overrides(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::ListMobileDeviceAccessOverridesError::unhandled)?;
         output.build()
     })
 }
@@ -4886,6 +5308,80 @@ pub fn parse_put_access_control_rule_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_inbound_dmarc_settings_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutInboundDmarcSettingsOutput,
+    crate::error::PutInboundDmarcSettingsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutInboundDmarcSettingsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::PutInboundDmarcSettingsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "OrganizationNotFoundException" => crate::error::PutInboundDmarcSettingsError {
+            meta: generic,
+            kind: crate::error::PutInboundDmarcSettingsErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutInboundDmarcSettingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::PutInboundDmarcSettingsError {
+            meta: generic,
+            kind: crate::error::PutInboundDmarcSettingsErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutInboundDmarcSettingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::PutInboundDmarcSettingsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_inbound_dmarc_settings_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutInboundDmarcSettingsOutput,
+    crate::error::PutInboundDmarcSettingsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::put_inbound_dmarc_settings_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_mailbox_permissions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -5001,6 +5497,141 @@ pub fn parse_put_mailbox_permissions_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_mailbox_permissions_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_mobile_device_access_override_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutMobileDeviceAccessOverrideOutput,
+    crate::error::PutMobileDeviceAccessOverrideError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutMobileDeviceAccessOverrideError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::PutMobileDeviceAccessOverrideError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EntityNotFoundException" => crate::error::PutMobileDeviceAccessOverrideError {
+            meta: generic,
+            kind: crate::error::PutMobileDeviceAccessOverrideErrorKind::EntityNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutMobileDeviceAccessOverrideError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EntityStateException" => crate::error::PutMobileDeviceAccessOverrideError {
+            meta: generic,
+            kind: crate::error::PutMobileDeviceAccessOverrideErrorKind::EntityStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutMobileDeviceAccessOverrideError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::PutMobileDeviceAccessOverrideError {
+            meta: generic,
+            kind: crate::error::PutMobileDeviceAccessOverrideErrorKind::InvalidParameterException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutMobileDeviceAccessOverrideError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "OrganizationNotFoundException" => crate::error::PutMobileDeviceAccessOverrideError {
+            meta: generic,
+            kind:
+                crate::error::PutMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::organization_not_found_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_organization_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutMobileDeviceAccessOverrideError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "OrganizationStateException" => crate::error::PutMobileDeviceAccessOverrideError {
+            meta: generic,
+            kind: crate::error::PutMobileDeviceAccessOverrideErrorKind::OrganizationStateException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::organization_state_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_organization_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutMobileDeviceAccessOverrideError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::PutMobileDeviceAccessOverrideError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_mobile_device_access_override_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutMobileDeviceAccessOverrideOutput,
+    crate::error::PutMobileDeviceAccessOverrideError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::put_mobile_device_access_override_output::Builder::default();
         let _ = response;
         output.build()
     })

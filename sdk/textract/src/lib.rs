@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Amazon Textract detects and analyzes text in documents and converts it
 //! into machine-readable text. This is the API reference documentation for
 //! Amazon Textract.</p>

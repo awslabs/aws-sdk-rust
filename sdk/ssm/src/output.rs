@@ -500,6 +500,9 @@ pub struct UpdateMaintenanceWindowTaskOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated task description.</p>
     pub description: std::option::Option<std::string::String>,
+    /// <p>The specification for whether tasks should continue to run after the cutoff time specified
+    /// in the maintenance windows is reached. </p>
+    pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
 impl std::fmt::Debug for UpdateMaintenanceWindowTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -520,6 +523,7 @@ impl std::fmt::Debug for UpdateMaintenanceWindowTaskOutput {
         formatter.field("logging_info", &self.logging_info);
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("cutoff_behavior", &self.cutoff_behavior);
         formatter.finish()
     }
 }
@@ -548,6 +552,8 @@ pub mod update_maintenance_window_task_output {
         pub(crate) logging_info: std::option::Option<crate::model::LoggingInfo>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) cutoff_behavior:
+            std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
     }
     impl Builder {
         /// <p>The ID of the maintenance window that was updated.</p>
@@ -710,6 +716,22 @@ pub mod update_maintenance_window_task_output {
             self.description = input;
             self
         }
+        /// <p>The specification for whether tasks should continue to run after the cutoff time specified
+        /// in the maintenance windows is reached. </p>
+        pub fn cutoff_behavior(
+            mut self,
+            input: crate::model::MaintenanceWindowTaskCutoffBehavior,
+        ) -> Self {
+            self.cutoff_behavior = Some(input);
+            self
+        }
+        pub fn set_cutoff_behavior(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        ) -> Self {
+            self.cutoff_behavior = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateMaintenanceWindowTaskOutput`](crate::output::UpdateMaintenanceWindowTaskOutput)
         pub fn build(self) -> crate::output::UpdateMaintenanceWindowTaskOutput {
             crate::output::UpdateMaintenanceWindowTaskOutput {
@@ -726,6 +748,7 @@ pub mod update_maintenance_window_task_output {
                 logging_info: self.logging_info,
                 name: self.name,
                 description: self.description,
+                cutoff_behavior: self.cutoff_behavior,
             }
         }
     }
@@ -4533,6 +4556,12 @@ pub struct GetMaintenanceWindowTaskOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The retrieved task description.</p>
     pub description: std::option::Option<std::string::String>,
+    /// <p>The action to take on tasks when the maintenance window cutoff time is reached.
+    /// <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently
+    /// running task invocations continue, but no new task invocations are started. For Run Command
+    /// tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a
+    /// <code>CancelCommand</code> operation.</p>
+    pub cutoff_behavior: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
 }
 impl std::fmt::Debug for GetMaintenanceWindowTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4554,6 +4583,7 @@ impl std::fmt::Debug for GetMaintenanceWindowTaskOutput {
         formatter.field("logging_info", &self.logging_info);
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("cutoff_behavior", &self.cutoff_behavior);
         formatter.finish()
     }
 }
@@ -4583,6 +4613,8 @@ pub mod get_maintenance_window_task_output {
         pub(crate) logging_info: std::option::Option<crate::model::LoggingInfo>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) cutoff_behavior:
+            std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
     }
     impl Builder {
         /// <p>The retrieved maintenance window ID.</p>
@@ -4774,6 +4806,25 @@ pub mod get_maintenance_window_task_output {
             self.description = input;
             self
         }
+        /// <p>The action to take on tasks when the maintenance window cutoff time is reached.
+        /// <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently
+        /// running task invocations continue, but no new task invocations are started. For Run Command
+        /// tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a
+        /// <code>CancelCommand</code> operation.</p>
+        pub fn cutoff_behavior(
+            mut self,
+            input: crate::model::MaintenanceWindowTaskCutoffBehavior,
+        ) -> Self {
+            self.cutoff_behavior = Some(input);
+            self
+        }
+        pub fn set_cutoff_behavior(
+            mut self,
+            input: std::option::Option<crate::model::MaintenanceWindowTaskCutoffBehavior>,
+        ) -> Self {
+            self.cutoff_behavior = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMaintenanceWindowTaskOutput`](crate::output::GetMaintenanceWindowTaskOutput)
         pub fn build(self) -> crate::output::GetMaintenanceWindowTaskOutput {
             crate::output::GetMaintenanceWindowTaskOutput {
@@ -4791,6 +4842,7 @@ pub mod get_maintenance_window_task_output {
                 logging_info: self.logging_info,
                 name: self.name,
                 description: self.description,
+                cutoff_behavior: self.cutoff_behavior,
             }
         }
     }

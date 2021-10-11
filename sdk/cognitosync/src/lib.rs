@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon Cognito Sync</fullname>
 //! <p>Amazon Cognito Sync provides an AWS service and client library that enable cross-device syncing of
 //! application-related user data. High-level client libraries are available for both iOS and

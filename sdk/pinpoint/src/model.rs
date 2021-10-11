@@ -4102,6 +4102,8 @@ pub struct JourneyResponse {
     pub wait_for_quiet_time: bool,
     /// <p>Specifies whether a journey should be refreshed on segment update.</p>
     pub refresh_on_segment_update: bool,
+    /// <p>The channel-specific configurations for the journey.</p>
+    pub journey_channel_settings: std::option::Option<crate::model::JourneyChannelSettings>,
 }
 impl std::fmt::Debug for JourneyResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4123,6 +4125,7 @@ impl std::fmt::Debug for JourneyResponse {
         formatter.field("tags", &self.tags);
         formatter.field("wait_for_quiet_time", &self.wait_for_quiet_time);
         formatter.field("refresh_on_segment_update", &self.refresh_on_segment_update);
+        formatter.field("journey_channel_settings", &self.journey_channel_settings);
         formatter.finish()
     }
 }
@@ -4153,6 +4156,8 @@ pub mod journey_response {
         >,
         pub(crate) wait_for_quiet_time: std::option::Option<bool>,
         pub(crate) refresh_on_segment_update: std::option::Option<bool>,
+        pub(crate) journey_channel_settings:
+            std::option::Option<crate::model::JourneyChannelSettings>,
     }
     impl Builder {
         pub fn activities(
@@ -4355,6 +4360,21 @@ pub mod journey_response {
             self.refresh_on_segment_update = input;
             self
         }
+        /// <p>The channel-specific configurations for the journey.</p>
+        pub fn journey_channel_settings(
+            mut self,
+            input: crate::model::JourneyChannelSettings,
+        ) -> Self {
+            self.journey_channel_settings = Some(input);
+            self
+        }
+        pub fn set_journey_channel_settings(
+            mut self,
+            input: std::option::Option<crate::model::JourneyChannelSettings>,
+        ) -> Self {
+            self.journey_channel_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JourneyResponse`](crate::model::JourneyResponse)
         pub fn build(self) -> crate::model::JourneyResponse {
             crate::model::JourneyResponse {
@@ -4375,6 +4395,7 @@ pub mod journey_response {
                 tags: self.tags,
                 wait_for_quiet_time: self.wait_for_quiet_time.unwrap_or_default(),
                 refresh_on_segment_update: self.refresh_on_segment_update.unwrap_or_default(),
+                journey_channel_settings: self.journey_channel_settings,
             }
         }
     }
@@ -4383,6 +4404,79 @@ impl JourneyResponse {
     /// Creates a new builder-style object to manufacture [`JourneyResponse`](crate::model::JourneyResponse)
     pub fn builder() -> crate::model::journey_response::Builder {
         crate::model::journey_response::Builder::default()
+    }
+}
+
+/// <p>The channel-specific configurations for the journey.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JourneyChannelSettings {
+    /// <p>Amazon Resource Name (ARN) of the Connect Campaign.</p>
+    pub connect_campaign_arn: std::option::Option<std::string::String>,
+    /// <p>IAM role ARN to be assumed when invoking Connect campaign execution APIs for dialing.</p>
+    pub connect_campaign_execution_role_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for JourneyChannelSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JourneyChannelSettings");
+        formatter.field("connect_campaign_arn", &self.connect_campaign_arn);
+        formatter.field(
+            "connect_campaign_execution_role_arn",
+            &self.connect_campaign_execution_role_arn,
+        );
+        formatter.finish()
+    }
+}
+/// See [`JourneyChannelSettings`](crate::model::JourneyChannelSettings)
+pub mod journey_channel_settings {
+    /// A builder for [`JourneyChannelSettings`](crate::model::JourneyChannelSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connect_campaign_arn: std::option::Option<std::string::String>,
+        pub(crate) connect_campaign_execution_role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Amazon Resource Name (ARN) of the Connect Campaign.</p>
+        pub fn connect_campaign_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connect_campaign_arn = Some(input.into());
+            self
+        }
+        pub fn set_connect_campaign_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connect_campaign_arn = input;
+            self
+        }
+        /// <p>IAM role ARN to be assumed when invoking Connect campaign execution APIs for dialing.</p>
+        pub fn connect_campaign_execution_role_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.connect_campaign_execution_role_arn = Some(input.into());
+            self
+        }
+        pub fn set_connect_campaign_execution_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connect_campaign_execution_role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JourneyChannelSettings`](crate::model::JourneyChannelSettings)
+        pub fn build(self) -> crate::model::JourneyChannelSettings {
+            crate::model::JourneyChannelSettings {
+                connect_campaign_arn: self.connect_campaign_arn,
+                connect_campaign_execution_role_arn: self.connect_campaign_execution_role_arn,
+            }
+        }
+    }
+}
+impl JourneyChannelSettings {
+    /// Creates a new builder-style object to manufacture [`JourneyChannelSettings`](crate::model::JourneyChannelSettings)
+    pub fn builder() -> crate::model::journey_channel_settings::Builder {
+        crate::model::journey_channel_settings::Builder::default()
     }
 }
 
@@ -5130,6 +5224,8 @@ pub struct Activity {
     pub sms: std::option::Option<crate::model::SmsMessageActivity>,
     /// <p>The settings for a wait activity. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
     pub wait: std::option::Option<crate::model::WaitActivity>,
+    /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
+    pub contact_center: std::option::Option<crate::model::ContactCenterActivity>,
 }
 impl std::fmt::Debug for Activity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5144,6 +5240,7 @@ impl std::fmt::Debug for Activity {
         formatter.field("random_split", &self.random_split);
         formatter.field("sms", &self.sms);
         formatter.field("wait", &self.wait);
+        formatter.field("contact_center", &self.contact_center);
         formatter.finish()
     }
 }
@@ -5164,6 +5261,7 @@ pub mod activity {
         pub(crate) random_split: std::option::Option<crate::model::RandomSplitActivity>,
         pub(crate) sms: std::option::Option<crate::model::SmsMessageActivity>,
         pub(crate) wait: std::option::Option<crate::model::WaitActivity>,
+        pub(crate) contact_center: std::option::Option<crate::model::ContactCenterActivity>,
     }
     impl Builder {
         /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
@@ -5283,6 +5381,18 @@ pub mod activity {
             self.wait = input;
             self
         }
+        /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
+        pub fn contact_center(mut self, input: crate::model::ContactCenterActivity) -> Self {
+            self.contact_center = Some(input);
+            self
+        }
+        pub fn set_contact_center(
+            mut self,
+            input: std::option::Option<crate::model::ContactCenterActivity>,
+        ) -> Self {
+            self.contact_center = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Activity`](crate::model::Activity)
         pub fn build(self) -> crate::model::Activity {
             crate::model::Activity {
@@ -5296,6 +5406,7 @@ pub mod activity {
                 random_split: self.random_split,
                 sms: self.sms,
                 wait: self.wait,
+                contact_center: self.contact_center,
             }
         }
     }
@@ -5304,6 +5415,55 @@ impl Activity {
     /// Creates a new builder-style object to manufacture [`Activity`](crate::model::Activity)
     pub fn builder() -> crate::model::activity::Builder {
         crate::model::activity::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ContactCenterActivity {
+    /// <p>The unique identifier for the next activity to perform after the this activity.</p>
+    pub next_activity: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ContactCenterActivity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ContactCenterActivity");
+        formatter.field("next_activity", &self.next_activity);
+        formatter.finish()
+    }
+}
+/// See [`ContactCenterActivity`](crate::model::ContactCenterActivity)
+pub mod contact_center_activity {
+    /// A builder for [`ContactCenterActivity`](crate::model::ContactCenterActivity)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_activity: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the next activity to perform after the this activity.</p>
+        pub fn next_activity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_activity = Some(input.into());
+            self
+        }
+        pub fn set_next_activity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.next_activity = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContactCenterActivity`](crate::model::ContactCenterActivity)
+        pub fn build(self) -> crate::model::ContactCenterActivity {
+            crate::model::ContactCenterActivity {
+                next_activity: self.next_activity,
+            }
+        }
+    }
+}
+impl ContactCenterActivity {
+    /// Creates a new builder-style object to manufacture [`ContactCenterActivity`](crate::model::ContactCenterActivity)
+    pub fn builder() -> crate::model::contact_center_activity::Builder {
+        crate::model::contact_center_activity::Builder::default()
     }
 }
 
@@ -6889,6 +7049,7 @@ pub enum EndpointTypesElement {
     Custom,
     Email,
     Gcm,
+    InApp,
     Push,
     Sms,
     Voice,
@@ -6907,6 +7068,7 @@ impl std::convert::From<&str> for EndpointTypesElement {
             "CUSTOM" => EndpointTypesElement::Custom,
             "EMAIL" => EndpointTypesElement::Email,
             "GCM" => EndpointTypesElement::Gcm,
+            "IN_APP" => EndpointTypesElement::InApp,
             "PUSH" => EndpointTypesElement::Push,
             "SMS" => EndpointTypesElement::Sms,
             "VOICE" => EndpointTypesElement::Voice,
@@ -6933,6 +7095,7 @@ impl EndpointTypesElement {
             EndpointTypesElement::Custom => "CUSTOM",
             EndpointTypesElement::Email => "EMAIL",
             EndpointTypesElement::Gcm => "GCM",
+            EndpointTypesElement::InApp => "IN_APP",
             EndpointTypesElement::Push => "PUSH",
             EndpointTypesElement::Sms => "SMS",
             EndpointTypesElement::Voice => "VOICE",
@@ -6950,6 +7113,7 @@ impl EndpointTypesElement {
             "CUSTOM",
             "EMAIL",
             "GCM",
+            "IN_APP",
             "PUSH",
             "SMS",
             "VOICE",
@@ -7270,6 +7434,893 @@ impl WriteJourneyRequest {
     /// Creates a new builder-style object to manufacture [`WriteJourneyRequest`](crate::model::WriteJourneyRequest)
     pub fn builder() -> crate::model::write_journey_request::Builder {
         crate::model::write_journey_request::Builder::default()
+    }
+}
+
+/// <p>InApp Template Request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InAppTemplateRequest {
+    /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
+    pub content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+    /// <p>Custom config to be sent to client.</p>
+    pub custom_config:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The layout of the message.</p>
+    pub layout: std::option::Option<crate::model::Layout>,
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The description of the template.</p>
+    pub template_description: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InAppTemplateRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InAppTemplateRequest");
+        formatter.field("content", &self.content);
+        formatter.field("custom_config", &self.custom_config);
+        formatter.field("layout", &self.layout);
+        formatter.field("tags", &self.tags);
+        formatter.field("template_description", &self.template_description);
+        formatter.finish()
+    }
+}
+/// See [`InAppTemplateRequest`](crate::model::InAppTemplateRequest)
+pub mod in_app_template_request {
+    /// A builder for [`InAppTemplateRequest`](crate::model::InAppTemplateRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+        pub(crate) custom_config: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) layout: std::option::Option<crate::model::Layout>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) template_description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
+            let mut v = self.content.unwrap_or_default();
+            v.push(input.into());
+            self.content = Some(v);
+            self
+        }
+        pub fn set_content(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+        ) -> Self {
+            self.content = input;
+            self
+        }
+        pub fn custom_config(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.custom_config.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.custom_config = Some(hash_map);
+            self
+        }
+        pub fn set_custom_config(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.custom_config = input;
+            self
+        }
+        /// <p>The layout of the message.</p>
+        pub fn layout(mut self, input: crate::model::Layout) -> Self {
+            self.layout = Some(input);
+            self
+        }
+        pub fn set_layout(mut self, input: std::option::Option<crate::model::Layout>) -> Self {
+            self.layout = input;
+            self
+        }
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The description of the template.</p>
+        pub fn template_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_description = Some(input.into());
+            self
+        }
+        pub fn set_template_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InAppTemplateRequest`](crate::model::InAppTemplateRequest)
+        pub fn build(self) -> crate::model::InAppTemplateRequest {
+            crate::model::InAppTemplateRequest {
+                content: self.content,
+                custom_config: self.custom_config,
+                layout: self.layout,
+                tags: self.tags,
+                template_description: self.template_description,
+            }
+        }
+    }
+}
+impl InAppTemplateRequest {
+    /// Creates a new builder-style object to manufacture [`InAppTemplateRequest`](crate::model::InAppTemplateRequest)
+    pub fn builder() -> crate::model::in_app_template_request::Builder {
+        crate::model::in_app_template_request::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Layout {
+    BottomBanner,
+    Carousel,
+    MiddleBanner,
+    MobileFeed,
+    Overlays,
+    TopBanner,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Layout {
+    fn from(s: &str) -> Self {
+        match s {
+            "BOTTOM_BANNER" => Layout::BottomBanner,
+            "CAROUSEL" => Layout::Carousel,
+            "MIDDLE_BANNER" => Layout::MiddleBanner,
+            "MOBILE_FEED" => Layout::MobileFeed,
+            "OVERLAYS" => Layout::Overlays,
+            "TOP_BANNER" => Layout::TopBanner,
+            other => Layout::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Layout {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Layout::from(s))
+    }
+}
+impl Layout {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Layout::BottomBanner => "BOTTOM_BANNER",
+            Layout::Carousel => "CAROUSEL",
+            Layout::MiddleBanner => "MIDDLE_BANNER",
+            Layout::MobileFeed => "MOBILE_FEED",
+            Layout::Overlays => "OVERLAYS",
+            Layout::TopBanner => "TOP_BANNER",
+            Layout::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BOTTOM_BANNER",
+            "CAROUSEL",
+            "MIDDLE_BANNER",
+            "MOBILE_FEED",
+            "OVERLAYS",
+            "TOP_BANNER",
+        ]
+    }
+}
+impl AsRef<str> for Layout {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The configuration for the message content.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InAppMessageContent {
+    /// <p>The background color for the message.</p>
+    pub background_color: std::option::Option<std::string::String>,
+    /// <p>The configuration for the message body.</p>
+    pub body_config: std::option::Option<crate::model::InAppMessageBodyConfig>,
+    /// <p>The configuration for the message header.</p>
+    pub header_config: std::option::Option<crate::model::InAppMessageHeaderConfig>,
+    /// <p>The image url for the background of message.</p>
+    pub image_url: std::option::Option<std::string::String>,
+    /// <p>The first button inside the message.</p>
+    pub primary_btn: std::option::Option<crate::model::InAppMessageButton>,
+    /// <p>The second button inside message.</p>
+    pub secondary_btn: std::option::Option<crate::model::InAppMessageButton>,
+}
+impl std::fmt::Debug for InAppMessageContent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InAppMessageContent");
+        formatter.field("background_color", &self.background_color);
+        formatter.field("body_config", &self.body_config);
+        formatter.field("header_config", &self.header_config);
+        formatter.field("image_url", &self.image_url);
+        formatter.field("primary_btn", &self.primary_btn);
+        formatter.field("secondary_btn", &self.secondary_btn);
+        formatter.finish()
+    }
+}
+/// See [`InAppMessageContent`](crate::model::InAppMessageContent)
+pub mod in_app_message_content {
+    /// A builder for [`InAppMessageContent`](crate::model::InAppMessageContent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) background_color: std::option::Option<std::string::String>,
+        pub(crate) body_config: std::option::Option<crate::model::InAppMessageBodyConfig>,
+        pub(crate) header_config: std::option::Option<crate::model::InAppMessageHeaderConfig>,
+        pub(crate) image_url: std::option::Option<std::string::String>,
+        pub(crate) primary_btn: std::option::Option<crate::model::InAppMessageButton>,
+        pub(crate) secondary_btn: std::option::Option<crate::model::InAppMessageButton>,
+    }
+    impl Builder {
+        /// <p>The background color for the message.</p>
+        pub fn background_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.background_color = Some(input.into());
+            self
+        }
+        pub fn set_background_color(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.background_color = input;
+            self
+        }
+        /// <p>The configuration for the message body.</p>
+        pub fn body_config(mut self, input: crate::model::InAppMessageBodyConfig) -> Self {
+            self.body_config = Some(input);
+            self
+        }
+        pub fn set_body_config(
+            mut self,
+            input: std::option::Option<crate::model::InAppMessageBodyConfig>,
+        ) -> Self {
+            self.body_config = input;
+            self
+        }
+        /// <p>The configuration for the message header.</p>
+        pub fn header_config(mut self, input: crate::model::InAppMessageHeaderConfig) -> Self {
+            self.header_config = Some(input);
+            self
+        }
+        pub fn set_header_config(
+            mut self,
+            input: std::option::Option<crate::model::InAppMessageHeaderConfig>,
+        ) -> Self {
+            self.header_config = input;
+            self
+        }
+        /// <p>The image url for the background of message.</p>
+        pub fn image_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_url = Some(input.into());
+            self
+        }
+        pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_url = input;
+            self
+        }
+        /// <p>The first button inside the message.</p>
+        pub fn primary_btn(mut self, input: crate::model::InAppMessageButton) -> Self {
+            self.primary_btn = Some(input);
+            self
+        }
+        pub fn set_primary_btn(
+            mut self,
+            input: std::option::Option<crate::model::InAppMessageButton>,
+        ) -> Self {
+            self.primary_btn = input;
+            self
+        }
+        /// <p>The second button inside message.</p>
+        pub fn secondary_btn(mut self, input: crate::model::InAppMessageButton) -> Self {
+            self.secondary_btn = Some(input);
+            self
+        }
+        pub fn set_secondary_btn(
+            mut self,
+            input: std::option::Option<crate::model::InAppMessageButton>,
+        ) -> Self {
+            self.secondary_btn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InAppMessageContent`](crate::model::InAppMessageContent)
+        pub fn build(self) -> crate::model::InAppMessageContent {
+            crate::model::InAppMessageContent {
+                background_color: self.background_color,
+                body_config: self.body_config,
+                header_config: self.header_config,
+                image_url: self.image_url,
+                primary_btn: self.primary_btn,
+                secondary_btn: self.secondary_btn,
+            }
+        }
+    }
+}
+impl InAppMessageContent {
+    /// Creates a new builder-style object to manufacture [`InAppMessageContent`](crate::model::InAppMessageContent)
+    pub fn builder() -> crate::model::in_app_message_content::Builder {
+        crate::model::in_app_message_content::Builder::default()
+    }
+}
+
+/// <p>Button Config for an in-app message.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InAppMessageButton {
+    /// <p>Default button content.</p>
+    pub android: std::option::Option<crate::model::OverrideButtonConfiguration>,
+    /// <p>Default button content.</p>
+    pub default_config: std::option::Option<crate::model::DefaultButtonConfiguration>,
+    /// <p>Default button content.</p>
+    pub ios: std::option::Option<crate::model::OverrideButtonConfiguration>,
+    /// <p>Default button content.</p>
+    pub web: std::option::Option<crate::model::OverrideButtonConfiguration>,
+}
+impl std::fmt::Debug for InAppMessageButton {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InAppMessageButton");
+        formatter.field("android", &self.android);
+        formatter.field("default_config", &self.default_config);
+        formatter.field("ios", &self.ios);
+        formatter.field("web", &self.web);
+        formatter.finish()
+    }
+}
+/// See [`InAppMessageButton`](crate::model::InAppMessageButton)
+pub mod in_app_message_button {
+    /// A builder for [`InAppMessageButton`](crate::model::InAppMessageButton)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) android: std::option::Option<crate::model::OverrideButtonConfiguration>,
+        pub(crate) default_config: std::option::Option<crate::model::DefaultButtonConfiguration>,
+        pub(crate) ios: std::option::Option<crate::model::OverrideButtonConfiguration>,
+        pub(crate) web: std::option::Option<crate::model::OverrideButtonConfiguration>,
+    }
+    impl Builder {
+        /// <p>Default button content.</p>
+        pub fn android(mut self, input: crate::model::OverrideButtonConfiguration) -> Self {
+            self.android = Some(input);
+            self
+        }
+        pub fn set_android(
+            mut self,
+            input: std::option::Option<crate::model::OverrideButtonConfiguration>,
+        ) -> Self {
+            self.android = input;
+            self
+        }
+        /// <p>Default button content.</p>
+        pub fn default_config(mut self, input: crate::model::DefaultButtonConfiguration) -> Self {
+            self.default_config = Some(input);
+            self
+        }
+        pub fn set_default_config(
+            mut self,
+            input: std::option::Option<crate::model::DefaultButtonConfiguration>,
+        ) -> Self {
+            self.default_config = input;
+            self
+        }
+        /// <p>Default button content.</p>
+        pub fn ios(mut self, input: crate::model::OverrideButtonConfiguration) -> Self {
+            self.ios = Some(input);
+            self
+        }
+        pub fn set_ios(
+            mut self,
+            input: std::option::Option<crate::model::OverrideButtonConfiguration>,
+        ) -> Self {
+            self.ios = input;
+            self
+        }
+        /// <p>Default button content.</p>
+        pub fn web(mut self, input: crate::model::OverrideButtonConfiguration) -> Self {
+            self.web = Some(input);
+            self
+        }
+        pub fn set_web(
+            mut self,
+            input: std::option::Option<crate::model::OverrideButtonConfiguration>,
+        ) -> Self {
+            self.web = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InAppMessageButton`](crate::model::InAppMessageButton)
+        pub fn build(self) -> crate::model::InAppMessageButton {
+            crate::model::InAppMessageButton {
+                android: self.android,
+                default_config: self.default_config,
+                ios: self.ios,
+                web: self.web,
+            }
+        }
+    }
+}
+impl InAppMessageButton {
+    /// Creates a new builder-style object to manufacture [`InAppMessageButton`](crate::model::InAppMessageButton)
+    pub fn builder() -> crate::model::in_app_message_button::Builder {
+        crate::model::in_app_message_button::Builder::default()
+    }
+}
+
+/// <p>Override button configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OverrideButtonConfiguration {
+    /// <p>Action triggered by the button.</p>
+    pub button_action: std::option::Option<crate::model::ButtonAction>,
+    /// <p>Button destination.</p>
+    pub link: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for OverrideButtonConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OverrideButtonConfiguration");
+        formatter.field("button_action", &self.button_action);
+        formatter.field("link", &self.link);
+        formatter.finish()
+    }
+}
+/// See [`OverrideButtonConfiguration`](crate::model::OverrideButtonConfiguration)
+pub mod override_button_configuration {
+    /// A builder for [`OverrideButtonConfiguration`](crate::model::OverrideButtonConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) button_action: std::option::Option<crate::model::ButtonAction>,
+        pub(crate) link: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Action triggered by the button.</p>
+        pub fn button_action(mut self, input: crate::model::ButtonAction) -> Self {
+            self.button_action = Some(input);
+            self
+        }
+        pub fn set_button_action(
+            mut self,
+            input: std::option::Option<crate::model::ButtonAction>,
+        ) -> Self {
+            self.button_action = input;
+            self
+        }
+        /// <p>Button destination.</p>
+        pub fn link(mut self, input: impl Into<std::string::String>) -> Self {
+            self.link = Some(input.into());
+            self
+        }
+        pub fn set_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.link = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OverrideButtonConfiguration`](crate::model::OverrideButtonConfiguration)
+        pub fn build(self) -> crate::model::OverrideButtonConfiguration {
+            crate::model::OverrideButtonConfiguration {
+                button_action: self.button_action,
+                link: self.link,
+            }
+        }
+    }
+}
+impl OverrideButtonConfiguration {
+    /// Creates a new builder-style object to manufacture [`OverrideButtonConfiguration`](crate::model::OverrideButtonConfiguration)
+    pub fn builder() -> crate::model::override_button_configuration::Builder {
+        crate::model::override_button_configuration::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ButtonAction {
+    Close,
+    DeepLink,
+    Link,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ButtonAction {
+    fn from(s: &str) -> Self {
+        match s {
+            "CLOSE" => ButtonAction::Close,
+            "DEEP_LINK" => ButtonAction::DeepLink,
+            "LINK" => ButtonAction::Link,
+            other => ButtonAction::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ButtonAction {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ButtonAction::from(s))
+    }
+}
+impl ButtonAction {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ButtonAction::Close => "CLOSE",
+            ButtonAction::DeepLink => "DEEP_LINK",
+            ButtonAction::Link => "LINK",
+            ButtonAction::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CLOSE", "DEEP_LINK", "LINK"]
+    }
+}
+impl AsRef<str> for ButtonAction {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Default button configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DefaultButtonConfiguration {
+    /// <p>The background color of the button.</p>
+    pub background_color: std::option::Option<std::string::String>,
+    /// <p>The border radius of the button.</p>
+    pub border_radius: i32,
+    /// <p>Action triggered by the button.</p>
+    pub button_action: std::option::Option<crate::model::ButtonAction>,
+    /// <p>Button destination.</p>
+    pub link: std::option::Option<std::string::String>,
+    /// <p>Button text.</p>
+    pub text: std::option::Option<std::string::String>,
+    /// <p>The text color of the button.</p>
+    pub text_color: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DefaultButtonConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DefaultButtonConfiguration");
+        formatter.field("background_color", &self.background_color);
+        formatter.field("border_radius", &self.border_radius);
+        formatter.field("button_action", &self.button_action);
+        formatter.field("link", &self.link);
+        formatter.field("text", &self.text);
+        formatter.field("text_color", &self.text_color);
+        formatter.finish()
+    }
+}
+/// See [`DefaultButtonConfiguration`](crate::model::DefaultButtonConfiguration)
+pub mod default_button_configuration {
+    /// A builder for [`DefaultButtonConfiguration`](crate::model::DefaultButtonConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) background_color: std::option::Option<std::string::String>,
+        pub(crate) border_radius: std::option::Option<i32>,
+        pub(crate) button_action: std::option::Option<crate::model::ButtonAction>,
+        pub(crate) link: std::option::Option<std::string::String>,
+        pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) text_color: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The background color of the button.</p>
+        pub fn background_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.background_color = Some(input.into());
+            self
+        }
+        pub fn set_background_color(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.background_color = input;
+            self
+        }
+        /// <p>The border radius of the button.</p>
+        pub fn border_radius(mut self, input: i32) -> Self {
+            self.border_radius = Some(input);
+            self
+        }
+        pub fn set_border_radius(mut self, input: std::option::Option<i32>) -> Self {
+            self.border_radius = input;
+            self
+        }
+        /// <p>Action triggered by the button.</p>
+        pub fn button_action(mut self, input: crate::model::ButtonAction) -> Self {
+            self.button_action = Some(input);
+            self
+        }
+        pub fn set_button_action(
+            mut self,
+            input: std::option::Option<crate::model::ButtonAction>,
+        ) -> Self {
+            self.button_action = input;
+            self
+        }
+        /// <p>Button destination.</p>
+        pub fn link(mut self, input: impl Into<std::string::String>) -> Self {
+            self.link = Some(input.into());
+            self
+        }
+        pub fn set_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.link = input;
+            self
+        }
+        /// <p>Button text.</p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// <p>The text color of the button.</p>
+        pub fn text_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text_color = Some(input.into());
+            self
+        }
+        pub fn set_text_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text_color = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DefaultButtonConfiguration`](crate::model::DefaultButtonConfiguration)
+        pub fn build(self) -> crate::model::DefaultButtonConfiguration {
+            crate::model::DefaultButtonConfiguration {
+                background_color: self.background_color,
+                border_radius: self.border_radius.unwrap_or_default(),
+                button_action: self.button_action,
+                link: self.link,
+                text: self.text,
+                text_color: self.text_color,
+            }
+        }
+    }
+}
+impl DefaultButtonConfiguration {
+    /// Creates a new builder-style object to manufacture [`DefaultButtonConfiguration`](crate::model::DefaultButtonConfiguration)
+    pub fn builder() -> crate::model::default_button_configuration::Builder {
+        crate::model::default_button_configuration::Builder::default()
+    }
+}
+
+/// <p>Text config for Message Header.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InAppMessageHeaderConfig {
+    /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
+    pub alignment: std::option::Option<crate::model::Alignment>,
+    /// <p>Message Header.</p>
+    pub header: std::option::Option<std::string::String>,
+    /// <p>The text color.</p>
+    pub text_color: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InAppMessageHeaderConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InAppMessageHeaderConfig");
+        formatter.field("alignment", &self.alignment);
+        formatter.field("header", &self.header);
+        formatter.field("text_color", &self.text_color);
+        formatter.finish()
+    }
+}
+/// See [`InAppMessageHeaderConfig`](crate::model::InAppMessageHeaderConfig)
+pub mod in_app_message_header_config {
+    /// A builder for [`InAppMessageHeaderConfig`](crate::model::InAppMessageHeaderConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) alignment: std::option::Option<crate::model::Alignment>,
+        pub(crate) header: std::option::Option<std::string::String>,
+        pub(crate) text_color: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
+        pub fn alignment(mut self, input: crate::model::Alignment) -> Self {
+            self.alignment = Some(input);
+            self
+        }
+        pub fn set_alignment(
+            mut self,
+            input: std::option::Option<crate::model::Alignment>,
+        ) -> Self {
+            self.alignment = input;
+            self
+        }
+        /// <p>Message Header.</p>
+        pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
+            self.header = Some(input.into());
+            self
+        }
+        pub fn set_header(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.header = input;
+            self
+        }
+        /// <p>The text color.</p>
+        pub fn text_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text_color = Some(input.into());
+            self
+        }
+        pub fn set_text_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text_color = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InAppMessageHeaderConfig`](crate::model::InAppMessageHeaderConfig)
+        pub fn build(self) -> crate::model::InAppMessageHeaderConfig {
+            crate::model::InAppMessageHeaderConfig {
+                alignment: self.alignment,
+                header: self.header,
+                text_color: self.text_color,
+            }
+        }
+    }
+}
+impl InAppMessageHeaderConfig {
+    /// Creates a new builder-style object to manufacture [`InAppMessageHeaderConfig`](crate::model::InAppMessageHeaderConfig)
+    pub fn builder() -> crate::model::in_app_message_header_config::Builder {
+        crate::model::in_app_message_header_config::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Alignment {
+    Center,
+    Left,
+    Right,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Alignment {
+    fn from(s: &str) -> Self {
+        match s {
+            "CENTER" => Alignment::Center,
+            "LEFT" => Alignment::Left,
+            "RIGHT" => Alignment::Right,
+            other => Alignment::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Alignment {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Alignment::from(s))
+    }
+}
+impl Alignment {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Alignment::Center => "CENTER",
+            Alignment::Left => "LEFT",
+            Alignment::Right => "RIGHT",
+            Alignment::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CENTER", "LEFT", "RIGHT"]
+    }
+}
+impl AsRef<str> for Alignment {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Text config for Message Body.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InAppMessageBodyConfig {
+    /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
+    pub alignment: std::option::Option<crate::model::Alignment>,
+    /// <p>Message Body.</p>
+    pub body: std::option::Option<std::string::String>,
+    /// <p>The text color.</p>
+    pub text_color: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InAppMessageBodyConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InAppMessageBodyConfig");
+        formatter.field("alignment", &self.alignment);
+        formatter.field("body", &self.body);
+        formatter.field("text_color", &self.text_color);
+        formatter.finish()
+    }
+}
+/// See [`InAppMessageBodyConfig`](crate::model::InAppMessageBodyConfig)
+pub mod in_app_message_body_config {
+    /// A builder for [`InAppMessageBodyConfig`](crate::model::InAppMessageBodyConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) alignment: std::option::Option<crate::model::Alignment>,
+        pub(crate) body: std::option::Option<std::string::String>,
+        pub(crate) text_color: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
+        pub fn alignment(mut self, input: crate::model::Alignment) -> Self {
+            self.alignment = Some(input);
+            self
+        }
+        pub fn set_alignment(
+            mut self,
+            input: std::option::Option<crate::model::Alignment>,
+        ) -> Self {
+            self.alignment = input;
+            self
+        }
+        /// <p>Message Body.</p>
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.body = Some(input.into());
+            self
+        }
+        pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.body = input;
+            self
+        }
+        /// <p>The text color.</p>
+        pub fn text_color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text_color = Some(input.into());
+            self
+        }
+        pub fn set_text_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text_color = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InAppMessageBodyConfig`](crate::model::InAppMessageBodyConfig)
+        pub fn build(self) -> crate::model::InAppMessageBodyConfig {
+            crate::model::InAppMessageBodyConfig {
+                alignment: self.alignment,
+                body: self.body,
+                text_color: self.text_color,
+            }
+        }
+    }
+}
+impl InAppMessageBodyConfig {
+    /// Creates a new builder-style object to manufacture [`InAppMessageBodyConfig`](crate::model::InAppMessageBodyConfig)
+    pub fn builder() -> crate::model::in_app_message_body_config::Builder {
+        crate::model::in_app_message_body_config::Builder::default()
     }
 }
 
@@ -8180,6 +9231,7 @@ pub enum ChannelType {
     Custom,
     Email,
     Gcm,
+    InApp,
     Push,
     Sms,
     Voice,
@@ -8198,6 +9250,7 @@ impl std::convert::From<&str> for ChannelType {
             "CUSTOM" => ChannelType::Custom,
             "EMAIL" => ChannelType::Email,
             "GCM" => ChannelType::Gcm,
+            "IN_APP" => ChannelType::InApp,
             "PUSH" => ChannelType::Push,
             "SMS" => ChannelType::Sms,
             "VOICE" => ChannelType::Voice,
@@ -8224,6 +9277,7 @@ impl ChannelType {
             ChannelType::Custom => "CUSTOM",
             ChannelType::Email => "EMAIL",
             ChannelType::Gcm => "GCM",
+            ChannelType::InApp => "IN_APP",
             ChannelType::Push => "PUSH",
             ChannelType::Sms => "SMS",
             ChannelType::Voice => "VOICE",
@@ -8241,6 +9295,7 @@ impl ChannelType {
             "CUSTOM",
             "EMAIL",
             "GCM",
+            "IN_APP",
             "PUSH",
             "SMS",
             "VOICE",
@@ -9045,6 +10100,8 @@ pub struct CampaignResponse {
     pub treatment_name: std::option::Option<std::string::String>,
     /// <p>The version number of the campaign.</p>
     pub version: i32,
+    /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
+    pub priority: i32,
 }
 impl std::fmt::Debug for CampaignResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9076,6 +10133,7 @@ impl std::fmt::Debug for CampaignResponse {
         formatter.field("treatment_description", &self.treatment_description);
         formatter.field("treatment_name", &self.treatment_name);
         formatter.field("version", &self.version);
+        formatter.field("priority", &self.priority);
         formatter.finish()
     }
 }
@@ -9113,6 +10171,7 @@ pub mod campaign_response {
         pub(crate) treatment_description: std::option::Option<std::string::String>,
         pub(crate) treatment_name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i32>,
+        pub(crate) priority: std::option::Option<i32>,
     }
     impl Builder {
         pub fn additional_treatments(
@@ -9387,6 +10446,15 @@ pub mod campaign_response {
             self.version = input;
             self
         }
+        /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
+            self
+        }
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CampaignResponse`](crate::model::CampaignResponse)
         pub fn build(self) -> crate::model::CampaignResponse {
             crate::model::CampaignResponse {
@@ -9414,6 +10482,7 @@ pub mod campaign_response {
                 treatment_description: self.treatment_description,
                 treatment_name: self.treatment_name,
                 version: self.version.unwrap_or_default(),
+                priority: self.priority.unwrap_or_default(),
             }
         }
     }
@@ -9870,6 +10939,7 @@ pub enum Frequency {
     Daily,
     Event,
     Hourly,
+    InAppEvent,
     Monthly,
     Once,
     Weekly,
@@ -9882,6 +10952,7 @@ impl std::convert::From<&str> for Frequency {
             "DAILY" => Frequency::Daily,
             "EVENT" => Frequency::Event,
             "HOURLY" => Frequency::Hourly,
+            "IN_APP_EVENT" => Frequency::InAppEvent,
             "MONTHLY" => Frequency::Monthly,
             "ONCE" => Frequency::Once,
             "WEEKLY" => Frequency::Weekly,
@@ -9902,6 +10973,7 @@ impl Frequency {
             Frequency::Daily => "DAILY",
             Frequency::Event => "EVENT",
             Frequency::Hourly => "HOURLY",
+            Frequency::InAppEvent => "IN_APP_EVENT",
             Frequency::Monthly => "MONTHLY",
             Frequency::Once => "ONCE",
             Frequency::Weekly => "WEEKLY",
@@ -9909,7 +10981,15 @@ impl Frequency {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["DAILY", "EVENT", "HOURLY", "MONTHLY", "ONCE", "WEEKLY"]
+        &[
+            "DAILY",
+            "EVENT",
+            "HOURLY",
+            "IN_APP_EVENT",
+            "MONTHLY",
+            "ONCE",
+            "WEEKLY",
+        ]
     }
 }
 impl AsRef<str> for Frequency {
@@ -10005,6 +11085,8 @@ pub struct MessageConfiguration {
     pub gcm_message: std::option::Option<crate::model::Message>,
     /// <p>The message that the campaign sends through the SMS channel. If specified, this message overrides the default message.</p>
     pub sms_message: std::option::Option<crate::model::CampaignSmsMessage>,
+    /// <p>The in-app message configuration.</p>
+    pub in_app_message: std::option::Option<crate::model::CampaignInAppMessage>,
 }
 impl std::fmt::Debug for MessageConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10017,6 +11099,7 @@ impl std::fmt::Debug for MessageConfiguration {
         formatter.field("email_message", &self.email_message);
         formatter.field("gcm_message", &self.gcm_message);
         formatter.field("sms_message", &self.sms_message);
+        formatter.field("in_app_message", &self.in_app_message);
         formatter.finish()
     }
 }
@@ -10034,6 +11117,7 @@ pub mod message_configuration {
         pub(crate) email_message: std::option::Option<crate::model::CampaignEmailMessage>,
         pub(crate) gcm_message: std::option::Option<crate::model::Message>,
         pub(crate) sms_message: std::option::Option<crate::model::CampaignSmsMessage>,
+        pub(crate) in_app_message: std::option::Option<crate::model::CampaignInAppMessage>,
     }
     impl Builder {
         /// <p>The message that the campaign sends through the ADM (Amazon Device Messaging) channel. If specified, this message overrides the default message.</p>
@@ -10132,6 +11216,18 @@ pub mod message_configuration {
             self.sms_message = input;
             self
         }
+        /// <p>The in-app message configuration.</p>
+        pub fn in_app_message(mut self, input: crate::model::CampaignInAppMessage) -> Self {
+            self.in_app_message = Some(input);
+            self
+        }
+        pub fn set_in_app_message(
+            mut self,
+            input: std::option::Option<crate::model::CampaignInAppMessage>,
+        ) -> Self {
+            self.in_app_message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MessageConfiguration`](crate::model::MessageConfiguration)
         pub fn build(self) -> crate::model::MessageConfiguration {
             crate::model::MessageConfiguration {
@@ -10143,6 +11239,7 @@ pub mod message_configuration {
                 email_message: self.email_message,
                 gcm_message: self.gcm_message,
                 sms_message: self.sms_message,
+                in_app_message: self.in_app_message,
             }
         }
     }
@@ -10151,6 +11248,112 @@ impl MessageConfiguration {
     /// Creates a new builder-style object to manufacture [`MessageConfiguration`](crate::model::MessageConfiguration)
     pub fn builder() -> crate::model::message_configuration::Builder {
         crate::model::message_configuration::Builder::default()
+    }
+}
+
+/// <p>In-app message configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CampaignInAppMessage {
+    /// <p>The message body of the notification, the email body or the text message.</p>
+    pub body: std::option::Option<std::string::String>,
+    /// <p>In-app message content.</p>
+    pub content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+    /// <p>Custom config to be sent to client.</p>
+    pub custom_config:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>In-app message layout.</p>
+    pub layout: std::option::Option<crate::model::Layout>,
+}
+impl std::fmt::Debug for CampaignInAppMessage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CampaignInAppMessage");
+        formatter.field("body", &self.body);
+        formatter.field("content", &self.content);
+        formatter.field("custom_config", &self.custom_config);
+        formatter.field("layout", &self.layout);
+        formatter.finish()
+    }
+}
+/// See [`CampaignInAppMessage`](crate::model::CampaignInAppMessage)
+pub mod campaign_in_app_message {
+    /// A builder for [`CampaignInAppMessage`](crate::model::CampaignInAppMessage)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) body: std::option::Option<std::string::String>,
+        pub(crate) content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+        pub(crate) custom_config: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) layout: std::option::Option<crate::model::Layout>,
+    }
+    impl Builder {
+        /// <p>The message body of the notification, the email body or the text message.</p>
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.body = Some(input.into());
+            self
+        }
+        pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.body = input;
+            self
+        }
+        pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
+            let mut v = self.content.unwrap_or_default();
+            v.push(input.into());
+            self.content = Some(v);
+            self
+        }
+        pub fn set_content(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+        ) -> Self {
+            self.content = input;
+            self
+        }
+        pub fn custom_config(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.custom_config.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.custom_config = Some(hash_map);
+            self
+        }
+        pub fn set_custom_config(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.custom_config = input;
+            self
+        }
+        /// <p>In-app message layout.</p>
+        pub fn layout(mut self, input: crate::model::Layout) -> Self {
+            self.layout = Some(input);
+            self
+        }
+        pub fn set_layout(mut self, input: std::option::Option<crate::model::Layout>) -> Self {
+            self.layout = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CampaignInAppMessage`](crate::model::CampaignInAppMessage)
+        pub fn build(self) -> crate::model::CampaignInAppMessage {
+            crate::model::CampaignInAppMessage {
+                body: self.body,
+                content: self.content,
+                custom_config: self.custom_config,
+                layout: self.layout,
+            }
+        }
+    }
+}
+impl CampaignInAppMessage {
+    /// Creates a new builder-style object to manufacture [`CampaignInAppMessage`](crate::model::CampaignInAppMessage)
+    pub fn builder() -> crate::model::campaign_in_app_message::Builder {
+        crate::model::campaign_in_app_message::Builder::default()
     }
 }
 
@@ -10630,6 +11833,8 @@ pub struct CampaignLimits {
     pub messages_per_second: i32,
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign. If a campaign recurs, this setting applies to all runs of the campaign. The maximum value is 100.</p>
     pub total: i32,
+    /// <p>The maximum total number of messages that the campaign can send per user session.</p>
+    pub session: i32,
 }
 impl std::fmt::Debug for CampaignLimits {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10638,6 +11843,7 @@ impl std::fmt::Debug for CampaignLimits {
         formatter.field("maximum_duration", &self.maximum_duration);
         formatter.field("messages_per_second", &self.messages_per_second);
         formatter.field("total", &self.total);
+        formatter.field("session", &self.session);
         formatter.finish()
     }
 }
@@ -10651,6 +11857,7 @@ pub mod campaign_limits {
         pub(crate) maximum_duration: std::option::Option<i32>,
         pub(crate) messages_per_second: std::option::Option<i32>,
         pub(crate) total: std::option::Option<i32>,
+        pub(crate) session: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. For an application, this value specifies the default limit for the number of messages that campaigns and journeys can send to a single endpoint during a 24-hour period. The maximum value is 100.</p>
@@ -10689,6 +11896,15 @@ pub mod campaign_limits {
             self.total = input;
             self
         }
+        /// <p>The maximum total number of messages that the campaign can send per user session.</p>
+        pub fn session(mut self, input: i32) -> Self {
+            self.session = Some(input);
+            self
+        }
+        pub fn set_session(mut self, input: std::option::Option<i32>) -> Self {
+            self.session = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CampaignLimits`](crate::model::CampaignLimits)
         pub fn build(self) -> crate::model::CampaignLimits {
             crate::model::CampaignLimits {
@@ -10696,6 +11912,7 @@ pub mod campaign_limits {
                 maximum_duration: self.maximum_duration.unwrap_or_default(),
                 messages_per_second: self.messages_per_second.unwrap_or_default(),
                 total: self.total.unwrap_or_default(),
+                session: self.session.unwrap_or_default(),
             }
         }
     }
@@ -11131,6 +12348,8 @@ pub struct WriteCampaignRequest {
     pub treatment_description: std::option::Option<std::string::String>,
     /// <p>A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
     pub treatment_name: std::option::Option<std::string::String>,
+    /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
+    pub priority: i32,
 }
 impl std::fmt::Debug for WriteCampaignRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11154,6 +12373,7 @@ impl std::fmt::Debug for WriteCampaignRequest {
         formatter.field("template_configuration", &self.template_configuration);
         formatter.field("treatment_description", &self.treatment_description);
         formatter.field("treatment_name", &self.treatment_name);
+        formatter.field("priority", &self.priority);
         formatter.finish()
     }
 }
@@ -11183,6 +12403,7 @@ pub mod write_campaign_request {
         pub(crate) template_configuration: std::option::Option<crate::model::TemplateConfiguration>,
         pub(crate) treatment_description: std::option::Option<std::string::String>,
         pub(crate) treatment_name: std::option::Option<std::string::String>,
+        pub(crate) priority: std::option::Option<i32>,
     }
     impl Builder {
         pub fn additional_treatments(
@@ -11370,6 +12591,15 @@ pub mod write_campaign_request {
             self.treatment_name = input;
             self
         }
+        /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
+            self
+        }
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WriteCampaignRequest`](crate::model::WriteCampaignRequest)
         pub fn build(self) -> crate::model::WriteCampaignRequest {
             crate::model::WriteCampaignRequest {
@@ -11389,6 +12619,7 @@ pub mod write_campaign_request {
                 template_configuration: self.template_configuration,
                 treatment_description: self.treatment_description,
                 treatment_name: self.treatment_name,
+                priority: self.priority.unwrap_or_default(),
             }
         }
     }
@@ -19397,6 +20628,7 @@ impl TemplateResponse {
 )]
 pub enum TemplateType {
     Email,
+    Inapp,
     Push,
     Sms,
     Voice,
@@ -19407,6 +20639,7 @@ impl std::convert::From<&str> for TemplateType {
     fn from(s: &str) -> Self {
         match s {
             "EMAIL" => TemplateType::Email,
+            "INAPP" => TemplateType::Inapp,
             "PUSH" => TemplateType::Push,
             "SMS" => TemplateType::Sms,
             "VOICE" => TemplateType::Voice,
@@ -19425,6 +20658,7 @@ impl TemplateType {
     pub fn as_str(&self) -> &str {
         match self {
             TemplateType::Email => "EMAIL",
+            TemplateType::Inapp => "INAPP",
             TemplateType::Push => "PUSH",
             TemplateType::Sms => "SMS",
             TemplateType::Voice => "VOICE",
@@ -19432,7 +20666,7 @@ impl TemplateType {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["EMAIL", "PUSH", "SMS", "VOICE"]
+        &["EMAIL", "INAPP", "PUSH", "SMS", "VOICE"]
     }
 }
 impl AsRef<str> for TemplateType {
@@ -22222,6 +23456,618 @@ impl ResultRowValue {
     }
 }
 
+/// <p>In-App Template Response.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InAppTemplateResponse {
+    /// <p>The resource arn of the template.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
+    pub content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+    /// <p>The creation date of the template.</p>
+    pub creation_date: std::option::Option<std::string::String>,
+    /// <p>Custom config to be sent to client.</p>
+    pub custom_config:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The last modified date of the template.</p>
+    pub last_modified_date: std::option::Option<std::string::String>,
+    /// <p>The layout of the message.</p>
+    pub layout: std::option::Option<crate::model::Layout>,
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The description of the template.</p>
+    pub template_description: std::option::Option<std::string::String>,
+    /// <p>The name of the template.</p>
+    pub template_name: std::option::Option<std::string::String>,
+    /// <p>The type of the template.</p>
+    pub template_type: std::option::Option<crate::model::TemplateType>,
+    /// <p>The version id of the template.</p>
+    pub version: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InAppTemplateResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InAppTemplateResponse");
+        formatter.field("arn", &self.arn);
+        formatter.field("content", &self.content);
+        formatter.field("creation_date", &self.creation_date);
+        formatter.field("custom_config", &self.custom_config);
+        formatter.field("last_modified_date", &self.last_modified_date);
+        formatter.field("layout", &self.layout);
+        formatter.field("tags", &self.tags);
+        formatter.field("template_description", &self.template_description);
+        formatter.field("template_name", &self.template_name);
+        formatter.field("template_type", &self.template_type);
+        formatter.field("version", &self.version);
+        formatter.finish()
+    }
+}
+/// See [`InAppTemplateResponse`](crate::model::InAppTemplateResponse)
+pub mod in_app_template_response {
+    /// A builder for [`InAppTemplateResponse`](crate::model::InAppTemplateResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+        pub(crate) creation_date: std::option::Option<std::string::String>,
+        pub(crate) custom_config: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) last_modified_date: std::option::Option<std::string::String>,
+        pub(crate) layout: std::option::Option<crate::model::Layout>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) template_description: std::option::Option<std::string::String>,
+        pub(crate) template_name: std::option::Option<std::string::String>,
+        pub(crate) template_type: std::option::Option<crate::model::TemplateType>,
+        pub(crate) version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The resource arn of the template.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
+            let mut v = self.content.unwrap_or_default();
+            v.push(input.into());
+            self.content = Some(v);
+            self
+        }
+        pub fn set_content(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+        ) -> Self {
+            self.content = input;
+            self
+        }
+        /// <p>The creation date of the template.</p>
+        pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.creation_date = Some(input.into());
+            self
+        }
+        pub fn set_creation_date(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.creation_date = input;
+            self
+        }
+        pub fn custom_config(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.custom_config.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.custom_config = Some(hash_map);
+            self
+        }
+        pub fn set_custom_config(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.custom_config = input;
+            self
+        }
+        /// <p>The last modified date of the template.</p>
+        pub fn last_modified_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_modified_date = Some(input.into());
+            self
+        }
+        pub fn set_last_modified_date(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_modified_date = input;
+            self
+        }
+        /// <p>The layout of the message.</p>
+        pub fn layout(mut self, input: crate::model::Layout) -> Self {
+            self.layout = Some(input);
+            self
+        }
+        pub fn set_layout(mut self, input: std::option::Option<crate::model::Layout>) -> Self {
+            self.layout = input;
+            self
+        }
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>The description of the template.</p>
+        pub fn template_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_description = Some(input.into());
+            self
+        }
+        pub fn set_template_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_description = input;
+            self
+        }
+        /// <p>The name of the template.</p>
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
+            self
+        }
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
+            self
+        }
+        /// <p>The type of the template.</p>
+        pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
+            self.template_type = Some(input);
+            self
+        }
+        pub fn set_template_type(
+            mut self,
+            input: std::option::Option<crate::model::TemplateType>,
+        ) -> Self {
+            self.template_type = input;
+            self
+        }
+        /// <p>The version id of the template.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InAppTemplateResponse`](crate::model::InAppTemplateResponse)
+        pub fn build(self) -> crate::model::InAppTemplateResponse {
+            crate::model::InAppTemplateResponse {
+                arn: self.arn,
+                content: self.content,
+                creation_date: self.creation_date,
+                custom_config: self.custom_config,
+                last_modified_date: self.last_modified_date,
+                layout: self.layout,
+                tags: self.tags,
+                template_description: self.template_description,
+                template_name: self.template_name,
+                template_type: self.template_type,
+                version: self.version,
+            }
+        }
+    }
+}
+impl InAppTemplateResponse {
+    /// Creates a new builder-style object to manufacture [`InAppTemplateResponse`](crate::model::InAppTemplateResponse)
+    pub fn builder() -> crate::model::in_app_template_response::Builder {
+        crate::model::in_app_template_response::Builder::default()
+    }
+}
+
+/// <p>Get in-app messages response object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InAppMessagesResponse {
+    /// <p>List of targeted in-app message campaigns.</p>
+    pub in_app_message_campaigns:
+        std::option::Option<std::vec::Vec<crate::model::InAppMessageCampaign>>,
+}
+impl std::fmt::Debug for InAppMessagesResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InAppMessagesResponse");
+        formatter.field("in_app_message_campaigns", &self.in_app_message_campaigns);
+        formatter.finish()
+    }
+}
+/// See [`InAppMessagesResponse`](crate::model::InAppMessagesResponse)
+pub mod in_app_messages_response {
+    /// A builder for [`InAppMessagesResponse`](crate::model::InAppMessagesResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) in_app_message_campaigns:
+            std::option::Option<std::vec::Vec<crate::model::InAppMessageCampaign>>,
+    }
+    impl Builder {
+        pub fn in_app_message_campaigns(
+            mut self,
+            input: impl Into<crate::model::InAppMessageCampaign>,
+        ) -> Self {
+            let mut v = self.in_app_message_campaigns.unwrap_or_default();
+            v.push(input.into());
+            self.in_app_message_campaigns = Some(v);
+            self
+        }
+        pub fn set_in_app_message_campaigns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InAppMessageCampaign>>,
+        ) -> Self {
+            self.in_app_message_campaigns = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InAppMessagesResponse`](crate::model::InAppMessagesResponse)
+        pub fn build(self) -> crate::model::InAppMessagesResponse {
+            crate::model::InAppMessagesResponse {
+                in_app_message_campaigns: self.in_app_message_campaigns,
+            }
+        }
+    }
+}
+impl InAppMessagesResponse {
+    /// Creates a new builder-style object to manufacture [`InAppMessagesResponse`](crate::model::InAppMessagesResponse)
+    pub fn builder() -> crate::model::in_app_messages_response::Builder {
+        crate::model::in_app_messages_response::Builder::default()
+    }
+}
+
+/// <p>Targeted in-app message campaign.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InAppMessageCampaign {
+    /// <p>Campaign id of the corresponding campaign.</p>
+    pub campaign_id: std::option::Option<std::string::String>,
+    /// <p>Daily cap which controls the number of times any in-app messages can be shown to the endpoint during a day.</p>
+    pub daily_cap: i32,
+    /// <p>In-app message content with all fields required for rendering an in-app message.</p>
+    pub in_app_message: std::option::Option<crate::model::InAppMessage>,
+    /// <p>Priority of the in-app message.</p>
+    pub priority: i32,
+    /// <p>Schedule of the campaign.</p>
+    pub schedule: std::option::Option<crate::model::InAppCampaignSchedule>,
+    /// <p>Session cap which controls the number of times an in-app message can be shown to the endpoint during an application session.</p>
+    pub session_cap: i32,
+    /// <p>Total cap which controls the number of times an in-app message can be shown to the endpoint.</p>
+    pub total_cap: i32,
+    /// <p>Treatment id of the campaign.</p>
+    pub treatment_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InAppMessageCampaign {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InAppMessageCampaign");
+        formatter.field("campaign_id", &self.campaign_id);
+        formatter.field("daily_cap", &self.daily_cap);
+        formatter.field("in_app_message", &self.in_app_message);
+        formatter.field("priority", &self.priority);
+        formatter.field("schedule", &self.schedule);
+        formatter.field("session_cap", &self.session_cap);
+        formatter.field("total_cap", &self.total_cap);
+        formatter.field("treatment_id", &self.treatment_id);
+        formatter.finish()
+    }
+}
+/// See [`InAppMessageCampaign`](crate::model::InAppMessageCampaign)
+pub mod in_app_message_campaign {
+    /// A builder for [`InAppMessageCampaign`](crate::model::InAppMessageCampaign)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) campaign_id: std::option::Option<std::string::String>,
+        pub(crate) daily_cap: std::option::Option<i32>,
+        pub(crate) in_app_message: std::option::Option<crate::model::InAppMessage>,
+        pub(crate) priority: std::option::Option<i32>,
+        pub(crate) schedule: std::option::Option<crate::model::InAppCampaignSchedule>,
+        pub(crate) session_cap: std::option::Option<i32>,
+        pub(crate) total_cap: std::option::Option<i32>,
+        pub(crate) treatment_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Campaign id of the corresponding campaign.</p>
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.campaign_id = Some(input.into());
+            self
+        }
+        pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.campaign_id = input;
+            self
+        }
+        /// <p>Daily cap which controls the number of times any in-app messages can be shown to the endpoint during a day.</p>
+        pub fn daily_cap(mut self, input: i32) -> Self {
+            self.daily_cap = Some(input);
+            self
+        }
+        pub fn set_daily_cap(mut self, input: std::option::Option<i32>) -> Self {
+            self.daily_cap = input;
+            self
+        }
+        /// <p>In-app message content with all fields required for rendering an in-app message.</p>
+        pub fn in_app_message(mut self, input: crate::model::InAppMessage) -> Self {
+            self.in_app_message = Some(input);
+            self
+        }
+        pub fn set_in_app_message(
+            mut self,
+            input: std::option::Option<crate::model::InAppMessage>,
+        ) -> Self {
+            self.in_app_message = input;
+            self
+        }
+        /// <p>Priority of the in-app message.</p>
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
+            self
+        }
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
+            self
+        }
+        /// <p>Schedule of the campaign.</p>
+        pub fn schedule(mut self, input: crate::model::InAppCampaignSchedule) -> Self {
+            self.schedule = Some(input);
+            self
+        }
+        pub fn set_schedule(
+            mut self,
+            input: std::option::Option<crate::model::InAppCampaignSchedule>,
+        ) -> Self {
+            self.schedule = input;
+            self
+        }
+        /// <p>Session cap which controls the number of times an in-app message can be shown to the endpoint during an application session.</p>
+        pub fn session_cap(mut self, input: i32) -> Self {
+            self.session_cap = Some(input);
+            self
+        }
+        pub fn set_session_cap(mut self, input: std::option::Option<i32>) -> Self {
+            self.session_cap = input;
+            self
+        }
+        /// <p>Total cap which controls the number of times an in-app message can be shown to the endpoint.</p>
+        pub fn total_cap(mut self, input: i32) -> Self {
+            self.total_cap = Some(input);
+            self
+        }
+        pub fn set_total_cap(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_cap = input;
+            self
+        }
+        /// <p>Treatment id of the campaign.</p>
+        pub fn treatment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.treatment_id = Some(input.into());
+            self
+        }
+        pub fn set_treatment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.treatment_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InAppMessageCampaign`](crate::model::InAppMessageCampaign)
+        pub fn build(self) -> crate::model::InAppMessageCampaign {
+            crate::model::InAppMessageCampaign {
+                campaign_id: self.campaign_id,
+                daily_cap: self.daily_cap.unwrap_or_default(),
+                in_app_message: self.in_app_message,
+                priority: self.priority.unwrap_or_default(),
+                schedule: self.schedule,
+                session_cap: self.session_cap.unwrap_or_default(),
+                total_cap: self.total_cap.unwrap_or_default(),
+                treatment_id: self.treatment_id,
+            }
+        }
+    }
+}
+impl InAppMessageCampaign {
+    /// Creates a new builder-style object to manufacture [`InAppMessageCampaign`](crate::model::InAppMessageCampaign)
+    pub fn builder() -> crate::model::in_app_message_campaign::Builder {
+        crate::model::in_app_message_campaign::Builder::default()
+    }
+}
+
+/// <p>Schedule of the campaign.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InAppCampaignSchedule {
+    /// <p>The scheduled time after which the in-app message should not be shown. Timestamp is in ISO 8601 format.</p>
+    pub end_date: std::option::Option<std::string::String>,
+    /// <p>The event filter the SDK has to use to show the in-app message in the application.</p>
+    pub event_filter: std::option::Option<crate::model::CampaignEventFilter>,
+    /// <p>Time during which the in-app message should not be shown to the user.</p>
+    pub quiet_time: std::option::Option<crate::model::QuietTime>,
+}
+impl std::fmt::Debug for InAppCampaignSchedule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InAppCampaignSchedule");
+        formatter.field("end_date", &self.end_date);
+        formatter.field("event_filter", &self.event_filter);
+        formatter.field("quiet_time", &self.quiet_time);
+        formatter.finish()
+    }
+}
+/// See [`InAppCampaignSchedule`](crate::model::InAppCampaignSchedule)
+pub mod in_app_campaign_schedule {
+    /// A builder for [`InAppCampaignSchedule`](crate::model::InAppCampaignSchedule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) end_date: std::option::Option<std::string::String>,
+        pub(crate) event_filter: std::option::Option<crate::model::CampaignEventFilter>,
+        pub(crate) quiet_time: std::option::Option<crate::model::QuietTime>,
+    }
+    impl Builder {
+        /// <p>The scheduled time after which the in-app message should not be shown. Timestamp is in ISO 8601 format.</p>
+        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_date = Some(input.into());
+            self
+        }
+        pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_date = input;
+            self
+        }
+        /// <p>The event filter the SDK has to use to show the in-app message in the application.</p>
+        pub fn event_filter(mut self, input: crate::model::CampaignEventFilter) -> Self {
+            self.event_filter = Some(input);
+            self
+        }
+        pub fn set_event_filter(
+            mut self,
+            input: std::option::Option<crate::model::CampaignEventFilter>,
+        ) -> Self {
+            self.event_filter = input;
+            self
+        }
+        /// <p>Time during which the in-app message should not be shown to the user.</p>
+        pub fn quiet_time(mut self, input: crate::model::QuietTime) -> Self {
+            self.quiet_time = Some(input);
+            self
+        }
+        pub fn set_quiet_time(
+            mut self,
+            input: std::option::Option<crate::model::QuietTime>,
+        ) -> Self {
+            self.quiet_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InAppCampaignSchedule`](crate::model::InAppCampaignSchedule)
+        pub fn build(self) -> crate::model::InAppCampaignSchedule {
+            crate::model::InAppCampaignSchedule {
+                end_date: self.end_date,
+                event_filter: self.event_filter,
+                quiet_time: self.quiet_time,
+            }
+        }
+    }
+}
+impl InAppCampaignSchedule {
+    /// Creates a new builder-style object to manufacture [`InAppCampaignSchedule`](crate::model::InAppCampaignSchedule)
+    pub fn builder() -> crate::model::in_app_campaign_schedule::Builder {
+        crate::model::in_app_campaign_schedule::Builder::default()
+    }
+}
+
+/// <p>Provides all fields required for building an in-app message.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InAppMessage {
+    /// <p>In-app message content.</p>
+    pub content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+    /// <p>Custom config to be sent to SDK.</p>
+    pub custom_config:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The layout of the message.</p>
+    pub layout: std::option::Option<crate::model::Layout>,
+}
+impl std::fmt::Debug for InAppMessage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InAppMessage");
+        formatter.field("content", &self.content);
+        formatter.field("custom_config", &self.custom_config);
+        formatter.field("layout", &self.layout);
+        formatter.finish()
+    }
+}
+/// See [`InAppMessage`](crate::model::InAppMessage)
+pub mod in_app_message {
+    /// A builder for [`InAppMessage`](crate::model::InAppMessage)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) content: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+        pub(crate) custom_config: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) layout: std::option::Option<crate::model::Layout>,
+    }
+    impl Builder {
+        pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
+            let mut v = self.content.unwrap_or_default();
+            v.push(input.into());
+            self.content = Some(v);
+            self
+        }
+        pub fn set_content(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
+        ) -> Self {
+            self.content = input;
+            self
+        }
+        pub fn custom_config(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.custom_config.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.custom_config = Some(hash_map);
+            self
+        }
+        pub fn set_custom_config(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.custom_config = input;
+            self
+        }
+        /// <p>The layout of the message.</p>
+        pub fn layout(mut self, input: crate::model::Layout) -> Self {
+            self.layout = Some(input);
+            self
+        }
+        pub fn set_layout(mut self, input: std::option::Option<crate::model::Layout>) -> Self {
+            self.layout = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InAppMessage`](crate::model::InAppMessage)
+        pub fn build(self) -> crate::model::InAppMessage {
+            crate::model::InAppMessage {
+                content: self.content,
+                custom_config: self.custom_config,
+                layout: self.layout,
+            }
+        }
+    }
+}
+impl InAppMessage {
+    /// Creates a new builder-style object to manufacture [`InAppMessage`](crate::model::InAppMessage)
+    pub fn builder() -> crate::model::in_app_message::Builder {
+        crate::model::in_app_message::Builder::default()
+    }
+}
+
 /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -23773,6 +25619,81 @@ impl CreateRecommenderConfigurationShape {
     /// Creates a new builder-style object to manufacture [`CreateRecommenderConfigurationShape`](crate::model::CreateRecommenderConfigurationShape)
     pub fn builder() -> crate::model::create_recommender_configuration_shape::Builder {
         crate::model::create_recommender_configuration_shape::Builder::default()
+    }
+}
+
+/// <p>Provides information about a request to create a message template.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TemplateCreateMessageBody {
+    /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The message that's returned from the API for the request to create the message template.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the request to create the message template.</p>
+    pub request_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TemplateCreateMessageBody {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TemplateCreateMessageBody");
+        formatter.field("arn", &self.arn);
+        formatter.field("message", &self.message);
+        formatter.field("request_id", &self.request_id);
+        formatter.finish()
+    }
+}
+/// See [`TemplateCreateMessageBody`](crate::model::TemplateCreateMessageBody)
+pub mod template_create_message_body {
+    /// A builder for [`TemplateCreateMessageBody`](crate::model::TemplateCreateMessageBody)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The message that's returned from the API for the request to create the message template.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The unique identifier for the request to create the message template.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TemplateCreateMessageBody`](crate::model::TemplateCreateMessageBody)
+        pub fn build(self) -> crate::model::TemplateCreateMessageBody {
+            crate::model::TemplateCreateMessageBody {
+                arn: self.arn,
+                message: self.message,
+                request_id: self.request_id,
+            }
+        }
+    }
+}
+impl TemplateCreateMessageBody {
+    /// Creates a new builder-style object to manufacture [`TemplateCreateMessageBody`](crate::model::TemplateCreateMessageBody)
+    pub fn builder() -> crate::model::template_create_message_body::Builder {
+        crate::model::template_create_message_body::Builder::default()
     }
 }
 

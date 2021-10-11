@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>Contact Lens for Amazon Connect enables you to analyze conversations between customer and agents,
 //! by using speech transcription, natural language processing, and intelligent search
 //! capabilities. It performs sentiment analysis, detects issues, and enables you to automatically

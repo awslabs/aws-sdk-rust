@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <p>The AWS Migration Hub API methods help to obtain server and application migration status
 //! and integrate your resource-specific migration tool by providing a programmatic interface
 //! to Migration Hub.</p>

@@ -2899,6 +2899,15 @@ where
                                     crate::json_deser::deser_structure_crate_model_ontap_file_system_configuration(tokens)?
                                 );
                             }
+                            "FileSystemTypeVersion" => {
+                                builder = builder.set_file_system_type_version(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

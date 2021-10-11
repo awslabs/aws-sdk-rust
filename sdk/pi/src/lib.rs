@@ -5,6 +5,7 @@
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
+#![allow(rustdoc::bare_urls)]
 //! <fullname>Amazon RDS Performance Insights</fullname>
 //! <p>Amazon RDS Performance Insights enables you to monitor and explore different dimensions of
 //! database load based on data captured from a running DB instance. The guide provides detailed

@@ -294,6 +294,33 @@ where
     }
 }
 impl<R>
+    From<
+        smithy_http::result::SdkError<crate::error::CreateLicenseConversionTaskForResourceError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<
+            crate::error::CreateLicenseConversionTaskForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
+                crate::error::CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+                crate::error::CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
+                crate::error::CreateLicenseConversionTaskForResourceErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::CreateLicenseConversionTaskForResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
     From<smithy_http::result::SdkError<crate::error::CreateLicenseManagerReportGeneratorError, R>>
     for Error
 where
@@ -717,6 +744,39 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::GetLicenseConversionTaskError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetLicenseConversionTaskError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetLicenseConversionTaskErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetLicenseConversionTaskErrorKind::AuthorizationException(inner) => {
+                    Error::AuthorizationException(inner)
+                }
+                crate::error::GetLicenseConversionTaskErrorKind::InvalidParameterValueException(
+                    inner,
+                ) => Error::InvalidParameterValueException(inner),
+                crate::error::GetLicenseConversionTaskErrorKind::RateLimitExceededException(
+                    inner,
+                ) => Error::RateLimitExceededException(inner),
+                crate::error::GetLicenseConversionTaskErrorKind::ServerInternalException(inner) => {
+                    Error::ServerInternalException(inner)
+                }
+                crate::error::GetLicenseConversionTaskErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::GetLicenseManagerReportGeneratorError, R>>
     for Error
 where
@@ -913,6 +973,27 @@ where
                 crate::error::ListLicenseConfigurationsErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
                 crate::error::ListLicenseConfigurationsErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::ListLicenseConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListLicenseConversionTasksError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListLicenseConversionTasksError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListLicenseConversionTasksErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListLicenseConversionTasksErrorKind::AuthorizationException(inner) => Error::AuthorizationException(inner),
+                crate::error::ListLicenseConversionTasksErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::ListLicenseConversionTasksErrorKind::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+                crate::error::ListLicenseConversionTasksErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
+                crate::error::ListLicenseConversionTasksErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

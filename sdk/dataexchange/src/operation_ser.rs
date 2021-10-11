@@ -9,6 +9,16 @@ pub fn serialize_operation_crate_operation_create_data_set(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_create_event_action(
+    input: &crate::input::CreateEventActionInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_event_action_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_create_job(
     input: &crate::input::CreateJobInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -55,6 +65,16 @@ pub fn serialize_operation_crate_operation_update_data_set(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_update_data_set_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_event_action(
+    input: &crate::input::UpdateEventActionInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_event_action_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

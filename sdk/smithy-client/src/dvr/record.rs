@@ -11,13 +11,14 @@ use std::task::{Context, Poll};
 
 use http_body::Body;
 use tokio::task::JoinHandle;
-use tower::{BoxError, Service};
+use tower::Service;
 
 use smithy_http::body::SdkBody;
 
 use crate::dvr::{self, Action, BodyData, ConnectionId, Direction, Error, NetworkTraffic, Version};
 
 use super::Event;
+use std::fmt::Display;
 
 /// Recording Connection Wrapper
 ///
@@ -138,18 +139,18 @@ where
         + Send
         + Clone
         + 'static,
-    S::Error: Into<BoxError> + Send + Sync + 'static,
+    S::Error: Display + Send + Sync + 'static,
     S::Future: Send + 'static,
     ResponseBody: Into<SdkBody>,
 {
     type Response = http::Response<SdkBody>;
-    type Error = BoxError;
+    type Error = S::Error;
     #[allow(clippy::type_complexity)]
     type Future =
         Pin<Box<dyn Future<Output = Result<http::Response<SdkBody>, Self::Error>> + Send>>;
 
     fn poll_ready(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
-        self.inner.poll_ready(cx).map_err(|err| err.into())
+        self.inner.poll_ready(cx)
     }
 
     fn call(&mut self, mut req: http::Request<SdkBody>) -> Self::Future {
@@ -200,7 +201,6 @@ where
                     Ok(resp)
                 }
                 Err(e) => {
-                    let e = e.into();
                     events.lock().unwrap().push(Event {
                         connection_id: event_id,
                         action: Action::Response {
