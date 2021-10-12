@@ -1,0 +1,1 @@
+This is a tool that the SDK developer team uses to publish the AWS SDK to crates.io.

@@ -1,0 +1,20 @@
+[package]
+name = "publisher"
+version = "0.1.0"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
+description = "Tool used to publish the AWS SDK to crates.io"
+edition = "2018"
+license = "Apache-2.0"
+publish = false
+
+[dependencies]
+anyhow = "1.0"
+cargo_toml = "0.10.1"
+clap = "2.33"
+dialoguer = "0.8"
+semver = "1.0"
+thiserror = "1.0"
+tokio = { version = "1.12", features = ["full"] }
+toml = "0.5.8"
+tracing = "0.1.29"
+tracing-subscriber = "0.2.25"
