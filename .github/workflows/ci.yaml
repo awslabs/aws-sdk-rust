@@ -1,4 +1,6 @@
-on: [ pull_request ]
+on:
+  pull_request:
+    paths: 'sdk/**'
 
 env:
   rust_version: 1.53.0
