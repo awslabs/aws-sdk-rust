@@ -5,7 +5,7 @@
 
 use crate::cargo;
 use crate::fs::Fs;
-use crate::package::{discover_package_batches, PackageBatch};
+use crate::package::{discover_package_batches, PackageBatch, PackageStats};
 use crate::repo::discover_repository;
 use crate::{REPO_CRATE_PATH, REPO_NAME};
 use anyhow::Result;
@@ -16,7 +16,6 @@ use tokio::sync::Semaphore;
 use tracing::info;
 
 const BACKOFF: Duration = Duration::from_millis(30);
-const MAX_CONCURRENCY: usize = 4;
 
 pub async fn subcommand_publish() -> Result<()> {
     // Make sure cargo exists
@@ -24,14 +23,19 @@ pub async fn subcommand_publish() -> Result<()> {
 
     info!("Discovering crates to publish...");
     let repo = discover_repository(REPO_NAME, REPO_CRATE_PATH)?;
-    let batches = discover_package_batches(Fs::Real, &repo.crates_root).await?;
-    info!("Crates discovered.");
+    let (batches, stats) = discover_package_batches(Fs::Real, &repo.crates_root).await?;
+    info!("Finished crate discovery.");
 
     // Don't proceed unless the user confirms the plan
-    confirm_plan(&batches)?;
+    confirm_plan(&batches, stats)?;
 
     // Use a semaphore to only allow a few concurrent publishes
-    let semaphore = Arc::new(Semaphore::new(MAX_CONCURRENCY));
+    let max_concurrency = num_cpus::get_physical();
+    let semaphore = Arc::new(Semaphore::new(max_concurrency));
+    info!(
+        "Will publish {} crates in parallel where possible.",
+        max_concurrency
+    );
     for batch in batches {
         let mut tasks = Vec::new();
         for package in batch {
@@ -65,7 +69,7 @@ pub async fn subcommand_publish() -> Result<()> {
     Ok(())
 }
 
-fn confirm_plan(batches: &Vec<PackageBatch>) -> Result<()> {
+fn confirm_plan(batches: &Vec<PackageBatch>, stats: PackageStats) -> Result<()> {
     let mut full_plan = Vec::new();
     for batch in batches {
         for package in batch {
@@ -74,10 +78,17 @@ fn confirm_plan(batches: &Vec<PackageBatch>) -> Result<()> {
         full_plan.push("wait".into());
     }
 
-    println!("Publish plan:");
+    info!("Publish plan:");
     for item in full_plan {
         println!("  {}", item);
     }
+    info!(
+        "Will publish {} crates total ({} Smithy runtime, {} AWS runtime, {} AWS SDK).",
+        stats.total(),
+        stats.smithy_runtime_crates,
+        stats.aws_runtime_crates,
+        stats.aws_sdk_crates
+    );
 
     if Confirm::new()
         .with_prompt("Continuing will publish to crates.io. Do you wish to continue?")

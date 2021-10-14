@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-//! Repository discovery.
+//! Local filesystem git repository discovery. This enables the tool to
+//! orient itself despite being run anywhere from within the git repo.
 
 use anyhow::Result;
 use std::env;

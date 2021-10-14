@@ -15,8 +15,8 @@ mod repo;
 mod sort;
 mod subcommand;
 
-pub const REPO_NAME: &'static str = "aws-sdk-rust";
-pub const REPO_CRATE_PATH: &'static str = "sdk";
+pub const REPO_NAME: &str = "aws-sdk-rust";
+pub const REPO_CRATE_PATH: &str = "sdk";
 
 #[tokio::main]
 async fn main() -> Result<()> {

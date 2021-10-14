@@ -12,6 +12,7 @@ anyhow = "1.0"
 cargo_toml = "0.10.1"
 clap = "2.33"
 dialoguer = "0.8"
+num_cpus = "1.13"
 semver = "1.0"
 thiserror = "1.0"
 tokio = { version = "1.12", features = ["full"] }

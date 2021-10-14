@@ -14,6 +14,7 @@ use std::collections::{BTreeMap, BTreeSet};
 use std::error::Error as StdError;
 use std::path::{Path, PathBuf};
 use tokio::fs;
+use tracing::warn;
 
 /// Information required to identify a package (crate).
 #[derive(Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
@@ -64,13 +65,50 @@ impl Package {
 /// Batch of packages.
 pub type PackageBatch = Vec<Package>;
 
+/// Stats about the packages.
+#[derive(Copy, Clone, Debug, Default)]
+pub struct PackageStats {
+    /// Number of Smithy runtime crates
+    pub smithy_runtime_crates: usize,
+    /// Number of AWS runtime crates
+    pub aws_runtime_crates: usize,
+    /// Number of AWS service crates
+    pub aws_sdk_crates: usize,
+}
+
+impl PackageStats {
+    pub fn total(&self) -> usize {
+        self.smithy_runtime_crates + self.aws_runtime_crates + self.aws_sdk_crates
+    }
+
+    fn calculate(packages: &[Package]) -> PackageStats {
+        let mut stats = PackageStats::default();
+        for package in packages {
+            if package.handle.name.starts_with("smithy-") {
+                stats.smithy_runtime_crates += 1;
+            } else if package.handle.name.starts_with("aws-sdk-") {
+                stats.aws_sdk_crates += 1;
+            } else if package.handle.name.starts_with("aws-") {
+                stats.aws_runtime_crates += 1;
+            } else {
+                warn!("Unrecognized crate name: {}", package.handle.name);
+            }
+        }
+        stats
+    }
+}
+
 /// Discovers publishable packages in the given directory and returns them as
 /// batches that can be published in order.
-pub async fn discover_package_batches(fs: Fs, path: impl AsRef<Path>) -> Result<Vec<PackageBatch>> {
+pub async fn discover_package_batches(
+    fs: Fs,
+    path: impl AsRef<Path>,
+) -> Result<(Vec<PackageBatch>, PackageStats)> {
     let manifest_paths = discover_package_manifests(path).await?;
     let packages = read_packages(fs, manifest_paths).await?;
+    let stats = PackageStats::calculate(&packages);
     validate_packages(&packages)?;
-    batch_packages(packages)
+    Ok((batch_packages(packages)?, stats))
 }
 
 type BoxError = Box<dyn StdError + Send + Sync + 'static>;
