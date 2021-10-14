@@ -26,22 +26,14 @@ pub fn dependency_order(packages: Vec<Package>) -> Result<Vec<Package>> {
     });
 
     // Depth-first search topological sort
-    loop {
-        if let Some(package) = to_visit
-            .iter()
-            .filter(|e| !visited.contains(&e.handle))
-            .next()
-        {
-            dependency_order_visit(
-                &package.handle,
-                &packages,
-                &mut BTreeSet::new(),
-                &mut visited,
-                &mut order,
-            )?;
-        } else {
-            break;
-        }
+    while let Some(package) = to_visit.iter().find(|e| !visited.contains(&e.handle)) {
+        dependency_order_visit(
+            &package.handle,
+            &packages,
+            &mut BTreeSet::new(),
+            &mut visited,
+            &mut order,
+        )?;
     }
 
     Ok(order

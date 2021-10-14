@@ -59,7 +59,7 @@ impl Cmd {
         if let Some(working_dir) = &self.working_dir {
             plan.push_str(&format!("[in {:?}]: ", working_dir));
         }
-        plan.push_str(&self.parts.join(" ").to_string());
+        plan.push_str(&self.parts.join(" "));
         plan
     }
 
@@ -76,7 +76,7 @@ impl Cmd {
 
 impl From<Cmd> for Command {
     fn from(cmd: Cmd) -> Self {
-        assert!(cmd.parts.len() > 0);
+        assert!(!cmd.parts.is_empty());
         let mut command = Command::new(&cmd.parts[0]);
         for i in 1..cmd.parts.len() {
             command.arg(&cmd.parts[i]);

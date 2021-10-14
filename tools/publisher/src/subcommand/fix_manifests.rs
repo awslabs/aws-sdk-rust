@@ -41,7 +41,7 @@ async fn read_manifests(fs: Fs, manifest_paths: Vec<PathBuf>) -> Result<Vec<Mani
     Ok(result)
 }
 
-fn package_versions(manifests: &Vec<Manifest>) -> Result<BTreeMap<String, Version>> {
+fn package_versions(manifests: &[Manifest]) -> Result<BTreeMap<String, Version>> {
     let mut versions = BTreeMap::new();
     for manifest in manifests {
         if let Some(package) = &manifest.metadata.package {

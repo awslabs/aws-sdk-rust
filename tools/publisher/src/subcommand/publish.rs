@@ -69,7 +69,7 @@ pub async fn subcommand_publish() -> Result<()> {
     Ok(())
 }
 
-fn confirm_plan(batches: &Vec<PackageBatch>, stats: PackageStats) -> Result<()> {
+fn confirm_plan(batches: &[PackageBatch], stats: PackageStats) -> Result<()> {
     let mut full_plan = Vec::new();
     for batch in batches {
         for package in batch {

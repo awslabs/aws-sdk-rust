@@ -190,7 +190,7 @@ fn read_package(path: &Path, manifest_bytes: &[u8]) -> Result<Package> {
 
 /// Validates that all of the publishable crates use consistent version numbers
 /// across all of their local dependencies.
-fn validate_packages(packages: &Vec<Package>) -> Result<()> {
+fn validate_packages(packages: &[Package]) -> Result<()> {
     let mut versions: BTreeMap<String, Version> = BTreeMap::new();
     let track_version = &mut |handle: &PackageHandle| -> Result<(), Error> {
         if let Some(version) = versions.get(&handle.name) {
