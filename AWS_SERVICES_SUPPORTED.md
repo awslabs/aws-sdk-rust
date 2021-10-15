@@ -174,6 +174,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Macie
 - [x] Amazon Macie2
 - [x] Amazon Managedblockchain
+- [x] Amazon Managed Grafana
 - [x] Amazon Marketplace-Catalog
 - [x] Amazon Marketplacecommerceanalytics
 - [x] Amazon Mediaconnect
