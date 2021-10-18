@@ -901,10 +901,10 @@ pub struct ZeppelinApplicationConfigurationDescription {
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
     pub monitoring_configuration_description:
         std::option::Option<crate::model::ZeppelinMonitoringConfigurationDescription>,
-    /// <p>The AWS Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
+    /// <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
     pub catalog_configuration_description:
         std::option::Option<crate::model::CatalogConfigurationDescription>,
-    /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state..</p>
+    /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
     pub deploy_as_application_configuration_description:
         std::option::Option<crate::model::DeployAsApplicationConfigurationDescription>,
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
@@ -965,7 +965,7 @@ pub mod zeppelin_application_configuration_description {
             self.monitoring_configuration_description = input;
             self
         }
-        /// <p>The AWS Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
+        /// <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
         pub fn catalog_configuration_description(
             mut self,
             input: crate::model::CatalogConfigurationDescription,
@@ -980,7 +980,7 @@ pub mod zeppelin_application_configuration_description {
             self.catalog_configuration_description = input;
             self
         }
-        /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state..</p>
+        /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
         pub fn deploy_as_application_configuration_description(
             mut self,
             input: crate::model::DeployAsApplicationConfigurationDescription,
@@ -1462,11 +1462,11 @@ impl S3ContentBaseLocationDescription {
     }
 }
 
-/// <p>The configuration parameters for the default AWS Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
+/// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogConfigurationDescription {
-    /// <p>The configuration parameters for the default AWS Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+    /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
     pub glue_data_catalog_configuration_description:
         std::option::Option<crate::model::GlueDataCatalogConfigurationDescription>,
 }
@@ -1490,7 +1490,7 @@ pub mod catalog_configuration_description {
             std::option::Option<crate::model::GlueDataCatalogConfigurationDescription>,
     }
     impl Builder {
-        /// <p>The configuration parameters for the default AWS Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+        /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
         pub fn glue_data_catalog_configuration_description(
             mut self,
             input: crate::model::GlueDataCatalogConfigurationDescription,
@@ -4166,7 +4166,7 @@ impl DestinationSchema {
     }
 }
 
-/// <p>For a SQL-based Kinesis Data Analytics application's output, describes the AWS
+/// <p>For a SQL-based Kinesis Data Analytics application's output, describes the Amazon
 /// Lambda function that is configured as its destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4943,7 +4943,7 @@ impl KinesisStreamsInputDescription {
 }
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides the configuration
-/// information about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.</p>
+/// information about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputProcessingConfigurationDescription {
@@ -5004,19 +5004,19 @@ impl InputProcessingConfigurationDescription {
 }
 
 /// <p>For a SQL-based Kinesis Data Analytics application, an object that contains the
-/// Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess records in
+/// Amazon Resource Name (ARN) of the Amazon Lambda function that is used to preprocess records in
 /// the stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputLambdaProcessorDescription {
-    /// <p>The ARN of the AWS Lambda function that is used to preprocess the records in the
+    /// <p>The ARN of the Amazon Lambda function that is used to preprocess the records in the
     /// stream.</p>
     /// <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
     /// </p>
     /// </note>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
+    /// <p>The ARN of the IAM role that is used to access the Amazon Lambda function.</p>
     /// <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API
     /// version have an application-level service execution role rather than a resource-level
@@ -5042,10 +5042,10 @@ pub mod input_lambda_processor_description {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the AWS Lambda function that is used to preprocess the records in the
+        /// <p>The ARN of the Amazon Lambda function that is used to preprocess the records in the
         /// stream.</p>
         /// <note>
-        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
         /// </p>
         /// </note>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5056,7 +5056,7 @@ pub mod input_lambda_processor_description {
             self.resource_arn = input;
             self
         }
-        /// <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
+        /// <p>The ARN of the IAM role that is used to access the Amazon Lambda function.</p>
         /// <note>
         /// <p>Provided for backward compatibility. Applications that are created with the current API
         /// version have an application-level service execution role rather than a resource-level
@@ -5187,10 +5187,12 @@ impl AsRef<str> for ApplicationStatus {
 )]
 pub enum RuntimeEnvironment {
     Flink111,
+    Flink113,
     Flink16,
     Flink18,
     Sql10,
     ZeppelinFlink10,
+    ZeppelinFlink20,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -5198,10 +5200,12 @@ impl std::convert::From<&str> for RuntimeEnvironment {
     fn from(s: &str) -> Self {
         match s {
             "FLINK-1_11" => RuntimeEnvironment::Flink111,
+            "FLINK-1_13" => RuntimeEnvironment::Flink113,
             "FLINK-1_6" => RuntimeEnvironment::Flink16,
             "FLINK-1_8" => RuntimeEnvironment::Flink18,
             "SQL-1_0" => RuntimeEnvironment::Sql10,
             "ZEPPELIN-FLINK-1_0" => RuntimeEnvironment::ZeppelinFlink10,
+            "ZEPPELIN-FLINK-2_0" => RuntimeEnvironment::ZeppelinFlink20,
             other => RuntimeEnvironment::Unknown(other.to_owned()),
         }
     }
@@ -5217,20 +5221,24 @@ impl RuntimeEnvironment {
     pub fn as_str(&self) -> &str {
         match self {
             RuntimeEnvironment::Flink111 => "FLINK-1_11",
+            RuntimeEnvironment::Flink113 => "FLINK-1_13",
             RuntimeEnvironment::Flink16 => "FLINK-1_6",
             RuntimeEnvironment::Flink18 => "FLINK-1_8",
             RuntimeEnvironment::Sql10 => "SQL-1_0",
             RuntimeEnvironment::ZeppelinFlink10 => "ZEPPELIN-FLINK-1_0",
+            RuntimeEnvironment::ZeppelinFlink20 => "ZEPPELIN-FLINK-2_0",
             RuntimeEnvironment::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
         &[
             "FLINK-1_11",
+            "FLINK-1_13",
             "FLINK-1_6",
             "FLINK-1_8",
             "SQL-1_0",
             "ZEPPELIN-FLINK-1_0",
+            "ZEPPELIN-FLINK-2_0",
         ]
     }
 }
@@ -5612,9 +5620,9 @@ pub struct ZeppelinApplicationConfigurationUpdate {
     /// <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
     pub monitoring_configuration_update:
         std::option::Option<crate::model::ZeppelinMonitoringConfigurationUpdate>,
-    /// <p>Updates to the configuration of the AWS Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
+    /// <p>Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
     pub catalog_configuration_update: std::option::Option<crate::model::CatalogConfigurationUpdate>,
-    /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state..</p>
+    /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
     pub deploy_as_application_configuration_update:
         std::option::Option<crate::model::DeployAsApplicationConfigurationUpdate>,
     /// <p>Updates to the customer artifacts. Custom artifacts are dependency JAR files and user-defined functions (UDF).</p>
@@ -5674,7 +5682,7 @@ pub mod zeppelin_application_configuration_update {
             self.monitoring_configuration_update = input;
             self
         }
-        /// <p>Updates to the configuration of the AWS Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
+        /// <p>Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
         pub fn catalog_configuration_update(
             mut self,
             input: crate::model::CatalogConfigurationUpdate,
@@ -5689,7 +5697,7 @@ pub mod zeppelin_application_configuration_update {
             self.catalog_configuration_update = input;
             self
         }
-        /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state..</p>
+        /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
         pub fn deploy_as_application_configuration_update(
             mut self,
             input: crate::model::DeployAsApplicationConfigurationUpdate,
@@ -5833,7 +5841,7 @@ impl CustomArtifactConfiguration {
     }
 }
 
-/// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state..</p>
+/// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeployAsApplicationConfigurationUpdate {
@@ -5957,11 +5965,11 @@ impl S3ContentBaseLocationUpdate {
     }
 }
 
-/// <p>Updates to </p>
+/// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogConfigurationUpdate {
-    /// <p>Updates to the configuration parameters for the default AWS Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+    /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
     pub glue_data_catalog_configuration_update:
         std::option::Option<crate::model::GlueDataCatalogConfigurationUpdate>,
 }
@@ -5985,7 +5993,7 @@ pub mod catalog_configuration_update {
             std::option::Option<crate::model::GlueDataCatalogConfigurationUpdate>,
     }
     impl Builder {
-        /// <p>Updates to the configuration parameters for the default AWS Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+        /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
         pub fn glue_data_catalog_configuration_update(
             mut self,
             input: crate::model::GlueDataCatalogConfigurationUpdate,
@@ -7339,7 +7347,7 @@ pub struct OutputUpdate {
     /// output.</p>
     pub kinesis_firehose_output_update:
         std::option::Option<crate::model::KinesisFirehoseOutputUpdate>,
-    /// <p>Describes an AWS Lambda function as the destination for the output.</p>
+    /// <p>Describes an Amazon Lambda function as the destination for the output.</p>
     pub lambda_output_update: std::option::Option<crate::model::LambdaOutputUpdate>,
     /// <p>Describes the data format when records are written to the destination.
     /// </p>
@@ -7430,7 +7438,7 @@ pub mod output_update {
             self.kinesis_firehose_output_update = input;
             self
         }
-        /// <p>Describes an AWS Lambda function as the destination for the output.</p>
+        /// <p>Describes an Amazon Lambda function as the destination for the output.</p>
         pub fn lambda_output_update(mut self, input: crate::model::LambdaOutputUpdate) -> Self {
             self.lambda_output_update = Some(input);
             self
@@ -7477,13 +7485,13 @@ impl OutputUpdate {
 
 /// <p>When you update an SQL-based Kinesis Data Analytics application's output
 /// configuration using the <a>UpdateApplication</a> operation, provides information
-/// about an AWS Lambda function that is configured as the destination.</p>
+/// about an Amazon Lambda function that is configured as the destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaOutputUpdate {
-    /// <p>The Amazon Resource Name (ARN) of the destination AWS Lambda function.</p>
+    /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
     /// <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
     /// </p>
     /// </note>
     pub resource_arn_update: std::option::Option<std::string::String>,
@@ -7504,9 +7512,9 @@ pub mod lambda_output_update {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the destination AWS Lambda function.</p>
+        /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
         /// <note>
-        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
         /// </p>
         /// </note>
         pub fn resource_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8133,10 +8141,10 @@ impl InputProcessingConfigurationUpdate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputLambdaProcessorUpdate {
-    /// <p>The Amazon Resource Name (ARN) of the new AWS Lambda function that is used to preprocess
+    /// <p>The Amazon Resource Name (ARN) of the new Amazon Lambda function that is used to preprocess
     /// the records in the stream.</p>
     /// <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
     /// </p>
     /// </note>
     pub resource_arn_update: std::option::Option<std::string::String>,
@@ -8157,10 +8165,10 @@ pub mod input_lambda_processor_update {
         pub(crate) resource_arn_update: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the new AWS Lambda function that is used to preprocess
+        /// <p>The Amazon Resource Name (ARN) of the new Amazon Lambda function that is used to preprocess
         /// the records in the stream.</p>
         /// <note>
-        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
         /// </p>
         /// </note>
         pub fn resource_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8189,7 +8197,7 @@ impl InputLambdaProcessorUpdate {
     }
 }
 
-/// <p>A key-value pair (the value is optional) that you can define and assign to AWS resources.
+/// <p>A key-value pair (the value is optional) that you can define and assign to Amazon resources.
 /// If you specify a tag that already exists, the tag value is replaced with the value that you
 /// specify in the request. Note that
 /// the maximum number of application tags includes system tags. The maximum number of user-defined
@@ -8788,7 +8796,7 @@ impl ApplicationSummary {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes a processor that is
 /// used to preprocess the records in the stream before being processed by your application code.
-/// Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.</p>
+/// Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputProcessingConfiguration {
@@ -8840,14 +8848,14 @@ impl InputProcessingConfiguration {
     }
 }
 
-/// <p>An object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is
+/// <p>An object that contains the Amazon Resource Name (ARN) of the Amazon Lambda function that is
 /// used to preprocess records in the stream in a SQL-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputLambdaProcessor {
-    /// <p>The ARN of the AWS Lambda function that operates on records in the stream.</p>
+    /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p>
     /// <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
     /// </p>
     /// </note>
     pub resource_arn: std::option::Option<std::string::String>,
@@ -8868,9 +8876,9 @@ pub mod input_lambda_processor {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the AWS Lambda function that operates on records in the stream.</p>
+        /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p>
         /// <note>
-        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
         /// </p>
         /// </note>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9267,9 +9275,9 @@ pub struct ZeppelinApplicationConfiguration {
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
     pub monitoring_configuration:
         std::option::Option<crate::model::ZeppelinMonitoringConfiguration>,
-    /// <p>The AWS Glue Data Catalog that you use in queries in a Kinesis Data Analytics Studio notebook.</p>
+    /// <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data Analytics Studio notebook.</p>
     pub catalog_configuration: std::option::Option<crate::model::CatalogConfiguration>,
-    /// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state..</p>
+    /// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
     pub deploy_as_application_configuration:
         std::option::Option<crate::model::DeployAsApplicationConfiguration>,
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
@@ -9322,7 +9330,7 @@ pub mod zeppelin_application_configuration {
             self.monitoring_configuration = input;
             self
         }
-        /// <p>The AWS Glue Data Catalog that you use in queries in a Kinesis Data Analytics Studio notebook.</p>
+        /// <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data Analytics Studio notebook.</p>
         pub fn catalog_configuration(mut self, input: crate::model::CatalogConfiguration) -> Self {
             self.catalog_configuration = Some(input);
             self
@@ -9334,7 +9342,7 @@ pub mod zeppelin_application_configuration {
             self.catalog_configuration = input;
             self
         }
-        /// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state..</p>
+        /// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
         pub fn deploy_as_application_configuration(
             mut self,
             input: crate::model::DeployAsApplicationConfiguration,
@@ -9383,7 +9391,7 @@ impl ZeppelinApplicationConfiguration {
     }
 }
 
-/// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state..</p>
+/// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeployAsApplicationConfiguration {
@@ -9496,11 +9504,11 @@ impl S3ContentBaseLocation {
     }
 }
 
-/// <p>The configuration parameters for the default AWS Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+/// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogConfiguration {
-    /// <p>The configuration parameters for the default AWS Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
+    /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
     pub glue_data_catalog_configuration:
         std::option::Option<crate::model::GlueDataCatalogConfiguration>,
 }
@@ -9524,7 +9532,7 @@ pub mod catalog_configuration {
             std::option::Option<crate::model::GlueDataCatalogConfiguration>,
     }
     impl Builder {
-        /// <p>The configuration parameters for the default AWS Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
+        /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
         pub fn glue_data_catalog_configuration(
             mut self,
             input: crate::model::GlueDataCatalogConfiguration,
@@ -10719,7 +10727,7 @@ pub struct Output {
     pub kinesis_streams_output: std::option::Option<crate::model::KinesisStreamsOutput>,
     /// <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
     pub kinesis_firehose_output: std::option::Option<crate::model::KinesisFirehoseOutput>,
-    /// <p>Identifies an AWS Lambda function as the destination.</p>
+    /// <p>Identifies an Amazon Lambda function as the destination.</p>
     pub lambda_output: std::option::Option<crate::model::LambdaOutput>,
     /// <p>Describes the data format when records are written to the destination.
     /// </p>
@@ -10787,7 +10795,7 @@ pub mod output {
             self.kinesis_firehose_output = input;
             self
         }
-        /// <p>Identifies an AWS Lambda function as the destination.</p>
+        /// <p>Identifies an Amazon Lambda function as the destination.</p>
         pub fn lambda_output(mut self, input: crate::model::LambdaOutput) -> Self {
             self.lambda_output = Some(input);
             self
@@ -10832,14 +10840,14 @@ impl Output {
 }
 
 /// <p>When you configure a SQL-based Kinesis Data Analytics application's output,
-/// identifies an AWS Lambda function as the destination. You provide the function Amazon Resource
+/// identifies an Amazon Lambda function as the destination. You provide the function Amazon Resource
 /// Name (ARN) of the Lambda function. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaOutput {
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function to write to.</p>
     /// <note>
-    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+    /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
     /// </p>
     /// </note>
     pub resource_arn: std::option::Option<std::string::String>,
@@ -10862,7 +10870,7 @@ pub mod lambda_output {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the destination Lambda function to write to.</p>
         /// <note>
-        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
         /// </p>
         /// </note>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {

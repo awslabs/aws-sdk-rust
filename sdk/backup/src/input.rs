@@ -1773,6 +1773,171 @@ impl DeleteBackupVaultAccessPolicyInput {
     }
 }
 
+/// See [`DeleteBackupVaultLockConfigurationInput`](crate::input::DeleteBackupVaultLockConfigurationInput)
+pub mod delete_backup_vault_lock_configuration_input {
+    /// A builder for [`DeleteBackupVaultLockConfigurationInput`](crate::input::DeleteBackupVaultLockConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) backup_vault_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
+        pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_vault_name = Some(input.into());
+            self
+        }
+        pub fn set_backup_vault_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_vault_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteBackupVaultLockConfigurationInput`](crate::input::DeleteBackupVaultLockConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteBackupVaultLockConfigurationInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteBackupVaultLockConfigurationInput {
+                backup_vault_name: self.backup_vault_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteBackupVaultLockConfigurationInputOperationOutputAlias =
+    crate::operation::DeleteBackupVaultLockConfiguration;
+#[doc(hidden)]
+pub type DeleteBackupVaultLockConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteBackupVaultLockConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteBackupVaultLockConfiguration`](crate::operation::DeleteBackupVaultLockConfiguration)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteBackupVaultLockConfiguration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteBackupVaultLockConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_8 = &_input.backup_vault_name;
+            let input_8 =
+                input_8
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "backup_vault_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let backup_vault_name = smithy_http::label::fmt_string(input_8, false);
+            if backup_vault_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "backup_vault_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/backup-vaults/{BackupVaultName}/vault-lock",
+                BackupVaultName = backup_vault_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteBackupVaultLockConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteBackupVaultLockConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteBackupVaultLockConfiguration::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteBackupVaultLockConfiguration",
+            "backup",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteBackupVaultLockConfigurationInput`](crate::input::DeleteBackupVaultLockConfigurationInput)
+    pub fn builder() -> crate::input::delete_backup_vault_lock_configuration_input::Builder {
+        crate::input::delete_backup_vault_lock_configuration_input::Builder::default()
+    }
+}
+
 /// See [`DeleteBackupVaultNotificationsInput`](crate::input::DeleteBackupVaultNotificationsInput)
 pub mod delete_backup_vault_notifications_input {
     /// A builder for [`DeleteBackupVaultNotificationsInput`](crate::input::DeleteBackupVaultNotificationsInput)
@@ -1831,15 +1996,15 @@ impl DeleteBackupVaultNotificationsInput {
             _input: &crate::input::DeleteBackupVaultNotificationsInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_8 = &_input.backup_vault_name;
-            let input_8 =
-                input_8
+            let input_9 = &_input.backup_vault_name;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_8, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_9, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
@@ -1995,15 +2160,15 @@ impl DeleteFrameworkInput {
             _input: &crate::input::DeleteFrameworkInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_9 = &_input.framework_name;
-            let input_9 =
-                input_9
+            let input_10 = &_input.framework_name;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "framework_name",
                         details: "cannot be empty or unset",
                     })?;
-            let framework_name = smithy_http::label::fmt_string(input_9, false);
+            let framework_name = smithy_http::label::fmt_string(input_10, false);
             if framework_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "framework_name",
@@ -2177,30 +2342,30 @@ impl DeleteRecoveryPointInput {
             _input: &crate::input::DeleteRecoveryPointInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_10 = &_input.backup_vault_name;
-            let input_10 =
-                input_10
+            let input_11 = &_input.backup_vault_name;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_10, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_11, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_11 = &_input.recovery_point_arn;
-            let input_11 =
-                input_11
+            let input_12 = &_input.recovery_point_arn;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let recovery_point_arn = smithy_http::label::fmt_string(input_11, false);
+            let recovery_point_arn = smithy_http::label::fmt_string(input_12, false);
             if recovery_point_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
@@ -2357,15 +2522,15 @@ impl DeleteReportPlanInput {
             _input: &crate::input::DeleteReportPlanInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_12 = &_input.report_plan_name;
-            let input_12 =
-                input_12
+            let input_13 = &_input.report_plan_name;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
                         details: "cannot be empty or unset",
                     })?;
-            let report_plan_name = smithy_http::label::fmt_string(input_12, false);
+            let report_plan_name = smithy_http::label::fmt_string(input_13, false);
             if report_plan_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "report_plan_name",
@@ -2521,15 +2686,15 @@ impl DescribeBackupJobInput {
             _input: &crate::input::DescribeBackupJobInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_13 = &_input.backup_job_id;
-            let input_13 =
-                input_13
+            let input_14 = &_input.backup_job_id;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_job_id = smithy_http::label::fmt_string(input_13, false);
+            let backup_job_id = smithy_http::label::fmt_string(input_14, false);
             if backup_job_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_job_id",
@@ -2688,15 +2853,15 @@ impl DescribeBackupVaultInput {
             _input: &crate::input::DescribeBackupVaultInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_14 = &_input.backup_vault_name;
-            let input_14 =
-                input_14
+            let input_15 = &_input.backup_vault_name;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_14, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_15, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
@@ -2849,15 +3014,15 @@ impl DescribeCopyJobInput {
             _input: &crate::input::DescribeCopyJobInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_15 = &_input.copy_job_id;
-            let input_15 =
-                input_15
+            let input_16 = &_input.copy_job_id;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "copy_job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let copy_job_id = smithy_http::label::fmt_string(input_15, false);
+            let copy_job_id = smithy_http::label::fmt_string(input_16, false);
             if copy_job_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "copy_job_id",
@@ -3009,15 +3174,15 @@ impl DescribeFrameworkInput {
             _input: &crate::input::DescribeFrameworkInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_16 = &_input.framework_name;
-            let input_16 =
-                input_16
+            let input_17 = &_input.framework_name;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "framework_name",
                         details: "cannot be empty or unset",
                     })?;
-            let framework_name = smithy_http::label::fmt_string(input_16, false);
+            let framework_name = smithy_http::label::fmt_string(input_17, false);
             if framework_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "framework_name",
@@ -3300,15 +3465,15 @@ impl DescribeProtectedResourceInput {
             _input: &crate::input::DescribeProtectedResourceInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_17 = &_input.resource_arn;
-            let input_17 =
-                input_17
+            let input_18 = &_input.resource_arn;
+            let input_18 =
+                input_18
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_17, false);
+            let resource_arn = smithy_http::label::fmt_string(input_18, false);
             if resource_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -3482,30 +3647,30 @@ impl DescribeRecoveryPointInput {
             _input: &crate::input::DescribeRecoveryPointInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_18 = &_input.backup_vault_name;
-            let input_18 =
-                input_18
+            let input_19 = &_input.backup_vault_name;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_18, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_19, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_19 = &_input.recovery_point_arn;
-            let input_19 =
-                input_19
+            let input_20 = &_input.recovery_point_arn;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let recovery_point_arn = smithy_http::label::fmt_string(input_19, false);
+            let recovery_point_arn = smithy_http::label::fmt_string(input_20, false);
             if recovery_point_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
@@ -3791,15 +3956,15 @@ impl DescribeReportJobInput {
             _input: &crate::input::DescribeReportJobInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_20 = &_input.report_job_id;
-            let input_20 =
-                input_20
+            let input_21 = &_input.report_job_id;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "report_job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let report_job_id = smithy_http::label::fmt_string(input_20, false);
+            let report_job_id = smithy_http::label::fmt_string(input_21, false);
             if report_job_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "report_job_id",
@@ -3955,15 +4120,15 @@ impl DescribeReportPlanInput {
             _input: &crate::input::DescribeReportPlanInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_21 = &_input.report_plan_name;
-            let input_21 =
-                input_21
+            let input_22 = &_input.report_plan_name;
+            let input_22 =
+                input_22
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
                         details: "cannot be empty or unset",
                     })?;
-            let report_plan_name = smithy_http::label::fmt_string(input_21, false);
+            let report_plan_name = smithy_http::label::fmt_string(input_22, false);
             if report_plan_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "report_plan_name",
@@ -4119,15 +4284,15 @@ impl DescribeRestoreJobInput {
             _input: &crate::input::DescribeRestoreJobInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_22 = &_input.restore_job_id;
-            let input_22 =
-                input_22
+            let input_23 = &_input.restore_job_id;
+            let input_23 =
+                input_23
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "restore_job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let restore_job_id = smithy_http::label::fmt_string(input_22, false);
+            let restore_job_id = smithy_http::label::fmt_string(input_23, false);
             if restore_job_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "restore_job_id",
@@ -4299,30 +4464,30 @@ impl DisassociateRecoveryPointInput {
             _input: &crate::input::DisassociateRecoveryPointInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_23 = &_input.backup_vault_name;
-            let input_23 =
-                input_23
+            let input_24 = &_input.backup_vault_name;
+            let input_24 =
+                input_24
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_23, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_24, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_24 = &_input.recovery_point_arn;
-            let input_24 =
-                input_24
+            let input_25 = &_input.recovery_point_arn;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let recovery_point_arn = smithy_http::label::fmt_string(input_24, false);
+            let recovery_point_arn = smithy_http::label::fmt_string(input_25, false);
             if recovery_point_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
@@ -4480,15 +4645,15 @@ impl ExportBackupPlanTemplateInput {
             _input: &crate::input::ExportBackupPlanTemplateInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_25 = &_input.backup_plan_id;
-            let input_25 =
-                input_25
+            let input_26 = &_input.backup_plan_id;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_25, false);
+            let backup_plan_id = smithy_http::label::fmt_string(input_26, false);
             if backup_plan_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
@@ -4654,15 +4819,15 @@ impl GetBackupPlanInput {
             _input: &crate::input::GetBackupPlanInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_26 = &_input.backup_plan_id;
-            let input_26 =
-                input_26
+            let input_27 = &_input.backup_plan_id;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_26, false);
+            let backup_plan_id = smithy_http::label::fmt_string(input_27, false);
             if backup_plan_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
@@ -4679,8 +4844,8 @@ impl GetBackupPlanInput {
         }
         fn uri_query(_input: &crate::input::GetBackupPlanInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_27) = &_input.version_id {
-                query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_27));
+            if let Some(inner_28) = &_input.version_id {
+                query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_28));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4972,15 +5137,15 @@ impl GetBackupPlanFromTemplateInput {
             _input: &crate::input::GetBackupPlanFromTemplateInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_28 = &_input.backup_plan_template_id;
-            let input_28 =
-                input_28
+            let input_29 = &_input.backup_plan_template_id;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_template_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_template_id = smithy_http::label::fmt_string(input_28, false);
+            let backup_plan_template_id = smithy_http::label::fmt_string(input_29, false);
             if backup_plan_template_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_template_id",
@@ -5148,30 +5313,30 @@ impl GetBackupSelectionInput {
             _input: &crate::input::GetBackupSelectionInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_29 = &_input.backup_plan_id;
-            let input_29 =
-                input_29
+            let input_30 = &_input.backup_plan_id;
+            let input_30 =
+                input_30
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_29, false);
+            let backup_plan_id = smithy_http::label::fmt_string(input_30, false);
             if backup_plan_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_30 = &_input.selection_id;
-            let input_30 =
-                input_30
+            let input_31 = &_input.selection_id;
+            let input_31 =
+                input_31
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "selection_id",
                         details: "cannot be empty or unset",
                     })?;
-            let selection_id = smithy_http::label::fmt_string(input_30, false);
+            let selection_id = smithy_http::label::fmt_string(input_31, false);
             if selection_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "selection_id",
@@ -5332,15 +5497,15 @@ impl GetBackupVaultAccessPolicyInput {
             _input: &crate::input::GetBackupVaultAccessPolicyInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_31 = &_input.backup_vault_name;
-            let input_31 =
-                input_31
+            let input_32 = &_input.backup_vault_name;
+            let input_32 =
+                input_32
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_31, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_32, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
@@ -5500,15 +5665,15 @@ impl GetBackupVaultNotificationsInput {
             _input: &crate::input::GetBackupVaultNotificationsInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_32 = &_input.backup_vault_name;
-            let input_32 =
-                input_32
+            let input_33 = &_input.backup_vault_name;
+            let input_33 =
+                input_33
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_32, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_33, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
@@ -5683,30 +5848,30 @@ impl GetRecoveryPointRestoreMetadataInput {
             _input: &crate::input::GetRecoveryPointRestoreMetadataInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_33 = &_input.backup_vault_name;
-            let input_33 =
-                input_33
+            let input_34 = &_input.backup_vault_name;
+            let input_34 =
+                input_34
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_33, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_34, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_34 = &_input.recovery_point_arn;
-            let input_34 =
-                input_34
+            let input_35 = &_input.recovery_point_arn;
+            let input_35 =
+                input_35
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let recovery_point_arn = smithy_http::label::fmt_string(input_34, false);
+            let recovery_point_arn = smithy_http::label::fmt_string(input_35, false);
             if recovery_point_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
@@ -6137,50 +6302,50 @@ impl ListBackupJobsInput {
         }
         fn uri_query(_input: &crate::input::ListBackupJobsInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_35) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_35));
+            if let Some(inner_36) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_36));
             }
-            if let Some(inner_36) = &_input.max_results {
+            if let Some(inner_37) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_36).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_37).encode(),
                 );
             }
-            if let Some(inner_37) = &_input.by_resource_arn {
-                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_37));
+            if let Some(inner_38) = &_input.by_resource_arn {
+                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_38));
             }
-            if let Some(inner_38) = &_input.by_state {
-                query.push_kv("state", &smithy_http::query::fmt_string(&inner_38));
+            if let Some(inner_39) = &_input.by_state {
+                query.push_kv("state", &smithy_http::query::fmt_string(&inner_39));
             }
-            if let Some(inner_39) = &_input.by_backup_vault_name {
+            if let Some(inner_40) = &_input.by_backup_vault_name {
                 query.push_kv(
                     "backupVaultName",
-                    &smithy_http::query::fmt_string(&inner_39),
+                    &smithy_http::query::fmt_string(&inner_40),
                 );
             }
-            if let Some(inner_40) = &_input.by_created_before {
+            if let Some(inner_41) = &_input.by_created_before {
                 query.push_kv(
                     "createdBefore",
-                    &smithy_http::query::fmt_timestamp(
-                        inner_40,
-                        smithy_types::instant::Format::DateTime,
-                    ),
-                );
-            }
-            if let Some(inner_41) = &_input.by_created_after {
-                query.push_kv(
-                    "createdAfter",
                     &smithy_http::query::fmt_timestamp(
                         inner_41,
                         smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
-            if let Some(inner_42) = &_input.by_resource_type {
-                query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_42));
+            if let Some(inner_42) = &_input.by_created_after {
+                query.push_kv(
+                    "createdAfter",
+                    &smithy_http::query::fmt_timestamp(
+                        inner_42,
+                        smithy_types::instant::Format::DateTime,
+                    ),
+                );
             }
-            if let Some(inner_43) = &_input.by_account_id {
-                query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_43));
+            if let Some(inner_43) = &_input.by_resource_type {
+                query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_43));
+            }
+            if let Some(inner_44) = &_input.by_account_id {
+                query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_44));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6353,19 +6518,19 @@ impl ListBackupPlansInput {
         }
         fn uri_query(_input: &crate::input::ListBackupPlansInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_44) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_44));
+            if let Some(inner_45) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_45));
             }
-            if let Some(inner_45) = &_input.max_results {
+            if let Some(inner_46) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_45).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_46).encode(),
                 );
             }
-            if let Some(inner_46) = &_input.include_deleted {
+            if let Some(inner_47) = &_input.include_deleted {
                 query.push_kv(
                     "includeDeleted",
-                    &smithy_types::primitive::Encoder::from(*inner_46).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_47).encode(),
                 );
             }
         }
@@ -6528,13 +6693,13 @@ impl ListBackupPlanTemplatesInput {
         }
         fn uri_query(_input: &crate::input::ListBackupPlanTemplatesInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_47) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_47));
+            if let Some(inner_48) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_48));
             }
-            if let Some(inner_48) = &_input.max_results {
+            if let Some(inner_49) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_48).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_49).encode(),
                 );
             }
         }
@@ -6705,15 +6870,15 @@ impl ListBackupPlanVersionsInput {
             _input: &crate::input::ListBackupPlanVersionsInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_49 = &_input.backup_plan_id;
-            let input_49 =
-                input_49
+            let input_50 = &_input.backup_plan_id;
+            let input_50 =
+                input_50
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_49, false);
+            let backup_plan_id = smithy_http::label::fmt_string(input_50, false);
             if backup_plan_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
@@ -6730,13 +6895,13 @@ impl ListBackupPlanVersionsInput {
         }
         fn uri_query(_input: &crate::input::ListBackupPlanVersionsInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_50) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_50));
+            if let Some(inner_51) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_51));
             }
-            if let Some(inner_51) = &_input.max_results {
+            if let Some(inner_52) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_51).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_52).encode(),
                 );
             }
         }
@@ -6907,15 +7072,15 @@ impl ListBackupSelectionsInput {
             _input: &crate::input::ListBackupSelectionsInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_52 = &_input.backup_plan_id;
-            let input_52 =
-                input_52
+            let input_53 = &_input.backup_plan_id;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_52, false);
+            let backup_plan_id = smithy_http::label::fmt_string(input_53, false);
             if backup_plan_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
@@ -6932,13 +7097,13 @@ impl ListBackupSelectionsInput {
         }
         fn uri_query(_input: &crate::input::ListBackupSelectionsInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_53) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_53));
+            if let Some(inner_54) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_54));
             }
-            if let Some(inner_54) = &_input.max_results {
+            if let Some(inner_55) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_55).encode(),
                 );
             }
         }
@@ -7100,13 +7265,13 @@ impl ListBackupVaultsInput {
         }
         fn uri_query(_input: &crate::input::ListBackupVaultsInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_55) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_55));
+            if let Some(inner_56) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_56));
             }
-            if let Some(inner_56) = &_input.max_results {
+            if let Some(inner_57) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_56).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_57).encode(),
                 );
             }
         }
@@ -7397,50 +7562,50 @@ impl ListCopyJobsInput {
         }
         fn uri_query(_input: &crate::input::ListCopyJobsInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_57) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_57));
+            if let Some(inner_58) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_58));
             }
-            if let Some(inner_58) = &_input.max_results {
+            if let Some(inner_59) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_58).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_59).encode(),
                 );
             }
-            if let Some(inner_59) = &_input.by_resource_arn {
-                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_59));
+            if let Some(inner_60) = &_input.by_resource_arn {
+                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_60));
             }
-            if let Some(inner_60) = &_input.by_state {
-                query.push_kv("state", &smithy_http::query::fmt_string(&inner_60));
+            if let Some(inner_61) = &_input.by_state {
+                query.push_kv("state", &smithy_http::query::fmt_string(&inner_61));
             }
-            if let Some(inner_61) = &_input.by_created_before {
+            if let Some(inner_62) = &_input.by_created_before {
                 query.push_kv(
                     "createdBefore",
-                    &smithy_http::query::fmt_timestamp(
-                        inner_61,
-                        smithy_types::instant::Format::DateTime,
-                    ),
-                );
-            }
-            if let Some(inner_62) = &_input.by_created_after {
-                query.push_kv(
-                    "createdAfter",
                     &smithy_http::query::fmt_timestamp(
                         inner_62,
                         smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
-            if let Some(inner_63) = &_input.by_resource_type {
-                query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_63));
-            }
-            if let Some(inner_64) = &_input.by_destination_vault_arn {
+            if let Some(inner_63) = &_input.by_created_after {
                 query.push_kv(
-                    "destinationVaultArn",
-                    &smithy_http::query::fmt_string(&inner_64),
+                    "createdAfter",
+                    &smithy_http::query::fmt_timestamp(
+                        inner_63,
+                        smithy_types::instant::Format::DateTime,
+                    ),
                 );
             }
-            if let Some(inner_65) = &_input.by_account_id {
-                query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_65));
+            if let Some(inner_64) = &_input.by_resource_type {
+                query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_64));
+            }
+            if let Some(inner_65) = &_input.by_destination_vault_arn {
+                query.push_kv(
+                    "destinationVaultArn",
+                    &smithy_http::query::fmt_string(&inner_65),
+                );
+            }
+            if let Some(inner_66) = &_input.by_account_id {
+                query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_66));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7598,14 +7763,14 @@ impl ListFrameworksInput {
         }
         fn uri_query(_input: &crate::input::ListFrameworksInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_66) = &_input.max_results {
+            if let Some(inner_67) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_66).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_67).encode(),
                 );
             }
-            if let Some(inner_67) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_67));
+            if let Some(inner_68) = &_input.next_token {
+                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_68));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7766,13 +7931,13 @@ impl ListProtectedResourcesInput {
         }
         fn uri_query(_input: &crate::input::ListProtectedResourcesInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_68) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_68));
+            if let Some(inner_69) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_69));
             }
-            if let Some(inner_69) = &_input.max_results {
+            if let Some(inner_70) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_69).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_70).encode(),
                 );
             }
         }
@@ -8022,15 +8187,15 @@ impl ListRecoveryPointsByBackupVaultInput {
             _input: &crate::input::ListRecoveryPointsByBackupVaultInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_70 = &_input.backup_vault_name;
-            let input_70 =
-                input_70
+            let input_71 = &_input.backup_vault_name;
+            let input_71 =
+                input_71
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_70, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_71, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
@@ -8050,38 +8215,38 @@ impl ListRecoveryPointsByBackupVaultInput {
             mut output: &mut String,
         ) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_71) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_71));
+            if let Some(inner_72) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_72));
             }
-            if let Some(inner_72) = &_input.max_results {
+            if let Some(inner_73) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_72).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_73).encode(),
                 );
             }
-            if let Some(inner_73) = &_input.by_resource_arn {
-                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_73));
+            if let Some(inner_74) = &_input.by_resource_arn {
+                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_74));
             }
-            if let Some(inner_74) = &_input.by_resource_type {
-                query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_74));
+            if let Some(inner_75) = &_input.by_resource_type {
+                query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_75));
             }
-            if let Some(inner_75) = &_input.by_backup_plan_id {
-                query.push_kv("backupPlanId", &smithy_http::query::fmt_string(&inner_75));
+            if let Some(inner_76) = &_input.by_backup_plan_id {
+                query.push_kv("backupPlanId", &smithy_http::query::fmt_string(&inner_76));
             }
-            if let Some(inner_76) = &_input.by_created_before {
+            if let Some(inner_77) = &_input.by_created_before {
                 query.push_kv(
                     "createdBefore",
                     &smithy_http::query::fmt_timestamp(
-                        inner_76,
+                        inner_77,
                         smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
-            if let Some(inner_77) = &_input.by_created_after {
+            if let Some(inner_78) = &_input.by_created_after {
                 query.push_kv(
                     "createdAfter",
                     &smithy_http::query::fmt_timestamp(
-                        inner_77,
+                        inner_78,
                         smithy_types::instant::Format::DateTime,
                     ),
                 );
@@ -8256,15 +8421,15 @@ impl ListRecoveryPointsByResourceInput {
             _input: &crate::input::ListRecoveryPointsByResourceInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_78 = &_input.resource_arn;
-            let input_78 =
-                input_78
+            let input_79 = &_input.resource_arn;
+            let input_79 =
+                input_79
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_78, false);
+            let resource_arn = smithy_http::label::fmt_string(input_79, false);
             if resource_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -8284,13 +8449,13 @@ impl ListRecoveryPointsByResourceInput {
             mut output: &mut String,
         ) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_79) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_79));
+            if let Some(inner_80) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_80));
             }
-            if let Some(inner_80) = &_input.max_results {
+            if let Some(inner_81) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_80).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_81).encode(),
                 );
             }
         }
@@ -8511,38 +8676,38 @@ impl ListReportJobsInput {
         }
         fn uri_query(_input: &crate::input::ListReportJobsInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_81) = &_input.by_report_plan_name {
-                query.push_kv("ReportPlanName", &smithy_http::query::fmt_string(&inner_81));
+            if let Some(inner_82) = &_input.by_report_plan_name {
+                query.push_kv("ReportPlanName", &smithy_http::query::fmt_string(&inner_82));
             }
-            if let Some(inner_82) = &_input.by_creation_before {
+            if let Some(inner_83) = &_input.by_creation_before {
                 query.push_kv(
                     "CreationBefore",
-                    &smithy_http::query::fmt_timestamp(
-                        inner_82,
-                        smithy_types::instant::Format::DateTime,
-                    ),
-                );
-            }
-            if let Some(inner_83) = &_input.by_creation_after {
-                query.push_kv(
-                    "CreationAfter",
                     &smithy_http::query::fmt_timestamp(
                         inner_83,
                         smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
-            if let Some(inner_84) = &_input.by_status {
-                query.push_kv("Status", &smithy_http::query::fmt_string(&inner_84));
-            }
-            if let Some(inner_85) = &_input.max_results {
+            if let Some(inner_84) = &_input.by_creation_after {
                 query.push_kv(
-                    "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_85).encode(),
+                    "CreationAfter",
+                    &smithy_http::query::fmt_timestamp(
+                        inner_84,
+                        smithy_types::instant::Format::DateTime,
+                    ),
                 );
             }
-            if let Some(inner_86) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_86));
+            if let Some(inner_85) = &_input.by_status {
+                query.push_kv("Status", &smithy_http::query::fmt_string(&inner_85));
+            }
+            if let Some(inner_86) = &_input.max_results {
+                query.push_kv(
+                    "MaxResults",
+                    &smithy_types::primitive::Encoder::from(*inner_86).encode(),
+                );
+            }
+            if let Some(inner_87) = &_input.next_token {
+                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_87));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8702,14 +8867,14 @@ impl ListReportPlansInput {
         }
         fn uri_query(_input: &crate::input::ListReportPlansInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_87) = &_input.max_results {
+            if let Some(inner_88) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_87).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_88).encode(),
                 );
             }
-            if let Some(inner_88) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_88));
+            if let Some(inner_89) = &_input.next_token {
+                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_89));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8927,38 +9092,38 @@ impl ListRestoreJobsInput {
         }
         fn uri_query(_input: &crate::input::ListRestoreJobsInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_89) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_89));
+            if let Some(inner_90) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_90));
             }
-            if let Some(inner_90) = &_input.max_results {
+            if let Some(inner_91) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_90).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_91).encode(),
                 );
             }
-            if let Some(inner_91) = &_input.by_account_id {
-                query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_91));
+            if let Some(inner_92) = &_input.by_account_id {
+                query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_92));
             }
-            if let Some(inner_92) = &_input.by_created_before {
+            if let Some(inner_93) = &_input.by_created_before {
                 query.push_kv(
                     "createdBefore",
-                    &smithy_http::query::fmt_timestamp(
-                        inner_92,
-                        smithy_types::instant::Format::DateTime,
-                    ),
-                );
-            }
-            if let Some(inner_93) = &_input.by_created_after {
-                query.push_kv(
-                    "createdAfter",
                     &smithy_http::query::fmt_timestamp(
                         inner_93,
                         smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
-            if let Some(inner_94) = &_input.by_status {
-                query.push_kv("status", &smithy_http::query::fmt_string(&inner_94));
+            if let Some(inner_94) = &_input.by_created_after {
+                query.push_kv(
+                    "createdAfter",
+                    &smithy_http::query::fmt_timestamp(
+                        inner_94,
+                        smithy_types::instant::Format::DateTime,
+                    ),
+                );
+            }
+            if let Some(inner_95) = &_input.by_status {
+                query.push_kv("status", &smithy_http::query::fmt_string(&inner_95));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9125,15 +9290,15 @@ impl ListTagsInput {
             _input: &crate::input::ListTagsInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_95 = &_input.resource_arn;
-            let input_95 =
-                input_95
+            let input_96 = &_input.resource_arn;
+            let input_96 =
+                input_96
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_95, false);
+            let resource_arn = smithy_http::label::fmt_string(input_96, false);
             if resource_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -9146,13 +9311,13 @@ impl ListTagsInput {
         }
         fn uri_query(_input: &crate::input::ListTagsInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_96) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_96));
+            if let Some(inner_97) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_97));
             }
-            if let Some(inner_97) = &_input.max_results {
+            if let Some(inner_98) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_97).encode(),
+                    &smithy_types::primitive::Encoder::from(*inner_98).encode(),
                 );
             }
         }
@@ -9307,15 +9472,15 @@ impl PutBackupVaultAccessPolicyInput {
             _input: &crate::input::PutBackupVaultAccessPolicyInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_98 = &_input.backup_vault_name;
-            let input_98 =
-                input_98
+            let input_99 = &_input.backup_vault_name;
+            let input_99 =
+                input_99
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_98, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_99, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
@@ -9418,6 +9583,242 @@ impl PutBackupVaultAccessPolicyInput {
     }
 }
 
+/// See [`PutBackupVaultLockConfigurationInput`](crate::input::PutBackupVaultLockConfigurationInput)
+pub mod put_backup_vault_lock_configuration_input {
+    /// A builder for [`PutBackupVaultLockConfigurationInput`](crate::input::PutBackupVaultLockConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) backup_vault_name: std::option::Option<std::string::String>,
+        pub(crate) min_retention_days: std::option::Option<i64>,
+        pub(crate) max_retention_days: std::option::Option<i64>,
+        pub(crate) changeable_for_days: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The Backup Vault Lock configuration that specifies the name of the backup
+        /// vault it protects.</p>
+        pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_vault_name = Some(input.into());
+            self
+        }
+        pub fn set_backup_vault_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.backup_vault_name = input;
+            self
+        }
+        /// <p>The Backup Vault Lock configuration that specifies the minimum retention
+        /// period that the vault retains its recovery points. This setting can be useful if, for
+        /// example, your organization's policies require you to retain certain data for at least seven
+        /// years (2555 days).</p>
+        /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention
+        /// period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
+        /// lifecycle policy with a retention period equal to or longer than the minimum retention
+        /// period. If the job's retention period is shorter than that minimum retention period, then
+        /// the vault fails that backup or copy job, and you should either modify your lifecycle
+        /// settings or use a different vault. Recovery points already saved in the vault prior to
+        /// Vault Lock are not affected.</p>
+        pub fn min_retention_days(mut self, input: i64) -> Self {
+            self.min_retention_days = Some(input);
+            self
+        }
+        pub fn set_min_retention_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.min_retention_days = input;
+            self
+        }
+        /// <p>The Backup Vault Lock configuration that specifies the maximum retention
+        /// period that the vault retains its recovery points. This setting can be useful if, for
+        /// example, your organization's policies require you to destroy certain data after retaining
+        /// it for four years (1460 days).</p>
+        /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention
+        /// period on the recovery points in the vault. If this parameter is included without a value,
+        /// Vault Lock will not enforce a maximum retention period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
+        /// lifecycle policy with a retention period equal to or shorter than the maximum retention
+        /// period. If the job's retention period is longer than that maximum retention period, then
+        /// the vault fails the backup or copy job, and you should either modify your lifecycle
+        /// settings or use a different vault. Recovery points already saved in the vault prior to
+        /// Vault Lock are not affected.</p>
+        pub fn max_retention_days(mut self, input: i64) -> Self {
+            self.max_retention_days = Some(input);
+            self
+        }
+        pub fn set_max_retention_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.max_retention_days = input;
+            self
+        }
+        /// <p>The Backup Vault Lock configuration that specifies the number of days before
+        /// the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at
+        /// 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
+        /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect
+        /// and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or
+        /// greater.</p>
+        /// <p>Before the lock date, you can delete Vault Lock from the vault using
+        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
+        /// using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault
+        /// Lock becomes immutable and cannot be changed or deleted.</p>
+        /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using
+        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
+        /// using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+        pub fn changeable_for_days(mut self, input: i64) -> Self {
+            self.changeable_for_days = Some(input);
+            self
+        }
+        pub fn set_changeable_for_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.changeable_for_days = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutBackupVaultLockConfigurationInput`](crate::input::PutBackupVaultLockConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::PutBackupVaultLockConfigurationInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutBackupVaultLockConfigurationInput {
+                backup_vault_name: self.backup_vault_name,
+                min_retention_days: self.min_retention_days,
+                max_retention_days: self.max_retention_days,
+                changeable_for_days: self.changeable_for_days,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutBackupVaultLockConfigurationInputOperationOutputAlias =
+    crate::operation::PutBackupVaultLockConfiguration;
+#[doc(hidden)]
+pub type PutBackupVaultLockConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl PutBackupVaultLockConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`PutBackupVaultLockConfiguration`](crate::operation::PutBackupVaultLockConfiguration)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutBackupVaultLockConfiguration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::PutBackupVaultLockConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_100 = &_input.backup_vault_name;
+            let input_100 =
+                input_100
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "backup_vault_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let backup_vault_name = smithy_http::label::fmt_string(input_100, false);
+            if backup_vault_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "backup_vault_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/backup-vaults/{BackupVaultName}/vault-lock",
+                BackupVaultName = backup_vault_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutBackupVaultLockConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutBackupVaultLockConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_backup_vault_lock_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutBackupVaultLockConfiguration::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "PutBackupVaultLockConfiguration",
+            "backup",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`PutBackupVaultLockConfigurationInput`](crate::input::PutBackupVaultLockConfigurationInput)
+    pub fn builder() -> crate::input::put_backup_vault_lock_configuration_input::Builder {
+        crate::input::put_backup_vault_lock_configuration_input::Builder::default()
+    }
+}
+
 /// See [`PutBackupVaultNotificationsInput`](crate::input::PutBackupVaultNotificationsInput)
 pub mod put_backup_vault_notifications_input {
     /// A builder for [`PutBackupVaultNotificationsInput`](crate::input::PutBackupVaultNotificationsInput)
@@ -9511,15 +9912,15 @@ impl PutBackupVaultNotificationsInput {
             _input: &crate::input::PutBackupVaultNotificationsInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_99 = &_input.backup_vault_name;
-            let input_99 =
-                input_99
+            let input_101 = &_input.backup_vault_name;
+            let input_101 =
+                input_101
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_99, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_101, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
@@ -10203,15 +10604,15 @@ impl StartReportJobInput {
             _input: &crate::input::StartReportJobInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_100 = &_input.report_plan_name;
-            let input_100 =
-                input_100
+            let input_102 = &_input.report_plan_name;
+            let input_102 =
+                input_102
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
                         details: "cannot be empty or unset",
                     })?;
-            let report_plan_name = smithy_http::label::fmt_string(input_100, false);
+            let report_plan_name = smithy_http::label::fmt_string(input_102, false);
             if report_plan_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "report_plan_name",
@@ -10617,15 +11018,15 @@ impl StopBackupJobInput {
             _input: &crate::input::StopBackupJobInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_101 = &_input.backup_job_id;
-            let input_101 =
-                input_101
+            let input_103 = &_input.backup_job_id;
+            let input_103 =
+                input_103
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_job_id = smithy_http::label::fmt_string(input_101, false);
+            let backup_job_id = smithy_http::label::fmt_string(input_103, false);
             if backup_job_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_job_id",
@@ -10798,15 +11199,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_102 = &_input.resource_arn;
-            let input_102 =
-                input_102
+            let input_104 = &_input.resource_arn;
+            let input_104 =
+                input_104
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_102, false);
+            let resource_arn = smithy_http::label::fmt_string(input_104, false);
             if resource_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -10968,15 +11369,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_103 = &_input.resource_arn;
-            let input_103 =
-                input_103
+            let input_105 = &_input.resource_arn;
+            let input_105 =
+                input_105
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_103, false);
+            let resource_arn = smithy_http::label::fmt_string(input_105, false);
             if resource_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -11142,15 +11543,15 @@ impl UpdateBackupPlanInput {
             _input: &crate::input::UpdateBackupPlanInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_104 = &_input.backup_plan_id;
-            let input_104 =
-                input_104
+            let input_106 = &_input.backup_plan_id;
+            let input_106 =
+                input_106
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_104, false);
+            let backup_plan_id = smithy_http::label::fmt_string(input_106, false);
             if backup_plan_id.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
@@ -11360,15 +11761,15 @@ impl UpdateFrameworkInput {
             _input: &crate::input::UpdateFrameworkInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_105 = &_input.framework_name;
-            let input_105 =
-                input_105
+            let input_107 = &_input.framework_name;
+            let input_107 =
+                input_107
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "framework_name",
                         details: "cannot be empty or unset",
                     })?;
-            let framework_name = smithy_http::label::fmt_string(input_105, false);
+            let framework_name = smithy_http::label::fmt_string(input_107, false);
             if framework_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "framework_name",
@@ -11727,30 +12128,30 @@ impl UpdateRecoveryPointLifecycleInput {
             _input: &crate::input::UpdateRecoveryPointLifecycleInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_106 = &_input.backup_vault_name;
-            let input_106 =
-                input_106
+            let input_108 = &_input.backup_vault_name;
+            let input_108 =
+                input_108
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_106, false);
+            let backup_vault_name = smithy_http::label::fmt_string(input_108, false);
             if backup_vault_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_107 = &_input.recovery_point_arn;
-            let input_107 =
-                input_107
+            let input_109 = &_input.recovery_point_arn;
+            let input_109 =
+                input_109
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let recovery_point_arn = smithy_http::label::fmt_string(input_107, false);
+            let recovery_point_arn = smithy_http::label::fmt_string(input_109, false);
             if recovery_point_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
@@ -12136,15 +12537,15 @@ impl UpdateReportPlanInput {
             _input: &crate::input::UpdateReportPlanInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_108 = &_input.report_plan_name;
-            let input_108 =
-                input_108
+            let input_110 = &_input.report_plan_name;
+            let input_110 =
+                input_110
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
                         details: "cannot be empty or unset",
                     })?;
-            let report_plan_name = smithy_http::label::fmt_string(input_108, false);
+            let report_plan_name = smithy_http::label::fmt_string(input_110, false);
             if report_plan_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "report_plan_name",
@@ -12728,6 +13129,65 @@ impl std::fmt::Debug for PutBackupVaultNotificationsInput {
         formatter.field("backup_vault_name", &self.backup_vault_name);
         formatter.field("sns_topic_arn", &self.sns_topic_arn);
         formatter.field("backup_vault_events", &self.backup_vault_events);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutBackupVaultLockConfigurationInput {
+    /// <p>The Backup Vault Lock configuration that specifies the name of the backup
+    /// vault it protects.</p>
+    pub backup_vault_name: std::option::Option<std::string::String>,
+    /// <p>The Backup Vault Lock configuration that specifies the minimum retention
+    /// period that the vault retains its recovery points. This setting can be useful if, for
+    /// example, your organization's policies require you to retain certain data for at least seven
+    /// years (2555 days).</p>
+    /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention
+    /// period.</p>
+    /// <p>If this parameter is specified, any backup or copy job to the vault must have a
+    /// lifecycle policy with a retention period equal to or longer than the minimum retention
+    /// period. If the job's retention period is shorter than that minimum retention period, then
+    /// the vault fails that backup or copy job, and you should either modify your lifecycle
+    /// settings or use a different vault. Recovery points already saved in the vault prior to
+    /// Vault Lock are not affected.</p>
+    pub min_retention_days: std::option::Option<i64>,
+    /// <p>The Backup Vault Lock configuration that specifies the maximum retention
+    /// period that the vault retains its recovery points. This setting can be useful if, for
+    /// example, your organization's policies require you to destroy certain data after retaining
+    /// it for four years (1460 days).</p>
+    /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention
+    /// period on the recovery points in the vault. If this parameter is included without a value,
+    /// Vault Lock will not enforce a maximum retention period.</p>
+    /// <p>If this parameter is specified, any backup or copy job to the vault must have a
+    /// lifecycle policy with a retention period equal to or shorter than the maximum retention
+    /// period. If the job's retention period is longer than that maximum retention period, then
+    /// the vault fails the backup or copy job, and you should either modify your lifecycle
+    /// settings or use a different vault. Recovery points already saved in the vault prior to
+    /// Vault Lock are not affected.</p>
+    pub max_retention_days: std::option::Option<i64>,
+    /// <p>The Backup Vault Lock configuration that specifies the number of days before
+    /// the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at
+    /// 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
+    /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect
+    /// and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or
+    /// greater.</p>
+    /// <p>Before the lock date, you can delete Vault Lock from the vault using
+    /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
+    /// using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault
+    /// Lock becomes immutable and cannot be changed or deleted.</p>
+    /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using
+    /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
+    /// using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+    pub changeable_for_days: std::option::Option<i64>,
+}
+impl std::fmt::Debug for PutBackupVaultLockConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutBackupVaultLockConfigurationInput");
+        formatter.field("backup_vault_name", &self.backup_vault_name);
+        formatter.field("min_retention_days", &self.min_retention_days);
+        formatter.field("max_retention_days", &self.max_retention_days);
+        formatter.field("changeable_for_days", &self.changeable_for_days);
         formatter.finish()
     }
 }
@@ -13620,6 +14080,20 @@ pub struct DeleteBackupVaultNotificationsInput {
 impl std::fmt::Debug for DeleteBackupVaultNotificationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBackupVaultNotificationsInput");
+        formatter.field("backup_vault_name", &self.backup_vault_name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteBackupVaultLockConfigurationInput {
+    /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
+    pub backup_vault_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteBackupVaultLockConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteBackupVaultLockConfigurationInput");
         formatter.field("backup_vault_name", &self.backup_vault_name);
         formatter.finish()
     }

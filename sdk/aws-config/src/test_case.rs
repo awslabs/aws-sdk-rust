@@ -18,6 +18,7 @@ use smithy_async::rt::sleep::{AsyncSleep, Sleep, TokioSleep};
 use smithy_client::dvr::{NetworkTraffic, RecordingConnection, ReplayingConnection};
 use smithy_client::erase::DynConnector;
 
+use std::fmt::Debug;
 use std::future::Future;
 
 /// Test case credentials
@@ -46,6 +47,12 @@ impl From<&aws_types::Credentials> for Credentials {
                 .expiry()
                 .map(|t| t.duration_since(UNIX_EPOCH).unwrap().as_secs()),
         }
+    }
+}
+
+impl From<aws_types::Credentials> for Credentials {
+    fn from(credentials: aws_types::Credentials) -> Self {
+        (&credentials).into()
     }
 }
 
@@ -78,10 +85,42 @@ impl AsyncSleep for InstantSleep {
 }
 
 #[derive(Deserialize)]
-enum TestResult {
-    Ok(Credentials),
+pub enum GenericTestResult<T> {
+    Ok(T),
     ErrorContains(String),
 }
+
+impl<T> GenericTestResult<T>
+where
+    T: PartialEq + Debug,
+{
+    pub fn assert_matches(&self, result: Result<impl Into<T>, impl Error>) {
+        match (result, &self) {
+            (Ok(actual), GenericTestResult::Ok(expected)) => {
+                assert_eq!(expected, &actual.into(), "incorrect result was returned")
+            }
+            (Err(err), GenericTestResult::ErrorContains(substr)) => {
+                assert!(
+                    format!("{}", err).contains(substr),
+                    "`{}` did not contain `{}`",
+                    err,
+                    substr
+                )
+            }
+            (Err(actual_error), GenericTestResult::Ok(expected_creds)) => panic!(
+                "expected credentials ({:?}) but an error was returned: {}",
+                expected_creds, actual_error
+            ),
+            (Ok(creds), GenericTestResult::ErrorContains(substr)) => panic!(
+                "expected an error containing: `{}`, but a result was returned: {:?}",
+                substr,
+                creds.into()
+            ),
+        }
+    }
+}
+
+type TestResult = GenericTestResult<Credentials>;
 
 #[derive(Deserialize)]
 pub struct Metadata {
@@ -153,7 +192,7 @@ impl TestEnvironment {
             serde_json::to_string(&live_connector.network_traffic()).unwrap(),
         )
         .unwrap();
-        self.check_results(&result);
+        self.check_results(result);
     }
 
     #[allow(dead_code)]
@@ -176,7 +215,7 @@ impl TestEnvironment {
             serde_json::to_string(&recording_connector.network_traffic()).unwrap(),
         )
         .unwrap();
-        self.check_results(&result);
+        self.check_results(result);
     }
 
     fn log_info(&self) {
@@ -193,7 +232,7 @@ impl TestEnvironment {
         let provider = make_provider(conf).await;
         let result = provider.provide_credentials().await;
         self.log_info();
-        self.check_results(&result);
+        self.check_results(result);
         // todo: validate bodies
         match connector
             .validate(
@@ -207,31 +246,7 @@ impl TestEnvironment {
         }
     }
 
-    fn check_results(&self, result: &credentials::Result) {
-        match (&result, &self.metadata.result) {
-            (Ok(actual), TestResult::Ok(expected)) => {
-                assert_eq!(
-                    expected,
-                    &Credentials::from(actual),
-                    "incorrect credentials were returned"
-                )
-            }
-            (Err(err), TestResult::ErrorContains(substr)) => {
-                assert!(
-                    format!("{}", err).contains(substr),
-                    "`{}` did not contain `{}`",
-                    err,
-                    substr
-                )
-            }
-            (Err(actual_error), TestResult::Ok(expected_creds)) => panic!(
-                "expected credentials ({:?}) but an error was returned: {}",
-                expected_creds, actual_error
-            ),
-            (Ok(creds), TestResult::ErrorContains(substr)) => panic!(
-                "expected an error containing: `{}`, but credentials were returned: {:?}",
-                substr, creds
-            ),
-        }
+    fn check_results(&self, result: credentials::Result) {
+        self.metadata.result.assert_matches(result);
     }
 }

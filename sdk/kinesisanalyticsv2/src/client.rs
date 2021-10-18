@@ -549,7 +549,7 @@ pub mod fluent_builders {
         }
         /// <p>An array of objects, each describing one output configuration. In the output
         /// configuration, you specify the name of an in-application stream, a destination (that is, a
-        /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an AWS Lambda function), and
+        /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
         /// record the formation to use when writing to the destination.</p>
         pub fn output(mut self, inp: crate::model::Output) -> Self {
             self.inner = self.inner.output(inp);
@@ -2033,7 +2033,7 @@ pub mod fluent_builders {
         /// <p>If a previous command returned a pagination token,
         /// pass it into this value to retrieve the next set of results.
         /// For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the AWS Command Line Interface's Pagination Options</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
@@ -2186,7 +2186,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the AWS Command Line Interface's Pagination Options</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
@@ -2837,7 +2837,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2857,7 +2858,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

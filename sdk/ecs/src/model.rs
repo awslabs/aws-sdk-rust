@@ -7745,12 +7745,16 @@ pub struct TaskOverride {
     /// <p>The Elastic Inference accelerator override for the task.</p>
     pub inference_accelerator_overrides:
         std::option::Option<std::vec::Vec<crate::model::InferenceAcceleratorOverride>>,
-    /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task.</p>
+    /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+    /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The memory override for the task.</p>
     pub memory: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers
-    /// in this task are granted the permissions that are specified in this role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
+    /// this task are granted the permissions that are specified in this role. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a>
+    /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub task_role_arn: std::option::Option<std::string::String>,
     /// <p>The ephemeral storage setting override for the task.</p>
     /// <note>
@@ -7833,7 +7837,9 @@ pub mod task_override {
             self.inference_accelerator_overrides = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task.</p>
+        /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+        /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
@@ -7854,8 +7860,10 @@ pub mod task_override {
             self.memory = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers
-        /// in this task are granted the permissions that are specified in this role.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
+        /// this task are granted the permissions that are specified in this role. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a>
+        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn task_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_role_arn = Some(input.into());
             self
@@ -7906,7 +7914,7 @@ impl TaskOverride {
 
 /// <p>Details on an Elastic Inference accelerator task override. This parameter is used to
 /// override the Elastic Inference accelerator specified in the task definition. For more
-/// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the
+/// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the
 /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8161,7 +8169,7 @@ impl ContainerOverride {
 
 /// <p>The type and amount of a resource to assign to a container. The supported resource
 /// types are GPUs and Elastic Inference accelerators. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working with
-/// GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the
+/// GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the
 /// <i>Amazon Elastic Container Service Developer Guide</i>
 /// </p>
 #[non_exhaustive]
@@ -8417,7 +8425,7 @@ impl AsRef<str> for EnvironmentFileType {
     }
 }
 
-/// <p>Details on a Elastic Inference accelerator. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with
+/// <p>Details on a Elastic Inference accelerator. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working with
 /// Amazon Elastic Inference on Amazon ECS</a> in the
 /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]

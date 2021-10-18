@@ -743,7 +743,7 @@ pub mod fluent_builders {
         /// threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex
         /// returns three alternative intents with the following confidence scores:
         /// IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the
-        /// PostText operation would be:</p>
+        /// <code>RecognizeText</code> operation would be:</p>
         /// <ul>
         /// <li>
         /// <p>AMAZON.FallbackIntent</p>
@@ -4236,7 +4236,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListExports</code> operation contans
+        /// <p>If the response from the <code>ListExports</code> operation contains
         /// more results that specified in the <code>maxResults</code> parameter, a
         /// token is returned in the response. Use that token in the
         /// <code>nextToken</code> parameter to return the next page of
@@ -6160,7 +6160,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -6180,7 +6181,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

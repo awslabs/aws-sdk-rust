@@ -2464,6 +2464,7 @@ pub struct DescribeLoadBalancersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLoadBalancersErrorKind {
+    InvalidNextToken(crate::error::InvalidNextToken),
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2471,6 +2472,7 @@ pub enum DescribeLoadBalancersErrorKind {
 impl std::fmt::Display for DescribeLoadBalancersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DescribeLoadBalancersErrorKind::InvalidNextToken(_inner) => _inner.fmt(f),
             DescribeLoadBalancersErrorKind::ResourceContentionFault(_inner) => _inner.fmt(f),
             DescribeLoadBalancersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2520,6 +2522,12 @@ impl DescribeLoadBalancersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLoadBalancersErrorKind::InvalidNextToken(_)
+        )
+    }
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2530,6 +2538,7 @@ impl DescribeLoadBalancersError {
 impl std::error::Error for DescribeLoadBalancersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DescribeLoadBalancersErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribeLoadBalancersErrorKind::ResourceContentionFault(_inner) => Some(_inner),
             DescribeLoadBalancersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2545,6 +2554,7 @@ pub struct DescribeLoadBalancerTargetGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLoadBalancerTargetGroupsErrorKind {
+    InvalidNextToken(crate::error::InvalidNextToken),
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2552,6 +2562,7 @@ pub enum DescribeLoadBalancerTargetGroupsErrorKind {
 impl std::fmt::Display for DescribeLoadBalancerTargetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DescribeLoadBalancerTargetGroupsErrorKind::InvalidNextToken(_inner) => _inner.fmt(f),
             DescribeLoadBalancerTargetGroupsErrorKind::ResourceContentionFault(_inner) => {
                 _inner.fmt(f)
             }
@@ -2603,6 +2614,12 @@ impl DescribeLoadBalancerTargetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_next_token(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLoadBalancerTargetGroupsErrorKind::InvalidNextToken(_)
+        )
+    }
     pub fn is_resource_contention_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2613,6 +2630,7 @@ impl DescribeLoadBalancerTargetGroupsError {
 impl std::error::Error for DescribeLoadBalancerTargetGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DescribeLoadBalancerTargetGroupsErrorKind::InvalidNextToken(_inner) => Some(_inner),
             DescribeLoadBalancerTargetGroupsErrorKind::ResourceContentionFault(_inner) => {
                 Some(_inner)
             }

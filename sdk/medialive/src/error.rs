@@ -839,6 +839,135 @@ impl std::error::Error for CancelInputDeviceTransferError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct ClaimDeviceError {
+    pub kind: ClaimDeviceErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ClaimDeviceErrorKind {
+    BadGatewayException(crate::error::BadGatewayException),
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ClaimDeviceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ClaimDeviceErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            ClaimDeviceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ClaimDeviceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ClaimDeviceErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            ClaimDeviceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ClaimDeviceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ClaimDeviceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ClaimDeviceErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
+            ClaimDeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ClaimDeviceError {
+    fn code(&self) -> Option<&str> {
+        ClaimDeviceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ClaimDeviceError {
+    pub fn new(kind: ClaimDeviceErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ClaimDeviceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ClaimDeviceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(&self.kind, ClaimDeviceErrorKind::BadGatewayException(_))
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ClaimDeviceErrorKind::BadRequestException(_))
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ClaimDeviceErrorKind::ForbiddenException(_))
+    }
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(&self.kind, ClaimDeviceErrorKind::GatewayTimeoutException(_))
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ClaimDeviceErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ClaimDeviceErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ClaimDeviceErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ClaimDeviceErrorKind::UnprocessableEntityException(_)
+        )
+    }
+}
+impl std::error::Error for ClaimDeviceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ClaimDeviceErrorKind::BadGatewayException(_inner) => Some(_inner),
+            ClaimDeviceErrorKind::BadRequestException(_inner) => Some(_inner),
+            ClaimDeviceErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ClaimDeviceErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            ClaimDeviceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ClaimDeviceErrorKind::NotFoundException(_inner) => Some(_inner),
+            ClaimDeviceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ClaimDeviceErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
+            ClaimDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct CreateChannelError {
     pub kind: CreateChannelErrorKind,
     pub(crate) meta: smithy_types::Error,

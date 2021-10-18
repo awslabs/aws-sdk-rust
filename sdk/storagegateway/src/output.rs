@@ -103,7 +103,7 @@ impl UpdateSnapshotScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbSecurityStrategyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateSmbSecurityStrategyOutput {
@@ -123,7 +123,7 @@ pub mod update_smb_security_strategy_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -149,9 +149,57 @@ impl UpdateSmbSecurityStrategyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateSmbLocalGroupsOutput {
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub gateway_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateSmbLocalGroupsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateSmbLocalGroupsOutput");
+        formatter.field("gateway_arn", &self.gateway_arn);
+        formatter.finish()
+    }
+}
+/// See [`UpdateSmbLocalGroupsOutput`](crate::output::UpdateSmbLocalGroupsOutput)
+pub mod update_smb_local_groups_output {
+    /// A builder for [`UpdateSmbLocalGroupsOutput`](crate::output::UpdateSmbLocalGroupsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) gateway_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.gateway_arn = Some(input.into());
+            self
+        }
+        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateSmbLocalGroupsOutput`](crate::output::UpdateSmbLocalGroupsOutput)
+        pub fn build(self) -> crate::output::UpdateSmbLocalGroupsOutput {
+            crate::output::UpdateSmbLocalGroupsOutput {
+                gateway_arn: self.gateway_arn,
+            }
+        }
+    }
+}
+impl UpdateSmbLocalGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSmbLocalGroupsOutput`](crate::output::UpdateSmbLocalGroupsOutput)
+    pub fn builder() -> crate::output::update_smb_local_groups_output::Builder {
+        crate::output::update_smb_local_groups_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmbFileShareVisibilityOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateSmbFileShareVisibilityOutput {
@@ -171,7 +219,7 @@ pub mod update_smb_file_share_visibility_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -301,7 +349,7 @@ impl UpdateNfsFileShareOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateMaintenanceStartTimeOutput {
@@ -321,7 +369,7 @@ pub mod update_maintenance_start_time_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -351,7 +399,7 @@ impl UpdateMaintenanceStartTimeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewaySoftwareNowOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateGatewaySoftwareNowOutput {
@@ -371,7 +419,7 @@ pub mod update_gateway_software_now_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -401,7 +449,7 @@ impl UpdateGatewaySoftwareNowOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The name you configured for your gateway.</p>
     pub gateway_name: std::option::Option<std::string::String>,
@@ -425,7 +473,7 @@ pub mod update_gateway_information_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -586,7 +634,7 @@ impl UpdateChapCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateBandwidthRateLimitScheduleOutput {
@@ -606,7 +654,7 @@ pub mod update_bandwidth_rate_limit_schedule_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -636,7 +684,7 @@ impl UpdateBandwidthRateLimitScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBandwidthRateLimitOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateBandwidthRateLimitOutput {
@@ -656,7 +704,7 @@ pub mod update_bandwidth_rate_limit_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -684,7 +732,7 @@ impl UpdateBandwidthRateLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAutomaticTapeCreationPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateAutomaticTapeCreationPolicyOutput {
@@ -704,7 +752,7 @@ pub mod update_automatic_tape_creation_policy_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -734,7 +782,7 @@ impl UpdateAutomaticTapeCreationPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StartGatewayOutput {
@@ -754,7 +802,7 @@ pub mod start_gateway_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -782,7 +830,7 @@ impl StartGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAvailabilityMonitorTestOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StartAvailabilityMonitorTestOutput {
@@ -802,7 +850,7 @@ pub mod start_availability_monitor_test_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -832,7 +880,7 @@ impl StartAvailabilityMonitorTestOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShutdownGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ShutdownGatewayOutput {
@@ -852,7 +900,7 @@ pub mod shutdown_gateway_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -880,7 +928,7 @@ impl ShutdownGatewayOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSmbGuestPasswordOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SetSmbGuestPasswordOutput {
@@ -900,7 +948,7 @@ pub mod set_smb_guest_password_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -928,7 +976,7 @@ impl SetSmbGuestPasswordOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetLocalConsolePasswordOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SetLocalConsolePasswordOutput {
@@ -948,7 +996,7 @@ pub mod set_local_console_password_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -1072,7 +1120,7 @@ impl RetrieveTapeArchiveOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResetCacheOutput {
@@ -1092,7 +1140,7 @@ pub mod reset_cache_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -1317,7 +1365,7 @@ impl NotifyWhenUploadedOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVolumesOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>Use the marker in your next request to continue pagination of iSCSI volumes. If there
     /// are no more volumes to list, this field does not appear in the response body.</p>
@@ -1348,7 +1396,7 @@ pub mod list_volumes_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -1401,7 +1449,7 @@ impl ListVolumesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVolumeRecoveryPointsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of <a>VolumeRecoveryPointInfo</a> objects.</p>
     pub volume_recovery_point_infos:
@@ -1430,7 +1478,7 @@ pub mod list_volume_recovery_points_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -1761,7 +1809,7 @@ impl ListTagsForResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLocalDisksOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>A JSON object containing the following fields:</p>
     /// <ul>
@@ -1792,7 +1840,7 @@ pub mod list_local_disks_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -1899,12 +1947,15 @@ impl ListGatewaysOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFileSystemAssociationsOutput {
-    /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
+    /// <p>If the request includes <code>Marker</code>, the response returns that value in this
+    /// field.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>If a value is present, there are more file system associations to return.
-    /// In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file system associations.</p>
+    /// <p>If a value is present, there are more file system associations to return. In a
+    /// subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to
+    /// retrieve the next set of file system associations.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>An array of information about the Amazon FSx gateway's file system associations.</p>
+    /// <p>An array of information about the Amazon FSx gateway's file system
+    /// associations.</p>
     pub file_system_association_summary_list:
         std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationSummary>>,
 }
@@ -1932,7 +1983,8 @@ pub mod list_file_system_associations_output {
             std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationSummary>>,
     }
     impl Builder {
-        /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
+        /// <p>If the request includes <code>Marker</code>, the response returns that value in this
+        /// field.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
@@ -1941,8 +1993,9 @@ pub mod list_file_system_associations_output {
             self.marker = input;
             self
         }
-        /// <p>If a value is present, there are more file system associations to return.
-        /// In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file system associations.</p>
+        /// <p>If a value is present, there are more file system associations to return. In a
+        /// subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to
+        /// retrieve the next set of file system associations.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
@@ -2433,7 +2486,7 @@ impl DetachVolumeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkingStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of the gateway's local disk IDs that are configured as working storage.
     /// Each local disk ID is specified as a string (minimum length of 1 and maximum length of
@@ -2476,7 +2529,7 @@ pub mod describe_working_storage_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -2551,7 +2604,7 @@ impl DescribeWorkingStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVtlDevicesOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL
     /// devices.</p>
@@ -2583,7 +2636,7 @@ pub mod describe_vtl_devices_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -2638,7 +2691,7 @@ impl DescribeVtlDevicesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUploadBufferOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of the gateway's local disk IDs that are configured as working storage.
     /// Each local disk ID is specified as a string (minimum length of 1 and maximum length of
@@ -2679,7 +2732,7 @@ pub mod describe_upload_buffer_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -2818,7 +2871,7 @@ impl DescribeTapesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTapeRecoveryPointsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
     pub tape_recovery_point_infos:
@@ -2852,7 +2905,7 @@ pub mod describe_tape_recovery_points_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -3247,7 +3300,7 @@ impl DescribeSnapshotScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSmbSettingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain that the gateway is joined to.</p>
     pub domain_name: std::option::Option<std::string::String>,
@@ -3301,7 +3354,8 @@ pub struct DescribeSmbSettingsOutput {
     /// <p>
     /// <code>ClientSpecified</code>: If you use this option, requests are established
     /// based on what is negotiated by the client. This option is recommended when you want
-    /// to maximize compatibility across different clients in your environment. Only supported for S3 File Gateways.</p>
+    /// to maximize compatibility across different clients in your environment. Only
+    /// supported for S3 File Gateways.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -3318,8 +3372,12 @@ pub struct DescribeSmbSettingsOutput {
     /// </li>
     /// </ul>
     pub smb_security_strategy: std::option::Option<crate::model::SmbSecurityStrategy>,
-    /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File Gateways. </p>
+    /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File
+    /// Gateways. </p>
     pub file_shares_visible: std::option::Option<bool>,
+    /// <p>A list of Active Directory users and groups that have special permissions for SMB file
+    /// shares on the gateway.</p>
+    pub smb_local_groups: std::option::Option<crate::model::SmbLocalGroups>,
 }
 impl std::fmt::Debug for DescribeSmbSettingsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3330,6 +3388,7 @@ impl std::fmt::Debug for DescribeSmbSettingsOutput {
         formatter.field("smb_guest_password_set", &self.smb_guest_password_set);
         formatter.field("smb_security_strategy", &self.smb_security_strategy);
         formatter.field("file_shares_visible", &self.file_shares_visible);
+        formatter.field("smb_local_groups", &self.smb_local_groups);
         formatter.finish()
     }
 }
@@ -3346,10 +3405,11 @@ pub mod describe_smb_settings_output {
         pub(crate) smb_guest_password_set: std::option::Option<bool>,
         pub(crate) smb_security_strategy: std::option::Option<crate::model::SmbSecurityStrategy>,
         pub(crate) file_shares_visible: std::option::Option<bool>,
+        pub(crate) smb_local_groups: std::option::Option<crate::model::SmbLocalGroups>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -3437,7 +3497,8 @@ pub mod describe_smb_settings_output {
         /// <p>
         /// <code>ClientSpecified</code>: If you use this option, requests are established
         /// based on what is negotiated by the client. This option is recommended when you want
-        /// to maximize compatibility across different clients in your environment. Only supported for S3 File Gateways.</p>
+        /// to maximize compatibility across different clients in your environment. Only
+        /// supported for S3 File Gateways.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3464,13 +3525,27 @@ pub mod describe_smb_settings_output {
             self.smb_security_strategy = input;
             self
         }
-        /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File Gateways. </p>
+        /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File
+        /// Gateways. </p>
         pub fn file_shares_visible(mut self, input: bool) -> Self {
             self.file_shares_visible = Some(input);
             self
         }
         pub fn set_file_shares_visible(mut self, input: std::option::Option<bool>) -> Self {
             self.file_shares_visible = input;
+            self
+        }
+        /// <p>A list of Active Directory users and groups that have special permissions for SMB file
+        /// shares on the gateway.</p>
+        pub fn smb_local_groups(mut self, input: crate::model::SmbLocalGroups) -> Self {
+            self.smb_local_groups = Some(input);
+            self
+        }
+        pub fn set_smb_local_groups(
+            mut self,
+            input: std::option::Option<crate::model::SmbLocalGroups>,
+        ) -> Self {
+            self.smb_local_groups = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSmbSettingsOutput`](crate::output::DescribeSmbSettingsOutput)
@@ -3482,6 +3557,7 @@ pub mod describe_smb_settings_output {
                 smb_guest_password_set: self.smb_guest_password_set,
                 smb_security_strategy: self.smb_security_strategy,
                 file_shares_visible: self.file_shares_visible,
+                smb_local_groups: self.smb_local_groups,
             }
         }
     }
@@ -3637,7 +3713,7 @@ impl DescribeNfsFileSharesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>,
     /// where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time
@@ -3686,7 +3762,7 @@ pub mod describe_maintenance_start_time_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -3774,7 +3850,7 @@ impl DescribeMaintenanceStartTimeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part
     /// of the gateway Amazon Resource Name (ARN), which you use as input for other
@@ -3801,7 +3877,7 @@ pub struct DescribeGatewayInformationOutput {
     pub last_software_update: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
     pub ec2_instance_id: std::option::Option<std::string::String>,
-    /// <p>The Region where the Amazon EC2 instance is located.</p>
+    /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
     pub ec2_instance_region: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each
     /// tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all
@@ -3826,7 +3902,8 @@ pub struct DescribeGatewayInformationOutput {
     pub deprecation_date: std::option::Option<std::string::String>,
     /// <p>Specifies the size of the gateway's metadata cache.</p>
     pub gateway_capacity: std::option::Option<crate::model::GatewayCapacity>,
-    /// <p>A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.</p>
+    /// <p>A list of the metadata cache sizes that the gateway can support based on its current
+    /// hardware specifications.</p>
     pub supported_gateway_capacities:
         std::option::Option<std::vec::Vec<crate::model::GatewayCapacity>>,
 }
@@ -3896,7 +3973,7 @@ pub mod describe_gateway_information_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -4016,7 +4093,7 @@ pub mod describe_gateway_information_output {
             self.ec2_instance_id = input;
             self
         }
-        /// <p>The Region where the Amazon EC2 instance is located.</p>
+        /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
         pub fn ec2_instance_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.ec2_instance_region = Some(input.into());
             self
@@ -4180,7 +4257,8 @@ impl DescribeGatewayInformationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemAssociationsOutput {
-    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described.
+    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file
+    /// system association to be described.
     /// </p>
     pub file_system_association_info_list:
         std::option::Option<std::vec::Vec<crate::model::FileSystemAssociationInfo>>,
@@ -4373,7 +4451,7 @@ impl DescribeCachediScsiVolumesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings that identify disks that are to be configured as working storage.
     /// Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs
@@ -4385,8 +4463,8 @@ pub struct DescribeCacheOutput {
     /// gateway-cached volume setup. The sample is taken at the end of the reporting period.</p>
     pub cache_used_percentage: f64,
     /// <p>The file share's contribution to the overall percentage of the gateway's cache
-    /// that has not been persisted to Amazon Web Services. The sample is taken at the end of the reporting
-    /// period.</p>
+    /// that has not been persisted to Amazon Web Services. The sample is taken at the end of the
+    /// reporting period.</p>
     pub cache_dirty_percentage: f64,
     /// <p>Percent of application read operations from the file shares that are served from cache.
     /// The sample is taken at the end of the reporting period.</p>
@@ -4424,7 +4502,7 @@ pub mod describe_cache_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -4466,8 +4544,8 @@ pub mod describe_cache_output {
             self
         }
         /// <p>The file share's contribution to the overall percentage of the gateway's cache
-        /// that has not been persisted to Amazon Web Services. The sample is taken at the end of the reporting
-        /// period.</p>
+        /// that has not been persisted to Amazon Web Services. The sample is taken at the end of the
+        /// reporting period.</p>
         pub fn cache_dirty_percentage(mut self, input: f64) -> Self {
             self.cache_dirty_percentage = Some(input);
             self
@@ -4521,11 +4599,9 @@ impl DescribeCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// An array that contains the bandwidth rate limit intervals for a tape or volume gateway.
-    /// </p>
+    /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
     pub bandwidth_rate_limit_intervals:
         std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
 }
@@ -4552,7 +4628,7 @@ pub mod describe_bandwidth_rate_limit_schedule_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -4598,7 +4674,7 @@ impl DescribeBandwidthRateLimitScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBandwidthRateLimitOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The average upload bandwidth rate limit in bits per second. This field does not appear
     /// in the response if the upload rate limit is not set.</p>
@@ -4634,7 +4710,7 @@ pub mod describe_bandwidth_rate_limit_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -4692,7 +4768,7 @@ impl DescribeBandwidthRateLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAvailabilityMonitorTestOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The status of the high availability monitoring test. If a test hasn't been
     /// performed, the value of this field is null.</p>
@@ -4722,7 +4798,7 @@ pub mod describe_availability_monitor_test_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -5014,7 +5090,7 @@ impl DeleteSnapshotScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteGatewayOutput {
@@ -5034,7 +5110,7 @@ pub mod delete_gateway_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -5178,7 +5254,7 @@ impl DeleteChapCredentialsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBandwidthRateLimitOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteBandwidthRateLimitOutput {
@@ -5198,7 +5274,7 @@ pub mod delete_bandwidth_rate_limit_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -5226,7 +5302,7 @@ impl DeleteBandwidthRateLimitOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAutomaticTapeCreationPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteAutomaticTapeCreationPolicyOutput {
@@ -5246,7 +5322,7 @@ pub mod delete_automatic_tape_creation_policy_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -5376,7 +5452,7 @@ impl CreateTapesOutput {
 pub struct CreateTapePoolOutput {
     /// <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the
     /// <a>ListTapePools</a> operation to return a list of tape pools for your
-    /// account and Region.</p>
+    /// account and Amazon Web Services Region.</p>
     pub pool_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateTapePoolOutput {
@@ -5397,7 +5473,7 @@ pub mod create_tape_pool_output {
     impl Builder {
         /// <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the
         /// <a>ListTapePools</a> operation to return a list of tape pools for your
-        /// account and Region.</p>
+        /// account and Amazon Web Services Region.</p>
         pub fn pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.pool_arn = Some(input.into());
             self
@@ -6077,7 +6153,7 @@ impl AssignTapePoolOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddWorkingStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AddWorkingStorageOutput {
@@ -6097,7 +6173,7 @@ pub mod add_working_storage_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -6125,7 +6201,7 @@ impl AddWorkingStorageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddUploadBufferOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AddUploadBufferOutput {
@@ -6145,7 +6221,7 @@ pub mod add_upload_buffer_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -6220,7 +6296,7 @@ impl AddTagsToResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AddCacheOutput {
@@ -6240,7 +6316,7 @@ pub mod add_cache_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -6265,9 +6341,8 @@ impl AddCacheOutput {
 }
 
 /// <p>Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It
-/// is a string made of information such as your account, gateway name, and Region. This
-/// ARN is used to reference the gateway in other API operations as well as resource-based
-/// authorization.</p>
+/// is a string made of information such as your account, gateway name, and Amazon Web Services Region. This ARN is used to reference the gateway in other API operations as
+/// well as resource-based authorization.</p>
 /// <note>
 /// <p>For gateways activated prior to September 02, 2015, the gateway ARN contains the
 /// gateway name rather than the gateway ID. Changing the name of the gateway has no effect
@@ -6277,7 +6352,7 @@ impl AddCacheOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and Region.</p>
+    /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ActivateGatewayOutput {
@@ -6297,7 +6372,7 @@ pub mod activate_gateway_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self

@@ -88,6 +88,8 @@ pub(crate) enum JsonCredentials<'a> {
 /// response from the credential provider vs. something invalid / unexpected. The inner error
 /// distinguishes between a successful response that contains credentials vs. an error with a code and
 /// error message.
+///
+/// Keys are case insensitive.
 pub(crate) fn parse_json_credentials(
     credentials_response: &str,
 ) -> Result<JsonCredentials, InvalidJsonCredentials> {
@@ -108,7 +110,7 @@ pub(crate) fn parse_json_credentials(
             Some(Token::EndObject { .. }) => break,
             Some(Token::ObjectKey { key, .. }) => {
                 if let Some(Ok(Token::ValueString { value, .. })) = tokens.peek() {
-                    match key.as_escaped_str() {
+                    match key.to_unescaped()? {
                         /*
                          "Code": "Success",
                          "Type": "AWS-HMAC",
@@ -118,14 +120,24 @@ pub(crate) fn parse_json_credentials(
                          "Expiration" : "....",
                          "LastUpdated" : "2009-11-23T0:00:00Z"
                         */
-                        "Code" => code = Some(value.to_unescaped()?),
-                        "AccessKeyId" => access_key_id = Some(value.to_unescaped()?),
-                        "SecretAccessKey" => secret_access_key = Some(value.to_unescaped()?),
-                        "Token" => session_token = Some(value.to_unescaped()?),
-                        "Expiration" => expiration = Some(value.to_unescaped()?),
+                        c if c.eq_ignore_ascii_case("Code") => code = Some(value.to_unescaped()?),
+                        c if c.eq_ignore_ascii_case("AccessKeyId") => {
+                            access_key_id = Some(value.to_unescaped()?)
+                        }
+                        c if c.eq_ignore_ascii_case("SecretAccessKey") => {
+                            secret_access_key = Some(value.to_unescaped()?)
+                        }
+                        c if c.eq_ignore_ascii_case("Token") => {
+                            session_token = Some(value.to_unescaped()?)
+                        }
+                        c if c.eq_ignore_ascii_case("Expiration") => {
+                            expiration = Some(value.to_unescaped()?)
+                        }
 
                         // Error case handling: message will be set
-                        "Message" => message = Some(value.to_unescaped()?),
+                        c if c.eq_ignore_ascii_case("Message") => {
+                            message = Some(value.to_unescaped()?)
+                        }
                         _ => {}
                     }
                 }
@@ -144,7 +156,7 @@ pub(crate) fn parse_json_credentials(
         ));
     }
     match code {
-        // IMDS does not appear to reply with an `Code` missing, but documentation indicates it
+        // IMDS does not appear to reply with a `Code` missing, but documentation indicates it
         // may be possible
         None | Some(Cow::Borrowed("Success")) => {
             let access_key_id =
@@ -286,6 +298,50 @@ mod test {
           "Code" : "AssumeRoleUnauthorizedAccess",
           "Message" : "EC2 cannot assume the role integration-test.",
           "LastUpdated" : "2021-09-17T20:46:56Z"
+        }"#;
+        let parsed = parse_json_credentials(response).expect("valid JSON");
+        assert_eq!(
+            parsed,
+            JsonCredentials::Error {
+                code: "AssumeRoleUnauthorizedAccess".into(),
+                message: "EC2 cannot assume the role integration-test.".into(),
+            }
+        );
+    }
+
+    /// Validate the specific JSON response format sent by ECS
+    #[test]
+    fn json_credentials_ecs() {
+        // identical, but extra `RoleArn` field is present
+        let response = r#"{
+            "RoleArn":"arn:aws:iam::123456789:role/ecs-task-role",
+            "AccessKeyId":"ASIARTEST",
+            "SecretAccessKey":"SECRETTEST",
+            "Token":"tokenEaCXVzLXdlc3QtMiJGMEQCIHt47W18eF4dYfSlmKGiwuJnqmIS3LMXNYfODBCEhcnaAiAnuhGOpcdIDxin4QFzhtgaCR2MpcVqR8NFJdMgOt0/xyrnAwhhEAEaDDEzNDA5NTA2NTg1NiIM9M9GT+c5UfV/8r7PKsQDUa9xE9Eprz5N+jgxbFSD2aJR2iyXCcP9Q1cOh4fdZhyw2WNmq9XnIa2tkzrreiQ5R2t+kzergJHO1KRZPfesarfJ879aWJCSocsEKh7xXwwzTsVXrNo5eWkpwTh64q+Ksz15eoaBhtrvnGvPx6SmXv7SToi/DTHFafJlT/T9jITACZvZXSE9zfLka26Rna3rI4g0ugowha//j1f/c1XuKloqshpZvMKc561om9Y5fqBv1fRiS2KhetGTcmz3wUqNQAk8Dq9oINS7cCtdIO0atqCK69UaKeJ9uKY8mzY9dFWw2IrkpOoXmA9r955iU0NOz/95jVJiPZ/8aE8vb0t67gQfzBUCfky+mGSGWAfPRXQlFa5AEulCTHPd7IcTVCtasG033oKEKgB8QnTxvM2LaPlwaaHo7MHGYXeUKbn9NRKd8m1ShwmAlr4oKp1vQp6cPHDTsdTfPTzh/ZAjUPs+ljQbAwqXbPQdUUPpOk0vltY8k6Im9EA0pf80iUNoqrixpmPsR2hzI/ybUwdh+QhvCSBx+J8KHqF6X92u4qAVYIxLy/LGZKT9YC6Kr9Gywn+Ro+EK/xl3axHPzNpbjRDJnbW3HrMw5LmmiwY6pgGWgmD6IOq4QYUtu1uhaLQZyoI5o5PWn+d3kqqxifu8D0ykldB3lQGdlJ2rjKJjCdx8fce1SoXao9cc4hiwn39hUPuTqzVwv2zbzCKmNggIpXP6gqyRtUCakf6tI7ZwqTb2S8KF3t4ElIP8i4cPdNoI0JHSC+sT4LDPpUcX1CjGxfvo55mBHJedW3LXve8TRj4UckFXT1gLuTnzqPMrC5AHz4TAt+uv",
+            "Expiration" : "2009-02-13T23:31:30Z"
+        }"#;
+        let parsed = parse_json_credentials(response).expect("valid JSON");
+        use std::borrow::Cow;
+        assert!(
+            matches!(
+                &parsed,
+                JsonCredentials::RefreshableCredentials {
+                    access_key_id: Cow::Borrowed("ASIARTEST"),
+                    secret_access_key: Cow::Borrowed("SECRETTEST"),
+                    session_token,
+                    expiration
+                } if session_token.starts_with("token") && *expiration == UNIX_EPOCH + Duration::from_secs(1234567890)
+            ),
+            "{:?}",
+            parsed
+        );
+    }
+
+    #[test]
+    fn case_insensitive_code_parsing() {
+        let response = r#"{
+          "code" : "AssumeRoleUnauthorizedAccess",
+          "message" : "EC2 cannot assume the role integration-test."
         }"#;
         let parsed = parse_json_credentials(response).expect("valid JSON");
         assert_eq!(

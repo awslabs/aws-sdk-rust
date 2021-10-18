@@ -1,0 +1,12 @@
+{
+  "name": "ecs-assume-role",
+  "docs": "load base creds from ECS then use those credentials to assume a role",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARCORRECT",
+      "secret_access_key": "secretkeycorrect",
+      "session_token": "tokencorrect",
+      "expiry": 1632249686
+    }
+  }
+}

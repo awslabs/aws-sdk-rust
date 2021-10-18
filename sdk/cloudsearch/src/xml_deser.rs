@@ -144,6 +144,52 @@ pub fn deser_structure_crate_error_resource_not_found_exception_xml_err(
 }
 
 #[allow(unused_mut)]
+pub fn deser_structure_crate_error_validation_exception_xml_err(
+    inp: &[u8],
+    mut builder: crate::error::validation_exception::Builder,
+) -> Result<crate::error::validation_exception::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
+    use std::convert::TryFrom;
+    let mut document = smithy_xml::decode::Document::try_from(inp)?;
+    #[allow(unused_mut)]
+    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
+    while let Some(mut tag) = error_decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Message") /* Message com.amazonaws.cloudsearch#ValidationException$Message */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_message(var_7);
+            }
+            ,
+            s if s.matches("Code") /* Code com.amazonaws.cloudsearch#ValidationException$Code */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_code(var_8);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder)
+}
+
+#[allow(unused_mut)]
 pub fn deser_operation_crate_operation_build_suggesters(
     inp: &[u8],
     mut builder: crate::output::build_suggesters_output::Builder,
@@ -171,13 +217,13 @@ pub fn deser_operation_crate_operation_build_suggesters(
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
             s if s.matches("FieldNames") /* FieldNames com.amazonaws.cloudsearch.synthetic#BuildSuggestersOutput$FieldNames */ =>  {
-                let var_7 =
+                let var_9 =
                     Some(
                         crate::xml_deser::deser_list_com_amazonaws_cloudsearch_field_name_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_field_names(var_7);
+                builder = builder.set_field_names(var_9);
             }
             ,
             _ => {}
@@ -206,7 +252,7 @@ pub fn deser_structure_crate_error_limit_exceeded_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudsearch#LimitExceededException$Message */ =>  {
-                let var_8 =
+                let var_10 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -215,11 +261,11 @@ pub fn deser_structure_crate_error_limit_exceeded_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_message(var_8);
+                builder = builder.set_message(var_10);
             }
             ,
             s if s.matches("Code") /* Code com.amazonaws.cloudsearch#LimitExceededException$Code */ =>  {
-                let var_9 =
+                let var_11 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -228,7 +274,7 @@ pub fn deser_structure_crate_error_limit_exceeded_exception_xml_err(
                         ?
                     )
                 ;
-                builder = builder.set_code(var_9);
+                builder = builder.set_code(var_11);
             }
             ,
             _ => {}
@@ -253,52 +299,6 @@ pub fn deser_structure_crate_error_resource_already_exists_exception_xml_err(
     while let Some(mut tag) = error_decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Message") /* Message com.amazonaws.cloudsearch#ResourceAlreadyExistsException$Message */ =>  {
-                let var_10 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_10);
-            }
-            ,
-            s if s.matches("Code") /* Code com.amazonaws.cloudsearch#ResourceAlreadyExistsException$Code */ =>  {
-                let var_11 =
-                    Some(
-                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_code(var_11);
-            }
-            ,
-            _ => {}
-        }
-    }
-    Ok(builder)
-}
-
-#[allow(unused_mut)]
-pub fn deser_structure_crate_error_validation_exception_xml_err(
-    inp: &[u8],
-    mut builder: crate::error::validation_exception::Builder,
-) -> Result<crate::error::validation_exception::Builder, smithy_xml::decode::XmlError> {
-    if inp.is_empty() {
-        return Ok(builder);
-    }
-    use std::convert::TryFrom;
-    let mut document = smithy_xml::decode::Document::try_from(inp)?;
-    #[allow(unused_mut)]
-    let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
-    while let Some(mut tag) = error_decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("Message") /* Message com.amazonaws.cloudsearch#ValidationException$Message */ =>  {
                 let var_12 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
@@ -311,7 +311,7 @@ pub fn deser_structure_crate_error_validation_exception_xml_err(
                 builder = builder.set_message(var_12);
             }
             ,
-            s if s.matches("Code") /* Code com.amazonaws.cloudsearch#ValidationException$Code */ =>  {
+            s if s.matches("Code") /* Code com.amazonaws.cloudsearch#ResourceAlreadyExistsException$Code */ =>  {
                 let var_13 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(

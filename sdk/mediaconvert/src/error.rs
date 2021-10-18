@@ -817,6 +817,120 @@ impl std::error::Error for DeleteJobTemplateError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeletePolicyError {
+    pub kind: DeletePolicyErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeletePolicyErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeletePolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeletePolicyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeletePolicyErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeletePolicyErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeletePolicyErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeletePolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeletePolicyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeletePolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeletePolicyError {
+    fn code(&self) -> Option<&str> {
+        DeletePolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeletePolicyError {
+    pub fn new(kind: DeletePolicyErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeletePolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeletePolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::BadRequestException(_))
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::ConflictException(_))
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::ForbiddenException(_))
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePolicyErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePolicyErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for DeletePolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeletePolicyErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeletePolicyErrorKind::ConflictException(_inner) => Some(_inner),
+            DeletePolicyErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeletePolicyErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeletePolicyErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeletePolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeletePolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DeletePresetError {
     pub kind: DeletePresetErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -1507,6 +1621,117 @@ impl std::error::Error for GetJobTemplateError {
             GetJobTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
             GetJobTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetJobTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetPolicyError {
+    pub kind: GetPolicyErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetPolicyErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetPolicyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetPolicyError {
+    fn code(&self) -> Option<&str> {
+        GetPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetPolicyError {
+    pub fn new(kind: GetPolicyErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::BadRequestException(_))
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::ConflictException(_))
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::ForbiddenException(_))
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPolicyErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::TooManyRequestsException(_))
+    }
+}
+impl std::error::Error for GetPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetPolicyErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetPolicyErrorKind::ConflictException(_inner) => Some(_inner),
+            GetPolicyErrorKind::ForbiddenException(_inner) => Some(_inner),
+            GetPolicyErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            GetPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2308,6 +2533,117 @@ impl std::error::Error for ListTagsForResourceError {
             ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutPolicyError {
+    pub kind: PutPolicyErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutPolicyErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutPolicyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutPolicyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutPolicyErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            PutPolicyErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            PutPolicyErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            PutPolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutPolicyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            PutPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for PutPolicyError {
+    fn code(&self) -> Option<&str> {
+        PutPolicyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutPolicyError {
+    pub fn new(kind: PutPolicyErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutPolicyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutPolicyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, PutPolicyErrorKind::BadRequestException(_))
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutPolicyErrorKind::ConflictException(_))
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, PutPolicyErrorKind::ForbiddenException(_))
+    }
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutPolicyErrorKind::InternalServerErrorException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PutPolicyErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, PutPolicyErrorKind::TooManyRequestsException(_))
+    }
+}
+impl std::error::Error for PutPolicyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutPolicyErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutPolicyErrorKind::ConflictException(_inner) => Some(_inner),
+            PutPolicyErrorKind::ForbiddenException(_inner) => Some(_inner),
+            PutPolicyErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            PutPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            PutPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

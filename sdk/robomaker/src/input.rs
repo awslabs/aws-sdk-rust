@@ -1649,7 +1649,8 @@ pub mod create_robot_application_input {
             self.tags = input;
             self
         }
-        /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
+        /// <p>The object that contains that URI of the Docker image that you use for your robot
+        /// application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
@@ -2075,7 +2076,8 @@ pub mod create_simulation_application_input {
             self.tags = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
+        /// <p>The object that contains the Docker image URI used to create your simulation
+        /// application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
@@ -2266,7 +2268,8 @@ pub mod create_simulation_application_version_input {
             self.s3_etags = input;
             self
         }
-        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
+        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
+        /// application.</p>
         pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_digest = Some(input.into());
             self
@@ -2492,7 +2495,8 @@ pub mod create_simulation_job_input {
         /// <dl>
         /// <dt>Continue</dt>
         /// <dd>
-        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+        /// <p>Leaves the instance running for its maximum timeout duration after a
+        /// <code>4XX</code> error code.</p>
         /// </dd>
         /// <dt>Fail</dt>
         /// <dd>
@@ -10750,7 +10754,8 @@ pub struct CreateSimulationJobInput {
     /// <dl>
     /// <dt>Continue</dt>
     /// <dd>
-    /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+    /// <p>Leaves the instance running for its maximum timeout duration after a
+    /// <code>4XX</code> error code.</p>
     /// </dd>
     /// <dt>Fail</dt>
     /// <dd>
@@ -10812,9 +10817,11 @@ pub struct CreateSimulationApplicationVersionInput {
     /// <p>The current revision id for the simulation application. If you provide a value and it
     /// matches the latest revision ID, a new version will be created.</p>
     pub current_revision_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
+    /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
+    /// simulation application.</p>
     pub s3_etags: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
+    /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
+    /// application.</p>
     pub image_digest: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateSimulationApplicationVersionInput {
@@ -10845,7 +10852,8 @@ pub struct CreateSimulationApplicationInput {
     /// application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
+    /// <p>The object that contains the Docker image URI used to create your simulation
+    /// application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for CreateSimulationApplicationInput {
@@ -10870,7 +10878,8 @@ pub struct CreateRobotApplicationVersionInput {
     /// <p>The current revision id for the robot application. If you provide a value and it matches
     /// the latest revision ID, a new version will be created.</p>
     pub current_revision_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
+    /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
+    /// application.</p>
     pub s3_etags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
     pub image_digest: std::option::Option<std::string::String>,
@@ -10899,7 +10908,8 @@ pub struct CreateRobotApplicationInput {
     /// application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
+    /// <p>The object that contains that URI of the Docker image that you use for your robot
+    /// application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for CreateRobotApplicationInput {

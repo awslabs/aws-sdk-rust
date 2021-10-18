@@ -322,6 +322,157 @@ impl BatchGetVariableInput {
     }
 }
 
+/// See [`CancelBatchImportJobInput`](crate::input::CancelBatchImportJobInput)
+pub mod cancel_batch_import_job_input {
+    /// A builder for [`CancelBatchImportJobInput`](crate::input::CancelBatchImportJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The ID of an in-progress batch import job to cancel. </p>
+        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelBatchImportJobInput`](crate::input::CancelBatchImportJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CancelBatchImportJobInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CancelBatchImportJobInput {
+                job_id: self.job_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CancelBatchImportJobInputOperationOutputAlias = crate::operation::CancelBatchImportJob;
+#[doc(hidden)]
+pub type CancelBatchImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CancelBatchImportJobInput {
+    /// Consumes the builder and constructs an Operation<[`CancelBatchImportJob`](crate::operation::CancelBatchImportJob)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CancelBatchImportJob,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CancelBatchImportJobInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CancelBatchImportJobInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CancelBatchImportJobInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSHawksNestServiceFacade.CancelBatchImportJob",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_cancel_batch_import_job(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelBatchImportJob::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CancelBatchImportJob",
+            "frauddetector",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CancelBatchImportJobInput`](crate::input::CancelBatchImportJobInput)
+    pub fn builder() -> crate::input::cancel_batch_import_job_input::Builder {
+        crate::input::cancel_batch_import_job_input::Builder::default()
+    }
+}
+
 /// See [`CancelBatchPredictionJobInput`](crate::input::CancelBatchPredictionJobInput)
 pub mod cancel_batch_prediction_job_input {
     /// A builder for [`CancelBatchPredictionJobInput`](crate::input::CancelBatchPredictionJobInput)
@@ -470,6 +621,219 @@ impl CancelBatchPredictionJobInput {
     /// Creates a new builder-style object to manufacture [`CancelBatchPredictionJobInput`](crate::input::CancelBatchPredictionJobInput)
     pub fn builder() -> crate::input::cancel_batch_prediction_job_input::Builder {
         crate::input::cancel_batch_prediction_job_input::Builder::default()
+    }
+}
+
+/// See [`CreateBatchImportJobInput`](crate::input::CreateBatchImportJobInput)
+pub mod create_batch_import_job_input {
+    /// A builder for [`CreateBatchImportJobInput`](crate::input::CreateBatchImportJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) input_path: std::option::Option<std::string::String>,
+        pub(crate) output_path: std::option::Option<std::string::String>,
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+        pub(crate) iam_role_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The URI that points to the Amazon S3 location of your data file.</p>
+        pub fn input_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_path = Some(input.into());
+            self
+        }
+        pub fn set_input_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_path = input;
+            self
+        }
+        /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+        pub fn output_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_path = Some(input.into());
+            self
+        }
+        pub fn set_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_path = input;
+            self
+        }
+        /// <p>The name of the event type.</p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
+        /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role_arn = Some(input.into());
+            self
+        }
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_role_arn = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateBatchImportJobInput`](crate::input::CreateBatchImportJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateBatchImportJobInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateBatchImportJobInput {
+                job_id: self.job_id,
+                input_path: self.input_path,
+                output_path: self.output_path,
+                event_type_name: self.event_type_name,
+                iam_role_arn: self.iam_role_arn,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateBatchImportJobInputOperationOutputAlias = crate::operation::CreateBatchImportJob;
+#[doc(hidden)]
+pub type CreateBatchImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreateBatchImportJobInput {
+    /// Consumes the builder and constructs an Operation<[`CreateBatchImportJob`](crate::operation::CreateBatchImportJob)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreateBatchImportJob,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateBatchImportJobInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateBatchImportJobInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateBatchImportJobInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSHawksNestServiceFacade.CreateBatchImportJob",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_batch_import_job(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateBatchImportJob::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreateBatchImportJob",
+            "frauddetector",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateBatchImportJobInput`](crate::input::CreateBatchImportJobInput)
+    pub fn builder() -> crate::input::create_batch_import_job_input::Builder {
+        crate::input::create_batch_import_job_input::Builder::default()
     }
 }
 
@@ -1162,6 +1526,7 @@ pub mod create_model_version_input {
         pub(crate) training_data_source: std::option::Option<crate::model::TrainingDataSourceEnum>,
         pub(crate) training_data_schema: std::option::Option<crate::model::TrainingDataSchema>,
         pub(crate) external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
+        pub(crate) ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -1210,7 +1575,7 @@ pub mod create_model_version_input {
             self.training_data_schema = input;
             self
         }
-        /// <p>Details for the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+        /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
         pub fn external_events_detail(mut self, input: crate::model::ExternalEventsDetail) -> Self {
             self.external_events_detail = Some(input);
             self
@@ -1220,6 +1585,18 @@ pub mod create_model_version_input {
             input: std::option::Option<crate::model::ExternalEventsDetail>,
         ) -> Self {
             self.external_events_detail = input;
+            self
+        }
+        /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+        pub fn ingested_events_detail(mut self, input: crate::model::IngestedEventsDetail) -> Self {
+            self.ingested_events_detail = Some(input);
+            self
+        }
+        pub fn set_ingested_events_detail(
+            mut self,
+            input: std::option::Option<crate::model::IngestedEventsDetail>,
+        ) -> Self {
+            self.ingested_events_detail = input;
             self
         }
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
@@ -1248,6 +1625,7 @@ pub mod create_model_version_input {
                 training_data_source: self.training_data_source,
                 training_data_schema: self.training_data_schema,
                 external_events_detail: self.external_events_detail,
+                ingested_events_detail: self.ingested_events_detail,
                 tags: self.tags,
             })
         }
@@ -1813,6 +2191,156 @@ impl CreateVariableInput {
     /// Creates a new builder-style object to manufacture [`CreateVariableInput`](crate::input::CreateVariableInput)
     pub fn builder() -> crate::input::create_variable_input::Builder {
         crate::input::create_variable_input::Builder::default()
+    }
+}
+
+/// See [`DeleteBatchImportJobInput`](crate::input::DeleteBatchImportJobInput)
+pub mod delete_batch_import_job_input {
+    /// A builder for [`DeleteBatchImportJobInput`](crate::input::DeleteBatchImportJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the batch import job to delete. </p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteBatchImportJobInput`](crate::input::DeleteBatchImportJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteBatchImportJobInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteBatchImportJobInput {
+                job_id: self.job_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteBatchImportJobInputOperationOutputAlias = crate::operation::DeleteBatchImportJob;
+#[doc(hidden)]
+pub type DeleteBatchImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteBatchImportJobInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteBatchImportJob`](crate::operation::DeleteBatchImportJob)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteBatchImportJob,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteBatchImportJobInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteBatchImportJobInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteBatchImportJobInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSHawksNestServiceFacade.DeleteBatchImportJob",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_batch_import_job(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteBatchImportJob::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteBatchImportJob",
+            "frauddetector",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteBatchImportJobInput`](crate::input::DeleteBatchImportJobInput)
+    pub fn builder() -> crate::input::delete_batch_import_job_input::Builder {
+        crate::input::delete_batch_import_job_input::Builder::default()
     }
 }
 
@@ -2434,6 +2962,7 @@ pub mod delete_event_input {
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
         pub(crate) event_type_name: std::option::Option<std::string::String>,
+        pub(crate) delete_audit_history: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The ID of the event to delete.</p>
@@ -2457,6 +2986,15 @@ pub mod delete_event_input {
             self.event_type_name = input;
             self
         }
+        /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
+        pub fn delete_audit_history(mut self, input: bool) -> Self {
+            self.delete_audit_history = Some(input);
+            self
+        }
+        pub fn set_delete_audit_history(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_audit_history = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteEventInput`](crate::input::DeleteEventInput)
         pub fn build(
             self,
@@ -2465,6 +3003,7 @@ pub mod delete_event_input {
             Ok(crate::input::DeleteEventInput {
                 event_id: self.event_id,
                 event_type_name: self.event_type_name,
+                delete_audit_history: self.delete_audit_history,
             })
         }
     }
@@ -2580,6 +3119,160 @@ impl DeleteEventInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventInput`](crate::input::DeleteEventInput)
     pub fn builder() -> crate::input::delete_event_input::Builder {
         crate::input::delete_event_input::Builder::default()
+    }
+}
+
+/// See [`DeleteEventsByEventTypeInput`](crate::input::DeleteEventsByEventTypeInput)
+pub mod delete_events_by_event_type_input {
+    /// A builder for [`DeleteEventsByEventTypeInput`](crate::input::DeleteEventsByEventTypeInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the event type.</p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteEventsByEventTypeInput`](crate::input::DeleteEventsByEventTypeInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteEventsByEventTypeInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteEventsByEventTypeInput {
+                event_type_name: self.event_type_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteEventsByEventTypeInputOperationOutputAlias =
+    crate::operation::DeleteEventsByEventType;
+#[doc(hidden)]
+pub type DeleteEventsByEventTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeleteEventsByEventTypeInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteEventsByEventType`](crate::operation::DeleteEventsByEventType)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeleteEventsByEventType,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteEventsByEventTypeInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteEventsByEventTypeInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteEventsByEventTypeInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSHawksNestServiceFacade.DeleteEventsByEventType",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_events_by_event_type(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteEventsByEventType::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeleteEventsByEventType",
+            "frauddetector",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteEventsByEventTypeInput`](crate::input::DeleteEventsByEventTypeInput)
+    pub fn builder() -> crate::input::delete_events_by_event_type_input::Builder {
+        crate::input::delete_events_by_event_type_input::Builder::default()
     }
 }
 
@@ -4157,6 +4850,178 @@ impl DescribeModelVersionsInput {
     }
 }
 
+/// See [`GetBatchImportJobsInput`](crate::input::GetBatchImportJobsInput)
+pub mod get_batch_import_jobs_input {
+    /// A builder for [`GetBatchImportJobsInput`](crate::input::GetBatchImportJobsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the batch import job to get.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The maximum number of objects to return for request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The next token from the previous request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBatchImportJobsInput`](crate::input::GetBatchImportJobsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetBatchImportJobsInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetBatchImportJobsInput {
+                job_id: self.job_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetBatchImportJobsInputOperationOutputAlias = crate::operation::GetBatchImportJobs;
+#[doc(hidden)]
+pub type GetBatchImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetBatchImportJobsInput {
+    /// Consumes the builder and constructs an Operation<[`GetBatchImportJobs`](crate::operation::GetBatchImportJobs)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetBatchImportJobs,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetBatchImportJobsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetBatchImportJobsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetBatchImportJobsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSHawksNestServiceFacade.GetBatchImportJobs",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_batch_import_jobs(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetBatchImportJobs::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetBatchImportJobs",
+            "frauddetector",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetBatchImportJobsInput`](crate::input::GetBatchImportJobsInput)
+    pub fn builder() -> crate::input::get_batch_import_jobs_input::Builder {
+        crate::input::get_batch_import_jobs_input::Builder::default()
+    }
+}
+
 /// See [`GetBatchPredictionJobsInput`](crate::input::GetBatchPredictionJobsInput)
 pub mod get_batch_prediction_jobs_input {
     /// A builder for [`GetBatchPredictionJobsInput`](crate::input::GetBatchPredictionJobsInput)
@@ -4326,6 +5191,158 @@ impl GetBatchPredictionJobsInput {
     /// Creates a new builder-style object to manufacture [`GetBatchPredictionJobsInput`](crate::input::GetBatchPredictionJobsInput)
     pub fn builder() -> crate::input::get_batch_prediction_jobs_input::Builder {
         crate::input::get_batch_prediction_jobs_input::Builder::default()
+    }
+}
+
+/// See [`GetDeleteEventsByEventTypeStatusInput`](crate::input::GetDeleteEventsByEventTypeStatusInput)
+pub mod get_delete_events_by_event_type_status_input {
+    /// A builder for [`GetDeleteEventsByEventTypeStatusInput`](crate::input::GetDeleteEventsByEventTypeStatusInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Name of event type for which to get the deletion status.</p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDeleteEventsByEventTypeStatusInput`](crate::input::GetDeleteEventsByEventTypeStatusInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetDeleteEventsByEventTypeStatusInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetDeleteEventsByEventTypeStatusInput {
+                event_type_name: self.event_type_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetDeleteEventsByEventTypeStatusInputOperationOutputAlias =
+    crate::operation::GetDeleteEventsByEventTypeStatus;
+#[doc(hidden)]
+pub type GetDeleteEventsByEventTypeStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetDeleteEventsByEventTypeStatusInput {
+    /// Consumes the builder and constructs an Operation<[`GetDeleteEventsByEventTypeStatus`](crate::operation::GetDeleteEventsByEventTypeStatus)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetDeleteEventsByEventTypeStatus,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetDeleteEventsByEventTypeStatusInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetDeleteEventsByEventTypeStatusInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetDeleteEventsByEventTypeStatusInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSHawksNestServiceFacade.GetDeleteEventsByEventTypeStatus",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_delete_events_by_event_type_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDeleteEventsByEventTypeStatus::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetDeleteEventsByEventTypeStatus",
+            "frauddetector",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetDeleteEventsByEventTypeStatusInput`](crate::input::GetDeleteEventsByEventTypeStatusInput)
+    pub fn builder() -> crate::input::get_delete_events_by_event_type_status_input::Builder {
+        crate::input::get_delete_events_by_event_type_status_input::Builder::default()
     }
 }
 
@@ -4830,6 +5847,162 @@ impl GetEntityTypesInput {
     }
 }
 
+/// See [`GetEventInput`](crate::input::GetEventInput)
+pub mod get_event_input {
+    /// A builder for [`GetEventInput`](crate::input::GetEventInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_id: std::option::Option<std::string::String>,
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the event to retrieve.</p>
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_id = Some(input.into());
+            self
+        }
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_id = input;
+            self
+        }
+        /// <p>The event type of the event to retrieve.</p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEventInput`](crate::input::GetEventInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::GetEventInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetEventInput {
+                event_id: self.event_id,
+                event_type_name: self.event_type_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetEventInputOperationOutputAlias = crate::operation::GetEvent;
+#[doc(hidden)]
+pub type GetEventInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetEventInput {
+    /// Consumes the builder and constructs an Operation<[`GetEvent`](crate::operation::GetEvent)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetEvent,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetEventInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetEventInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetEventInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSHawksNestServiceFacade.GetEvent",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_event(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(request, crate::operation::GetEvent::new())
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetEvent",
+                "frauddetector",
+            ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetEventInput`](crate::input::GetEventInput)
+    pub fn builder() -> crate::input::get_event_input::Builder {
+        crate::input::get_event_input::Builder::default()
+    }
+}
+
 /// See [`GetEventPredictionInput`](crate::input::GetEventPredictionInput)
 pub mod get_event_prediction_input {
     /// A builder for [`GetEventPredictionInput`](crate::input::GetEventPredictionInput)
@@ -4905,7 +6078,7 @@ pub mod get_event_prediction_input {
             self.entities = input;
             self
         }
-        /// <p>Timestamp that defines when the event under evaluation occurred.</p>
+        /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
         pub fn event_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_timestamp = Some(input.into());
             self
@@ -7144,6 +8317,7 @@ pub mod put_event_type_input {
         pub(crate) event_variables: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) labels: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) entity_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) event_ingestion: std::option::Option<crate::model::EventIngestion>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -7204,6 +8378,18 @@ pub mod put_event_type_input {
             self.entity_types = input;
             self
         }
+        /// <p>Specifies if ingenstion is enabled or disabled.</p>
+        pub fn event_ingestion(mut self, input: crate::model::EventIngestion) -> Self {
+            self.event_ingestion = Some(input);
+            self
+        }
+        pub fn set_event_ingestion(
+            mut self,
+            input: std::option::Option<crate::model::EventIngestion>,
+        ) -> Self {
+            self.event_ingestion = input;
+            self
+        }
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
@@ -7228,6 +8414,7 @@ pub mod put_event_type_input {
                 event_variables: self.event_variables,
                 labels: self.labels,
                 entity_types: self.entity_types,
+                event_ingestion: self.event_ingestion,
                 tags: self.tags,
             })
         }
@@ -8079,6 +9266,243 @@ impl PutOutcomeInput {
     /// Creates a new builder-style object to manufacture [`PutOutcomeInput`](crate::input::PutOutcomeInput)
     pub fn builder() -> crate::input::put_outcome_input::Builder {
         crate::input::put_outcome_input::Builder::default()
+    }
+}
+
+/// See [`SendEventInput`](crate::input::SendEventInput)
+pub mod send_event_input {
+    /// A builder for [`SendEventInput`](crate::input::SendEventInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_id: std::option::Option<std::string::String>,
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+        pub(crate) event_timestamp: std::option::Option<std::string::String>,
+        pub(crate) event_variables: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) assigned_label: std::option::Option<std::string::String>,
+        pub(crate) label_timestamp: std::option::Option<std::string::String>,
+        pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
+    }
+    impl Builder {
+        /// <p>The event ID to upload.</p>
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_id = Some(input.into());
+            self
+        }
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_id = input;
+            self
+        }
+        /// <p>The event type name of the event.</p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+        pub fn event_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_timestamp = Some(input.into());
+            self
+        }
+        pub fn set_event_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_timestamp = input;
+            self
+        }
+        pub fn event_variables(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.event_variables.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.event_variables = Some(hash_map);
+            self
+        }
+        pub fn set_event_variables(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.event_variables = input;
+            self
+        }
+        /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
+        pub fn assigned_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.assigned_label = Some(input.into());
+            self
+        }
+        pub fn set_assigned_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assigned_label = input;
+            self
+        }
+        /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
+        pub fn label_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_timestamp = Some(input.into());
+            self
+        }
+        pub fn set_label_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_timestamp = input;
+            self
+        }
+        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+            let mut v = self.entities.unwrap_or_default();
+            v.push(input.into());
+            self.entities = Some(v);
+            self
+        }
+        pub fn set_entities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
+        ) -> Self {
+            self.entities = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SendEventInput`](crate::input::SendEventInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::SendEventInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::SendEventInput {
+                event_id: self.event_id,
+                event_type_name: self.event_type_name,
+                event_timestamp: self.event_timestamp,
+                event_variables: self.event_variables,
+                assigned_label: self.assigned_label,
+                label_timestamp: self.label_timestamp,
+                entities: self.entities,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type SendEventInputOperationOutputAlias = crate::operation::SendEvent;
+#[doc(hidden)]
+pub type SendEventInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl SendEventInput {
+    /// Consumes the builder and constructs an Operation<[`SendEvent`](crate::operation::SendEvent)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::SendEvent,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::SendEventInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::SendEventInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::SendEventInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSHawksNestServiceFacade.SendEvent",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_send_event(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::SendEvent::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "SendEvent",
+                    "frauddetector",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`SendEventInput`](crate::input::SendEventInput)
+    pub fn builder() -> crate::input::send_event_input::Builder {
+        crate::input::send_event_input::Builder::default()
     }
 }
 
@@ -8987,6 +10411,198 @@ impl UpdateDetectorVersionStatusInput {
     }
 }
 
+/// See [`UpdateEventLabelInput`](crate::input::UpdateEventLabelInput)
+pub mod update_event_label_input {
+    /// A builder for [`UpdateEventLabelInput`](crate::input::UpdateEventLabelInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_id: std::option::Option<std::string::String>,
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+        pub(crate) assigned_label: std::option::Option<std::string::String>,
+        pub(crate) label_timestamp: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the event associated with the label to update.</p>
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_id = Some(input.into());
+            self
+        }
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_id = input;
+            self
+        }
+        /// <p>The event type of the event associated with the label to update.</p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// <p>The new label to assign to the event.</p>
+        pub fn assigned_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.assigned_label = Some(input.into());
+            self
+        }
+        pub fn set_assigned_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assigned_label = input;
+            self
+        }
+        /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+        pub fn label_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_timestamp = Some(input.into());
+            self
+        }
+        pub fn set_label_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateEventLabelInput`](crate::input::UpdateEventLabelInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateEventLabelInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateEventLabelInput {
+                event_id: self.event_id,
+                event_type_name: self.event_type_name,
+                assigned_label: self.assigned_label,
+                label_timestamp: self.label_timestamp,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateEventLabelInputOperationOutputAlias = crate::operation::UpdateEventLabel;
+#[doc(hidden)]
+pub type UpdateEventLabelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateEventLabelInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateEventLabel`](crate::operation::UpdateEventLabel)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateEventLabel,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateEventLabelInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateEventLabelInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateEventLabelInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSHawksNestServiceFacade.UpdateEventLabel",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_event_label(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateEventLabel::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateEventLabel",
+            "frauddetector",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateEventLabelInput`](crate::input::UpdateEventLabelInput)
+    pub fn builder() -> crate::input::update_event_label_input::Builder {
+        crate::input::update_event_label_input::Builder::default()
+    }
+}
+
 /// See [`UpdateModelInput`](crate::input::UpdateModelInput)
 pub mod update_model_input {
     /// A builder for [`UpdateModelInput`](crate::input::UpdateModelInput)
@@ -9165,6 +10781,7 @@ pub mod update_model_version_input {
         pub(crate) model_type: std::option::Option<crate::model::ModelTypeEnum>,
         pub(crate) major_version_number: std::option::Option<std::string::String>,
         pub(crate) external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
+        pub(crate) ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -9201,7 +10818,7 @@ pub mod update_model_version_input {
             self.major_version_number = input;
             self
         }
-        /// <p>The event details.</p>
+        /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
         pub fn external_events_detail(mut self, input: crate::model::ExternalEventsDetail) -> Self {
             self.external_events_detail = Some(input);
             self
@@ -9211,6 +10828,18 @@ pub mod update_model_version_input {
             input: std::option::Option<crate::model::ExternalEventsDetail>,
         ) -> Self {
             self.external_events_detail = input;
+            self
+        }
+        /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+        pub fn ingested_events_detail(mut self, input: crate::model::IngestedEventsDetail) -> Self {
+            self.ingested_events_detail = Some(input);
+            self
+        }
+        pub fn set_ingested_events_detail(
+            mut self,
+            input: std::option::Option<crate::model::IngestedEventsDetail>,
+        ) -> Self {
+            self.ingested_events_detail = input;
             self
         }
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
@@ -9238,6 +10867,7 @@ pub mod update_model_version_input {
                 model_type: self.model_type,
                 major_version_number: self.major_version_number,
                 external_events_detail: self.external_events_detail,
+                ingested_events_detail: self.ingested_events_detail,
                 tags: self.tags,
             })
         }
@@ -10212,8 +11842,10 @@ pub struct UpdateModelVersionInput {
     pub model_type: std::option::Option<crate::model::ModelTypeEnum>,
     /// <p>The major version number.</p>
     pub major_version_number: std::option::Option<std::string::String>,
-    /// <p>The event details.</p>
+    /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
     pub external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
+    /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    pub ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -10224,6 +11856,7 @@ impl std::fmt::Debug for UpdateModelVersionInput {
         formatter.field("model_type", &self.model_type);
         formatter.field("major_version_number", &self.major_version_number);
         formatter.field("external_events_detail", &self.external_events_detail);
+        formatter.field("ingested_events_detail", &self.ingested_events_detail);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -10245,6 +11878,29 @@ impl std::fmt::Debug for UpdateModelInput {
         formatter.field("model_id", &self.model_id);
         formatter.field("model_type", &self.model_type);
         formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateEventLabelInput {
+    /// <p>The ID of the event associated with the label to update.</p>
+    pub event_id: std::option::Option<std::string::String>,
+    /// <p>The event type of the event associated with the label to update.</p>
+    pub event_type_name: std::option::Option<std::string::String>,
+    /// <p>The new label to assign to the event.</p>
+    pub assigned_label: std::option::Option<std::string::String>,
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    pub label_timestamp: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateEventLabelInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateEventLabelInput");
+        formatter.field("event_id", &self.event_id);
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("assigned_label", &self.assigned_label);
+        formatter.field("label_timestamp", &self.label_timestamp);
         formatter.finish()
     }
 }
@@ -10360,6 +12016,39 @@ impl std::fmt::Debug for TagResourceInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendEventInput {
+    /// <p>The event ID to upload.</p>
+    pub event_id: std::option::Option<std::string::String>,
+    /// <p>The event type name of the event.</p>
+    pub event_type_name: std::option::Option<std::string::String>,
+    /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub event_timestamp: std::option::Option<std::string::String>,
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+    pub event_variables:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
+    pub assigned_label: std::option::Option<std::string::String>,
+    /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
+    pub label_timestamp: std::option::Option<std::string::String>,
+    /// <p>An array of entities.</p>
+    pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
+}
+impl std::fmt::Debug for SendEventInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SendEventInput");
+        formatter.field("event_id", &self.event_id);
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("event_timestamp", &self.event_timestamp);
+        formatter.field("event_variables", &self.event_variables);
+        formatter.field("assigned_label", &self.assigned_label);
+        formatter.field("label_timestamp", &self.label_timestamp);
+        formatter.field("entities", &self.entities);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutOutcomeInput {
     /// <p>The name of the outcome.</p>
     pub name: std::option::Option<std::string::String>,
@@ -10460,6 +12149,8 @@ pub struct PutEventTypeInput {
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
     pub entity_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Specifies if ingenstion is enabled or disabled.</p>
+    pub event_ingestion: std::option::Option<crate::model::EventIngestion>,
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -10471,6 +12162,7 @@ impl std::fmt::Debug for PutEventTypeInput {
         formatter.field("event_variables", &self.event_variables);
         formatter.field("labels", &self.labels);
         formatter.field("entity_types", &self.entity_types);
+        formatter.field("event_ingestion", &self.event_ingestion);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -10731,28 +12423,21 @@ pub struct GetEventPredictionInput {
     pub event_type_name: std::option::Option<std::string::String>,
     /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
-    /// <p>Timestamp that defines when the event under evaluation occurred.</p>
+    /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub event_timestamp: std::option::Option<std::string::String>,
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
     /// their corresponding values for the event you are sending for evaluation.</p>
-    /// <important>
-    /// <ul>
-    /// <li>
-    /// <p>You must provide at least one eventVariable</p>
-    /// </li>
-    /// <li>
-    /// <p>If detectorVersion is associated with a modelVersion, you must provide at least one associated eventVariable</p>
-    /// </li>
-    /// </ul>
+    /// <important>         
+    /// <p>You must provide at least one eventVariable</p>        
     /// </important>
-    /// <p>To ensure highest possible fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
+    /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
     /// <p>
     /// <b>For Amazon Fraud Detector trained models:</b>
     /// </p>
     /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
     /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
     /// <p>
-    /// <b>For External models ( for example, imported SageMaker):</b>
+    /// <b>For imported SageMaker models:</b>
     /// </p>
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
     /// will use the default value that is provided for the variable. </p>
@@ -10777,6 +12462,23 @@ impl std::fmt::Debug for GetEventPredictionInput {
             "external_model_endpoint_data_blobs",
             &"*** Sensitive Data Redacted ***",
         );
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEventInput {
+    /// <p>The ID of the event to retrieve.</p>
+    pub event_id: std::option::Option<std::string::String>,
+    /// <p>The event type of the event to retrieve.</p>
+    pub event_type_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetEventInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEventInput");
+        formatter.field("event_id", &self.event_id);
+        formatter.field("event_type_name", &self.event_type_name);
         formatter.finish()
     }
 }
@@ -10840,6 +12542,20 @@ impl std::fmt::Debug for GetDetectorsInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDeleteEventsByEventTypeStatusInput {
+    /// <p>Name of event type for which to get the deletion status.</p>
+    pub event_type_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetDeleteEventsByEventTypeStatusInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetDeleteEventsByEventTypeStatusInput");
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBatchPredictionJobsInput {
     /// <p>The batch prediction job for which to get the details.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -10851,6 +12567,26 @@ pub struct GetBatchPredictionJobsInput {
 impl std::fmt::Debug for GetBatchPredictionJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetBatchPredictionJobsInput");
+        formatter.field("job_id", &self.job_id);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBatchImportJobsInput {
+    /// <p>The ID of the batch import job to get.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The maximum number of objects to return for request.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The next token from the previous request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetBatchImportJobsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBatchImportJobsInput");
         formatter.field("job_id", &self.job_id);
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
@@ -11027,17 +12763,34 @@ impl std::fmt::Debug for DeleteEventTypeInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEventsByEventTypeInput {
+    /// <p>The name of the event type.</p>
+    pub event_type_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteEventsByEventTypeInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEventsByEventTypeInput");
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventInput {
     /// <p>The ID of the event to delete.</p>
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
     pub event_type_name: std::option::Option<std::string::String>,
+    /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
+    pub delete_audit_history: std::option::Option<bool>,
 }
 impl std::fmt::Debug for DeleteEventInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteEventInput");
         formatter.field("event_id", &self.event_id);
         formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("delete_audit_history", &self.delete_audit_history);
         formatter.finish()
     }
 }
@@ -11096,6 +12849,20 @@ pub struct DeleteBatchPredictionJobInput {
 impl std::fmt::Debug for DeleteBatchPredictionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteBatchPredictionJobInput");
+        formatter.field("job_id", &self.job_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteBatchImportJobInput {
+    /// <p>The ID of the batch import job to delete. </p>
+    pub job_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteBatchImportJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteBatchImportJobInput");
         formatter.field("job_id", &self.job_id);
         formatter.finish()
     }
@@ -11179,8 +12946,10 @@ pub struct CreateModelVersionInput {
     pub training_data_source: std::option::Option<crate::model::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
     pub training_data_schema: std::option::Option<crate::model::TrainingDataSchema>,
-    /// <p>Details for the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+    /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
     pub external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
+    /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    pub ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -11192,6 +12961,7 @@ impl std::fmt::Debug for CreateModelVersionInput {
         formatter.field("training_data_source", &self.training_data_source);
         formatter.field("training_data_schema", &self.training_data_schema);
         formatter.field("external_events_detail", &self.external_events_detail);
+        formatter.field("ingested_events_detail", &self.ingested_events_detail);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -11296,6 +13066,36 @@ impl std::fmt::Debug for CreateBatchPredictionJobInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateBatchImportJobInput {
+    /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The URI that points to the Amazon S3 location of your data file.</p>
+    pub input_path: std::option::Option<std::string::String>,
+    /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    pub output_path: std::option::Option<std::string::String>,
+    /// <p>The name of the event type.</p>
+    pub event_type_name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
+    /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+    pub iam_role_arn: std::option::Option<std::string::String>,
+    /// <p>A collection of key-value pairs associated with this request.  </p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for CreateBatchImportJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBatchImportJobInput");
+        formatter.field("job_id", &self.job_id);
+        formatter.field("input_path", &self.input_path);
+        formatter.field("output_path", &self.output_path);
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("iam_role_arn", &self.iam_role_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelBatchPredictionJobInput {
     /// <p>The ID of the batch prediction job to cancel.</p>
     pub job_id: std::option::Option<std::string::String>,
@@ -11303,6 +13103,21 @@ pub struct CancelBatchPredictionJobInput {
 impl std::fmt::Debug for CancelBatchPredictionJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CancelBatchPredictionJobInput");
+        formatter.field("job_id", &self.job_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelBatchImportJobInput {
+    /// <p> The ID of an in-progress batch import job to cancel. </p>
+    /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+    pub job_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CancelBatchImportJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelBatchImportJobInput");
         formatter.field("job_id", &self.job_id);
         formatter.finish()
     }

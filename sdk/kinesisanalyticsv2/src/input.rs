@@ -631,7 +631,7 @@ pub mod add_application_output_input {
         }
         /// <p>An array of objects, each describing one output configuration. In the output
         /// configuration, you specify the name of an in-application stream, a destination (that is, a
-        /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an AWS Lambda function), and
+        /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
         /// record the formation to use when writing to the destination.</p>
         pub fn output(mut self, input: crate::model::Output) -> Self {
             self.output = Some(input);
@@ -3825,7 +3825,7 @@ pub mod list_applications_input {
         /// <p>If a previous command returned a pagination token,
         /// pass it into this value to retrieve the next set of results.
         /// For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the AWS Command Line Interface's Pagination Options</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -4178,7 +4178,7 @@ pub mod list_application_versions_input {
             self
         }
         /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the AWS Command Line Interface's Pagination Options</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -5930,7 +5930,7 @@ pub struct ListApplicationVersionsInput {
     /// <p>The maximum number of versions to list in this invocation of the operation.</p>
     pub limit: std::option::Option<i32>,
     /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the AWS Command Line Interface's Pagination Options</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListApplicationVersionsInput {
@@ -5973,7 +5973,7 @@ pub struct ListApplicationsInput {
     /// <p>If a previous command returned a pagination token,
     /// pass it into this value to retrieve the next set of results.
     /// For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the AWS Command Line Interface's Pagination Options</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListApplicationsInput {
@@ -6443,7 +6443,7 @@ pub struct AddApplicationOutputInput {
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>An array of objects, each describing one output configuration. In the output
     /// configuration, you specify the name of an in-application stream, a destination (that is, a
-    /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an AWS Lambda function), and
+    /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
     /// record the formation to use when writing to the destination.</p>
     pub output: std::option::Option<crate::model::Output>,
 }

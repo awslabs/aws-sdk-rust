@@ -8509,6 +8509,7 @@ pub enum ScoreConfidence {
     High,
     Low,
     Medium,
+    NotAvailable,
     VeryHigh,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8519,6 +8520,7 @@ impl std::convert::From<&str> for ScoreConfidence {
             "HIGH" => ScoreConfidence::High,
             "LOW" => ScoreConfidence::Low,
             "MEDIUM" => ScoreConfidence::Medium,
+            "NOT_AVAILABLE" => ScoreConfidence::NotAvailable,
             "VERY_HIGH" => ScoreConfidence::VeryHigh,
             other => ScoreConfidence::Unknown(other.to_owned()),
         }
@@ -8537,12 +8539,13 @@ impl ScoreConfidence {
             ScoreConfidence::High => "HIGH",
             ScoreConfidence::Low => "LOW",
             ScoreConfidence::Medium => "MEDIUM",
+            ScoreConfidence::NotAvailable => "NOT_AVAILABLE",
             ScoreConfidence::VeryHigh => "VERY_HIGH",
             ScoreConfidence::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["HIGH", "LOW", "MEDIUM", "VERY_HIGH"]
+        &["HIGH", "LOW", "MEDIUM", "NOT_AVAILABLE", "VERY_HIGH"]
     }
 }
 impl AsRef<str> for ScoreConfidence {
@@ -10785,6 +10788,12 @@ pub struct FaqSummary {
     pub updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The file type used to create the FAQ. </p>
     pub file_format: std::option::Option<crate::model::FaqFileFormat>,
+    /// <p>The code for a language. This shows a supported language for the FAQ document
+    /// as part of the summary information for FAQs. English is supported by default.  
+    /// For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub language_code: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FaqSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10795,6 +10804,7 @@ impl std::fmt::Debug for FaqSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("file_format", &self.file_format);
+        formatter.field("language_code", &self.language_code);
         formatter.finish()
     }
 }
@@ -10810,6 +10820,7 @@ pub mod faq_summary {
         pub(crate) created_at: std::option::Option<smithy_types::Instant>,
         pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
         pub(crate) file_format: std::option::Option<crate::model::FaqFileFormat>,
+        pub(crate) language_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier of the FAQ.</p>
@@ -10871,6 +10882,22 @@ pub mod faq_summary {
             self.file_format = input;
             self
         }
+        /// <p>The code for a language. This shows a supported language for the FAQ document
+        /// as part of the summary information for FAQs. English is supported by default.  
+        /// For more information on supported languages, including their codes,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// documents in languages other than English</a>.</p>
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FaqSummary`](crate::model::FaqSummary)
         pub fn build(self) -> crate::model::FaqSummary {
             crate::model::FaqSummary {
@@ -10880,6 +10907,7 @@ pub mod faq_summary {
                 created_at: self.created_at,
                 updated_at: self.updated_at,
                 file_format: self.file_format,
+                language_code: self.language_code,
             }
         }
     }
@@ -11523,6 +11551,12 @@ pub struct DataSourceSummary {
     /// <p>The status of the data source. When the status is
     /// <code>ACTIVE</code> the data source is ready to use.</p>
     pub status: std::option::Option<crate::model::DataSourceStatus>,
+    /// <p>The code for a language. This shows a supported language for all documents
+    /// in the data source. English is supported by default.  
+    /// For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub language_code: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DataSourceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11533,6 +11567,7 @@ impl std::fmt::Debug for DataSourceSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("status", &self.status);
+        formatter.field("language_code", &self.language_code);
         formatter.finish()
     }
 }
@@ -11548,6 +11583,7 @@ pub mod data_source_summary {
         pub(crate) created_at: std::option::Option<smithy_types::Instant>,
         pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::DataSourceStatus>,
+        pub(crate) language_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the data source.</p>
@@ -11611,6 +11647,22 @@ pub mod data_source_summary {
             self.status = input;
             self
         }
+        /// <p>The code for a language. This shows a supported language for all documents
+        /// in the data source. English is supported by default.  
+        /// For more information on supported languages, including their codes,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// documents in languages other than English</a>.</p>
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSourceSummary`](crate::model::DataSourceSummary)
         pub fn build(self) -> crate::model::DataSourceSummary {
             crate::model::DataSourceSummary {
@@ -11620,6 +11672,7 @@ pub mod data_source_summary {
                 created_at: self.created_at,
                 updated_at: self.updated_at,
                 status: self.status,
+                language_code: self.language_code,
             }
         }
     }

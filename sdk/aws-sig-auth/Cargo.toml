@@ -1,11 +1,11 @@
 [package]
 name = "aws-sig-auth"
-version = "0.1.0"
-authors = ["Russell Cohen <rcoh@amazon.com>"]
+version = "0.0.21-alpha"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
+description = "SigV4 signing middleware for the AWS SDK."
 edition = "2018"
 license = "Apache-2.0"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+repository = "https://github.com/awslabs/smithy-rs"
 
 [features]
 sign-eventstream = ["smithy-eventstream", "aws-sigv4/sign-eventstream"]
@@ -14,7 +14,6 @@ default = []
 [dependencies]
 http = "0.2.2"
 aws-sigv4 = { path = "../aws-sigv4" }
-aws-auth = { path = "../aws-auth" }
 aws-types = { path = "../aws-types" }
 smithy-http = { path = "../smithy-http" }
 smithy-eventstream = { path = "../smithy-eventstream", optional = true }

@@ -77,6 +77,9 @@ where
     pub fn create_channel(&self) -> fluent_builders::CreateChannel<C, M, R> {
         fluent_builders::CreateChannel::new(self.handle.clone())
     }
+    pub fn create_prefetch_schedule(&self) -> fluent_builders::CreatePrefetchSchedule<C, M, R> {
+        fluent_builders::CreatePrefetchSchedule::new(self.handle.clone())
+    }
     pub fn create_program(&self) -> fluent_builders::CreateProgram<C, M, R> {
         fluent_builders::CreateProgram::new(self.handle.clone())
     }
@@ -96,6 +99,9 @@ where
         &self,
     ) -> fluent_builders::DeletePlaybackConfiguration<C, M, R> {
         fluent_builders::DeletePlaybackConfiguration::new(self.handle.clone())
+    }
+    pub fn delete_prefetch_schedule(&self) -> fluent_builders::DeletePrefetchSchedule<C, M, R> {
+        fluent_builders::DeletePrefetchSchedule::new(self.handle.clone())
     }
     pub fn delete_program(&self) -> fluent_builders::DeleteProgram<C, M, R> {
         fluent_builders::DeleteProgram::new(self.handle.clone())
@@ -127,6 +133,9 @@ where
     pub fn get_playback_configuration(&self) -> fluent_builders::GetPlaybackConfiguration<C, M, R> {
         fluent_builders::GetPlaybackConfiguration::new(self.handle.clone())
     }
+    pub fn get_prefetch_schedule(&self) -> fluent_builders::GetPrefetchSchedule<C, M, R> {
+        fluent_builders::GetPrefetchSchedule::new(self.handle.clone())
+    }
     pub fn list_alerts(&self) -> fluent_builders::ListAlerts<C, M, R> {
         fluent_builders::ListAlerts::new(self.handle.clone())
     }
@@ -137,6 +146,9 @@ where
         &self,
     ) -> fluent_builders::ListPlaybackConfigurations<C, M, R> {
         fluent_builders::ListPlaybackConfigurations::new(self.handle.clone())
+    }
+    pub fn list_prefetch_schedules(&self) -> fluent_builders::ListPrefetchSchedules<C, M, R> {
+        fluent_builders::ListPrefetchSchedules::new(self.handle.clone())
     }
     pub fn list_source_locations(&self) -> fluent_builders::ListSourceLocations<C, M, R> {
         fluent_builders::ListSourceLocations::new(self.handle.clone())
@@ -353,6 +365,105 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreatePrefetchSchedule<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_prefetch_schedule_input::Builder,
+    }
+    impl<C, M, R> CreatePrefetchSchedule<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreatePrefetchScheduleOutput,
+            smithy_http::result::SdkError<crate::error::CreatePrefetchScheduleError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreatePrefetchScheduleInputOperationOutputAlias,
+                crate::output::CreatePrefetchScheduleOutput,
+                crate::error::CreatePrefetchScheduleError,
+                crate::input::CreatePrefetchScheduleInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+        pub fn consumption(mut self, inp: crate::model::PrefetchConsumption) -> Self {
+            self.inner = self.inner.consumption(inp);
+            self
+        }
+        pub fn set_consumption(
+            mut self,
+            input: std::option::Option<crate::model::PrefetchConsumption>,
+        ) -> Self {
+            self.inner = self.inner.set_consumption(input);
+            self
+        }
+        /// <p>The identifier for the playback configuration.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The name of the playback configuration.</p>
+        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.playback_configuration_name(inp);
+            self
+        }
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_playback_configuration_name(input);
+            self
+        }
+        /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+        pub fn retrieval(mut self, inp: crate::model::PrefetchRetrieval) -> Self {
+            self.inner = self.inner.retrieval(inp);
+            self
+        }
+        pub fn set_retrieval(
+            mut self,
+            input: std::option::Option<crate::model::PrefetchRetrieval>,
+        ) -> Self {
+            self.inner = self.inner.set_retrieval(input);
+            self
+        }
+        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
+        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(inp);
+            self
+        }
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_id(input);
             self
         }
     }
@@ -854,6 +965,72 @@ pub mod fluent_builders {
         }
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeletePrefetchSchedule<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_prefetch_schedule_input::Builder,
+    }
+    impl<C, M, R> DeletePrefetchSchedule<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeletePrefetchScheduleOutput,
+            smithy_http::result::SdkError<crate::error::DeletePrefetchScheduleError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeletePrefetchScheduleInputOperationOutputAlias,
+                crate::output::DeletePrefetchScheduleOutput,
+                crate::error::DeletePrefetchScheduleError,
+                crate::input::DeletePrefetchScheduleInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier for the playback configuration.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The name of the playback configuration.</p>
+        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.playback_configuration_name(inp);
+            self
+        }
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_playback_configuration_name(input);
             self
         }
     }
@@ -1482,6 +1659,72 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetPrefetchSchedule<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_prefetch_schedule_input::Builder,
+    }
+    impl<C, M, R> GetPrefetchSchedule<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetPrefetchScheduleOutput,
+            smithy_http::result::SdkError<crate::error::GetPrefetchScheduleError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetPrefetchScheduleInputOperationOutputAlias,
+                crate::output::GetPrefetchScheduleOutput,
+                crate::error::GetPrefetchScheduleError,
+                crate::input::GetPrefetchScheduleInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier for the playback configuration.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The name of the playback configuration.</p>
+        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.playback_configuration_name(inp);
+            self
+        }
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_playback_configuration_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ListAlerts<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -1676,6 +1919,90 @@ pub mod fluent_builders {
         }
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListPrefetchSchedules<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_prefetch_schedules_input::Builder,
+    }
+    impl<C, M, R> ListPrefetchSchedules<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListPrefetchSchedulesOutput,
+            smithy_http::result::SdkError<crate::error::ListPrefetchSchedulesError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListPrefetchSchedulesInputOperationOutputAlias,
+                crate::output::ListPrefetchSchedulesOutput,
+                crate::error::ListPrefetchSchedulesError,
+                crate::input::ListPrefetchSchedulesInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The name of the playback configuration.</p>
+        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.playback_configuration_name(inp);
+            self
+        }
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_playback_configuration_name(input);
+            self
+        }
+        /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
+        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(inp);
+            self
+        }
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_id(input);
             self
         }
     }
@@ -2672,7 +2999,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2692,7 +3020,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

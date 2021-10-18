@@ -742,6 +742,17 @@ pub fn serialize_operation_crate_operation_describe_auto_scaling_groups(
             smithy_types::Number::NegInt((*var_205).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_206 = writer.prefix("Filters");
+    if let Some(var_207) = &input.filters {
+        let mut list_209 = scope_206.start_list(false, None);
+        for item_208 in var_207 {
+            #[allow(unused_mut)]
+            let mut entry_210 = list_209.entry();
+            crate::query_ser::serialize_structure_crate_model_filter(entry_210, item_208);
+        }
+        list_209.finish();
+    }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -754,28 +765,28 @@ pub fn serialize_operation_crate_operation_describe_auto_scaling_instances(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeAutoScalingInstances", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_206 = writer.prefix("InstanceIds");
-    if let Some(var_207) = &input.instance_ids {
-        let mut list_209 = scope_206.start_list(false, None);
-        for item_208 in var_207 {
+    let mut scope_211 = writer.prefix("InstanceIds");
+    if let Some(var_212) = &input.instance_ids {
+        let mut list_214 = scope_211.start_list(false, None);
+        for item_213 in var_212 {
             #[allow(unused_mut)]
-            let mut entry_210 = list_209.entry();
-            entry_210.string(item_208);
+            let mut entry_215 = list_214.entry();
+            entry_215.string(item_213);
         }
-        list_209.finish();
+        list_214.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_211 = writer.prefix("MaxRecords");
-    if let Some(var_212) = &input.max_records {
-        scope_211.number(
+    let mut scope_216 = writer.prefix("MaxRecords");
+    if let Some(var_217) = &input.max_records {
+        scope_216.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_212).into()),
+            smithy_types::Number::NegInt((*var_217).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_213 = writer.prefix("NextToken");
-    if let Some(var_214) = &input.next_token {
-        scope_213.string(var_214);
+    let mut scope_218 = writer.prefix("NextToken");
+    if let Some(var_219) = &input.next_token {
+        scope_218.string(var_219);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -804,32 +815,32 @@ pub fn serialize_operation_crate_operation_describe_instance_refreshes(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeInstanceRefreshes", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_215 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_216) = &input.auto_scaling_group_name {
-        scope_215.string(var_216);
+    let mut scope_220 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_221) = &input.auto_scaling_group_name {
+        scope_220.string(var_221);
     }
     #[allow(unused_mut)]
-    let mut scope_217 = writer.prefix("InstanceRefreshIds");
-    if let Some(var_218) = &input.instance_refresh_ids {
-        let mut list_220 = scope_217.start_list(false, None);
-        for item_219 in var_218 {
+    let mut scope_222 = writer.prefix("InstanceRefreshIds");
+    if let Some(var_223) = &input.instance_refresh_ids {
+        let mut list_225 = scope_222.start_list(false, None);
+        for item_224 in var_223 {
             #[allow(unused_mut)]
-            let mut entry_221 = list_220.entry();
-            entry_221.string(item_219);
+            let mut entry_226 = list_225.entry();
+            entry_226.string(item_224);
         }
-        list_220.finish();
+        list_225.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_222 = writer.prefix("NextToken");
-    if let Some(var_223) = &input.next_token {
-        scope_222.string(var_223);
+    let mut scope_227 = writer.prefix("NextToken");
+    if let Some(var_228) = &input.next_token {
+        scope_227.string(var_228);
     }
     #[allow(unused_mut)]
-    let mut scope_224 = writer.prefix("MaxRecords");
-    if let Some(var_225) = &input.max_records {
-        scope_224.number(
+    let mut scope_229 = writer.prefix("MaxRecords");
+    if let Some(var_230) = &input.max_records {
+        scope_229.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_225).into()),
+            smithy_types::Number::NegInt((*var_230).into()),
         );
     }
     writer.finish();
@@ -844,27 +855,27 @@ pub fn serialize_operation_crate_operation_describe_launch_configurations(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeLaunchConfigurations", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_226 = writer.prefix("LaunchConfigurationNames");
-    if let Some(var_227) = &input.launch_configuration_names {
-        let mut list_229 = scope_226.start_list(false, None);
-        for item_228 in var_227 {
+    let mut scope_231 = writer.prefix("LaunchConfigurationNames");
+    if let Some(var_232) = &input.launch_configuration_names {
+        let mut list_234 = scope_231.start_list(false, None);
+        for item_233 in var_232 {
             #[allow(unused_mut)]
-            let mut entry_230 = list_229.entry();
-            entry_230.string(item_228);
+            let mut entry_235 = list_234.entry();
+            entry_235.string(item_233);
         }
-        list_229.finish();
+        list_234.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_231 = writer.prefix("NextToken");
-    if let Some(var_232) = &input.next_token {
-        scope_231.string(var_232);
+    let mut scope_236 = writer.prefix("NextToken");
+    if let Some(var_237) = &input.next_token {
+        scope_236.string(var_237);
     }
     #[allow(unused_mut)]
-    let mut scope_233 = writer.prefix("MaxRecords");
-    if let Some(var_234) = &input.max_records {
-        scope_233.number(
+    let mut scope_238 = writer.prefix("MaxRecords");
+    if let Some(var_239) = &input.max_records {
+        scope_238.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_234).into()),
+            smithy_types::Number::NegInt((*var_239).into()),
         );
     }
     writer.finish();
@@ -879,20 +890,20 @@ pub fn serialize_operation_crate_operation_describe_lifecycle_hooks(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeLifecycleHooks", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_235 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_236) = &input.auto_scaling_group_name {
-        scope_235.string(var_236);
+    let mut scope_240 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_241) = &input.auto_scaling_group_name {
+        scope_240.string(var_241);
     }
     #[allow(unused_mut)]
-    let mut scope_237 = writer.prefix("LifecycleHookNames");
-    if let Some(var_238) = &input.lifecycle_hook_names {
-        let mut list_240 = scope_237.start_list(false, None);
-        for item_239 in var_238 {
+    let mut scope_242 = writer.prefix("LifecycleHookNames");
+    if let Some(var_243) = &input.lifecycle_hook_names {
+        let mut list_245 = scope_242.start_list(false, None);
+        for item_244 in var_243 {
             #[allow(unused_mut)]
-            let mut entry_241 = list_240.entry();
-            entry_241.string(item_239);
+            let mut entry_246 = list_245.entry();
+            entry_246.string(item_244);
         }
-        list_240.finish();
+        list_245.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -918,21 +929,21 @@ pub fn serialize_operation_crate_operation_describe_load_balancers(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeLoadBalancers", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_242 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_243) = &input.auto_scaling_group_name {
-        scope_242.string(var_243);
+    let mut scope_247 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_248) = &input.auto_scaling_group_name {
+        scope_247.string(var_248);
     }
     #[allow(unused_mut)]
-    let mut scope_244 = writer.prefix("NextToken");
-    if let Some(var_245) = &input.next_token {
-        scope_244.string(var_245);
+    let mut scope_249 = writer.prefix("NextToken");
+    if let Some(var_250) = &input.next_token {
+        scope_249.string(var_250);
     }
     #[allow(unused_mut)]
-    let mut scope_246 = writer.prefix("MaxRecords");
-    if let Some(var_247) = &input.max_records {
-        scope_246.number(
+    let mut scope_251 = writer.prefix("MaxRecords");
+    if let Some(var_252) = &input.max_records {
+        scope_251.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_247).into()),
+            smithy_types::Number::NegInt((*var_252).into()),
         );
     }
     writer.finish();
@@ -947,21 +958,21 @@ pub fn serialize_operation_crate_operation_describe_load_balancer_target_groups(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeLoadBalancerTargetGroups", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_248 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_249) = &input.auto_scaling_group_name {
-        scope_248.string(var_249);
+    let mut scope_253 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_254) = &input.auto_scaling_group_name {
+        scope_253.string(var_254);
     }
     #[allow(unused_mut)]
-    let mut scope_250 = writer.prefix("NextToken");
-    if let Some(var_251) = &input.next_token {
-        scope_250.string(var_251);
+    let mut scope_255 = writer.prefix("NextToken");
+    if let Some(var_256) = &input.next_token {
+        scope_255.string(var_256);
     }
     #[allow(unused_mut)]
-    let mut scope_252 = writer.prefix("MaxRecords");
-    if let Some(var_253) = &input.max_records {
-        scope_252.number(
+    let mut scope_257 = writer.prefix("MaxRecords");
+    if let Some(var_258) = &input.max_records {
+        scope_257.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_253).into()),
+            smithy_types::Number::NegInt((*var_258).into()),
         );
     }
     writer.finish();
@@ -991,27 +1002,27 @@ pub fn serialize_operation_crate_operation_describe_notification_configurations(
         "2011-01-01",
     );
     #[allow(unused_mut)]
-    let mut scope_254 = writer.prefix("AutoScalingGroupNames");
-    if let Some(var_255) = &input.auto_scaling_group_names {
-        let mut list_257 = scope_254.start_list(false, None);
-        for item_256 in var_255 {
+    let mut scope_259 = writer.prefix("AutoScalingGroupNames");
+    if let Some(var_260) = &input.auto_scaling_group_names {
+        let mut list_262 = scope_259.start_list(false, None);
+        for item_261 in var_260 {
             #[allow(unused_mut)]
-            let mut entry_258 = list_257.entry();
-            entry_258.string(item_256);
+            let mut entry_263 = list_262.entry();
+            entry_263.string(item_261);
         }
-        list_257.finish();
+        list_262.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_259 = writer.prefix("NextToken");
-    if let Some(var_260) = &input.next_token {
-        scope_259.string(var_260);
+    let mut scope_264 = writer.prefix("NextToken");
+    if let Some(var_265) = &input.next_token {
+        scope_264.string(var_265);
     }
     #[allow(unused_mut)]
-    let mut scope_261 = writer.prefix("MaxRecords");
-    if let Some(var_262) = &input.max_records {
-        scope_261.number(
+    let mut scope_266 = writer.prefix("MaxRecords");
+    if let Some(var_267) = &input.max_records {
+        scope_266.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_262).into()),
+            smithy_types::Number::NegInt((*var_267).into()),
         );
     }
     writer.finish();
@@ -1025,24 +1036,13 @@ pub fn serialize_operation_crate_operation_describe_policies(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DescribePolicies", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_263 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_264) = &input.auto_scaling_group_name {
-        scope_263.string(var_264);
+    let mut scope_268 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_269) = &input.auto_scaling_group_name {
+        scope_268.string(var_269);
     }
     #[allow(unused_mut)]
-    let mut scope_265 = writer.prefix("PolicyNames");
-    if let Some(var_266) = &input.policy_names {
-        let mut list_268 = scope_265.start_list(false, None);
-        for item_267 in var_266 {
-            #[allow(unused_mut)]
-            let mut entry_269 = list_268.entry();
-            entry_269.string(item_267);
-        }
-        list_268.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_270 = writer.prefix("PolicyTypes");
-    if let Some(var_271) = &input.policy_types {
+    let mut scope_270 = writer.prefix("PolicyNames");
+    if let Some(var_271) = &input.policy_names {
         let mut list_273 = scope_270.start_list(false, None);
         for item_272 in var_271 {
             #[allow(unused_mut)]
@@ -1052,16 +1052,27 @@ pub fn serialize_operation_crate_operation_describe_policies(
         list_273.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_275 = writer.prefix("NextToken");
-    if let Some(var_276) = &input.next_token {
-        scope_275.string(var_276);
+    let mut scope_275 = writer.prefix("PolicyTypes");
+    if let Some(var_276) = &input.policy_types {
+        let mut list_278 = scope_275.start_list(false, None);
+        for item_277 in var_276 {
+            #[allow(unused_mut)]
+            let mut entry_279 = list_278.entry();
+            entry_279.string(item_277);
+        }
+        list_278.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_277 = writer.prefix("MaxRecords");
-    if let Some(var_278) = &input.max_records {
-        scope_277.number(
+    let mut scope_280 = writer.prefix("NextToken");
+    if let Some(var_281) = &input.next_token {
+        scope_280.string(var_281);
+    }
+    #[allow(unused_mut)]
+    let mut scope_282 = writer.prefix("MaxRecords");
+    if let Some(var_283) = &input.max_records {
+        scope_282.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_278).into()),
+            smithy_types::Number::NegInt((*var_283).into()),
         );
     }
     writer.finish();
@@ -1076,38 +1087,38 @@ pub fn serialize_operation_crate_operation_describe_scaling_activities(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeScalingActivities", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_279 = writer.prefix("ActivityIds");
-    if let Some(var_280) = &input.activity_ids {
-        let mut list_282 = scope_279.start_list(false, None);
-        for item_281 in var_280 {
+    let mut scope_284 = writer.prefix("ActivityIds");
+    if let Some(var_285) = &input.activity_ids {
+        let mut list_287 = scope_284.start_list(false, None);
+        for item_286 in var_285 {
             #[allow(unused_mut)]
-            let mut entry_283 = list_282.entry();
-            entry_283.string(item_281);
+            let mut entry_288 = list_287.entry();
+            entry_288.string(item_286);
         }
-        list_282.finish();
+        list_287.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_284 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_285) = &input.auto_scaling_group_name {
-        scope_284.string(var_285);
+    let mut scope_289 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_290) = &input.auto_scaling_group_name {
+        scope_289.string(var_290);
     }
     #[allow(unused_mut)]
-    let mut scope_286 = writer.prefix("IncludeDeletedGroups");
-    if let Some(var_287) = &input.include_deleted_groups {
-        scope_286.boolean(*var_287);
+    let mut scope_291 = writer.prefix("IncludeDeletedGroups");
+    if let Some(var_292) = &input.include_deleted_groups {
+        scope_291.boolean(*var_292);
     }
     #[allow(unused_mut)]
-    let mut scope_288 = writer.prefix("MaxRecords");
-    if let Some(var_289) = &input.max_records {
-        scope_288.number(
+    let mut scope_293 = writer.prefix("MaxRecords");
+    if let Some(var_294) = &input.max_records {
+        scope_293.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_289).into()),
+            smithy_types::Number::NegInt((*var_294).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_290 = writer.prefix("NextToken");
-    if let Some(var_291) = &input.next_token {
-        scope_290.string(var_291);
+    let mut scope_295 = writer.prefix("NextToken");
+    if let Some(var_296) = &input.next_token {
+        scope_295.string(var_296);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1133,42 +1144,42 @@ pub fn serialize_operation_crate_operation_describe_scheduled_actions(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeScheduledActions", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_292 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_293) = &input.auto_scaling_group_name {
-        scope_292.string(var_293);
+    let mut scope_297 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_298) = &input.auto_scaling_group_name {
+        scope_297.string(var_298);
     }
     #[allow(unused_mut)]
-    let mut scope_294 = writer.prefix("ScheduledActionNames");
-    if let Some(var_295) = &input.scheduled_action_names {
-        let mut list_297 = scope_294.start_list(false, None);
-        for item_296 in var_295 {
+    let mut scope_299 = writer.prefix("ScheduledActionNames");
+    if let Some(var_300) = &input.scheduled_action_names {
+        let mut list_302 = scope_299.start_list(false, None);
+        for item_301 in var_300 {
             #[allow(unused_mut)]
-            let mut entry_298 = list_297.entry();
-            entry_298.string(item_296);
+            let mut entry_303 = list_302.entry();
+            entry_303.string(item_301);
         }
-        list_297.finish();
+        list_302.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_299 = writer.prefix("StartTime");
-    if let Some(var_300) = &input.start_time {
-        scope_299.instant(var_300, smithy_types::instant::Format::DateTime);
+    let mut scope_304 = writer.prefix("StartTime");
+    if let Some(var_305) = &input.start_time {
+        scope_304.instant(var_305, smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_301 = writer.prefix("EndTime");
-    if let Some(var_302) = &input.end_time {
-        scope_301.instant(var_302, smithy_types::instant::Format::DateTime);
+    let mut scope_306 = writer.prefix("EndTime");
+    if let Some(var_307) = &input.end_time {
+        scope_306.instant(var_307, smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_303 = writer.prefix("NextToken");
-    if let Some(var_304) = &input.next_token {
-        scope_303.string(var_304);
+    let mut scope_308 = writer.prefix("NextToken");
+    if let Some(var_309) = &input.next_token {
+        scope_308.string(var_309);
     }
     #[allow(unused_mut)]
-    let mut scope_305 = writer.prefix("MaxRecords");
-    if let Some(var_306) = &input.max_records {
-        scope_305.number(
+    let mut scope_310 = writer.prefix("MaxRecords");
+    if let Some(var_311) = &input.max_records {
+        scope_310.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_306).into()),
+            smithy_types::Number::NegInt((*var_311).into()),
         );
     }
     writer.finish();
@@ -1182,27 +1193,27 @@ pub fn serialize_operation_crate_operation_describe_tags(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DescribeTags", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_307 = writer.prefix("Filters");
-    if let Some(var_308) = &input.filters {
-        let mut list_310 = scope_307.start_list(false, None);
-        for item_309 in var_308 {
+    let mut scope_312 = writer.prefix("Filters");
+    if let Some(var_313) = &input.filters {
+        let mut list_315 = scope_312.start_list(false, None);
+        for item_314 in var_313 {
             #[allow(unused_mut)]
-            let mut entry_311 = list_310.entry();
-            crate::query_ser::serialize_structure_crate_model_filter(entry_311, item_309);
+            let mut entry_316 = list_315.entry();
+            crate::query_ser::serialize_structure_crate_model_filter(entry_316, item_314);
         }
-        list_310.finish();
+        list_315.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_312 = writer.prefix("NextToken");
-    if let Some(var_313) = &input.next_token {
-        scope_312.string(var_313);
+    let mut scope_317 = writer.prefix("NextToken");
+    if let Some(var_318) = &input.next_token {
+        scope_317.string(var_318);
     }
     #[allow(unused_mut)]
-    let mut scope_314 = writer.prefix("MaxRecords");
-    if let Some(var_315) = &input.max_records {
-        scope_314.number(
+    let mut scope_319 = writer.prefix("MaxRecords");
+    if let Some(var_320) = &input.max_records {
+        scope_319.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_315).into()),
+            smithy_types::Number::NegInt((*var_320).into()),
         );
     }
     writer.finish();
@@ -1228,22 +1239,22 @@ pub fn serialize_operation_crate_operation_describe_warm_pool(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DescribeWarmPool", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_316 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_317) = &input.auto_scaling_group_name {
-        scope_316.string(var_317);
+    let mut scope_321 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_322) = &input.auto_scaling_group_name {
+        scope_321.string(var_322);
     }
     #[allow(unused_mut)]
-    let mut scope_318 = writer.prefix("MaxRecords");
-    if let Some(var_319) = &input.max_records {
-        scope_318.number(
+    let mut scope_323 = writer.prefix("MaxRecords");
+    if let Some(var_324) = &input.max_records {
+        scope_323.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_319).into()),
+            smithy_types::Number::NegInt((*var_324).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_320 = writer.prefix("NextToken");
-    if let Some(var_321) = &input.next_token {
-        scope_320.string(var_321);
+    let mut scope_325 = writer.prefix("NextToken");
+    if let Some(var_326) = &input.next_token {
+        scope_325.string(var_326);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1256,25 +1267,25 @@ pub fn serialize_operation_crate_operation_detach_instances(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DetachInstances", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_322 = writer.prefix("InstanceIds");
-    if let Some(var_323) = &input.instance_ids {
-        let mut list_325 = scope_322.start_list(false, None);
-        for item_324 in var_323 {
+    let mut scope_327 = writer.prefix("InstanceIds");
+    if let Some(var_328) = &input.instance_ids {
+        let mut list_330 = scope_327.start_list(false, None);
+        for item_329 in var_328 {
             #[allow(unused_mut)]
-            let mut entry_326 = list_325.entry();
-            entry_326.string(item_324);
+            let mut entry_331 = list_330.entry();
+            entry_331.string(item_329);
         }
-        list_325.finish();
+        list_330.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_327 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_328) = &input.auto_scaling_group_name {
-        scope_327.string(var_328);
+    let mut scope_332 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_333) = &input.auto_scaling_group_name {
+        scope_332.string(var_333);
     }
     #[allow(unused_mut)]
-    let mut scope_329 = writer.prefix("ShouldDecrementDesiredCapacity");
-    if let Some(var_330) = &input.should_decrement_desired_capacity {
-        scope_329.boolean(*var_330);
+    let mut scope_334 = writer.prefix("ShouldDecrementDesiredCapacity");
+    if let Some(var_335) = &input.should_decrement_desired_capacity {
+        scope_334.boolean(*var_335);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1287,20 +1298,20 @@ pub fn serialize_operation_crate_operation_detach_load_balancers(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DetachLoadBalancers", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_331 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_332) = &input.auto_scaling_group_name {
-        scope_331.string(var_332);
+    let mut scope_336 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_337) = &input.auto_scaling_group_name {
+        scope_336.string(var_337);
     }
     #[allow(unused_mut)]
-    let mut scope_333 = writer.prefix("LoadBalancerNames");
-    if let Some(var_334) = &input.load_balancer_names {
-        let mut list_336 = scope_333.start_list(false, None);
-        for item_335 in var_334 {
+    let mut scope_338 = writer.prefix("LoadBalancerNames");
+    if let Some(var_339) = &input.load_balancer_names {
+        let mut list_341 = scope_338.start_list(false, None);
+        for item_340 in var_339 {
             #[allow(unused_mut)]
-            let mut entry_337 = list_336.entry();
-            entry_337.string(item_335);
+            let mut entry_342 = list_341.entry();
+            entry_342.string(item_340);
         }
-        list_336.finish();
+        list_341.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1314,20 +1325,20 @@ pub fn serialize_operation_crate_operation_detach_load_balancer_target_groups(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DetachLoadBalancerTargetGroups", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_338 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_339) = &input.auto_scaling_group_name {
-        scope_338.string(var_339);
+    let mut scope_343 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_344) = &input.auto_scaling_group_name {
+        scope_343.string(var_344);
     }
     #[allow(unused_mut)]
-    let mut scope_340 = writer.prefix("TargetGroupARNs");
-    if let Some(var_341) = &input.target_group_ar_ns {
-        let mut list_343 = scope_340.start_list(false, None);
-        for item_342 in var_341 {
+    let mut scope_345 = writer.prefix("TargetGroupARNs");
+    if let Some(var_346) = &input.target_group_ar_ns {
+        let mut list_348 = scope_345.start_list(false, None);
+        for item_347 in var_346 {
             #[allow(unused_mut)]
-            let mut entry_344 = list_343.entry();
-            entry_344.string(item_342);
+            let mut entry_349 = list_348.entry();
+            entry_349.string(item_347);
         }
-        list_343.finish();
+        list_348.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1341,20 +1352,20 @@ pub fn serialize_operation_crate_operation_disable_metrics_collection(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DisableMetricsCollection", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_345 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_346) = &input.auto_scaling_group_name {
-        scope_345.string(var_346);
+    let mut scope_350 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_351) = &input.auto_scaling_group_name {
+        scope_350.string(var_351);
     }
     #[allow(unused_mut)]
-    let mut scope_347 = writer.prefix("Metrics");
-    if let Some(var_348) = &input.metrics {
-        let mut list_350 = scope_347.start_list(false, None);
-        for item_349 in var_348 {
+    let mut scope_352 = writer.prefix("Metrics");
+    if let Some(var_353) = &input.metrics {
+        let mut list_355 = scope_352.start_list(false, None);
+        for item_354 in var_353 {
             #[allow(unused_mut)]
-            let mut entry_351 = list_350.entry();
-            entry_351.string(item_349);
+            let mut entry_356 = list_355.entry();
+            entry_356.string(item_354);
         }
-        list_350.finish();
+        list_355.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1368,25 +1379,25 @@ pub fn serialize_operation_crate_operation_enable_metrics_collection(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "EnableMetricsCollection", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_352 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_353) = &input.auto_scaling_group_name {
-        scope_352.string(var_353);
+    let mut scope_357 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_358) = &input.auto_scaling_group_name {
+        scope_357.string(var_358);
     }
     #[allow(unused_mut)]
-    let mut scope_354 = writer.prefix("Metrics");
-    if let Some(var_355) = &input.metrics {
-        let mut list_357 = scope_354.start_list(false, None);
-        for item_356 in var_355 {
+    let mut scope_359 = writer.prefix("Metrics");
+    if let Some(var_360) = &input.metrics {
+        let mut list_362 = scope_359.start_list(false, None);
+        for item_361 in var_360 {
             #[allow(unused_mut)]
-            let mut entry_358 = list_357.entry();
-            entry_358.string(item_356);
+            let mut entry_363 = list_362.entry();
+            entry_363.string(item_361);
         }
-        list_357.finish();
+        list_362.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_359 = writer.prefix("Granularity");
-    if let Some(var_360) = &input.granularity {
-        scope_359.string(var_360);
+    let mut scope_364 = writer.prefix("Granularity");
+    if let Some(var_365) = &input.granularity {
+        scope_364.string(var_365);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1399,25 +1410,25 @@ pub fn serialize_operation_crate_operation_enter_standby(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "EnterStandby", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_361 = writer.prefix("InstanceIds");
-    if let Some(var_362) = &input.instance_ids {
-        let mut list_364 = scope_361.start_list(false, None);
-        for item_363 in var_362 {
+    let mut scope_366 = writer.prefix("InstanceIds");
+    if let Some(var_367) = &input.instance_ids {
+        let mut list_369 = scope_366.start_list(false, None);
+        for item_368 in var_367 {
             #[allow(unused_mut)]
-            let mut entry_365 = list_364.entry();
-            entry_365.string(item_363);
+            let mut entry_370 = list_369.entry();
+            entry_370.string(item_368);
         }
-        list_364.finish();
+        list_369.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_366 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_367) = &input.auto_scaling_group_name {
-        scope_366.string(var_367);
+    let mut scope_371 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_372) = &input.auto_scaling_group_name {
+        scope_371.string(var_372);
     }
     #[allow(unused_mut)]
-    let mut scope_368 = writer.prefix("ShouldDecrementDesiredCapacity");
-    if let Some(var_369) = &input.should_decrement_desired_capacity {
-        scope_368.boolean(*var_369);
+    let mut scope_373 = writer.prefix("ShouldDecrementDesiredCapacity");
+    if let Some(var_374) = &input.should_decrement_desired_capacity {
+        scope_373.boolean(*var_374);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1430,34 +1441,34 @@ pub fn serialize_operation_crate_operation_execute_policy(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ExecutePolicy", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_370 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_371) = &input.auto_scaling_group_name {
-        scope_370.string(var_371);
+    let mut scope_375 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_376) = &input.auto_scaling_group_name {
+        scope_375.string(var_376);
     }
     #[allow(unused_mut)]
-    let mut scope_372 = writer.prefix("PolicyName");
-    if let Some(var_373) = &input.policy_name {
-        scope_372.string(var_373);
+    let mut scope_377 = writer.prefix("PolicyName");
+    if let Some(var_378) = &input.policy_name {
+        scope_377.string(var_378);
     }
     #[allow(unused_mut)]
-    let mut scope_374 = writer.prefix("HonorCooldown");
-    if let Some(var_375) = &input.honor_cooldown {
-        scope_374.boolean(*var_375);
+    let mut scope_379 = writer.prefix("HonorCooldown");
+    if let Some(var_380) = &input.honor_cooldown {
+        scope_379.boolean(*var_380);
     }
     #[allow(unused_mut)]
-    let mut scope_376 = writer.prefix("MetricValue");
-    if let Some(var_377) = &input.metric_value {
-        scope_376.number(
+    let mut scope_381 = writer.prefix("MetricValue");
+    if let Some(var_382) = &input.metric_value {
+        scope_381.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::Float((*var_377).into()),
+            smithy_types::Number::Float((*var_382).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_378 = writer.prefix("BreachThreshold");
-    if let Some(var_379) = &input.breach_threshold {
-        scope_378.number(
+    let mut scope_383 = writer.prefix("BreachThreshold");
+    if let Some(var_384) = &input.breach_threshold {
+        scope_383.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::Float((*var_379).into()),
+            smithy_types::Number::Float((*var_384).into()),
         );
     }
     writer.finish();
@@ -1471,20 +1482,20 @@ pub fn serialize_operation_crate_operation_exit_standby(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ExitStandby", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_380 = writer.prefix("InstanceIds");
-    if let Some(var_381) = &input.instance_ids {
-        let mut list_383 = scope_380.start_list(false, None);
-        for item_382 in var_381 {
+    let mut scope_385 = writer.prefix("InstanceIds");
+    if let Some(var_386) = &input.instance_ids {
+        let mut list_388 = scope_385.start_list(false, None);
+        for item_387 in var_386 {
             #[allow(unused_mut)]
-            let mut entry_384 = list_383.entry();
-            entry_384.string(item_382);
+            let mut entry_389 = list_388.entry();
+            entry_389.string(item_387);
         }
-        list_383.finish();
+        list_388.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_385 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_386) = &input.auto_scaling_group_name {
-        scope_385.string(var_386);
+    let mut scope_390 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_391) = &input.auto_scaling_group_name {
+        scope_390.string(var_391);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1498,24 +1509,24 @@ pub fn serialize_operation_crate_operation_get_predictive_scaling_forecast(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "GetPredictiveScalingForecast", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_387 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_388) = &input.auto_scaling_group_name {
-        scope_387.string(var_388);
+    let mut scope_392 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_393) = &input.auto_scaling_group_name {
+        scope_392.string(var_393);
     }
     #[allow(unused_mut)]
-    let mut scope_389 = writer.prefix("PolicyName");
-    if let Some(var_390) = &input.policy_name {
-        scope_389.string(var_390);
+    let mut scope_394 = writer.prefix("PolicyName");
+    if let Some(var_395) = &input.policy_name {
+        scope_394.string(var_395);
     }
     #[allow(unused_mut)]
-    let mut scope_391 = writer.prefix("StartTime");
-    if let Some(var_392) = &input.start_time {
-        scope_391.instant(var_392, smithy_types::instant::Format::DateTime);
+    let mut scope_396 = writer.prefix("StartTime");
+    if let Some(var_397) = &input.start_time {
+        scope_396.instant(var_397, smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_393 = writer.prefix("EndTime");
-    if let Some(var_394) = &input.end_time {
-        scope_393.instant(var_394, smithy_types::instant::Format::DateTime);
+    let mut scope_398 = writer.prefix("EndTime");
+    if let Some(var_399) = &input.end_time {
+        scope_398.instant(var_399, smithy_types::instant::Format::DateTime);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1528,47 +1539,47 @@ pub fn serialize_operation_crate_operation_put_lifecycle_hook(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "PutLifecycleHook", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_395 = writer.prefix("LifecycleHookName");
-    if let Some(var_396) = &input.lifecycle_hook_name {
-        scope_395.string(var_396);
+    let mut scope_400 = writer.prefix("LifecycleHookName");
+    if let Some(var_401) = &input.lifecycle_hook_name {
+        scope_400.string(var_401);
     }
     #[allow(unused_mut)]
-    let mut scope_397 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_398) = &input.auto_scaling_group_name {
-        scope_397.string(var_398);
+    let mut scope_402 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_403) = &input.auto_scaling_group_name {
+        scope_402.string(var_403);
     }
     #[allow(unused_mut)]
-    let mut scope_399 = writer.prefix("LifecycleTransition");
-    if let Some(var_400) = &input.lifecycle_transition {
-        scope_399.string(var_400);
+    let mut scope_404 = writer.prefix("LifecycleTransition");
+    if let Some(var_405) = &input.lifecycle_transition {
+        scope_404.string(var_405);
     }
     #[allow(unused_mut)]
-    let mut scope_401 = writer.prefix("RoleARN");
-    if let Some(var_402) = &input.role_arn {
-        scope_401.string(var_402);
+    let mut scope_406 = writer.prefix("RoleARN");
+    if let Some(var_407) = &input.role_arn {
+        scope_406.string(var_407);
     }
     #[allow(unused_mut)]
-    let mut scope_403 = writer.prefix("NotificationTargetARN");
-    if let Some(var_404) = &input.notification_target_arn {
-        scope_403.string(var_404);
+    let mut scope_408 = writer.prefix("NotificationTargetARN");
+    if let Some(var_409) = &input.notification_target_arn {
+        scope_408.string(var_409);
     }
     #[allow(unused_mut)]
-    let mut scope_405 = writer.prefix("NotificationMetadata");
-    if let Some(var_406) = &input.notification_metadata {
-        scope_405.string(var_406);
+    let mut scope_410 = writer.prefix("NotificationMetadata");
+    if let Some(var_411) = &input.notification_metadata {
+        scope_410.string(var_411);
     }
     #[allow(unused_mut)]
-    let mut scope_407 = writer.prefix("HeartbeatTimeout");
-    if let Some(var_408) = &input.heartbeat_timeout {
-        scope_407.number(
+    let mut scope_412 = writer.prefix("HeartbeatTimeout");
+    if let Some(var_413) = &input.heartbeat_timeout {
+        scope_412.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_408).into()),
+            smithy_types::Number::NegInt((*var_413).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_409 = writer.prefix("DefaultResult");
-    if let Some(var_410) = &input.default_result {
-        scope_409.string(var_410);
+    let mut scope_414 = writer.prefix("DefaultResult");
+    if let Some(var_415) = &input.default_result {
+        scope_414.string(var_415);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1582,25 +1593,25 @@ pub fn serialize_operation_crate_operation_put_notification_configuration(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "PutNotificationConfiguration", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_411 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_412) = &input.auto_scaling_group_name {
-        scope_411.string(var_412);
+    let mut scope_416 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_417) = &input.auto_scaling_group_name {
+        scope_416.string(var_417);
     }
     #[allow(unused_mut)]
-    let mut scope_413 = writer.prefix("TopicARN");
-    if let Some(var_414) = &input.topic_arn {
-        scope_413.string(var_414);
+    let mut scope_418 = writer.prefix("TopicARN");
+    if let Some(var_419) = &input.topic_arn {
+        scope_418.string(var_419);
     }
     #[allow(unused_mut)]
-    let mut scope_415 = writer.prefix("NotificationTypes");
-    if let Some(var_416) = &input.notification_types {
-        let mut list_418 = scope_415.start_list(false, None);
-        for item_417 in var_416 {
+    let mut scope_420 = writer.prefix("NotificationTypes");
+    if let Some(var_421) = &input.notification_types {
+        let mut list_423 = scope_420.start_list(false, None);
+        for item_422 in var_421 {
             #[allow(unused_mut)]
-            let mut entry_419 = list_418.entry();
-            entry_419.string(item_417);
+            let mut entry_424 = list_423.entry();
+            entry_424.string(item_422);
         }
-        list_418.finish();
+        list_423.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1613,98 +1624,98 @@ pub fn serialize_operation_crate_operation_put_scaling_policy(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "PutScalingPolicy", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_420 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_421) = &input.auto_scaling_group_name {
-        scope_420.string(var_421);
+    let mut scope_425 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_426) = &input.auto_scaling_group_name {
+        scope_425.string(var_426);
     }
     #[allow(unused_mut)]
-    let mut scope_422 = writer.prefix("PolicyName");
-    if let Some(var_423) = &input.policy_name {
-        scope_422.string(var_423);
+    let mut scope_427 = writer.prefix("PolicyName");
+    if let Some(var_428) = &input.policy_name {
+        scope_427.string(var_428);
     }
     #[allow(unused_mut)]
-    let mut scope_424 = writer.prefix("PolicyType");
-    if let Some(var_425) = &input.policy_type {
-        scope_424.string(var_425);
+    let mut scope_429 = writer.prefix("PolicyType");
+    if let Some(var_430) = &input.policy_type {
+        scope_429.string(var_430);
     }
     #[allow(unused_mut)]
-    let mut scope_426 = writer.prefix("AdjustmentType");
-    if let Some(var_427) = &input.adjustment_type {
-        scope_426.string(var_427);
+    let mut scope_431 = writer.prefix("AdjustmentType");
+    if let Some(var_432) = &input.adjustment_type {
+        scope_431.string(var_432);
     }
     #[allow(unused_mut)]
-    let mut scope_428 = writer.prefix("MinAdjustmentStep");
-    if let Some(var_429) = &input.min_adjustment_step {
-        scope_428.number(
+    let mut scope_433 = writer.prefix("MinAdjustmentStep");
+    if let Some(var_434) = &input.min_adjustment_step {
+        scope_433.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_429).into()),
+            smithy_types::Number::NegInt((*var_434).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_430 = writer.prefix("MinAdjustmentMagnitude");
-    if let Some(var_431) = &input.min_adjustment_magnitude {
-        scope_430.number(
+    let mut scope_435 = writer.prefix("MinAdjustmentMagnitude");
+    if let Some(var_436) = &input.min_adjustment_magnitude {
+        scope_435.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_431).into()),
+            smithy_types::Number::NegInt((*var_436).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_432 = writer.prefix("ScalingAdjustment");
-    if let Some(var_433) = &input.scaling_adjustment {
-        scope_432.number(
+    let mut scope_437 = writer.prefix("ScalingAdjustment");
+    if let Some(var_438) = &input.scaling_adjustment {
+        scope_437.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_433).into()),
+            smithy_types::Number::NegInt((*var_438).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_434 = writer.prefix("Cooldown");
-    if let Some(var_435) = &input.cooldown {
-        scope_434.number(
+    let mut scope_439 = writer.prefix("Cooldown");
+    if let Some(var_440) = &input.cooldown {
+        scope_439.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_435).into()),
+            smithy_types::Number::NegInt((*var_440).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_436 = writer.prefix("MetricAggregationType");
-    if let Some(var_437) = &input.metric_aggregation_type {
-        scope_436.string(var_437);
+    let mut scope_441 = writer.prefix("MetricAggregationType");
+    if let Some(var_442) = &input.metric_aggregation_type {
+        scope_441.string(var_442);
     }
     #[allow(unused_mut)]
-    let mut scope_438 = writer.prefix("StepAdjustments");
-    if let Some(var_439) = &input.step_adjustments {
-        let mut list_441 = scope_438.start_list(false, None);
-        for item_440 in var_439 {
+    let mut scope_443 = writer.prefix("StepAdjustments");
+    if let Some(var_444) = &input.step_adjustments {
+        let mut list_446 = scope_443.start_list(false, None);
+        for item_445 in var_444 {
             #[allow(unused_mut)]
-            let mut entry_442 = list_441.entry();
-            crate::query_ser::serialize_structure_crate_model_step_adjustment(entry_442, item_440);
+            let mut entry_447 = list_446.entry();
+            crate::query_ser::serialize_structure_crate_model_step_adjustment(entry_447, item_445);
         }
-        list_441.finish();
+        list_446.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_443 = writer.prefix("EstimatedInstanceWarmup");
-    if let Some(var_444) = &input.estimated_instance_warmup {
-        scope_443.number(
+    let mut scope_448 = writer.prefix("EstimatedInstanceWarmup");
+    if let Some(var_449) = &input.estimated_instance_warmup {
+        scope_448.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_444).into()),
+            smithy_types::Number::NegInt((*var_449).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_445 = writer.prefix("TargetTrackingConfiguration");
-    if let Some(var_446) = &input.target_tracking_configuration {
+    let mut scope_450 = writer.prefix("TargetTrackingConfiguration");
+    if let Some(var_451) = &input.target_tracking_configuration {
         crate::query_ser::serialize_structure_crate_model_target_tracking_configuration(
-            scope_445, var_446,
+            scope_450, var_451,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_447 = writer.prefix("Enabled");
-    if let Some(var_448) = &input.enabled {
-        scope_447.boolean(*var_448);
+    let mut scope_452 = writer.prefix("Enabled");
+    if let Some(var_453) = &input.enabled {
+        scope_452.boolean(*var_453);
     }
     #[allow(unused_mut)]
-    let mut scope_449 = writer.prefix("PredictiveScalingConfiguration");
-    if let Some(var_450) = &input.predictive_scaling_configuration {
+    let mut scope_454 = writer.prefix("PredictiveScalingConfiguration");
+    if let Some(var_455) = &input.predictive_scaling_configuration {
         crate::query_ser::serialize_structure_crate_model_predictive_scaling_configuration(
-            scope_449, var_450,
+            scope_454, var_455,
         );
     }
     writer.finish();
@@ -1719,63 +1730,63 @@ pub fn serialize_operation_crate_operation_put_scheduled_update_group_action(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "PutScheduledUpdateGroupAction", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_451 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_452) = &input.auto_scaling_group_name {
-        scope_451.string(var_452);
+    let mut scope_456 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_457) = &input.auto_scaling_group_name {
+        scope_456.string(var_457);
     }
     #[allow(unused_mut)]
-    let mut scope_453 = writer.prefix("ScheduledActionName");
-    if let Some(var_454) = &input.scheduled_action_name {
-        scope_453.string(var_454);
+    let mut scope_458 = writer.prefix("ScheduledActionName");
+    if let Some(var_459) = &input.scheduled_action_name {
+        scope_458.string(var_459);
     }
     #[allow(unused_mut)]
-    let mut scope_455 = writer.prefix("Time");
-    if let Some(var_456) = &input.time {
-        scope_455.instant(var_456, smithy_types::instant::Format::DateTime);
+    let mut scope_460 = writer.prefix("Time");
+    if let Some(var_461) = &input.time {
+        scope_460.instant(var_461, smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_457 = writer.prefix("StartTime");
-    if let Some(var_458) = &input.start_time {
-        scope_457.instant(var_458, smithy_types::instant::Format::DateTime);
+    let mut scope_462 = writer.prefix("StartTime");
+    if let Some(var_463) = &input.start_time {
+        scope_462.instant(var_463, smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_459 = writer.prefix("EndTime");
-    if let Some(var_460) = &input.end_time {
-        scope_459.instant(var_460, smithy_types::instant::Format::DateTime);
+    let mut scope_464 = writer.prefix("EndTime");
+    if let Some(var_465) = &input.end_time {
+        scope_464.instant(var_465, smithy_types::instant::Format::DateTime);
     }
     #[allow(unused_mut)]
-    let mut scope_461 = writer.prefix("Recurrence");
-    if let Some(var_462) = &input.recurrence {
-        scope_461.string(var_462);
+    let mut scope_466 = writer.prefix("Recurrence");
+    if let Some(var_467) = &input.recurrence {
+        scope_466.string(var_467);
     }
     #[allow(unused_mut)]
-    let mut scope_463 = writer.prefix("MinSize");
-    if let Some(var_464) = &input.min_size {
-        scope_463.number(
+    let mut scope_468 = writer.prefix("MinSize");
+    if let Some(var_469) = &input.min_size {
+        scope_468.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_464).into()),
+            smithy_types::Number::NegInt((*var_469).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_465 = writer.prefix("MaxSize");
-    if let Some(var_466) = &input.max_size {
-        scope_465.number(
+    let mut scope_470 = writer.prefix("MaxSize");
+    if let Some(var_471) = &input.max_size {
+        scope_470.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_466).into()),
+            smithy_types::Number::NegInt((*var_471).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_467 = writer.prefix("DesiredCapacity");
-    if let Some(var_468) = &input.desired_capacity {
-        scope_467.number(
+    let mut scope_472 = writer.prefix("DesiredCapacity");
+    if let Some(var_473) = &input.desired_capacity {
+        scope_472.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_468).into()),
+            smithy_types::Number::NegInt((*var_473).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_469 = writer.prefix("TimeZone");
-    if let Some(var_470) = &input.time_zone {
-        scope_469.string(var_470);
+    let mut scope_474 = writer.prefix("TimeZone");
+    if let Some(var_475) = &input.time_zone {
+        scope_474.string(var_475);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1788,30 +1799,30 @@ pub fn serialize_operation_crate_operation_put_warm_pool(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "PutWarmPool", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_471 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_472) = &input.auto_scaling_group_name {
-        scope_471.string(var_472);
+    let mut scope_476 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_477) = &input.auto_scaling_group_name {
+        scope_476.string(var_477);
     }
     #[allow(unused_mut)]
-    let mut scope_473 = writer.prefix("MaxGroupPreparedCapacity");
-    if let Some(var_474) = &input.max_group_prepared_capacity {
-        scope_473.number(
+    let mut scope_478 = writer.prefix("MaxGroupPreparedCapacity");
+    if let Some(var_479) = &input.max_group_prepared_capacity {
+        scope_478.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_474).into()),
+            smithy_types::Number::NegInt((*var_479).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_475 = writer.prefix("MinSize");
-    if let Some(var_476) = &input.min_size {
-        scope_475.number(
+    let mut scope_480 = writer.prefix("MinSize");
+    if let Some(var_481) = &input.min_size {
+        scope_480.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_476).into()),
+            smithy_types::Number::NegInt((*var_481).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_477 = writer.prefix("PoolState");
-    if let Some(var_478) = &input.pool_state {
-        scope_477.string(var_478.as_str());
+    let mut scope_482 = writer.prefix("PoolState");
+    if let Some(var_483) = &input.pool_state {
+        scope_482.string(var_483.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1825,24 +1836,24 @@ pub fn serialize_operation_crate_operation_record_lifecycle_action_heartbeat(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "RecordLifecycleActionHeartbeat", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_479 = writer.prefix("LifecycleHookName");
-    if let Some(var_480) = &input.lifecycle_hook_name {
-        scope_479.string(var_480);
+    let mut scope_484 = writer.prefix("LifecycleHookName");
+    if let Some(var_485) = &input.lifecycle_hook_name {
+        scope_484.string(var_485);
     }
     #[allow(unused_mut)]
-    let mut scope_481 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_482) = &input.auto_scaling_group_name {
-        scope_481.string(var_482);
+    let mut scope_486 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_487) = &input.auto_scaling_group_name {
+        scope_486.string(var_487);
     }
     #[allow(unused_mut)]
-    let mut scope_483 = writer.prefix("LifecycleActionToken");
-    if let Some(var_484) = &input.lifecycle_action_token {
-        scope_483.string(var_484);
+    let mut scope_488 = writer.prefix("LifecycleActionToken");
+    if let Some(var_489) = &input.lifecycle_action_token {
+        scope_488.string(var_489);
     }
     #[allow(unused_mut)]
-    let mut scope_485 = writer.prefix("InstanceId");
-    if let Some(var_486) = &input.instance_id {
-        scope_485.string(var_486);
+    let mut scope_490 = writer.prefix("InstanceId");
+    if let Some(var_491) = &input.instance_id {
+        scope_490.string(var_491);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1855,20 +1866,20 @@ pub fn serialize_operation_crate_operation_resume_processes(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ResumeProcesses", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_487 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_488) = &input.auto_scaling_group_name {
-        scope_487.string(var_488);
+    let mut scope_492 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_493) = &input.auto_scaling_group_name {
+        scope_492.string(var_493);
     }
     #[allow(unused_mut)]
-    let mut scope_489 = writer.prefix("ScalingProcesses");
-    if let Some(var_490) = &input.scaling_processes {
-        let mut list_492 = scope_489.start_list(false, None);
-        for item_491 in var_490 {
+    let mut scope_494 = writer.prefix("ScalingProcesses");
+    if let Some(var_495) = &input.scaling_processes {
+        let mut list_497 = scope_494.start_list(false, None);
+        for item_496 in var_495 {
             #[allow(unused_mut)]
-            let mut entry_493 = list_492.entry();
-            entry_493.string(item_491);
+            let mut entry_498 = list_497.entry();
+            entry_498.string(item_496);
         }
-        list_492.finish();
+        list_497.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1881,22 +1892,22 @@ pub fn serialize_operation_crate_operation_set_desired_capacity(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "SetDesiredCapacity", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_494 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_495) = &input.auto_scaling_group_name {
-        scope_494.string(var_495);
+    let mut scope_499 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_500) = &input.auto_scaling_group_name {
+        scope_499.string(var_500);
     }
     #[allow(unused_mut)]
-    let mut scope_496 = writer.prefix("DesiredCapacity");
-    if let Some(var_497) = &input.desired_capacity {
-        scope_496.number(
+    let mut scope_501 = writer.prefix("DesiredCapacity");
+    if let Some(var_502) = &input.desired_capacity {
+        scope_501.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_497).into()),
+            smithy_types::Number::NegInt((*var_502).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_498 = writer.prefix("HonorCooldown");
-    if let Some(var_499) = &input.honor_cooldown {
-        scope_498.boolean(*var_499);
+    let mut scope_503 = writer.prefix("HonorCooldown");
+    if let Some(var_504) = &input.honor_cooldown {
+        scope_503.boolean(*var_504);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1909,19 +1920,19 @@ pub fn serialize_operation_crate_operation_set_instance_health(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "SetInstanceHealth", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_500 = writer.prefix("InstanceId");
-    if let Some(var_501) = &input.instance_id {
-        scope_500.string(var_501);
+    let mut scope_505 = writer.prefix("InstanceId");
+    if let Some(var_506) = &input.instance_id {
+        scope_505.string(var_506);
     }
     #[allow(unused_mut)]
-    let mut scope_502 = writer.prefix("HealthStatus");
-    if let Some(var_503) = &input.health_status {
-        scope_502.string(var_503);
+    let mut scope_507 = writer.prefix("HealthStatus");
+    if let Some(var_508) = &input.health_status {
+        scope_507.string(var_508);
     }
     #[allow(unused_mut)]
-    let mut scope_504 = writer.prefix("ShouldRespectGracePeriod");
-    if let Some(var_505) = &input.should_respect_grace_period {
-        scope_504.boolean(*var_505);
+    let mut scope_509 = writer.prefix("ShouldRespectGracePeriod");
+    if let Some(var_510) = &input.should_respect_grace_period {
+        scope_509.boolean(*var_510);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1935,25 +1946,25 @@ pub fn serialize_operation_crate_operation_set_instance_protection(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "SetInstanceProtection", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_506 = writer.prefix("InstanceIds");
-    if let Some(var_507) = &input.instance_ids {
-        let mut list_509 = scope_506.start_list(false, None);
-        for item_508 in var_507 {
+    let mut scope_511 = writer.prefix("InstanceIds");
+    if let Some(var_512) = &input.instance_ids {
+        let mut list_514 = scope_511.start_list(false, None);
+        for item_513 in var_512 {
             #[allow(unused_mut)]
-            let mut entry_510 = list_509.entry();
-            entry_510.string(item_508);
+            let mut entry_515 = list_514.entry();
+            entry_515.string(item_513);
         }
-        list_509.finish();
+        list_514.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_511 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_512) = &input.auto_scaling_group_name {
-        scope_511.string(var_512);
+    let mut scope_516 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_517) = &input.auto_scaling_group_name {
+        scope_516.string(var_517);
     }
     #[allow(unused_mut)]
-    let mut scope_513 = writer.prefix("ProtectedFromScaleIn");
-    if let Some(var_514) = &input.protected_from_scale_in {
-        scope_513.boolean(*var_514);
+    let mut scope_518 = writer.prefix("ProtectedFromScaleIn");
+    if let Some(var_519) = &input.protected_from_scale_in {
+        scope_518.boolean(*var_519);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1966,24 +1977,24 @@ pub fn serialize_operation_crate_operation_start_instance_refresh(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "StartInstanceRefresh", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_515 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_516) = &input.auto_scaling_group_name {
-        scope_515.string(var_516);
+    let mut scope_520 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_521) = &input.auto_scaling_group_name {
+        scope_520.string(var_521);
     }
     #[allow(unused_mut)]
-    let mut scope_517 = writer.prefix("Strategy");
-    if let Some(var_518) = &input.strategy {
-        scope_517.string(var_518.as_str());
+    let mut scope_522 = writer.prefix("Strategy");
+    if let Some(var_523) = &input.strategy {
+        scope_522.string(var_523.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_519 = writer.prefix("DesiredConfiguration");
-    if let Some(var_520) = &input.desired_configuration {
-        crate::query_ser::serialize_structure_crate_model_desired_configuration(scope_519, var_520);
+    let mut scope_524 = writer.prefix("DesiredConfiguration");
+    if let Some(var_525) = &input.desired_configuration {
+        crate::query_ser::serialize_structure_crate_model_desired_configuration(scope_524, var_525);
     }
     #[allow(unused_mut)]
-    let mut scope_521 = writer.prefix("Preferences");
-    if let Some(var_522) = &input.preferences {
-        crate::query_ser::serialize_structure_crate_model_refresh_preferences(scope_521, var_522);
+    let mut scope_526 = writer.prefix("Preferences");
+    if let Some(var_527) = &input.preferences {
+        crate::query_ser::serialize_structure_crate_model_refresh_preferences(scope_526, var_527);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1996,20 +2007,20 @@ pub fn serialize_operation_crate_operation_suspend_processes(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "SuspendProcesses", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_523 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_524) = &input.auto_scaling_group_name {
-        scope_523.string(var_524);
+    let mut scope_528 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_529) = &input.auto_scaling_group_name {
+        scope_528.string(var_529);
     }
     #[allow(unused_mut)]
-    let mut scope_525 = writer.prefix("ScalingProcesses");
-    if let Some(var_526) = &input.scaling_processes {
-        let mut list_528 = scope_525.start_list(false, None);
-        for item_527 in var_526 {
+    let mut scope_530 = writer.prefix("ScalingProcesses");
+    if let Some(var_531) = &input.scaling_processes {
+        let mut list_533 = scope_530.start_list(false, None);
+        for item_532 in var_531 {
             #[allow(unused_mut)]
-            let mut entry_529 = list_528.entry();
-            entry_529.string(item_527);
+            let mut entry_534 = list_533.entry();
+            entry_534.string(item_532);
         }
-        list_528.finish();
+        list_533.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -2026,14 +2037,14 @@ pub fn serialize_operation_crate_operation_terminate_instance_in_auto_scaling_gr
         "2011-01-01",
     );
     #[allow(unused_mut)]
-    let mut scope_530 = writer.prefix("InstanceId");
-    if let Some(var_531) = &input.instance_id {
-        scope_530.string(var_531);
+    let mut scope_535 = writer.prefix("InstanceId");
+    if let Some(var_536) = &input.instance_id {
+        scope_535.string(var_536);
     }
     #[allow(unused_mut)]
-    let mut scope_532 = writer.prefix("ShouldDecrementDesiredCapacity");
-    if let Some(var_533) = &input.should_decrement_desired_capacity {
-        scope_532.boolean(*var_533);
+    let mut scope_537 = writer.prefix("ShouldDecrementDesiredCapacity");
+    if let Some(var_538) = &input.should_decrement_desired_capacity {
+        scope_537.boolean(*var_538);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -2047,133 +2058,133 @@ pub fn serialize_operation_crate_operation_update_auto_scaling_group(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "UpdateAutoScalingGroup", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_534 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_535) = &input.auto_scaling_group_name {
-        scope_534.string(var_535);
+    let mut scope_539 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_540) = &input.auto_scaling_group_name {
+        scope_539.string(var_540);
     }
     #[allow(unused_mut)]
-    let mut scope_536 = writer.prefix("LaunchConfigurationName");
-    if let Some(var_537) = &input.launch_configuration_name {
-        scope_536.string(var_537);
+    let mut scope_541 = writer.prefix("LaunchConfigurationName");
+    if let Some(var_542) = &input.launch_configuration_name {
+        scope_541.string(var_542);
     }
     #[allow(unused_mut)]
-    let mut scope_538 = writer.prefix("LaunchTemplate");
-    if let Some(var_539) = &input.launch_template {
+    let mut scope_543 = writer.prefix("LaunchTemplate");
+    if let Some(var_544) = &input.launch_template {
         crate::query_ser::serialize_structure_crate_model_launch_template_specification(
-            scope_538, var_539,
+            scope_543, var_544,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_540 = writer.prefix("MixedInstancesPolicy");
-    if let Some(var_541) = &input.mixed_instances_policy {
+    let mut scope_545 = writer.prefix("MixedInstancesPolicy");
+    if let Some(var_546) = &input.mixed_instances_policy {
         crate::query_ser::serialize_structure_crate_model_mixed_instances_policy(
-            scope_540, var_541,
+            scope_545, var_546,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_542 = writer.prefix("MinSize");
-    if let Some(var_543) = &input.min_size {
-        scope_542.number(
+    let mut scope_547 = writer.prefix("MinSize");
+    if let Some(var_548) = &input.min_size {
+        scope_547.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_543).into()),
+            smithy_types::Number::NegInt((*var_548).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_544 = writer.prefix("MaxSize");
-    if let Some(var_545) = &input.max_size {
-        scope_544.number(
+    let mut scope_549 = writer.prefix("MaxSize");
+    if let Some(var_550) = &input.max_size {
+        scope_549.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_545).into()),
+            smithy_types::Number::NegInt((*var_550).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_546 = writer.prefix("DesiredCapacity");
-    if let Some(var_547) = &input.desired_capacity {
-        scope_546.number(
+    let mut scope_551 = writer.prefix("DesiredCapacity");
+    if let Some(var_552) = &input.desired_capacity {
+        scope_551.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_547).into()),
+            smithy_types::Number::NegInt((*var_552).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_548 = writer.prefix("DefaultCooldown");
-    if let Some(var_549) = &input.default_cooldown {
-        scope_548.number(
+    let mut scope_553 = writer.prefix("DefaultCooldown");
+    if let Some(var_554) = &input.default_cooldown {
+        scope_553.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_549).into()),
+            smithy_types::Number::NegInt((*var_554).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_550 = writer.prefix("AvailabilityZones");
-    if let Some(var_551) = &input.availability_zones {
-        let mut list_553 = scope_550.start_list(false, None);
-        for item_552 in var_551 {
+    let mut scope_555 = writer.prefix("AvailabilityZones");
+    if let Some(var_556) = &input.availability_zones {
+        let mut list_558 = scope_555.start_list(false, None);
+        for item_557 in var_556 {
             #[allow(unused_mut)]
-            let mut entry_554 = list_553.entry();
-            entry_554.string(item_552);
+            let mut entry_559 = list_558.entry();
+            entry_559.string(item_557);
         }
-        list_553.finish();
+        list_558.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_555 = writer.prefix("HealthCheckType");
-    if let Some(var_556) = &input.health_check_type {
-        scope_555.string(var_556);
+    let mut scope_560 = writer.prefix("HealthCheckType");
+    if let Some(var_561) = &input.health_check_type {
+        scope_560.string(var_561);
     }
     #[allow(unused_mut)]
-    let mut scope_557 = writer.prefix("HealthCheckGracePeriod");
-    if let Some(var_558) = &input.health_check_grace_period {
-        scope_557.number(
+    let mut scope_562 = writer.prefix("HealthCheckGracePeriod");
+    if let Some(var_563) = &input.health_check_grace_period {
+        scope_562.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_558).into()),
+            smithy_types::Number::NegInt((*var_563).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_559 = writer.prefix("PlacementGroup");
-    if let Some(var_560) = &input.placement_group {
-        scope_559.string(var_560);
+    let mut scope_564 = writer.prefix("PlacementGroup");
+    if let Some(var_565) = &input.placement_group {
+        scope_564.string(var_565);
     }
     #[allow(unused_mut)]
-    let mut scope_561 = writer.prefix("VPCZoneIdentifier");
-    if let Some(var_562) = &input.vpc_zone_identifier {
-        scope_561.string(var_562);
+    let mut scope_566 = writer.prefix("VPCZoneIdentifier");
+    if let Some(var_567) = &input.vpc_zone_identifier {
+        scope_566.string(var_567);
     }
     #[allow(unused_mut)]
-    let mut scope_563 = writer.prefix("TerminationPolicies");
-    if let Some(var_564) = &input.termination_policies {
-        let mut list_566 = scope_563.start_list(false, None);
-        for item_565 in var_564 {
+    let mut scope_568 = writer.prefix("TerminationPolicies");
+    if let Some(var_569) = &input.termination_policies {
+        let mut list_571 = scope_568.start_list(false, None);
+        for item_570 in var_569 {
             #[allow(unused_mut)]
-            let mut entry_567 = list_566.entry();
-            entry_567.string(item_565);
+            let mut entry_572 = list_571.entry();
+            entry_572.string(item_570);
         }
-        list_566.finish();
+        list_571.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_568 = writer.prefix("NewInstancesProtectedFromScaleIn");
-    if let Some(var_569) = &input.new_instances_protected_from_scale_in {
-        scope_568.boolean(*var_569);
+    let mut scope_573 = writer.prefix("NewInstancesProtectedFromScaleIn");
+    if let Some(var_574) = &input.new_instances_protected_from_scale_in {
+        scope_573.boolean(*var_574);
     }
     #[allow(unused_mut)]
-    let mut scope_570 = writer.prefix("ServiceLinkedRoleARN");
-    if let Some(var_571) = &input.service_linked_role_arn {
-        scope_570.string(var_571);
+    let mut scope_575 = writer.prefix("ServiceLinkedRoleARN");
+    if let Some(var_576) = &input.service_linked_role_arn {
+        scope_575.string(var_576);
     }
     #[allow(unused_mut)]
-    let mut scope_572 = writer.prefix("MaxInstanceLifetime");
-    if let Some(var_573) = &input.max_instance_lifetime {
-        scope_572.number(
+    let mut scope_577 = writer.prefix("MaxInstanceLifetime");
+    if let Some(var_578) = &input.max_instance_lifetime {
+        scope_577.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_573).into()),
+            smithy_types::Number::NegInt((*var_578).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_574 = writer.prefix("CapacityRebalance");
-    if let Some(var_575) = &input.capacity_rebalance {
-        scope_574.boolean(*var_575);
+    let mut scope_579 = writer.prefix("CapacityRebalance");
+    if let Some(var_580) = &input.capacity_rebalance {
+        scope_579.boolean(*var_580);
     }
     #[allow(unused_mut)]
-    let mut scope_576 = writer.prefix("Context");
-    if let Some(var_577) = &input.context {
-        scope_576.string(var_577);
+    let mut scope_581 = writer.prefix("Context");
+    if let Some(var_582) = &input.context {
+        scope_581.string(var_582);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))

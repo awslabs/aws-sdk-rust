@@ -160,6 +160,32 @@ impl smithy_http::response::ParseStrictResponse for CancelInputDeviceTransfer {
     }
 }
 
+/// Send a request to claim an AWS Elemental device that you have purchased from a third-party vendor. After the request succeeds, you will own the device.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ClaimDevice {
+    _private: (),
+}
+impl ClaimDevice {
+    /// Creates a new builder-style object to manufacture [`ClaimDeviceInput`](crate::input::ClaimDeviceInput)
+    pub fn builder() -> crate::input::claim_device_input::Builder {
+        crate::input::claim_device_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ClaimDevice {
+    type Output =
+        std::result::Result<crate::output::ClaimDeviceOutput, crate::error::ClaimDeviceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_claim_device_error(response)
+        } else {
+            crate::operation_deser::parse_claim_device_response(response)
+        }
+    }
+}
+
 /// Creates a new channel
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateChannel {

@@ -118,7 +118,7 @@ impl ProviderConfig {
 #[non_exhaustive]
 #[derive(Default)]
 pub(crate) struct HttpSettings {
-    pub(crate) timeout_config: timeout::Settings,
+    pub(crate) timeout_settings: timeout::Settings,
 }
 
 impl ProviderConfig {

@@ -4281,7 +4281,7 @@ pub struct DescribeImportOutput {
     /// use.</p>
     pub import_status: std::option::Option<crate::model::ImportStatus>,
     /// <p>If the <code>importStatus</code> field is <code>Failed</code>, this
-    /// provides one or more reasons for the failture.</p>
+    /// provides one or more reasons for the failure.</p>
     pub failure_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time that the import was created.</p>
     pub creation_date_time: std::option::Option<smithy_types::Instant>,

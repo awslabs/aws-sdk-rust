@@ -24666,6 +24666,7 @@ pub struct UpdatePhoneNumberError {
 #[derive(std::fmt::Debug)]
 pub enum UpdatePhoneNumberErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     ForbiddenException(crate::error::ForbiddenException),
     NotFoundException(crate::error::NotFoundException),
     ServiceFailureException(crate::error::ServiceFailureException),
@@ -24679,6 +24680,7 @@ impl std::fmt::Display for UpdatePhoneNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdatePhoneNumberErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdatePhoneNumberErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdatePhoneNumberErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             UpdatePhoneNumberErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdatePhoneNumberErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
@@ -24739,6 +24741,9 @@ impl UpdatePhoneNumberError {
             UpdatePhoneNumberErrorKind::BadRequestException(_)
         )
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdatePhoneNumberErrorKind::ConflictException(_))
+    }
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -24777,6 +24782,7 @@ impl std::error::Error for UpdatePhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdatePhoneNumberErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdatePhoneNumberErrorKind::ConflictException(_inner) => Some(_inner),
             UpdatePhoneNumberErrorKind::ForbiddenException(_inner) => Some(_inner),
             UpdatePhoneNumberErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdatePhoneNumberErrorKind::ServiceFailureException(_inner) => Some(_inner),

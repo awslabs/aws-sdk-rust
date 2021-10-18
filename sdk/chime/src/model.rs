@@ -7156,7 +7156,7 @@ pub struct MediaPlacement {
     pub signaling_url: std::option::Option<std::string::String>,
     /// <p>The turn control URL.</p>
     pub turn_control_url: std::option::Option<std::string::String>,
-    /// <p>The URL of the S3 bucket used to store the captured media.</p>
+    /// <p>The event ingestion URL.</p>
     pub event_ingestion_url: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MediaPlacement {
@@ -7273,7 +7273,7 @@ pub mod media_placement {
             self.turn_control_url = input;
             self
         }
-        /// <p>The URL of the S3 bucket used to store the captured media.</p>
+        /// <p>The event ingestion URL.</p>
         pub fn event_ingestion_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_ingestion_url = Some(input.into());
             self
@@ -7307,7 +7307,7 @@ impl MediaPlacement {
     }
 }
 
-/// <p>A media capture pipeline object. A string consisting of an ID, source type, a source ARN, a sink type, and a sink ARN.</p>
+/// <p>A media capture pipeline object consisting of an ID, source type, source ARN, a sink type, a sink ARN, and a configuration object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaCapturePipeline {
@@ -7327,6 +7327,9 @@ pub struct MediaCapturePipeline {
     pub created_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>The time at which the capture pipeline was updated, in ISO 8601 format.</p>
     pub updated_timestamp: std::option::Option<smithy_types::Instant>,
+    /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+    pub chime_sdk_meeting_configuration:
+        std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
 }
 impl std::fmt::Debug for MediaCapturePipeline {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7339,6 +7342,10 @@ impl std::fmt::Debug for MediaCapturePipeline {
         formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.field(
+            "chime_sdk_meeting_configuration",
+            &self.chime_sdk_meeting_configuration,
+        );
         formatter.finish()
     }
 }
@@ -7356,6 +7363,8 @@ pub mod media_capture_pipeline {
         pub(crate) sink_arn: std::option::Option<std::string::String>,
         pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
         pub(crate) updated_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) chime_sdk_meeting_configuration:
+            std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
     }
     impl Builder {
         /// <p>The ID of a media capture pipeline.</p>
@@ -7448,6 +7457,21 @@ pub mod media_capture_pipeline {
             self.updated_timestamp = input;
             self
         }
+        /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+        pub fn chime_sdk_meeting_configuration(
+            mut self,
+            input: crate::model::ChimeSdkMeetingConfiguration,
+        ) -> Self {
+            self.chime_sdk_meeting_configuration = Some(input);
+            self
+        }
+        pub fn set_chime_sdk_meeting_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
+        ) -> Self {
+            self.chime_sdk_meeting_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MediaCapturePipeline`](crate::model::MediaCapturePipeline)
         pub fn build(self) -> crate::model::MediaCapturePipeline {
             crate::model::MediaCapturePipeline {
@@ -7459,6 +7483,7 @@ pub mod media_capture_pipeline {
                 sink_arn: self.sink_arn,
                 created_timestamp: self.created_timestamp,
                 updated_timestamp: self.updated_timestamp,
+                chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration,
             }
         }
     }
@@ -7467,6 +7492,658 @@ impl MediaCapturePipeline {
     /// Creates a new builder-style object to manufacture [`MediaCapturePipeline`](crate::model::MediaCapturePipeline)
     pub fn builder() -> crate::model::media_capture_pipeline::Builder {
         crate::model::media_capture_pipeline::Builder::default()
+    }
+}
+
+/// <p>The configuration object of the Amazon Chime SDK meeting for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChimeSdkMeetingConfiguration {
+    /// <p>The source configuration for a specified media capture pipline.</p>
+    pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
+    /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
+    pub artifacts_configuration: std::option::Option<crate::model::ArtifactsConfiguration>,
+}
+impl std::fmt::Debug for ChimeSdkMeetingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChimeSdkMeetingConfiguration");
+        formatter.field("source_configuration", &self.source_configuration);
+        formatter.field("artifacts_configuration", &self.artifacts_configuration);
+        formatter.finish()
+    }
+}
+/// See [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration)
+pub mod chime_sdk_meeting_configuration {
+    /// A builder for [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_configuration: std::option::Option<crate::model::SourceConfiguration>,
+        pub(crate) artifacts_configuration:
+            std::option::Option<crate::model::ArtifactsConfiguration>,
+    }
+    impl Builder {
+        /// <p>The source configuration for a specified media capture pipline.</p>
+        pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
+            self.source_configuration = Some(input);
+            self
+        }
+        pub fn set_source_configuration(
+            mut self,
+            input: std::option::Option<crate::model::SourceConfiguration>,
+        ) -> Self {
+            self.source_configuration = input;
+            self
+        }
+        /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
+        pub fn artifacts_configuration(
+            mut self,
+            input: crate::model::ArtifactsConfiguration,
+        ) -> Self {
+            self.artifacts_configuration = Some(input);
+            self
+        }
+        pub fn set_artifacts_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ArtifactsConfiguration>,
+        ) -> Self {
+            self.artifacts_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration)
+        pub fn build(self) -> crate::model::ChimeSdkMeetingConfiguration {
+            crate::model::ChimeSdkMeetingConfiguration {
+                source_configuration: self.source_configuration,
+                artifacts_configuration: self.artifacts_configuration,
+            }
+        }
+    }
+}
+impl ChimeSdkMeetingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration)
+    pub fn builder() -> crate::model::chime_sdk_meeting_configuration::Builder {
+        crate::model::chime_sdk_meeting_configuration::Builder::default()
+    }
+}
+
+/// <p>The configuration for the artifacts.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ArtifactsConfiguration {
+    /// <p>The configuration for the audio artifacts.</p>
+    pub audio: std::option::Option<crate::model::AudioArtifactsConfiguration>,
+    /// <p>The configuration for the video artifacts.</p>
+    pub video: std::option::Option<crate::model::VideoArtifactsConfiguration>,
+    /// <p>The configuration for the content artifacts.</p>
+    pub content: std::option::Option<crate::model::ContentArtifactsConfiguration>,
+}
+impl std::fmt::Debug for ArtifactsConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ArtifactsConfiguration");
+        formatter.field("audio", &self.audio);
+        formatter.field("video", &self.video);
+        formatter.field("content", &self.content);
+        formatter.finish()
+    }
+}
+/// See [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration)
+pub mod artifacts_configuration {
+    /// A builder for [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) audio: std::option::Option<crate::model::AudioArtifactsConfiguration>,
+        pub(crate) video: std::option::Option<crate::model::VideoArtifactsConfiguration>,
+        pub(crate) content: std::option::Option<crate::model::ContentArtifactsConfiguration>,
+    }
+    impl Builder {
+        /// <p>The configuration for the audio artifacts.</p>
+        pub fn audio(mut self, input: crate::model::AudioArtifactsConfiguration) -> Self {
+            self.audio = Some(input);
+            self
+        }
+        pub fn set_audio(
+            mut self,
+            input: std::option::Option<crate::model::AudioArtifactsConfiguration>,
+        ) -> Self {
+            self.audio = input;
+            self
+        }
+        /// <p>The configuration for the video artifacts.</p>
+        pub fn video(mut self, input: crate::model::VideoArtifactsConfiguration) -> Self {
+            self.video = Some(input);
+            self
+        }
+        pub fn set_video(
+            mut self,
+            input: std::option::Option<crate::model::VideoArtifactsConfiguration>,
+        ) -> Self {
+            self.video = input;
+            self
+        }
+        /// <p>The configuration for the content artifacts.</p>
+        pub fn content(mut self, input: crate::model::ContentArtifactsConfiguration) -> Self {
+            self.content = Some(input);
+            self
+        }
+        pub fn set_content(
+            mut self,
+            input: std::option::Option<crate::model::ContentArtifactsConfiguration>,
+        ) -> Self {
+            self.content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration)
+        pub fn build(self) -> crate::model::ArtifactsConfiguration {
+            crate::model::ArtifactsConfiguration {
+                audio: self.audio,
+                video: self.video,
+                content: self.content,
+            }
+        }
+    }
+}
+impl ArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration)
+    pub fn builder() -> crate::model::artifacts_configuration::Builder {
+        crate::model::artifacts_configuration::Builder::default()
+    }
+}
+
+/// <p>The content artifact object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ContentArtifactsConfiguration {
+    /// <p>Indicates whether the content artifact is enabled or disabled.</p>
+    pub state: std::option::Option<crate::model::ArtifactsState>,
+    /// <p>The MUX type of the artifact configuration.</p>
+    pub mux_type: std::option::Option<crate::model::ContentMuxType>,
+}
+impl std::fmt::Debug for ContentArtifactsConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ContentArtifactsConfiguration");
+        formatter.field("state", &self.state);
+        formatter.field("mux_type", &self.mux_type);
+        formatter.finish()
+    }
+}
+/// See [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration)
+pub mod content_artifacts_configuration {
+    /// A builder for [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) state: std::option::Option<crate::model::ArtifactsState>,
+        pub(crate) mux_type: std::option::Option<crate::model::ContentMuxType>,
+    }
+    impl Builder {
+        /// <p>Indicates whether the content artifact is enabled or disabled.</p>
+        pub fn state(mut self, input: crate::model::ArtifactsState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::ArtifactsState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The MUX type of the artifact configuration.</p>
+        pub fn mux_type(mut self, input: crate::model::ContentMuxType) -> Self {
+            self.mux_type = Some(input);
+            self
+        }
+        pub fn set_mux_type(
+            mut self,
+            input: std::option::Option<crate::model::ContentMuxType>,
+        ) -> Self {
+            self.mux_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration)
+        pub fn build(self) -> crate::model::ContentArtifactsConfiguration {
+            crate::model::ContentArtifactsConfiguration {
+                state: self.state,
+                mux_type: self.mux_type,
+            }
+        }
+    }
+}
+impl ContentArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration)
+    pub fn builder() -> crate::model::content_artifacts_configuration::Builder {
+        crate::model::content_artifacts_configuration::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ContentMuxType {
+    ContentOnly,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ContentMuxType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ContentOnly" => ContentMuxType::ContentOnly,
+            other => ContentMuxType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ContentMuxType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContentMuxType::from(s))
+    }
+}
+impl ContentMuxType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContentMuxType::ContentOnly => "ContentOnly",
+            ContentMuxType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ContentOnly"]
+    }
+}
+impl AsRef<str> for ContentMuxType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ArtifactsState {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ArtifactsState {
+    fn from(s: &str) -> Self {
+        match s {
+            "Disabled" => ArtifactsState::Disabled,
+            "Enabled" => ArtifactsState::Enabled,
+            other => ArtifactsState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ArtifactsState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ArtifactsState::from(s))
+    }
+}
+impl ArtifactsState {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ArtifactsState::Disabled => "Disabled",
+            ArtifactsState::Enabled => "Enabled",
+            ArtifactsState::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
+}
+impl AsRef<str> for ArtifactsState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The video artifact configuration object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VideoArtifactsConfiguration {
+    /// <p>Indicates whether the video artifact is enabled or disabled.</p>
+    pub state: std::option::Option<crate::model::ArtifactsState>,
+    /// <p>The MUX type of the video artifact configuration object.</p>
+    pub mux_type: std::option::Option<crate::model::VideoMuxType>,
+}
+impl std::fmt::Debug for VideoArtifactsConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VideoArtifactsConfiguration");
+        formatter.field("state", &self.state);
+        formatter.field("mux_type", &self.mux_type);
+        formatter.finish()
+    }
+}
+/// See [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration)
+pub mod video_artifacts_configuration {
+    /// A builder for [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) state: std::option::Option<crate::model::ArtifactsState>,
+        pub(crate) mux_type: std::option::Option<crate::model::VideoMuxType>,
+    }
+    impl Builder {
+        /// <p>Indicates whether the video artifact is enabled or disabled.</p>
+        pub fn state(mut self, input: crate::model::ArtifactsState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::ArtifactsState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The MUX type of the video artifact configuration object.</p>
+        pub fn mux_type(mut self, input: crate::model::VideoMuxType) -> Self {
+            self.mux_type = Some(input);
+            self
+        }
+        pub fn set_mux_type(
+            mut self,
+            input: std::option::Option<crate::model::VideoMuxType>,
+        ) -> Self {
+            self.mux_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration)
+        pub fn build(self) -> crate::model::VideoArtifactsConfiguration {
+            crate::model::VideoArtifactsConfiguration {
+                state: self.state,
+                mux_type: self.mux_type,
+            }
+        }
+    }
+}
+impl VideoArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration)
+    pub fn builder() -> crate::model::video_artifacts_configuration::Builder {
+        crate::model::video_artifacts_configuration::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VideoMuxType {
+    VideoOnly,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VideoMuxType {
+    fn from(s: &str) -> Self {
+        match s {
+            "VideoOnly" => VideoMuxType::VideoOnly,
+            other => VideoMuxType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VideoMuxType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VideoMuxType::from(s))
+    }
+}
+impl VideoMuxType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            VideoMuxType::VideoOnly => "VideoOnly",
+            VideoMuxType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["VideoOnly"]
+    }
+}
+impl AsRef<str> for VideoMuxType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The audio artifact configuration object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AudioArtifactsConfiguration {
+    /// <p>The MUX type of the audio artifact configuration object.</p>
+    pub mux_type: std::option::Option<crate::model::AudioMuxType>,
+}
+impl std::fmt::Debug for AudioArtifactsConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AudioArtifactsConfiguration");
+        formatter.field("mux_type", &self.mux_type);
+        formatter.finish()
+    }
+}
+/// See [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration)
+pub mod audio_artifacts_configuration {
+    /// A builder for [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) mux_type: std::option::Option<crate::model::AudioMuxType>,
+    }
+    impl Builder {
+        /// <p>The MUX type of the audio artifact configuration object.</p>
+        pub fn mux_type(mut self, input: crate::model::AudioMuxType) -> Self {
+            self.mux_type = Some(input);
+            self
+        }
+        pub fn set_mux_type(
+            mut self,
+            input: std::option::Option<crate::model::AudioMuxType>,
+        ) -> Self {
+            self.mux_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration)
+        pub fn build(self) -> crate::model::AudioArtifactsConfiguration {
+            crate::model::AudioArtifactsConfiguration {
+                mux_type: self.mux_type,
+            }
+        }
+    }
+}
+impl AudioArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration)
+    pub fn builder() -> crate::model::audio_artifacts_configuration::Builder {
+        crate::model::audio_artifacts_configuration::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AudioMuxType {
+    AudioOnly,
+    AudioWithActiveSpeakerVideo,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AudioMuxType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AudioOnly" => AudioMuxType::AudioOnly,
+            "AudioWithActiveSpeakerVideo" => AudioMuxType::AudioWithActiveSpeakerVideo,
+            other => AudioMuxType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AudioMuxType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AudioMuxType::from(s))
+    }
+}
+impl AudioMuxType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AudioMuxType::AudioOnly => "AudioOnly",
+            AudioMuxType::AudioWithActiveSpeakerVideo => "AudioWithActiveSpeakerVideo",
+            AudioMuxType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AudioOnly", "AudioWithActiveSpeakerVideo"]
+    }
+}
+impl AsRef<str> for AudioMuxType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Source configuration for a specified media capture pipeline.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SourceConfiguration {
+    /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
+    pub selected_video_streams: std::option::Option<crate::model::SelectedVideoStreams>,
+}
+impl std::fmt::Debug for SourceConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SourceConfiguration");
+        formatter.field("selected_video_streams", &self.selected_video_streams);
+        formatter.finish()
+    }
+}
+/// See [`SourceConfiguration`](crate::model::SourceConfiguration)
+pub mod source_configuration {
+    /// A builder for [`SourceConfiguration`](crate::model::SourceConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) selected_video_streams: std::option::Option<crate::model::SelectedVideoStreams>,
+    }
+    impl Builder {
+        /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
+        pub fn selected_video_streams(mut self, input: crate::model::SelectedVideoStreams) -> Self {
+            self.selected_video_streams = Some(input);
+            self
+        }
+        pub fn set_selected_video_streams(
+            mut self,
+            input: std::option::Option<crate::model::SelectedVideoStreams>,
+        ) -> Self {
+            self.selected_video_streams = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SourceConfiguration`](crate::model::SourceConfiguration)
+        pub fn build(self) -> crate::model::SourceConfiguration {
+            crate::model::SourceConfiguration {
+                selected_video_streams: self.selected_video_streams,
+            }
+        }
+    }
+}
+impl SourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`SourceConfiguration`](crate::model::SourceConfiguration)
+    pub fn builder() -> crate::model::source_configuration::Builder {
+        crate::model::source_configuration::Builder::default()
+    }
+}
+
+/// <p>The video streams to capture for a specified media capture pipeline. The total number of video streams can't exceed 25.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SelectedVideoStreams {
+    /// <p>The attendee IDs of the streams selected for a media capture pipeline. </p>
+    pub attendee_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The external user IDs of the streams selected for a media capture pipeline.</p>
+    pub external_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for SelectedVideoStreams {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SelectedVideoStreams");
+        formatter.field("attendee_ids", &self.attendee_ids);
+        formatter.field("external_user_ids", &self.external_user_ids);
+        formatter.finish()
+    }
+}
+/// See [`SelectedVideoStreams`](crate::model::SelectedVideoStreams)
+pub mod selected_video_streams {
+    /// A builder for [`SelectedVideoStreams`](crate::model::SelectedVideoStreams)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attendee_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) external_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        pub fn attendee_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.attendee_ids.unwrap_or_default();
+            v.push(input.into());
+            self.attendee_ids = Some(v);
+            self
+        }
+        pub fn set_attendee_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.attendee_ids = input;
+            self
+        }
+        pub fn external_user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.external_user_ids.unwrap_or_default();
+            v.push(input.into());
+            self.external_user_ids = Some(v);
+            self
+        }
+        pub fn set_external_user_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.external_user_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SelectedVideoStreams`](crate::model::SelectedVideoStreams)
+        pub fn build(self) -> crate::model::SelectedVideoStreams {
+            crate::model::SelectedVideoStreams {
+                attendee_ids: self.attendee_ids,
+                external_user_ids: self.external_user_ids,
+            }
+        }
+    }
+}
+impl SelectedVideoStreams {
+    /// Creates a new builder-style object to manufacture [`SelectedVideoStreams`](crate::model::SelectedVideoStreams)
+    pub fn builder() -> crate::model::selected_video_streams::Builder {
+        crate::model::selected_video_streams::Builder::default()
     }
 }
 

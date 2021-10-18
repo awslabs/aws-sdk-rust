@@ -91,6 +91,9 @@ where
     ) -> fluent_builders::CancelInputDeviceTransfer<C, M, R> {
         fluent_builders::CancelInputDeviceTransfer::new(self.handle.clone())
     }
+    pub fn claim_device(&self) -> fluent_builders::ClaimDevice<C, M, R> {
+        fluent_builders::ClaimDevice::new(self.handle.clone())
+    }
     pub fn create_channel(&self) -> fluent_builders::CreateChannel<C, M, R> {
         fluent_builders::CreateChannel::new(self.handle.clone())
     }
@@ -705,6 +708,60 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct ClaimDevice<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::claim_device_input::Builder,
+    }
+    impl<C, M, R> ClaimDevice<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ClaimDeviceOutput,
+            smithy_http::result::SdkError<crate::error::ClaimDeviceError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ClaimDeviceInputOperationOutputAlias,
+                crate::output::ClaimDeviceOutput,
+                crate::error::ClaimDeviceError,
+                crate::input::ClaimDeviceInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// The id of the device you want to claim.
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct CreateChannel<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -893,7 +950,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// Settings for VPC output
+        /// Settings for the VPC outputs
         pub fn vpc(mut self, inp: crate::model::VpcOutputSettings) -> Self {
             self.inner = self.inner.vpc(inp);
             self
@@ -1084,7 +1141,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// Placeholder documentation for InputType
+        /// The different types of inputs that AWS Elemental MediaLive supports.
         pub fn r#type(mut self, inp: crate::model::InputType) -> Self {
             self.inner = self.inner.r#type(inp);
             self
@@ -4725,7 +4782,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4745,7 +4803,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

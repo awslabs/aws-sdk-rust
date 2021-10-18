@@ -214,7 +214,7 @@ pub struct FolderConfiguration {
     /// <p>The action to take on the folder contents at the end of the folder configuration
     /// period.</p>
     pub action: std::option::Option<crate::model::RetentionAction>,
-    /// <p>The period of time at which the folder configuration action is applied.</p>
+    /// <p>The number of days for which the folder-configuration action applies.</p>
     pub period: std::option::Option<i32>,
 }
 impl std::fmt::Debug for FolderConfiguration {
@@ -259,7 +259,7 @@ pub mod folder_configuration {
             self.action = input;
             self
         }
-        /// <p>The period of time at which the folder configuration action is applied.</p>
+        /// <p>The number of days for which the folder-configuration action applies.</p>
         pub fn period(mut self, input: i32) -> Self {
             self.period = Some(input);
             self
@@ -1591,6 +1591,67 @@ impl MobileDeviceAccessOverride {
     }
 }
 
+/// <p>The data for a given domain.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MailDomainSummary {
+    /// <p>The domain name.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+    /// <p>Whether the domain is default or not.</p>
+    pub default_domain: bool,
+}
+impl std::fmt::Debug for MailDomainSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MailDomainSummary");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("default_domain", &self.default_domain);
+        formatter.finish()
+    }
+}
+/// See [`MailDomainSummary`](crate::model::MailDomainSummary)
+pub mod mail_domain_summary {
+    /// A builder for [`MailDomainSummary`](crate::model::MailDomainSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+        pub(crate) default_domain: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The domain name.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// <p>Whether the domain is default or not.</p>
+        pub fn default_domain(mut self, input: bool) -> Self {
+            self.default_domain = Some(input);
+            self
+        }
+        pub fn set_default_domain(mut self, input: std::option::Option<bool>) -> Self {
+            self.default_domain = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MailDomainSummary`](crate::model::MailDomainSummary)
+        pub fn build(self) -> crate::model::MailDomainSummary {
+            crate::model::MailDomainSummary {
+                domain_name: self.domain_name,
+                default_domain: self.default_domain.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl MailDomainSummary {
+    /// Creates a new builder-style object to manufacture [`MailDomainSummary`](crate::model::MailDomainSummary)
+    pub fn builder() -> crate::model::mail_domain_summary::Builder {
+        crate::model::mail_domain_summary::Builder::default()
+    }
+}
+
 /// <p>Permission granted to a user, group, or resource to access a certain aspect of
 /// another user, group, or resource mailbox.</p>
 #[non_exhaustive]
@@ -2441,6 +2502,134 @@ impl MobileDeviceAccessMatchedRule {
     /// Creates a new builder-style object to manufacture [`MobileDeviceAccessMatchedRule`](crate::model::MobileDeviceAccessMatchedRule)
     pub fn builder() -> crate::model::mobile_device_access_matched_rule::Builder {
         crate::model::mobile_device_access_matched_rule::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DnsRecordVerificationStatus {
+    Failed,
+    Pending,
+    Verified,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DnsRecordVerificationStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => DnsRecordVerificationStatus::Failed,
+            "PENDING" => DnsRecordVerificationStatus::Pending,
+            "VERIFIED" => DnsRecordVerificationStatus::Verified,
+            other => DnsRecordVerificationStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DnsRecordVerificationStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DnsRecordVerificationStatus::from(s))
+    }
+}
+impl DnsRecordVerificationStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DnsRecordVerificationStatus::Failed => "FAILED",
+            DnsRecordVerificationStatus::Pending => "PENDING",
+            DnsRecordVerificationStatus::Verified => "VERIFIED",
+            DnsRecordVerificationStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "PENDING", "VERIFIED"]
+    }
+}
+impl AsRef<str> for DnsRecordVerificationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A DNS record uploaded to your DNS provider.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DnsRecord {
+    /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
+    pub hostname: std::option::Option<std::string::String>,
+    /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DnsRecord {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DnsRecord");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("hostname", &self.hostname);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`DnsRecord`](crate::model::DnsRecord)
+pub mod dns_record {
+    /// A builder for [`DnsRecord`](crate::model::DnsRecord)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) hostname: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hostname = Some(input.into());
+            self
+        }
+        pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hostname = input;
+            self
+        }
+        /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DnsRecord`](crate::model::DnsRecord)
+        pub fn build(self) -> crate::model::DnsRecord {
+            crate::model::DnsRecord {
+                r#type: self.r#type,
+                hostname: self.hostname,
+                value: self.value,
+            }
+        }
+    }
+}
+impl DnsRecord {
+    /// Creates a new builder-style object to manufacture [`DnsRecord`](crate::model::DnsRecord)
+    pub fn builder() -> crate::model::dns_record::Builder {
+        crate::model::dns_record::Builder::default()
     }
 }
 

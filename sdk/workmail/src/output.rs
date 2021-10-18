@@ -117,6 +117,35 @@ impl UpdateMailboxQuotaOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateDefaultMailDomainOutput {}
+impl std::fmt::Debug for UpdateDefaultMailDomainOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateDefaultMailDomainOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateDefaultMailDomainOutput`](crate::output::UpdateDefaultMailDomainOutput)
+pub mod update_default_mail_domain_output {
+    /// A builder for [`UpdateDefaultMailDomainOutput`](crate::output::UpdateDefaultMailDomainOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateDefaultMailDomainOutput`](crate::output::UpdateDefaultMailDomainOutput)
+        pub fn build(self) -> crate::output::UpdateDefaultMailDomainOutput {
+            crate::output::UpdateDefaultMailDomainOutput {}
+        }
+    }
+}
+impl UpdateDefaultMailDomainOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDefaultMailDomainOutput`](crate::output::UpdateDefaultMailDomainOutput)
+    pub fn builder() -> crate::output::update_default_mail_domain_output::Builder {
+        crate::output::update_default_mail_domain_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -274,6 +303,35 @@ impl RegisterToWorkMailOutput {
     /// Creates a new builder-style object to manufacture [`RegisterToWorkMailOutput`](crate::output::RegisterToWorkMailOutput)
     pub fn builder() -> crate::output::register_to_work_mail_output::Builder {
         crate::output::register_to_work_mail_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisterMailDomainOutput {}
+impl std::fmt::Debug for RegisterMailDomainOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisterMailDomainOutput");
+        formatter.finish()
+    }
+}
+/// See [`RegisterMailDomainOutput`](crate::output::RegisterMailDomainOutput)
+pub mod register_mail_domain_output {
+    /// A builder for [`RegisterMailDomainOutput`](crate::output::RegisterMailDomainOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`RegisterMailDomainOutput`](crate::output::RegisterMailDomainOutput)
+        pub fn build(self) -> crate::output::RegisterMailDomainOutput {
+            crate::output::RegisterMailDomainOutput {}
+        }
+    }
+}
+impl RegisterMailDomainOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterMailDomainOutput`](crate::output::RegisterMailDomainOutput)
+    pub fn builder() -> crate::output::register_mail_domain_output::Builder {
+        crate::output::register_mail_domain_output::Builder::default()
     }
 }
 
@@ -862,6 +920,71 @@ impl ListMobileDeviceAccessOverridesOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMailDomainsOutput {
+    /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail  organization, along with the information about whether the domain is or isn't the default.</p>
+    pub mail_domains: std::option::Option<std::vec::Vec<crate::model::MailDomainSummary>>,
+    /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListMailDomainsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMailDomainsOutput");
+        formatter.field("mail_domains", &self.mail_domains);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListMailDomainsOutput`](crate::output::ListMailDomainsOutput)
+pub mod list_mail_domains_output {
+    /// A builder for [`ListMailDomainsOutput`](crate::output::ListMailDomainsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) mail_domains:
+            std::option::Option<std::vec::Vec<crate::model::MailDomainSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn mail_domains(mut self, input: impl Into<crate::model::MailDomainSummary>) -> Self {
+            let mut v = self.mail_domains.unwrap_or_default();
+            v.push(input.into());
+            self.mail_domains = Some(v);
+            self
+        }
+        pub fn set_mail_domains(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MailDomainSummary>>,
+        ) -> Self {
+            self.mail_domains = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMailDomainsOutput`](crate::output::ListMailDomainsOutput)
+        pub fn build(self) -> crate::output::ListMailDomainsOutput {
+            crate::output::ListMailDomainsOutput {
+                mail_domains: self.mail_domains,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMailDomainsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMailDomainsOutput`](crate::output::ListMailDomainsOutput)
+    pub fn builder() -> crate::output::list_mail_domains_output::Builder {
+        crate::output::list_mail_domains_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailboxPermissionsOutput {
     /// <p>One page of the user, group, or resource mailbox permissions.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -1432,6 +1555,131 @@ impl GetMobileDeviceAccessEffectOutput {
     /// Creates a new builder-style object to manufacture [`GetMobileDeviceAccessEffectOutput`](crate::output::GetMobileDeviceAccessEffectOutput)
     pub fn builder() -> crate::output::get_mobile_device_access_effect_output::Builder {
         crate::output::get_mobile_device_access_effect_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMailDomainOutput {
+    /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming
+    /// email traffic to SES. See admin guide for more details.</p>
+    pub records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
+    /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
+    pub is_test_domain: bool,
+    /// <p>Specifies whether the domain is the default domain for your organization.</p>
+    pub is_default: bool,
+    /// <p> Indicates the status of the domain ownership verification.</p>
+    pub ownership_verification_status:
+        std::option::Option<crate::model::DnsRecordVerificationStatus>,
+    /// <p>Indicates the status of a DKIM verification.</p>
+    pub dkim_verification_status: std::option::Option<crate::model::DnsRecordVerificationStatus>,
+}
+impl std::fmt::Debug for GetMailDomainOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMailDomainOutput");
+        formatter.field("records", &self.records);
+        formatter.field("is_test_domain", &self.is_test_domain);
+        formatter.field("is_default", &self.is_default);
+        formatter.field(
+            "ownership_verification_status",
+            &self.ownership_verification_status,
+        );
+        formatter.field("dkim_verification_status", &self.dkim_verification_status);
+        formatter.finish()
+    }
+}
+/// See [`GetMailDomainOutput`](crate::output::GetMailDomainOutput)
+pub mod get_mail_domain_output {
+    /// A builder for [`GetMailDomainOutput`](crate::output::GetMailDomainOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
+        pub(crate) is_test_domain: std::option::Option<bool>,
+        pub(crate) is_default: std::option::Option<bool>,
+        pub(crate) ownership_verification_status:
+            std::option::Option<crate::model::DnsRecordVerificationStatus>,
+        pub(crate) dkim_verification_status:
+            std::option::Option<crate::model::DnsRecordVerificationStatus>,
+    }
+    impl Builder {
+        pub fn records(mut self, input: impl Into<crate::model::DnsRecord>) -> Self {
+            let mut v = self.records.unwrap_or_default();
+            v.push(input.into());
+            self.records = Some(v);
+            self
+        }
+        pub fn set_records(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
+        ) -> Self {
+            self.records = input;
+            self
+        }
+        /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
+        pub fn is_test_domain(mut self, input: bool) -> Self {
+            self.is_test_domain = Some(input);
+            self
+        }
+        pub fn set_is_test_domain(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_test_domain = input;
+            self
+        }
+        /// <p>Specifies whether the domain is the default domain for your organization.</p>
+        pub fn is_default(mut self, input: bool) -> Self {
+            self.is_default = Some(input);
+            self
+        }
+        pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_default = input;
+            self
+        }
+        /// <p> Indicates the status of the domain ownership verification.</p>
+        pub fn ownership_verification_status(
+            mut self,
+            input: crate::model::DnsRecordVerificationStatus,
+        ) -> Self {
+            self.ownership_verification_status = Some(input);
+            self
+        }
+        pub fn set_ownership_verification_status(
+            mut self,
+            input: std::option::Option<crate::model::DnsRecordVerificationStatus>,
+        ) -> Self {
+            self.ownership_verification_status = input;
+            self
+        }
+        /// <p>Indicates the status of a DKIM verification.</p>
+        pub fn dkim_verification_status(
+            mut self,
+            input: crate::model::DnsRecordVerificationStatus,
+        ) -> Self {
+            self.dkim_verification_status = Some(input);
+            self
+        }
+        pub fn set_dkim_verification_status(
+            mut self,
+            input: std::option::Option<crate::model::DnsRecordVerificationStatus>,
+        ) -> Self {
+            self.dkim_verification_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMailDomainOutput`](crate::output::GetMailDomainOutput)
+        pub fn build(self) -> crate::output::GetMailDomainOutput {
+            crate::output::GetMailDomainOutput {
+                records: self.records,
+                is_test_domain: self.is_test_domain.unwrap_or_default(),
+                is_default: self.is_default.unwrap_or_default(),
+                ownership_verification_status: self.ownership_verification_status,
+                dkim_verification_status: self.dkim_verification_status,
+            }
+        }
+    }
+}
+impl GetMailDomainOutput {
+    /// Creates a new builder-style object to manufacture [`GetMailDomainOutput`](crate::output::GetMailDomainOutput)
+    pub fn builder() -> crate::output::get_mail_domain_output::Builder {
+        crate::output::get_mail_domain_output::Builder::default()
     }
 }
 
@@ -2600,6 +2848,35 @@ impl DescribeGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGroupOutput`](crate::output::DescribeGroupOutput)
     pub fn builder() -> crate::output::describe_group_output::Builder {
         crate::output::describe_group_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeregisterMailDomainOutput {}
+impl std::fmt::Debug for DeregisterMailDomainOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeregisterMailDomainOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeregisterMailDomainOutput`](crate::output::DeregisterMailDomainOutput)
+pub mod deregister_mail_domain_output {
+    /// A builder for [`DeregisterMailDomainOutput`](crate::output::DeregisterMailDomainOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeregisterMailDomainOutput`](crate::output::DeregisterMailDomainOutput)
+        pub fn build(self) -> crate::output::DeregisterMailDomainOutput {
+            crate::output::DeregisterMailDomainOutput {}
+        }
+    }
+}
+impl DeregisterMailDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterMailDomainOutput`](crate::output::DeregisterMailDomainOutput)
+    pub fn builder() -> crate::output::deregister_mail_domain_output::Builder {
+        crate::output::deregister_mail_domain_output::Builder::default()
     }
 }
 

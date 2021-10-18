@@ -229,6 +229,19 @@ pub fn serialize_operation_crate_operation_deregister_from_work_mail(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_deregister_mail_domain(
+    input: &crate::input::DeregisterMailDomainInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_deregister_mail_domain_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_describe_group(
     input: &crate::input::DescribeGroupInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -360,6 +373,16 @@ pub fn serialize_operation_crate_operation_get_mailbox_details(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_get_mail_domain(
+    input: &crate::input::GetMailDomainInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_get_mail_domain_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_get_mobile_device_access_effect(
     input: &crate::input::GetMobileDeviceAccessEffectInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -451,6 +474,16 @@ pub fn serialize_operation_crate_operation_list_mailbox_permissions(
         &mut object,
         input,
     );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_mail_domains(
+    input: &crate::input::ListMailDomainsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_mail_domains_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -599,6 +632,16 @@ pub fn serialize_operation_crate_operation_put_retention_policy(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_register_mail_domain(
+    input: &crate::input::RegisterMailDomainInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_register_mail_domain_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_register_to_work_mail(
     input: &crate::input::RegisterToWorkMailInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -651,6 +694,19 @@ pub fn serialize_operation_crate_operation_untag_resource(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_untag_resource_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_default_mail_domain(
+    input: &crate::input::UpdateDefaultMailDomainInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_default_mail_domain_input(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

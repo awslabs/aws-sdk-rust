@@ -14,6 +14,7 @@ pub use parser::{load, Profile, ProfileParseError, ProfileSet, Property};
 
 pub mod credentials;
 pub mod region;
+pub mod retry_config;
 
 #[doc(inline)]
 pub use credentials::ProfileFileCredentialsProvider;

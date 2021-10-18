@@ -1029,7 +1029,7 @@ pub mod fluent_builders {
         /// <p>Specifies whether to propagate the tags from the task definition or the service to the
         /// tasks in the service. If no value is specified, the tags are not propagated. Tags can
         /// only be propagated to the tasks within the service during service creation. To add tags
-        /// to a task after service creation, use the <a>TagResource</a> API
+        /// to a task after service creation or task creation, use the <a>TagResource</a> API
         /// action.</p>
         pub fn propagate_tags(mut self, inp: crate::model::PropagateTags) -> Self {
             self.inner = self.inner.propagate_tags(inp);
@@ -5034,6 +5034,11 @@ pub mod fluent_builders {
         /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
         /// full ARN of the task definition to run. If a <code>revision</code> is not specified,
         /// the latest <code>ACTIVE</code> revision is used.</p>
+        /// <p>The full ARN value must match the value that you specified ias the <code>Resource</code>
+        /// of the IAM principal's permissions policy. For example, if the <code>Resource</code> is
+        /// arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
+        /// <code>taskDefinition</code> ARN value must be
+        /// <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
         pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.task_definition(inp);
             self
@@ -6696,7 +6701,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -6716,7 +6722,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

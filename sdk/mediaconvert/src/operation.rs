@@ -185,6 +185,32 @@ impl smithy_http::response::ParseStrictResponse for DeleteJobTemplate {
     }
 }
 
+/// Permanently delete a policy that you created.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeletePolicy {
+    _private: (),
+}
+impl DeletePolicy {
+    /// Creates a new builder-style object to manufacture [`DeletePolicyInput`](crate::input::DeletePolicyInput)
+    pub fn builder() -> crate::input::delete_policy_input::Builder {
+        crate::input::delete_policy_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeletePolicy {
+    type Output =
+        std::result::Result<crate::output::DeletePolicyOutput, crate::error::DeletePolicyError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_policy_error(response)
+        } else {
+            crate::operation_deser::parse_delete_policy_response(response)
+        }
+    }
+}
+
 /// Permanently delete a preset you have created.
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePreset {
@@ -340,6 +366,31 @@ impl smithy_http::response::ParseStrictResponse for GetJobTemplate {
             crate::operation_deser::parse_get_job_template_error(response)
         } else {
             crate::operation_deser::parse_get_job_template_response(response)
+        }
+    }
+}
+
+/// Retrieve the JSON for your policy.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetPolicy {
+    _private: (),
+}
+impl GetPolicy {
+    /// Creates a new builder-style object to manufacture [`GetPolicyInput`](crate::input::GetPolicyInput)
+    pub fn builder() -> crate::input::get_policy_input::Builder {
+        crate::input::get_policy_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetPolicy {
+    type Output = std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_policy_error(response)
+        } else {
+            crate::operation_deser::parse_get_policy_response(response)
         }
     }
 }
@@ -523,6 +574,31 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
             crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
+/// Create or change your policy. For more information about policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutPolicy {
+    _private: (),
+}
+impl PutPolicy {
+    /// Creates a new builder-style object to manufacture [`PutPolicyInput`](crate::input::PutPolicyInput)
+    pub fn builder() -> crate::input::put_policy_input::Builder {
+        crate::input::put_policy_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for PutPolicy {
+    type Output = std::result::Result<crate::output::PutPolicyOutput, crate::error::PutPolicyError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_policy_error(response)
+        } else {
+            crate::operation_deser::parse_put_policy_response(response)
         }
     }
 }

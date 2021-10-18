@@ -1055,7 +1055,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
+        /// <p>The object that contains that URI of the Docker image that you use for your robot
+        /// application.</p>
         pub fn environment(mut self, inp: crate::model::Environment) -> Self {
             self.inner = self.inner.environment(inp);
             self
@@ -1137,7 +1138,8 @@ pub mod fluent_builders {
         /// Appends an item to `s3Etags`.
         ///
         /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
-        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
+        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
+        /// application.</p>
         pub fn s3_etags(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_etags(inp);
             self
@@ -1288,7 +1290,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
+        /// <p>The object that contains the Docker image URI used to create your simulation
+        /// application.</p>
         pub fn environment(mut self, inp: crate::model::Environment) -> Self {
             self.inner = self.inner.environment(inp);
             self
@@ -1370,7 +1373,8 @@ pub mod fluent_builders {
         /// Appends an item to `s3Etags`.
         ///
         /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
-        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
+        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
+        /// simulation application.</p>
         pub fn s3_etags(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_etags(inp);
             self
@@ -1382,7 +1386,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_etags(input);
             self
         }
-        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
+        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
+        /// application.</p>
         pub fn image_digest(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_digest(inp);
             self
@@ -1499,7 +1504,8 @@ pub mod fluent_builders {
         /// <dl>
         /// <dt>Continue</dt>
         /// <dd>
-        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+        /// <p>Leaves the instance running for its maximum timeout duration after a
+        /// <code>4XX</code> error code.</p>
         /// </dd>
         /// <dt>Fail</dt>
         /// <dd>
@@ -4835,7 +4841,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4855,7 +4862,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

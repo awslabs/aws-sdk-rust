@@ -3597,6 +3597,170 @@ impl DeregisterFromWorkMailInput {
     }
 }
 
+/// See [`DeregisterMailDomainInput`](crate::input::DeregisterMailDomainInput)
+pub mod deregister_mail_domain_input {
+    /// A builder for [`DeregisterMailDomainInput`](crate::input::DeregisterMailDomainInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The domain to deregister in WorkMail and SES. </p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeregisterMailDomainInput`](crate::input::DeregisterMailDomainInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeregisterMailDomainInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeregisterMailDomainInput {
+                organization_id: self.organization_id,
+                domain_name: self.domain_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeregisterMailDomainInputOperationOutputAlias = crate::operation::DeregisterMailDomain;
+#[doc(hidden)]
+pub type DeregisterMailDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeregisterMailDomainInput {
+    /// Consumes the builder and constructs an Operation<[`DeregisterMailDomain`](crate::operation::DeregisterMailDomain)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeregisterMailDomain,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeregisterMailDomainInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeregisterMailDomainInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeregisterMailDomainInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.DeregisterMailDomain",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_deregister_mail_domain(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeregisterMailDomain::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeregisterMailDomain",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeregisterMailDomainInput`](crate::input::DeregisterMailDomainInput)
+    pub fn builder() -> crate::input::deregister_mail_domain_input::Builder {
+        crate::input::deregister_mail_domain_input::Builder::default()
+    }
+}
+
 /// See [`DescribeGroupInput`](crate::input::DescribeGroupInput)
 pub mod describe_group_input {
     /// A builder for [`DescribeGroupInput`](crate::input::DescribeGroupInput)
@@ -5405,6 +5569,163 @@ impl GetMailboxDetailsInput {
     }
 }
 
+/// See [`GetMailDomainInput`](crate::input::GetMailDomainInput)
+pub mod get_mail_domain_input {
+    /// A builder for [`GetMailDomainInput`](crate::input::GetMailDomainInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The domain from which you want to retrieve details.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMailDomainInput`](crate::input::GetMailDomainInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::GetMailDomainInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetMailDomainInput {
+                organization_id: self.organization_id,
+                domain_name: self.domain_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetMailDomainInputOperationOutputAlias = crate::operation::GetMailDomain;
+#[doc(hidden)]
+pub type GetMailDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetMailDomainInput {
+    /// Consumes the builder and constructs an Operation<[`GetMailDomain`](crate::operation::GetMailDomain)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetMailDomain,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetMailDomainInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetMailDomainInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetMailDomainInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.GetMailDomain",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_get_mail_domain(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::GetMailDomain::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "GetMailDomain",
+                    "workmail",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetMailDomainInput`](crate::input::GetMailDomainInput)
+    pub fn builder() -> crate::input::get_mail_domain_input::Builder {
+        crate::input::get_mail_domain_input::Builder::default()
+    }
+}
+
 /// See [`GetMobileDeviceAccessEffectInput`](crate::input::GetMobileDeviceAccessEffectInput)
 pub mod get_mobile_device_access_effect_input {
     /// A builder for [`GetMobileDeviceAccessEffectInput`](crate::input::GetMobileDeviceAccessEffectInput)
@@ -6846,6 +7167,181 @@ impl ListMailboxPermissionsInput {
     /// Creates a new builder-style object to manufacture [`ListMailboxPermissionsInput`](crate::input::ListMailboxPermissionsInput)
     pub fn builder() -> crate::input::list_mailbox_permissions_input::Builder {
         crate::input::list_mailbox_permissions_input::Builder::default()
+    }
+}
+
+/// See [`ListMailDomainsInput`](crate::input::ListMailDomainsInput)
+pub mod list_mail_domains_input {
+    /// A builder for [`ListMailDomainsInput`](crate::input::ListMailDomainsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The maximum number of results to return in a single call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMailDomainsInput`](crate::input::ListMailDomainsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListMailDomainsInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListMailDomainsInput {
+                organization_id: self.organization_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListMailDomainsInputOperationOutputAlias = crate::operation::ListMailDomains;
+#[doc(hidden)]
+pub type ListMailDomainsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListMailDomainsInput {
+    /// Consumes the builder and constructs an Operation<[`ListMailDomains`](crate::operation::ListMailDomains)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListMailDomains,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListMailDomainsInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListMailDomainsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListMailDomainsInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.ListMailDomains",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_mail_domains(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMailDomains::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListMailDomains",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListMailDomainsInput`](crate::input::ListMailDomainsInput)
+    pub fn builder() -> crate::input::list_mail_domains_input::Builder {
+        crate::input::list_mail_domains_input::Builder::default()
     }
 }
 
@@ -9103,6 +9599,182 @@ impl PutRetentionPolicyInput {
     }
 }
 
+/// See [`RegisterMailDomainInput`](crate::input::RegisterMailDomainInput)
+pub mod register_mail_domain_input {
+    /// A builder for [`RegisterMailDomainInput`](crate::input::RegisterMailDomainInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Idempotency token used when retrying requests.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisterMailDomainInput`](crate::input::RegisterMailDomainInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::RegisterMailDomainInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RegisterMailDomainInput {
+                client_token: self.client_token,
+                organization_id: self.organization_id,
+                domain_name: self.domain_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type RegisterMailDomainInputOperationOutputAlias = crate::operation::RegisterMailDomain;
+#[doc(hidden)]
+pub type RegisterMailDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl RegisterMailDomainInput {
+    /// Consumes the builder and constructs an Operation<[`RegisterMailDomain`](crate::operation::RegisterMailDomain)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::RegisterMailDomain,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::RegisterMailDomainInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::RegisterMailDomainInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::RegisterMailDomainInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.RegisterMailDomain",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_register_mail_domain(&self)
+                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterMailDomain::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "RegisterMailDomain",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`RegisterMailDomainInput`](crate::input::RegisterMailDomainInput)
+    pub fn builder() -> crate::input::register_mail_domain_input::Builder {
+        crate::input::register_mail_domain_input::Builder::default()
+    }
+}
+
 /// See [`RegisterToWorkMailInput`](crate::input::RegisterToWorkMailInput)
 pub mod register_to_work_mail_input {
     /// A builder for [`RegisterToWorkMailInput`](crate::input::RegisterToWorkMailInput)
@@ -9999,6 +10671,171 @@ impl UntagResourceInput {
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UpdateDefaultMailDomainInput`](crate::input::UpdateDefaultMailDomainInput)
+pub mod update_default_mail_domain_input {
+    /// A builder for [`UpdateDefaultMailDomainInput`](crate::input::UpdateDefaultMailDomainInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) domain_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The domain name that will become the default domain.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
+            self
+        }
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateDefaultMailDomainInput`](crate::input::UpdateDefaultMailDomainInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateDefaultMailDomainInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateDefaultMailDomainInput {
+                organization_id: self.organization_id,
+                domain_name: self.domain_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateDefaultMailDomainInputOperationOutputAlias =
+    crate::operation::UpdateDefaultMailDomain;
+#[doc(hidden)]
+pub type UpdateDefaultMailDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateDefaultMailDomainInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateDefaultMailDomain`](crate::operation::UpdateDefaultMailDomain)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateDefaultMailDomain,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateDefaultMailDomainInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateDefaultMailDomainInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateDefaultMailDomainInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.UpdateDefaultMailDomain",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_default_mail_domain(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateDefaultMailDomain::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "UpdateDefaultMailDomain",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateDefaultMailDomainInput`](crate::input::UpdateDefaultMailDomainInput)
+    pub fn builder() -> crate::input::update_default_mail_domain_input::Builder {
+        crate::input::update_default_mail_domain_input::Builder::default()
     }
 }
 
@@ -10992,6 +11829,23 @@ impl std::fmt::Debug for UpdateMailboxQuotaInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateDefaultMailDomainInput {
+    /// <p>The Amazon WorkMail organization for which to list domains.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The domain name that will become the default domain.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateDefaultMailDomainInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateDefaultMailDomainInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("domain_name", &self.domain_name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The resource ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
@@ -11099,6 +11953,26 @@ impl std::fmt::Debug for RegisterToWorkMailInput {
         formatter.field("organization_id", &self.organization_id);
         formatter.field("entity_id", &self.entity_id);
         formatter.field("email", &self.email);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisterMailDomainInput {
+    /// <p>Idempotency token used when retrying requests.</p>
+    pub client_token: std::option::Option<std::string::String>,
+    /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RegisterMailDomainInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisterMailDomainInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("domain_name", &self.domain_name);
         formatter.finish()
     }
 }
@@ -11418,6 +12292,26 @@ impl std::fmt::Debug for ListMobileDeviceAccessOverridesInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMailDomainsInput {
+    /// <p>The Amazon WorkMail organization for which to list domains.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListMailDomainsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMailDomainsInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailboxPermissionsInput {
     /// <p>The identifier of the organization under which the user, group, or resource
     /// exists.</p>
@@ -11602,6 +12496,23 @@ impl std::fmt::Debug for GetMobileDeviceAccessEffectInput {
         formatter.field("device_model", &self.device_model);
         formatter.field("device_operating_system", &self.device_operating_system);
         formatter.field("device_user_agent", &self.device_user_agent);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMailDomainInput {
+    /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The domain from which you want to retrieve details.</p>
+    pub domain_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetMailDomainInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMailDomainInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("domain_name", &self.domain_name);
         formatter.finish()
     }
 }
@@ -11798,6 +12709,23 @@ impl std::fmt::Debug for DescribeGroupInput {
         let mut formatter = f.debug_struct("DescribeGroupInput");
         formatter.field("organization_id", &self.organization_id);
         formatter.field("group_id", &self.group_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeregisterMailDomainInput {
+    /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The domain to deregister in WorkMail and SES. </p>
+    pub domain_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeregisterMailDomainInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeregisterMailDomainInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("domain_name", &self.domain_name);
         formatter.finish()
     }
 }

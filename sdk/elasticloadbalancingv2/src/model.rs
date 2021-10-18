@@ -3161,6 +3161,10 @@ pub struct TargetGroup {
     /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>,
     /// <code>HTTP1</code>, and <code>HTTP2</code>.</p>
     pub protocol_version: std::option::Option<std::string::String>,
+    /// <p>The type of IP address used for this target group. The possible values are
+    /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
+    /// the IP address type defaults to <code>ipv4</code>.</p>
+    pub ip_address_type: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
 }
 impl std::fmt::Debug for TargetGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3188,6 +3192,7 @@ impl std::fmt::Debug for TargetGroup {
         formatter.field("load_balancer_arns", &self.load_balancer_arns);
         formatter.field("target_type", &self.target_type);
         formatter.field("protocol_version", &self.protocol_version);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.finish()
     }
 }
@@ -3214,6 +3219,7 @@ pub mod target_group {
         pub(crate) load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) target_type: std::option::Option<crate::model::TargetTypeEnum>,
         pub(crate) protocol_version: std::option::Option<std::string::String>,
+        pub(crate) ip_address_type: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -3412,6 +3418,23 @@ pub mod target_group {
             self.protocol_version = input;
             self
         }
+        /// <p>The type of IP address used for this target group. The possible values are
+        /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
+        /// the IP address type defaults to <code>ipv4</code>.</p>
+        pub fn ip_address_type(
+            mut self,
+            input: crate::model::TargetGroupIpAddressTypeEnum,
+        ) -> Self {
+            self.ip_address_type = Some(input);
+            self
+        }
+        pub fn set_ip_address_type(
+            mut self,
+            input: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
+        ) -> Self {
+            self.ip_address_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TargetGroup`](crate::model::TargetGroup)
         pub fn build(self) -> crate::model::TargetGroup {
             crate::model::TargetGroup {
@@ -3432,6 +3455,7 @@ pub mod target_group {
                 load_balancer_arns: self.load_balancer_arns,
                 target_type: self.target_type,
                 protocol_version: self.protocol_version,
+                ip_address_type: self.ip_address_type,
             }
         }
     }
@@ -3440,6 +3464,56 @@ impl TargetGroup {
     /// Creates a new builder-style object to manufacture [`TargetGroup`](crate::model::TargetGroup)
     pub fn builder() -> crate::model::target_group::Builder {
         crate::model::target_group::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TargetGroupIpAddressTypeEnum {
+    Ipv4,
+    Ipv6,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TargetGroupIpAddressTypeEnum {
+    fn from(s: &str) -> Self {
+        match s {
+            "ipv4" => TargetGroupIpAddressTypeEnum::Ipv4,
+            "ipv6" => TargetGroupIpAddressTypeEnum::Ipv6,
+            other => TargetGroupIpAddressTypeEnum::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TargetGroupIpAddressTypeEnum {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetGroupIpAddressTypeEnum::from(s))
+    }
+}
+impl TargetGroupIpAddressTypeEnum {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetGroupIpAddressTypeEnum::Ipv4 => "ipv4",
+            TargetGroupIpAddressTypeEnum::Ipv6 => "ipv6",
+            TargetGroupIpAddressTypeEnum::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ipv4", "ipv6"]
+    }
+}
+impl AsRef<str> for TargetGroupIpAddressTypeEnum {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3500,7 +3574,7 @@ impl AsRef<str> for TargetTypeEnum {
 }
 
 /// <p>The codes to use when checking for a successful response from a target. If the protocol
-/// version is gRPC, these are gRPC codes. Otherwise, these are HTTP codes.</p>
+/// version is gRPC, these are gRPC codes. Otherwise, these are HTTP codes. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Matcher {
@@ -3508,6 +3582,8 @@ pub struct Matcher {
     /// default value is 200. You can specify multiple values (for example, "200,202") or a range of
     /// values (for example, "200-299").</p>
     /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
+    /// <p>Note that when using shorthand syntax, some values such as commas need to be
+    /// escaped.</p>
     pub http_code: std::option::Option<std::string::String>,
     /// <p>You can specify values between 0 and 99. You can specify multiple values (for example,
     /// "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
@@ -3535,6 +3611,8 @@ pub mod matcher {
         /// default value is 200. You can specify multiple values (for example, "200,202") or a range of
         /// values (for example, "200-299").</p>
         /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
+        /// <p>Note that when using shorthand syntax, some values such as commas need to be
+        /// escaped.</p>
         pub fn http_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_code = Some(input.into());
             self
@@ -3692,14 +3770,14 @@ pub struct LoadBalancerAttribute {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates whether the two headers (<code>x-amzn-tls-version</code> and
-    /// <code>x-amzn-tls-cipher-suite</code>), which contain information about
-    /// the negotiated TLS version and cipher suite, are added to the client request
-    /// before sending it to the target. The <code>x-amzn-tls-version</code> header
-    /// has information about the TLS protocol version negotiated with the client,
-    /// and the <code>x-amzn-tls-cipher-suite</code> header has information about
-    /// the cipher suite negotiated with the client. Both headers are in OpenSSL
-    /// format. The possible values for the attribute are <code>true</code> and
+    /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
+    /// whether the two headers (<code>x-amzn-tls-version</code> and
+    /// <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated
+    /// TLS version and cipher suite, are added to the client request before sending it to the
+    /// target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol
+    /// version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header
+    /// has information about the cipher suite negotiated with the client. Both headers are in
+    /// OpenSSL format. The possible values for the attribute are <code>true</code> and
     /// <code>false</code>. The default is <code>false</code>.</p>
     /// </li>
     /// <li>
@@ -3809,14 +3887,14 @@ pub mod load_balancer_attribute {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates whether the two headers (<code>x-amzn-tls-version</code> and
-        /// <code>x-amzn-tls-cipher-suite</code>), which contain information about
-        /// the negotiated TLS version and cipher suite, are added to the client request
-        /// before sending it to the target. The <code>x-amzn-tls-version</code> header
-        /// has information about the TLS protocol version negotiated with the client,
-        /// and the <code>x-amzn-tls-cipher-suite</code> header has information about
-        /// the cipher suite negotiated with the client. Both headers are in OpenSSL
-        /// format. The possible values for the attribute are <code>true</code> and
+        /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
+        /// whether the two headers (<code>x-amzn-tls-version</code> and
+        /// <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated
+        /// TLS version and cipher suite, are added to the client request before sending it to the
+        /// target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol
+        /// version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header
+        /// has information about the cipher suite negotiated with the client. Both headers are in
+        /// OpenSSL format. The possible values for the attribute are <code>true</code> and
         /// <code>false</code>. The default is <code>false</code>.</p>
         /// </li>
         /// <li>
@@ -4688,6 +4766,10 @@ pub struct SslPolicy {
     pub ciphers: std::option::Option<std::vec::Vec<crate::model::Cipher>>,
     /// <p>The name of the policy.</p>
     pub name: std::option::Option<std::string::String>,
+    /// <p>
+    /// The supported load balancers.
+    /// </p>
+    pub supported_load_balancer_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for SslPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4695,6 +4777,10 @@ impl std::fmt::Debug for SslPolicy {
         formatter.field("ssl_protocols", &self.ssl_protocols);
         formatter.field("ciphers", &self.ciphers);
         formatter.field("name", &self.name);
+        formatter.field(
+            "supported_load_balancer_types",
+            &self.supported_load_balancer_types,
+        );
         formatter.finish()
     }
 }
@@ -4707,6 +4793,8 @@ pub mod ssl_policy {
         pub(crate) ssl_protocols: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) ciphers: std::option::Option<std::vec::Vec<crate::model::Cipher>>,
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) supported_load_balancer_types:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         pub fn ssl_protocols(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4744,12 +4832,29 @@ pub mod ssl_policy {
             self.name = input;
             self
         }
+        pub fn supported_load_balancer_types(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.supported_load_balancer_types.unwrap_or_default();
+            v.push(input.into());
+            self.supported_load_balancer_types = Some(v);
+            self
+        }
+        pub fn set_supported_load_balancer_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_load_balancer_types = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SslPolicy`](crate::model::SslPolicy)
         pub fn build(self) -> crate::model::SslPolicy {
             crate::model::SslPolicy {
                 ssl_protocols: self.ssl_protocols,
                 ciphers: self.ciphers,
                 name: self.name,
+                supported_load_balancer_types: self.supported_load_balancer_types,
             }
         }
     }
@@ -4819,6 +4924,59 @@ impl Cipher {
     /// Creates a new builder-style object to manufacture [`Cipher`](crate::model::Cipher)
     pub fn builder() -> crate::model::cipher::Builder {
         crate::model::cipher::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum LoadBalancerTypeEnum {
+    Application,
+    Gateway,
+    Network,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for LoadBalancerTypeEnum {
+    fn from(s: &str) -> Self {
+        match s {
+            "application" => LoadBalancerTypeEnum::Application,
+            "gateway" => LoadBalancerTypeEnum::Gateway,
+            "network" => LoadBalancerTypeEnum::Network,
+            other => LoadBalancerTypeEnum::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for LoadBalancerTypeEnum {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LoadBalancerTypeEnum::from(s))
+    }
+}
+impl LoadBalancerTypeEnum {
+    pub fn as_str(&self) -> &str {
+        match self {
+            LoadBalancerTypeEnum::Application => "application",
+            LoadBalancerTypeEnum::Gateway => "gateway",
+            LoadBalancerTypeEnum::Network => "network",
+            LoadBalancerTypeEnum::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["application", "gateway", "network"]
+    }
+}
+impl AsRef<str> for LoadBalancerTypeEnum {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -5091,59 +5249,6 @@ impl LoadBalancer {
     /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::model::LoadBalancer)
     pub fn builder() -> crate::model::load_balancer::Builder {
         crate::model::load_balancer::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum LoadBalancerTypeEnum {
-    Application,
-    Gateway,
-    Network,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for LoadBalancerTypeEnum {
-    fn from(s: &str) -> Self {
-        match s {
-            "application" => LoadBalancerTypeEnum::Application,
-            "gateway" => LoadBalancerTypeEnum::Gateway,
-            "network" => LoadBalancerTypeEnum::Network,
-            other => LoadBalancerTypeEnum::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for LoadBalancerTypeEnum {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LoadBalancerTypeEnum::from(s))
-    }
-}
-impl LoadBalancerTypeEnum {
-    pub fn as_str(&self) -> &str {
-        match self {
-            LoadBalancerTypeEnum::Application => "application",
-            LoadBalancerTypeEnum::Gateway => "gateway",
-            LoadBalancerTypeEnum::Network => "network",
-            LoadBalancerTypeEnum::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["application", "gateway", "network"]
-    }
-}
-impl AsRef<str> for LoadBalancerTypeEnum {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 

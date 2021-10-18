@@ -824,7 +824,7 @@ mod create_multipart_upload_request_test {
         assert_eq!(http_request.method(), "POST");
         assert_eq!(http_request.uri().path(), "/test-bucket/object.txt");
         let expected_query_params = &["uploads", "x-id=CreateMultipartUpload"];
-        protocol_test_helpers::assert_ok(protocol_test_helpers::validate_query_string(
+        smithy_protocol_test::assert_ok(smithy_protocol_test::validate_query_string(
             &http_request,
             expected_query_params,
         ));
@@ -5140,13 +5140,13 @@ mod put_bucket_lifecycle_configuration_request_test {
         assert_eq!(http_request.method(), "PUT");
         assert_eq!(http_request.uri().path(), "/test-bucket");
         let expected_headers = &[("content-md5", "sUu+uAZPkTtAxJdaA+9uSg==")];
-        protocol_test_helpers::assert_ok(protocol_test_helpers::validate_headers(
+        smithy_protocol_test::assert_ok(smithy_protocol_test::validate_headers(
             &http_request,
             expected_headers,
         ));
         let body = http_request.body().bytes().expect("body should be strict");
-        protocol_test_helpers::assert_ok(
-        protocol_test_helpers::validate_body(&body, "<LifecycleConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n    <Rule xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n        <Expiration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n            <Days xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">1</Days>\n        </Expiration>\n        <ID xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">Expire</ID>\n        <Status xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">Enabled</Status>\n    </Rule>\n</LifecycleConfiguration>\n", protocol_test_helpers::MediaType::from("application/xml"))
+        smithy_protocol_test::assert_ok(
+        smithy_protocol_test::validate_body(&body, "<LifecycleConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n    <Rule xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n        <Expiration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n            <Days xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">1</Days>\n        </Expiration>\n        <ID xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">Expire</ID>\n        <Status xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">Enabled</Status>\n    </Rule>\n</LifecycleConfiguration>\n", smithy_protocol_test::MediaType::from("application/xml"))
         );
     }
 }
@@ -6084,7 +6084,7 @@ mod put_object_request_test {
         assert_eq!(http_request.method(), "PUT");
         assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
         let expected_headers = &[("content-type", "text/html")];
-        protocol_test_helpers::assert_ok(protocol_test_helpers::validate_headers(
+        smithy_protocol_test::assert_ok(smithy_protocol_test::validate_headers(
             &http_request,
             expected_headers,
         ));
@@ -6109,7 +6109,7 @@ mod put_object_request_test {
         assert_eq!(http_request.method(), "PUT");
         assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
         let expected_headers = &[("content-length", "2")];
-        protocol_test_helpers::assert_ok(protocol_test_helpers::validate_headers(
+        smithy_protocol_test::assert_ok(smithy_protocol_test::validate_headers(
             &http_request,
             expected_headers,
         ));

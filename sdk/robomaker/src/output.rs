@@ -114,7 +114,8 @@ pub struct UpdateSimulationApplicationOutput {
     pub last_updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The revision id of the simulation application.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The object that contains the Docker image URI used for your simulation application.</p>
+    /// <p>The object that contains the Docker image URI used for your simulation
+    /// application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for UpdateSimulationApplicationOutput {
@@ -253,7 +254,8 @@ pub mod update_simulation_application_output {
             self.revision_id = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used for your simulation application.</p>
+        /// <p>The object that contains the Docker image URI used for your simulation
+        /// application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
@@ -4050,9 +4052,11 @@ pub struct DescribeSimulationApplicationOutput {
     /// <p>The list of all tags added to the specified simulation application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
+    /// <p>The object that contains the Docker image URI used to create the simulation
+    /// application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
-    /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
+    /// <p>A SHA256 identifier for the Docker image that you use for your simulation
+    /// application.</p>
     pub image_digest: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeSimulationApplicationOutput {
@@ -4216,7 +4220,8 @@ pub mod describe_simulation_application_output {
             self.tags = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
+        /// <p>The object that contains the Docker image URI used to create the simulation
+        /// application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
@@ -4228,7 +4233,8 @@ pub mod describe_simulation_application_output {
             self.environment = input;
             self
         }
-        /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
+        /// <p>A SHA256 identifier for the Docker image that you use for your simulation
+        /// application.</p>
         pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_digest = Some(input.into());
             self
@@ -4284,7 +4290,8 @@ pub struct DescribeRobotApplicationOutput {
     /// <p>The list of all tags added to the specified robot application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The object that contains the Docker image URI used to create the robot application.</p>
+    /// <p>The object that contains the Docker image URI used to create the robot
+    /// application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
     pub image_digest: std::option::Option<std::string::String>,
@@ -4418,7 +4425,8 @@ pub mod describe_robot_application_output {
             self.tags = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used to create the robot application.</p>
+        /// <p>The object that contains the Docker image URI used to create the robot
+        /// application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
@@ -6473,7 +6481,8 @@ pub struct CreateSimulationApplicationVersionOutput {
     pub last_updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The revision ID of the simulation application.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
+    /// <p>The object that contains the Docker image URI used to create the simulation
+    /// application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for CreateSimulationApplicationVersionOutput {
@@ -6612,7 +6621,8 @@ pub mod create_simulation_application_version_output {
             self.revision_id = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
+        /// <p>The object that contains the Docker image URI used to create the simulation
+        /// application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
@@ -6673,7 +6683,8 @@ pub struct CreateSimulationApplicationOutput {
     /// <p>The list of all tags added to the simulation application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The object that contains the Docker image URI that you used to create your simulation application.</p>
+    /// <p>The object that contains the Docker image URI that you used to create your simulation
+    /// application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for CreateSimulationApplicationOutput {
@@ -6835,7 +6846,8 @@ pub mod create_simulation_application_output {
             self.tags = input;
             self
         }
-        /// <p>The object that contains the Docker image URI that you used to create your simulation application.</p>
+        /// <p>The object that contains the Docker image URI that you used to create your simulation
+        /// application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
@@ -6890,7 +6902,8 @@ pub struct CreateRobotApplicationVersionOutput {
     pub last_updated_at: std::option::Option<smithy_types::Instant>,
     /// <p>The revision id of the robot application.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The object that contains the Docker image URI used to create your robot application.</p>
+    /// <p>The object that contains the Docker image URI used to create your robot
+    /// application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for CreateRobotApplicationVersionOutput {
@@ -6997,7 +7010,8 @@ pub mod create_robot_application_version_output {
             self.revision_id = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used to create your robot application.</p>
+        /// <p>The object that contains the Docker image URI used to create your robot
+        /// application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
@@ -7052,7 +7066,8 @@ pub struct CreateRobotApplicationOutput {
     /// <p>The list of all tags added to the robot application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
+    /// <p>An object that contains the Docker image URI used to a create your robot
+    /// application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl std::fmt::Debug for CreateRobotApplicationOutput {
@@ -7182,7 +7197,8 @@ pub mod create_robot_application_output {
             self.tags = input;
             self
         }
-        /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
+        /// <p>An object that contains the Docker image URI used to a create your robot
+        /// application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self

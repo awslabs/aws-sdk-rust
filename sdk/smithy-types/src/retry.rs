@@ -5,6 +5,10 @@
 
 //! This module defines types that describe when to retry given a response.
 
+use std::borrow::Cow;
+use std::fmt::{Display, Formatter};
+use std::num::ParseIntError;
+use std::str::FromStr;
 use std::time::Duration;
 
 #[derive(Clone, Copy, Eq, PartialEq, Debug)]
@@ -67,4 +71,289 @@ pub enum RetryKind {
 
     /// The response associated with this variant should not be retried.
     NotRetryable,
+}
+
+#[non_exhaustive]
+#[derive(Eq, PartialEq, Debug, Clone, Copy)]
+pub enum RetryMode {
+    Standard,
+    Adaptive,
+}
+
+const VALID_RETRY_MODES: &[RetryMode] = &[RetryMode::Standard];
+
+#[derive(Debug)]
+pub struct RetryModeParseErr(String);
+
+impl Display for RetryModeParseErr {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "error parsing string '{}' as RetryMode, valid options are: {:#?}",
+            self.0, VALID_RETRY_MODES
+        )
+    }
+}
+
+impl std::error::Error for RetryModeParseErr {}
+
+impl FromStr for RetryMode {
+    type Err = RetryModeParseErr;
+
+    fn from_str(string: &str) -> Result<Self, Self::Err> {
+        let string = string.trim();
+        // eq_ignore_ascii_case is OK here because the only strings we need to check for are ASCII
+        if string.eq_ignore_ascii_case("standard") {
+            Ok(RetryMode::Standard)
+        // TODO we can uncomment this once this issue is addressed: https://github.com/awslabs/aws-sdk-rust/issues/247
+        // } else if string.eq_ignore_ascii_case("adaptive") {
+        //     Ok(RetryMode::Adaptive)
+        } else {
+            Err(RetryModeParseErr(string.to_owned()))
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(Debug, Default, Clone, PartialEq)]
+pub struct RetryConfigBuilder {
+    pub mode: Option<RetryMode>,
+    pub max_attempts: Option<u32>,
+}
+
+impl RetryConfigBuilder {
+    pub fn new() -> Self {
+        Default::default()
+    }
+
+    pub fn set_mode(&mut self, retry_mode: Option<RetryMode>) -> &mut Self {
+        self.mode = retry_mode;
+        self
+    }
+
+    pub fn set_max_attempts(&mut self, max_attempts: Option<u32>) -> &mut Self {
+        self.max_attempts = max_attempts;
+        self
+    }
+
+    pub fn mode(mut self, mode: RetryMode) -> Self {
+        self.set_mode(Some(mode));
+        self
+    }
+
+    pub fn max_attempts(mut self, max_attempts: u32) -> Self {
+        self.set_max_attempts(Some(max_attempts));
+        self
+    }
+
+    /// Merge two builders together. Values from `other` will only be used as a fallback for values
+    /// from `self` Useful for merging configs from different sources together when you want to
+    /// handle "precedence" per value instead of at the config level
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use smithy_types::retry::{RetryMode, RetryConfigBuilder};
+    /// let a = RetryConfigBuilder::new().max_attempts(1);
+    /// let b = RetryConfigBuilder::new().max_attempts(5).mode(RetryMode::Adaptive);
+    /// let retry_config = a.merge_with(b).build();
+    /// // A's value take precedence over B's value
+    /// assert_eq!(retry_config.max_attempts(), 1);
+    /// // A never set a retry mode so B's value was used
+    /// assert_eq!(retry_config.mode(), RetryMode::Adaptive);
+    /// ```
+    pub fn merge_with(self, other: Self) -> Self {
+        Self {
+            mode: self.mode.or(other.mode),
+            max_attempts: self.max_attempts.or(other.max_attempts),
+        }
+    }
+
+    pub fn build(self) -> RetryConfig {
+        RetryConfig {
+            mode: self.mode.unwrap_or(RetryMode::Standard),
+            max_attempts: self.max_attempts.unwrap_or(3),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(Debug, Clone, PartialEq)]
+pub struct RetryConfig {
+    mode: RetryMode,
+    max_attempts: u32,
+}
+
+impl RetryConfig {
+    pub fn new() -> Self {
+        Default::default()
+    }
+
+    pub fn disabled() -> Self {
+        Self::default().with_max_attempts(1)
+    }
+
+    pub fn with_retry_mode(mut self, retry_mode: RetryMode) -> Self {
+        self.mode = retry_mode;
+        self
+    }
+
+    pub fn with_max_attempts(mut self, max_attempts: u32) -> Self {
+        self.max_attempts = max_attempts;
+        self
+    }
+
+    pub fn mode(&self) -> RetryMode {
+        self.mode
+    }
+
+    pub fn max_attempts(&self) -> u32 {
+        self.max_attempts
+    }
+}
+
+impl Default for RetryConfig {
+    fn default() -> Self {
+        Self {
+            mode: RetryMode::Standard,
+            max_attempts: 3,
+        }
+    }
+}
+
+#[derive(Debug)]
+pub enum RetryConfigErr {
+    InvalidRetryMode {
+        source: RetryModeParseErr,
+        set_by: Cow<'static, str>,
+    },
+    MaxAttemptsMustNotBeZero {
+        set_by: Cow<'static, str>,
+    },
+    FailedToParseMaxAttempts {
+        source: ParseIntError,
+        set_by: Cow<'static, str>,
+    },
+    AdaptiveModeIsNotSupported {
+        set_by: Cow<'static, str>,
+    },
+}
+
+impl Display for RetryConfigErr {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        use RetryConfigErr::*;
+        match self {
+            InvalidRetryMode { set_by, source } => {
+                write!(f, "invalid configuration set by {}: {}", set_by, source)
+            }
+            MaxAttemptsMustNotBeZero { set_by } => {
+                write!(f, "invalid configuration set by {}: It is invalid to set max attempts to 0. Unset it or set it to an integer greater than or equal to one.", set_by)
+            }
+            FailedToParseMaxAttempts { set_by, source } => {
+                write!(
+                    f,
+                    "failed to parse max attempts set by {}: {}",
+                    set_by, source
+                )
+            }
+            AdaptiveModeIsNotSupported { set_by } => {
+                write!(f, "invalid configuration set by {}: Setting retry mode to 'adaptive' is not yet supported. Unset it or set it to 'standard' mode.", set_by)
+            }
+        }
+    }
+}
+
+impl std::error::Error for RetryConfigErr {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        use RetryConfigErr::*;
+        match self {
+            InvalidRetryMode { source, .. } => Some(source),
+            FailedToParseMaxAttempts { source, .. } => Some(source),
+            _ => None,
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::retry::{RetryConfigBuilder, RetryMode};
+    use std::str::FromStr;
+
+    #[test]
+    fn retry_config_builder_merge_with_favors_self_values_over_other_values() {
+        let self_builder = RetryConfigBuilder::new()
+            .max_attempts(1)
+            .mode(RetryMode::Adaptive);
+        let other_builder = RetryConfigBuilder::new()
+            .max_attempts(5)
+            .mode(RetryMode::Standard);
+        let retry_config = self_builder.merge_with(other_builder).build();
+
+        assert_eq!(retry_config.max_attempts, 1);
+        assert_eq!(retry_config.mode, RetryMode::Adaptive);
+    }
+
+    #[test]
+    fn retry_mode_from_str_parses_valid_strings_regardless_of_casing() {
+        assert_eq!(
+            RetryMode::from_str("standard").ok(),
+            Some(RetryMode::Standard)
+        );
+        assert_eq!(
+            RetryMode::from_str("STANDARD").ok(),
+            Some(RetryMode::Standard)
+        );
+        assert_eq!(
+            RetryMode::from_str("StAnDaRd").ok(),
+            Some(RetryMode::Standard)
+        );
+        // assert_eq!(
+        //     RetryMode::from_str("adaptive").ok(),
+        //     Some(RetryMode::Adaptive)
+        // );
+        // assert_eq!(
+        //     RetryMode::from_str("ADAPTIVE").ok(),
+        //     Some(RetryMode::Adaptive)
+        // );
+        // assert_eq!(
+        //     RetryMode::from_str("aDaPtIvE").ok(),
+        //     Some(RetryMode::Adaptive)
+        // );
+    }
+
+    #[test]
+    fn retry_mode_from_str_ignores_whitespace_before_and_after() {
+        assert_eq!(
+            RetryMode::from_str("  standard ").ok(),
+            Some(RetryMode::Standard)
+        );
+        assert_eq!(
+            RetryMode::from_str("   STANDARD  ").ok(),
+            Some(RetryMode::Standard)
+        );
+        assert_eq!(
+            RetryMode::from_str("  StAnDaRd   ").ok(),
+            Some(RetryMode::Standard)
+        );
+        // assert_eq!(
+        //     RetryMode::from_str("  adaptive  ").ok(),
+        //     Some(RetryMode::Adaptive)
+        // );
+        // assert_eq!(
+        //     RetryMode::from_str("   ADAPTIVE ").ok(),
+        //     Some(RetryMode::Adaptive)
+        // );
+        // assert_eq!(
+        //     RetryMode::from_str("  aDaPtIvE    ").ok(),
+        //     Some(RetryMode::Adaptive)
+        // );
+    }
+
+    #[test]
+    fn retry_mode_from_str_wont_parse_invalid_strings() {
+        assert_eq!(RetryMode::from_str("std").ok(), None);
+        assert_eq!(RetryMode::from_str("aws").ok(), None);
+        assert_eq!(RetryMode::from_str("s t a n d a r d").ok(), None);
+        assert_eq!(RetryMode::from_str("a d a p t i v e").ok(), None);
+    }
 }

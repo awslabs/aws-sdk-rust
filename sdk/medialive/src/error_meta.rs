@@ -269,6 +269,43 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::ClaimDeviceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ClaimDeviceError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ClaimDeviceErrorKind::BadGatewayException(inner) => {
+                    Error::BadGatewayException(inner)
+                }
+                crate::error::ClaimDeviceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::ClaimDeviceErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::ClaimDeviceErrorKind::GatewayTimeoutException(inner) => {
+                    Error::GatewayTimeoutException(inner)
+                }
+                crate::error::ClaimDeviceErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::ClaimDeviceErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::ClaimDeviceErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::ClaimDeviceErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
+                }
+                crate::error::ClaimDeviceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::CreateChannelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

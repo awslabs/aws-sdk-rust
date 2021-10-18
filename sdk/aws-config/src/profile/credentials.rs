@@ -396,7 +396,16 @@ impl Builder {
                         .build(),
                 )
             });
-        // TODO: ECS, IMDS, and other named providers
+
+        named_providers
+            .entry("EcsContainer".into())
+            .or_insert_with(|| {
+                Arc::new(
+                    crate::ecs::EcsCredentialsProvider::builder()
+                        .configure(&conf)
+                        .build(),
+                )
+            });
         let factory = exec::named::NamedProviderFactory::new(named_providers);
         let connector = expect_connector(conf.default_connector());
         let core_client = aws_hyper::Client::new(connector.clone());

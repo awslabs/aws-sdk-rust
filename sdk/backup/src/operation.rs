@@ -311,6 +311,39 @@ impl smithy_http::response::ParseStrictResponse for DeleteBackupVaultAccessPolic
     }
 }
 
+/// <p>Deletes Backup Vault Lock from a backup vault specified by a backup vault
+/// name.</p>
+/// <p>If the Vault Lock configuration is immutable, then you cannot delete Vault Lock using
+/// API operations, and you will receive an <code>InvalidRequestException</code> if you attempt
+/// to do so. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault Lock</a> in the
+/// <i>Backup Developer Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteBackupVaultLockConfiguration {
+    _private: (),
+}
+impl DeleteBackupVaultLockConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteBackupVaultLockConfigurationInput`](crate::input::DeleteBackupVaultLockConfigurationInput)
+    pub fn builder() -> crate::input::delete_backup_vault_lock_configuration_input::Builder {
+        crate::input::delete_backup_vault_lock_configuration_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteBackupVaultLockConfiguration {
+    type Output = std::result::Result<
+        crate::output::DeleteBackupVaultLockConfigurationOutput,
+        crate::error::DeleteBackupVaultLockConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_backup_vault_lock_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_delete_backup_vault_lock_configuration_response(response)
+        }
+    }
+}
+
 /// <p>Deletes event notifications for the specified backup vault.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBackupVaultNotifications {
@@ -1485,6 +1518,38 @@ impl smithy_http::response::ParseStrictResponse for PutBackupVaultAccessPolicy {
             crate::operation_deser::parse_put_backup_vault_access_policy_error(response)
         } else {
             crate::operation_deser::parse_put_backup_vault_access_policy_response(response)
+        }
+    }
+}
+
+/// <p>Applies Backup Vault Lock to a backup vault, preventing attempts to delete
+/// any recovery point stored in or created in a backup vault. Vault Lock also prevents
+/// attempts to update the lifecycle policy that controls the retention period of any recovery
+/// point currently stored in a backup vault. If specified, Vault Lock enforces a minimum and
+/// maximum retention period for future backup and copy jobs that target a backup vault.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutBackupVaultLockConfiguration {
+    _private: (),
+}
+impl PutBackupVaultLockConfiguration {
+    /// Creates a new builder-style object to manufacture [`PutBackupVaultLockConfigurationInput`](crate::input::PutBackupVaultLockConfigurationInput)
+    pub fn builder() -> crate::input::put_backup_vault_lock_configuration_input::Builder {
+        crate::input::put_backup_vault_lock_configuration_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for PutBackupVaultLockConfiguration {
+    type Output = std::result::Result<
+        crate::output::PutBackupVaultLockConfigurationOutput,
+        crate::error::PutBackupVaultLockConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_backup_vault_lock_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_put_backup_vault_lock_configuration_response(response)
         }
     }
 }

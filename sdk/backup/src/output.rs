@@ -869,6 +869,35 @@ impl PutBackupVaultNotificationsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutBackupVaultLockConfigurationOutput {}
+impl std::fmt::Debug for PutBackupVaultLockConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutBackupVaultLockConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutBackupVaultLockConfigurationOutput`](crate::output::PutBackupVaultLockConfigurationOutput)
+pub mod put_backup_vault_lock_configuration_output {
+    /// A builder for [`PutBackupVaultLockConfigurationOutput`](crate::output::PutBackupVaultLockConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutBackupVaultLockConfigurationOutput`](crate::output::PutBackupVaultLockConfigurationOutput)
+        pub fn build(self) -> crate::output::PutBackupVaultLockConfigurationOutput {
+            crate::output::PutBackupVaultLockConfigurationOutput {}
+        }
+    }
+}
+impl PutBackupVaultLockConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutBackupVaultLockConfigurationOutput`](crate::output::PutBackupVaultLockConfigurationOutput)
+    pub fn builder() -> crate::output::put_backup_vault_lock_configuration_output::Builder {
+        crate::output::put_backup_vault_lock_configuration_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBackupVaultAccessPolicyOutput {}
 impl std::fmt::Debug for PutBackupVaultAccessPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4264,6 +4293,40 @@ pub struct DescribeBackupVaultOutput {
     pub creator_request_id: std::option::Option<std::string::String>,
     /// <p>The number of recovery points that are stored in a backup vault.</p>
     pub number_of_recovery_points: i64,
+    /// <p>A Boolean that indicates whether Backup Vault Lock is currently protecting
+    /// the backup vault. <code>True</code> means that Vault Lock causes delete or update
+    /// operations on the recovery points stored in the vault to fail.</p>
+    pub locked: std::option::Option<bool>,
+    /// <p>The Backup Vault Lock setting that specifies the minimum retention period
+    /// that the vault retains its recovery points. If this parameter is not specified, Vault Lock
+    /// does not enforce a minimum retention period.</p>
+    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a
+    /// retention period equal to or longer than the minimum retention period. If the job's
+    /// retention period is shorter than that minimum retention period, then the vault fails the
+    /// backup or copy job, and you should either modify your lifecycle settings or use a different
+    /// vault. Recovery points already stored in the vault prior to Vault Lock are not
+    /// affected.</p>
+    pub min_retention_days: std::option::Option<i64>,
+    /// <p>The Backup Vault Lock setting that specifies the maximum retention period
+    /// that the vault retains its recovery points. If this parameter is not specified, Vault Lock
+    /// does not enforce a maximum retention period on the recovery points in the vault (allowing
+    /// indefinite storage).</p>
+    /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a
+    /// retention period equal to or shorter than the maximum retention period. If the job's
+    /// retention period is longer than that maximum retention period, then the vault fails the
+    /// backup or copy job, and you should either modify your lifecycle settings or use a different
+    /// vault. Recovery points already stored in the vault prior to Vault Lock are not
+    /// affected.</p>
+    pub max_retention_days: std::option::Option<i64>,
+    /// <p>The date and time when Backup Vault Lock configuration cannot be changed or
+    /// deleted.</p>
+    /// <p>If you applied Vault Lock to your vault without specifying a lock date, you can change
+    /// any of your Vault Lock settings, or delete Vault Lock from the vault entirely, at any
+    /// time.</p>
+    /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
+    /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+    /// 12:11:30.087 AM.</p>
+    pub lock_date: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for DescribeBackupVaultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4274,6 +4337,10 @@ impl std::fmt::Debug for DescribeBackupVaultOutput {
         formatter.field("creation_date", &self.creation_date);
         formatter.field("creator_request_id", &self.creator_request_id);
         formatter.field("number_of_recovery_points", &self.number_of_recovery_points);
+        formatter.field("locked", &self.locked);
+        formatter.field("min_retention_days", &self.min_retention_days);
+        formatter.field("max_retention_days", &self.max_retention_days);
+        formatter.field("lock_date", &self.lock_date);
         formatter.finish()
     }
 }
@@ -4289,6 +4356,10 @@ pub mod describe_backup_vault_output {
         pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
         pub(crate) number_of_recovery_points: std::option::Option<i64>,
+        pub(crate) locked: std::option::Option<bool>,
+        pub(crate) min_retention_days: std::option::Option<i64>,
+        pub(crate) max_retention_days: std::option::Option<i64>,
+        pub(crate) lock_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -4368,6 +4439,68 @@ pub mod describe_backup_vault_output {
             self.number_of_recovery_points = input;
             self
         }
+        /// <p>A Boolean that indicates whether Backup Vault Lock is currently protecting
+        /// the backup vault. <code>True</code> means that Vault Lock causes delete or update
+        /// operations on the recovery points stored in the vault to fail.</p>
+        pub fn locked(mut self, input: bool) -> Self {
+            self.locked = Some(input);
+            self
+        }
+        pub fn set_locked(mut self, input: std::option::Option<bool>) -> Self {
+            self.locked = input;
+            self
+        }
+        /// <p>The Backup Vault Lock setting that specifies the minimum retention period
+        /// that the vault retains its recovery points. If this parameter is not specified, Vault Lock
+        /// does not enforce a minimum retention period.</p>
+        /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a
+        /// retention period equal to or longer than the minimum retention period. If the job's
+        /// retention period is shorter than that minimum retention period, then the vault fails the
+        /// backup or copy job, and you should either modify your lifecycle settings or use a different
+        /// vault. Recovery points already stored in the vault prior to Vault Lock are not
+        /// affected.</p>
+        pub fn min_retention_days(mut self, input: i64) -> Self {
+            self.min_retention_days = Some(input);
+            self
+        }
+        pub fn set_min_retention_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.min_retention_days = input;
+            self
+        }
+        /// <p>The Backup Vault Lock setting that specifies the maximum retention period
+        /// that the vault retains its recovery points. If this parameter is not specified, Vault Lock
+        /// does not enforce a maximum retention period on the recovery points in the vault (allowing
+        /// indefinite storage).</p>
+        /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a
+        /// retention period equal to or shorter than the maximum retention period. If the job's
+        /// retention period is longer than that maximum retention period, then the vault fails the
+        /// backup or copy job, and you should either modify your lifecycle settings or use a different
+        /// vault. Recovery points already stored in the vault prior to Vault Lock are not
+        /// affected.</p>
+        pub fn max_retention_days(mut self, input: i64) -> Self {
+            self.max_retention_days = Some(input);
+            self
+        }
+        pub fn set_max_retention_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.max_retention_days = input;
+            self
+        }
+        /// <p>The date and time when Backup Vault Lock configuration cannot be changed or
+        /// deleted.</p>
+        /// <p>If you applied Vault Lock to your vault without specifying a lock date, you can change
+        /// any of your Vault Lock settings, or delete Vault Lock from the vault entirely, at any
+        /// time.</p>
+        /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
+        /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+        /// 12:11:30.087 AM.</p>
+        pub fn lock_date(mut self, input: smithy_types::Instant) -> Self {
+            self.lock_date = Some(input);
+            self
+        }
+        pub fn set_lock_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.lock_date = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeBackupVaultOutput`](crate::output::DescribeBackupVaultOutput)
         pub fn build(self) -> crate::output::DescribeBackupVaultOutput {
             crate::output::DescribeBackupVaultOutput {
@@ -4377,6 +4510,10 @@ pub mod describe_backup_vault_output {
                 creation_date: self.creation_date,
                 creator_request_id: self.creator_request_id,
                 number_of_recovery_points: self.number_of_recovery_points.unwrap_or_default(),
+                locked: self.locked,
+                min_retention_days: self.min_retention_days,
+                max_retention_days: self.max_retention_days,
+                lock_date: self.lock_date,
             }
         }
     }
@@ -4915,6 +5052,35 @@ impl DeleteBackupVaultNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupVaultNotificationsOutput`](crate::output::DeleteBackupVaultNotificationsOutput)
     pub fn builder() -> crate::output::delete_backup_vault_notifications_output::Builder {
         crate::output::delete_backup_vault_notifications_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteBackupVaultLockConfigurationOutput {}
+impl std::fmt::Debug for DeleteBackupVaultLockConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteBackupVaultLockConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteBackupVaultLockConfigurationOutput`](crate::output::DeleteBackupVaultLockConfigurationOutput)
+pub mod delete_backup_vault_lock_configuration_output {
+    /// A builder for [`DeleteBackupVaultLockConfigurationOutput`](crate::output::DeleteBackupVaultLockConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteBackupVaultLockConfigurationOutput`](crate::output::DeleteBackupVaultLockConfigurationOutput)
+        pub fn build(self) -> crate::output::DeleteBackupVaultLockConfigurationOutput {
+            crate::output::DeleteBackupVaultLockConfigurationOutput {}
+        }
+    }
+}
+impl DeleteBackupVaultLockConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBackupVaultLockConfigurationOutput`](crate::output::DeleteBackupVaultLockConfigurationOutput)
+    pub fn builder() -> crate::output::delete_backup_vault_lock_configuration_output::Builder {
+        crate::output::delete_backup_vault_lock_configuration_output::Builder::default()
     }
 }
 

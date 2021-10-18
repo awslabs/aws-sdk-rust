@@ -11,6 +11,7 @@ pub enum BuildSuggestersErrorKind {
     BaseException(crate::error::BaseException),
     InternalException(crate::error::InternalException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -20,6 +21,7 @@ impl std::fmt::Display for BuildSuggestersError {
             BuildSuggestersErrorKind::BaseException(_inner) => _inner.fmt(f),
             BuildSuggestersErrorKind::InternalException(_inner) => _inner.fmt(f),
             BuildSuggestersErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            BuildSuggestersErrorKind::ValidationException(_inner) => _inner.fmt(f),
             BuildSuggestersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -80,6 +82,9 @@ impl BuildSuggestersError {
             BuildSuggestersErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, BuildSuggestersErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for BuildSuggestersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -87,6 +92,7 @@ impl std::error::Error for BuildSuggestersError {
             BuildSuggestersErrorKind::BaseException(_inner) => Some(_inner),
             BuildSuggestersErrorKind::InternalException(_inner) => Some(_inner),
             BuildSuggestersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            BuildSuggestersErrorKind::ValidationException(_inner) => Some(_inner),
             BuildSuggestersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -211,6 +217,7 @@ pub enum DefineAnalysisSchemeErrorKind {
     InvalidTypeException(crate::error::InvalidTypeException),
     LimitExceededException(crate::error::LimitExceededException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -222,6 +229,7 @@ impl std::fmt::Display for DefineAnalysisSchemeError {
             DefineAnalysisSchemeErrorKind::InvalidTypeException(_inner) => _inner.fmt(f),
             DefineAnalysisSchemeErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DefineAnalysisSchemeErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DefineAnalysisSchemeErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DefineAnalysisSchemeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -297,6 +305,12 @@ impl DefineAnalysisSchemeError {
             DefineAnalysisSchemeErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DefineAnalysisSchemeErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for DefineAnalysisSchemeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -306,6 +320,7 @@ impl std::error::Error for DefineAnalysisSchemeError {
             DefineAnalysisSchemeErrorKind::InvalidTypeException(_inner) => Some(_inner),
             DefineAnalysisSchemeErrorKind::LimitExceededException(_inner) => Some(_inner),
             DefineAnalysisSchemeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DefineAnalysisSchemeErrorKind::ValidationException(_inner) => Some(_inner),
             DefineAnalysisSchemeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -325,6 +340,7 @@ pub enum DefineExpressionErrorKind {
     InvalidTypeException(crate::error::InvalidTypeException),
     LimitExceededException(crate::error::LimitExceededException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -336,6 +352,7 @@ impl std::fmt::Display for DefineExpressionError {
             DefineExpressionErrorKind::InvalidTypeException(_inner) => _inner.fmt(f),
             DefineExpressionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DefineExpressionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DefineExpressionErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DefineExpressionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -408,6 +425,12 @@ impl DefineExpressionError {
             DefineExpressionErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DefineExpressionErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for DefineExpressionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -417,6 +440,7 @@ impl std::error::Error for DefineExpressionError {
             DefineExpressionErrorKind::InvalidTypeException(_inner) => Some(_inner),
             DefineExpressionErrorKind::LimitExceededException(_inner) => Some(_inner),
             DefineExpressionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DefineExpressionErrorKind::ValidationException(_inner) => Some(_inner),
             DefineExpressionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -436,6 +460,7 @@ pub enum DefineIndexFieldErrorKind {
     InvalidTypeException(crate::error::InvalidTypeException),
     LimitExceededException(crate::error::LimitExceededException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -447,6 +472,7 @@ impl std::fmt::Display for DefineIndexFieldError {
             DefineIndexFieldErrorKind::InvalidTypeException(_inner) => _inner.fmt(f),
             DefineIndexFieldErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DefineIndexFieldErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DefineIndexFieldErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DefineIndexFieldErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -519,6 +545,12 @@ impl DefineIndexFieldError {
             DefineIndexFieldErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DefineIndexFieldErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for DefineIndexFieldError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -528,6 +560,7 @@ impl std::error::Error for DefineIndexFieldError {
             DefineIndexFieldErrorKind::InvalidTypeException(_inner) => Some(_inner),
             DefineIndexFieldErrorKind::LimitExceededException(_inner) => Some(_inner),
             DefineIndexFieldErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DefineIndexFieldErrorKind::ValidationException(_inner) => Some(_inner),
             DefineIndexFieldErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -547,6 +580,7 @@ pub enum DefineSuggesterErrorKind {
     InvalidTypeException(crate::error::InvalidTypeException),
     LimitExceededException(crate::error::LimitExceededException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -558,6 +592,7 @@ impl std::fmt::Display for DefineSuggesterError {
             DefineSuggesterErrorKind::InvalidTypeException(_inner) => _inner.fmt(f),
             DefineSuggesterErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DefineSuggesterErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DefineSuggesterErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DefineSuggesterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -630,6 +665,9 @@ impl DefineSuggesterError {
             DefineSuggesterErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DefineSuggesterErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for DefineSuggesterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -639,6 +677,7 @@ impl std::error::Error for DefineSuggesterError {
             DefineSuggesterErrorKind::InvalidTypeException(_inner) => Some(_inner),
             DefineSuggesterErrorKind::LimitExceededException(_inner) => Some(_inner),
             DefineSuggesterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DefineSuggesterErrorKind::ValidationException(_inner) => Some(_inner),
             DefineSuggesterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -657,6 +696,7 @@ pub enum DeleteAnalysisSchemeErrorKind {
     InternalException(crate::error::InternalException),
     InvalidTypeException(crate::error::InvalidTypeException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -667,6 +707,7 @@ impl std::fmt::Display for DeleteAnalysisSchemeError {
             DeleteAnalysisSchemeErrorKind::InternalException(_inner) => _inner.fmt(f),
             DeleteAnalysisSchemeErrorKind::InvalidTypeException(_inner) => _inner.fmt(f),
             DeleteAnalysisSchemeErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteAnalysisSchemeErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteAnalysisSchemeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -736,6 +777,12 @@ impl DeleteAnalysisSchemeError {
             DeleteAnalysisSchemeErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAnalysisSchemeErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteAnalysisSchemeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -744,6 +791,7 @@ impl std::error::Error for DeleteAnalysisSchemeError {
             DeleteAnalysisSchemeErrorKind::InternalException(_inner) => Some(_inner),
             DeleteAnalysisSchemeErrorKind::InvalidTypeException(_inner) => Some(_inner),
             DeleteAnalysisSchemeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteAnalysisSchemeErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteAnalysisSchemeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -846,6 +894,7 @@ pub enum DeleteExpressionErrorKind {
     InternalException(crate::error::InternalException),
     InvalidTypeException(crate::error::InvalidTypeException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -856,6 +905,7 @@ impl std::fmt::Display for DeleteExpressionError {
             DeleteExpressionErrorKind::InternalException(_inner) => _inner.fmt(f),
             DeleteExpressionErrorKind::InvalidTypeException(_inner) => _inner.fmt(f),
             DeleteExpressionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteExpressionErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteExpressionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -922,6 +972,12 @@ impl DeleteExpressionError {
             DeleteExpressionErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteExpressionErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteExpressionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -930,6 +986,7 @@ impl std::error::Error for DeleteExpressionError {
             DeleteExpressionErrorKind::InternalException(_inner) => Some(_inner),
             DeleteExpressionErrorKind::InvalidTypeException(_inner) => Some(_inner),
             DeleteExpressionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteExpressionErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteExpressionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -948,6 +1005,7 @@ pub enum DeleteIndexFieldErrorKind {
     InternalException(crate::error::InternalException),
     InvalidTypeException(crate::error::InvalidTypeException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -958,6 +1016,7 @@ impl std::fmt::Display for DeleteIndexFieldError {
             DeleteIndexFieldErrorKind::InternalException(_inner) => _inner.fmt(f),
             DeleteIndexFieldErrorKind::InvalidTypeException(_inner) => _inner.fmt(f),
             DeleteIndexFieldErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteIndexFieldErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteIndexFieldErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1024,6 +1083,12 @@ impl DeleteIndexFieldError {
             DeleteIndexFieldErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteIndexFieldErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteIndexFieldError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1032,6 +1097,7 @@ impl std::error::Error for DeleteIndexFieldError {
             DeleteIndexFieldErrorKind::InternalException(_inner) => Some(_inner),
             DeleteIndexFieldErrorKind::InvalidTypeException(_inner) => Some(_inner),
             DeleteIndexFieldErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteIndexFieldErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteIndexFieldErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1050,6 +1116,7 @@ pub enum DeleteSuggesterErrorKind {
     InternalException(crate::error::InternalException),
     InvalidTypeException(crate::error::InvalidTypeException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1060,6 +1127,7 @@ impl std::fmt::Display for DeleteSuggesterError {
             DeleteSuggesterErrorKind::InternalException(_inner) => _inner.fmt(f),
             DeleteSuggesterErrorKind::InvalidTypeException(_inner) => _inner.fmt(f),
             DeleteSuggesterErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteSuggesterErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteSuggesterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1126,6 +1194,9 @@ impl DeleteSuggesterError {
             DeleteSuggesterErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, DeleteSuggesterErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for DeleteSuggesterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1134,6 +1205,7 @@ impl std::error::Error for DeleteSuggesterError {
             DeleteSuggesterErrorKind::InternalException(_inner) => Some(_inner),
             DeleteSuggesterErrorKind::InvalidTypeException(_inner) => Some(_inner),
             DeleteSuggesterErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteSuggesterErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteSuggesterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2081,6 +2153,7 @@ pub enum IndexDocumentsErrorKind {
     BaseException(crate::error::BaseException),
     InternalException(crate::error::InternalException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2090,6 +2163,7 @@ impl std::fmt::Display for IndexDocumentsError {
             IndexDocumentsErrorKind::BaseException(_inner) => _inner.fmt(f),
             IndexDocumentsErrorKind::InternalException(_inner) => _inner.fmt(f),
             IndexDocumentsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            IndexDocumentsErrorKind::ValidationException(_inner) => _inner.fmt(f),
             IndexDocumentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2150,6 +2224,9 @@ impl IndexDocumentsError {
             IndexDocumentsErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, IndexDocumentsErrorKind::ValidationException(_))
+    }
 }
 impl std::error::Error for IndexDocumentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2157,6 +2234,7 @@ impl std::error::Error for IndexDocumentsError {
             IndexDocumentsErrorKind::BaseException(_inner) => Some(_inner),
             IndexDocumentsErrorKind::InternalException(_inner) => Some(_inner),
             IndexDocumentsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            IndexDocumentsErrorKind::ValidationException(_inner) => Some(_inner),
             IndexDocumentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2530,6 +2608,7 @@ pub enum UpdateScalingParametersErrorKind {
     InvalidTypeException(crate::error::InvalidTypeException),
     LimitExceededException(crate::error::LimitExceededException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2541,6 +2620,7 @@ impl std::fmt::Display for UpdateScalingParametersError {
             UpdateScalingParametersErrorKind::InvalidTypeException(_inner) => _inner.fmt(f),
             UpdateScalingParametersErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateScalingParametersErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateScalingParametersErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateScalingParametersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2619,6 +2699,12 @@ impl UpdateScalingParametersError {
             UpdateScalingParametersErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateScalingParametersErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for UpdateScalingParametersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2628,6 +2714,7 @@ impl std::error::Error for UpdateScalingParametersError {
             UpdateScalingParametersErrorKind::InvalidTypeException(_inner) => Some(_inner),
             UpdateScalingParametersErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateScalingParametersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateScalingParametersErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateScalingParametersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2647,6 +2734,7 @@ pub enum UpdateServiceAccessPoliciesErrorKind {
     InvalidTypeException(crate::error::InvalidTypeException),
     LimitExceededException(crate::error::LimitExceededException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2660,6 +2748,7 @@ impl std::fmt::Display for UpdateServiceAccessPoliciesError {
             UpdateServiceAccessPoliciesErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
+            UpdateServiceAccessPoliciesErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateServiceAccessPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2738,6 +2827,12 @@ impl UpdateServiceAccessPoliciesError {
             UpdateServiceAccessPoliciesErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServiceAccessPoliciesErrorKind::ValidationException(_)
+        )
+    }
 }
 impl std::error::Error for UpdateServiceAccessPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2747,8 +2842,85 @@ impl std::error::Error for UpdateServiceAccessPoliciesError {
             UpdateServiceAccessPoliciesErrorKind::InvalidTypeException(_inner) => Some(_inner),
             UpdateServiceAccessPoliciesErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateServiceAccessPoliciesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateServiceAccessPoliciesErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateServiceAccessPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
+    }
+}
+
+/// <p>The request was rejected because it has invalid parameters.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ValidationException {
+    /// <p>A machine-parsable string error or warning code.</p>
+    pub code: std::option::Option<std::string::String>,
+    /// <p>A human-readable string error or warning message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValidationException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ValidationException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ValidationException")?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ValidationException {}
+/// See [`ValidationException`](crate::error::ValidationException)
+pub mod validation_exception {
+    /// A builder for [`ValidationException`](crate::error::ValidationException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A machine-parsable string error or warning code.</p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p>A human-readable string error or warning message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException)
+        pub fn build(self) -> crate::error::ValidationException {
+            crate::error::ValidationException {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl ValidationException {
+    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException)
+    pub fn builder() -> crate::error::validation_exception::Builder {
+        crate::error::validation_exception::Builder::default()
     }
 }
 
@@ -2777,8 +2949,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
@@ -2853,8 +3025,8 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
@@ -2929,8 +3101,8 @@ impl InvalidTypeException {
 impl std::fmt::Display for InvalidTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTypeException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -3006,8 +3178,8 @@ impl InternalException {
 impl std::fmt::Display for InternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -3082,8 +3254,8 @@ impl BaseException {
 impl std::fmt::Display for BaseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BaseException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -3130,82 +3302,6 @@ impl BaseException {
     /// Creates a new builder-style object to manufacture [`BaseException`](crate::error::BaseException)
     pub fn builder() -> crate::error::base_exception::Builder {
         crate::error::base_exception::Builder::default()
-    }
-}
-
-/// <p>The request was rejected because it has invalid parameters.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ValidationException {
-    /// <p>A machine-parsable string error or warning code.</p>
-    pub code: std::option::Option<std::string::String>,
-    /// <p>A human-readable string error or warning message.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ValidationException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ValidationException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ValidationException {}
-/// See [`ValidationException`](crate::error::ValidationException)
-pub mod validation_exception {
-    /// A builder for [`ValidationException`](crate::error::ValidationException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) code: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A machine-parsable string error or warning code.</p>
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        /// <p>A human-readable string error or warning message.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException)
-        pub fn build(self) -> crate::error::ValidationException {
-            crate::error::ValidationException {
-                code: self.code,
-                message: self.message,
-            }
-        }
-    }
-}
-impl ValidationException {
-    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException)
-    pub fn builder() -> crate::error::validation_exception::Builder {
-        crate::error::validation_exception::Builder::default()
     }
 }
 

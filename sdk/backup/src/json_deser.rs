@@ -1185,6 +1185,31 @@ pub fn deser_operation_crate_operation_describe_backup_vault(
                                 .transpose()?,
                         );
                     }
+                    "LockDate" => {
+                        builder = builder.set_lock_date(
+                            smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                smithy_types::instant::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
+                    "Locked" => {
+                        builder = builder.set_locked(
+                            smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,
+                        );
+                    }
+                    "MaxRetentionDays" => {
+                        builder = builder.set_max_retention_days(
+                            smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                .map(|v| v.to_i64()),
+                        );
+                    }
+                    "MinRetentionDays" => {
+                        builder = builder.set_min_retention_days(
+                            smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                .map(|v| v.to_i64()),
+                        );
+                    }
                     "NumberOfRecoveryPoints" => {
                         builder = builder.set_number_of_recovery_points(
                             smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
@@ -5958,6 +5983,37 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_i64()),
+                                );
+                            }
+                            "Locked" => {
+                                builder = builder.set_locked(
+                                    smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "MinRetentionDays" => {
+                                builder = builder.set_min_retention_days(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "MaxRetentionDays" => {
+                                builder = builder.set_max_retention_days(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "LockDate" => {
+                                builder = builder.set_lock_date(
+                                    smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        smithy_types::instant::Format::EpochSeconds,
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

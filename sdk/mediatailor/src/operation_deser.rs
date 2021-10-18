@@ -55,6 +55,38 @@ pub fn parse_create_channel_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_prefetch_schedule_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreatePrefetchScheduleOutput,
+    crate::error::CreatePrefetchScheduleError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreatePrefetchScheduleError::unhandled)?;
+    Err(crate::error::CreatePrefetchScheduleError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_prefetch_schedule_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreatePrefetchScheduleOutput,
+    crate::error::CreatePrefetchScheduleError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_prefetch_schedule_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_prefetch_schedule(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreatePrefetchScheduleError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_program_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateProgramOutput, crate::error::CreateProgramError> {
@@ -210,6 +242,33 @@ pub fn parse_delete_playback_configuration_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_playback_configuration_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_prefetch_schedule_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeletePrefetchScheduleOutput,
+    crate::error::DeletePrefetchScheduleError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeletePrefetchScheduleError::unhandled)?;
+    Err(crate::error::DeletePrefetchScheduleError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_prefetch_schedule_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeletePrefetchScheduleOutput,
+    crate::error::DeletePrefetchScheduleError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_prefetch_schedule_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -491,6 +550,38 @@ pub fn parse_get_playback_configuration_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_prefetch_schedule_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetPrefetchScheduleOutput,
+    crate::error::GetPrefetchScheduleError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetPrefetchScheduleError::unhandled)?;
+    Err(crate::error::GetPrefetchScheduleError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_prefetch_schedule_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetPrefetchScheduleOutput,
+    crate::error::GetPrefetchScheduleError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_prefetch_schedule_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_prefetch_schedule(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetPrefetchScheduleError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_alerts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAlertsOutput, crate::error::ListAlertsError> {
@@ -572,6 +663,38 @@ pub fn parse_list_playback_configurations_response(
             output,
         )
         .map_err(crate::error::ListPlaybackConfigurationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_prefetch_schedules_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListPrefetchSchedulesOutput,
+    crate::error::ListPrefetchSchedulesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListPrefetchSchedulesError::unhandled)?;
+    Err(crate::error::ListPrefetchSchedulesError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_prefetch_schedules_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListPrefetchSchedulesOutput,
+    crate::error::ListPrefetchSchedulesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_prefetch_schedules_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_prefetch_schedules(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListPrefetchSchedulesError::unhandled)?;
         output.build()
     })
 }

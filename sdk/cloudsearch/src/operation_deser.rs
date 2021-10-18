@@ -69,6 +69,25 @@ pub fn parse_build_suggesters_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::BuildSuggestersError {
+                meta: generic,
+                kind: crate::error::BuildSuggestersErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BuildSuggestersError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::BuildSuggestersError::generic(generic),
     })
 }
@@ -325,6 +344,25 @@ pub fn parse_define_analysis_scheme_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::DefineAnalysisSchemeError {
+                meta: generic,
+                kind: crate::error::DefineAnalysisSchemeErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineAnalysisSchemeError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DefineAnalysisSchemeError::generic(generic),
     })
 }
@@ -454,6 +492,25 @@ pub fn parse_define_expression_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::DefineExpressionError {
+                meta: generic,
+                kind: crate::error::DefineExpressionErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineExpressionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DefineExpressionError::generic(generic),
     })
 }
@@ -581,6 +638,25 @@ pub fn parse_define_index_field_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::DefineIndexFieldError {
+                meta: generic,
+                kind: crate::error::DefineIndexFieldErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineIndexFieldError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DefineIndexFieldError::generic(generic),
     })
 }
@@ -707,6 +783,25 @@ pub fn parse_define_suggester_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::DefineSuggesterError {
+                meta: generic,
+                kind: crate::error::DefineSuggesterErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineSuggesterError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DefineSuggesterError::generic(generic),
     })
 }
@@ -818,6 +913,25 @@ pub fn parse_delete_analysis_scheme_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::DeleteAnalysisSchemeError {
+                meta: generic,
+                kind: crate::error::DeleteAnalysisSchemeErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnalysisSchemeError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DeleteAnalysisSchemeError::generic(generic),
     })
 }
@@ -1004,6 +1118,25 @@ pub fn parse_delete_expression_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::DeleteExpressionError {
+                meta: generic,
+                kind: crate::error::DeleteExpressionErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteExpressionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DeleteExpressionError::generic(generic),
     })
 }
@@ -1114,6 +1247,25 @@ pub fn parse_delete_index_field_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::DeleteIndexFieldError {
+                meta: generic,
+                kind: crate::error::DeleteIndexFieldErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteIndexFieldError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DeleteIndexFieldError::generic(generic),
     })
 }
@@ -1223,6 +1375,25 @@ pub fn parse_delete_suggester_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::DeleteSuggesterError {
+                meta: generic,
+                kind: crate::error::DeleteSuggesterErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSuggesterError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::DeleteSuggesterError::generic(generic),
     })
 }
@@ -2280,6 +2451,25 @@ pub fn parse_index_documents_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::IndexDocumentsError {
+                meta: generic,
+                kind: crate::error::IndexDocumentsErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IndexDocumentsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::IndexDocumentsError::generic(generic),
     })
 }
@@ -2809,6 +2999,25 @@ pub fn parse_update_scaling_parameters_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::UpdateScalingParametersError {
+                meta: generic,
+                kind: crate::error::UpdateScalingParametersErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingParametersError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::UpdateScalingParametersError::generic(generic),
     })
 }
@@ -2944,6 +3153,25 @@ pub fn parse_update_service_access_policies_error(
                 tmp
             }),
         },
+        "ValidationException" => {
+            crate::error::UpdateServiceAccessPoliciesError {
+                meta: generic,
+                kind: crate::error::UpdateServiceAccessPoliciesErrorKind::ValidationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::validation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceAccessPoliciesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::UpdateServiceAccessPoliciesError::generic(generic),
     })
 }

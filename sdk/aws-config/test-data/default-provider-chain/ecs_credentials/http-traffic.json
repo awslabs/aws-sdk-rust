@@ -1,0 +1,87 @@
+{
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "http://169.254.170.2/v2/credentials/52b19262-e7aa-4f56-a1cd-b958dcde8f3b",
+            "headers": {
+              "accept": [
+                "application/json"
+              ]
+            },
+            "method": "GET"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "version": "HTTP/1.1",
+              "headers": {
+                "content-type": [
+                  "application/json"
+                ],
+                "x-rate-limit-duration": [
+                  "1"
+                ],
+                "x-rate-limit-limit": [
+                  "40"
+                ],
+                "x-rate-limit-request-forwarded-for": [
+                  ""
+                ],
+                "x-rate-limit-request-remote-addr": [
+                  "169.254.172.2:35484"
+                ],
+                "date": [
+                  "Fri, 15 Oct 2021 15:23:49 GMT"
+                ],
+                "content-length": [
+                  "1231"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{\"RoleArn\":\"arn:aws:iam::123456789:role/ecs-task-role\",\"AccessKeyId\":\"ASIARCORRECT\",\"SecretAccessKey\":\"secretkeycorrect\",\"Token\":\"tokencorrect\",\"Expiration\" : \"2009-02-13T23:31:30Z\"}"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    }
+  ],
+  "docs": "Load ECS credentials",
+  "version": "V0"
+}
