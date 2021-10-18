@@ -1,9 +1,11 @@
 [package]
 name = "smithy-types"
-version = "0.0.1"
-authors = ["rcoh@amazon.com"]
+version = "0.26.0-alpha"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
+description = "Types for smithy-rs codegen."
 edition = "2018"
 license = "Apache-2.0"
+repository = "https://github.com/awslabs/smithy-rs"
 
 [features]
 chrono-conversions = []

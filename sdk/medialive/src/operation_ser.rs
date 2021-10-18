@@ -42,6 +42,16 @@ pub fn serialize_operation_crate_operation_batch_update_schedule(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_claim_device(
+    input: &crate::input::ClaimDeviceInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_claim_device_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_create_channel(
     input: &crate::input::CreateChannelInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

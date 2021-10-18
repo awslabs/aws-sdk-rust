@@ -738,6 +738,13 @@ pub fn deser_operation_crate_operation_describe_data_source(
                                 .transpose()?,
                         );
                     }
+                    "LanguageCode" => {
+                        builder = builder.set_language_code(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -850,6 +857,13 @@ pub fn deser_operation_crate_operation_describe_faq(
                                     s.to_unescaped()
                                         .map(|u| crate::model::FaqFileFormat::from(u.as_ref()))
                                 })
+                                .transpose()?,
+                        );
+                    }
+                    "LanguageCode" => {
+                        builder = builder.set_language_code(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
                         );
                     }
@@ -4612,6 +4626,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "LanguageCode" => {
+                                builder = builder.set_language_code(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -4812,6 +4835,15 @@ where
                                         s.to_unescaped()
                                             .map(|u| crate::model::FaqFileFormat::from(u.as_ref()))
                                     })
+                                    .transpose()?,
+                                );
+                            }
+                            "LanguageCode" => {
+                                builder = builder.set_language_code(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }

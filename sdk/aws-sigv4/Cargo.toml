@@ -1,14 +1,15 @@
 [package]
 name = "aws-sigv4"
-version = "0.1.0"
-authors = ["David Barsky <me@davidbarsky.com>", "AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
+version = "0.0.21-alpha"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "David Barsky <me@davidbarsky.com>"]
+description = "SigV4 signer for HTTP requests and Event Stream messages."
 edition = "2018"
 exclude = ["aws-sig-v4-test-suite/*"]
-license = "MIT OR Apache-2.0"
-description = "AWS SigV4 signer"
+license = "Apache-2.0"
+repository = "https://github.com/awslabs/smithy-rs"
 
 [features]
-sign-http = ["http", "http-body", "percent-encoding", "form_urlencoded"]
+sign-http = ["http", "percent-encoding", "form_urlencoded"]
 sign-eventstream = ["smithy-eventstream", "bytes"]
 default = ["sign-http"]
 
@@ -18,7 +19,6 @@ chrono = { version = "0.4", default-features = false, features = ["clock", "std"
 form_urlencoded = { version = "1.0", optional = true }
 hex = "0.4"
 http = { version = "0.2", optional = true }
-http-body = { version = "0.4", optional = true }
 percent-encoding = { version = "2.1", optional = true }
 ring = "0.16"
 smithy-eventstream = { path = "../smithy-eventstream", optional = true }
@@ -26,5 +26,5 @@ tracing = "0.1"
 
 [dev-dependencies]
 bytes = "1"
-pretty_assertions = "0.6"
+pretty_assertions = "1.0"
 httparse = "1.5"

@@ -252,6 +252,9 @@ impl smithy_http::response::ParseStrictResponse for CreateUser {
 }
 
 /// <p>Deletes an access control rule for the specified WorkMail organization.</p>
+/// <note>
+/// <p>Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
+/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccessControlRule {
     _private: (),
@@ -361,6 +364,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMailboxPermissions {
 }
 
 /// <p>Deletes the mobile device access override for the given WorkMail organization, user, and device.</p>
+/// <note>
+/// <p>Deleting already deleted and non-existing overrides does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
+/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessOverride {
     _private: (),
@@ -389,6 +395,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMobileDeviceAccessOver
 }
 
 /// <p>Deletes a mobile device access rule for the specified Amazon WorkMail organization.</p>
+/// <note>
+/// <p>Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
+/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessRule {
     _private: (),
@@ -555,6 +564,35 @@ impl smithy_http::response::ParseStrictResponse for DeregisterFromWorkMail {
             crate::operation_deser::parse_deregister_from_work_mail_error(response)
         } else {
             crate::operation_deser::parse_deregister_from_work_mail_response(response)
+        }
+    }
+}
+
+/// <p>Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail use. SES keeps the domain because other applications may use it. You must first
+/// remove any email address used by WorkMail entities before you remove the domain.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeregisterMailDomain {
+    _private: (),
+}
+impl DeregisterMailDomain {
+    /// Creates a new builder-style object to manufacture [`DeregisterMailDomainInput`](crate::input::DeregisterMailDomainInput)
+    pub fn builder() -> crate::input::deregister_mail_domain_input::Builder {
+        crate::input::deregister_mail_domain_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeregisterMailDomain {
+    type Output = std::result::Result<
+        crate::output::DeregisterMailDomainOutput,
+        crate::error::DeregisterMailDomainError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_deregister_mail_domain_error(response)
+        } else {
+            crate::operation_deser::parse_deregister_mail_domain_response(response)
         }
     }
 }
@@ -865,6 +903,32 @@ impl smithy_http::response::ParseStrictResponse for GetMailboxDetails {
     }
 }
 
+/// <p>Gets details for a mail domain, including domain records required to configure your domain with recommended security.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMailDomain {
+    _private: (),
+}
+impl GetMailDomain {
+    /// Creates a new builder-style object to manufacture [`GetMailDomainInput`](crate::input::GetMailDomainInput)
+    pub fn builder() -> crate::input::get_mail_domain_input::Builder {
+        crate::input::get_mail_domain_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetMailDomain {
+    type Output =
+        std::result::Result<crate::output::GetMailDomainOutput, crate::error::GetMailDomainError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_mail_domain_error(response)
+        } else {
+            crate::operation_deser::parse_get_mail_domain_response(response)
+        }
+    }
+}
+
 /// <p>Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use this method to test the effects of the current set of mobile device access
 /// rules for the Amazon WorkMail organization for a particular user's attributes.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1086,6 +1150,34 @@ impl smithy_http::response::ParseStrictResponse for ListMailboxPermissions {
             crate::operation_deser::parse_list_mailbox_permissions_error(response)
         } else {
             crate::operation_deser::parse_list_mailbox_permissions_response(response)
+        }
+    }
+}
+
+/// <p>Lists the mail domains in a given Amazon WorkMail organization.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMailDomains {
+    _private: (),
+}
+impl ListMailDomains {
+    /// Creates a new builder-style object to manufacture [`ListMailDomainsInput`](crate::input::ListMailDomainsInput)
+    pub fn builder() -> crate::input::list_mail_domains_input::Builder {
+        crate::input::list_mail_domains_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListMailDomains {
+    type Output = std::result::Result<
+        crate::output::ListMailDomainsOutput,
+        crate::error::ListMailDomainsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_mail_domains_error(response)
+        } else {
+            crate::operation_deser::parse_list_mail_domains_response(response)
         }
     }
 }
@@ -1426,6 +1518,35 @@ impl smithy_http::response::ParseStrictResponse for PutRetentionPolicy {
     }
 }
 
+/// <p>Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for this domain are routed to the specified WorkMail organization, and WorkMail has
+/// permanent permission to use the specified domain for sending your users' emails.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RegisterMailDomain {
+    _private: (),
+}
+impl RegisterMailDomain {
+    /// Creates a new builder-style object to manufacture [`RegisterMailDomainInput`](crate::input::RegisterMailDomainInput)
+    pub fn builder() -> crate::input::register_mail_domain_input::Builder {
+        crate::input::register_mail_domain_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for RegisterMailDomain {
+    type Output = std::result::Result<
+        crate::output::RegisterMailDomainOutput,
+        crate::error::RegisterMailDomainError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_register_mail_domain_error(response)
+        } else {
+            crate::operation_deser::parse_register_mail_domain_response(response)
+        }
+    }
+}
+
 /// <p>Registers an existing and disabled user, group, or resource for Amazon WorkMail use by
 /// associating a mailbox and calendaring capabilities. It performs no change if the user,
 /// group, or resource is enabled and fails if the user, group, or resource is deleted. This
@@ -1567,6 +1688,34 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// <p>Updates the default mail domain for an organization. The default mail domain is used by the WorkMail AWS Console to suggest an email address when enabling a mail user. You can only have one default domain.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateDefaultMailDomain {
+    _private: (),
+}
+impl UpdateDefaultMailDomain {
+    /// Creates a new builder-style object to manufacture [`UpdateDefaultMailDomainInput`](crate::input::UpdateDefaultMailDomainInput)
+    pub fn builder() -> crate::input::update_default_mail_domain_input::Builder {
+        crate::input::update_default_mail_domain_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UpdateDefaultMailDomain {
+    type Output = std::result::Result<
+        crate::output::UpdateDefaultMailDomainOutput,
+        crate::error::UpdateDefaultMailDomainError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_default_mail_domain_error(response)
+        } else {
+            crate::operation_deser::parse_update_default_mail_domain_response(response)
         }
     }
 }

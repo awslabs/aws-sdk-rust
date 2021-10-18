@@ -9,12 +9,15 @@
 //!
 //! This module contains an shared configuration representation that is agnostic from a specific service.
 
+use smithy_types::retry::RetryConfig;
+
 use crate::credentials::SharedCredentialsProvider;
 use crate::region::Region;
 
 /// AWS Shared Configuration
 pub struct Config {
     region: Option<Region>,
+    retry_config: Option<RetryConfig>,
     credentials_provider: Option<SharedCredentialsProvider>,
 }
 
@@ -22,6 +25,7 @@ pub struct Config {
 #[derive(Default)]
 pub struct Builder {
     region: Option<Region>,
+    retry_config: Option<RetryConfig>,
     credentials_provider: Option<SharedCredentialsProvider>,
 }
 
@@ -57,6 +61,42 @@ impl Builder {
     /// ```
     pub fn set_region(&mut self, region: impl Into<Option<Region>>) -> &mut Self {
         self.region = region.into();
+        self
+    }
+
+    /// Set the retry_config for the builder
+    ///
+    /// # Examples
+    /// ```rust
+    /// use aws_types::config::Config;
+    /// use smithy_types::retry::RetryConfig;
+    ///
+    /// let retry_config = RetryConfig::new().with_max_attempts(5);
+    /// let config = Config::builder().retry_config(retry_config).build();
+    /// ```
+    pub fn retry_config(mut self, retry_config: RetryConfig) -> Self {
+        self.set_retry_config(Some(retry_config));
+        self
+    }
+
+    /// Set the retry_config for the builder
+    ///
+    /// # Examples
+    /// ```rust
+    /// use aws_types::config::{Config, Builder};
+    /// use smithy_types::retry::RetryConfig;
+    ///
+    /// fn disable_retries(builder: &mut Builder) {
+    ///     let retry_config = RetryConfig::new().with_max_attempts(1);
+    ///     builder.set_retry_config(Some(retry_config));
+    /// }
+    ///
+    /// let mut builder = Config::builder();
+    /// disable_retries(&mut builder);
+    /// let config = builder.build();
+    /// ```
+    pub fn set_retry_config(&mut self, retry_config: Option<RetryConfig>) -> &mut Self {
+        self.retry_config = retry_config;
         self
     }
 
@@ -116,6 +156,7 @@ impl Builder {
     pub fn build(self) -> Config {
         Config {
             region: self.region,
+            retry_config: self.retry_config,
             credentials_provider: self.credentials_provider,
         }
     }
@@ -125,6 +166,11 @@ impl Config {
     /// Configured region
     pub fn region(&self) -> Option<&Region> {
         self.region.as_ref()
+    }
+
+    /// Configured retry config
+    pub fn retry_config(&self) -> Option<&RetryConfig> {
+        self.retry_config.as_ref()
     }
 
     /// Configured credentials provider

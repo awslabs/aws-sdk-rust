@@ -75,10 +75,16 @@ where
     pub fn batch_get_variable(&self) -> fluent_builders::BatchGetVariable<C, M, R> {
         fluent_builders::BatchGetVariable::new(self.handle.clone())
     }
+    pub fn cancel_batch_import_job(&self) -> fluent_builders::CancelBatchImportJob<C, M, R> {
+        fluent_builders::CancelBatchImportJob::new(self.handle.clone())
+    }
     pub fn cancel_batch_prediction_job(
         &self,
     ) -> fluent_builders::CancelBatchPredictionJob<C, M, R> {
         fluent_builders::CancelBatchPredictionJob::new(self.handle.clone())
+    }
+    pub fn create_batch_import_job(&self) -> fluent_builders::CreateBatchImportJob<C, M, R> {
+        fluent_builders::CreateBatchImportJob::new(self.handle.clone())
     }
     pub fn create_batch_prediction_job(
         &self,
@@ -100,6 +106,9 @@ where
     pub fn create_variable(&self) -> fluent_builders::CreateVariable<C, M, R> {
         fluent_builders::CreateVariable::new(self.handle.clone())
     }
+    pub fn delete_batch_import_job(&self) -> fluent_builders::DeleteBatchImportJob<C, M, R> {
+        fluent_builders::DeleteBatchImportJob::new(self.handle.clone())
+    }
     pub fn delete_batch_prediction_job(
         &self,
     ) -> fluent_builders::DeleteBatchPredictionJob<C, M, R> {
@@ -116,6 +125,9 @@ where
     }
     pub fn delete_event(&self) -> fluent_builders::DeleteEvent<C, M, R> {
         fluent_builders::DeleteEvent::new(self.handle.clone())
+    }
+    pub fn delete_events_by_event_type(&self) -> fluent_builders::DeleteEventsByEventType<C, M, R> {
+        fluent_builders::DeleteEventsByEventType::new(self.handle.clone())
     }
     pub fn delete_event_type(&self) -> fluent_builders::DeleteEventType<C, M, R> {
         fluent_builders::DeleteEventType::new(self.handle.clone())
@@ -147,8 +159,16 @@ where
     pub fn describe_model_versions(&self) -> fluent_builders::DescribeModelVersions<C, M, R> {
         fluent_builders::DescribeModelVersions::new(self.handle.clone())
     }
+    pub fn get_batch_import_jobs(&self) -> fluent_builders::GetBatchImportJobs<C, M, R> {
+        fluent_builders::GetBatchImportJobs::new(self.handle.clone())
+    }
     pub fn get_batch_prediction_jobs(&self) -> fluent_builders::GetBatchPredictionJobs<C, M, R> {
         fluent_builders::GetBatchPredictionJobs::new(self.handle.clone())
+    }
+    pub fn get_delete_events_by_event_type_status(
+        &self,
+    ) -> fluent_builders::GetDeleteEventsByEventTypeStatus<C, M, R> {
+        fluent_builders::GetDeleteEventsByEventTypeStatus::new(self.handle.clone())
     }
     pub fn get_detectors(&self) -> fluent_builders::GetDetectors<C, M, R> {
         fluent_builders::GetDetectors::new(self.handle.clone())
@@ -158,6 +178,9 @@ where
     }
     pub fn get_entity_types(&self) -> fluent_builders::GetEntityTypes<C, M, R> {
         fluent_builders::GetEntityTypes::new(self.handle.clone())
+    }
+    pub fn get_event(&self) -> fluent_builders::GetEvent<C, M, R> {
+        fluent_builders::GetEvent::new(self.handle.clone())
     }
     pub fn get_event_prediction(&self) -> fluent_builders::GetEventPrediction<C, M, R> {
         fluent_builders::GetEventPrediction::new(self.handle.clone())
@@ -213,6 +236,9 @@ where
     pub fn put_outcome(&self) -> fluent_builders::PutOutcome<C, M, R> {
         fluent_builders::PutOutcome::new(self.handle.clone())
     }
+    pub fn send_event(&self) -> fluent_builders::SendEvent<C, M, R> {
+        fluent_builders::SendEvent::new(self.handle.clone())
+    }
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
@@ -231,6 +257,9 @@ where
         &self,
     ) -> fluent_builders::UpdateDetectorVersionStatus<C, M, R> {
         fluent_builders::UpdateDetectorVersionStatus::new(self.handle.clone())
+    }
+    pub fn update_event_label(&self) -> fluent_builders::UpdateEventLabel<C, M, R> {
+        fluent_builders::UpdateEventLabel::new(self.handle.clone())
     }
     pub fn update_model(&self) -> fluent_builders::UpdateModel<C, M, R> {
         fluent_builders::UpdateModel::new(self.handle.clone())
@@ -390,6 +419,61 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct CancelBatchImportJob<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::cancel_batch_import_job_input::Builder,
+    }
+    impl<C, M, R> CancelBatchImportJob<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelBatchImportJobOutput,
+            smithy_http::result::SdkError<crate::error::CancelBatchImportJobError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CancelBatchImportJobInputOperationOutputAlias,
+                crate::output::CancelBatchImportJobOutput,
+                crate::error::CancelBatchImportJobError,
+                crate::input::CancelBatchImportJobInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The ID of an in-progress batch import job to cancel. </p>
+        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(inp);
+            self
+        }
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct CancelBatchPredictionJob<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -440,6 +524,115 @@ pub mod fluent_builders {
         }
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateBatchImportJob<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_batch_import_job_input::Builder,
+    }
+    impl<C, M, R> CreateBatchImportJob<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateBatchImportJobOutput,
+            smithy_http::result::SdkError<crate::error::CreateBatchImportJobError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateBatchImportJobInputOperationOutputAlias,
+                crate::output::CreateBatchImportJobOutput,
+                crate::error::CreateBatchImportJobError,
+                crate::input::CreateBatchImportJobInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
+        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(inp);
+            self
+        }
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
+            self
+        }
+        /// <p>The URI that points to the Amazon S3 location of your data file.</p>
+        pub fn input_path(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_path(inp);
+            self
+        }
+        pub fn set_input_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_input_path(input);
+            self
+        }
+        /// <p>The URI that points to the Amazon S3 location for storing your results. </p>
+        pub fn output_path(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_path(inp);
+            self
+        }
+        pub fn set_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_output_path(input);
+            self
+        }
+        /// <p>The name of the event type.</p>
+        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(inp);
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_type_name(input);
+            self
+        }
+        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
+        /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(inp);
+            self
+        }
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_iam_role_arn(input);
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        /// <p>A collection of key-value pairs associated with this request.  </p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -905,7 +1098,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_training_data_schema(input);
             self
         }
-        /// <p>Details for the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+        /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
         pub fn external_events_detail(mut self, inp: crate::model::ExternalEventsDetail) -> Self {
             self.inner = self.inner.external_events_detail(inp);
             self
@@ -915,6 +1108,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ExternalEventsDetail>,
         ) -> Self {
             self.inner = self.inner.set_external_events_detail(input);
+            self
+        }
+        /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+        pub fn ingested_events_detail(mut self, inp: crate::model::IngestedEventsDetail) -> Self {
+            self.inner = self.inner.ingested_events_detail(inp);
+            self
+        }
+        pub fn set_ingested_events_detail(
+            mut self,
+            input: std::option::Option<crate::model::IngestedEventsDetail>,
+        ) -> Self {
+            self.inner = self.inner.set_ingested_events_detail(input);
             self
         }
         /// Appends an item to `tags`.
@@ -1176,6 +1381,60 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteBatchImportJob<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_batch_import_job_input::Builder,
+    }
+    impl<C, M, R> DeleteBatchImportJob<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteBatchImportJobOutput,
+            smithy_http::result::SdkError<crate::error::DeleteBatchImportJobError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteBatchImportJobInputOperationOutputAlias,
+                crate::output::DeleteBatchImportJobOutput,
+                crate::error::DeleteBatchImportJobError,
+                crate::input::DeleteBatchImportJobInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the batch import job to delete. </p>
+        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(inp);
+            self
+        }
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
             self
         }
     }
@@ -1459,6 +1718,72 @@ pub mod fluent_builders {
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_id(input);
             self
+        }
+        /// <p>The name of the event type.</p>
+        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(inp);
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_type_name(input);
+            self
+        }
+        /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
+        pub fn delete_audit_history(mut self, inp: bool) -> Self {
+            self.inner = self.inner.delete_audit_history(inp);
+            self
+        }
+        pub fn set_delete_audit_history(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_delete_audit_history(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteEventsByEventType<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_events_by_event_type_input::Builder,
+    }
+    impl<C, M, R> DeleteEventsByEventType<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteEventsByEventTypeOutput,
+            smithy_http::result::SdkError<crate::error::DeleteEventsByEventTypeError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteEventsByEventTypeInputOperationOutputAlias,
+                crate::output::DeleteEventsByEventTypeOutput,
+                crate::error::DeleteEventsByEventTypeError,
+                crate::input::DeleteEventsByEventTypeInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
         }
         /// <p>The name of the event type.</p>
         pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -2113,6 +2438,78 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetBatchImportJobs<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_batch_import_jobs_input::Builder,
+    }
+    impl<C, M, R> GetBatchImportJobs<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetBatchImportJobsOutput,
+            smithy_http::result::SdkError<crate::error::GetBatchImportJobsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetBatchImportJobsInputOperationOutputAlias,
+                crate::output::GetBatchImportJobsOutput,
+                crate::error::GetBatchImportJobsError,
+                crate::input::GetBatchImportJobsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the batch import job to get.</p>
+        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(inp);
+            self
+        }
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
+            self
+        }
+        /// <p>The maximum number of objects to return for request.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The next token from the previous request.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetBatchPredictionJobs<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -2181,6 +2578,63 @@ pub mod fluent_builders {
         }
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetDeleteEventsByEventTypeStatus<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_delete_events_by_event_type_status_input::Builder,
+    }
+    impl<C, M, R> GetDeleteEventsByEventTypeStatus<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetDeleteEventsByEventTypeStatusOutput,
+            smithy_http::result::SdkError<crate::error::GetDeleteEventsByEventTypeStatusError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetDeleteEventsByEventTypeStatusInputOperationOutputAlias,
+                crate::output::GetDeleteEventsByEventTypeStatusOutput,
+                crate::error::GetDeleteEventsByEventTypeStatusError,
+                crate::input::GetDeleteEventsByEventTypeStatusInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Name of event type for which to get the deletion status.</p>
+        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(inp);
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_type_name(input);
             self
         }
     }
@@ -2395,6 +2849,72 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetEvent<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_event_input::Builder,
+    }
+    impl<C, M, R> GetEvent<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetEventOutput,
+            smithy_http::result::SdkError<crate::error::GetEventError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetEventInputOperationOutputAlias,
+                crate::output::GetEventOutput,
+                crate::error::GetEventError,
+                crate::input::GetEventInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the event to retrieve.</p>
+        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(inp);
+            self
+        }
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_event_id(input);
+            self
+        }
+        /// <p>The event type of the event to retrieve.</p>
+        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(inp);
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_type_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetEventPrediction<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -2495,7 +3015,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entities(input);
             self
         }
-        /// <p>Timestamp that defines when the event under evaluation occurred.</p>
+        /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
         pub fn event_timestamp(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_timestamp(inp);
             self
@@ -2512,24 +3032,17 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
         /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
         /// their corresponding values for the event you are sending for evaluation.</p>
-        /// <important>
-        /// <ul>
-        /// <li>
-        /// <p>You must provide at least one eventVariable</p>
-        /// </li>
-        /// <li>
-        /// <p>If detectorVersion is associated with a modelVersion, you must provide at least one associated eventVariable</p>
-        /// </li>
-        /// </ul>
+        /// <important>         
+        /// <p>You must provide at least one eventVariable</p>        
         /// </important>
-        /// <p>To ensure highest possible fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
+        /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
         /// <p>
         /// <b>For Amazon Fraud Detector trained models:</b>
         /// </p>
         /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
         /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
         /// <p>
-        /// <b>For External models ( for example, imported SageMaker):</b>
+        /// <b>For imported SageMaker models:</b>
         /// </p>
         /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
         /// will use the default value that is provided for the variable. </p>
@@ -3579,6 +4092,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entity_types(input);
             self
         }
+        /// <p>Specifies if ingenstion is enabled or disabled.</p>
+        pub fn event_ingestion(mut self, inp: crate::model::EventIngestion) -> Self {
+            self.inner = self.inner.event_ingestion(inp);
+            self
+        }
+        pub fn set_event_ingestion(
+            mut self,
+            input: std::option::Option<crate::model::EventIngestion>,
+        ) -> Self {
+            self.inner = self.inner.set_event_ingestion(input);
+            self
+        }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -3940,6 +4465,144 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct SendEvent<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::send_event_input::Builder,
+    }
+    impl<C, M, R> SendEvent<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SendEventOutput,
+            smithy_http::result::SdkError<crate::error::SendEventError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::SendEventInputOperationOutputAlias,
+                crate::output::SendEventOutput,
+                crate::error::SendEventError,
+                crate::input::SendEventInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The event ID to upload.</p>
+        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(inp);
+            self
+        }
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_event_id(input);
+            self
+        }
+        /// <p>The event type name of the event.</p>
+        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(inp);
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_type_name(input);
+            self
+        }
+        /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+        pub fn event_timestamp(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_timestamp(inp);
+            self
+        }
+        pub fn set_event_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_timestamp(input);
+            self
+        }
+        /// Adds a key-value pair to `eventVariables`.
+        ///
+        /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
+        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+        pub fn event_variables(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.event_variables(k, v);
+            self
+        }
+        pub fn set_event_variables(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_event_variables(input);
+            self
+        }
+        /// <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
+        pub fn assigned_label(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assigned_label(inp);
+            self
+        }
+        pub fn set_assigned_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_assigned_label(input);
+            self
+        }
+        /// <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
+        pub fn label_timestamp(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_timestamp(inp);
+            self
+        }
+        pub fn set_label_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_label_timestamp(input);
+            self
+        }
+        /// Appends an item to `entities`.
+        ///
+        /// To override the contents of this collection use [`set_entities`](Self::set_entities).
+        /// <p>An array of entities.</p>
+        pub fn entities(mut self, inp: impl Into<crate::model::Entity>) -> Self {
+            self.inner = self.inner.entities(inp);
+            self
+        }
+        pub fn set_entities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
+        ) -> Self {
+            self.inner = self.inner.set_entities(input);
             self
         }
     }
@@ -4370,6 +5033,96 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct UpdateEventLabel<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_event_label_input::Builder,
+    }
+    impl<C, M, R> UpdateEventLabel<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateEventLabelOutput,
+            smithy_http::result::SdkError<crate::error::UpdateEventLabelError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateEventLabelInputOperationOutputAlias,
+                crate::output::UpdateEventLabelOutput,
+                crate::error::UpdateEventLabelError,
+                crate::input::UpdateEventLabelInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the event associated with the label to update.</p>
+        pub fn event_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(inp);
+            self
+        }
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_event_id(input);
+            self
+        }
+        /// <p>The event type of the event associated with the label to update.</p>
+        pub fn event_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_type_name(inp);
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_type_name(input);
+            self
+        }
+        /// <p>The new label to assign to the event.</p>
+        pub fn assigned_label(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assigned_label(inp);
+            self
+        }
+        pub fn set_assigned_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_assigned_label(input);
+            self
+        }
+        /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+        pub fn label_timestamp(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_timestamp(inp);
+            self
+        }
+        pub fn set_label_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_label_timestamp(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct UpdateModel<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -4521,7 +5274,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_major_version_number(input);
             self
         }
-        /// <p>The event details.</p>
+        /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
         pub fn external_events_detail(mut self, inp: crate::model::ExternalEventsDetail) -> Self {
             self.inner = self.inner.external_events_detail(inp);
             self
@@ -4531,6 +5284,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ExternalEventsDetail>,
         ) -> Self {
             self.inner = self.inner.set_external_events_detail(input);
+            self
+        }
+        /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+        pub fn ingested_events_detail(mut self, inp: crate::model::IngestedEventsDetail) -> Self {
+            self.inner = self.inner.ingested_events_detail(inp);
+            self
+        }
+        pub fn set_ingested_events_detail(
+            mut self,
+            input: std::option::Option<crate::model::IngestedEventsDetail>,
+        ) -> Self {
+            self.inner = self.inner.set_ingested_events_detail(input);
             self
         }
         /// Appends an item to `tags`.
@@ -4903,7 +5668,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -4923,7 +5689,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

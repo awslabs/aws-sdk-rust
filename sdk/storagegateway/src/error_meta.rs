@@ -1765,6 +1765,29 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateSMBLocalGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateSMBLocalGroupsError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateSMBLocalGroupsErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::UpdateSMBLocalGroupsErrorKind::InvalidGatewayRequestException(
+                    inner,
+                ) => Error::InvalidGatewayRequestException(inner),
+                crate::error::UpdateSMBLocalGroupsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::UpdateSMBSecurityStrategyError, R>>
     for Error
 where

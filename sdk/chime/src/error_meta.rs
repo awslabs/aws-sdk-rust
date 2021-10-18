@@ -6070,6 +6070,9 @@ where
                 crate::error::UpdatePhoneNumberErrorKind::BadRequestException(inner) => {
                     Error::BadRequestException(inner)
                 }
+                crate::error::UpdatePhoneNumberErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
                 crate::error::UpdatePhoneNumberErrorKind::ForbiddenException(inner) => {
                     Error::ForbiddenException(inner)
                 }

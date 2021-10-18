@@ -1052,6 +1052,146 @@ impl std::error::Error for DeleteBackupVaultAccessPolicyError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeleteBackupVaultLockConfigurationError {
+    pub kind: DeleteBackupVaultLockConfigurationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteBackupVaultLockConfigurationErrorKind {
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteBackupVaultLockConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteBackupVaultLockConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteBackupVaultLockConfigurationErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteBackupVaultLockConfigurationErrorKind::MissingParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteBackupVaultLockConfigurationErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteBackupVaultLockConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteBackupVaultLockConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DeleteBackupVaultLockConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteBackupVaultLockConfigurationError {
+    pub fn new(
+        kind: DeleteBackupVaultLockConfigurationErrorKind,
+        meta: smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteBackupVaultLockConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteBackupVaultLockConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBackupVaultLockConfigurationErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBackupVaultLockConfigurationErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBackupVaultLockConfigurationErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBackupVaultLockConfigurationErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteBackupVaultLockConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteBackupVaultLockConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DeleteBackupVaultLockConfigurationErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            DeleteBackupVaultLockConfigurationErrorKind::MissingParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DeleteBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteBackupVaultLockConfigurationErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            DeleteBackupVaultLockConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DeleteBackupVaultNotificationsError {
     pub kind: DeleteBackupVaultNotificationsErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -5517,6 +5657,143 @@ impl std::error::Error for PutBackupVaultAccessPolicyError {
                 Some(_inner)
             }
             PutBackupVaultAccessPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutBackupVaultLockConfigurationError {
+    pub kind: PutBackupVaultLockConfigurationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutBackupVaultLockConfigurationErrorKind {
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    MissingParameterValueException(crate::error::MissingParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutBackupVaultLockConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutBackupVaultLockConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutBackupVaultLockConfigurationErrorKind::InvalidRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutBackupVaultLockConfigurationErrorKind::MissingParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutBackupVaultLockConfigurationErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutBackupVaultLockConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for PutBackupVaultLockConfigurationError {
+    fn code(&self) -> Option<&str> {
+        PutBackupVaultLockConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutBackupVaultLockConfigurationError {
+    pub fn new(kind: PutBackupVaultLockConfigurationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutBackupVaultLockConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutBackupVaultLockConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutBackupVaultLockConfigurationErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutBackupVaultLockConfigurationErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_missing_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutBackupVaultLockConfigurationErrorKind::MissingParameterValueException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutBackupVaultLockConfigurationErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for PutBackupVaultLockConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutBackupVaultLockConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            PutBackupVaultLockConfigurationErrorKind::InvalidRequestException(_inner) => {
+                Some(_inner)
+            }
+            PutBackupVaultLockConfigurationErrorKind::MissingParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            PutBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            PutBackupVaultLockConfigurationErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            PutBackupVaultLockConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

@@ -198,6 +198,52 @@ impl TagResourceOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutPolicyOutput {
+    /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub policy: std::option::Option<crate::model::Policy>,
+}
+impl std::fmt::Debug for PutPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutPolicyOutput");
+        formatter.field("policy", &self.policy);
+        formatter.finish()
+    }
+}
+/// See [`PutPolicyOutput`](crate::output::PutPolicyOutput)
+pub mod put_policy_output {
+    /// A builder for [`PutPolicyOutput`](crate::output::PutPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy: std::option::Option<crate::model::Policy>,
+    }
+    impl Builder {
+        /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+        pub fn policy(mut self, input: crate::model::Policy) -> Self {
+            self.policy = Some(input);
+            self
+        }
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
+            self.policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutPolicyOutput`](crate::output::PutPolicyOutput)
+        pub fn build(self) -> crate::output::PutPolicyOutput {
+            crate::output::PutPolicyOutput {
+                policy: self.policy,
+            }
+        }
+    }
+}
+impl PutPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutPolicyOutput`](crate::output::PutPolicyOutput)
+    pub fn builder() -> crate::output::put_policy_output::Builder {
+        crate::output::put_policy_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
     pub resource_tags: std::option::Option<crate::model::ResourceTags>,
@@ -593,6 +639,52 @@ impl GetPresetOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPolicyOutput {
+    /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    pub policy: std::option::Option<crate::model::Policy>,
+}
+impl std::fmt::Debug for GetPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetPolicyOutput");
+        formatter.field("policy", &self.policy);
+        formatter.finish()
+    }
+}
+/// See [`GetPolicyOutput`](crate::output::GetPolicyOutput)
+pub mod get_policy_output {
+    /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy: std::option::Option<crate::model::Policy>,
+    }
+    impl Builder {
+        /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+        pub fn policy(mut self, input: crate::model::Policy) -> Self {
+            self.policy = Some(input);
+            self
+        }
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
+            self.policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput)
+        pub fn build(self) -> crate::output::GetPolicyOutput {
+            crate::output::GetPolicyOutput {
+                policy: self.policy,
+            }
+        }
+    }
+}
+impl GetPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::output::GetPolicyOutput)
+    pub fn builder() -> crate::output::get_policy_output::Builder {
+        crate::output::get_policy_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     pub job_template: std::option::Option<crate::model::JobTemplate>,
@@ -832,6 +924,35 @@ impl DeletePresetOutput {
     /// Creates a new builder-style object to manufacture [`DeletePresetOutput`](crate::output::DeletePresetOutput)
     pub fn builder() -> crate::output::delete_preset_output::Builder {
         crate::output::delete_preset_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePolicyOutput {}
+impl std::fmt::Debug for DeletePolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeletePolicyOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
+pub mod delete_policy_output {
+    /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
+        pub fn build(self) -> crate::output::DeletePolicyOutput {
+            crate::output::DeletePolicyOutput {}
+        }
+    }
+}
+impl DeletePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
+    pub fn builder() -> crate::output::delete_policy_output::Builder {
+        crate::output::delete_policy_output::Builder::default()
     }
 }
 

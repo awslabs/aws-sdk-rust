@@ -1009,6 +1009,19 @@ pub fn serialize_operation_crate_operation_update_smb_file_share_visibility(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_update_smb_local_groups(
+    input: &crate::input::UpdateSmbLocalGroupsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_smb_local_groups_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_update_smb_security_strategy(
     input: &crate::input::UpdateSmbSecurityStrategyInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

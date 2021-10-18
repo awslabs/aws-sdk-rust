@@ -1940,6 +1940,421 @@ impl SourceLocation {
     }
 }
 
+/// <p>A complex type that contains prefetch schedule information.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PrefetchSchedule {
+    /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
+    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    pub playback_configuration_name: std::option::Option<std::string::String>,
+    /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
+    /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    pub stream_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for PrefetchSchedule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PrefetchSchedule");
+        formatter.field("arn", &self.arn);
+        formatter.field("consumption", &self.consumption);
+        formatter.field("name", &self.name);
+        formatter.field(
+            "playback_configuration_name",
+            &self.playback_configuration_name,
+        );
+        formatter.field("retrieval", &self.retrieval);
+        formatter.field("stream_id", &self.stream_id);
+        formatter.finish()
+    }
+}
+/// See [`PrefetchSchedule`](crate::model::PrefetchSchedule)
+pub mod prefetch_schedule {
+    /// A builder for [`PrefetchSchedule`](crate::model::PrefetchSchedule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) consumption: std::option::Option<crate::model::PrefetchConsumption>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
+        pub(crate) retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+        pub fn consumption(mut self, input: crate::model::PrefetchConsumption) -> Self {
+            self.consumption = Some(input);
+            self
+        }
+        pub fn set_consumption(
+            mut self,
+            input: std::option::Option<crate::model::PrefetchConsumption>,
+        ) -> Self {
+            self.consumption = input;
+            self
+        }
+        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = Some(input.into());
+            self
+        }
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = input;
+            self
+        }
+        /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+        pub fn retrieval(mut self, input: crate::model::PrefetchRetrieval) -> Self {
+            self.retrieval = Some(input);
+            self
+        }
+        pub fn set_retrieval(
+            mut self,
+            input: std::option::Option<crate::model::PrefetchRetrieval>,
+        ) -> Self {
+            self.retrieval = input;
+            self
+        }
+        /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
+            self
+        }
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PrefetchSchedule`](crate::model::PrefetchSchedule)
+        pub fn build(self) -> crate::model::PrefetchSchedule {
+            crate::model::PrefetchSchedule {
+                arn: self.arn,
+                consumption: self.consumption,
+                name: self.name,
+                playback_configuration_name: self.playback_configuration_name,
+                retrieval: self.retrieval,
+                stream_id: self.stream_id,
+            }
+        }
+    }
+}
+impl PrefetchSchedule {
+    /// Creates a new builder-style object to manufacture [`PrefetchSchedule`](crate::model::PrefetchSchedule)
+    pub fn builder() -> crate::model::prefetch_schedule::Builder {
+        crate::model::prefetch_schedule::Builder::default()
+    }
+}
+
+/// <p>A complex type that contains settings governing when MediaTailor prefetches ads, and which dynamic variables that MediaTailor includes in the request to the ad decision server.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PrefetchRetrieval {
+    /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p> <p>You intially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify DynamicVariables for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
+    pub dynamic_variables:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
+    pub end_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
+    pub start_time: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for PrefetchRetrieval {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PrefetchRetrieval");
+        formatter.field("dynamic_variables", &self.dynamic_variables);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("start_time", &self.start_time);
+        formatter.finish()
+    }
+}
+/// See [`PrefetchRetrieval`](crate::model::PrefetchRetrieval)
+pub mod prefetch_retrieval {
+    /// A builder for [`PrefetchRetrieval`](crate::model::PrefetchRetrieval)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dynamic_variables: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        pub fn dynamic_variables(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.dynamic_variables.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.dynamic_variables = Some(hash_map);
+            self
+        }
+        pub fn set_dynamic_variables(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.dynamic_variables = input;
+            self
+        }
+        /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
+        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PrefetchRetrieval`](crate::model::PrefetchRetrieval)
+        pub fn build(self) -> crate::model::PrefetchRetrieval {
+            crate::model::PrefetchRetrieval {
+                dynamic_variables: self.dynamic_variables,
+                end_time: self.end_time,
+                start_time: self.start_time,
+            }
+        }
+    }
+}
+impl PrefetchRetrieval {
+    /// Creates a new builder-style object to manufacture [`PrefetchRetrieval`](crate::model::PrefetchRetrieval)
+    pub fn builder() -> crate::model::prefetch_retrieval::Builder {
+        crate::model::prefetch_retrieval::Builder::default()
+    }
+}
+
+/// <p>A complex type that contains settings that determine how and when that MediaTailor places prefetched ads into upcoming ad breaks.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PrefetchConsumption {
+    /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as scte.event_id, set the avail matching criteria.</p>
+    pub avail_matching_criteria:
+        std::option::Option<std::vec::Vec<crate::model::AvailMatchingCriteria>>,
+    /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call DeletePrefetchSchedule.</p>
+    pub end_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
+    pub start_time: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for PrefetchConsumption {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PrefetchConsumption");
+        formatter.field("avail_matching_criteria", &self.avail_matching_criteria);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("start_time", &self.start_time);
+        formatter.finish()
+    }
+}
+/// See [`PrefetchConsumption`](crate::model::PrefetchConsumption)
+pub mod prefetch_consumption {
+    /// A builder for [`PrefetchConsumption`](crate::model::PrefetchConsumption)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) avail_matching_criteria:
+            std::option::Option<std::vec::Vec<crate::model::AvailMatchingCriteria>>,
+        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        pub fn avail_matching_criteria(
+            mut self,
+            input: impl Into<crate::model::AvailMatchingCriteria>,
+        ) -> Self {
+            let mut v = self.avail_matching_criteria.unwrap_or_default();
+            v.push(input.into());
+            self.avail_matching_criteria = Some(v);
+            self
+        }
+        pub fn set_avail_matching_criteria(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AvailMatchingCriteria>>,
+        ) -> Self {
+            self.avail_matching_criteria = input;
+            self
+        }
+        /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call DeletePrefetchSchedule.</p>
+        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PrefetchConsumption`](crate::model::PrefetchConsumption)
+        pub fn build(self) -> crate::model::PrefetchConsumption {
+            crate::model::PrefetchConsumption {
+                avail_matching_criteria: self.avail_matching_criteria,
+                end_time: self.end_time,
+                start_time: self.start_time,
+            }
+        }
+    }
+}
+impl PrefetchConsumption {
+    /// Creates a new builder-style object to manufacture [`PrefetchConsumption`](crate::model::PrefetchConsumption)
+    pub fn builder() -> crate::model::prefetch_consumption::Builder {
+        crate::model::prefetch_consumption::Builder::default()
+    }
+}
+
+/// <p>MediaTailor only places (consumes) prefetched ads if the ad break meets the criteria defined by the dynamic variables. This gives you granular control over which ad break to place the prefetched ads into.</p> <p>As an example, let's say that you set DynamicVariable to scte.event_id and Operator to EQUALS, and your playback configuration has an ADS URL of https://my.ads.server.com/path?&amp;podId=[scte.avail_num]&amp;event=[scte.event_id]&amp;duration=[session.avail_duration_secs]. And the prefetch request to the ADS contains these values https://my.ads.server.com/path?&amp;podId=3&amp;event=my-awesome-event&amp;duration=30. MediaTailor will only insert the prefetched ads into the ad break if has a SCTE marker with an event id of my-awesome-event, since it must match the event id that MediaTailor uses to query the ADS.</p> <p>You can specify up to five AvailMatchingCriteria. If you specify multiple AvailMatchingCriteria, MediaTailor combines them to match using a logical AND. You can model logical OR combinations by creating multiple prefetch schedules.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AvailMatchingCriteria {
+    /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p> <p>You can include up to 100 dynamic variables.</p>
+    pub dynamic_variable: std::option::Option<std::string::String>,
+    /// <p>For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.</p>
+    pub operator: std::option::Option<crate::model::Operator>,
+}
+impl std::fmt::Debug for AvailMatchingCriteria {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AvailMatchingCriteria");
+        formatter.field("dynamic_variable", &self.dynamic_variable);
+        formatter.field("operator", &self.operator);
+        formatter.finish()
+    }
+}
+/// See [`AvailMatchingCriteria`](crate::model::AvailMatchingCriteria)
+pub mod avail_matching_criteria {
+    /// A builder for [`AvailMatchingCriteria`](crate::model::AvailMatchingCriteria)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dynamic_variable: std::option::Option<std::string::String>,
+        pub(crate) operator: std::option::Option<crate::model::Operator>,
+    }
+    impl Builder {
+        /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p> <p>You can include up to 100 dynamic variables.</p>
+        pub fn dynamic_variable(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dynamic_variable = Some(input.into());
+            self
+        }
+        pub fn set_dynamic_variable(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dynamic_variable = input;
+            self
+        }
+        /// <p>For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.</p>
+        pub fn operator(mut self, input: crate::model::Operator) -> Self {
+            self.operator = Some(input);
+            self
+        }
+        pub fn set_operator(mut self, input: std::option::Option<crate::model::Operator>) -> Self {
+            self.operator = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AvailMatchingCriteria`](crate::model::AvailMatchingCriteria)
+        pub fn build(self) -> crate::model::AvailMatchingCriteria {
+            crate::model::AvailMatchingCriteria {
+                dynamic_variable: self.dynamic_variable,
+                operator: self.operator,
+            }
+        }
+    }
+}
+impl AvailMatchingCriteria {
+    /// Creates a new builder-style object to manufacture [`AvailMatchingCriteria`](crate::model::AvailMatchingCriteria)
+    pub fn builder() -> crate::model::avail_matching_criteria::Builder {
+        crate::model::avail_matching_criteria::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Operator {
+    Equals,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Operator {
+    fn from(s: &str) -> Self {
+        match s {
+            "EQUALS" => Operator::Equals,
+            other => Operator::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Operator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Operator::from(s))
+    }
+}
+impl Operator {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Operator::Equals => "EQUALS",
+            Operator::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EQUALS"]
+    }
+}
+impl AsRef<str> for Operator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Creates a playback configuration. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

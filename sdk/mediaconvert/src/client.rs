@@ -90,6 +90,9 @@ where
     pub fn delete_job_template(&self) -> fluent_builders::DeleteJobTemplate<C, M, R> {
         fluent_builders::DeleteJobTemplate::new(self.handle.clone())
     }
+    pub fn delete_policy(&self) -> fluent_builders::DeletePolicy<C, M, R> {
+        fluent_builders::DeletePolicy::new(self.handle.clone())
+    }
     pub fn delete_preset(&self) -> fluent_builders::DeletePreset<C, M, R> {
         fluent_builders::DeletePreset::new(self.handle.clone())
     }
@@ -107,6 +110,9 @@ where
     }
     pub fn get_job_template(&self) -> fluent_builders::GetJobTemplate<C, M, R> {
         fluent_builders::GetJobTemplate::new(self.handle.clone())
+    }
+    pub fn get_policy(&self) -> fluent_builders::GetPolicy<C, M, R> {
+        fluent_builders::GetPolicy::new(self.handle.clone())
     }
     pub fn get_preset(&self) -> fluent_builders::GetPreset<C, M, R> {
         fluent_builders::GetPreset::new(self.handle.clone())
@@ -128,6 +134,9 @@ where
     }
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    pub fn put_policy(&self) -> fluent_builders::PutPolicy<C, M, R> {
+        fluent_builders::PutPolicy::new(self.handle.clone())
     }
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
@@ -906,6 +915,51 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeletePolicy<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_policy_input::Builder,
+    }
+    impl<C, M, R> DeletePolicy<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeletePolicyOutput,
+            smithy_http::result::SdkError<crate::error::DeletePolicyError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeletePolicyInputOperationOutputAlias,
+                crate::output::DeletePolicyOutput,
+                crate::error::DeletePolicyError,
+                crate::input::DeletePolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DeletePreset<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -1248,6 +1302,51 @@ pub mod fluent_builders {
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetPolicy<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_policy_input::Builder,
+    }
+    impl<C, M, R> GetPolicy<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetPolicyOutput,
+            smithy_http::result::SdkError<crate::error::GetPolicyError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetPolicyInputOperationOutputAlias,
+                crate::output::GetPolicyOutput,
+                crate::error::GetPolicyError,
+                crate::input::GetPolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
         }
     }
     #[derive(std::fmt::Debug)]
@@ -1773,6 +1872,60 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct PutPolicy<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_policy_input::Builder,
+    }
+    impl<C, M, R> PutPolicy<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutPolicyOutput,
+            smithy_http::result::SdkError<crate::error::PutPolicyError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutPolicyInputOperationOutputAlias,
+                crate::output::PutPolicyOutput,
+                crate::error::PutPolicyError,
+                crate::input::PutPolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+        pub fn policy(mut self, inp: crate::model::Policy) -> Self {
+            self.inner = self.inner.policy(inp);
+            self
+        }
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
+            self.inner = self.inner.set_policy(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -2231,7 +2384,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2251,7 +2405,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

@@ -4422,6 +4422,8 @@ pub mod create_media_capture_pipeline_input {
         pub(crate) sink_type: std::option::Option<crate::model::MediaPipelineSinkType>,
         pub(crate) sink_arn: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) chime_sdk_meeting_configuration:
+            std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
     }
     impl Builder {
         /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
@@ -4479,6 +4481,21 @@ pub mod create_media_capture_pipeline_input {
             self.client_request_token = input;
             self
         }
+        /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+        pub fn chime_sdk_meeting_configuration(
+            mut self,
+            input: crate::model::ChimeSdkMeetingConfiguration,
+        ) -> Self {
+            self.chime_sdk_meeting_configuration = Some(input);
+            self
+        }
+        pub fn set_chime_sdk_meeting_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
+        ) -> Self {
+            self.chime_sdk_meeting_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput)
         pub fn build(
             self,
@@ -4492,6 +4509,7 @@ pub mod create_media_capture_pipeline_input {
                 sink_type: self.sink_type,
                 sink_arn: self.sink_arn,
                 client_request_token: self.client_request_token,
+                chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration,
             })
         }
     }
@@ -39886,6 +39904,9 @@ pub struct CreateMediaCapturePipelineInput {
     pub sink_arn: std::option::Option<std::string::String>,
     /// <p>The token assigned to the client making the pipeline request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+    pub chime_sdk_meeting_configuration:
+        std::option::Option<crate::model::ChimeSdkMeetingConfiguration>,
 }
 impl std::fmt::Debug for CreateMediaCapturePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39895,6 +39916,10 @@ impl std::fmt::Debug for CreateMediaCapturePipelineInput {
         formatter.field("sink_type", &self.sink_type);
         formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "chime_sdk_meeting_configuration",
+            &self.chime_sdk_meeting_configuration,
+        );
         formatter.finish()
     }
 }

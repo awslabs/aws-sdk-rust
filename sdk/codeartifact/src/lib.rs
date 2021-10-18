@@ -291,3 +291,4 @@ pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
 pub use smithy_http::endpoint::Endpoint;
+pub use smithy_types::retry::RetryConfig;

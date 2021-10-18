@@ -191,20 +191,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon
         /// Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -374,15 +362,9 @@ pub mod fluent_builders {
         /// secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the
         /// information as a JSON structure of key/value pairs that the Lambda rotation function knows how
         /// to parse.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
-        /// specify key/value pairs. For information on how to format a JSON parameter for the various
-        /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
-        /// <p>
-        /// <code>{"username":"bob","password":"abc123xyz456"}</code>
-        /// </p>
-        /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
-        /// use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn secret_string(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_string(inp);
             self
@@ -539,20 +521,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You
         /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -608,20 +578,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or
         /// the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -719,20 +677,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the secret whose details you want to retrieve. You can specify either
         /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -925,20 +871,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You
         /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -994,20 +928,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the secret containing the version that you want to retrieve. You can specify
         /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -1196,20 +1118,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the secret containing the versions you want to list. You can specify
         /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -1304,20 +1214,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify
         /// either the ARN or the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -1400,20 +1298,8 @@ pub mod fluent_builders {
         /// <p>Specifies the secret to which you want to add a new version. You can specify either the
         /// Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already
         /// exist.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -1485,16 +1371,9 @@ pub mod fluent_builders {
         /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
         /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
         /// function knows how to parse.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
-        /// specify key/value pairs. For information on how to format a JSON parameter for the various
-        /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>CLI User Guide</i>.</p>
-        /// <p> For example:</p>
-        /// <p>
-        /// <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
-        /// </p>
-        /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
-        /// use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn secret_string(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_string(inp);
             self
@@ -1729,20 +1608,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You
         /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -1798,20 +1665,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource
         /// Name (ARN) or the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -1970,20 +1825,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the secret that you want to attach tags to. You can specify either the
         /// Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -1997,11 +1840,10 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code>
         /// and a <code>Value</code>.</p>
-        /// <p>This parameter to the API requires a JSON text string argument. For information on how to
-        /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>. For the
-        /// CLI, you can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
-        /// Key="Key2",Value="Value2"[,…]</code>
-        /// </p>
+        /// <p>This parameter to the API requires a JSON text string argument.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -2060,20 +1902,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the secret that you want to remove tags from. You can specify either
         /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -2087,8 +1917,10 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the
         /// key and its associated value are removed.</p>
-        /// <p>This parameter to the API requires a JSON text string argument. For information on how to
-        /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+        /// <p>This parameter to the API requires a JSON text string argument.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(inp);
             self
@@ -2148,20 +1980,8 @@ pub mod fluent_builders {
         /// <p>Specifies the secret that you want to modify or to which you want to add a new version.
         /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
         /// secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -2220,8 +2040,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) to be
-        /// used to encrypt the protected text in new versions of this secret.</p>
+        /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) that Secrets Manager
+        /// uses to encrypt the protected text in new versions of this secret as well as any existing versions of this secret that have the staging labels AWSCURRENT, AWSPENDING, or AWSPREVIOUS. For more information about staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging
+        /// Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
         /// <important>
         /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this
         /// operation using credentials from the same account that owns the secret. If the secret is in
@@ -2258,21 +2079,9 @@ pub mod fluent_builders {
         /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
         /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
         /// function knows how to parse.</p>
-        /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
-        /// specify key/value pairs. For information on how to format a JSON parameter for the various
-        /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
-        /// <p>
-        /// <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
-        /// </p>
-        /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
-        /// use single quotes to avoid confusion with the double quotes required in the JSON text. You can
-        /// also 'escape' the double quote character in the embedded JSON text by prefacing each with a
-        /// backslash. For example, the following string is surrounded by double-quotes. All of the
-        /// embedded double quotes are escaped:</p>
-        /// <p>
-        /// <code>"[{\"username\":\"bob\"},{\"password\":\"abc123xyz456\"}]"</code>
-        /// </p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn secret_string(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_string(inp);
             self
@@ -2332,20 +2141,8 @@ pub mod fluent_builders {
         /// <p>Specifies the secret with the version with the list of staging labels you want to modify.
         /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
         /// secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -2445,20 +2242,8 @@ pub mod fluent_builders {
         /// <p> (Optional) The identifier of the secret with the resource-based policy you want to
         /// validate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
         /// secret.</p>
-        /// <note>
-        /// <p>If you specify an ARN, we generally recommend that you specify a complete ARN. You can
-        /// specify a partial ARN too—for example, if you don’t include the final hyphen and six random
-        /// characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN
-        /// match can work as long as it uniquely matches only one secret. However, if your secret has a
-        /// name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six
-        /// characters to the ARN) and you try to use that as a partial ARN, then those characters cause
-        /// Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected
-        /// results. To avoid this situation, we recommend that you don’t create secret names ending
-        /// with a hyphen followed by six characters.</p>
-        /// <p>If you specify an incomplete ARN without the random suffix, and instead provide the
-        /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
-        /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
-        /// </note>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_id(inp);
             self
@@ -2487,7 +2272,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -2507,7 +2293,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

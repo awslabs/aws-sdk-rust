@@ -163,7 +163,7 @@ impl ScopeWriter<'_, '_> {
 #[cfg(test)]
 mod test {
     use crate::encode::XmlWriter;
-    use protocol_test_helpers::{assert_ok, validate_body, MediaType};
+    use smithy_protocol_test::{assert_ok, validate_body, MediaType};
 
     #[test]
     fn forgot_finish() {

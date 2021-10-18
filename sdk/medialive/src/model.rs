@@ -3701,7 +3701,7 @@ pub struct Input {
     /// A list of IDs for all Inputs which are partners of this one.
     pub input_partner_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-    /// during input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+    /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
     pub input_source_type: std::option::Option<crate::model::InputSourceType>,
     /// A list of MediaConnect Flows for this input.
     pub media_connect_flows: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
@@ -3718,7 +3718,7 @@ pub struct Input {
     /// A collection of key-value pairs.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// Placeholder documentation for InputType
+    /// The different types of inputs that AWS Elemental MediaLive supports.
     pub r#type: std::option::Option<crate::model::InputType>,
 }
 impl std::fmt::Debug for Input {
@@ -3858,7 +3858,7 @@ pub mod input {
             self
         }
         /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-        /// during input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+        /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
         pub fn input_source_type(mut self, input: crate::model::InputSourceType) -> Self {
             self.input_source_type = Some(input);
             self
@@ -3958,7 +3958,7 @@ pub mod input {
             self.tags = input;
             self
         }
-        /// Placeholder documentation for InputType
+        /// The different types of inputs that AWS Elemental MediaLive supports.
         pub fn r#type(mut self, input: crate::model::InputType) -> Self {
             self.r#type = Some(input);
             self
@@ -3997,7 +3997,7 @@ impl Input {
     }
 }
 
-/// Placeholder documentation for InputType
+/// The different types of inputs that AWS Elemental MediaLive supports.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4016,6 +4016,7 @@ pub enum InputType {
     RtmpPull,
     RtmpPush,
     RtpPush,
+    TsFile,
     UdpPush,
     UrlPull,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -4031,6 +4032,7 @@ impl std::convert::From<&str> for InputType {
             "RTMP_PULL" => InputType::RtmpPull,
             "RTMP_PUSH" => InputType::RtmpPush,
             "RTP_PUSH" => InputType::RtpPush,
+            "TS_FILE" => InputType::TsFile,
             "UDP_PUSH" => InputType::UdpPush,
             "URL_PULL" => InputType::UrlPull,
             other => InputType::Unknown(other.to_owned()),
@@ -4054,6 +4056,7 @@ impl InputType {
             InputType::RtmpPull => "RTMP_PULL",
             InputType::RtmpPush => "RTMP_PUSH",
             InputType::RtpPush => "RTP_PUSH",
+            InputType::TsFile => "TS_FILE",
             InputType::UdpPush => "UDP_PUSH",
             InputType::UrlPull => "URL_PULL",
             InputType::Unknown(s) => s.as_ref(),
@@ -4068,6 +4071,7 @@ impl InputType {
             "RTMP_PULL",
             "RTMP_PUSH",
             "RTP_PUSH",
+            "TS_FILE",
             "UDP_PUSH",
             "URL_PULL",
         ]
@@ -4267,8 +4271,8 @@ impl MediaConnectFlow {
 }
 
 /// There are two types of input sources, static and dynamic. If an input source is dynamic you can
-/// change the source url of the input dynamically using an input switch action. However, the only input type
-/// to support a dynamic url at this time is MP4_FILE. By default all input sources are static.
+/// change the source url of the input dynamically using an input switch action. Currently, two input types
+/// support a dynamic url at this time, MP4_FILE and TS_FILE. By default all input sources are static.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -28863,6 +28867,8 @@ pub struct AudioDescription {
     /// useConfigured: The value in Audio Type is included in the output.
     /// Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
     pub audio_type_control: std::option::Option<crate::model::AudioDescriptionAudioTypeControl>,
+    /// Settings to configure one or more solutions that insert audio watermarks in the audio encode
+    pub audio_watermarking_settings: std::option::Option<crate::model::AudioWatermarkSettings>,
     /// Audio codec settings.
     pub codec_settings: std::option::Option<crate::model::AudioCodecSettings>,
     /// RFC 5646 language code representing the language of the audio output track. Only used if languageControlMode is useConfigured, or there is no ISO 639 language code specified in the input.
@@ -28887,6 +28893,10 @@ impl std::fmt::Debug for AudioDescription {
         formatter.field("audio_selector_name", &self.audio_selector_name);
         formatter.field("audio_type", &self.audio_type);
         formatter.field("audio_type_control", &self.audio_type_control);
+        formatter.field(
+            "audio_watermarking_settings",
+            &self.audio_watermarking_settings,
+        );
         formatter.field("codec_settings", &self.codec_settings);
         formatter.field("language_code", &self.language_code);
         formatter.field("language_code_control", &self.language_code_control);
@@ -28908,6 +28918,8 @@ pub mod audio_description {
         pub(crate) audio_type: std::option::Option<crate::model::AudioType>,
         pub(crate) audio_type_control:
             std::option::Option<crate::model::AudioDescriptionAudioTypeControl>,
+        pub(crate) audio_watermarking_settings:
+            std::option::Option<crate::model::AudioWatermarkSettings>,
         pub(crate) codec_settings: std::option::Option<crate::model::AudioCodecSettings>,
         pub(crate) language_code: std::option::Option<std::string::String>,
         pub(crate) language_code_control:
@@ -28972,6 +28984,21 @@ pub mod audio_description {
             input: std::option::Option<crate::model::AudioDescriptionAudioTypeControl>,
         ) -> Self {
             self.audio_type_control = input;
+            self
+        }
+        /// Settings to configure one or more solutions that insert audio watermarks in the audio encode
+        pub fn audio_watermarking_settings(
+            mut self,
+            input: crate::model::AudioWatermarkSettings,
+        ) -> Self {
+            self.audio_watermarking_settings = Some(input);
+            self
+        }
+        pub fn set_audio_watermarking_settings(
+            mut self,
+            input: std::option::Option<crate::model::AudioWatermarkSettings>,
+        ) -> Self {
+            self.audio_watermarking_settings = input;
             self
         }
         /// Audio codec settings.
@@ -29050,6 +29077,7 @@ pub mod audio_description {
                 audio_selector_name: self.audio_selector_name,
                 audio_type: self.audio_type,
                 audio_type_control: self.audio_type_control,
+                audio_watermarking_settings: self.audio_watermarking_settings,
                 codec_settings: self.codec_settings,
                 language_code: self.language_code,
                 language_code_control: self.language_code_control,
@@ -31897,6 +31925,410 @@ impl AsRef<str> for AacCodingMode {
     }
 }
 
+/// Audio Watermark Settings
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AudioWatermarkSettings {
+    /// Settings to configure Nielsen Watermarks in the audio encode
+    pub nielsen_watermarks_settings: std::option::Option<crate::model::NielsenWatermarksSettings>,
+}
+impl std::fmt::Debug for AudioWatermarkSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AudioWatermarkSettings");
+        formatter.field(
+            "nielsen_watermarks_settings",
+            &self.nielsen_watermarks_settings,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings)
+pub mod audio_watermark_settings {
+    /// A builder for [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) nielsen_watermarks_settings:
+            std::option::Option<crate::model::NielsenWatermarksSettings>,
+    }
+    impl Builder {
+        /// Settings to configure Nielsen Watermarks in the audio encode
+        pub fn nielsen_watermarks_settings(
+            mut self,
+            input: crate::model::NielsenWatermarksSettings,
+        ) -> Self {
+            self.nielsen_watermarks_settings = Some(input);
+            self
+        }
+        pub fn set_nielsen_watermarks_settings(
+            mut self,
+            input: std::option::Option<crate::model::NielsenWatermarksSettings>,
+        ) -> Self {
+            self.nielsen_watermarks_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings)
+        pub fn build(self) -> crate::model::AudioWatermarkSettings {
+            crate::model::AudioWatermarkSettings {
+                nielsen_watermarks_settings: self.nielsen_watermarks_settings,
+            }
+        }
+    }
+}
+impl AudioWatermarkSettings {
+    /// Creates a new builder-style object to manufacture [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings)
+    pub fn builder() -> crate::model::audio_watermark_settings::Builder {
+        crate::model::audio_watermark_settings::Builder::default()
+    }
+}
+
+/// Nielsen Watermarks Settings
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NielsenWatermarksSettings {
+    /// Complete these fields only if you want to insert watermarks of type Nielsen CBET
+    pub nielsen_cbet_settings: std::option::Option<crate::model::NielsenCbet>,
+    /// Choose the distribution types that you want to assign to the watermarks:
+    /// - PROGRAM_CONTENT
+    /// - FINAL_DISTRIBUTOR
+    pub nielsen_distribution_type:
+        std::option::Option<crate::model::NielsenWatermarksDistributionTypes>,
+    /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
+    pub nielsen_naes_ii_nw_settings: std::option::Option<crate::model::NielsenNaesIiNw>,
+}
+impl std::fmt::Debug for NielsenWatermarksSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NielsenWatermarksSettings");
+        formatter.field("nielsen_cbet_settings", &self.nielsen_cbet_settings);
+        formatter.field("nielsen_distribution_type", &self.nielsen_distribution_type);
+        formatter.field(
+            "nielsen_naes_ii_nw_settings",
+            &self.nielsen_naes_ii_nw_settings,
+        );
+        formatter.finish()
+    }
+}
+/// See [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings)
+pub mod nielsen_watermarks_settings {
+    /// A builder for [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) nielsen_cbet_settings: std::option::Option<crate::model::NielsenCbet>,
+        pub(crate) nielsen_distribution_type:
+            std::option::Option<crate::model::NielsenWatermarksDistributionTypes>,
+        pub(crate) nielsen_naes_ii_nw_settings: std::option::Option<crate::model::NielsenNaesIiNw>,
+    }
+    impl Builder {
+        /// Complete these fields only if you want to insert watermarks of type Nielsen CBET
+        pub fn nielsen_cbet_settings(mut self, input: crate::model::NielsenCbet) -> Self {
+            self.nielsen_cbet_settings = Some(input);
+            self
+        }
+        pub fn set_nielsen_cbet_settings(
+            mut self,
+            input: std::option::Option<crate::model::NielsenCbet>,
+        ) -> Self {
+            self.nielsen_cbet_settings = input;
+            self
+        }
+        /// Choose the distribution types that you want to assign to the watermarks:
+        /// - PROGRAM_CONTENT
+        /// - FINAL_DISTRIBUTOR
+        pub fn nielsen_distribution_type(
+            mut self,
+            input: crate::model::NielsenWatermarksDistributionTypes,
+        ) -> Self {
+            self.nielsen_distribution_type = Some(input);
+            self
+        }
+        pub fn set_nielsen_distribution_type(
+            mut self,
+            input: std::option::Option<crate::model::NielsenWatermarksDistributionTypes>,
+        ) -> Self {
+            self.nielsen_distribution_type = input;
+            self
+        }
+        /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
+        pub fn nielsen_naes_ii_nw_settings(mut self, input: crate::model::NielsenNaesIiNw) -> Self {
+            self.nielsen_naes_ii_nw_settings = Some(input);
+            self
+        }
+        pub fn set_nielsen_naes_ii_nw_settings(
+            mut self,
+            input: std::option::Option<crate::model::NielsenNaesIiNw>,
+        ) -> Self {
+            self.nielsen_naes_ii_nw_settings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings)
+        pub fn build(self) -> crate::model::NielsenWatermarksSettings {
+            crate::model::NielsenWatermarksSettings {
+                nielsen_cbet_settings: self.nielsen_cbet_settings,
+                nielsen_distribution_type: self.nielsen_distribution_type,
+                nielsen_naes_ii_nw_settings: self.nielsen_naes_ii_nw_settings,
+            }
+        }
+    }
+}
+impl NielsenWatermarksSettings {
+    /// Creates a new builder-style object to manufacture [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings)
+    pub fn builder() -> crate::model::nielsen_watermarks_settings::Builder {
+        crate::model::nielsen_watermarks_settings::Builder::default()
+    }
+}
+
+/// Nielsen Naes Ii Nw
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NielsenNaesIiNw {
+    /// Enter the check digit string for the watermark
+    pub check_digit_string: std::option::Option<std::string::String>,
+    /// Enter the Nielsen Source ID (SID) to include in the watermark
+    pub sid: f64,
+}
+impl std::fmt::Debug for NielsenNaesIiNw {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NielsenNaesIiNw");
+        formatter.field("check_digit_string", &self.check_digit_string);
+        formatter.field("sid", &self.sid);
+        formatter.finish()
+    }
+}
+/// See [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw)
+pub mod nielsen_naes_ii_nw {
+    /// A builder for [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) check_digit_string: std::option::Option<std::string::String>,
+        pub(crate) sid: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// Enter the check digit string for the watermark
+        pub fn check_digit_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.check_digit_string = Some(input.into());
+            self
+        }
+        pub fn set_check_digit_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.check_digit_string = input;
+            self
+        }
+        /// Enter the Nielsen Source ID (SID) to include in the watermark
+        pub fn sid(mut self, input: f64) -> Self {
+            self.sid = Some(input);
+            self
+        }
+        pub fn set_sid(mut self, input: std::option::Option<f64>) -> Self {
+            self.sid = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw)
+        pub fn build(self) -> crate::model::NielsenNaesIiNw {
+            crate::model::NielsenNaesIiNw {
+                check_digit_string: self.check_digit_string,
+                sid: self.sid.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl NielsenNaesIiNw {
+    /// Creates a new builder-style object to manufacture [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw)
+    pub fn builder() -> crate::model::nielsen_naes_ii_nw::Builder {
+        crate::model::nielsen_naes_ii_nw::Builder::default()
+    }
+}
+
+/// Nielsen Watermarks Distribution Types
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NielsenWatermarksDistributionTypes {
+    FinalDistributor,
+    ProgramContent,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for NielsenWatermarksDistributionTypes {
+    fn from(s: &str) -> Self {
+        match s {
+            "FINAL_DISTRIBUTOR" => NielsenWatermarksDistributionTypes::FinalDistributor,
+            "PROGRAM_CONTENT" => NielsenWatermarksDistributionTypes::ProgramContent,
+            other => NielsenWatermarksDistributionTypes::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for NielsenWatermarksDistributionTypes {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NielsenWatermarksDistributionTypes::from(s))
+    }
+}
+impl NielsenWatermarksDistributionTypes {
+    pub fn as_str(&self) -> &str {
+        match self {
+            NielsenWatermarksDistributionTypes::FinalDistributor => "FINAL_DISTRIBUTOR",
+            NielsenWatermarksDistributionTypes::ProgramContent => "PROGRAM_CONTENT",
+            NielsenWatermarksDistributionTypes::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FINAL_DISTRIBUTOR", "PROGRAM_CONTENT"]
+    }
+}
+impl AsRef<str> for NielsenWatermarksDistributionTypes {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Nielsen CBET
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NielsenCbet {
+    /// Enter the CBET check digits to use in the watermark.
+    pub cbet_check_digit_string: std::option::Option<std::string::String>,
+    /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
+    pub cbet_stepaside: std::option::Option<crate::model::NielsenWatermarksCbetStepaside>,
+    /// Enter the CBET Source ID (CSID) to use in the watermark
+    pub csid: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for NielsenCbet {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NielsenCbet");
+        formatter.field("cbet_check_digit_string", &self.cbet_check_digit_string);
+        formatter.field("cbet_stepaside", &self.cbet_stepaside);
+        formatter.field("csid", &self.csid);
+        formatter.finish()
+    }
+}
+/// See [`NielsenCbet`](crate::model::NielsenCbet)
+pub mod nielsen_cbet {
+    /// A builder for [`NielsenCbet`](crate::model::NielsenCbet)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cbet_check_digit_string: std::option::Option<std::string::String>,
+        pub(crate) cbet_stepaside:
+            std::option::Option<crate::model::NielsenWatermarksCbetStepaside>,
+        pub(crate) csid: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Enter the CBET check digits to use in the watermark.
+        pub fn cbet_check_digit_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cbet_check_digit_string = Some(input.into());
+            self
+        }
+        pub fn set_cbet_check_digit_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cbet_check_digit_string = input;
+            self
+        }
+        /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
+        pub fn cbet_stepaside(
+            mut self,
+            input: crate::model::NielsenWatermarksCbetStepaside,
+        ) -> Self {
+            self.cbet_stepaside = Some(input);
+            self
+        }
+        pub fn set_cbet_stepaside(
+            mut self,
+            input: std::option::Option<crate::model::NielsenWatermarksCbetStepaside>,
+        ) -> Self {
+            self.cbet_stepaside = input;
+            self
+        }
+        /// Enter the CBET Source ID (CSID) to use in the watermark
+        pub fn csid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.csid = Some(input.into());
+            self
+        }
+        pub fn set_csid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.csid = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NielsenCbet`](crate::model::NielsenCbet)
+        pub fn build(self) -> crate::model::NielsenCbet {
+            crate::model::NielsenCbet {
+                cbet_check_digit_string: self.cbet_check_digit_string,
+                cbet_stepaside: self.cbet_stepaside,
+                csid: self.csid,
+            }
+        }
+    }
+}
+impl NielsenCbet {
+    /// Creates a new builder-style object to manufacture [`NielsenCbet`](crate::model::NielsenCbet)
+    pub fn builder() -> crate::model::nielsen_cbet::Builder {
+        crate::model::nielsen_cbet::Builder::default()
+    }
+}
+
+/// Nielsen Watermarks Cbet Stepaside
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NielsenWatermarksCbetStepaside {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for NielsenWatermarksCbetStepaside {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => NielsenWatermarksCbetStepaside::Disabled,
+            "ENABLED" => NielsenWatermarksCbetStepaside::Enabled,
+            other => NielsenWatermarksCbetStepaside::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for NielsenWatermarksCbetStepaside {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NielsenWatermarksCbetStepaside::from(s))
+    }
+}
+impl NielsenWatermarksCbetStepaside {
+    pub fn as_str(&self) -> &str {
+        match self {
+            NielsenWatermarksCbetStepaside::Disabled => "DISABLED",
+            NielsenWatermarksCbetStepaside::Enabled => "ENABLED",
+            NielsenWatermarksCbetStepaside::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for NielsenWatermarksCbetStepaside {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// Audio Description Audio Type Control
 #[non_exhaustive]
 #[derive(
@@ -33575,7 +34007,7 @@ pub struct ChannelSummary {
     /// A collection of key-value pairs.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// Settings for VPC output
+    /// Settings for any VPC outputs.
     pub vpc: std::option::Option<crate::model::VpcOutputSettingsDescription>,
 }
 impl std::fmt::Debug for ChannelSummary {
@@ -33794,7 +34226,7 @@ pub mod channel_summary {
             self.tags = input;
             self
         }
-        /// Settings for VPC output
+        /// Settings for any VPC outputs.
         pub fn vpc(mut self, input: crate::model::VpcOutputSettingsDescription) -> Self {
             self.vpc = Some(input);
             self

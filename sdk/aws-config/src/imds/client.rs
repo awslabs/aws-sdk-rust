@@ -46,7 +46,7 @@ mod token;
 
 // 6 hours
 const DEFAULT_TOKEN_TTL: Duration = Duration::from_secs(21_600);
-const DEFAULT_RETRIES: u32 = 3;
+const DEFAULT_ATTEMPTS: u32 = 4;
 const DEFAULT_CONNECT_TIMEOUT: Duration = Duration::from_secs(1);
 const DEFAULT_READ_TIMEOUT: Duration = Duration::from_secs(1);
 
@@ -353,7 +353,7 @@ impl EndpointMode {
 /// IMDSv2 Client Builder
 #[derive(Default, Debug, Clone)]
 pub struct Builder {
-    num_retries: Option<u32>,
+    max_attempts: Option<u32>,
     endpoint: Option<EndpointSource>,
     mode_override: Option<EndpointMode>,
     token_ttl: Option<Duration>,
@@ -399,9 +399,9 @@ impl Error for BuildError {
 impl Builder {
     /// Override the number of retries for fetching tokens & metadata
     ///
-    /// By default, 3 retries will be made.
-    pub fn retries(mut self, retries: u32) -> Self {
-        self.num_retries = Some(retries);
+    /// By default, 4 attempts will be made.
+    pub fn max_attempts(mut self, max_attempts: u32) -> Self {
+        self.max_attempts = Some(max_attempts);
         self
     }
 
@@ -487,14 +487,16 @@ impl Builder {
         let timeout_config = timeout::Settings::default()
             .with_connect_timeout(self.connect_timeout.unwrap_or(DEFAULT_CONNECT_TIMEOUT))
             .with_read_timeout(self.read_timeout.unwrap_or(DEFAULT_READ_TIMEOUT));
-        let connector = expect_connector(config.connector(&HttpSettings { timeout_config }));
+        let connector = expect_connector(config.connector(&HttpSettings {
+            timeout_settings: timeout_config,
+        }));
         let endpoint_source = self
             .endpoint
             .unwrap_or_else(|| EndpointSource::Env(config.env(), config.fs()));
         let endpoint = endpoint_source.endpoint(self.mode_override).await?;
         let endpoint = Endpoint::immutable(endpoint);
-        let retry_config =
-            retry::Config::default().with_max_retries(self.num_retries.unwrap_or(DEFAULT_RETRIES));
+        let retry_config = retry::Config::default()
+            .with_max_attempts(self.max_attempts.unwrap_or(DEFAULT_ATTEMPTS));
         let token_loader = token::TokenMiddleware::new(
             connector.clone(),
             config.time_source(),

@@ -1,0 +1,75 @@
+{
+  "tests": [
+    {
+      "docs": "all fields unset provider is not enabled",
+      "env": {},
+      "result": {
+        "ErrorContains": "No environment variables were set to configure ECS provider"
+      }
+    },
+    {
+      "docs": "relative URI",
+      "env": {
+        "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI": "/credentials"
+      },
+      "result": {
+        "Ok": "http://169.254.170.2/credentials"
+      }
+    },
+    {
+      "docs": "invalid full uri",
+      "env": {
+        "AWS_CONTAINER_CREDENTIALS_FULL_URI": "/credentials"
+      },
+      "result": {
+        "ErrorContains": "URI did not specify a host"
+      }
+    },
+    {
+      "docs": "full uri HTTPS",
+      "env": {
+        "AWS_CONTAINER_CREDENTIALS_FULL_URI": "https://mypersonalsite/credentials"
+      },
+      "result": {
+        "Ok": "https://mypersonalsite/credentials"
+      }
+    },
+    {
+      "docs": "full uri HTTPS with port",
+      "env": {
+        "AWS_CONTAINER_CREDENTIALS_FULL_URI": "https://mypersonalsite:8080/credentials"
+      },
+      "result": {
+        "Ok": "https://mypersonalsite:8080/credentials"
+      }
+    },
+    {
+      "docs": "localhost",
+      "env": {
+        "AWS_CONTAINER_CREDENTIALS_FULL_URI": "http://localhost:8080/credentials"
+      },
+      "result": {
+        "Ok": "http://localhost:8080/credentials"
+      }
+    },
+    {
+      "docs": "relative takes precedence over full",
+      "env": {
+        "AWS_CONTAINER_CREDENTIALS_FULL_URI": "http://localhost:8080/credentials",
+        "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI": "/credentials"
+      },
+      "result": {
+        "Ok": "http://169.254.170.2/credentials"
+      }
+    },
+    {
+      "docs": "support query params",
+      "env": {
+        "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI": "/credentials?a=1"
+      },
+      "result": {
+        "Ok": "http://169.254.170.2/credentials?a=1"
+      }
+    }
+  ]
+}

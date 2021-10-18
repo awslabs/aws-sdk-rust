@@ -2018,6 +2018,25 @@ pub fn parse_describe_load_balancers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidNextToken" => {
+            crate::error::DescribeLoadBalancersError {
+                meta: generic,
+                kind: crate::error::DescribeLoadBalancersErrorKind::InvalidNextToken({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DescribeLoadBalancersError {
             meta: generic,
             kind: crate::error::DescribeLoadBalancersErrorKind::ResourceContentionFault({
@@ -2077,6 +2096,25 @@ pub fn parse_describe_load_balancer_target_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidNextToken" => {
+            crate::error::DescribeLoadBalancerTargetGroupsError {
+                meta: generic,
+                kind: crate::error::DescribeLoadBalancerTargetGroupsErrorKind::InvalidNextToken({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::invalid_next_token::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ResourceContention" => crate::error::DescribeLoadBalancerTargetGroupsError {
             meta: generic,
             kind: crate::error::DescribeLoadBalancerTargetGroupsErrorKind::ResourceContentionFault(

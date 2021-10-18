@@ -3,6 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use std::convert::Infallible;
+use std::error::Error;
+use std::fmt;
+use std::fmt::{Display, Formatter};
+use std::sync::Arc;
+use std::time::{Duration, UNIX_EPOCH};
+
+use bytes::Bytes;
+use http::header::{AUTHORIZATION, USER_AGENT};
+use http::{self, Uri};
+use tokio::time::Instant;
+
 use aws_endpoint::partition::endpoint::{Protocol, SignatureVersion};
 use aws_endpoint::set_endpoint_resolver;
 use aws_http::user_agent::AwsUserAgent;
@@ -13,9 +25,6 @@ use aws_types::credentials::SharedCredentialsProvider;
 use aws_types::region::Region;
 use aws_types::Credentials;
 use aws_types::SigningService;
-use bytes::Bytes;
-use http::header::{AUTHORIZATION, USER_AGENT};
-use http::{self, Uri};
 use smithy_client::test_connection::TestConnection;
 use smithy_http::body::SdkBody;
 use smithy_http::operation;
@@ -23,13 +32,6 @@ use smithy_http::operation::Operation;
 use smithy_http::response::ParseHttpResponse;
 use smithy_http::result::SdkError;
 use smithy_types::retry::{ErrorKind, ProvideErrorKind};
-use std::convert::Infallible;
-use std::error::Error;
-use std::fmt;
-use std::fmt::{Display, Formatter};
-use std::sync::Arc;
-use std::time::{Duration, UNIX_EPOCH};
-use tokio::time::Instant;
 
 #[derive(Clone)]
 struct TestOperationParser;
@@ -160,7 +162,7 @@ async fn retry_test() {
             .body("response body")
             .unwrap()
     }
-    // 1 failing response followed by 1 succesful response
+    // 1 failing response followed by 1 successful response
     let events = vec![
         // First operation
         (req(), err()),
@@ -174,12 +176,11 @@ async fn retry_test() {
         (req(), err()),
         (req(), err()),
         (req(), err()),
-        (req(), err()),
-        (req(), err()),
-        (req(), err()),
     ];
     let conn = TestConnection::new(events);
-    let retry_config = RetryConfig::default().with_base(|| 1_f64);
+    let retry_config = RetryConfig::default()
+        .with_max_attempts(4)
+        .with_base(|| 1_f64);
     let client = Client::new(conn.clone()).with_retry_config(retry_config);
     tokio::time::pause();
     let initial = tokio::time::Instant::now();
@@ -204,10 +205,10 @@ async fn retry_test() {
         .call(test_operation())
         .await
         .expect_err("all responses failed");
-    // three more tries followed by failure
-    assert_eq!(conn.requests().len(), 8);
+    // 4 more tries followed by failure
+    assert_eq!(conn.requests().len(), 9);
     assert!(matches!(err, SdkError::ServiceError { .. }));
-    assert_time_passed(initial, Duration::from_secs(3));
+    assert_time_passed(initial, Duration::from_secs(7));
 }
 
 /// Validate that time has passed with a 5ms tolerance

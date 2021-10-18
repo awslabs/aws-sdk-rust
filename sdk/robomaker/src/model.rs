@@ -60,7 +60,8 @@ impl TemplateLocation {
     }
 }
 
-/// <p>The object that contains the Docker image URI for either your robot or simulation applications.</p>
+/// <p>The object that contains the Docker image URI for either your robot or simulation
+/// applications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
@@ -350,6 +351,7 @@ impl AsRef<str> for RobotSoftwareSuiteVersionType {
     std::hash::Hash,
 )]
 pub enum RobotSoftwareSuiteType {
+    General,
     Ros,
     Ros2,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -358,6 +360,7 @@ pub enum RobotSoftwareSuiteType {
 impl std::convert::From<&str> for RobotSoftwareSuiteType {
     fn from(s: &str) -> Self {
         match s {
+            "General" => RobotSoftwareSuiteType::General,
             "ROS" => RobotSoftwareSuiteType::Ros,
             "ROS2" => RobotSoftwareSuiteType::Ros2,
             other => RobotSoftwareSuiteType::Unknown(other.to_owned()),
@@ -374,13 +377,14 @@ impl std::str::FromStr for RobotSoftwareSuiteType {
 impl RobotSoftwareSuiteType {
     pub fn as_str(&self) -> &str {
         match self {
+            RobotSoftwareSuiteType::General => "General",
             RobotSoftwareSuiteType::Ros => "ROS",
             RobotSoftwareSuiteType::Ros2 => "ROS2",
             RobotSoftwareSuiteType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["ROS", "ROS2"]
+        &["General", "ROS", "ROS2"]
     }
 }
 impl AsRef<str> for RobotSoftwareSuiteType {
@@ -466,6 +470,7 @@ impl SimulationSoftwareSuite {
 pub enum SimulationSoftwareSuiteType {
     Gazebo,
     RosbagPlay,
+    SimulationRuntime,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -474,6 +479,7 @@ impl std::convert::From<&str> for SimulationSoftwareSuiteType {
         match s {
             "Gazebo" => SimulationSoftwareSuiteType::Gazebo,
             "RosbagPlay" => SimulationSoftwareSuiteType::RosbagPlay,
+            "SimulationRuntime" => SimulationSoftwareSuiteType::SimulationRuntime,
             other => SimulationSoftwareSuiteType::Unknown(other.to_owned()),
         }
     }
@@ -490,11 +496,12 @@ impl SimulationSoftwareSuiteType {
         match self {
             SimulationSoftwareSuiteType::Gazebo => "Gazebo",
             SimulationSoftwareSuiteType::RosbagPlay => "RosbagPlay",
+            SimulationSoftwareSuiteType::SimulationRuntime => "SimulationRuntime",
             SimulationSoftwareSuiteType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["Gazebo", "RosbagPlay"]
+        &["Gazebo", "RosbagPlay", "SimulationRuntime"]
     }
 }
 impl AsRef<str> for SimulationSoftwareSuiteType {
@@ -1359,6 +1366,8 @@ pub struct SimulationJobSummary {
     pub robot_application_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of the data sources.</p>
     pub data_source_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The compute type for the simulation job summary.</p>
+    pub compute_type: std::option::Option<crate::model::ComputeType>,
 }
 impl std::fmt::Debug for SimulationJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1373,6 +1382,7 @@ impl std::fmt::Debug for SimulationJobSummary {
         );
         formatter.field("robot_application_names", &self.robot_application_names);
         formatter.field("data_source_names", &self.data_source_names);
+        formatter.field("compute_type", &self.compute_type);
         formatter.finish()
     }
 }
@@ -1390,6 +1400,7 @@ pub mod simulation_job_summary {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) robot_application_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) data_source_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) compute_type: std::option::Option<crate::model::ComputeType>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
@@ -1477,6 +1488,18 @@ pub mod simulation_job_summary {
             self.data_source_names = input;
             self
         }
+        /// <p>The compute type for the simulation job summary.</p>
+        pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
+            self.compute_type = Some(input);
+            self
+        }
+        pub fn set_compute_type(
+            mut self,
+            input: std::option::Option<crate::model::ComputeType>,
+        ) -> Self {
+            self.compute_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SimulationJobSummary`](crate::model::SimulationJobSummary)
         pub fn build(self) -> crate::model::SimulationJobSummary {
             crate::model::SimulationJobSummary {
@@ -1487,6 +1510,7 @@ pub mod simulation_job_summary {
                 simulation_application_names: self.simulation_application_names,
                 robot_application_names: self.robot_application_names,
                 data_source_names: self.data_source_names,
+                compute_type: self.compute_type,
             }
         }
     }
@@ -1495,6 +1519,56 @@ impl SimulationJobSummary {
     /// Creates a new builder-style object to manufacture [`SimulationJobSummary`](crate::model::SimulationJobSummary)
     pub fn builder() -> crate::model::simulation_job_summary::Builder {
         crate::model::simulation_job_summary::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ComputeType {
+    Cpu,
+    GpuAndCpu,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ComputeType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CPU" => ComputeType::Cpu,
+            "GPU_AND_CPU" => ComputeType::GpuAndCpu,
+            other => ComputeType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ComputeType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ComputeType::from(s))
+    }
+}
+impl ComputeType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ComputeType::Cpu => "CPU",
+            ComputeType::GpuAndCpu => "GPU_AND_CPU",
+            ComputeType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CPU", "GPU_AND_CPU"]
+    }
+}
+impl AsRef<str> for ComputeType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1602,7 +1676,8 @@ pub struct SimulationJobRequest {
     /// <dl>
     /// <dt>Continue</dt>
     /// <dd>
-    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+    /// <p>Leaves the host running for its maximum timeout duration after a
+    /// <code>4XX</code> error code.</p>
     /// </dd>
     /// <dt>Fail</dt>
     /// <dd>
@@ -1731,7 +1806,8 @@ pub mod simulation_job_request {
         /// <dl>
         /// <dt>Continue</dt>
         /// <dd>
-        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+        /// <p>Leaves the host running for its maximum timeout duration after a
+        /// <code>4XX</code> error code.</p>
         /// </dd>
         /// <dt>Fail</dt>
         /// <dd>
@@ -1878,14 +1954,21 @@ impl SimulationJobRequest {
 pub struct Compute {
     /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
     /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-    /// only billed for the SU utilization you consume up to the maximim value provided. The
+    /// only billed for the SU utilization you consume up to the maximum value provided. The
     /// default is 15. </p>
     pub simulation_unit_limit: std::option::Option<i32>,
+    /// <p>Compute type information for the simulation job.</p>
+    pub compute_type: std::option::Option<crate::model::ComputeType>,
+    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
+    /// allocated to the SimulationJob.</p>
+    pub gpu_unit_limit: std::option::Option<i32>,
 }
 impl std::fmt::Debug for Compute {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Compute");
         formatter.field("simulation_unit_limit", &self.simulation_unit_limit);
+        formatter.field("compute_type", &self.compute_type);
+        formatter.field("gpu_unit_limit", &self.gpu_unit_limit);
         formatter.finish()
     }
 }
@@ -1896,11 +1979,13 @@ pub mod compute {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation_unit_limit: std::option::Option<i32>,
+        pub(crate) compute_type: std::option::Option<crate::model::ComputeType>,
+        pub(crate) gpu_unit_limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
         /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-        /// only billed for the SU utilization you consume up to the maximim value provided. The
+        /// only billed for the SU utilization you consume up to the maximum value provided. The
         /// default is 15. </p>
         pub fn simulation_unit_limit(mut self, input: i32) -> Self {
             self.simulation_unit_limit = Some(input);
@@ -1910,10 +1995,34 @@ pub mod compute {
             self.simulation_unit_limit = input;
             self
         }
+        /// <p>Compute type information for the simulation job.</p>
+        pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
+            self.compute_type = Some(input);
+            self
+        }
+        pub fn set_compute_type(
+            mut self,
+            input: std::option::Option<crate::model::ComputeType>,
+        ) -> Self {
+            self.compute_type = input;
+            self
+        }
+        /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
+        /// allocated to the SimulationJob.</p>
+        pub fn gpu_unit_limit(mut self, input: i32) -> Self {
+            self.gpu_unit_limit = Some(input);
+            self
+        }
+        pub fn set_gpu_unit_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.gpu_unit_limit = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Compute`](crate::model::Compute)
         pub fn build(self) -> crate::model::Compute {
             crate::model::Compute {
                 simulation_unit_limit: self.simulation_unit_limit,
+                compute_type: self.compute_type,
+                gpu_unit_limit: self.gpu_unit_limit,
             }
         }
     }
@@ -2020,6 +2129,21 @@ pub struct DataSourceConfig {
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub s3_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The data type for the data source that you're using for your container image or
+    /// simulation job. You can use this field to specify whether your data source is an Archive,
+    /// an Amazon S3 prefix, or a file.</p>
+    /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
+    pub r#type: std::option::Option<crate::model::DataSourceType>,
+    /// <p>The location where your files are mounted in the container image.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
+    /// you must provide an Amazon S3 object key to your archive. The object key must point to
+    /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
+    /// you provide the Amazon S3 prefix that points to the files that you are using for your data
+    /// source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
+    /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+    pub destination: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DataSourceConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2027,6 +2151,8 @@ impl std::fmt::Debug for DataSourceConfig {
         formatter.field("name", &self.name);
         formatter.field("s3_bucket", &self.s3_bucket);
         formatter.field("s3_keys", &self.s3_keys);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("destination", &self.destination);
         formatter.finish()
     }
 }
@@ -2039,6 +2165,8 @@ pub mod data_source_config {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) r#type: std::option::Option<crate::model::DataSourceType>,
+        pub(crate) destination: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the data source.</p>
@@ -2072,12 +2200,46 @@ pub mod data_source_config {
             self.s3_keys = input;
             self
         }
+        /// <p>The data type for the data source that you're using for your container image or
+        /// simulation job. You can use this field to specify whether your data source is an Archive,
+        /// an Amazon S3 prefix, or a file.</p>
+        /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
+        pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The location where your files are mounted in the container image.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
+        /// you must provide an Amazon S3 object key to your archive. The object key must point to
+        /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
+        /// you provide the Amazon S3 prefix that points to the files that you are using for your data
+        /// source.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
+        /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+        pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination = Some(input.into());
+            self
+        }
+        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSourceConfig`](crate::model::DataSourceConfig)
         pub fn build(self) -> crate::model::DataSourceConfig {
             crate::model::DataSourceConfig {
                 name: self.name,
                 s3_bucket: self.s3_bucket,
                 s3_keys: self.s3_keys,
+                r#type: self.r#type,
+                destination: self.destination,
             }
         }
     }
@@ -2086,6 +2248,59 @@ impl DataSourceConfig {
     /// Creates a new builder-style object to manufacture [`DataSourceConfig`](crate::model::DataSourceConfig)
     pub fn builder() -> crate::model::data_source_config::Builder {
         crate::model::data_source_config::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DataSourceType {
+    Archive,
+    File,
+    Prefix,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DataSourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Archive" => DataSourceType::Archive,
+            "File" => DataSourceType::File,
+            "Prefix" => DataSourceType::Prefix,
+            other => DataSourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DataSourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataSourceType::from(s))
+    }
+}
+impl DataSourceType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataSourceType::Archive => "Archive",
+            DataSourceType::File => "File",
+            DataSourceType::Prefix => "Prefix",
+            DataSourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Archive", "File", "Prefix"]
+    }
+}
+impl AsRef<str> for DataSourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2111,10 +2326,8 @@ pub struct SimulationApplicationConfig {
     pub use_default_upload_configurations: std::option::Option<bool>,
     /// <p>Information about tools configured for the simulation application.</p>
     pub tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
-    /// <p>A Boolean indicating whether to use default simulation application tools.
-    /// The default tools are rviz, rqt, terminal and rosbag record.
-    /// The default is <code>False</code>.
-    /// </p>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default
+    /// tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
     pub use_default_tools: std::option::Option<bool>,
 }
 impl std::fmt::Debug for SimulationApplicationConfig {
@@ -2241,10 +2454,8 @@ pub mod simulation_application_config {
             self.tools = input;
             self
         }
-        /// <p>A Boolean indicating whether to use default simulation application tools.
-        /// The default tools are rviz, rqt, terminal and rosbag record.
-        /// The default is <code>False</code>.
-        /// </p>
+        /// <p>A Boolean indicating whether to use default simulation application tools. The default
+        /// tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
         pub fn use_default_tools(mut self, input: bool) -> Self {
             self.use_default_tools = Some(input);
             self
@@ -2279,24 +2490,21 @@ impl SimulationApplicationConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tool {
-    /// <p>Boolean indicating whether a streaming session will be configured for the tool.
-    /// If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
-    /// the tool as it is running in the simulation. It must have a graphical user interface.
-    /// The default is <code>False</code>.
-    /// </p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If
+    /// <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
+    /// the tool as it is running in the simulation. It must have a graphical user interface. The
+    /// default is <code>False</code>. </p>
     pub stream_ui: std::option::Option<bool>,
     /// <p>The name of the tool.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
     pub command: std::option::Option<std::string::String>,
-    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool.
-    /// The default is <code>False</code>.
-    /// </p>
+    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default
+    /// is <code>False</code>. </p>
     pub stream_output_to_cloud_watch: std::option::Option<bool>,
-    /// <p>Exit behavior determines what happens when your tool quits running.
-    /// <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code>
-    /// will cause your job to exit. The default is <code>RESTART</code>.
-    /// </p>
+    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code>
+    /// will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The
+    /// default is <code>RESTART</code>. </p>
     pub exit_behavior: std::option::Option<crate::model::ExitBehavior>,
 }
 impl std::fmt::Debug for Tool {
@@ -2326,11 +2534,10 @@ pub mod tool {
         pub(crate) exit_behavior: std::option::Option<crate::model::ExitBehavior>,
     }
     impl Builder {
-        /// <p>Boolean indicating whether a streaming session will be configured for the tool.
-        /// If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
-        /// the tool as it is running in the simulation. It must have a graphical user interface.
-        /// The default is <code>False</code>.
-        /// </p>
+        /// <p>Boolean indicating whether a streaming session will be configured for the tool. If
+        /// <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
+        /// the tool as it is running in the simulation. It must have a graphical user interface. The
+        /// default is <code>False</code>. </p>
         pub fn stream_ui(mut self, input: bool) -> Self {
             self.stream_ui = Some(input);
             self
@@ -2357,9 +2564,8 @@ pub mod tool {
             self.command = input;
             self
         }
-        /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool.
-        /// The default is <code>False</code>.
-        /// </p>
+        /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default
+        /// is <code>False</code>. </p>
         pub fn stream_output_to_cloud_watch(mut self, input: bool) -> Self {
             self.stream_output_to_cloud_watch = Some(input);
             self
@@ -2371,10 +2577,9 @@ pub mod tool {
             self.stream_output_to_cloud_watch = input;
             self
         }
-        /// <p>Exit behavior determines what happens when your tool quits running.
-        /// <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code>
-        /// will cause your job to exit. The default is <code>RESTART</code>.
-        /// </p>
+        /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code>
+        /// will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The
+        /// default is <code>RESTART</code>. </p>
         pub fn exit_behavior(mut self, input: crate::model::ExitBehavior) -> Self {
             self.exit_behavior = Some(input);
             self
@@ -2505,14 +2710,11 @@ impl WorldConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadConfiguration {
-    /// <p>A prefix that specifies where files will be uploaded in Amazon S3.
-    /// It is appended to the simulation output location to determine the final path.
-    /// </p>
-    /// <p>
-    /// For example, if your simulation output location is <code>s3://my-bucket</code> and your upload
-    /// configuration name is <code>robot-test</code>, your files will be uploaded to
-    /// <code>s3://my-bucket/<simid>/<runid>/robot-test</code>.
-    /// </p>
+    /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the
+    /// simulation output location to determine the final path. </p>
+    /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your
+    /// upload configuration name is <code>robot-test</code>, your files will be uploaded to
+    /// <code>s3://my-bucket/<simid>/<runid>/robot-test</code>. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are
     /// accepted, with the addition of <code>**</code> as a <i>super asterisk</i>.
@@ -2558,14 +2760,11 @@ pub mod upload_configuration {
         pub(crate) upload_behavior: std::option::Option<crate::model::UploadBehavior>,
     }
     impl Builder {
-        /// <p>A prefix that specifies where files will be uploaded in Amazon S3.
-        /// It is appended to the simulation output location to determine the final path.
-        /// </p>
-        /// <p>
-        /// For example, if your simulation output location is <code>s3://my-bucket</code> and your upload
-        /// configuration name is <code>robot-test</code>, your files will be uploaded to
-        /// <code>s3://my-bucket/<simid>/<runid>/robot-test</code>.
-        /// </p>
+        /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the
+        /// simulation output location to determine the final path. </p>
+        /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your
+        /// upload configuration name is <code>robot-test</code>, your files will be uploaded to
+        /// <code>s3://my-bucket/<simid>/<runid>/robot-test</code>. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -2699,6 +2898,9 @@ pub struct LaunchConfig {
     /// your application as it is running in the simulation. You must configure and launch the
     /// component. It must have a graphical user interface. </p>
     pub stream_ui: bool,
+    /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
+    /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
+    pub command: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for LaunchConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2708,6 +2910,7 @@ impl std::fmt::Debug for LaunchConfig {
         formatter.field("environment_variables", &self.environment_variables);
         formatter.field("port_forwarding_config", &self.port_forwarding_config);
         formatter.field("stream_ui", &self.stream_ui);
+        formatter.field("command", &self.command);
         formatter.finish()
     }
 }
@@ -2724,6 +2927,7 @@ pub mod launch_config {
         >,
         pub(crate) port_forwarding_config: std::option::Option<crate::model::PortForwardingConfig>,
         pub(crate) stream_ui: std::option::Option<bool>,
+        pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The package name.</p>
@@ -2787,6 +2991,19 @@ pub mod launch_config {
             self.stream_ui = input;
             self
         }
+        pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.command.unwrap_or_default();
+            v.push(input.into());
+            self.command = Some(v);
+            self
+        }
+        pub fn set_command(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.command = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LaunchConfig`](crate::model::LaunchConfig)
         pub fn build(self) -> crate::model::LaunchConfig {
             crate::model::LaunchConfig {
@@ -2795,6 +3012,7 @@ pub mod launch_config {
                 environment_variables: self.environment_variables,
                 port_forwarding_config: self.port_forwarding_config,
                 stream_ui: self.stream_ui.unwrap_or_default(),
+                command: self.command,
             }
         }
     }
@@ -2954,10 +3172,8 @@ pub struct RobotApplicationConfig {
     pub use_default_upload_configurations: std::option::Option<bool>,
     /// <p>Information about tools configured for the robot application.</p>
     pub tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
-    /// <p>A Boolean indicating whether to use default robot application tools.
-    /// The default tools are rviz, rqt, terminal and rosbag record.
-    /// The default is <code>False</code>.
-    /// </p>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools
+    /// are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
     pub use_default_tools: std::option::Option<bool>,
 }
 impl std::fmt::Debug for RobotApplicationConfig {
@@ -3069,10 +3285,8 @@ pub mod robot_application_config {
             self.tools = input;
             self
         }
-        /// <p>A Boolean indicating whether to use default robot application tools.
-        /// The default tools are rviz, rqt, terminal and rosbag record.
-        /// The default is <code>False</code>.
-        /// </p>
+        /// <p>A Boolean indicating whether to use default robot application tools. The default tools
+        /// are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
         pub fn use_default_tools(mut self, input: bool) -> Self {
             self.use_default_tools = Some(input);
             self
@@ -6043,14 +6257,21 @@ impl AsRef<str> for WorldExportJobErrorCode {
 pub struct ComputeResponse {
     /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
     /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-    /// only billed for the SU utilization you consume up to the maximim value provided. The
+    /// only billed for the SU utilization you consume up to the maximum value provided. The
     /// default is 15. </p>
     pub simulation_unit_limit: std::option::Option<i32>,
+    /// <p>Compute type response information for the simulation job.</p>
+    pub compute_type: std::option::Option<crate::model::ComputeType>,
+    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
+    /// allocated to the SimulationJob.</p>
+    pub gpu_unit_limit: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ComputeResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComputeResponse");
         formatter.field("simulation_unit_limit", &self.simulation_unit_limit);
+        formatter.field("compute_type", &self.compute_type);
+        formatter.field("gpu_unit_limit", &self.gpu_unit_limit);
         formatter.finish()
     }
 }
@@ -6061,11 +6282,13 @@ pub mod compute_response {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation_unit_limit: std::option::Option<i32>,
+        pub(crate) compute_type: std::option::Option<crate::model::ComputeType>,
+        pub(crate) gpu_unit_limit: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
         /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-        /// only billed for the SU utilization you consume up to the maximim value provided. The
+        /// only billed for the SU utilization you consume up to the maximum value provided. The
         /// default is 15. </p>
         pub fn simulation_unit_limit(mut self, input: i32) -> Self {
             self.simulation_unit_limit = Some(input);
@@ -6075,10 +6298,34 @@ pub mod compute_response {
             self.simulation_unit_limit = input;
             self
         }
+        /// <p>Compute type response information for the simulation job.</p>
+        pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
+            self.compute_type = Some(input);
+            self
+        }
+        pub fn set_compute_type(
+            mut self,
+            input: std::option::Option<crate::model::ComputeType>,
+        ) -> Self {
+            self.compute_type = input;
+            self
+        }
+        /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
+        /// allocated to the SimulationJob.</p>
+        pub fn gpu_unit_limit(mut self, input: i32) -> Self {
+            self.gpu_unit_limit = Some(input);
+            self
+        }
+        pub fn set_gpu_unit_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.gpu_unit_limit = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ComputeResponse`](crate::model::ComputeResponse)
         pub fn build(self) -> crate::model::ComputeResponse {
             crate::model::ComputeResponse {
                 simulation_unit_limit: self.simulation_unit_limit,
+                compute_type: self.compute_type,
+                gpu_unit_limit: self.gpu_unit_limit,
             }
         }
     }
@@ -6281,6 +6528,21 @@ pub struct DataSource {
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub s3_keys: std::option::Option<std::vec::Vec<crate::model::S3KeyOutput>>,
+    /// <p>The data type for the data source that you're using for your container image or
+    /// simulation job. You can use this field to specify whether your data source is an Archive,
+    /// an Amazon S3 prefix, or a file.</p>
+    /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
+    pub r#type: std::option::Option<crate::model::DataSourceType>,
+    /// <p>The location where your files are mounted in the container image.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
+    /// you must provide an Amazon S3 object key to your archive. The object key must point to
+    /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
+    /// you provide the Amazon S3 prefix that points to the files that you are using for your data
+    /// source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
+    /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+    pub destination: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DataSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6288,6 +6550,8 @@ impl std::fmt::Debug for DataSource {
         formatter.field("name", &self.name);
         formatter.field("s3_bucket", &self.s3_bucket);
         formatter.field("s3_keys", &self.s3_keys);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("destination", &self.destination);
         formatter.finish()
     }
 }
@@ -6300,6 +6564,8 @@ pub mod data_source {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_keys: std::option::Option<std::vec::Vec<crate::model::S3KeyOutput>>,
+        pub(crate) r#type: std::option::Option<crate::model::DataSourceType>,
+        pub(crate) destination: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the data source.</p>
@@ -6333,12 +6599,46 @@ pub mod data_source {
             self.s3_keys = input;
             self
         }
+        /// <p>The data type for the data source that you're using for your container image or
+        /// simulation job. You can use this field to specify whether your data source is an Archive,
+        /// an Amazon S3 prefix, or a file.</p>
+        /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
+        pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The location where your files are mounted in the container image.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
+        /// you must provide an Amazon S3 object key to your archive. The object key must point to
+        /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
+        /// you provide the Amazon S3 prefix that points to the files that you are using for your data
+        /// source.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
+        /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+        pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination = Some(input.into());
+            self
+        }
+        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource)
         pub fn build(self) -> crate::model::DataSource {
             crate::model::DataSource {
                 name: self.name,
                 s3_bucket: self.s3_bucket,
                 s3_keys: self.s3_keys,
+                r#type: self.r#type,
+                destination: self.destination,
             }
         }
     }
@@ -6811,7 +7111,8 @@ pub struct SimulationJob {
     /// <dl>
     /// <dt>Continue</dt>
     /// <dd>
-    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+    /// <p>Leaves the host running for its maximum timeout duration after a
+    /// <code>4XX</code> error code.</p>
     /// </dd>
     /// <dt>Fail</dt>
     /// <dd>
@@ -6980,7 +7281,8 @@ pub mod simulation_job {
         /// <dl>
         /// <dt>Continue</dt>
         /// <dd>
-        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
+        /// <p>Leaves the host running for its maximum timeout duration after a
+        /// <code>4XX</code> error code.</p>
         /// </dd>
         /// <dt>Fail</dt>
         /// <dd>

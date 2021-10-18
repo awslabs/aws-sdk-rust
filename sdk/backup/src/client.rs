@@ -98,6 +98,11 @@ where
     ) -> fluent_builders::DeleteBackupVaultAccessPolicy<C, M, R> {
         fluent_builders::DeleteBackupVaultAccessPolicy::new(self.handle.clone())
     }
+    pub fn delete_backup_vault_lock_configuration(
+        &self,
+    ) -> fluent_builders::DeleteBackupVaultLockConfiguration<C, M, R> {
+        fluent_builders::DeleteBackupVaultLockConfiguration::new(self.handle.clone())
+    }
     pub fn delete_backup_vault_notifications(
         &self,
     ) -> fluent_builders::DeleteBackupVaultNotifications<C, M, R> {
@@ -244,6 +249,11 @@ where
         &self,
     ) -> fluent_builders::PutBackupVaultAccessPolicy<C, M, R> {
         fluent_builders::PutBackupVaultAccessPolicy::new(self.handle.clone())
+    }
+    pub fn put_backup_vault_lock_configuration(
+        &self,
+    ) -> fluent_builders::PutBackupVaultLockConfiguration<C, M, R> {
+        fluent_builders::PutBackupVaultLockConfiguration::new(self.handle.clone())
     }
     pub fn put_backup_vault_notifications(
         &self,
@@ -1077,6 +1087,63 @@ pub mod fluent_builders {
         /// by names that are unique to the account used to create them and the Amazon Web Services
         /// Region where they are created. They consist of lowercase letters, numbers, and
         /// hyphens.</p>
+        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(inp);
+            self
+        }
+        pub fn set_backup_vault_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_backup_vault_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteBackupVaultLockConfiguration<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_backup_vault_lock_configuration_input::Builder,
+    }
+    impl<C, M, R> DeleteBackupVaultLockConfiguration<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteBackupVaultLockConfigurationOutput,
+            smithy_http::result::SdkError<crate::error::DeleteBackupVaultLockConfigurationError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteBackupVaultLockConfigurationInputOperationOutputAlias,
+                crate::output::DeleteBackupVaultLockConfigurationOutput,
+                crate::error::DeleteBackupVaultLockConfigurationError,
+                crate::input::DeleteBackupVaultLockConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
         pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(inp);
             self
@@ -4100,6 +4167,126 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct PutBackupVaultLockConfiguration<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_backup_vault_lock_configuration_input::Builder,
+    }
+    impl<C, M, R> PutBackupVaultLockConfiguration<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutBackupVaultLockConfigurationOutput,
+            smithy_http::result::SdkError<crate::error::PutBackupVaultLockConfigurationError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutBackupVaultLockConfigurationInputOperationOutputAlias,
+                crate::output::PutBackupVaultLockConfigurationOutput,
+                crate::error::PutBackupVaultLockConfigurationError,
+                crate::input::PutBackupVaultLockConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Backup Vault Lock configuration that specifies the name of the backup
+        /// vault it protects.</p>
+        pub fn backup_vault_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_vault_name(inp);
+            self
+        }
+        pub fn set_backup_vault_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_backup_vault_name(input);
+            self
+        }
+        /// <p>The Backup Vault Lock configuration that specifies the minimum retention
+        /// period that the vault retains its recovery points. This setting can be useful if, for
+        /// example, your organization's policies require you to retain certain data for at least seven
+        /// years (2555 days).</p>
+        /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention
+        /// period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
+        /// lifecycle policy with a retention period equal to or longer than the minimum retention
+        /// period. If the job's retention period is shorter than that minimum retention period, then
+        /// the vault fails that backup or copy job, and you should either modify your lifecycle
+        /// settings or use a different vault. Recovery points already saved in the vault prior to
+        /// Vault Lock are not affected.</p>
+        pub fn min_retention_days(mut self, inp: i64) -> Self {
+            self.inner = self.inner.min_retention_days(inp);
+            self
+        }
+        pub fn set_min_retention_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_min_retention_days(input);
+            self
+        }
+        /// <p>The Backup Vault Lock configuration that specifies the maximum retention
+        /// period that the vault retains its recovery points. This setting can be useful if, for
+        /// example, your organization's policies require you to destroy certain data after retaining
+        /// it for four years (1460 days).</p>
+        /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention
+        /// period on the recovery points in the vault. If this parameter is included without a value,
+        /// Vault Lock will not enforce a maximum retention period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
+        /// lifecycle policy with a retention period equal to or shorter than the maximum retention
+        /// period. If the job's retention period is longer than that maximum retention period, then
+        /// the vault fails the backup or copy job, and you should either modify your lifecycle
+        /// settings or use a different vault. Recovery points already saved in the vault prior to
+        /// Vault Lock are not affected.</p>
+        pub fn max_retention_days(mut self, inp: i64) -> Self {
+            self.inner = self.inner.max_retention_days(inp);
+            self
+        }
+        pub fn set_max_retention_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_max_retention_days(input);
+            self
+        }
+        /// <p>The Backup Vault Lock configuration that specifies the number of days before
+        /// the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at
+        /// 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
+        /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect
+        /// and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or
+        /// greater.</p>
+        /// <p>Before the lock date, you can delete Vault Lock from the vault using
+        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
+        /// using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault
+        /// Lock becomes immutable and cannot be changed or deleted.</p>
+        /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using
+        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
+        /// using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+        pub fn changeable_for_days(mut self, inp: i64) -> Self {
+            self.inner = self.inner.changeable_for_days(inp);
+            self
+        }
+        pub fn set_changeable_for_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_changeable_for_days(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct PutBackupVaultNotifications<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -5503,7 +5690,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -5523,7 +5711,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

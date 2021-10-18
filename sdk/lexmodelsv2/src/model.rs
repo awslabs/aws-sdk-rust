@@ -106,8 +106,8 @@ impl SlotValueSelectionSetting {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SlotValueRegexFilter {
     /// <p>A regular expression used to validate the value of a slot.</p>
-    /// <p> Use a standard regular expression. Amazon Lex supports the
-    /// following characters in the regular expression: </p>
+    /// <p> Use a standard regular expression. Amazon Lex supports the following
+    /// characters in the regular expression: </p>
     /// <ul>
     /// <li>
     /// <p>A-Z, a-z</p>
@@ -149,8 +149,8 @@ pub mod slot_value_regex_filter {
     }
     impl Builder {
         /// <p>A regular expression used to validate the value of a slot.</p>
-        /// <p> Use a standard regular expression. Amazon Lex supports the
-        /// following characters in the regular expression: </p>
+        /// <p> Use a standard regular expression. Amazon Lex supports the following
+        /// characters in the regular expression: </p>
         /// <ul>
         /// <li>
         /// <p>A-Z, a-z</p>
@@ -254,7 +254,7 @@ impl AsRef<str> for SlotValueResolutionStrategy {
 pub struct SlotTypeValue {
     /// <p>The value of the slot type entry.</p>
     pub sample_value: std::option::Option<crate::model::SampleValue>,
-    /// <p>Additional values releated to the slot type entry.</p>
+    /// <p>Additional values related to the slot type entry.</p>
     pub synonyms: std::option::Option<std::vec::Vec<crate::model::SampleValue>>,
 }
 impl std::fmt::Debug for SlotTypeValue {
@@ -537,7 +537,7 @@ impl AsRef<str> for ObfuscationSettingType {
 pub struct SlotValueElicitationSetting {
     /// <p>A list of default values for a slot. Default values are used when
     /// Amazon Lex hasn't determined a value for a slot. You can specify default
-    /// values from context variables, sesion attributes, and defined
+    /// values from context variables, session attributes, and defined
     /// values.</p>
     pub default_value_specification:
         std::option::Option<crate::model::SlotDefaultValueSpecification>,
@@ -591,7 +591,7 @@ pub mod slot_value_elicitation_setting {
     impl Builder {
         /// <p>A list of default values for a slot. Default values are used when
         /// Amazon Lex hasn't determined a value for a slot. You can specify default
-        /// values from context variables, sesion attributes, and defined
+        /// values from context variables, session attributes, and defined
         /// values.</p>
         pub fn default_value_specification(
             mut self,
@@ -699,9 +699,8 @@ pub struct WaitAndContinueSpecification {
     pub still_waiting_response:
         std::option::Option<crate::model::StillWaitingResponseSpecification>,
     /// <p>Specifies whether the bot will wait for a user to respond. When this
-    /// field is false, wait and continue responses for a slot aren't used and
-    /// the bot expects an appropriate response within the configured timeout.
-    /// If the <code>active</code> field isn't specified, the default is
+    /// field is false, wait and continue responses for a slot aren't used. If
+    /// the <code>active</code> field isn't specified, the default is
     /// true.</p>
     pub active: std::option::Option<bool>,
 }
@@ -771,9 +770,8 @@ pub mod wait_and_continue_specification {
             self
         }
         /// <p>Specifies whether the bot will wait for a user to respond. When this
-        /// field is false, wait and continue responses for a slot aren't used and
-        /// the bot expects an appropriate response within the configured timeout.
-        /// If the <code>active</code> field isn't specified, the default is
+        /// field is false, wait and continue responses for a slot aren't used. If
+        /// the <code>active</code> field isn't specified, the default is
         /// true.</p>
         pub fn active(mut self, input: bool) -> Self {
             self.active = Some(input);
@@ -1512,7 +1510,7 @@ pub struct PromptSpecification {
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex
     /// chooses the actual message to send at runtime.</p>
     pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
-    /// <p>The maximum number of times the bot tries to elicit a resonse from
+    /// <p>The maximum number of times the bot tries to elicit a response from
     /// the user using this prompt.</p>
     pub max_retries: std::option::Option<i32>,
     /// <p>Indicates whether the user can interrupt a speech prompt from the
@@ -1552,7 +1550,7 @@ pub mod prompt_specification {
             self.message_groups = input;
             self
         }
-        /// <p>The maximum number of times the bot tries to elicit a resonse from
+        /// <p>The maximum number of times the bot tries to elicit a response from
         /// the user using this prompt.</p>
         pub fn max_retries(mut self, input: i32) -> Self {
             self.max_retries = Some(input);
@@ -1984,9 +1982,9 @@ pub struct IntentClosingSetting {
     /// complete.</p>
     pub closing_response: std::option::Option<crate::model::ResponseSpecification>,
     /// <p>Specifies whether an intent's closing response is used. When this
-    /// field is false, the closing response isn't sent to the user and no
-    /// closing input from the user is used. If the <code>active</code> field
-    /// isn't specified, the default is true.</p>
+    /// field is false, the closing response isn't sent to the user. If the
+    /// <code>active</code> field isn't specified, the default is
+    /// true.</p>
     pub active: std::option::Option<bool>,
 }
 impl std::fmt::Debug for IntentClosingSetting {
@@ -2021,9 +2019,9 @@ pub mod intent_closing_setting {
             self
         }
         /// <p>Specifies whether an intent's closing response is used. When this
-        /// field is false, the closing response isn't sent to the user and no
-        /// closing input from the user is used. If the <code>active</code> field
-        /// isn't specified, the default is true.</p>
+        /// field is false, the closing response isn't sent to the user. If the
+        /// <code>active</code> field isn't specified, the default is
+        /// true.</p>
         pub fn active(mut self, input: bool) -> Self {
             self.active = Some(input);
             self
@@ -2068,8 +2066,7 @@ pub struct IntentConfirmationSetting {
     pub declination_response: std::option::Option<crate::model::ResponseSpecification>,
     /// <p>Specifies whether the intent's confirmation is sent to the user.
     /// When this field is false, confirmation and declination responses aren't
-    /// sent and processing continues as if the responses aren't present. If
-    /// the <code>active</code> field isn't specified, the default is
+    /// sent. If the <code>active</code> field isn't specified, the default is
     /// true.</p>
     pub active: std::option::Option<bool>,
 }
@@ -2128,8 +2125,7 @@ pub mod intent_confirmation_setting {
         }
         /// <p>Specifies whether the intent's confirmation is sent to the user.
         /// When this field is false, confirmation and declination responses aren't
-        /// sent and processing continues as if the responses aren't present. If
-        /// the <code>active</code> field isn't specified, the default is
+        /// sent. If the <code>active</code> field isn't specified, the default is
         /// true.</p>
         pub fn active(mut self, input: bool) -> Self {
             self.active = Some(input);
@@ -2226,11 +2222,29 @@ pub struct FulfillmentCodeHookSettings {
     /// <p>Indicates whether a Lambda function should be invoked to fulfill a
     /// specific intent.</p>
     pub enabled: bool,
+    /// <p>Provides settings for messages sent to the user for after the Lambda
+    /// fulfillment function completes. Post-fulfillment messages can be sent
+    /// for both streaming and non-streaming conversations.</p>
+    pub post_fulfillment_status_specification:
+        std::option::Option<crate::model::PostFulfillmentStatusSpecification>,
+    /// <p>Provides settings for update messages sent to the user for
+    /// long-running Lambda fulfillment functions. Fulfillment updates can be
+    /// used only with streaming conversations.</p>
+    pub fulfillment_updates_specification:
+        std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
 }
 impl std::fmt::Debug for FulfillmentCodeHookSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FulfillmentCodeHookSettings");
         formatter.field("enabled", &self.enabled);
+        formatter.field(
+            "post_fulfillment_status_specification",
+            &self.post_fulfillment_status_specification,
+        );
+        formatter.field(
+            "fulfillment_updates_specification",
+            &self.fulfillment_updates_specification,
+        );
         formatter.finish()
     }
 }
@@ -2241,6 +2255,10 @@ pub mod fulfillment_code_hook_settings {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) post_fulfillment_status_specification:
+            std::option::Option<crate::model::PostFulfillmentStatusSpecification>,
+        pub(crate) fulfillment_updates_specification:
+            std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
     }
     impl Builder {
         /// <p>Indicates whether a Lambda function should be invoked to fulfill a
@@ -2253,10 +2271,46 @@ pub mod fulfillment_code_hook_settings {
             self.enabled = input;
             self
         }
+        /// <p>Provides settings for messages sent to the user for after the Lambda
+        /// fulfillment function completes. Post-fulfillment messages can be sent
+        /// for both streaming and non-streaming conversations.</p>
+        pub fn post_fulfillment_status_specification(
+            mut self,
+            input: crate::model::PostFulfillmentStatusSpecification,
+        ) -> Self {
+            self.post_fulfillment_status_specification = Some(input);
+            self
+        }
+        pub fn set_post_fulfillment_status_specification(
+            mut self,
+            input: std::option::Option<crate::model::PostFulfillmentStatusSpecification>,
+        ) -> Self {
+            self.post_fulfillment_status_specification = input;
+            self
+        }
+        /// <p>Provides settings for update messages sent to the user for
+        /// long-running Lambda fulfillment functions. Fulfillment updates can be
+        /// used only with streaming conversations.</p>
+        pub fn fulfillment_updates_specification(
+            mut self,
+            input: crate::model::FulfillmentUpdatesSpecification,
+        ) -> Self {
+            self.fulfillment_updates_specification = Some(input);
+            self
+        }
+        pub fn set_fulfillment_updates_specification(
+            mut self,
+            input: std::option::Option<crate::model::FulfillmentUpdatesSpecification>,
+        ) -> Self {
+            self.fulfillment_updates_specification = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FulfillmentCodeHookSettings`](crate::model::FulfillmentCodeHookSettings)
         pub fn build(self) -> crate::model::FulfillmentCodeHookSettings {
             crate::model::FulfillmentCodeHookSettings {
                 enabled: self.enabled.unwrap_or_default(),
+                post_fulfillment_status_specification: self.post_fulfillment_status_specification,
+                fulfillment_updates_specification: self.fulfillment_updates_specification,
             }
         }
     }
@@ -2265,6 +2319,392 @@ impl FulfillmentCodeHookSettings {
     /// Creates a new builder-style object to manufacture [`FulfillmentCodeHookSettings`](crate::model::FulfillmentCodeHookSettings)
     pub fn builder() -> crate::model::fulfillment_code_hook_settings::Builder {
         crate::model::fulfillment_code_hook_settings::Builder::default()
+    }
+}
+
+/// <p>Provides information for updating the user on the progress of
+/// fulfilling an intent.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FulfillmentUpdatesSpecification {
+    /// <p>Determines whether fulfillment updates are sent to the user. When
+    /// this field is true, updates are sent.</p>
+    /// <p>If the <code>active</code> field is set to true, the
+    /// <code>startResponse</code>, <code>updateResponse</code>, and
+    /// <code>timeoutInSeconds</code> fields are required.</p>
+    pub active: std::option::Option<bool>,
+    /// <p>Provides configuration information for the message sent to users
+    /// when the fulfillment Lambda functions starts running.</p>
+    pub start_response: std::option::Option<crate::model::FulfillmentStartResponseSpecification>,
+    /// <p>Provides configuration information for messages sent periodically to
+    /// the user while the fulfillment Lambda function is running.</p>
+    pub update_response: std::option::Option<crate::model::FulfillmentUpdateResponseSpecification>,
+    /// <p>The length of time that the fulfillment Lambda function should run
+    /// before it times out.</p>
+    pub timeout_in_seconds: std::option::Option<i32>,
+}
+impl std::fmt::Debug for FulfillmentUpdatesSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FulfillmentUpdatesSpecification");
+        formatter.field("active", &self.active);
+        formatter.field("start_response", &self.start_response);
+        formatter.field("update_response", &self.update_response);
+        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
+        formatter.finish()
+    }
+}
+/// See [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification)
+pub mod fulfillment_updates_specification {
+    /// A builder for [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) active: std::option::Option<bool>,
+        pub(crate) start_response:
+            std::option::Option<crate::model::FulfillmentStartResponseSpecification>,
+        pub(crate) update_response:
+            std::option::Option<crate::model::FulfillmentUpdateResponseSpecification>,
+        pub(crate) timeout_in_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Determines whether fulfillment updates are sent to the user. When
+        /// this field is true, updates are sent.</p>
+        /// <p>If the <code>active</code> field is set to true, the
+        /// <code>startResponse</code>, <code>updateResponse</code>, and
+        /// <code>timeoutInSeconds</code> fields are required.</p>
+        pub fn active(mut self, input: bool) -> Self {
+            self.active = Some(input);
+            self
+        }
+        pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+            self.active = input;
+            self
+        }
+        /// <p>Provides configuration information for the message sent to users
+        /// when the fulfillment Lambda functions starts running.</p>
+        pub fn start_response(
+            mut self,
+            input: crate::model::FulfillmentStartResponseSpecification,
+        ) -> Self {
+            self.start_response = Some(input);
+            self
+        }
+        pub fn set_start_response(
+            mut self,
+            input: std::option::Option<crate::model::FulfillmentStartResponseSpecification>,
+        ) -> Self {
+            self.start_response = input;
+            self
+        }
+        /// <p>Provides configuration information for messages sent periodically to
+        /// the user while the fulfillment Lambda function is running.</p>
+        pub fn update_response(
+            mut self,
+            input: crate::model::FulfillmentUpdateResponseSpecification,
+        ) -> Self {
+            self.update_response = Some(input);
+            self
+        }
+        pub fn set_update_response(
+            mut self,
+            input: std::option::Option<crate::model::FulfillmentUpdateResponseSpecification>,
+        ) -> Self {
+            self.update_response = input;
+            self
+        }
+        /// <p>The length of time that the fulfillment Lambda function should run
+        /// before it times out.</p>
+        pub fn timeout_in_seconds(mut self, input: i32) -> Self {
+            self.timeout_in_seconds = Some(input);
+            self
+        }
+        pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_in_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification)
+        pub fn build(self) -> crate::model::FulfillmentUpdatesSpecification {
+            crate::model::FulfillmentUpdatesSpecification {
+                active: self.active,
+                start_response: self.start_response,
+                update_response: self.update_response,
+                timeout_in_seconds: self.timeout_in_seconds,
+            }
+        }
+    }
+}
+impl FulfillmentUpdatesSpecification {
+    /// Creates a new builder-style object to manufacture [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification)
+    pub fn builder() -> crate::model::fulfillment_updates_specification::Builder {
+        crate::model::fulfillment_updates_specification::Builder::default()
+    }
+}
+
+/// <p>Provides settings for a message that is sent periodically to the
+/// user while a fulfillment Lambda function is running.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FulfillmentUpdateResponseSpecification {
+    /// <p>The frequency that a message is sent to the user. When the period
+    /// ends, Amazon Lex chooses a message from the message groups and plays it to
+    /// the user. If the fulfillment Lambda returns before the first period
+    /// ends, an update message is not played to the user.</p>
+    pub frequency_in_seconds: std::option::Option<i32>,
+    /// <p>One to 5 message groups that contain update messages. Amazon Lex chooses
+    /// one of the messages to play to the user.</p>
+    pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
+    /// <p>Determines whether the user can interrupt an update message while it
+    /// is playing.</p>
+    pub allow_interrupt: std::option::Option<bool>,
+}
+impl std::fmt::Debug for FulfillmentUpdateResponseSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FulfillmentUpdateResponseSpecification");
+        formatter.field("frequency_in_seconds", &self.frequency_in_seconds);
+        formatter.field("message_groups", &self.message_groups);
+        formatter.field("allow_interrupt", &self.allow_interrupt);
+        formatter.finish()
+    }
+}
+/// See [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification)
+pub mod fulfillment_update_response_specification {
+    /// A builder for [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) frequency_in_seconds: std::option::Option<i32>,
+        pub(crate) message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
+        pub(crate) allow_interrupt: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The frequency that a message is sent to the user. When the period
+        /// ends, Amazon Lex chooses a message from the message groups and plays it to
+        /// the user. If the fulfillment Lambda returns before the first period
+        /// ends, an update message is not played to the user.</p>
+        pub fn frequency_in_seconds(mut self, input: i32) -> Self {
+            self.frequency_in_seconds = Some(input);
+            self
+        }
+        pub fn set_frequency_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.frequency_in_seconds = input;
+            self
+        }
+        pub fn message_groups(mut self, input: impl Into<crate::model::MessageGroup>) -> Self {
+            let mut v = self.message_groups.unwrap_or_default();
+            v.push(input.into());
+            self.message_groups = Some(v);
+            self
+        }
+        pub fn set_message_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
+        ) -> Self {
+            self.message_groups = input;
+            self
+        }
+        /// <p>Determines whether the user can interrupt an update message while it
+        /// is playing.</p>
+        pub fn allow_interrupt(mut self, input: bool) -> Self {
+            self.allow_interrupt = Some(input);
+            self
+        }
+        pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_interrupt = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification)
+        pub fn build(self) -> crate::model::FulfillmentUpdateResponseSpecification {
+            crate::model::FulfillmentUpdateResponseSpecification {
+                frequency_in_seconds: self.frequency_in_seconds,
+                message_groups: self.message_groups,
+                allow_interrupt: self.allow_interrupt,
+            }
+        }
+    }
+}
+impl FulfillmentUpdateResponseSpecification {
+    /// Creates a new builder-style object to manufacture [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification)
+    pub fn builder() -> crate::model::fulfillment_update_response_specification::Builder {
+        crate::model::fulfillment_update_response_specification::Builder::default()
+    }
+}
+
+/// <p>Provides settings for a message that is sent to the user when a
+/// fulfillment Lambda function starts running.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FulfillmentStartResponseSpecification {
+    /// <p>The delay between when the Lambda fulfillment function starts running
+    /// and the start message is played. If the Lambda function returns before
+    /// the delay is over, the start message isn't played.</p>
+    pub delay_in_seconds: std::option::Option<i32>,
+    /// <p>One to 5 message groups that contain start messages. Amazon Lex chooses
+    /// one of the messages to play to the user.</p>
+    pub message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
+    /// <p>Determines whether the user can interrupt the start message while it
+    /// is playing.</p>
+    pub allow_interrupt: std::option::Option<bool>,
+}
+impl std::fmt::Debug for FulfillmentStartResponseSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FulfillmentStartResponseSpecification");
+        formatter.field("delay_in_seconds", &self.delay_in_seconds);
+        formatter.field("message_groups", &self.message_groups);
+        formatter.field("allow_interrupt", &self.allow_interrupt);
+        formatter.finish()
+    }
+}
+/// See [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification)
+pub mod fulfillment_start_response_specification {
+    /// A builder for [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delay_in_seconds: std::option::Option<i32>,
+        pub(crate) message_groups: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
+        pub(crate) allow_interrupt: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The delay between when the Lambda fulfillment function starts running
+        /// and the start message is played. If the Lambda function returns before
+        /// the delay is over, the start message isn't played.</p>
+        pub fn delay_in_seconds(mut self, input: i32) -> Self {
+            self.delay_in_seconds = Some(input);
+            self
+        }
+        pub fn set_delay_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.delay_in_seconds = input;
+            self
+        }
+        pub fn message_groups(mut self, input: impl Into<crate::model::MessageGroup>) -> Self {
+            let mut v = self.message_groups.unwrap_or_default();
+            v.push(input.into());
+            self.message_groups = Some(v);
+            self
+        }
+        pub fn set_message_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MessageGroup>>,
+        ) -> Self {
+            self.message_groups = input;
+            self
+        }
+        /// <p>Determines whether the user can interrupt the start message while it
+        /// is playing.</p>
+        pub fn allow_interrupt(mut self, input: bool) -> Self {
+            self.allow_interrupt = Some(input);
+            self
+        }
+        pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_interrupt = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification)
+        pub fn build(self) -> crate::model::FulfillmentStartResponseSpecification {
+            crate::model::FulfillmentStartResponseSpecification {
+                delay_in_seconds: self.delay_in_seconds,
+                message_groups: self.message_groups,
+                allow_interrupt: self.allow_interrupt,
+            }
+        }
+    }
+}
+impl FulfillmentStartResponseSpecification {
+    /// Creates a new builder-style object to manufacture [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification)
+    pub fn builder() -> crate::model::fulfillment_start_response_specification::Builder {
+        crate::model::fulfillment_start_response_specification::Builder::default()
+    }
+}
+
+/// <p>Provides a setting that determines whether the post-fulfillment
+/// response is sent to the user. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete">https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete</a>
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PostFulfillmentStatusSpecification {
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the
+    /// user input.</p>
+    pub success_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the
+    /// user input.</p>
+    pub failure_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the
+    /// user input.</p>
+    pub timeout_response: std::option::Option<crate::model::ResponseSpecification>,
+}
+impl std::fmt::Debug for PostFulfillmentStatusSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PostFulfillmentStatusSpecification");
+        formatter.field("success_response", &self.success_response);
+        formatter.field("failure_response", &self.failure_response);
+        formatter.field("timeout_response", &self.timeout_response);
+        formatter.finish()
+    }
+}
+/// See [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification)
+pub mod post_fulfillment_status_specification {
+    /// A builder for [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) success_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) failure_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) timeout_response: std::option::Option<crate::model::ResponseSpecification>,
+    }
+    impl Builder {
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the
+        /// user input.</p>
+        pub fn success_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.success_response = Some(input);
+            self
+        }
+        pub fn set_success_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.success_response = input;
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the
+        /// user input.</p>
+        pub fn failure_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.failure_response = Some(input);
+            self
+        }
+        pub fn set_failure_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.failure_response = input;
+            self
+        }
+        /// <p>Specifies a list of message groups that Amazon Lex uses to respond the
+        /// user input.</p>
+        pub fn timeout_response(mut self, input: crate::model::ResponseSpecification) -> Self {
+            self.timeout_response = Some(input);
+            self
+        }
+        pub fn set_timeout_response(
+            mut self,
+            input: std::option::Option<crate::model::ResponseSpecification>,
+        ) -> Self {
+            self.timeout_response = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification)
+        pub fn build(self) -> crate::model::PostFulfillmentStatusSpecification {
+            crate::model::PostFulfillmentStatusSpecification {
+                success_response: self.success_response,
+                failure_response: self.failure_response,
+                timeout_response: self.timeout_response,
+            }
+        }
+    }
+}
+impl PostFulfillmentStatusSpecification {
+    /// Creates a new builder-style object to manufacture [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification)
+    pub fn builder() -> crate::model::post_fulfillment_status_specification::Builder {
+        crate::model::post_fulfillment_status_specification::Builder::default()
     }
 }
 
@@ -3426,7 +3866,7 @@ impl BotAliasLocaleSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeHookSpecification {
     /// <p>Specifies a Lambda function that verifies requests to a bot or
-    /// fulfilles the user's request to a bot.</p>
+    /// fulfills the user's request to a bot.</p>
     pub lambda_code_hook: std::option::Option<crate::model::LambdaCodeHook>,
 }
 impl std::fmt::Debug for CodeHookSpecification {
@@ -3446,7 +3886,7 @@ pub mod code_hook_specification {
     }
     impl Builder {
         /// <p>Specifies a Lambda function that verifies requests to a bot or
-        /// fulfilles the user's request to a bot.</p>
+        /// fulfills the user's request to a bot.</p>
         pub fn lambda_code_hook(mut self, input: crate::model::LambdaCodeHook) -> Self {
             self.lambda_code_hook = Some(input);
             self
@@ -3474,7 +3914,7 @@ impl CodeHookSpecification {
 }
 
 /// <p>Specifies a Lambda function that verifies requests to a bot or
-/// fulfilles the user's request to a bot.</p>
+/// fulfills the user's request to a bot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaCodeHook {
@@ -3826,7 +4266,7 @@ impl AsRef<str> for MergeStrategy {
 }
 
 /// <p>Provides information about the bot or bot locale that you want to
-/// import. You can sepcifiy the <code>botImportSpecification</code> or the
+/// import. You can specify the <code>botImportSpecification</code> or the
 /// <code>botLocaleImportSpecification</code>, but not both.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6270,14 +6710,14 @@ impl ExportSummary {
     }
 }
 
-/// <p>Filtes the response form the
+/// <p>Filters the response form the
 /// operation</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportFilter {
     /// <p>The name of the field to use for filtering.</p>
     pub name: std::option::Option<crate::model::ExportFilterName>,
-    /// <p>The values to use to fileter the response.</p>
+    /// <p>The values to use to filter the response.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The operator to use for the filter. Specify EQ when the
     /// <code>ListExports</code> operation should return only resource types

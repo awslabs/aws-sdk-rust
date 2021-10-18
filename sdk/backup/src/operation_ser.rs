@@ -78,6 +78,19 @@ pub fn serialize_operation_crate_operation_put_backup_vault_access_policy(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_put_backup_vault_lock_configuration(
+    input: &crate::input::PutBackupVaultLockConfigurationInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_put_backup_vault_lock_configuration_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_put_backup_vault_notifications(
     input: &crate::input::PutBackupVaultNotificationsInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

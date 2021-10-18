@@ -12,9 +12,11 @@ pub enum Error {
     EntityNotFoundException(crate::error::EntityNotFoundException),
     EntityStateException(crate::error::EntityStateException),
     InvalidConfigurationException(crate::error::InvalidConfigurationException),
+    InvalidCustomSesConfigurationException(crate::error::InvalidCustomSesConfigurationException),
     InvalidParameterException(crate::error::InvalidParameterException),
     InvalidPasswordException(crate::error::InvalidPasswordException),
     LimitExceededException(crate::error::LimitExceededException),
+    MailDomainInUseException(crate::error::MailDomainInUseException),
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
     MailDomainStateException(crate::error::MailDomainStateException),
     NameAvailabilityException(crate::error::NameAvailabilityException),
@@ -37,9 +39,11 @@ impl std::fmt::Display for Error {
             Error::EntityNotFoundException(inner) => inner.fmt(f),
             Error::EntityStateException(inner) => inner.fmt(f),
             Error::InvalidConfigurationException(inner) => inner.fmt(f),
+            Error::InvalidCustomSesConfigurationException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidPasswordException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::MailDomainInUseException(inner) => inner.fmt(f),
             Error::MailDomainNotFoundException(inner) => inner.fmt(f),
             Error::MailDomainStateException(inner) => inner.fmt(f),
             Error::NameAvailabilityException(inner) => inner.fmt(f),
@@ -549,6 +553,26 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::DeregisterMailDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeregisterMailDomainError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeregisterMailDomainErrorKind::InvalidCustomSesConfigurationException(inner) => Error::InvalidCustomSesConfigurationException(inner),
+                crate::error::DeregisterMailDomainErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DeregisterMailDomainErrorKind::MailDomainInUseException(inner) => Error::MailDomainInUseException(inner),
+                crate::error::DeregisterMailDomainErrorKind::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+                crate::error::DeregisterMailDomainErrorKind::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+                crate::error::DeregisterMailDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::DescribeGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -825,6 +849,31 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::GetMailDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetMailDomainError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetMailDomainErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::GetMailDomainErrorKind::MailDomainNotFoundException(inner) => {
+                    Error::MailDomainNotFoundException(inner)
+                }
+                crate::error::GetMailDomainErrorKind::OrganizationNotFoundException(inner) => {
+                    Error::OrganizationNotFoundException(inner)
+                }
+                crate::error::GetMailDomainErrorKind::OrganizationStateException(inner) => {
+                    Error::OrganizationStateException(inner)
+                }
+                crate::error::GetMailDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::GetMobileDeviceAccessEffectError, R>>
     for Error
 where
@@ -1021,6 +1070,28 @@ where
                 crate::error::ListMailboxPermissionsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::ListMailDomainsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListMailDomainsError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListMailDomainsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::ListMailDomainsErrorKind::OrganizationNotFoundException(inner) => {
+                    Error::OrganizationNotFoundException(inner)
+                }
+                crate::error::ListMailDomainsErrorKind::OrganizationStateException(inner) => {
+                    Error::OrganizationStateException(inner)
+                }
+                crate::error::ListMailDomainsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -1312,6 +1383,36 @@ where
         }
     }
 }
+impl<R> From<smithy_http::result::SdkError<crate::error::RegisterMailDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RegisterMailDomainError, R>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RegisterMailDomainErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::RegisterMailDomainErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::RegisterMailDomainErrorKind::MailDomainInUseException(inner) => {
+                    Error::MailDomainInUseException(inner)
+                }
+                crate::error::RegisterMailDomainErrorKind::OrganizationNotFoundException(inner) => {
+                    Error::OrganizationNotFoundException(inner)
+                }
+                crate::error::RegisterMailDomainErrorKind::OrganizationStateException(inner) => {
+                    Error::OrganizationStateException(inner)
+                }
+                crate::error::RegisterMailDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::RegisterToWorkMailError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1423,6 +1524,38 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateDefaultMailDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateDefaultMailDomainError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateDefaultMailDomainErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::UpdateDefaultMailDomainErrorKind::MailDomainNotFoundException(
+                    inner,
+                ) => Error::MailDomainNotFoundException(inner),
+                crate::error::UpdateDefaultMailDomainErrorKind::MailDomainStateException(inner) => {
+                    Error::MailDomainStateException(inner)
+                }
+                crate::error::UpdateDefaultMailDomainErrorKind::OrganizationNotFoundException(
+                    inner,
+                ) => Error::OrganizationNotFoundException(inner),
+                crate::error::UpdateDefaultMailDomainErrorKind::OrganizationStateException(
+                    inner,
+                ) => Error::OrganizationStateException(inner),
+                crate::error::UpdateDefaultMailDomainErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

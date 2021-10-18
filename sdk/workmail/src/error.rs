@@ -2463,6 +2463,127 @@ impl std::error::Error for DeregisterFromWorkMailError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeregisterMailDomainError {
+    pub kind: DeregisterMailDomainErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeregisterMailDomainErrorKind {
+    InvalidCustomSesConfigurationException(crate::error::InvalidCustomSesConfigurationException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    MailDomainInUseException(crate::error::MailDomainInUseException),
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeregisterMailDomainError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeregisterMailDomainErrorKind::InvalidCustomSesConfigurationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeregisterMailDomainErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeregisterMailDomainErrorKind::MailDomainInUseException(_inner) => _inner.fmt(f),
+            DeregisterMailDomainErrorKind::OrganizationNotFoundException(_inner) => _inner.fmt(f),
+            DeregisterMailDomainErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            DeregisterMailDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeregisterMailDomainError {
+    fn code(&self) -> Option<&str> {
+        DeregisterMailDomainError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeregisterMailDomainError {
+    pub fn new(kind: DeregisterMailDomainErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeregisterMailDomainErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeregisterMailDomainErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_custom_ses_configuration_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterMailDomainErrorKind::InvalidCustomSesConfigurationException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterMailDomainErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_mail_domain_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterMailDomainErrorKind::MailDomainInUseException(_)
+        )
+    }
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterMailDomainErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterMailDomainErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for DeregisterMailDomainError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeregisterMailDomainErrorKind::InvalidCustomSesConfigurationException(_inner) => {
+                Some(_inner)
+            }
+            DeregisterMailDomainErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeregisterMailDomainErrorKind::MailDomainInUseException(_inner) => Some(_inner),
+            DeregisterMailDomainErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            DeregisterMailDomainErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            DeregisterMailDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeGroupError {
     pub kind: DescribeGroupErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -3709,6 +3830,114 @@ impl std::error::Error for GetMailboxDetailsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct GetMailDomainError {
+    pub kind: GetMailDomainErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMailDomainErrorKind {
+    InvalidParameterException(crate::error::InvalidParameterException),
+    MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetMailDomainError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMailDomainErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetMailDomainErrorKind::MailDomainNotFoundException(_inner) => _inner.fmt(f),
+            GetMailDomainErrorKind::OrganizationNotFoundException(_inner) => _inner.fmt(f),
+            GetMailDomainErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            GetMailDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetMailDomainError {
+    fn code(&self) -> Option<&str> {
+        GetMailDomainError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMailDomainError {
+    pub fn new(kind: GetMailDomainErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMailDomainErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMailDomainErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMailDomainErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_mail_domain_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMailDomainErrorKind::MailDomainNotFoundException(_)
+        )
+    }
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMailDomainErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMailDomainErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for GetMailDomainError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMailDomainErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetMailDomainErrorKind::MailDomainNotFoundException(_inner) => Some(_inner),
+            GetMailDomainErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            GetMailDomainErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            GetMailDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct GetMobileDeviceAccessEffectError {
     pub kind: GetMobileDeviceAccessEffectErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -4577,6 +4806,105 @@ impl std::error::Error for ListMailboxPermissionsError {
             ListMailboxPermissionsErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
             ListMailboxPermissionsErrorKind::OrganizationStateException(_inner) => Some(_inner),
             ListMailboxPermissionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMailDomainsError {
+    pub kind: ListMailDomainsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMailDomainsErrorKind {
+    InvalidParameterException(crate::error::InvalidParameterException),
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListMailDomainsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMailDomainsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListMailDomainsErrorKind::OrganizationNotFoundException(_inner) => _inner.fmt(f),
+            ListMailDomainsErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            ListMailDomainsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListMailDomainsError {
+    fn code(&self) -> Option<&str> {
+        ListMailDomainsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMailDomainsError {
+    pub fn new(kind: ListMailDomainsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMailDomainsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMailDomainsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMailDomainsErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMailDomainsErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMailDomainsErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for ListMailDomainsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMailDomainsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListMailDomainsErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            ListMailDomainsErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            ListMailDomainsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5855,6 +6183,123 @@ impl std::error::Error for PutRetentionPolicyError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct RegisterMailDomainError {
+    pub kind: RegisterMailDomainErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RegisterMailDomainErrorKind {
+    InvalidParameterException(crate::error::InvalidParameterException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MailDomainInUseException(crate::error::MailDomainInUseException),
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RegisterMailDomainError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RegisterMailDomainErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            RegisterMailDomainErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            RegisterMailDomainErrorKind::MailDomainInUseException(_inner) => _inner.fmt(f),
+            RegisterMailDomainErrorKind::OrganizationNotFoundException(_inner) => _inner.fmt(f),
+            RegisterMailDomainErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            RegisterMailDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for RegisterMailDomainError {
+    fn code(&self) -> Option<&str> {
+        RegisterMailDomainError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RegisterMailDomainError {
+    pub fn new(kind: RegisterMailDomainErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RegisterMailDomainErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RegisterMailDomainErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterMailDomainErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterMailDomainErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_mail_domain_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterMailDomainErrorKind::MailDomainInUseException(_)
+        )
+    }
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterMailDomainErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterMailDomainErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for RegisterMailDomainError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RegisterMailDomainErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            RegisterMailDomainErrorKind::LimitExceededException(_inner) => Some(_inner),
+            RegisterMailDomainErrorKind::MailDomainInUseException(_inner) => Some(_inner),
+            RegisterMailDomainErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            RegisterMailDomainErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            RegisterMailDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct RegisterToWorkMailError {
     pub kind: RegisterToWorkMailErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -6476,6 +6921,125 @@ impl std::error::Error for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateDefaultMailDomainError {
+    pub kind: UpdateDefaultMailDomainErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateDefaultMailDomainErrorKind {
+    InvalidParameterException(crate::error::InvalidParameterException),
+    MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
+    MailDomainStateException(crate::error::MailDomainStateException),
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateDefaultMailDomainError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateDefaultMailDomainErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateDefaultMailDomainErrorKind::MailDomainNotFoundException(_inner) => _inner.fmt(f),
+            UpdateDefaultMailDomainErrorKind::MailDomainStateException(_inner) => _inner.fmt(f),
+            UpdateDefaultMailDomainErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateDefaultMailDomainErrorKind::OrganizationStateException(_inner) => _inner.fmt(f),
+            UpdateDefaultMailDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateDefaultMailDomainError {
+    fn code(&self) -> Option<&str> {
+        UpdateDefaultMailDomainError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateDefaultMailDomainError {
+    pub fn new(kind: UpdateDefaultMailDomainErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateDefaultMailDomainErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateDefaultMailDomainErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDefaultMailDomainErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_mail_domain_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDefaultMailDomainErrorKind::MailDomainNotFoundException(_)
+        )
+    }
+    pub fn is_mail_domain_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDefaultMailDomainErrorKind::MailDomainStateException(_)
+        )
+    }
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDefaultMailDomainErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDefaultMailDomainErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateDefaultMailDomainError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateDefaultMailDomainErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateDefaultMailDomainErrorKind::MailDomainNotFoundException(_inner) => Some(_inner),
+            UpdateDefaultMailDomainErrorKind::MailDomainStateException(_inner) => Some(_inner),
+            UpdateDefaultMailDomainErrorKind::OrganizationNotFoundException(_inner) => Some(_inner),
+            UpdateDefaultMailDomainErrorKind::OrganizationStateException(_inner) => Some(_inner),
+            UpdateDefaultMailDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -7310,8 +7874,7 @@ impl MailDomainStateException {
     }
 }
 
-/// <p>For an email or alias to be created in Amazon WorkMail, the included domain must be defined
-/// in the organization.</p>
+/// <p>The domain specified is not found in your organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailDomainNotFoundException {
@@ -8158,6 +8721,127 @@ impl EntityAlreadyRegisteredException {
     }
 }
 
+/// <p>The domain you're trying to change is in use by another user or organization in your account. See the error message for details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MailDomainInUseException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MailDomainInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MailDomainInUseException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl MailDomainInUseException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for MailDomainInUseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "MailDomainInUseException")?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for MailDomainInUseException {}
+/// See [`MailDomainInUseException`](crate::error::MailDomainInUseException)
+pub mod mail_domain_in_use_exception {
+    /// A builder for [`MailDomainInUseException`](crate::error::MailDomainInUseException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MailDomainInUseException`](crate::error::MailDomainInUseException)
+        pub fn build(self) -> crate::error::MailDomainInUseException {
+            crate::error::MailDomainInUseException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl MailDomainInUseException {
+    /// Creates a new builder-style object to manufacture [`MailDomainInUseException`](crate::error::MailDomainInUseException)
+    pub fn builder() -> crate::error::mail_domain_in_use_exception::Builder {
+        crate::error::mail_domain_in_use_exception::Builder::default()
+    }
+}
+
+/// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to
+/// <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidCustomSesConfigurationException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidCustomSesConfigurationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidCustomSesConfigurationException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidCustomSesConfigurationException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidCustomSesConfigurationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidCustomSesConfigurationException")?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidCustomSesConfigurationException {}
+/// See [`InvalidCustomSesConfigurationException`](crate::error::InvalidCustomSesConfigurationException)
+pub mod invalid_custom_ses_configuration_exception {
+    /// A builder for [`InvalidCustomSesConfigurationException`](crate::error::InvalidCustomSesConfigurationException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidCustomSesConfigurationException`](crate::error::InvalidCustomSesConfigurationException)
+        pub fn build(self) -> crate::error::InvalidCustomSesConfigurationException {
+            crate::error::InvalidCustomSesConfigurationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidCustomSesConfigurationException {
+    /// Creates a new builder-style object to manufacture [`InvalidCustomSesConfigurationException`](crate::error::InvalidCustomSesConfigurationException)
+    pub fn builder() -> crate::error::invalid_custom_ses_configuration_exception::Builder {
+        crate::error::invalid_custom_ses_configuration_exception::Builder::default()
+    }
+}
+
 /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8179,8 +8863,8 @@ impl ReservedNameException {
 impl std::fmt::Display for ReservedNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReservedNameException")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -8239,8 +8923,8 @@ impl DirectoryInUseException {
 impl std::fmt::Display for DirectoryInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DirectoryInUseException")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }

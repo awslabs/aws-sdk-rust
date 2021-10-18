@@ -1053,6 +1053,7 @@ pub mod create_target_group_input {
         pub(crate) matcher: std::option::Option<crate::model::Matcher>,
         pub(crate) target_type: std::option::Option<crate::model::TargetTypeEnum>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) ip_address_type: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
     }
     impl Builder {
         /// <p>The name of the target group.</p>
@@ -1288,6 +1289,23 @@ pub mod create_target_group_input {
             self.tags = input;
             self
         }
+        /// <p>The type of IP address used for this target group. The possible values are
+        /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
+        /// the IP address type defaults to <code>ipv4</code>.</p>
+        pub fn ip_address_type(
+            mut self,
+            input: crate::model::TargetGroupIpAddressTypeEnum,
+        ) -> Self {
+            self.ip_address_type = Some(input);
+            self
+        }
+        pub fn set_ip_address_type(
+            mut self,
+            input: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
+        ) -> Self {
+            self.ip_address_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateTargetGroupInput`](crate::input::CreateTargetGroupInput)
         pub fn build(
             self,
@@ -1312,6 +1330,7 @@ pub mod create_target_group_input {
                 matcher: self.matcher,
                 target_type: self.target_type,
                 tags: self.tags,
+                ip_address_type: self.ip_address_type,
             })
         }
     }
@@ -3196,6 +3215,7 @@ pub mod describe_ssl_policies_input {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) page_size: std::option::Option<i32>,
+        pub(crate) load_balancer_type: std::option::Option<crate::model::LoadBalancerTypeEnum>,
     }
     impl Builder {
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3230,6 +3250,19 @@ pub mod describe_ssl_policies_input {
             self.page_size = input;
             self
         }
+        /// <p> The type of load balancer. The default lists the SSL policies for all load
+        /// balancers.</p>
+        pub fn load_balancer_type(mut self, input: crate::model::LoadBalancerTypeEnum) -> Self {
+            self.load_balancer_type = Some(input);
+            self
+        }
+        pub fn set_load_balancer_type(
+            mut self,
+            input: std::option::Option<crate::model::LoadBalancerTypeEnum>,
+        ) -> Self {
+            self.load_balancer_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeSslPoliciesInput`](crate::input::DescribeSslPoliciesInput)
         pub fn build(
             self,
@@ -3241,6 +3274,7 @@ pub mod describe_ssl_policies_input {
                 names: self.names,
                 marker: self.marker,
                 page_size: self.page_size,
+                load_balancer_type: self.load_balancer_type,
             })
         }
     }
@@ -6586,6 +6620,9 @@ pub struct DescribeSslPoliciesInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: std::option::Option<i32>,
+    /// <p> The type of load balancer. The default lists the SSL policies for all load
+    /// balancers.</p>
+    pub load_balancer_type: std::option::Option<crate::model::LoadBalancerTypeEnum>,
 }
 impl std::fmt::Debug for DescribeSslPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6593,6 +6630,7 @@ impl std::fmt::Debug for DescribeSslPoliciesInput {
         formatter.field("names", &self.names);
         formatter.field("marker", &self.marker);
         formatter.field("page_size", &self.page_size);
+        formatter.field("load_balancer_type", &self.load_balancer_type);
         formatter.finish()
     }
 }
@@ -6896,6 +6934,10 @@ pub struct CreateTargetGroupInput {
     pub target_type: std::option::Option<crate::model::TargetTypeEnum>,
     /// <p>The tags to assign to the target group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The type of IP address used for this target group. The possible values are
+    /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
+    /// the IP address type defaults to <code>ipv4</code>.</p>
+    pub ip_address_type: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
 }
 impl std::fmt::Debug for CreateTargetGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6922,6 +6964,7 @@ impl std::fmt::Debug for CreateTargetGroupInput {
         formatter.field("matcher", &self.matcher);
         formatter.field("target_type", &self.target_type);
         formatter.field("tags", &self.tags);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.finish()
     }
 }

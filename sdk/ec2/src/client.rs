@@ -2608,13 +2608,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_public_ipv4_pool(input);
             self
         }
-        /// <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS
+        /// <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services
         /// advertises IP addresses. Use this parameter to limit the IP address to this location. IP
         /// addresses cannot move between network border groups.</p>
         /// <p>Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a> to view the network border groups.</p>
-        /// <note>
-        /// <p>You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you will receive an <code>InvalidParameterCombination</code> error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.</p>
-        /// </note>
+        /// <p>You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic,
+        /// you receive an <code>InvalidParameterCombination</code> error.</p>
         pub fn network_border_group(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.network_border_group(inp);
             self
@@ -6022,7 +6021,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -8185,7 +8184,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_traffic_type(input);
             self
         }
-        /// <p>Specifies the type of destination to which the flow log data is to be published. Flow log data can be
+        /// <p>The type of destination to which the flow log data is to be published. Flow log data can be
         /// published to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To
         /// publish flow log data to Amazon S3, specify <code>s3</code>.</p>
         /// <p>If you specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
@@ -8203,7 +8202,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_destination_type(input);
             self
         }
-        /// <p>Specifies the destination to which the flow log data is to be published. Flow log data can be published
+        /// <p>The destination to which the flow log data is to be published. Flow log data can be published
         /// to a CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value specified
         /// for <code>LogDestinationType</code>.</p>
         /// <p>If <code>LogDestinationType</code> is not specified or <code>cloud-watch-logs</code>,
@@ -8232,7 +8231,8 @@ pub mod fluent_builders {
         /// omit this parameter, the flow log is created using the default format. If you specify this parameter,
         /// you must specify at least one field.</p>
         /// <p>Specify the fields using the <code>${field-id}</code> format, separated by spaces. For
-        /// the CLI, use single quotation marks (' ') to surround the parameter value.</p>
+        /// the CLI, surround this parameter value with single quotes on Linux or
+        /// double quotes on Windows.</p>
         pub fn log_format(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.log_format(inp);
             self
@@ -8270,6 +8270,18 @@ pub mod fluent_builders {
         }
         pub fn set_max_aggregation_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_aggregation_interval(input);
+            self
+        }
+        /// <p>The destination options.</p>
+        pub fn destination_options(mut self, inp: crate::model::DestinationOptionsRequest) -> Self {
+            self.inner = self.inner.destination_options(inp);
+            self
+        }
+        pub fn set_destination_options(
+            mut self,
+            input: std::option::Option<crate::model::DestinationOptionsRequest>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_options(input);
             self
         }
     }
@@ -9301,17 +9313,6 @@ pub mod fluent_builders {
             self.inner = self.inner.set_local_gateway_route_table_id(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
-            self
-        }
-        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_dry_run(input);
-            self
-        }
         /// <p>The ID of the virtual interface group.</p>
         pub fn local_gateway_virtual_interface_group_id(
             mut self,
@@ -9327,6 +9328,17 @@ pub mod fluent_builders {
             self.inner = self
                 .inner
                 .set_local_gateway_virtual_interface_group_id(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, inp: bool) -> Self {
+            self.inner = self.inner.dry_run(inp);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
             self
         }
     }
@@ -11789,6 +11801,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone_id(input);
             self
         }
+        /// <p>The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+        pub fn cidr_block(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr_block(inp);
+            self
+        }
+        pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_cidr_block(input);
+            self
+        }
         /// <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a
         /// /64 prefix length.</p>
         pub fn ipv6_cidr_block(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -11830,15 +11851,6 @@ pub mod fluent_builders {
         }
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
-            self
-        }
-        /// <p>The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
-        pub fn cidr_block(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidr_block(inp);
-            self
-        }
-        pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_cidr_block(input);
             self
         }
     }
@@ -12146,7 +12158,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -12212,7 +12224,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_traffic_mirror_filter_id(input);
             self
         }
-        /// <p>The type of traffic (<code>ingress</code> | <code>egress</code>).</p>
+        /// <p>The type of traffic.</p>
         pub fn traffic_direction(mut self, inp: crate::model::TrafficDirection) -> Self {
             self.inner = self.inner.traffic_direction(inp);
             self
@@ -12234,7 +12246,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_number(input);
             self
         }
-        /// <p>The action to take (<code>accept</code> | <code>reject</code>) on the filtered traffic.</p>
+        /// <p>The action to take on the filtered traffic.</p>
         pub fn rule_action(mut self, inp: crate::model::TrafficMirrorRuleAction) -> Self {
             self.inner = self.inner.rule_action(inp);
             self
@@ -12330,7 +12342,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -12494,7 +12506,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -12610,7 +12622,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -14209,8 +14221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+        /// idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -14367,8 +14379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure
+        /// idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -14487,8 +14499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure
+        /// idempotency</a>.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -22980,7 +22992,9 @@ pub mod fluent_builders {
         /// Appends an item to `Owners`.
         ///
         /// To override the contents of this collection use [`set_owners`](Self::set_owners).
-        /// <p>Filters the AFI by owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code>).</p>
+        /// <p>Filters the AFI by owner. Specify an Amazon Web Services account ID, <code>self</code>
+        /// (owner is the sender of the request), or an Amazon Web Services owner alias (valid values are
+        /// <code>amazon</code> | <code>aws-marketplace</code>).</p>
         pub fn owners(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owners(inp);
             self
@@ -23015,7 +23029,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The AWS account ID of the AFI owner.</p>
+        /// <code>owner-id</code> - The Amazon Web Services account ID of the AFI owner.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -23023,7 +23037,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>shell-version</code> - The version of the AWS Shell that was used to create the bitstream.</p>
+        /// <code>shell-version</code> - The version of the Amazon Web Services Shell that was used to create the bitstream.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -25727,9 +25741,14 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>instance-storage-info.encryption-supported</code> - Indicates whether data is encrypted at rest
+        /// (<code>required</code> | <code>unsupported</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile memory
-        /// express (NVMe) is supported for instance store (<code>required</code> | <code>supported</code>)
-        /// | <code>unsupported</code>).</p>
+        /// express (NVMe) is supported for instance store (<code>required</code> | <code>supported</code> |
+        /// <code>unsupported</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -35228,8 +35247,8 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>vpc-endpoint-owner</code> - The AWS account number of the owner of the
-        /// endpoint.</p>
+        /// <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID
+        /// that owns the endpoint.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -41879,7 +41898,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tag_specifications(input);
             self
         }
-        /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
         pub fn usage_operation(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.usage_operation(inp);
             self
@@ -42506,7 +42525,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The
-        /// only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">AWS Support</a> to opt out of a Local Zone group, or Wavelength Zone group.</p>
+        /// only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
         pub fn opt_in_status(
             mut self,
             inp: crate::model::ModifyAvailabilityZoneOptInStatus,
@@ -43359,7 +43378,7 @@ pub mod fluent_builders {
         /// Appends an item to `UserIds`.
         ///
         /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
-        /// <p>The AWS account IDs. This parameter is valid only when modifying the <code>loadPermission</code> attribute.</p>
+        /// <p>The Amazon Web Services account IDs. This parameter is valid only when modifying the <code>loadPermission</code> attribute.</p>
         pub fn user_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_ids(inp);
             self
@@ -45885,7 +45904,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_traffic_mirror_filter_rule_id(input);
             self
         }
-        /// <p>The type of traffic (<code>ingress</code> | <code>egress</code>) to assign to the rule.</p>
+        /// <p>The type of traffic to assign to the rule.</p>
         pub fn traffic_direction(mut self, inp: crate::model::TrafficDirection) -> Self {
             self.inner = self.inner.traffic_direction(inp);
             self
@@ -49544,12 +49563,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_public_ip(input);
             self
         }
-        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises
+        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
         /// IP addresses.</p>
-        /// <p>If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code> error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.</p>
-        /// <note>
-        /// <p>You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you will receive an <code>InvalidParameterCombination</code> error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.</p>
-        /// </note>
+        /// <p>If you provide an incorrect network border group, you receive an <code>InvalidAddress.NotFound</code> error.</p>
+        /// <p>You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you
+        /// receive an <code>InvalidParameterCombination</code> error.</p>
         pub fn network_border_group(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.network_border_group(inp);
             self
@@ -52760,6 +52778,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_local_gateway_route_table_id(input);
             self
         }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        /// <p>One or more filters.</p>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
@@ -52788,21 +52821,6 @@ pub mod fluent_builders {
         }
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
-            self
-        }
-        /// Appends an item to `Filters`.
-        ///
-        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
-        /// <p>One or more filters.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
-            self
-        }
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.inner = self.inner.set_filters(input);
             self
         }
     }
@@ -54207,7 +54225,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -54227,7 +54246,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

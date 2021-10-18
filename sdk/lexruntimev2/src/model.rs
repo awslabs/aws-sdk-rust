@@ -273,6 +273,7 @@ impl AsRef<str> for ConfirmationState {
 pub enum IntentState {
     Failed,
     Fulfilled,
+    FulfillmentInProgress,
     InProgress,
     ReadyForFulfillment,
     Waiting,
@@ -284,6 +285,7 @@ impl std::convert::From<&str> for IntentState {
         match s {
             "Failed" => IntentState::Failed,
             "Fulfilled" => IntentState::Fulfilled,
+            "FulfillmentInProgress" => IntentState::FulfillmentInProgress,
             "InProgress" => IntentState::InProgress,
             "ReadyForFulfillment" => IntentState::ReadyForFulfillment,
             "Waiting" => IntentState::Waiting,
@@ -303,6 +305,7 @@ impl IntentState {
         match self {
             IntentState::Failed => "Failed",
             IntentState::Fulfilled => "Fulfilled",
+            IntentState::FulfillmentInProgress => "FulfillmentInProgress",
             IntentState::InProgress => "InProgress",
             IntentState::ReadyForFulfillment => "ReadyForFulfillment",
             IntentState::Waiting => "Waiting",
@@ -313,6 +316,7 @@ impl IntentState {
         &[
             "Failed",
             "Fulfilled",
+            "FulfillmentInProgress",
             "InProgress",
             "ReadyForFulfillment",
             "Waiting",
@@ -337,8 +341,8 @@ pub struct Slot {
     /// <code>value</code> field contains a single value.</p>
     pub shape: std::option::Option<crate::model::Shape>,
     /// <p>A list of one or more values that the user provided for the slot.
-    /// For example, if a for a slot that elicits pizza toppings, the values might
-    /// be "pepperoni" and "pineapple." </p>
+    /// For example, if a for a slot that elicits pizza toppings, the values
+    /// might be "pepperoni" and "pineapple." </p>
     pub values: std::option::Option<std::vec::Vec<crate::model::Slot>>,
 }
 impl std::fmt::Debug for Slot {
@@ -987,12 +991,12 @@ pub struct ActiveContext {
     /// Once the time to live expires, the context is no longer returned in a
     /// response.</p>
     pub time_to_live: std::option::Option<crate::model::ActiveContextTimeToLive>,
-    /// <p>A lis tof contexts active for the request. A context can be
+    /// <p>A list of contexts active for the request. A context can be
     /// activated when a previous intent is fulfilled, or by including the
     /// context in the request.</p>
-    /// <p>If you don't specify a list of contexts, Amazon Lex will use the
-    /// current list of contexts for the session. If you specify an empty list,
-    /// all contexts for the session are cleared. </p>
+    /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+    /// list of contexts for the session. If you specify an empty list, all
+    /// contexts for the session are cleared. </p>
     pub context_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1276,6 +1280,7 @@ pub enum DialogActionType {
     Delegate,
     ElicitIntent,
     ElicitSlot,
+    None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -1287,6 +1292,7 @@ impl std::convert::From<&str> for DialogActionType {
             "Delegate" => DialogActionType::Delegate,
             "ElicitIntent" => DialogActionType::ElicitIntent,
             "ElicitSlot" => DialogActionType::ElicitSlot,
+            "None" => DialogActionType::None,
             other => DialogActionType::Unknown(other.to_owned()),
         }
     }
@@ -1306,6 +1312,7 @@ impl DialogActionType {
             DialogActionType::Delegate => "Delegate",
             DialogActionType::ElicitIntent => "ElicitIntent",
             DialogActionType::ElicitSlot => "ElicitSlot",
+            DialogActionType::None => "None",
             DialogActionType::Unknown(s) => s.as_ref(),
         }
     }
@@ -1316,6 +1323,7 @@ impl DialogActionType {
             "Delegate",
             "ElicitIntent",
             "ElicitSlot",
+            "None",
         ]
     }
 }

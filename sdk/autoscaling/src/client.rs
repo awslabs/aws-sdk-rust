@@ -1535,8 +1535,8 @@ pub mod fluent_builders {
         /// throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O
         /// performance. This optimization is not available with all instance types. Additional fees
         /// are incurred when you enable EBS optimization for an instance type that is not
-        /// EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
-        /// Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in
+        /// the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         /// <p>The default value is <code>false</code>.</p>
         pub fn ebs_optimized(mut self, inp: bool) -> Self {
             self.inner = self.inner.ebs_optimized(inp);
@@ -2359,6 +2359,22 @@ pub mod fluent_builders {
         }
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
+            self
+        }
+        /// Appends an item to `Filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        /// <p>One or more filters to limit the results based on specific tags.
+        /// </p>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
             self
         }
     }
@@ -6457,7 +6473,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -6477,7 +6494,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

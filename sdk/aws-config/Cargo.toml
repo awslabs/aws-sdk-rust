@@ -1,19 +1,22 @@
 [package]
 name = "aws-config"
-version = "0.1.0"
+version = "0.0.21-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
+description = "AWS SDK config and credential provider implementations."
 edition = "2018"
 exclude = ["test-data/*", "integration-tests/*"]
+license = "Apache-2.0"
+repository = "https://github.com/awslabs/smithy-rs"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [features]
-default-provider = ["profile", "imds", "meta", "sts", "environment"]
+default-provider = ["profile", "imds", "meta", "sts", "environment", "http-provider"]
 profile = ["sts", "web-identity-token", "meta", "environment", "imds"]
 meta = ["tokio/sync"]
-imds = ["profile", "smithy-http", "smithy-types", "smithy-http-tower", "smithy-json", "tower", "aws-http", "meta"]
+imds = ["profile", "smithy-http", "smithy-http-tower", "smithy-json", "tower", "aws-http", "meta"]
 environment = ["meta"]
 sts = ["aws-sdk-sts", "aws-hyper"]
 web-identity-token = ["sts", "profile"]
+http-provider = []
 
 # SSO is not supported
 sso = []
@@ -22,12 +25,16 @@ rustls = ["smithy-client/rustls"]
 native-tls = ["smithy-client/native-tls"]
 rt-tokio = ["smithy-async/rt-tokio"]
 
-default = ["default-provider", "rustls", "rt-tokio"]
+# Tokio based DNS-resolver for ECS validation
+dns = ["tokio/rt"]
+
+default = ["default-provider", "rustls", "rt-tokio", "dns"]
 
 [dependencies]
 aws-types = { path = "../aws-types" }
 smithy-async = { path = "../smithy-async" }
 smithy-client = { path = "../smithy-client" }
+smithy-types = { path = "../smithy-types" }
 tracing = { version = "0.1" }
 tokio = { version = "1", features = ["sync"], optional = true }
 aws-sdk-sts = { path = "../sts", optional = true }
@@ -37,14 +44,12 @@ aws-hyper = { path = "../aws-hyper", optional = true }
 
 # imds
 smithy-http = { path = "../smithy-http", optional = true }
-smithy-types = { path = "../smithy-types", optional = true }
 smithy-http-tower = { path = "../smithy-http-tower", optional = true }
 tower = { version = "0.4.8", optional = true }
 aws-http = { path = "../aws-http", optional = true }
 bytes = "1.1.0"
 http = "0.2.4"
 smithy-json = { path = "../smithy-json", optional = true }
-
 
 [dev-dependencies]
 futures-util = "0.3.16"

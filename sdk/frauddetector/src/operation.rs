@@ -55,6 +55,34 @@ impl smithy_http::response::ParseStrictResponse for BatchGetVariable {
     }
 }
 
+/// <p> Cancels an in-progress batch import job.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CancelBatchImportJob {
+    _private: (),
+}
+impl CancelBatchImportJob {
+    /// Creates a new builder-style object to manufacture [`CancelBatchImportJobInput`](crate::input::CancelBatchImportJobInput)
+    pub fn builder() -> crate::input::cancel_batch_import_job_input::Builder {
+        crate::input::cancel_batch_import_job_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CancelBatchImportJob {
+    type Output = std::result::Result<
+        crate::output::CancelBatchImportJobOutput,
+        crate::error::CancelBatchImportJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_cancel_batch_import_job_error(response)
+        } else {
+            crate::operation_deser::parse_cancel_batch_import_job_response(response)
+        }
+    }
+}
+
 /// <p>Cancels the specified batch prediction job.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CancelBatchPredictionJob {
@@ -79,6 +107,34 @@ impl smithy_http::response::ParseStrictResponse for CancelBatchPredictionJob {
             crate::operation_deser::parse_cancel_batch_prediction_job_error(response)
         } else {
             crate::operation_deser::parse_cancel_batch_prediction_job_response(response)
+        }
+    }
+}
+
+/// <p>Creates a batch import job. </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateBatchImportJob {
+    _private: (),
+}
+impl CreateBatchImportJob {
+    /// Creates a new builder-style object to manufacture [`CreateBatchImportJobInput`](crate::input::CreateBatchImportJobInput)
+    pub fn builder() -> crate::input::create_batch_import_job_input::Builder {
+        crate::input::create_batch_import_job_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateBatchImportJob {
+    type Output = std::result::Result<
+        crate::output::CreateBatchImportJobOutput,
+        crate::error::CreateBatchImportJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_batch_import_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_batch_import_job_response(response)
         }
     }
 }
@@ -246,6 +302,34 @@ impl smithy_http::response::ParseStrictResponse for CreateVariable {
     }
 }
 
+/// <p>Deletes data that was batch imported to Amazon Fraud Detector. </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteBatchImportJob {
+    _private: (),
+}
+impl DeleteBatchImportJob {
+    /// Creates a new builder-style object to manufacture [`DeleteBatchImportJobInput`](crate::input::DeleteBatchImportJobInput)
+    pub fn builder() -> crate::input::delete_batch_import_job_input::Builder {
+        crate::input::delete_batch_import_job_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteBatchImportJob {
+    type Output = std::result::Result<
+        crate::output::DeleteBatchImportJobOutput,
+        crate::error::DeleteBatchImportJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_batch_import_job_error(response)
+        } else {
+            crate::operation_deser::parse_delete_batch_import_job_response(response)
+        }
+    }
+}
+
 /// <p>Deletes a batch prediction job.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBatchPredictionJob {
@@ -387,9 +471,37 @@ impl smithy_http::response::ParseStrictResponse for DeleteEvent {
     }
 }
 
+/// <p>Deletes all events of a particular event type.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteEventsByEventType {
+    _private: (),
+}
+impl DeleteEventsByEventType {
+    /// Creates a new builder-style object to manufacture [`DeleteEventsByEventTypeInput`](crate::input::DeleteEventsByEventTypeInput)
+    pub fn builder() -> crate::input::delete_events_by_event_type_input::Builder {
+        crate::input::delete_events_by_event_type_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteEventsByEventType {
+    type Output = std::result::Result<
+        crate::output::DeleteEventsByEventTypeOutput,
+        crate::error::DeleteEventsByEventTypeError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_events_by_event_type_error(response)
+        } else {
+            crate::operation_deser::parse_delete_events_by_event_type_response(response)
+        }
+    }
+}
+
 /// <p>Deletes an event type.</p>
 /// <p>You cannot delete an event type that is used in a detector or a model.</p>
-/// <p>When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type and the data is no longer stored in Amazon Fraud Detector.</p>
+/// <p>When you delete an event type, Amazon Fraud Detector permanently deletes that event type and the data is no longer stored in Amazon Fraud Detector.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEventType {
     _private: (),
@@ -673,6 +785,37 @@ impl smithy_http::response::ParseStrictResponse for DescribeModelVersions {
     }
 }
 
+/// <p>Gets all batch import jobs or a specific job of the specified ID. This is a paginated API. If you provide a null <code>maxResults</code>,
+/// this action retrieves a maximum of 50 records per page. If you provide a <code>maxResults</code>, the value must be between 1 and 50.
+/// To get the next page results, provide the pagination token from the <code>GetBatchImportJobsResponse</code> as part of your request.
+/// A null pagination token fetches the records from the beginning.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetBatchImportJobs {
+    _private: (),
+}
+impl GetBatchImportJobs {
+    /// Creates a new builder-style object to manufacture [`GetBatchImportJobsInput`](crate::input::GetBatchImportJobsInput)
+    pub fn builder() -> crate::input::get_batch_import_jobs_input::Builder {
+        crate::input::get_batch_import_jobs_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetBatchImportJobs {
+    type Output = std::result::Result<
+        crate::output::GetBatchImportJobsOutput,
+        crate::error::GetBatchImportJobsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_batch_import_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_get_batch_import_jobs_response(response)
+        }
+    }
+}
+
 /// <p>Gets all batch prediction jobs or a specific job if you specify a job ID. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 50 records per page. If you provide a maxResults, the value must be between 1 and 50. To get the next page results, provide the pagination token from the GetBatchPredictionJobsResponse as part of your request. A null pagination token fetches the records from the beginning.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetBatchPredictionJobs {
@@ -697,6 +840,34 @@ impl smithy_http::response::ParseStrictResponse for GetBatchPredictionJobs {
             crate::operation_deser::parse_get_batch_prediction_jobs_error(response)
         } else {
             crate::operation_deser::parse_get_batch_prediction_jobs_response(response)
+        }
+    }
+}
+
+/// <p>Retrieves the status of a <code>DeleteEventsByEventType</code> action.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetDeleteEventsByEventTypeStatus {
+    _private: (),
+}
+impl GetDeleteEventsByEventTypeStatus {
+    /// Creates a new builder-style object to manufacture [`GetDeleteEventsByEventTypeStatusInput`](crate::input::GetDeleteEventsByEventTypeStatusInput)
+    pub fn builder() -> crate::input::get_delete_events_by_event_type_status_input::Builder {
+        crate::input::get_delete_events_by_event_type_status_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetDeleteEventsByEventTypeStatus {
+    type Output = std::result::Result<
+        crate::output::GetDeleteEventsByEventTypeStatusOutput,
+        crate::error::GetDeleteEventsByEventTypeStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_delete_events_by_event_type_status_error(response)
+        } else {
+            crate::operation_deser::parse_get_delete_events_by_event_type_status_response(response)
         }
     }
 }
@@ -787,6 +958,31 @@ impl smithy_http::response::ParseStrictResponse for GetEntityTypes {
             crate::operation_deser::parse_get_entity_types_error(response)
         } else {
             crate::operation_deser::parse_get_entity_types_response(response)
+        }
+    }
+}
+
+/// <p>Retrieves details of events stored with Amazon Fraud Detector. This action does not retrieve prediction results.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetEvent {
+    _private: (),
+}
+impl GetEvent {
+    /// Creates a new builder-style object to manufacture [`GetEventInput`](crate::input::GetEventInput)
+    pub fn builder() -> crate::input::get_event_input::Builder {
+        crate::input::get_event_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetEvent {
+    type Output = std::result::Result<crate::output::GetEventOutput, crate::error::GetEventError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_event_error(response)
+        } else {
+            crate::operation_deser::parse_get_event_response(response)
         }
     }
 }
@@ -883,7 +1079,7 @@ impl smithy_http::response::ParseStrictResponse for GetExternalModels {
     }
 }
 
-/// <p>Gets the encryption key if a Key Management Service (KMS) customer master key (CMK) has been specified to be used to encrypt content in Amazon Fraud Detector.</p>
+/// <p>Gets the encryption key if a KMS key has been specified to be used to encrypt content in Amazon Fraud Detector.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetKMSEncryptionKey {
     _private: (),
@@ -1224,7 +1420,7 @@ impl smithy_http::response::ParseStrictResponse for PutExternalModel {
     }
 }
 
-/// <p>Specifies the Key Management Service (KMS) customer master key (CMK) to be used to encrypt content in Amazon Fraud Detector.</p>
+/// <p>Specifies the KMS key to be used to encrypt content in Amazon Fraud Detector.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutKMSEncryptionKey {
     _private: (),
@@ -1299,6 +1495,31 @@ impl smithy_http::response::ParseStrictResponse for PutOutcome {
             crate::operation_deser::parse_put_outcome_error(response)
         } else {
             crate::operation_deser::parse_put_outcome_response(response)
+        }
+    }
+}
+
+/// <p>Stores events in Amazon Fraud Detector without generating fraud predictions for those events. For example, you can use <code>SendEvent</code> to upload a historical dataset, which you can then later use to train a model.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SendEvent {
+    _private: (),
+}
+impl SendEvent {
+    /// Creates a new builder-style object to manufacture [`SendEventInput`](crate::input::SendEventInput)
+    pub fn builder() -> crate::input::send_event_input::Builder {
+        crate::input::send_event_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for SendEvent {
+    type Output = std::result::Result<crate::output::SendEventOutput, crate::error::SendEventError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_send_event_error(response)
+        } else {
+            crate::operation_deser::parse_send_event_response(response)
         }
     }
 }
@@ -1441,7 +1662,35 @@ impl smithy_http::response::ParseStrictResponse for UpdateDetectorVersionStatus 
     }
 }
 
-/// <p>Updates a model. You can update the description attribute using this action.</p>
+/// <p>Updates the specified event with a new label.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateEventLabel {
+    _private: (),
+}
+impl UpdateEventLabel {
+    /// Creates a new builder-style object to manufacture [`UpdateEventLabelInput`](crate::input::UpdateEventLabelInput)
+    pub fn builder() -> crate::input::update_event_label_input::Builder {
+        crate::input::update_event_label_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UpdateEventLabel {
+    type Output = std::result::Result<
+        crate::output::UpdateEventLabelOutput,
+        crate::error::UpdateEventLabelError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_event_label_error(response)
+        } else {
+            crate::operation_deser::parse_update_event_label_response(response)
+        }
+    }
+}
+
+/// <p>Updates model description.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateModel {
     _private: (),
@@ -1502,7 +1751,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateModelVersion {
 /// <p>Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.</p>
 /// </li>
 /// <li>
-/// <p>Change <code>ACTIVE</code>to <code>INACTIVE</code>.</p>
+/// <p>Change <code>ACTIVE</code> to <code>INACTIVE</code>.</p>
 /// </li>
 /// </ol>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]

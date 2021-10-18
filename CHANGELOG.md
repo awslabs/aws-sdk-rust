@@ -1,3 +1,23 @@
+v0.0.21-alpha (October 15th, 2021)
+==================================
+
+**New this week**
+
+- Prepare crate manifests for publishing to crates.io (smithy-rs#755)
+- Add support for IAM Roles for tasks credential provider (smithy-rs#765, aws-sdk-rust#123)
+- All service crates now have generated README files (smithy-rs#766)
+- Update AWS service models (smithy-rs#772)
+- :tada: Add support for Amazon Managed Grafana (smithy-rs#772)
+- :tada: Make retry behavior configurable
+    - With env vars `AWS_MAX_ATTEMPTS` and `AWS_RETRY_MODE`
+    - With `~/.aws/config` settings `max_attempts` and `retry_mode`
+    - By calling the `with_retry_config` method on a `Config` and passing in a `RetryConfig`
+    - Only the `Standard` retry mode is currently implemented. `Adaptive` retry mode will be implemented at a later
+      date.
+    - For more info, see the AWS Reference pages on configuring these settings:
+        - [Setting global max attempts](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-max_attempts.html)
+        - [Setting global retry mode](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-retry_mode.html)
+
 v0.0.20-alpha (October, 7, 2021)
 ================================
 

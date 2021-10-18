@@ -815,7 +815,7 @@ pub mod create_bot_locale_input {
         /// threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex
         /// returns three alternative intents with the following confidence scores:
         /// IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the
-        /// PostText operation would be:</p>
+        /// <code>RecognizeText</code> operation would be:</p>
         /// <ul>
         /// <li>
         /// <p>AMAZON.FallbackIntent</p>
@@ -9087,7 +9087,7 @@ pub mod list_exports_input {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListExports</code> operation contans
+        /// <p>If the response from the <code>ListExports</code> operation contains
         /// more results that specified in the <code>maxResults</code> parameter, a
         /// token is returned in the response. Use that token in the
         /// <code>nextToken</code> parameter to return the next page of
@@ -13850,7 +13850,7 @@ pub struct ListExportsInput {
     /// there are fewer results than the max page size, only the actual number
     /// of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListExports</code> operation contans
+    /// <p>If the response from the <code>ListExports</code> operation contains
     /// more results that specified in the <code>maxResults</code> parameter, a
     /// token is returned in the response. Use that token in the
     /// <code>nextToken</code> parameter to return the next page of
@@ -15000,7 +15000,7 @@ pub struct CreateBotLocaleInput {
     /// threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex
     /// returns three alternative intents with the following confidence scores:
     /// IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the
-    /// PostText operation would be:</p>
+    /// <code>RecognizeText</code> operation would be:</p>
     /// <ul>
     /// <li>
     /// <p>AMAZON.FallbackIntent</p>

@@ -3845,7 +3845,7 @@ pub struct DescribeInputOutput {
     /// A list of IDs for all Inputs which are partners of this one.
     pub input_partner_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-    /// during input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+    /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
     pub input_source_type: std::option::Option<crate::model::InputSourceType>,
     /// A list of MediaConnect Flows for this input.
     pub media_connect_flows: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
@@ -3862,7 +3862,7 @@ pub struct DescribeInputOutput {
     /// A collection of key-value pairs.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// Placeholder documentation for InputType
+    /// The different types of inputs that AWS Elemental MediaLive supports.
     pub r#type: std::option::Option<crate::model::InputType>,
 }
 impl std::fmt::Debug for DescribeInputOutput {
@@ -4002,7 +4002,7 @@ pub mod describe_input_output {
             self
         }
         /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
-        /// during input switch actions. Presently, this functionality only works with MP4_FILE inputs.
+        /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
         pub fn input_source_type(mut self, input: crate::model::InputSourceType) -> Self {
             self.input_source_type = Some(input);
             self
@@ -4102,7 +4102,7 @@ pub mod describe_input_output {
             self.tags = input;
             self
         }
-        /// Placeholder documentation for InputType
+        /// The different types of inputs that AWS Elemental MediaLive supports.
         pub fn r#type(mut self, input: crate::model::InputType) -> Self {
             self.r#type = Some(input);
             self
@@ -5892,6 +5892,36 @@ impl CreateChannelOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::output::CreateChannelOutput)
     pub fn builder() -> crate::output::create_channel_output::Builder {
         crate::output::create_channel_output::Builder::default()
+    }
+}
+
+/// Placeholder documentation for ClaimDeviceResponse
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClaimDeviceOutput {}
+impl std::fmt::Debug for ClaimDeviceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClaimDeviceOutput");
+        formatter.finish()
+    }
+}
+/// See [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput)
+pub mod claim_device_output {
+    /// A builder for [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput)
+        pub fn build(self) -> crate::output::ClaimDeviceOutput {
+            crate::output::ClaimDeviceOutput {}
+        }
+    }
+}
+impl ClaimDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput)
+    pub fn builder() -> crate::output::claim_device_output::Builder {
+        crate::output::claim_device_output::Builder::default()
     }
 }
 

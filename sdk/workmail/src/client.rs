@@ -137,6 +137,9 @@ where
     pub fn deregister_from_work_mail(&self) -> fluent_builders::DeregisterFromWorkMail<C, M, R> {
         fluent_builders::DeregisterFromWorkMail::new(self.handle.clone())
     }
+    pub fn deregister_mail_domain(&self) -> fluent_builders::DeregisterMailDomain<C, M, R> {
+        fluent_builders::DeregisterMailDomain::new(self.handle.clone())
+    }
     pub fn describe_group(&self) -> fluent_builders::DescribeGroup<C, M, R> {
         fluent_builders::DescribeGroup::new(self.handle.clone())
     }
@@ -180,6 +183,9 @@ where
     pub fn get_mailbox_details(&self) -> fluent_builders::GetMailboxDetails<C, M, R> {
         fluent_builders::GetMailboxDetails::new(self.handle.clone())
     }
+    pub fn get_mail_domain(&self) -> fluent_builders::GetMailDomain<C, M, R> {
+        fluent_builders::GetMailDomain::new(self.handle.clone())
+    }
     pub fn get_mobile_device_access_effect(
         &self,
     ) -> fluent_builders::GetMobileDeviceAccessEffect<C, M, R> {
@@ -207,6 +213,9 @@ where
     }
     pub fn list_mailbox_permissions(&self) -> fluent_builders::ListMailboxPermissions<C, M, R> {
         fluent_builders::ListMailboxPermissions::new(self.handle.clone())
+    }
+    pub fn list_mail_domains(&self) -> fluent_builders::ListMailDomains<C, M, R> {
+        fluent_builders::ListMailDomains::new(self.handle.clone())
     }
     pub fn list_mobile_device_access_overrides(
         &self,
@@ -250,6 +259,9 @@ where
     pub fn put_retention_policy(&self) -> fluent_builders::PutRetentionPolicy<C, M, R> {
         fluent_builders::PutRetentionPolicy::new(self.handle.clone())
     }
+    pub fn register_mail_domain(&self) -> fluent_builders::RegisterMailDomain<C, M, R> {
+        fluent_builders::RegisterMailDomain::new(self.handle.clone())
+    }
     pub fn register_to_work_mail(&self) -> fluent_builders::RegisterToWorkMail<C, M, R> {
         fluent_builders::RegisterToWorkMail::new(self.handle.clone())
     }
@@ -264,6 +276,9 @@ where
     }
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
+    }
+    pub fn update_default_mail_domain(&self) -> fluent_builders::UpdateDefaultMailDomain<C, M, R> {
+        fluent_builders::UpdateDefaultMailDomain::new(self.handle.clone())
     }
     pub fn update_mailbox_quota(&self) -> fluent_builders::UpdateMailboxQuota<C, M, R> {
         fluent_builders::UpdateMailboxQuota::new(self.handle.clone())
@@ -1917,6 +1932,72 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeregisterMailDomain<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::deregister_mail_domain_input::Builder,
+    }
+    impl<C, M, R> DeregisterMailDomain<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeregisterMailDomainOutput,
+            smithy_http::result::SdkError<crate::error::DeregisterMailDomainError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeregisterMailDomainInputOperationOutputAlias,
+                crate::output::DeregisterMailDomainOutput,
+                crate::error::DeregisterMailDomainError,
+                crate::input::DeregisterMailDomainInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(inp);
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The domain to deregister in WorkMail and SES. </p>
+        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(inp);
+            self
+        }
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DescribeGroup<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -2658,6 +2739,72 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetMailDomain<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_mail_domain_input::Builder,
+    }
+    impl<C, M, R> GetMailDomain<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMailDomainOutput,
+            smithy_http::result::SdkError<crate::error::GetMailDomainError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetMailDomainInputOperationOutputAlias,
+                crate::output::GetMailDomainOutput,
+                crate::error::GetMailDomainError,
+                crate::input::GetMailDomainInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(inp);
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The domain from which you want to retrieve details.</p>
+        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(inp);
+            self
+        }
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetMobileDeviceAccessEffect<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -3308,6 +3455,81 @@ pub mod fluent_builders {
         }
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListMailDomains<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_mail_domains_input::Builder,
+    }
+    impl<C, M, R> ListMailDomains<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMailDomainsOutput,
+            smithy_http::result::SdkError<crate::error::ListMailDomainsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListMailDomainsInputOperationOutputAlias,
+                crate::output::ListMailDomainsOutput,
+                crate::error::ListMailDomainsError,
+                crate::input::ListMailDomainsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(inp);
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return in a single call.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -4389,6 +4611,81 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct RegisterMailDomain<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::register_mail_domain_input::Builder,
+    }
+    impl<C, M, R> RegisterMailDomain<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RegisterMailDomainOutput,
+            smithy_http::result::SdkError<crate::error::RegisterMailDomainError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::RegisterMailDomainInputOperationOutputAlias,
+                crate::output::RegisterMailDomainOutput,
+                crate::error::RegisterMailDomainError,
+                crate::input::RegisterMailDomainInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Idempotency token used when retrying requests.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(inp);
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(inp);
+            self
+        }
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct RegisterToWorkMail<
         C = smithy_client::erase::DynConnector,
         M = aws_hyper::AwsMiddleware,
@@ -4800,6 +5097,72 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateDefaultMailDomain<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_default_mail_domain_input::Builder,
+    }
+    impl<C, M, R> UpdateDefaultMailDomain<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateDefaultMailDomainOutput,
+            smithy_http::result::SdkError<crate::error::UpdateDefaultMailDomainError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateDefaultMailDomainInputOperationOutputAlias,
+                crate::output::UpdateDefaultMailDomainOutput,
+                crate::error::UpdateDefaultMailDomainError,
+                crate::input::UpdateDefaultMailDomainInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon WorkMail organization for which to list domains.</p>
+        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(inp);
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The domain name that will become the default domain.</p>
+        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(inp);
+            self
+        }
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_domain_name(input);
             self
         }
     }
@@ -5264,7 +5627,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -5284,7 +5648,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

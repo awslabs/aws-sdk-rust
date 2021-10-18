@@ -231,6 +231,9 @@ where
                 crate::error::CreateApplicationErrorKind::TooManyTagsException(inner) => {
                     Error::TooManyTagsException(inner)
                 }
+                crate::error::CreateApplicationErrorKind::UnsupportedOperationException(inner) => {
+                    Error::UnsupportedOperationException(inner)
+                }
                 crate::error::CreateApplicationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -552,6 +555,7 @@ where
                 crate::error::DiscoverInputSchemaErrorKind::ResourceProvisionedThroughputExceededException(inner) => Error::ResourceProvisionedThroughputExceededException(inner),
                 crate::error::DiscoverInputSchemaErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::DiscoverInputSchemaErrorKind::UnableToDetectSchemaException(inner) => Error::UnableToDetectSchemaException(inner),
+                crate::error::DiscoverInputSchemaErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
                 crate::error::DiscoverInputSchemaErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),

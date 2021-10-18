@@ -7,8 +7,6 @@
 //! - Reading environment variables
 //! - Reading from the file system
 
-use crate::os_shim_internal::fs::Fake;
-use crate::os_shim_internal::time_source::Inner;
 use std::collections::HashMap;
 use std::env::VarError;
 use std::ffi::OsString;
@@ -17,6 +15,9 @@ use std::ops::Deref;
 use std::path::{Path, PathBuf};
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, SystemTime};
+
+use crate::os_shim_internal::fs::Fake;
+use crate::os_shim_internal::time_source::Inner;
 
 /// File system abstraction
 ///
@@ -91,6 +92,31 @@ impl Fs {
             real_path: test_directory.into(),
             namespaced_to: namespaced_to.into(),
         })))
+    }
+
+    /// Create a fake process environment from a slice of tuples.
+    ///
+    /// # Examples
+    /// ```rust
+    /// # async fn example() {
+    /// use aws_types::os_shim_internal::Fs;
+    /// let mock_fs = Fs::from_slice(&[
+    ///     ("config", "[default]\nretry_mode = \"standard\""),
+    /// ]);
+    /// assert_eq!(mock_fs.read_to_end("config").await.unwrap(), b"[default]\nretry_mode = \"standard\"");
+    /// # }
+    /// ```
+    pub fn from_slice<'a>(files: &[(&'a str, &'a str)]) -> Self {
+        let fs: HashMap<String, Vec<u8>> = files
+            .iter()
+            .map(|(k, v)| {
+                let k = (*k).to_owned();
+                let v = v.as_bytes().to_vec();
+                (k, v)
+            })
+            .collect();
+
+        Self::from_map(fs)
     }
 
     /// Read the entire contents of a file
@@ -310,10 +336,12 @@ mod time_source {
 
 #[cfg(test)]
 mod test {
-    use crate::os_shim_internal::{Env, Fs, ManualTimeSource, TimeSource};
-    use futures_util::FutureExt;
     use std::env::VarError;
     use std::time::{Duration, UNIX_EPOCH};
+
+    use futures_util::FutureExt;
+
+    use crate::os_shim_internal::{Env, Fs, ManualTimeSource, TimeSource};
 
     #[test]
     fn env_works() {

@@ -3873,29 +3873,7 @@ impl AsRef<str> for AnalysisStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagSpecification {
-    /// <p>The type of resource to tag on creation. The possible values are:
-    /// <code>capacity-reservation</code> | <code>carrier-gateway</code> |
-    /// <code>client-vpn-endpoint</code> | <code>customer-gateway</code> |
-    /// <code>dedicated-host</code> | <code>dhcp-options</code> |
-    /// <code>egress-only-internet-gateway</code> | <code>elastic-gpu</code> |
-    /// <code>elastic-ip</code> | <code>export-image-task</code> |
-    /// <code>export-instance-task</code> | <code>fleet</code> | <code>fpga-image</code> |
-    /// <code>host-reservation</code> | <code>image</code> | <code>import-image-task</code> |
-    /// <code>import-snapshot-task</code> | <code>instance</code> | <code>instance-event-window</code> |
-    /// <code>internet-gateway</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
-    /// <code>key-pair</code> | <code>launch-template</code> | <code>local-gateway-route-table-vpc-association</code> |
-    /// <code>natgateway</code> | <code>network-acl</code> | <code>network-insights-analysis</code> |
-    /// <code>network-insights-path</code> | <code>network-interface</code> |
-    /// <code>placement-group</code> | <code>prefix-list</code> | <code>reserved-instances</code> |
-    /// <code>route-table</code> | <code>security-group</code> | <code>security-group-rule</code> |
-    /// <code>snapshot</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> | <code>subnet</code> |
-    /// <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
-    /// <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
-    /// <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> |
-    /// <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> |
-    /// <code>vpc-flow-log</code> | <code>vpc-peering-connection</code> |
-    /// <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
-    /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    /// <p>The type of resource to tag on creation.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tags to apply to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3918,29 +3896,7 @@ pub mod tag_specification {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The type of resource to tag on creation. The possible values are:
-        /// <code>capacity-reservation</code> | <code>carrier-gateway</code> |
-        /// <code>client-vpn-endpoint</code> | <code>customer-gateway</code> |
-        /// <code>dedicated-host</code> | <code>dhcp-options</code> |
-        /// <code>egress-only-internet-gateway</code> | <code>elastic-gpu</code> |
-        /// <code>elastic-ip</code> | <code>export-image-task</code> |
-        /// <code>export-instance-task</code> | <code>fleet</code> | <code>fpga-image</code> |
-        /// <code>host-reservation</code> | <code>image</code> | <code>import-image-task</code> |
-        /// <code>import-snapshot-task</code> | <code>instance</code> | <code>instance-event-window</code> |
-        /// <code>internet-gateway</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
-        /// <code>key-pair</code> | <code>launch-template</code> | <code>local-gateway-route-table-vpc-association</code> |
-        /// <code>natgateway</code> | <code>network-acl</code> | <code>network-insights-analysis</code> |
-        /// <code>network-insights-path</code> | <code>network-interface</code> |
-        /// <code>placement-group</code> | <code>prefix-list</code> | <code>reserved-instances</code> |
-        /// <code>route-table</code> | <code>security-group</code> | <code>security-group-rule</code> |
-        /// <code>snapshot</code> | <code>spot-fleet-request</code> | <code>spot-instances-request</code> | <code>subnet</code> |
-        /// <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
-        /// <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
-        /// <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> |
-        /// <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> |
-        /// <code>vpc-flow-log</code> | <code>vpc-peering-connection</code> |
-        /// <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
-        /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+        /// <p>The type of resource to tag on creation.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
@@ -5032,7 +4988,7 @@ pub struct LocalGatewayRoute {
     pub local_gateway_route_table_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
     pub local_gateway_route_table_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that owns the local gateway route.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway route.</p>
     pub owner_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LocalGatewayRoute {
@@ -5154,7 +5110,7 @@ pub mod local_gateway_route {
             self.local_gateway_route_table_arn = input;
             self
         }
-        /// <p>The AWS account ID that owns the local gateway route.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the local gateway route.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -7461,14 +7417,9 @@ pub struct InstanceMetadataOptionsResponse {
     /// <p>Default: 1</p>
     /// <p>Possible values: Integers from 1 to 64</p>
     pub http_put_response_hop_limit: std::option::Option<i32>,
-    /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If
-    /// the parameter is not specified, the default state is <code>enabled</code>.</p>
-    /// <note>
-    /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your
-    /// instance metadata.</p>
-    /// </note>
+    /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
     pub http_endpoint: std::option::Option<crate::model::InstanceMetadataEndpointState>,
-    /// <p>Whether or not the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+    /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
     pub http_protocol_ipv6: std::option::Option<crate::model::InstanceMetadataProtocolState>,
 }
 impl std::fmt::Debug for InstanceMetadataOptionsResponse {
@@ -7551,12 +7502,7 @@ pub mod instance_metadata_options_response {
             self.http_put_response_hop_limit = input;
             self
         }
-        /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If
-        /// the parameter is not specified, the default state is <code>enabled</code>.</p>
-        /// <note>
-        /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your
-        /// instance metadata.</p>
-        /// </note>
+        /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
         pub fn http_endpoint(mut self, input: crate::model::InstanceMetadataEndpointState) -> Self {
             self.http_endpoint = Some(input);
             self
@@ -7568,7 +7514,7 @@ pub mod instance_metadata_options_response {
             self.http_endpoint = input;
             self
         }
-        /// <p>Whether or not the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+        /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
         pub fn http_protocol_ipv6(
             mut self,
             input: crate::model::InstanceMetadataProtocolState,
@@ -12337,12 +12283,10 @@ pub struct InstanceMetadataOptionsRequest {
     /// <p>Default: 1</p>
     /// <p>Possible values: Integers from 1 to 64</p>
     pub http_put_response_hop_limit: std::option::Option<i32>,
-    /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If
-    /// the parameter is not specified, the default state is <code>enabled</code>.</p>
-    /// <note>
+    /// <p>Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not
+    /// specified, the default state is <code>enabled</code>.</p>
     /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your
     /// instance metadata.</p>
-    /// </note>
     pub http_endpoint: std::option::Option<crate::model::InstanceMetadataEndpointState>,
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
     pub http_protocol_ipv6: std::option::Option<crate::model::InstanceMetadataProtocolState>,
@@ -12407,12 +12351,10 @@ pub mod instance_metadata_options_request {
             self.http_put_response_hop_limit = input;
             self
         }
-        /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If
-        /// the parameter is not specified, the default state is <code>enabled</code>.</p>
-        /// <note>
+        /// <p>Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not
+        /// specified, the default state is <code>enabled</code>.</p>
         /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your
         /// instance metadata.</p>
-        /// </note>
         pub fn http_endpoint(mut self, input: crate::model::InstanceMetadataEndpointState) -> Self {
             self.http_endpoint = Some(input);
             self
@@ -13400,8 +13342,8 @@ impl ElasticInferenceAccelerator {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ElasticGpuSpecification {
     /// <p>The type of Elastic Graphics accelerator. For more information about the values to specify for
-    /// <code>Type</code>, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html#elastic-graphics-basics">Elastic Graphics Basics</a>, specifically the Elastic Graphics accelerator column, in the <i>Amazon Elastic Compute Cloud User Guide for Windows
-    /// Instances</i>.</p>
+    /// <code>Type</code>, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html#elastic-graphics-basics">Elastic Graphics Basics</a>, specifically the Elastic Graphics accelerator column, in the
+    /// <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ElasticGpuSpecification {
@@ -13421,8 +13363,8 @@ pub mod elastic_gpu_specification {
     }
     impl Builder {
         /// <p>The type of Elastic Graphics accelerator. For more information about the values to specify for
-        /// <code>Type</code>, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html#elastic-graphics-basics">Elastic Graphics Basics</a>, specifically the Elastic Graphics accelerator column, in the <i>Amazon Elastic Compute Cloud User Guide for Windows
-        /// Instances</i>.</p>
+        /// <code>Type</code>, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html#elastic-graphics-basics">Elastic Graphics Basics</a>, specifically the Elastic Graphics accelerator column, in the
+        /// <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
@@ -30195,7 +30137,7 @@ impl FpgaImageAttribute {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadPermission {
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The name of the group.</p>
     pub group: std::option::Option<crate::model::PermissionGroup>,
@@ -30218,7 +30160,7 @@ pub mod load_permission {
         pub(crate) group: std::option::Option<crate::model::PermissionGroup>,
     }
     impl Builder {
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
@@ -30330,7 +30272,7 @@ impl LoadPermissionModifications {
 pub struct LoadPermissionRequest {
     /// <p>The name of the group.</p>
     pub group: std::option::Option<crate::model::PermissionGroup>,
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LoadPermissionRequest {
@@ -30363,7 +30305,7 @@ pub mod load_permission_request {
             self.group = input;
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
@@ -37919,9 +37861,9 @@ impl AsRef<str> for PartitionLoadFrequency {
 pub struct CoipAddressUsage {
     /// <p>The allocation ID of the address.</p>
     pub allocation_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The AWS service.</p>
+    /// <p>The Amazon Web Services service.</p>
     pub aws_service: std::option::Option<std::string::String>,
     /// <p>The customer-owned IP address.</p>
     pub co_ip: std::option::Option<std::string::String>,
@@ -37960,7 +37902,7 @@ pub mod coip_address_usage {
             self.allocation_id = input;
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -37972,7 +37914,7 @@ pub mod coip_address_usage {
             self.aws_account_id = input;
             self
         }
-        /// <p>The AWS service.</p>
+        /// <p>The Amazon Web Services service.</p>
         pub fn aws_service(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_service = Some(input.into());
             self
@@ -39397,7 +39339,7 @@ pub struct VpcIpv6CidrBlockAssociation {
     /// <p>Information about the state of the CIDR block.</p>
     pub ipv6_cidr_block_state: std::option::Option<crate::model::VpcCidrBlockState>,
     /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from
-    /// which AWS advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.</p>
+    /// which Amazon Web Services advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.</p>
     pub network_border_group: std::option::Option<std::string::String>,
     /// <p>The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p>
     pub ipv6_pool: std::option::Option<std::string::String>,
@@ -39463,7 +39405,7 @@ pub mod vpc_ipv6_cidr_block_association {
             self
         }
         /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from
-        /// which AWS advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.</p>
+        /// which Amazon Web Services advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.</p>
         pub fn network_border_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_border_group = Some(input.into());
             self
@@ -41682,7 +41624,7 @@ pub struct ServiceDetail {
     pub service_type: std::option::Option<std::vec::Vec<crate::model::ServiceTypeDetail>>,
     /// <p>The Availability Zones in which the service is available.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The AWS account ID of the service owner.</p>
+    /// <p>The Amazon Web Services account ID of the service owner.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The DNS names for the service.</p>
     pub base_endpoint_dns_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -41796,7 +41738,7 @@ pub mod service_detail {
             self.availability_zones = input;
             self
         }
-        /// <p>The AWS account ID of the service owner.</p>
+        /// <p>The Amazon Web Services account ID of the service owner.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
@@ -42286,7 +42228,7 @@ pub struct ServiceConfiguration {
     pub service_state: std::option::Option<crate::model::ServiceState>,
     /// <p>The Availability Zones in which the service is available.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates whether requests from other AWS accounts to create an endpoint to the service must first be accepted.</p>
+    /// <p>Indicates whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
     pub acceptance_required: std::option::Option<bool>,
     /// <p>Indicates whether the service manages its VPC endpoints. Management of the service VPC
     /// endpoints using the VPC endpoint API is restricted.</p>
@@ -42414,7 +42356,7 @@ pub mod service_configuration {
             self.availability_zones = input;
             self
         }
-        /// <p>Indicates whether requests from other AWS accounts to create an endpoint to the service must first be accepted.</p>
+        /// <p>Indicates whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
         pub fn acceptance_required(mut self, input: bool) -> Self {
             self.acceptance_required = Some(input);
             self
@@ -42731,7 +42673,7 @@ pub struct VpcEndpoint {
     pub creation_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>Any tags assigned to the VPC endpoint.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The ID of the AWS account that owns the VPC endpoint.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The last error that occurred for VPC endpoint.</p>
     pub last_error: std::option::Option<crate::model::LastError>,
@@ -42956,7 +42898,7 @@ pub mod vpc_endpoint {
             self.tags = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the VPC endpoint.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -43332,7 +43274,7 @@ pub struct VpcEndpointConnection {
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC endpoint.</p>
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the VPC endpoint.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
     pub vpc_endpoint_owner: std::option::Option<std::string::String>,
     /// <p>The state of the VPC endpoint.</p>
     pub vpc_endpoint_state: std::option::Option<crate::model::State>,
@@ -43404,7 +43346,7 @@ pub mod vpc_endpoint_connection {
             self.vpc_endpoint_id = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the VPC endpoint.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
         pub fn vpc_endpoint_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_endpoint_owner = Some(input.into());
             self
@@ -48764,58 +48706,70 @@ pub struct EventInformation {
     /// <p>The description of the event.</p>
     pub event_description: std::option::Option<std::string::String>,
     /// <p>The event.</p>
-    /// <p>The following are the <code>error</code> events:</p>
+    /// <p>
+    /// <code>error</code> events:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet did not have the required
+    /// <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet does not have the required
     /// permissions either to launch or terminate an instance.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
-    /// valid. For more information, see the description of the event.</p>
+    /// <code>allLaunchSpecsTemporarilyBlacklisted</code> - None of the configurations
+    /// are valid, and several attempts to launch instances have failed. For more
+    /// information, see the description of the event.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on the
     /// number of Spot Instances that you can launch.</p>
     /// </li>
+    /// <li>
+    /// <p>
+    /// <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
+    /// valid. For more information, see the description of the event.</p>
+    /// </li>
     /// </ul>
-    /// <p>The following are the <code>fleetRequestChange</code> events:</p>
+    /// <p>
+    /// <code>fleetRequestChange</code> events:</p>
     /// <ul>
     /// <li>
     /// <p>
     /// <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and Amazon EC2 is
-    /// attempting to maintain the target number of running Spot Instances.</p>
+    /// attempting to maintain the target number of running instances.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running
-    /// Spot Instances. The EC2 Fleet or Spot Fleet will be deleted two days after its instances
-    /// were terminated.</p>
+    /// instances. The EC2 Fleet or Spot Fleet will be deleted two days after its instances are
+    /// terminated.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does
-    /// not launch additional Spot Instances. Existing Spot Instances continue to run
-    /// until they are interrupted or terminated.</p>
+    /// not launch additional instances. Its existing instances continue to run until
+    /// they are interrupted or terminated. The request remains in this state until all
+    /// instances are interrupted or terminated.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and
-    /// its Spot Instances are terminating.</p>
+    /// its instances are terminating. The request remains in this state until all
+    /// instances are terminated.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. A subsequent event
-    /// indicates that the instances were terminated, if the request was created with
-    /// <code>TerminateInstancesWithExpiration</code> set.</p>
+    /// <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. If the request was
+    /// created with <code>TerminateInstancesWithExpiration</code> set, a subsequent
+    /// <code>terminated</code> event indicates that the instances are
+    /// terminated.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>modify_in_progress</code> - A request to modify the EC2 Fleet or Spot Fleet request
-    /// was accepted and is in progress.</p>
+    /// <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet request is being modified.
+    /// The request remains in this state until the modification is fully
+    /// processed.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -48824,23 +48778,42 @@ pub struct EventInformation {
     /// <li>
     /// <p>
     /// <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon EC2
-    /// is preparing to launch the target number of Spot Instances.</p>
+    /// is preparing to launch the target number of instances.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>progress</code> - The EC2 Fleet or Spot Fleet request is in the process of being fulfilled.</p>
     /// </li>
     /// </ul>
-    /// <p>The following are the <code>instanceChange</code> events:</p>
+    /// <p>
+    /// <code>instanceChange</code> events:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>launched</code> - A request was fulfilled and a new instance was
-    /// launched.</p>
+    /// <code>launched</code> - A new instance was launched.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>terminated</code> - An instance was terminated by the user.</p>
     /// </li>
+    /// <li>
+    /// <p>
+    /// <code>termination_notified</code> - An instance termination notification was
+    /// sent when a Spot Instance was terminated by Amazon EC2 during scale-down, when the target
+    /// capacity of the fleet was modified down, for example, from a target capacity of
+    /// 4 to a target capacity of 3.</p>
+    /// </li>
     /// </ul>
-    /// <p>The following are the <code>Information</code> events:</p>
+    /// <p>
+    /// <code>Information</code> events:</p>
     /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>fleetProgressHalted</code> - The price in every launch specification is
+    /// not valid because it is below the Spot price (all the launch specifications have
+    /// produced <code>launchSpecUnusable</code> events). A launch specification might
+    /// become valid if the Spot price changes.</p>
+    /// </li>
     /// <li>
     /// <p>
     /// <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid
@@ -48850,14 +48823,13 @@ pub struct EventInformation {
     /// <li>
     /// <p>
     /// <code>launchSpecUnusable</code> - The price in a launch specification is not
-    /// valid because it is below the Spot price or the Spot price is above the
-    /// On-Demand price.</p>
+    /// valid because it is below the Spot price.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>fleetProgressHalted</code> - The price in every launch specification is
-    /// not valid. A launch specification might become valid if the Spot price
-    /// changes.</p>
+    /// <code>registerWithLoadBalancersFailed</code> - An attempt to register
+    /// instances with load balancers failed. For more information, see the description
+    /// of the event.</p>
     /// </li>
     /// </ul>
     pub event_sub_type: std::option::Option<std::string::String>,
@@ -48898,58 +48870,70 @@ pub mod event_information {
             self
         }
         /// <p>The event.</p>
-        /// <p>The following are the <code>error</code> events:</p>
+        /// <p>
+        /// <code>error</code> events:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet did not have the required
+        /// <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet does not have the required
         /// permissions either to launch or terminate an instance.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
-        /// valid. For more information, see the description of the event.</p>
+        /// <code>allLaunchSpecsTemporarilyBlacklisted</code> - None of the configurations
+        /// are valid, and several attempts to launch instances have failed. For more
+        /// information, see the description of the event.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on the
         /// number of Spot Instances that you can launch.</p>
         /// </li>
+        /// <li>
+        /// <p>
+        /// <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
+        /// valid. For more information, see the description of the event.</p>
+        /// </li>
         /// </ul>
-        /// <p>The following are the <code>fleetRequestChange</code> events:</p>
+        /// <p>
+        /// <code>fleetRequestChange</code> events:</p>
         /// <ul>
         /// <li>
         /// <p>
         /// <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and Amazon EC2 is
-        /// attempting to maintain the target number of running Spot Instances.</p>
+        /// attempting to maintain the target number of running instances.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>cancelled</code> - The EC2 Fleet or Spot Fleet request is canceled and has no running
-        /// Spot Instances. The EC2 Fleet or Spot Fleet will be deleted two days after its instances
-        /// were terminated.</p>
+        /// instances. The EC2 Fleet or Spot Fleet will be deleted two days after its instances are
+        /// terminated.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>cancelled_running</code> - The EC2 Fleet or Spot Fleet request is canceled and does
-        /// not launch additional Spot Instances. Existing Spot Instances continue to run
-        /// until they are interrupted or terminated.</p>
+        /// not launch additional instances. Its existing instances continue to run until
+        /// they are interrupted or terminated. The request remains in this state until all
+        /// instances are interrupted or terminated.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>cancelled_terminating</code> - The EC2 Fleet or Spot Fleet request is canceled and
-        /// its Spot Instances are terminating.</p>
+        /// its instances are terminating. The request remains in this state until all
+        /// instances are terminated.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. A subsequent event
-        /// indicates that the instances were terminated, if the request was created with
-        /// <code>TerminateInstancesWithExpiration</code> set.</p>
+        /// <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. If the request was
+        /// created with <code>TerminateInstancesWithExpiration</code> set, a subsequent
+        /// <code>terminated</code> event indicates that the instances are
+        /// terminated.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>modify_in_progress</code> - A request to modify the EC2 Fleet or Spot Fleet request
-        /// was accepted and is in progress.</p>
+        /// <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet request is being modified.
+        /// The request remains in this state until the modification is fully
+        /// processed.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -48958,23 +48942,42 @@ pub mod event_information {
         /// <li>
         /// <p>
         /// <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon EC2
-        /// is preparing to launch the target number of Spot Instances.</p>
+        /// is preparing to launch the target number of instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>progress</code> - The EC2 Fleet or Spot Fleet request is in the process of being fulfilled.</p>
         /// </li>
         /// </ul>
-        /// <p>The following are the <code>instanceChange</code> events:</p>
+        /// <p>
+        /// <code>instanceChange</code> events:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>launched</code> - A request was fulfilled and a new instance was
-        /// launched.</p>
+        /// <code>launched</code> - A new instance was launched.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>terminated</code> - An instance was terminated by the user.</p>
         /// </li>
+        /// <li>
+        /// <p>
+        /// <code>termination_notified</code> - An instance termination notification was
+        /// sent when a Spot Instance was terminated by Amazon EC2 during scale-down, when the target
+        /// capacity of the fleet was modified down, for example, from a target capacity of
+        /// 4 to a target capacity of 3.</p>
+        /// </li>
         /// </ul>
-        /// <p>The following are the <code>Information</code> events:</p>
+        /// <p>
+        /// <code>Information</code> events:</p>
         /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>fleetProgressHalted</code> - The price in every launch specification is
+        /// not valid because it is below the Spot price (all the launch specifications have
+        /// produced <code>launchSpecUnusable</code> events). A launch specification might
+        /// become valid if the Spot price changes.</p>
+        /// </li>
         /// <li>
         /// <p>
         /// <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid
@@ -48984,14 +48987,13 @@ pub mod event_information {
         /// <li>
         /// <p>
         /// <code>launchSpecUnusable</code> - The price in a launch specification is not
-        /// valid because it is below the Spot price or the Spot price is above the
-        /// On-Demand price.</p>
+        /// valid because it is below the Spot price.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>fleetProgressHalted</code> - The price in every launch specification is
-        /// not valid. A launch specification might become valid if the Spot price
-        /// changes.</p>
+        /// <code>registerWithLoadBalancersFailed</code> - An attempt to register
+        /// instances with load balancers failed. For more information, see the description
+        /// of the event.</p>
         /// </li>
         /// </ul>
         pub fn event_sub_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57192,7 +57194,7 @@ pub struct LocalGatewayVirtualInterface {
     pub local_bgp_asn: std::option::Option<i32>,
     /// <p>The peer BGP ASN.</p>
     pub peer_bgp_asn: std::option::Option<i32>,
-    /// <p>The AWS account ID that owns the local gateway virtual interface.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -57307,7 +57309,7 @@ pub mod local_gateway_virtual_interface {
             self.peer_bgp_asn = input;
             self
         }
-        /// <p>The AWS account ID that owns the local gateway virtual interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -57363,7 +57365,7 @@ pub struct LocalGatewayVirtualInterfaceGroup {
         std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the local gateway.</p>
     pub local_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that owns the local gateway virtual interface group.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the virtual interface group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -57443,7 +57445,7 @@ pub mod local_gateway_virtual_interface_group {
             self.local_gateway_id = input;
             self
         }
-        /// <p>The AWS account ID that owns the local gateway virtual interface group.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -57493,7 +57495,7 @@ pub struct LocalGateway {
     pub local_gateway_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that owns the local gateway.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The state of the local gateway.</p>
     pub state: std::option::Option<std::string::String>,
@@ -57545,7 +57547,7 @@ pub mod local_gateway {
             self.outpost_arn = input;
             self
         }
-        /// <p>The AWS account ID that owns the local gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the local gateway.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -57609,7 +57611,7 @@ pub struct LocalGatewayRouteTableVpcAssociation {
     pub local_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that owns the local gateway route table for the association.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The state of the association.</p>
     pub state: std::option::Option<std::string::String>,
@@ -57722,7 +57724,7 @@ pub mod local_gateway_route_table_vpc_association {
             self.vpc_id = input;
             self
         }
-        /// <p>The AWS account ID that owns the local gateway route table for the association.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the local gateway route table for the association.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -57791,7 +57793,7 @@ pub struct LocalGatewayRouteTableVirtualInterfaceGroupAssociation {
     pub local_gateway_route_table_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table for the virtual interface group.</p>
     pub local_gateway_route_table_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that owns the local gateway virtual interface group association.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group association.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The state of the association.</p>
     pub state: std::option::Option<std::string::String>,
@@ -57916,7 +57918,7 @@ pub mod local_gateway_route_table_virtual_interface_group_association {
             self.local_gateway_route_table_arn = input;
             self
         }
-        /// <p>The AWS account ID that owns the local gateway virtual interface group association.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group association.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -57984,7 +57986,7 @@ pub struct LocalGatewayRouteTable {
     pub local_gateway_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that owns the local gateway route table.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway route table.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The state of the local gateway route table.</p>
     pub state: std::option::Option<std::string::String>,
@@ -58076,7 +58078,7 @@ pub mod local_gateway_route_table {
             self.outpost_arn = input;
             self
         }
-        /// <p>The AWS account ID that owns the local gateway route table.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the local gateway route table.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -60750,7 +60752,7 @@ impl AsRef<str> for EbsOptimizedSupport {
     }
 }
 
-/// <p>Describes the disks that are available for the instance type.</p>
+/// <p>Describes the instance store features that are supported by the instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceStorageInfo {
@@ -60758,8 +60760,10 @@ pub struct InstanceStorageInfo {
     pub total_size_in_gb: std::option::Option<i64>,
     /// <p>Describes the disks that are available for the instance type.</p>
     pub disks: std::option::Option<std::vec::Vec<crate::model::DiskInfo>>,
-    /// <p>Indicates whether non-volatile memory express (NVMe) is supported for instance store.</p>
+    /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
     pub nvme_support: std::option::Option<crate::model::EphemeralNvmeSupport>,
+    /// <p>Indicates whether data is encrypted at rest.</p>
+    pub encryption_support: std::option::Option<crate::model::InstanceStorageEncryptionSupport>,
 }
 impl std::fmt::Debug for InstanceStorageInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -60767,6 +60771,7 @@ impl std::fmt::Debug for InstanceStorageInfo {
         formatter.field("total_size_in_gb", &self.total_size_in_gb);
         formatter.field("disks", &self.disks);
         formatter.field("nvme_support", &self.nvme_support);
+        formatter.field("encryption_support", &self.encryption_support);
         formatter.finish()
     }
 }
@@ -60779,6 +60784,8 @@ pub mod instance_storage_info {
         pub(crate) total_size_in_gb: std::option::Option<i64>,
         pub(crate) disks: std::option::Option<std::vec::Vec<crate::model::DiskInfo>>,
         pub(crate) nvme_support: std::option::Option<crate::model::EphemeralNvmeSupport>,
+        pub(crate) encryption_support:
+            std::option::Option<crate::model::InstanceStorageEncryptionSupport>,
     }
     impl Builder {
         /// <p>The total size of the disks, in GB.</p>
@@ -60803,7 +60810,7 @@ pub mod instance_storage_info {
             self.disks = input;
             self
         }
-        /// <p>Indicates whether non-volatile memory express (NVMe) is supported for instance store.</p>
+        /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
         pub fn nvme_support(mut self, input: crate::model::EphemeralNvmeSupport) -> Self {
             self.nvme_support = Some(input);
             self
@@ -60815,12 +60822,28 @@ pub mod instance_storage_info {
             self.nvme_support = input;
             self
         }
+        /// <p>Indicates whether data is encrypted at rest.</p>
+        pub fn encryption_support(
+            mut self,
+            input: crate::model::InstanceStorageEncryptionSupport,
+        ) -> Self {
+            self.encryption_support = Some(input);
+            self
+        }
+        pub fn set_encryption_support(
+            mut self,
+            input: std::option::Option<crate::model::InstanceStorageEncryptionSupport>,
+        ) -> Self {
+            self.encryption_support = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceStorageInfo`](crate::model::InstanceStorageInfo)
         pub fn build(self) -> crate::model::InstanceStorageInfo {
             crate::model::InstanceStorageInfo {
                 total_size_in_gb: self.total_size_in_gb,
                 disks: self.disks,
                 nvme_support: self.nvme_support,
+                encryption_support: self.encryption_support,
             }
         }
     }
@@ -60829,6 +60852,56 @@ impl InstanceStorageInfo {
     /// Creates a new builder-style object to manufacture [`InstanceStorageInfo`](crate::model::InstanceStorageInfo)
     pub fn builder() -> crate::model::instance_storage_info::Builder {
         crate::model::instance_storage_info::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InstanceStorageEncryptionSupport {
+    Required,
+    Unsupported,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for InstanceStorageEncryptionSupport {
+    fn from(s: &str) -> Self {
+        match s {
+            "required" => InstanceStorageEncryptionSupport::Required,
+            "unsupported" => InstanceStorageEncryptionSupport::Unsupported,
+            other => InstanceStorageEncryptionSupport::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for InstanceStorageEncryptionSupport {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InstanceStorageEncryptionSupport::from(s))
+    }
+}
+impl InstanceStorageEncryptionSupport {
+    pub fn as_str(&self) -> &str {
+        match self {
+            InstanceStorageEncryptionSupport::Required => "required",
+            InstanceStorageEncryptionSupport::Unsupported => "unsupported",
+            InstanceStorageEncryptionSupport::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["required", "unsupported"]
+    }
+}
+impl AsRef<str> for InstanceStorageEncryptionSupport {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -60885,7 +60958,7 @@ impl AsRef<str> for EphemeralNvmeSupport {
     }
 }
 
-/// <p>Describes the disk.</p>
+/// <p>Describes a disk.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiskInfo {
@@ -61251,6 +61324,7 @@ pub enum ArchitectureType {
     Arm64,
     I386,
     X8664,
+    X8664Mac,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -61260,6 +61334,7 @@ impl std::convert::From<&str> for ArchitectureType {
             "arm64" => ArchitectureType::Arm64,
             "i386" => ArchitectureType::I386,
             "x86_64" => ArchitectureType::X8664,
+            "x86_64_mac" => ArchitectureType::X8664Mac,
             other => ArchitectureType::Unknown(other.to_owned()),
         }
     }
@@ -61277,11 +61352,12 @@ impl ArchitectureType {
             ArchitectureType::Arm64 => "arm64",
             ArchitectureType::I386 => "i386",
             ArchitectureType::X8664 => "x86_64",
+            ArchitectureType::X8664Mac => "x86_64_mac",
             ArchitectureType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["arm64", "i386", "x86_64"]
+        &["arm64", "i386", "x86_64", "x86_64_mac"]
     }
 }
 impl AsRef<str> for ArchitectureType {
@@ -64647,7 +64723,7 @@ pub struct FpgaImage {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the AFI.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The version of the AWS Shell that was used to create the bitstream.</p>
+    /// <p>The version of the Amazon Web Services Shell that was used to create the bitstream.</p>
     pub shell_version: std::option::Option<std::string::String>,
     /// <p>Information about the PCI bus.</p>
     pub pci_id: std::option::Option<crate::model::PciId>,
@@ -64657,7 +64733,7 @@ pub struct FpgaImage {
     pub create_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time of the most recent update to the AFI.</p>
     pub update_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The AWS account ID of the AFI owner.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the AFI.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The alias of the AFI owner. Possible values include <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>.</p>
     pub owner_alias: std::option::Option<std::string::String>,
@@ -64756,7 +64832,7 @@ pub mod fpga_image {
             self.description = input;
             self
         }
-        /// <p>The version of the AWS Shell that was used to create the bitstream.</p>
+        /// <p>The version of the Amazon Web Services Shell that was used to create the bitstream.</p>
         pub fn shell_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.shell_version = Some(input.into());
             self
@@ -64813,7 +64889,7 @@ pub mod fpga_image {
             self.update_time = input;
             self
         }
-        /// <p>The AWS account ID of the AFI owner.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the AFI.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -65179,10 +65255,10 @@ pub struct FlowLog {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of traffic captured for the flow log.</p>
     pub traffic_type: std::option::Option<crate::model::TrafficType>,
-    /// <p>Specifies the type of destination to which the flow log data is published. Flow log data can be
+    /// <p>The type of destination to which the flow log data is published. Flow log data can be
     /// published to CloudWatch Logs or Amazon S3.</p>
     pub log_destination_type: std::option::Option<crate::model::LogDestinationType>,
-    /// <p>Specifies the destination to which the flow log data is published. Flow log data can be
+    /// <p>The destination to which the flow log data is published. Flow log data can be
     /// published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs,
     /// this element indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which
     /// the data is published. If the flow log publishes to Amazon S3, this element indicates the ARN
@@ -65199,6 +65275,8 @@ pub struct FlowLog {
     /// <p>Valid Values: <code>60</code> | <code>600</code>
     /// </p>
     pub max_aggregation_interval: std::option::Option<i32>,
+    /// <p>The destination options.</p>
+    pub destination_options: std::option::Option<crate::model::DestinationOptionsResponse>,
 }
 impl std::fmt::Debug for FlowLog {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -65223,6 +65301,7 @@ impl std::fmt::Debug for FlowLog {
         formatter.field("log_format", &self.log_format);
         formatter.field("tags", &self.tags);
         formatter.field("max_aggregation_interval", &self.max_aggregation_interval);
+        formatter.field("destination_options", &self.destination_options);
         formatter.finish()
     }
 }
@@ -65246,6 +65325,8 @@ pub mod flow_log {
         pub(crate) log_format: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) max_aggregation_interval: std::option::Option<i32>,
+        pub(crate) destination_options:
+            std::option::Option<crate::model::DestinationOptionsResponse>,
     }
     impl Builder {
         /// <p>The date and time the flow log was created.</p>
@@ -65358,7 +65439,7 @@ pub mod flow_log {
             self.traffic_type = input;
             self
         }
-        /// <p>Specifies the type of destination to which the flow log data is published. Flow log data can be
+        /// <p>The type of destination to which the flow log data is published. Flow log data can be
         /// published to CloudWatch Logs or Amazon S3.</p>
         pub fn log_destination_type(mut self, input: crate::model::LogDestinationType) -> Self {
             self.log_destination_type = Some(input);
@@ -65371,7 +65452,7 @@ pub mod flow_log {
             self.log_destination_type = input;
             self
         }
-        /// <p>Specifies the destination to which the flow log data is published. Flow log data can be
+        /// <p>The destination to which the flow log data is published. Flow log data can be
         /// published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs,
         /// this element indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which
         /// the data is published. If the flow log publishes to Amazon S3, this element indicates the ARN
@@ -65423,6 +65504,21 @@ pub mod flow_log {
             self.max_aggregation_interval = input;
             self
         }
+        /// <p>The destination options.</p>
+        pub fn destination_options(
+            mut self,
+            input: crate::model::DestinationOptionsResponse,
+        ) -> Self {
+            self.destination_options = Some(input);
+            self
+        }
+        pub fn set_destination_options(
+            mut self,
+            input: std::option::Option<crate::model::DestinationOptionsResponse>,
+        ) -> Self {
+            self.destination_options = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FlowLog`](crate::model::FlowLog)
         pub fn build(self) -> crate::model::FlowLog {
             crate::model::FlowLog {
@@ -65440,6 +65536,7 @@ pub mod flow_log {
                 log_format: self.log_format,
                 tags: self.tags,
                 max_aggregation_interval: self.max_aggregation_interval,
+                destination_options: self.destination_options,
             }
         }
     }
@@ -65448,6 +65545,137 @@ impl FlowLog {
     /// Creates a new builder-style object to manufacture [`FlowLog`](crate::model::FlowLog)
     pub fn builder() -> crate::model::flow_log::Builder {
         crate::model::flow_log::Builder::default()
+    }
+}
+
+/// <p>Describes the destination options for a flow log.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DestinationOptionsResponse {
+    /// <p>The format for the flow log.</p>
+    pub file_format: std::option::Option<crate::model::DestinationFileFormat>,
+    /// <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in Amazon S3.</p>
+    pub hive_compatible_partitions: std::option::Option<bool>,
+    /// <p>Indicates whether to partition the flow log per hour.</p>
+    pub per_hour_partition: std::option::Option<bool>,
+}
+impl std::fmt::Debug for DestinationOptionsResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DestinationOptionsResponse");
+        formatter.field("file_format", &self.file_format);
+        formatter.field(
+            "hive_compatible_partitions",
+            &self.hive_compatible_partitions,
+        );
+        formatter.field("per_hour_partition", &self.per_hour_partition);
+        formatter.finish()
+    }
+}
+/// See [`DestinationOptionsResponse`](crate::model::DestinationOptionsResponse)
+pub mod destination_options_response {
+    /// A builder for [`DestinationOptionsResponse`](crate::model::DestinationOptionsResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_format: std::option::Option<crate::model::DestinationFileFormat>,
+        pub(crate) hive_compatible_partitions: std::option::Option<bool>,
+        pub(crate) per_hour_partition: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The format for the flow log.</p>
+        pub fn file_format(mut self, input: crate::model::DestinationFileFormat) -> Self {
+            self.file_format = Some(input);
+            self
+        }
+        pub fn set_file_format(
+            mut self,
+            input: std::option::Option<crate::model::DestinationFileFormat>,
+        ) -> Self {
+            self.file_format = input;
+            self
+        }
+        /// <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in Amazon S3.</p>
+        pub fn hive_compatible_partitions(mut self, input: bool) -> Self {
+            self.hive_compatible_partitions = Some(input);
+            self
+        }
+        pub fn set_hive_compatible_partitions(mut self, input: std::option::Option<bool>) -> Self {
+            self.hive_compatible_partitions = input;
+            self
+        }
+        /// <p>Indicates whether to partition the flow log per hour.</p>
+        pub fn per_hour_partition(mut self, input: bool) -> Self {
+            self.per_hour_partition = Some(input);
+            self
+        }
+        pub fn set_per_hour_partition(mut self, input: std::option::Option<bool>) -> Self {
+            self.per_hour_partition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DestinationOptionsResponse`](crate::model::DestinationOptionsResponse)
+        pub fn build(self) -> crate::model::DestinationOptionsResponse {
+            crate::model::DestinationOptionsResponse {
+                file_format: self.file_format,
+                hive_compatible_partitions: self.hive_compatible_partitions,
+                per_hour_partition: self.per_hour_partition,
+            }
+        }
+    }
+}
+impl DestinationOptionsResponse {
+    /// Creates a new builder-style object to manufacture [`DestinationOptionsResponse`](crate::model::DestinationOptionsResponse)
+    pub fn builder() -> crate::model::destination_options_response::Builder {
+        crate::model::destination_options_response::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DestinationFileFormat {
+    Parquet,
+    PlainText,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DestinationFileFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "parquet" => DestinationFileFormat::Parquet,
+            "plain-text" => DestinationFileFormat::PlainText,
+            other => DestinationFileFormat::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DestinationFileFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DestinationFileFormat::from(s))
+    }
+}
+impl DestinationFileFormat {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DestinationFileFormat::Parquet => "parquet",
+            DestinationFileFormat::PlainText => "plain-text",
+            DestinationFileFormat::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["parquet", "plain-text"]
+    }
+}
+impl AsRef<str> for DestinationFileFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -74488,7 +74716,7 @@ pub struct Address {
     /// <p>The ID of an address pool.</p>
     pub public_ipv4_pool: std::option::Option<std::string::String>,
     /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from
-    /// which AWS advertises IP addresses. </p>
+    /// which Amazon Web Services advertises IP addresses.</p>
     pub network_border_group: std::option::Option<std::string::String>,
     /// <p>The customer-owned IP address.</p>
     pub customer_owned_ip: std::option::Option<std::string::String>,
@@ -74657,7 +74885,7 @@ pub mod address {
             self
         }
         /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from
-        /// which AWS advertises IP addresses. </p>
+        /// which Amazon Web Services advertises IP addresses.</p>
         pub fn network_border_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_border_group = Some(input.into());
             self
@@ -80722,6 +80950,91 @@ impl StorageLocation {
     /// Creates a new builder-style object to manufacture [`StorageLocation`](crate::model::StorageLocation)
     pub fn builder() -> crate::model::storage_location::Builder {
         crate::model::storage_location::Builder::default()
+    }
+}
+
+/// <p>Describes the destination options for a flow log.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DestinationOptionsRequest {
+    /// <p>The format for the flow log. The default is <code>plain-text</code>.</p>
+    pub file_format: std::option::Option<crate::model::DestinationFileFormat>,
+    /// <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in Amazon S3.
+    /// The default is <code>false</code>.</p>
+    pub hive_compatible_partitions: std::option::Option<bool>,
+    /// <p>Indicates whether to partition the flow log per hour. This reduces the cost and response
+    /// time for queries. The default is <code>false</code>.</p>
+    pub per_hour_partition: std::option::Option<bool>,
+}
+impl std::fmt::Debug for DestinationOptionsRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DestinationOptionsRequest");
+        formatter.field("file_format", &self.file_format);
+        formatter.field(
+            "hive_compatible_partitions",
+            &self.hive_compatible_partitions,
+        );
+        formatter.field("per_hour_partition", &self.per_hour_partition);
+        formatter.finish()
+    }
+}
+/// See [`DestinationOptionsRequest`](crate::model::DestinationOptionsRequest)
+pub mod destination_options_request {
+    /// A builder for [`DestinationOptionsRequest`](crate::model::DestinationOptionsRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_format: std::option::Option<crate::model::DestinationFileFormat>,
+        pub(crate) hive_compatible_partitions: std::option::Option<bool>,
+        pub(crate) per_hour_partition: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The format for the flow log. The default is <code>plain-text</code>.</p>
+        pub fn file_format(mut self, input: crate::model::DestinationFileFormat) -> Self {
+            self.file_format = Some(input);
+            self
+        }
+        pub fn set_file_format(
+            mut self,
+            input: std::option::Option<crate::model::DestinationFileFormat>,
+        ) -> Self {
+            self.file_format = input;
+            self
+        }
+        /// <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in Amazon S3.
+        /// The default is <code>false</code>.</p>
+        pub fn hive_compatible_partitions(mut self, input: bool) -> Self {
+            self.hive_compatible_partitions = Some(input);
+            self
+        }
+        pub fn set_hive_compatible_partitions(mut self, input: std::option::Option<bool>) -> Self {
+            self.hive_compatible_partitions = input;
+            self
+        }
+        /// <p>Indicates whether to partition the flow log per hour. This reduces the cost and response
+        /// time for queries. The default is <code>false</code>.</p>
+        pub fn per_hour_partition(mut self, input: bool) -> Self {
+            self.per_hour_partition = Some(input);
+            self
+        }
+        pub fn set_per_hour_partition(mut self, input: std::option::Option<bool>) -> Self {
+            self.per_hour_partition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DestinationOptionsRequest`](crate::model::DestinationOptionsRequest)
+        pub fn build(self) -> crate::model::DestinationOptionsRequest {
+            crate::model::DestinationOptionsRequest {
+                file_format: self.file_format,
+                hive_compatible_partitions: self.hive_compatible_partitions,
+                per_hour_partition: self.per_hour_partition,
+            }
+        }
+    }
+}
+impl DestinationOptionsRequest {
+    /// Creates a new builder-style object to manufacture [`DestinationOptionsRequest`](crate::model::DestinationOptionsRequest)
+    pub fn builder() -> crate::model::destination_options_request::Builder {
+        crate::model::destination_options_request::Builder::default()
     }
 }
 

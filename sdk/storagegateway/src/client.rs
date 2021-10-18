@@ -375,6 +375,9 @@ where
     ) -> fluent_builders::UpdateSMBFileShareVisibility<C, M, R> {
         fluent_builders::UpdateSMBFileShareVisibility::new(self.handle.clone())
     }
+    pub fn update_smb_local_groups(&self) -> fluent_builders::UpdateSMBLocalGroups<C, M, R> {
+        fluent_builders::UpdateSMBLocalGroups::new(self.handle.clone())
+    }
     pub fn update_smb_security_strategy(
         &self,
     ) -> fluent_builders::UpdateSMBSecurityStrategy<C, M, R> {
@@ -477,16 +480,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_timezone(input);
             self
         }
-        /// <p>A value that indicates the Region where you want to store your data.
-        /// The gateway Region specified must be the same Region
-        /// as the Region in your <code>Host</code>
-        /// header in the request. For more information about available Regions and endpoints for
-        /// Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
-        /// Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>A value that indicates the Amazon Web Services Region where you want to store your data.
+        /// The gateway Amazon Web Services Region specified must be the same Amazon Web Services Region
+        /// as the Amazon Web Services Region in your <code>Host</code> header in the request. For more
+        /// information about available Amazon Web Services Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
+        /// Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services
+        /// General Reference</i>.</p>
         /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
-        /// Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General
-        /// Reference</i>.
+        /// Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services
+        /// General Reference</i>.
         /// </p>
         pub fn gateway_region(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_region(inp);
@@ -612,7 +614,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -760,7 +762,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -832,7 +834,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -989,8 +991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user name of the user credential that has permission to access the root share D$ of
-        /// the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin
-        /// user group.</p>
+        /// the Amazon FSx file system. The user account must belong to the Amazon FSx
+        /// delegated admin user group.</p>
         pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(inp);
             self
@@ -1019,7 +1021,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -1028,8 +1030,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the
-        /// FSx File Gateway.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with
+        /// the FSx File Gateway.</p>
         pub fn location_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location_arn(inp);
             self
@@ -1041,7 +1043,8 @@ pub mod fluent_builders {
         /// Appends an item to `Tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        /// <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is a key-value pair.</p>
+        /// <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is
+        /// a key-value pair.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -1077,9 +1080,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cache_attributes(input);
             self
         }
-        /// <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p>
+        /// <p>Specifies the network configuration information for the gateway associated with the
+        /// Amazon FSx file system.</p>
         /// <note>
-        /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
+        /// <p>If multiple file systems are associated with this gateway, this parameter's
+        /// <code>IpAddresses</code> field is required.</p>
         /// </note>
         pub fn endpoint_network_configuration(
             mut self,
@@ -1246,7 +1251,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -1311,7 +1316,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -1376,7 +1381,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -1461,8 +1466,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
-        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3.
+        /// Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
         pub fn kms_encrypted(mut self, inp: bool) -> Self {
@@ -1473,8 +1479,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_encrypted(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
-        /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(inp);
             self
@@ -1550,8 +1556,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent
-        /// file share creation.</p>
+        /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure
+        /// idempotent file share creation.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -1582,8 +1588,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_arn(input);
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
-        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3.
+        /// Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
         pub fn kms_encrypted(mut self, inp: bool) -> Self {
@@ -1594,8 +1601,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_encrypted(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
-        /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(inp);
             self
@@ -1604,8 +1611,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key(input);
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes
-        /// when it accesses the underlying storage.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it
+        /// accesses the underlying storage.</p>
         pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role(inp);
             self
@@ -1614,17 +1621,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>The ARN of the backend storage used for storing file data. A prefix name can be added to
-        /// the S3 bucket name. It must end with a "/".</p>
+        /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes
+        /// a resource ARN with an optional prefix concatenation. The prefix must end with a forward
+        /// slash (/).</p>
         /// <note>
-        /// <p>You can specify a bucket attached to an access point using a complete ARN that includes the
-        /// bucket region as shown:</p>
+        /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias,
+        /// as shown in the following examples.</p>
+        /// <p>Bucket ARN:</p>
         /// <p>
-        /// <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
-        /// </code>
+        /// <code>arn:aws:s3:::my-bucket/prefix/</code>
         /// </p>
-        /// <p>If you specify a bucket attached to an access point, the bucket policy must be
-        /// configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Access point ARN:</p>
+        /// <p>
+        /// <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+        /// </p>
+        /// <p>If you specify an access point, the bucket policy must be configured to delegate
+        /// access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Access point alias:</p>
+        /// <p>
+        /// <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code>
+        /// </p>
         /// </note>
         pub fn location_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location_arn(inp);
@@ -1634,8 +1650,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_location_arn(input);
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
-        /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+        /// File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
         /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
         /// </p>
@@ -1666,8 +1682,8 @@ pub mod fluent_builders {
         /// Appends an item to `ClientList`.
         ///
         /// To override the contents of this collection use [`set_client_list`](Self::set_client_list).
-        /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain
-        /// either valid IP addresses or valid CIDR blocks.</p>
+        /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must
+        /// contain either valid IP addresses or valid CIDR blocks.</p>
         pub fn client_list(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_list(inp);
             self
@@ -1774,7 +1790,7 @@ pub mod fluent_builders {
         /// <note>
         /// <p>
         /// <code>FileShareName</code> must be set if an S3 prefix name is set in
-        /// <code>LocationARN</code>.</p>
+        /// <code>LocationARN</code>, or if an access point or access point alias is used.</p>
         /// </note>
         pub fn file_share_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.file_share_name(inp);
@@ -1833,7 +1849,8 @@ pub mod fluent_builders {
         /// Amazon S3.</p>
         /// <note>
         /// <p>This parameter is required for NFS file shares that connect to Amazon S3
-        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+        /// VPC access point.</p>
         /// </note>
         pub fn vpc_endpoint_dns_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpc_endpoint_dns_name(inp);
@@ -1849,7 +1866,8 @@ pub mod fluent_builders {
         /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p>
         /// <note>
         /// <p>This parameter is required for NFS file shares that connect to Amazon S3
-        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+        /// VPC access point.</p>
         /// </note>
         pub fn bucket_region(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket_region(inp);
@@ -1860,6 +1878,18 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_bucket_region(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+        pub fn audit_destination_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.audit_destination_arn(inp);
+            self
+        }
+        pub fn set_audit_destination_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_audit_destination_arn(input);
             self
         }
     }
@@ -1907,8 +1937,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent
-        /// file share creation.</p>
+        /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure
+        /// idempotent file share creation.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
@@ -1926,8 +1956,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_arn(input);
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
-        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3.
+        /// Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
         pub fn kms_encrypted(mut self, inp: bool) -> Self {
@@ -1938,8 +1969,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_encrypted(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
-        /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(inp);
             self
@@ -1948,8 +1979,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key(input);
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes
-        /// when it accesses the underlying storage.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it
+        /// accesses the underlying storage.</p>
         pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role(inp);
             self
@@ -1958,17 +1989,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>The ARN of the backend storage used for storing file data. A prefix name can be added to
-        /// the S3 bucket name. It must end with a "/".</p>
+        /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes
+        /// a resource ARN with an optional prefix concatenation. The prefix must end with a forward
+        /// slash (/).</p>
         /// <note>
-        /// <p>You can specify a bucket attached to an access point using a complete ARN that includes the
-        /// bucket region as shown:</p>
+        /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias,
+        /// as shown in the following examples.</p>
+        /// <p>Bucket ARN:</p>
         /// <p>
-        /// <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
-        /// </code>
+        /// <code>arn:aws:s3:::my-bucket/prefix/</code>
         /// </p>
-        /// <p>If you specify a bucket attached to an access point, the bucket policy must be
-        /// configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Access point ARN:</p>
+        /// <p>
+        /// <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
+        /// </p>
+        /// <p>If you specify an access point, the bucket policy must be configured to delegate
+        /// access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Access point alias:</p>
+        /// <p>
+        /// <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code>
+        /// </p>
         /// </note>
         pub fn location_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location_arn(inp);
@@ -1978,8 +2018,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_location_arn(input);
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
-        /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+        /// File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
         /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
         /// </p>
@@ -2165,9 +2205,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authentication(input);
             self
         }
-        /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the
-        /// client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway
-        /// determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
+        /// <p>The case of an object name in an Amazon S3 bucket. For
+        /// <code>ClientSpecified</code>, the client determines the case sensitivity. For
+        /// <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default
+        /// value is <code>ClientSpecified</code>.</p>
         pub fn case_sensitivity(mut self, inp: crate::model::CaseSensitivity) -> Self {
             self.inner = self.inner.case_sensitivity(inp);
             self
@@ -2205,7 +2246,7 @@ pub mod fluent_builders {
         /// <note>
         /// <p>
         /// <code>FileShareName</code> must be set if an S3 prefix name is set in
-        /// <code>LocationARN</code>.</p>
+        /// <code>LocationARN</code>, or if an access point or access point alias is used.</p>
         /// </note>
         pub fn file_share_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.file_share_name(inp);
@@ -2260,10 +2301,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_policy(input);
             self
         }
-        /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p>
+        /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to
+        /// Amazon S3.</p>
         /// <note>
         /// <p>This parameter is required for SMB file shares that connect to Amazon S3
-        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+        /// VPC access point.</p>
         /// </note>
         pub fn vpc_endpoint_dns_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpc_endpoint_dns_name(inp);
@@ -2279,7 +2322,8 @@ pub mod fluent_builders {
         /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p>
         /// <note>
         /// <p>This parameter is required for SMB file shares that connect to Amazon S3
-        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+        /// VPC access point.</p>
         /// </note>
         pub fn bucket_region(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket_region(inp);
@@ -2294,8 +2338,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p>
         /// <note>
-        /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
-        /// access to files with the same name in different case.</p>
+        /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for
+        /// workloads that involve access to files with the same name in different case.</p>
         /// </note>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -2537,7 +2581,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -2611,8 +2655,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_interface_id(input);
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
-        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3.
+        /// Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
         pub fn kms_encrypted(mut self, inp: bool) -> Self {
@@ -2623,8 +2668,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_encrypted(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
-        /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(inp);
             self
@@ -2724,9 +2769,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Tape retention lock can be configured in two modes. When configured in governance mode,
-        /// accounts with specific IAM permissions are authorized to remove the tape retention lock
-        /// from archived virtual tapes. When configured in compliance mode, the tape retention lock
-        /// cannot be removed by any user, including the root account.</p>
+        /// Amazon Web Services accounts with specific IAM permissions are authorized to remove the
+        /// tape retention lock from archived virtual tapes. When configured in compliance mode, the
+        /// tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
         pub fn retention_lock_type(mut self, inp: crate::model::RetentionLockType) -> Self {
             self.inner = self.inner.retention_lock_type(inp);
             self
@@ -2817,7 +2862,7 @@ pub mod fluent_builders {
         }
         /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the
         /// virtual tapes with. Use the <a>ListGateways</a> operation to return a list of
-        /// gateways for your account and Region.</p>
+        /// gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -2878,8 +2923,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tape_barcode_prefix(input);
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
-        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3.
+        /// Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
         pub fn kms_encrypted(mut self, inp: bool) -> Self {
@@ -2890,8 +2936,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_encrypted(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
-        /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(inp);
             self
@@ -2993,7 +3039,7 @@ pub mod fluent_builders {
         }
         /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the
         /// virtual tape with. Use the <a>ListGateways</a> operation to return a list of
-        /// gateways for your account and Region.</p>
+        /// gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -3027,8 +3073,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tape_barcode(input);
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
-        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3.
+        /// Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
         pub fn kms_encrypted(mut self, inp: bool) -> Self {
@@ -3039,8 +3086,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_encrypted(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
-        /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(inp);
             self
@@ -3141,7 +3188,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -3196,7 +3243,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -3345,9 +3392,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>If this value is set to <code>true</code>, the operation deletes a file share
-        /// immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted
-        /// until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the
-        /// file share enters the <code>FORCE_DELETING</code> status.</p>
+        /// immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is
+        /// not deleted until all data is uploaded to Amazon Web Services. This process aborts the data
+        /// upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
         pub fn force_delete(mut self, inp: bool) -> Self {
@@ -3404,7 +3451,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -3514,7 +3561,7 @@ pub mod fluent_builders {
         }
         /// <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is
         /// associated with. Use the <a>ListGateways</a> operation to return a list of
-        /// gateways for your account and Region.</p>
+        /// gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -3766,7 +3813,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -3821,7 +3868,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -3876,7 +3923,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -3931,7 +3978,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -4104,7 +4151,8 @@ pub mod fluent_builders {
         /// Appends an item to `FileSystemAssociationARNList`.
         ///
         /// To override the contents of this collection use [`set_file_system_association_arn_list`](Self::set_file_system_association_arn_list).
-        /// <p>An array containing the Amazon Resource Name (ARN) of each file system association to be described.</p>
+        /// <p>An array containing the Amazon Resource Name (ARN) of each file system association to be
+        /// described.</p>
         pub fn file_system_association_arn_list(
             mut self,
             inp: impl Into<std::string::String>,
@@ -4165,7 +4213,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -4220,7 +4268,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -4397,7 +4445,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -4649,7 +4697,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -4724,7 +4772,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -4820,7 +4868,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -4875,7 +4923,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -4970,7 +5018,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -5093,7 +5141,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -5159,9 +5207,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_association_arn(input);
             self
         }
-        /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system
-        /// immediately. It ends all data uploads to the file system, and the file system association
-        /// enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
+        /// <p>If this value is set to true, the operation disassociates an Amazon FSx file
+        /// system immediately. It ends all data uploads to the file system, and the file system
+        /// association enters the <code>FORCE_DELETING</code> status. If this value is set to false,
+        /// the Amazon FSx file system does not disassociate until all data is uploaded.</p>
         pub fn force_delete(mut self, inp: bool) -> Self {
             self.inner = self.inner.force_delete(inp);
             self
@@ -5216,7 +5265,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -5343,7 +5392,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -5474,7 +5523,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -5483,7 +5532,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_arn(input);
             self
         }
-        /// <p>The maximum number of file system associations to return in the response. If present, <code>Limit</code> must be an integer with a value greater than zero. Optional.</p>
+        /// <p>The maximum number of file system associations to return in the response. If present,
+        /// <code>Limit</code> must be an integer with a value greater than zero. Optional.</p>
         pub fn limit(mut self, inp: i32) -> Self {
             self.inner = self.inner.limit(inp);
             self
@@ -5492,7 +5542,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>Opaque pagination token returned from a previous <code>ListFileSystemAssociations</code> operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to <code>ListFileSystemAssociations</code>. Optional.</p>
+        /// <p>Opaque pagination token returned from a previous <code>ListFileSystemAssociations</code>
+        /// operation. If present, <code>Marker</code> specifies where to continue the list from after
+        /// a previous call to <code>ListFileSystemAssociations</code>. Optional.</p>
         pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.marker(inp);
             self
@@ -5612,7 +5664,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -5956,7 +6008,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -6011,7 +6063,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -6158,8 +6210,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_folder_list`](Self::set_folder_list).
         /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is
-        /// [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that
-        /// the file share has access to is refreshed.</p>
+        /// [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3
+        /// bucket that the file share has access to is refreshed.</p>
         pub fn folder_list(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.folder_list(inp);
             self
@@ -6304,7 +6356,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -6370,7 +6422,7 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to.
         /// Use the <a>ListGateways</a> operation to return a list of gateways for your
-        /// account and Region.</p>
+        /// account and Amazon Web Services Region.</p>
         /// <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape
         /// gateway.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -6437,7 +6489,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -6492,7 +6544,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -6623,7 +6675,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -6678,7 +6730,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -6733,7 +6785,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -6807,7 +6859,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -6862,7 +6914,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -6945,7 +6997,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -6957,10 +7009,8 @@ pub mod fluent_builders {
         /// Appends an item to `BandwidthRateLimitIntervals`.
         ///
         /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
-        /// <p>
-        /// An array containing bandwidth rate limit schedule intervals for a gateway.
-        /// When no bandwidth rate limit intervals have been scheduled, the array is empty.
-        /// </p>
+        /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no
+        /// bandwidth rate limit intervals have been scheduled, the array is empty. </p>
         pub fn bandwidth_rate_limit_intervals(
             mut self,
             inp: impl Into<crate::model::BandwidthRateLimitInterval>,
@@ -7126,7 +7176,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the file system association that you want to update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the file system association that you want to
+        /// update.</p>
         pub fn file_system_association_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.file_system_association_arn(inp);
             self
@@ -7139,8 +7190,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user credential that has permission to access the root share D$ of
-        /// the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin
-        /// user group.</p>
+        /// the Amazon FSx file system. The user account must belong to the Amazon FSx
+        /// delegated admin user group.</p>
         pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(inp);
             self
@@ -7228,7 +7279,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -7332,7 +7383,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -7387,7 +7438,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -7496,8 +7547,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_share_arn(input);
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
-        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3.
+        /// Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
         pub fn kms_encrypted(mut self, inp: bool) -> Self {
@@ -7508,8 +7560,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_encrypted(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
-        /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(inp);
             self
@@ -7530,8 +7582,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_nfs_file_share_defaults(input);
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
-        /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+        /// File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
         /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
         /// </p>
@@ -7562,8 +7614,8 @@ pub mod fluent_builders {
         /// Appends an item to `ClientList`.
         ///
         /// To override the contents of this collection use [`set_client_list`](Self::set_client_list).
-        /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain
-        /// either valid IP addresses or valid CIDR blocks.</p>
+        /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must
+        /// contain either valid IP addresses or valid CIDR blocks.</p>
         pub fn client_list(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_list(inp);
             self
@@ -7648,7 +7700,7 @@ pub mod fluent_builders {
         /// <note>
         /// <p>
         /// <code>FileShareName</code> must be set if an S3 prefix name is set in
-        /// <code>LocationARN</code>.</p>
+        /// <code>LocationARN</code>, or if an access point or access point alias is used.</p>
         /// </note>
         pub fn file_share_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.file_share_name(inp);
@@ -7661,7 +7713,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_share_name(input);
             self
         }
-        /// <p>specifies refresh cache information for the file share.</p>
+        /// <p>Specifies refresh cache information for the file share.</p>
         pub fn cache_attributes(mut self, inp: crate::model::CacheAttributes) -> Self {
             self.inner = self.inner.cache_attributes(inp);
             self
@@ -7701,6 +7753,18 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_notification_policy(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+        pub fn audit_destination_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.audit_destination_arn(inp);
+            self
+        }
+        pub fn set_audit_destination_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_audit_destination_arn(input);
             self
         }
     }
@@ -7760,8 +7824,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_share_arn(input);
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
-        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own
+        /// KMS key, or <code>false</code> to use a key managed by Amazon S3.
+        /// Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
         pub fn kms_encrypted(mut self, inp: bool) -> Self {
@@ -7772,8 +7837,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_encrypted(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
-        /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
+        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(inp);
             self
@@ -7782,8 +7847,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key(input);
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
-        /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+        /// File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
         /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
         /// </p>
@@ -7951,9 +8016,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_audit_destination_arn(input);
             self
         }
-        /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the
-        /// client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway
-        /// determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
+        /// <p>The case of an object name in an Amazon S3 bucket. For
+        /// <code>ClientSpecified</code>, the client determines the case sensitivity. For
+        /// <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default
+        /// value is <code>ClientSpecified</code>.</p>
         pub fn case_sensitivity(mut self, inp: crate::model::CaseSensitivity) -> Self {
             self.inner = self.inner.case_sensitivity(inp);
             self
@@ -7969,7 +8035,7 @@ pub mod fluent_builders {
         /// <note>
         /// <p>
         /// <code>FileShareName</code> must be set if an S3 prefix name is set in
-        /// <code>LocationARN</code>.</p>
+        /// <code>LocationARN</code>, or if an access point or access point alias is used.</p>
         /// </note>
         pub fn file_share_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.file_share_name(inp);
@@ -8026,8 +8092,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p>
         /// <note>
-        /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
-        /// access to files with the same name in different case.</p>
+        /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for
+        /// workloads that involve access to files with the same name in different case.</p>
         /// </note>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -8085,7 +8151,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -8101,6 +8167,74 @@ pub mod fluent_builders {
         }
         pub fn set_file_shares_visible(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_file_shares_visible(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateSMBLocalGroups<
+        C = smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_smb_local_groups_input::Builder,
+    }
+    impl<C, M, R> UpdateSMBLocalGroups<C, M, R>
+    where
+        C: smithy_client::bounds::SmithyConnector,
+        M: smithy_client::bounds::SmithyMiddleware<C>,
+        R: smithy_client::retry::NewRequestPolicy,
+    {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateSmbLocalGroupsOutput,
+            smithy_http::result::SdkError<crate::error::UpdateSMBLocalGroupsError>,
+        >
+        where
+            R::Policy: smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateSmbLocalGroupsInputOperationOutputAlias,
+                crate::output::UpdateSmbLocalGroupsOutput,
+                crate::error::UpdateSMBLocalGroupsError,
+                crate::input::UpdateSmbLocalGroupsInputOperationRetryAlias,
+            >,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(inp);
+            self
+        }
+        pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_gateway_arn(input);
+            self
+        }
+        /// <p>A list of Active Directory users and groups that you want to grant special permissions
+        /// for SMB file shares on the gateway.</p>
+        pub fn smb_local_groups(mut self, inp: crate::model::SmbLocalGroups) -> Self {
+            self.inner = self.inner.smb_local_groups(inp);
+            self
+        }
+        pub fn set_smb_local_groups(
+            mut self,
+            input: std::option::Option<crate::model::SmbLocalGroups>,
+        ) -> Self {
+            self.inner = self.inner.set_smb_local_groups(input);
             self
         }
     }
@@ -8149,7 +8283,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and Region.</p>
+        /// operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(inp);
             self
@@ -8161,7 +8295,8 @@ pub mod fluent_builders {
         /// <p>Specifies the type of security strategy.</p>
         /// <p>ClientSpecified: if you use this option, requests are established based on what is
         /// negotiated by the client. This option is recommended when you want to maximize
-        /// compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
+        /// compatibility across different clients in your environment. Supported only in S3 File
+        /// Gateway.</p>
         /// <p>MandatorySigning: if you use this option, file gateway only allows connections from
         /// SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on
         /// Microsoft Windows Vista, Windows Server 2008 or newer.</p>
@@ -8359,7 +8494,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -8379,7 +8515,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

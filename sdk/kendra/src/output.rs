@@ -2282,6 +2282,12 @@ pub struct DescribeFaqOutput {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The file format used by the input files for the FAQ.</p>
     pub file_format: std::option::Option<crate::model::FaqFileFormat>,
+    /// <p>The code for a language. This shows a supported language
+    /// for the FAQ document. English is supported by default.  
+    /// For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub language_code: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeFaqOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2297,6 +2303,7 @@ impl std::fmt::Debug for DescribeFaqOutput {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("error_message", &self.error_message);
         formatter.field("file_format", &self.file_format);
+        formatter.field("language_code", &self.language_code);
         formatter.finish()
     }
 }
@@ -2317,6 +2324,7 @@ pub mod describe_faq_output {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) file_format: std::option::Option<crate::model::FaqFileFormat>,
+        pub(crate) language_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the FAQ.</p>
@@ -2428,6 +2436,22 @@ pub mod describe_faq_output {
             self.file_format = input;
             self
         }
+        /// <p>The code for a language. This shows a supported language
+        /// for the FAQ document. English is supported by default.  
+        /// For more information on supported languages, including their codes,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// documents in languages other than English</a>.</p>
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeFaqOutput`](crate::output::DescribeFaqOutput)
         pub fn build(self) -> crate::output::DescribeFaqOutput {
             crate::output::DescribeFaqOutput {
@@ -2442,6 +2466,7 @@ pub mod describe_faq_output {
                 role_arn: self.role_arn,
                 error_message: self.error_message,
                 file_format: self.file_format,
+                language_code: self.language_code,
             }
         }
     }
@@ -2488,6 +2513,12 @@ pub struct DescribeDataSourceOutput {
     /// <code>ErrorMessage</code> field contains a description of the error that
     /// caused the data source to fail.</p>
     pub error_message: std::option::Option<std::string::String>,
+    /// <p>The code for a language. This shows a supported language for all
+    /// documents in the data source. English is supported by
+    /// default. For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub language_code: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2504,6 +2535,7 @@ impl std::fmt::Debug for DescribeDataSourceOutput {
         formatter.field("schedule", &self.schedule);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("error_message", &self.error_message);
+        formatter.field("language_code", &self.language_code);
         formatter.finish()
     }
 }
@@ -2525,6 +2557,7 @@ pub mod describe_data_source_output {
         pub(crate) schedule: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the data source.</p>
@@ -2655,6 +2688,22 @@ pub mod describe_data_source_output {
             self.error_message = input;
             self
         }
+        /// <p>The code for a language. This shows a supported language for all
+        /// documents in the data source. English is supported by
+        /// default. For more information on supported languages, including their codes,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// documents in languages other than English</a>.</p>
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput)
         pub fn build(self) -> crate::output::DescribeDataSourceOutput {
             crate::output::DescribeDataSourceOutput {
@@ -2670,6 +2719,7 @@ pub mod describe_data_source_output {
                 schedule: self.schedule,
                 role_arn: self.role_arn,
                 error_message: self.error_message,
+                language_code: self.language_code,
             }
         }
     }

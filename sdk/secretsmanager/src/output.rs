@@ -1272,7 +1272,8 @@ pub struct DescribeSecretOutput {
     /// secret either automatically per the schedule or manually by a call to
     /// <code>RotateSecret</code>.</p>
     pub rotation_lambda_arn: std::option::Option<std::string::String>,
-    /// <p>A structure with the rotation configuration for this secret.</p>
+    /// <p>A structure with the rotation configuration for this secret. This field is only populated
+    /// if rotation is configured.</p>
     pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
     /// <p>The last date and time that the rotation process for this secret was invoked.</p>
     /// <p>The most recent date and time that the Secrets Manager rotation process successfully
@@ -1427,7 +1428,8 @@ pub mod describe_secret_output {
             self.rotation_lambda_arn = input;
             self
         }
-        /// <p>A structure with the rotation configuration for this secret.</p>
+        /// <p>A structure with the rotation configuration for this secret. This field is only populated
+        /// if rotation is configured.</p>
         pub fn rotation_rules(mut self, input: crate::model::RotationRulesType) -> Self {
             self.rotation_rules = Some(input);
             self

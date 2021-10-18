@@ -143,8 +143,8 @@ mod change_message_visibility_request_test {
         assert_eq!(http_request.method(), "POST");
         assert_eq!(http_request.uri().path(), "/");
         let body = http_request.body().bytes().expect("body should be strict");
-        protocol_test_helpers::assert_ok(
-        protocol_test_helpers::validate_body(&body, "Action=ChangeMessageVisibility&Version=2012-11-05&QueueUrl=http%3A%2F%2Fsomequeue.amazon.com&ReceiptHandle=handlehandle&VisibilityTimeout=0", protocol_test_helpers::MediaType::from("application/x-www-formurl-encoded"))
+        smithy_protocol_test::assert_ok(
+        smithy_protocol_test::validate_body(&body, "Action=ChangeMessageVisibility&Version=2012-11-05&QueueUrl=http%3A%2F%2Fsomequeue.amazon.com&ReceiptHandle=handlehandle&VisibilityTimeout=0", smithy_protocol_test::MediaType::from("application/x-www-formurl-encoded"))
         );
     }
 }

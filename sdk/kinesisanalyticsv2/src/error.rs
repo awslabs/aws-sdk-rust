@@ -835,6 +835,7 @@ pub enum CreateApplicationErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     ResourceInUseException(crate::error::ResourceInUseException),
     TooManyTagsException(crate::error::TooManyTagsException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -848,6 +849,7 @@ impl std::fmt::Display for CreateApplicationError {
             CreateApplicationErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateApplicationErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateApplicationErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
+            CreateApplicationErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             CreateApplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -938,6 +940,12 @@ impl CreateApplicationError {
             CreateApplicationErrorKind::TooManyTagsException(_)
         )
     }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateApplicationErrorKind::UnsupportedOperationException(_)
+        )
+    }
 }
 impl std::error::Error for CreateApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -949,6 +957,7 @@ impl std::error::Error for CreateApplicationError {
             CreateApplicationErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateApplicationErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateApplicationErrorKind::TooManyTagsException(_inner) => Some(_inner),
+            CreateApplicationErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             CreateApplicationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2493,6 +2502,7 @@ pub enum DiscoverInputSchemaErrorKind {
     ),
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     UnableToDetectSchemaException(crate::error::UnableToDetectSchemaException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2506,6 +2516,7 @@ impl std::fmt::Display for DiscoverInputSchemaError {
             ) => _inner.fmt(f),
             DiscoverInputSchemaErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             DiscoverInputSchemaErrorKind::UnableToDetectSchemaException(_inner) => _inner.fmt(f),
+            DiscoverInputSchemaErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
             DiscoverInputSchemaErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2584,6 +2595,12 @@ impl DiscoverInputSchemaError {
             DiscoverInputSchemaErrorKind::UnableToDetectSchemaException(_)
         )
     }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DiscoverInputSchemaErrorKind::UnsupportedOperationException(_)
+        )
+    }
 }
 impl std::error::Error for DiscoverInputSchemaError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2595,6 +2612,7 @@ impl std::error::Error for DiscoverInputSchemaError {
             ) => Some(_inner),
             DiscoverInputSchemaErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DiscoverInputSchemaErrorKind::UnableToDetectSchemaException(_inner) => Some(_inner),
+            DiscoverInputSchemaErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             DiscoverInputSchemaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }

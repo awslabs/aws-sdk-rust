@@ -19,6 +19,19 @@ pub fn serialize_operation_crate_operation_create_channel(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_create_prefetch_schedule(
+    input: &crate::input::CreatePrefetchScheduleInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_prefetch_schedule_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_create_program(
     input: &crate::input::CreateProgramInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -48,6 +61,19 @@ pub fn serialize_operation_crate_operation_create_vod_source(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_create_vod_source_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_prefetch_schedules(
+    input: &crate::input::ListPrefetchSchedulesInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_prefetch_schedules_input(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

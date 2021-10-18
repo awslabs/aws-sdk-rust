@@ -217,6 +217,123 @@ impl std::error::Error for BatchGetVariableError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CancelBatchImportJobError {
+    pub kind: CancelBatchImportJobErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CancelBatchImportJobErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CancelBatchImportJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CancelBatchImportJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CancelBatchImportJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CancelBatchImportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CancelBatchImportJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CancelBatchImportJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CancelBatchImportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CancelBatchImportJobError {
+    fn code(&self) -> Option<&str> {
+        CancelBatchImportJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CancelBatchImportJobError {
+    pub fn new(kind: CancelBatchImportJobErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CancelBatchImportJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CancelBatchImportJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelBatchImportJobErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelBatchImportJobErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelBatchImportJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelBatchImportJobErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelBatchImportJobErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CancelBatchImportJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CancelBatchImportJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CancelBatchImportJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            CancelBatchImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CancelBatchImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CancelBatchImportJobErrorKind::ValidationException(_inner) => Some(_inner),
+            CancelBatchImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct CancelBatchPredictionJobError {
     pub kind: CancelBatchPredictionJobErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -328,6 +445,123 @@ impl std::error::Error for CancelBatchPredictionJobError {
             CancelBatchPredictionJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             CancelBatchPredictionJobErrorKind::ValidationException(_inner) => Some(_inner),
             CancelBatchPredictionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateBatchImportJobError {
+    pub kind: CreateBatchImportJobErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateBatchImportJobErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateBatchImportJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateBatchImportJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateBatchImportJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateBatchImportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateBatchImportJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateBatchImportJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateBatchImportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateBatchImportJobError {
+    fn code(&self) -> Option<&str> {
+        CreateBatchImportJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateBatchImportJobError {
+    pub fn new(kind: CreateBatchImportJobErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateBatchImportJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateBatchImportJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchImportJobErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchImportJobErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchImportJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchImportJobErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchImportJobErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateBatchImportJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateBatchImportJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateBatchImportJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateBatchImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateBatchImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateBatchImportJobErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateBatchImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -979,6 +1213,114 @@ impl std::error::Error for CreateVariableError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeleteBatchImportJobError {
+    pub kind: DeleteBatchImportJobErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteBatchImportJobErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteBatchImportJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteBatchImportJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteBatchImportJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteBatchImportJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteBatchImportJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteBatchImportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteBatchImportJobError {
+    fn code(&self) -> Option<&str> {
+        DeleteBatchImportJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteBatchImportJobError {
+    pub fn new(kind: DeleteBatchImportJobErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteBatchImportJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteBatchImportJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBatchImportJobErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBatchImportJobErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBatchImportJobErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBatchImportJobErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteBatchImportJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteBatchImportJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteBatchImportJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteBatchImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteBatchImportJobErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteBatchImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DeleteBatchPredictionJobError {
     pub kind: DeleteBatchPredictionJobErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -988,7 +1330,6 @@ pub struct DeleteBatchPredictionJobError {
 pub enum DeleteBatchPredictionJobErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -999,7 +1340,6 @@ impl std::fmt::Display for DeleteBatchPredictionJobError {
         match &self.kind {
             DeleteBatchPredictionJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             DeleteBatchPredictionJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            DeleteBatchPredictionJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteBatchPredictionJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             DeleteBatchPredictionJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
             DeleteBatchPredictionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1062,12 +1402,6 @@ impl DeleteBatchPredictionJobError {
             DeleteBatchPredictionJobErrorKind::InternalServerException(_)
         )
     }
-    pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBatchPredictionJobErrorKind::ResourceNotFoundException(_)
-        )
-    }
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1086,7 +1420,6 @@ impl std::error::Error for DeleteBatchPredictionJobError {
         match &self.kind {
             DeleteBatchPredictionJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
             DeleteBatchPredictionJobErrorKind::InternalServerException(_inner) => Some(_inner),
-            DeleteBatchPredictionJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteBatchPredictionJobErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteBatchPredictionJobErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteBatchPredictionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1534,6 +1867,132 @@ impl std::error::Error for DeleteEventError {
             DeleteEventErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteEventErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteEventErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteEventsByEventTypeError {
+    pub kind: DeleteEventsByEventTypeErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteEventsByEventTypeErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteEventsByEventTypeError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteEventsByEventTypeErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteEventsByEventTypeErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteEventsByEventTypeErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeleteEventsByEventTypeErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteEventsByEventTypeErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteEventsByEventTypeErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeleteEventsByEventTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteEventsByEventTypeError {
+    fn code(&self) -> Option<&str> {
+        DeleteEventsByEventTypeError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteEventsByEventTypeError {
+    pub fn new(kind: DeleteEventsByEventTypeErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteEventsByEventTypeErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteEventsByEventTypeErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventsByEventTypeErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventsByEventTypeErrorKind::ConflictException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventsByEventTypeErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventsByEventTypeErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventsByEventTypeErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventsByEventTypeErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteEventsByEventTypeError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteEventsByEventTypeErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteEventsByEventTypeErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteEventsByEventTypeErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeleteEventsByEventTypeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteEventsByEventTypeErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteEventsByEventTypeErrorKind::ValidationException(_inner) => Some(_inner),
+            DeleteEventsByEventTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2629,6 +3088,123 @@ impl std::error::Error for DescribeModelVersionsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct GetBatchImportJobsError {
+    pub kind: GetBatchImportJobsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetBatchImportJobsErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetBatchImportJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetBatchImportJobsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetBatchImportJobsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetBatchImportJobsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetBatchImportJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetBatchImportJobsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetBatchImportJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetBatchImportJobsError {
+    fn code(&self) -> Option<&str> {
+        GetBatchImportJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetBatchImportJobsError {
+    pub fn new(kind: GetBatchImportJobsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetBatchImportJobsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetBatchImportJobsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBatchImportJobsErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBatchImportJobsErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBatchImportJobsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBatchImportJobsErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBatchImportJobsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetBatchImportJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetBatchImportJobsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetBatchImportJobsErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetBatchImportJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetBatchImportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetBatchImportJobsErrorKind::ValidationException(_inner) => Some(_inner),
+            GetBatchImportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct GetBatchPredictionJobsError {
     pub kind: GetBatchPredictionJobsErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -2740,6 +3316,135 @@ impl std::error::Error for GetBatchPredictionJobsError {
             GetBatchPredictionJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetBatchPredictionJobsErrorKind::ValidationException(_inner) => Some(_inner),
             GetBatchPredictionJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetDeleteEventsByEventTypeStatusError {
+    pub kind: GetDeleteEventsByEventTypeStatusErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetDeleteEventsByEventTypeStatusErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetDeleteEventsByEventTypeStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetDeleteEventsByEventTypeStatusErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDeleteEventsByEventTypeStatusErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDeleteEventsByEventTypeStatusErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetDeleteEventsByEventTypeStatusErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetDeleteEventsByEventTypeStatusErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetDeleteEventsByEventTypeStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetDeleteEventsByEventTypeStatusError {
+    fn code(&self) -> Option<&str> {
+        GetDeleteEventsByEventTypeStatusError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetDeleteEventsByEventTypeStatusError {
+    pub fn new(kind: GetDeleteEventsByEventTypeStatusErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetDeleteEventsByEventTypeStatusErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetDeleteEventsByEventTypeStatusErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeleteEventsByEventTypeStatusErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeleteEventsByEventTypeStatusErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeleteEventsByEventTypeStatusErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeleteEventsByEventTypeStatusErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeleteEventsByEventTypeStatusErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetDeleteEventsByEventTypeStatusError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetDeleteEventsByEventTypeStatusErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            GetDeleteEventsByEventTypeStatusErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            GetDeleteEventsByEventTypeStatusErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetDeleteEventsByEventTypeStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetDeleteEventsByEventTypeStatusErrorKind::ValidationException(_inner) => Some(_inner),
+            GetDeleteEventsByEventTypeStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3076,6 +3781,108 @@ impl std::error::Error for GetEntityTypesError {
             GetEntityTypesErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetEntityTypesErrorKind::ValidationException(_inner) => Some(_inner),
             GetEntityTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetEventError {
+    pub kind: GetEventErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetEventErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetEventError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetEventErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetEventErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetEventErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetEventErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetEventErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetEventErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetEventError {
+    fn code(&self) -> Option<&str> {
+        GetEventError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetEventError {
+    pub fn new(kind: GetEventErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetEventErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetEventErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, GetEventErrorKind::AccessDeniedException(_))
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, GetEventErrorKind::InternalServerException(_))
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetEventErrorKind::ResourceNotFoundException(_))
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, GetEventErrorKind::ThrottlingException(_))
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, GetEventErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for GetEventError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetEventErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetEventErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetEventErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetEventErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetEventErrorKind::ValidationException(_inner) => Some(_inner),
+            GetEventErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5044,6 +5851,114 @@ impl std::error::Error for PutOutcomeError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct SendEventError {
+    pub kind: SendEventErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SendEventErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SendEventError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SendEventErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SendEventErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            SendEventErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            SendEventErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            SendEventErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SendEventErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            SendEventErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for SendEventError {
+    fn code(&self) -> Option<&str> {
+        SendEventError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SendEventError {
+    pub fn new(kind: SendEventErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SendEventErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SendEventErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, SendEventErrorKind::AccessDeniedException(_))
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, SendEventErrorKind::ConflictException(_))
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, SendEventErrorKind::InternalServerException(_))
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, SendEventErrorKind::ResourceNotFoundException(_))
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, SendEventErrorKind::ThrottlingException(_))
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, SendEventErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for SendEventError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SendEventErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SendEventErrorKind::ConflictException(_inner) => Some(_inner),
+            SendEventErrorKind::InternalServerException(_inner) => Some(_inner),
+            SendEventErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            SendEventErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SendEventErrorKind::ValidationException(_inner) => Some(_inner),
+            SendEventErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     pub kind: TagResourceErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -5609,6 +6524,129 @@ impl std::error::Error for UpdateDetectorVersionStatusError {
             UpdateDetectorVersionStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateDetectorVersionStatusErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateDetectorVersionStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateEventLabelError {
+    pub kind: UpdateEventLabelErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateEventLabelErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateEventLabelError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateEventLabelErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateEventLabelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateEventLabelErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateEventLabelErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateEventLabelErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateEventLabelErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateEventLabelErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateEventLabelError {
+    fn code(&self) -> Option<&str> {
+        UpdateEventLabelError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateEventLabelError {
+    pub fn new(kind: UpdateEventLabelErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateEventLabelErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateEventLabelErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventLabelErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateEventLabelErrorKind::ConflictException(_))
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventLabelErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventLabelErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventLabelErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventLabelErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateEventLabelError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateEventLabelErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateEventLabelErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateEventLabelErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateEventLabelErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateEventLabelErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateEventLabelErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateEventLabelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6462,7 +7500,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>An exception indicating the specified resource was not found. This can occur if you submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector name or version does not exist.</p>
+/// <p>An exception indicating the specified resource was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -6582,18 +7620,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>An exception indicating there was a conflict during a delete operation. The following delete operations can cause a conflict exception:</p>
-/// <ul>
-/// <li>
-/// <p>DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or <code>DetectorVersions</code>.</p>
-/// </li>
-/// <li>
-/// <p>DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is <code>ACTIVE</code>.</p>
-/// </li>
-/// <li>
-/// <p>DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.</p>
-/// </li>
-/// </ul>
+/// <p>An exception indicating there was a conflict during a delete operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -6713,9 +7740,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>
-/// An exception indicating that the attached customer-owned (external) model threw an exception when Amazon Fraud Detector invoked the model.
-/// </p>
+/// <p>An exception indicating that the attached customer-owned (external) model threw an exception when Amazon Fraud Detector invoked the model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceUnavailableException {

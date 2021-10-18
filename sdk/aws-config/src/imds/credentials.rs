@@ -154,8 +154,10 @@ impl ImdsCredentialsProvider {
             tracing::debug!("IMDS disabled because $AWS_EC2_METADATA_DISABLED was set to `true`");
             return Err(CredentialsError::CredentialsNotLoaded);
         }
+        tracing::debug!("loading credentials from IMDS");
         let get_profile = self.get_profile_uncached();
         let profile = self.profile.get_or_try_init(|| get_profile).await?;
+        tracing::debug!(profile = %profile, "loaded profile");
         let credentials = self
             .client()
             .await?

@@ -1947,8 +1947,8 @@ pub mod create_launch_configuration_input {
         /// throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O
         /// performance. This optimization is not available with all instance types. Additional fees
         /// are incurred when you enable EBS optimization for an instance type that is not
-        /// EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
-        /// Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in
+        /// the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         /// <p>The default value is <code>false</code>.</p>
         pub fn ebs_optimized(mut self, input: bool) -> Self {
             self.ebs_optimized = Some(input);
@@ -3833,6 +3833,7 @@ pub mod describe_auto_scaling_groups_input {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
+        pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
         pub fn auto_scaling_group_names(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3868,6 +3869,19 @@ pub mod describe_auto_scaling_groups_input {
             self.max_records = input;
             self
         }
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+            let mut v = self.filters.unwrap_or_default();
+            v.push(input.into());
+            self.filters = Some(v);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAutoScalingGroupsInput`](crate::input::DescribeAutoScalingGroupsInput)
         pub fn build(
             self,
@@ -3879,6 +3893,7 @@ pub mod describe_auto_scaling_groups_input {
                 auto_scaling_group_names: self.auto_scaling_group_names,
                 next_token: self.next_token,
                 max_records: self.max_records,
+                filters: self.filters,
             })
         }
     }
@@ -13072,6 +13087,9 @@ pub struct DescribeAutoScalingGroupsInput {
     /// <p>The maximum number of items to return with this call. The default value is
     /// <code>50</code> and the maximum value is <code>100</code>.</p>
     pub max_records: std::option::Option<i32>,
+    /// <p>One or more filters to limit the results based on specific tags.
+    /// </p>
+    pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl std::fmt::Debug for DescribeAutoScalingGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13079,6 +13097,7 @@ impl std::fmt::Debug for DescribeAutoScalingGroupsInput {
         formatter.field("auto_scaling_group_names", &self.auto_scaling_group_names);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_records", &self.max_records);
+        formatter.field("filters", &self.filters);
         formatter.finish()
     }
 }
@@ -13351,8 +13370,8 @@ pub struct CreateLaunchConfigurationInput {
     /// throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O
     /// performance. This optimization is not available with all instance types. Additional fees
     /// are incurred when you enable EBS optimization for an instance type that is not
-    /// EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
-    /// Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in
+    /// the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>The default value is <code>false</code>.</p>
     pub ebs_optimized: std::option::Option<bool>,
     /// <p>For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether

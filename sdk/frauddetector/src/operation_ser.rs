@@ -22,12 +22,38 @@ pub fn serialize_operation_crate_operation_batch_get_variable(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_cancel_batch_import_job(
+    input: &crate::input::CancelBatchImportJobInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_cancel_batch_import_job_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_cancel_batch_prediction_job(
     input: &crate::input::CancelBatchPredictionJobInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_cancel_batch_prediction_job_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_create_batch_import_job(
+    input: &crate::input::CreateBatchImportJobInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_batch_import_job_input(
         &mut object,
         input,
     );
@@ -101,6 +127,19 @@ pub fn serialize_operation_crate_operation_create_variable(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_delete_batch_import_job(
+    input: &crate::input::DeleteBatchImportJobInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_delete_batch_import_job_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_delete_batch_prediction_job(
     input: &crate::input::DeleteBatchPredictionJobInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -153,6 +192,19 @@ pub fn serialize_operation_crate_operation_delete_event(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_delete_event_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_delete_events_by_event_type(
+    input: &crate::input::DeleteEventsByEventTypeInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_delete_events_by_event_type_input(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -263,12 +315,38 @@ pub fn serialize_operation_crate_operation_describe_model_versions(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_get_batch_import_jobs(
+    input: &crate::input::GetBatchImportJobsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_get_batch_import_jobs_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_get_batch_prediction_jobs(
     input: &crate::input::GetBatchPredictionJobsInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_get_batch_prediction_jobs_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_get_delete_events_by_event_type_status(
+    input: &crate::input::GetDeleteEventsByEventTypeStatusInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_get_delete_events_by_event_type_status_input(
         &mut object,
         input,
     );
@@ -302,6 +380,16 @@ pub fn serialize_operation_crate_operation_get_entity_types(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_get_entity_types_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_get_event(
+    input: &crate::input::GetEventInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_get_event_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -488,6 +576,16 @@ pub fn serialize_operation_crate_operation_put_outcome(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_send_event(
+    input: &crate::input::SendEventInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_send_event_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_tag_resource(
     input: &crate::input::TagResourceInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -543,6 +641,16 @@ pub fn serialize_operation_crate_operation_update_detector_version_status(
         &mut object,
         input,
     );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_event_label(
+    input: &crate::input::UpdateEventLabelInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_event_label_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

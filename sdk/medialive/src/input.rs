@@ -1025,6 +1025,142 @@ impl CancelInputDeviceTransferInput {
     }
 }
 
+/// See [`ClaimDeviceInput`](crate::input::ClaimDeviceInput)
+pub mod claim_device_input {
+    /// A builder for [`ClaimDeviceInput`](crate::input::ClaimDeviceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// The id of the device you want to claim.
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClaimDeviceInput`](crate::input::ClaimDeviceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::ClaimDeviceInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ClaimDeviceInput { id: self.id })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ClaimDeviceInputOperationOutputAlias = crate::operation::ClaimDevice;
+#[doc(hidden)]
+pub type ClaimDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ClaimDeviceInput {
+    /// Consumes the builder and constructs an Operation<[`ClaimDevice`](crate::operation::ClaimDevice)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ClaimDevice,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ClaimDeviceInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            write!(output, "/prod/claimDevice").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ClaimDeviceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ClaimDeviceInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_claim_device(&self)
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op =
+            smithy_http::operation::Operation::new(request, crate::operation::ClaimDevice::new())
+                .with_metadata(smithy_http::operation::Metadata::new(
+                    "ClaimDevice",
+                    "medialive",
+                ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ClaimDeviceInput`](crate::input::ClaimDeviceInput)
+    pub fn builder() -> crate::input::claim_device_input::Builder {
+        crate::input::claim_device_input::Builder::default()
+    }
+}
+
 /// See [`CreateChannelInput`](crate::input::CreateChannelInput)
 pub mod create_channel_input {
     /// A builder for [`CreateChannelInput`](crate::input::CreateChannelInput)
@@ -1196,7 +1332,7 @@ pub mod create_channel_input {
             self.tags = input;
             self
         }
-        /// Settings for VPC output
+        /// Settings for the VPC outputs
         pub fn vpc(mut self, input: crate::model::VpcOutputSettings) -> Self {
             self.vpc = Some(input);
             self
@@ -1488,7 +1624,7 @@ pub mod create_input_input {
             self.tags = input;
             self
         }
-        /// Placeholder documentation for InputType
+        /// The different types of inputs that AWS Elemental MediaLive supports.
         pub fn r#type(mut self, input: crate::model::InputType) -> Self {
             self.r#type = Some(input);
             self
@@ -11631,7 +11767,7 @@ pub struct CreateInputInput {
     /// A collection of key-value pairs.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// Placeholder documentation for InputType
+    /// The different types of inputs that AWS Elemental MediaLive supports.
     pub r#type: std::option::Option<crate::model::InputType>,
     /// Settings for a private VPC Input.
     /// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
@@ -11687,7 +11823,7 @@ pub struct CreateChannelInput {
     /// A collection of key-value pairs.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// Settings for VPC output
+    /// Settings for the VPC outputs
     pub vpc: std::option::Option<crate::model::VpcOutputSettings>,
 }
 impl std::fmt::Debug for CreateChannelInput {
@@ -11706,6 +11842,21 @@ impl std::fmt::Debug for CreateChannelInput {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("tags", &self.tags);
         formatter.field("vpc", &self.vpc);
+        formatter.finish()
+    }
+}
+
+/// A request to claim an AWS Elemental device that you have purchased from a third-party vendor.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClaimDeviceInput {
+    /// The id of the device you want to claim.
+    pub id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ClaimDeviceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClaimDeviceInput");
+        formatter.field("id", &self.id);
         formatter.finish()
     }
 }

@@ -699,6 +699,7 @@ pub mod create_data_source_input {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A unique name for the data source. A data source name can't be changed
@@ -816,6 +817,22 @@ pub mod create_data_source_input {
             self.client_token = input;
             self
         }
+        /// <p>The code for a language. This allows you to support a language for all
+        /// documents when creating the data source. English is supported
+        /// by default. For more information on supported languages, including their codes,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// documents in languages other than English</a>.</p>
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDataSourceInput`](crate::input::CreateDataSourceInput)
         pub fn build(
             self,
@@ -833,6 +850,7 @@ pub mod create_data_source_input {
                 role_arn: self.role_arn,
                 tags: self.tags,
                 client_token: self.client_token,
+                language_code: self.language_code,
             })
         }
     }
@@ -973,6 +991,7 @@ pub mod create_faq_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) file_format: std::option::Option<crate::model::FaqFileFormat>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the index that contains the FAQ.</p>
@@ -1063,6 +1082,22 @@ pub mod create_faq_input {
             self.client_token = input;
             self
         }
+        /// <p>The code for a language. This allows you to support a language
+        /// for the FAQ document. English is supported by default.
+        /// For more information on supported languages, including their codes,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// documents in languages other than English</a>.</p>
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFaqInput`](crate::input::CreateFaqInput)
         pub fn build(
             self,
@@ -1077,6 +1112,7 @@ pub mod create_faq_input {
                 tags: self.tags,
                 file_format: self.file_format,
                 client_token: self.client_token,
+                language_code: self.language_code,
             })
         }
     }
@@ -7075,6 +7111,7 @@ pub mod update_data_source_input {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) schedule: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier of the data source to update.</p>
@@ -7147,6 +7184,22 @@ pub mod update_data_source_input {
             self.role_arn = input;
             self
         }
+        /// <p>The code for a language. This allows you to support a language for all
+        /// documents when updating the data source. English is supported
+        /// by default. For more information on supported languages, including their codes,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// documents in languages other than English</a>.</p>
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_code = Some(input.into());
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput)
         pub fn build(
             self,
@@ -7162,6 +7215,7 @@ pub mod update_data_source_input {
                 description: self.description,
                 schedule: self.schedule,
                 role_arn: self.role_arn,
+                language_code: self.language_code,
             })
         }
     }
@@ -8433,6 +8487,12 @@ pub struct UpdateDataSourceInput {
     /// <p>The Amazon Resource Name (ARN) of the new role to use when the data
     /// source is accessing resources on your behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The code for a language. This allows you to support a language for all
+    /// documents when updating the data source. English is supported
+    /// by default. For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub language_code: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8444,6 +8504,7 @@ impl std::fmt::Debug for UpdateDataSourceInput {
         formatter.field("description", &self.description);
         formatter.field("schedule", &self.schedule);
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("language_code", &self.language_code);
         formatter.finish()
     }
 }
@@ -9382,6 +9443,12 @@ pub struct CreateFaqInput {
     /// the <code>CreateFaqRequest</code> operation with the same client token will create only
     /// one FAQ. </p>
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>The code for a language. This allows you to support a language
+    /// for the FAQ document. English is supported by default.
+    /// For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub language_code: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateFaqInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9394,6 +9461,7 @@ impl std::fmt::Debug for CreateFaqInput {
         formatter.field("tags", &self.tags);
         formatter.field("file_format", &self.file_format);
         formatter.field("client_token", &self.client_token);
+        formatter.field("language_code", &self.language_code);
         formatter.finish()
     }
 }
@@ -9445,6 +9513,12 @@ pub struct CreateDataSourceInput {
     /// source. Multiple calls to the <code>CreateDataSource</code> operation with
     /// the same client token will create only one data source.</p>
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>The code for a language. This allows you to support a language for all
+    /// documents when creating the data source. English is supported
+    /// by default. For more information on supported languages, including their codes,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+    /// documents in languages other than English</a>.</p>
+    pub language_code: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateDataSourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9458,6 +9532,7 @@ impl std::fmt::Debug for CreateDataSourceInput {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("tags", &self.tags);
         formatter.field("client_token", &self.client_token);
+        formatter.field("language_code", &self.language_code);
         formatter.finish()
     }
 }

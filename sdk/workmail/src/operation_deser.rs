@@ -2550,6 +2550,129 @@ pub fn parse_deregister_from_work_mail_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_deregister_mail_domain_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeregisterMailDomainOutput,
+    crate::error::DeregisterMailDomainError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeregisterMailDomainError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeregisterMailDomainError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidCustomSesConfigurationException" => crate::error::DeregisterMailDomainError {
+            meta: generic,
+            kind:
+                crate::error::DeregisterMailDomainErrorKind::InvalidCustomSesConfigurationException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::invalid_custom_ses_configuration_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_custom_ses_configuration_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterMailDomainError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "InvalidParameterException" => crate::error::DeregisterMailDomainError {
+            meta: generic,
+            kind: crate::error::DeregisterMailDomainErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MailDomainInUseException" => crate::error::DeregisterMailDomainError {
+            meta: generic,
+            kind: crate::error::DeregisterMailDomainErrorKind::MailDomainInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::mail_domain_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_mail_domain_in_use_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::DeregisterMailDomainError {
+            meta: generic,
+            kind: crate::error::DeregisterMailDomainErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::DeregisterMailDomainError {
+            meta: generic,
+            kind: crate::error::DeregisterMailDomainErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DeregisterMailDomainError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_deregister_mail_domain_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeregisterMailDomainOutput,
+    crate::error::DeregisterMailDomainError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::deregister_mail_domain_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeGroupOutput, crate::error::DescribeGroupError> {
@@ -3710,6 +3833,110 @@ pub fn parse_get_mailbox_details_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_mail_domain_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetMailDomainOutput, crate::error::GetMailDomainError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetMailDomainError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetMailDomainError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::GetMailDomainError {
+            meta: generic,
+            kind: crate::error::GetMailDomainErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MailDomainNotFoundException" => crate::error::GetMailDomainError {
+            meta: generic,
+            kind: crate::error::GetMailDomainErrorKind::MailDomainNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::mail_domain_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_mail_domain_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::GetMailDomainError {
+            meta: generic,
+            kind: crate::error::GetMailDomainErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::GetMailDomainError {
+            meta: generic,
+            kind: crate::error::GetMailDomainErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetMailDomainError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_mail_domain_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetMailDomainOutput, crate::error::GetMailDomainError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_mail_domain_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_mail_domain(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetMailDomainError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_mobile_device_access_effect_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -4577,6 +4804,92 @@ pub fn parse_list_mailbox_permissions_response(
             output,
         )
         .map_err(crate::error::ListMailboxPermissionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_mail_domains_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListMailDomainsOutput, crate::error::ListMailDomainsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListMailDomainsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListMailDomainsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::ListMailDomainsError {
+            meta: generic,
+            kind: crate::error::ListMailDomainsErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListMailDomainsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::ListMailDomainsError {
+            meta: generic,
+            kind: crate::error::ListMailDomainsErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListMailDomainsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::ListMailDomainsError {
+            meta: generic,
+            kind: crate::error::ListMailDomainsErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListMailDomainsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListMailDomainsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_mail_domains_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListMailDomainsOutput, crate::error::ListMailDomainsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_mail_domains_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_mail_domains(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListMailDomainsError::unhandled)?;
         output.build()
     })
 }
@@ -5742,6 +6055,127 @@ pub fn parse_put_retention_policy_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_register_mail_domain_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RegisterMailDomainOutput,
+    crate::error::RegisterMailDomainError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RegisterMailDomainError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::RegisterMailDomainError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::RegisterMailDomainError {
+            meta: generic,
+            kind: crate::error::RegisterMailDomainErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::RegisterMailDomainError {
+            meta: generic,
+            kind: crate::error::RegisterMailDomainErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MailDomainInUseException" => crate::error::RegisterMailDomainError {
+            meta: generic,
+            kind: crate::error::RegisterMailDomainErrorKind::MailDomainInUseException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::mail_domain_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_mail_domain_in_use_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::RegisterMailDomainError {
+            meta: generic,
+            kind: crate::error::RegisterMailDomainErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::RegisterMailDomainError {
+            meta: generic,
+            kind: crate::error::RegisterMailDomainErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::RegisterMailDomainError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_register_mail_domain_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RegisterMailDomainOutput,
+    crate::error::RegisterMailDomainError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::register_mail_domain_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_to_work_mail_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -6364,6 +6798,132 @@ pub fn parse_untag_resource_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_default_mail_domain_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDefaultMailDomainOutput,
+    crate::error::UpdateDefaultMailDomainError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateDefaultMailDomainError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateDefaultMailDomainError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::UpdateDefaultMailDomainError {
+            meta: generic,
+            kind: crate::error::UpdateDefaultMailDomainErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDefaultMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MailDomainNotFoundException" => crate::error::UpdateDefaultMailDomainError {
+            meta: generic,
+            kind: crate::error::UpdateDefaultMailDomainErrorKind::MailDomainNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::mail_domain_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_mail_domain_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDefaultMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MailDomainStateException" => crate::error::UpdateDefaultMailDomainError {
+            meta: generic,
+            kind: crate::error::UpdateDefaultMailDomainErrorKind::MailDomainStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::mail_domain_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_mail_domain_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDefaultMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationNotFoundException" => crate::error::UpdateDefaultMailDomainError {
+            meta: generic,
+            kind: crate::error::UpdateDefaultMailDomainErrorKind::OrganizationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDefaultMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OrganizationStateException" => crate::error::UpdateDefaultMailDomainError {
+            meta: generic,
+            kind: crate::error::UpdateDefaultMailDomainErrorKind::OrganizationStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDefaultMailDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateDefaultMailDomainError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_default_mail_domain_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDefaultMailDomainOutput,
+    crate::error::UpdateDefaultMailDomainError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_default_mail_domain_output::Builder::default();
         let _ = response;
         output.build()
     })

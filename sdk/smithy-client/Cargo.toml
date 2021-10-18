@@ -1,15 +1,15 @@
 [package]
 name = "smithy-client"
-version = "0.1.0"
-authors = ["Russell Cohen <rcoh@amazon.com>"]
+version = "0.26.0-alpha"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
+description = "Client for smithy-rs."
 edition = "2018"
 license = "Apache-2.0"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+repository = "https://github.com/awslabs/smithy-rs"
 
 [features]
 rt-tokio = ["smithy-async/rt-tokio"]
-test-util = ["protocol-test-helpers", "serde/derive"]
+test-util = ["smithy-protocol-test", "serde/derive"]
 default = ["hyper", "rustls", "rt-tokio"]
 native-tls = ["hyper", "hyper-tls", "rt-tokio"]
 rustls = ["hyper", "hyper-rustls", "rt-tokio", "lazy_static"]
@@ -34,7 +34,7 @@ lazy_static = { version = "1", optional = true }
 pin-project = "1"
 tracing = "0.1"
 
-protocol-test-helpers = { path = "../protocol-test-helpers", optional = true }
+smithy-protocol-test = { path = "../smithy-protocol-test", optional = true }
 serde = { version = "1", features = ["derive"], optional = true }
 
 [dev-dependencies]

@@ -62,6 +62,16 @@ pub fn serialize_operation_crate_operation_describe_endpoints(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_put_policy(
+    input: &crate::input::PutPolicyInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_put_policy_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_tag_resource(
     input: &crate::input::TagResourceInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

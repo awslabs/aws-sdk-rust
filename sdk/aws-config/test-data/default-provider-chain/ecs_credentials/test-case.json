@@ -1,0 +1,12 @@
+{
+  "name": "ecs-credentials",
+  "docs": "load credentials directly from ECS",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARCORRECT",
+      "secret_access_key": "secretkeycorrect",
+      "session_token": "tokencorrect",
+      "expiry": 1234567890
+    }
+  }
+}

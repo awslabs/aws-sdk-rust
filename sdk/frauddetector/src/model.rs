@@ -247,6 +247,7 @@ impl AsRef<str> for ModelVersionStatus {
 )]
 pub enum ModelTypeEnum {
     OnlineFraudInsights,
+    TransactionFraudInsights,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -254,6 +255,7 @@ impl std::convert::From<&str> for ModelTypeEnum {
     fn from(s: &str) -> Self {
         match s {
             "ONLINE_FRAUD_INSIGHTS" => ModelTypeEnum::OnlineFraudInsights,
+            "TRANSACTION_FRAUD_INSIGHTS" => ModelTypeEnum::TransactionFraudInsights,
             other => ModelTypeEnum::Unknown(other.to_owned()),
         }
     }
@@ -269,16 +271,135 @@ impl ModelTypeEnum {
     pub fn as_str(&self) -> &str {
         match self {
             ModelTypeEnum::OnlineFraudInsights => "ONLINE_FRAUD_INSIGHTS",
+            ModelTypeEnum::TransactionFraudInsights => "TRANSACTION_FRAUD_INSIGHTS",
             ModelTypeEnum::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["ONLINE_FRAUD_INSIGHTS"]
+        &["ONLINE_FRAUD_INSIGHTS", "TRANSACTION_FRAUD_INSIGHTS"]
     }
 }
 impl AsRef<str> for ModelTypeEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The details of the ingested event.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IngestedEventsDetail {
+    /// <p>The start and stop time of the ingested events.</p>
+    pub ingested_events_time_window: std::option::Option<crate::model::IngestedEventsTimeWindow>,
+}
+impl std::fmt::Debug for IngestedEventsDetail {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IngestedEventsDetail");
+        formatter.field(
+            "ingested_events_time_window",
+            &self.ingested_events_time_window,
+        );
+        formatter.finish()
+    }
+}
+/// See [`IngestedEventsDetail`](crate::model::IngestedEventsDetail)
+pub mod ingested_events_detail {
+    /// A builder for [`IngestedEventsDetail`](crate::model::IngestedEventsDetail)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ingested_events_time_window:
+            std::option::Option<crate::model::IngestedEventsTimeWindow>,
+    }
+    impl Builder {
+        /// <p>The start and stop time of the ingested events.</p>
+        pub fn ingested_events_time_window(
+            mut self,
+            input: crate::model::IngestedEventsTimeWindow,
+        ) -> Self {
+            self.ingested_events_time_window = Some(input);
+            self
+        }
+        pub fn set_ingested_events_time_window(
+            mut self,
+            input: std::option::Option<crate::model::IngestedEventsTimeWindow>,
+        ) -> Self {
+            self.ingested_events_time_window = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IngestedEventsDetail`](crate::model::IngestedEventsDetail)
+        pub fn build(self) -> crate::model::IngestedEventsDetail {
+            crate::model::IngestedEventsDetail {
+                ingested_events_time_window: self.ingested_events_time_window,
+            }
+        }
+    }
+}
+impl IngestedEventsDetail {
+    /// Creates a new builder-style object to manufacture [`IngestedEventsDetail`](crate::model::IngestedEventsDetail)
+    pub fn builder() -> crate::model::ingested_events_detail::Builder {
+        crate::model::ingested_events_detail::Builder::default()
+    }
+}
+
+/// <p>The start and stop time of the ingested events.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IngestedEventsTimeWindow {
+    /// <p>Timestamp of the first ingensted event.</p>
+    pub start_time: std::option::Option<std::string::String>,
+    /// <p>Timestamp of the final ingested event.</p>
+    pub end_time: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for IngestedEventsTimeWindow {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IngestedEventsTimeWindow");
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.finish()
+    }
+}
+/// See [`IngestedEventsTimeWindow`](crate::model::IngestedEventsTimeWindow)
+pub mod ingested_events_time_window {
+    /// A builder for [`IngestedEventsTimeWindow`](crate::model::IngestedEventsTimeWindow)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_time: std::option::Option<std::string::String>,
+        pub(crate) end_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Timestamp of the first ingensted event.</p>
+        pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_time = Some(input.into());
+            self
+        }
+        pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>Timestamp of the final ingested event.</p>
+        pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_time = Some(input.into());
+            self
+        }
+        pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IngestedEventsTimeWindow`](crate::model::IngestedEventsTimeWindow)
+        pub fn build(self) -> crate::model::IngestedEventsTimeWindow {
+            crate::model::IngestedEventsTimeWindow {
+                start_time: self.start_time,
+                end_time: self.end_time,
+            }
+        }
+    }
+}
+impl IngestedEventsTimeWindow {
+    /// Creates a new builder-style object to manufacture [`IngestedEventsTimeWindow`](crate::model::IngestedEventsTimeWindow)
+    pub fn builder() -> crate::model::ingested_events_time_window::Builder {
+        crate::model::ingested_events_time_window::Builder::default()
     }
 }
 
@@ -544,6 +665,67 @@ impl ModelVersion {
     /// Creates a new builder-style object to manufacture [`ModelVersion`](crate::model::ModelVersion)
     pub fn builder() -> crate::model::model_version::Builder {
         crate::model::model_version::Builder::default()
+    }
+}
+
+/// <p>The entity details. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Entity {
+    /// <p>The entity type.</p>
+    pub entity_type: std::option::Option<std::string::String>,
+    /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
+    pub entity_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Entity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Entity");
+        formatter.field("entity_type", &self.entity_type);
+        formatter.field("entity_id", &self.entity_id);
+        formatter.finish()
+    }
+}
+/// See [`Entity`](crate::model::Entity)
+pub mod entity {
+    /// A builder for [`Entity`](crate::model::Entity)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entity_type: std::option::Option<std::string::String>,
+        pub(crate) entity_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The entity type.</p>
+        pub fn entity_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_type = Some(input.into());
+            self
+        }
+        pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_type = input;
+            self
+        }
+        /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_id = Some(input.into());
+            self
+        }
+        pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Entity`](crate::model::Entity)
+        pub fn build(self) -> crate::model::Entity {
+            crate::model::Entity {
+                entity_type: self.entity_type,
+                entity_id: self.entity_id,
+            }
+        }
+    }
+}
+impl Entity {
+    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity)
+    pub fn builder() -> crate::model::entity::Builder {
+        crate::model::entity::Builder::default()
     }
 }
 
@@ -968,6 +1150,56 @@ impl ModelSource {
     }
 }
 impl AsRef<str> for ModelSource {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EventIngestion {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EventIngestion {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => EventIngestion::Disabled,
+            "ENABLED" => EventIngestion::Enabled,
+            other => EventIngestion::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EventIngestion {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EventIngestion::from(s))
+    }
+}
+impl EventIngestion {
+    pub fn as_str(&self) -> &str {
+        match self {
+            EventIngestion::Disabled => "DISABLED",
+            EventIngestion::Enabled => "ENABLED",
+            EventIngestion::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for EventIngestion {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -1620,11 +1852,17 @@ pub struct LabelSchema {
     pub label_mapper: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
+    /// <p>The action to take for unlabeled events.</p>
+    pub unlabeled_events_treatment: std::option::Option<crate::model::UnlabeledEventsTreatment>,
 }
 impl std::fmt::Debug for LabelSchema {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LabelSchema");
         formatter.field("label_mapper", &self.label_mapper);
+        formatter.field(
+            "unlabeled_events_treatment",
+            &self.unlabeled_events_treatment,
+        );
         formatter.finish()
     }
 }
@@ -1637,6 +1875,8 @@ pub mod label_schema {
         pub(crate) label_mapper: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
+        pub(crate) unlabeled_events_treatment:
+            std::option::Option<crate::model::UnlabeledEventsTreatment>,
     }
     impl Builder {
         pub fn label_mapper(
@@ -1658,10 +1898,26 @@ pub mod label_schema {
             self.label_mapper = input;
             self
         }
+        /// <p>The action to take for unlabeled events.</p>
+        pub fn unlabeled_events_treatment(
+            mut self,
+            input: crate::model::UnlabeledEventsTreatment,
+        ) -> Self {
+            self.unlabeled_events_treatment = Some(input);
+            self
+        }
+        pub fn set_unlabeled_events_treatment(
+            mut self,
+            input: std::option::Option<crate::model::UnlabeledEventsTreatment>,
+        ) -> Self {
+            self.unlabeled_events_treatment = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LabelSchema`](crate::model::LabelSchema)
         pub fn build(self) -> crate::model::LabelSchema {
             crate::model::LabelSchema {
                 label_mapper: self.label_mapper,
+                unlabeled_events_treatment: self.unlabeled_events_treatment,
             }
         }
     }
@@ -1683,8 +1939,62 @@ impl LabelSchema {
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum UnlabeledEventsTreatment {
+    Fraud,
+    Ignore,
+    Legit,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for UnlabeledEventsTreatment {
+    fn from(s: &str) -> Self {
+        match s {
+            "FRAUD" => UnlabeledEventsTreatment::Fraud,
+            "IGNORE" => UnlabeledEventsTreatment::Ignore,
+            "LEGIT" => UnlabeledEventsTreatment::Legit,
+            other => UnlabeledEventsTreatment::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for UnlabeledEventsTreatment {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UnlabeledEventsTreatment::from(s))
+    }
+}
+impl UnlabeledEventsTreatment {
+    pub fn as_str(&self) -> &str {
+        match self {
+            UnlabeledEventsTreatment::Fraud => "FRAUD",
+            UnlabeledEventsTreatment::Ignore => "IGNORE",
+            UnlabeledEventsTreatment::Legit => "LEGIT",
+            UnlabeledEventsTreatment::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FRAUD", "IGNORE", "LEGIT"]
+    }
+}
+impl AsRef<str> for UnlabeledEventsTreatment {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TrainingDataSourceEnum {
     ExternalEvents,
+    IngestedEvents,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -1692,6 +2002,7 @@ impl std::convert::From<&str> for TrainingDataSourceEnum {
     fn from(s: &str) -> Self {
         match s {
             "EXTERNAL_EVENTS" => TrainingDataSourceEnum::ExternalEvents,
+            "INGESTED_EVENTS" => TrainingDataSourceEnum::IngestedEvents,
             other => TrainingDataSourceEnum::Unknown(other.to_owned()),
         }
     }
@@ -1707,11 +2018,12 @@ impl TrainingDataSourceEnum {
     pub fn as_str(&self) -> &str {
         match self {
             TrainingDataSourceEnum::ExternalEvents => "EXTERNAL_EVENTS",
+            TrainingDataSourceEnum::IngestedEvents => "INGESTED_EVENTS",
             TrainingDataSourceEnum::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["EXTERNAL_EVENTS"]
+        &["EXTERNAL_EVENTS", "INGESTED_EVENTS"]
     }
 }
 impl AsRef<str> for TrainingDataSourceEnum {
@@ -2220,6 +2532,10 @@ pub struct EventType {
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The event type entity types.</p>
     pub entity_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate a prediction and uses that data to update calculated variables in near real-time. Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train your model and  improve fraud predictions.</p>
+    pub event_ingestion: std::option::Option<crate::model::EventIngestion>,
+    /// <p>Data about the stored events.</p>
+    pub ingested_event_statistics: std::option::Option<crate::model::IngestedEventStatistics>,
     /// <p>Timestamp of when the event type was last updated.</p>
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the event type was created.</p>
@@ -2235,6 +2551,8 @@ impl std::fmt::Debug for EventType {
         formatter.field("event_variables", &self.event_variables);
         formatter.field("labels", &self.labels);
         formatter.field("entity_types", &self.entity_types);
+        formatter.field("event_ingestion", &self.event_ingestion);
+        formatter.field("ingested_event_statistics", &self.ingested_event_statistics);
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
         formatter.field("arn", &self.arn);
@@ -2252,6 +2570,9 @@ pub mod event_type {
         pub(crate) event_variables: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) labels: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) entity_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) event_ingestion: std::option::Option<crate::model::EventIngestion>,
+        pub(crate) ingested_event_statistics:
+            std::option::Option<crate::model::IngestedEventStatistics>,
         pub(crate) last_updated_time: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2314,6 +2635,33 @@ pub mod event_type {
             self.entity_types = input;
             self
         }
+        /// <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate a prediction and uses that data to update calculated variables in near real-time. Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train your model and  improve fraud predictions.</p>
+        pub fn event_ingestion(mut self, input: crate::model::EventIngestion) -> Self {
+            self.event_ingestion = Some(input);
+            self
+        }
+        pub fn set_event_ingestion(
+            mut self,
+            input: std::option::Option<crate::model::EventIngestion>,
+        ) -> Self {
+            self.event_ingestion = input;
+            self
+        }
+        /// <p>Data about the stored events.</p>
+        pub fn ingested_event_statistics(
+            mut self,
+            input: crate::model::IngestedEventStatistics,
+        ) -> Self {
+            self.ingested_event_statistics = Some(input);
+            self
+        }
+        pub fn set_ingested_event_statistics(
+            mut self,
+            input: std::option::Option<crate::model::IngestedEventStatistics>,
+        ) -> Self {
+            self.ingested_event_statistics = input;
+            self
+        }
         /// <p>Timestamp of when the event type was last updated.</p>
         pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_updated_time = Some(input.into());
@@ -2352,6 +2700,8 @@ pub mod event_type {
                 event_variables: self.event_variables,
                 labels: self.labels,
                 entity_types: self.entity_types,
+                event_ingestion: self.event_ingestion,
+                ingested_event_statistics: self.ingested_event_statistics,
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,
                 arn: self.arn,
@@ -2363,6 +2713,120 @@ impl EventType {
     /// Creates a new builder-style object to manufacture [`EventType`](crate::model::EventType)
     pub fn builder() -> crate::model::event_type::Builder {
         crate::model::event_type::Builder::default()
+    }
+}
+
+/// <p>Data about the stored events.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IngestedEventStatistics {
+    /// <p>The number of stored events.</p>
+    pub number_of_events: std::option::Option<i64>,
+    /// <p>The total size of the stored events.</p>
+    pub event_data_size_in_bytes: std::option::Option<i64>,
+    /// <p>The oldest stored event.</p>
+    pub least_recent_event: std::option::Option<std::string::String>,
+    /// <p>The newest stored event.</p>
+    pub most_recent_event: std::option::Option<std::string::String>,
+    /// <p>Timestamp of when the stored event was last updated.    
+    /// </p>
+    pub last_updated_time: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for IngestedEventStatistics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IngestedEventStatistics");
+        formatter.field("number_of_events", &self.number_of_events);
+        formatter.field("event_data_size_in_bytes", &self.event_data_size_in_bytes);
+        formatter.field("least_recent_event", &self.least_recent_event);
+        formatter.field("most_recent_event", &self.most_recent_event);
+        formatter.field("last_updated_time", &self.last_updated_time);
+        formatter.finish()
+    }
+}
+/// See [`IngestedEventStatistics`](crate::model::IngestedEventStatistics)
+pub mod ingested_event_statistics {
+    /// A builder for [`IngestedEventStatistics`](crate::model::IngestedEventStatistics)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) number_of_events: std::option::Option<i64>,
+        pub(crate) event_data_size_in_bytes: std::option::Option<i64>,
+        pub(crate) least_recent_event: std::option::Option<std::string::String>,
+        pub(crate) most_recent_event: std::option::Option<std::string::String>,
+        pub(crate) last_updated_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The number of stored events.</p>
+        pub fn number_of_events(mut self, input: i64) -> Self {
+            self.number_of_events = Some(input);
+            self
+        }
+        pub fn set_number_of_events(mut self, input: std::option::Option<i64>) -> Self {
+            self.number_of_events = input;
+            self
+        }
+        /// <p>The total size of the stored events.</p>
+        pub fn event_data_size_in_bytes(mut self, input: i64) -> Self {
+            self.event_data_size_in_bytes = Some(input);
+            self
+        }
+        pub fn set_event_data_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.event_data_size_in_bytes = input;
+            self
+        }
+        /// <p>The oldest stored event.</p>
+        pub fn least_recent_event(mut self, input: impl Into<std::string::String>) -> Self {
+            self.least_recent_event = Some(input.into());
+            self
+        }
+        pub fn set_least_recent_event(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.least_recent_event = input;
+            self
+        }
+        /// <p>The newest stored event.</p>
+        pub fn most_recent_event(mut self, input: impl Into<std::string::String>) -> Self {
+            self.most_recent_event = Some(input.into());
+            self
+        }
+        pub fn set_most_recent_event(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.most_recent_event = input;
+            self
+        }
+        /// <p>Timestamp of when the stored event was last updated.    
+        /// </p>
+        pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_updated_time = Some(input.into());
+            self
+        }
+        pub fn set_last_updated_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.last_updated_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IngestedEventStatistics`](crate::model::IngestedEventStatistics)
+        pub fn build(self) -> crate::model::IngestedEventStatistics {
+            crate::model::IngestedEventStatistics {
+                number_of_events: self.number_of_events,
+                event_data_size_in_bytes: self.event_data_size_in_bytes,
+                least_recent_event: self.least_recent_event,
+                most_recent_event: self.most_recent_event,
+                last_updated_time: self.last_updated_time,
+            }
+        }
+    }
+}
+impl IngestedEventStatistics {
+    /// Creates a new builder-style object to manufacture [`IngestedEventStatistics`](crate::model::IngestedEventStatistics)
+    pub fn builder() -> crate::model::ingested_event_statistics::Builder {
+        crate::model::ingested_event_statistics::Builder::default()
     }
 }
 
@@ -2704,64 +3168,163 @@ impl ModelEndpointDataBlob {
     }
 }
 
-/// <p>The entity details. </p>
+/// <p>The event details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Entity {
-    /// <p>The entity type.</p>
-    pub entity_type: std::option::Option<std::string::String>,
-    /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
-    pub entity_id: std::option::Option<std::string::String>,
+pub struct Event {
+    /// <p>The event ID.</p>
+    pub event_id: std::option::Option<std::string::String>,
+    /// <p>The event type.</p>
+    pub event_type_name: std::option::Option<std::string::String>,
+    /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub event_timestamp: std::option::Option<std::string::String>,
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+    pub event_variables:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The label associated with the event.</p>
+    pub current_label: std::option::Option<std::string::String>,
+    /// <p>The timestamp associated with the label to update. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    pub label_timestamp: std::option::Option<std::string::String>,
+    /// <p>The event entities.</p>
+    pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
 }
-impl std::fmt::Debug for Entity {
+impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Entity");
-        formatter.field("entity_type", &self.entity_type);
-        formatter.field("entity_id", &self.entity_id);
+        let mut formatter = f.debug_struct("Event");
+        formatter.field("event_id", &self.event_id);
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("event_timestamp", &self.event_timestamp);
+        formatter.field("event_variables", &self.event_variables);
+        formatter.field("current_label", &self.current_label);
+        formatter.field("label_timestamp", &self.label_timestamp);
+        formatter.field("entities", &self.entities);
         formatter.finish()
     }
 }
-/// See [`Entity`](crate::model::Entity)
-pub mod entity {
-    /// A builder for [`Entity`](crate::model::Entity)
+/// See [`Event`](crate::model::Event)
+pub mod event {
+    /// A builder for [`Event`](crate::model::Event)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entity_type: std::option::Option<std::string::String>,
-        pub(crate) entity_id: std::option::Option<std::string::String>,
+        pub(crate) event_id: std::option::Option<std::string::String>,
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+        pub(crate) event_timestamp: std::option::Option<std::string::String>,
+        pub(crate) event_variables: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) current_label: std::option::Option<std::string::String>,
+        pub(crate) label_timestamp: std::option::Option<std::string::String>,
+        pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
     }
     impl Builder {
-        /// <p>The entity type.</p>
-        pub fn entity_type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.entity_type = Some(input.into());
+        /// <p>The event ID.</p>
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_id = Some(input.into());
             self
         }
-        pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_type = input;
+        pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_id = input;
             self
         }
-        /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
-        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.entity_id = Some(input.into());
+        /// <p>The event type.</p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
             self
         }
-        pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_id = input;
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`Entity`](crate::model::Entity)
-        pub fn build(self) -> crate::model::Entity {
-            crate::model::Entity {
-                entity_type: self.entity_type,
-                entity_id: self.entity_id,
+        /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+        pub fn event_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_timestamp = Some(input.into());
+            self
+        }
+        pub fn set_event_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_timestamp = input;
+            self
+        }
+        pub fn event_variables(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.event_variables.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.event_variables = Some(hash_map);
+            self
+        }
+        pub fn set_event_variables(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.event_variables = input;
+            self
+        }
+        /// <p>The label associated with the event.</p>
+        pub fn current_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.current_label = Some(input.into());
+            self
+        }
+        pub fn set_current_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.current_label = input;
+            self
+        }
+        /// <p>The timestamp associated with the label to update. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+        pub fn label_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.label_timestamp = Some(input.into());
+            self
+        }
+        pub fn set_label_timestamp(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.label_timestamp = input;
+            self
+        }
+        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+            let mut v = self.entities.unwrap_or_default();
+            v.push(input.into());
+            self.entities = Some(v);
+            self
+        }
+        pub fn set_entities(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
+        ) -> Self {
+            self.entities = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Event`](crate::model::Event)
+        pub fn build(self) -> crate::model::Event {
+            crate::model::Event {
+                event_id: self.event_id,
+                event_type_name: self.event_type_name,
+                event_timestamp: self.event_timestamp,
+                event_variables: self.event_variables,
+                current_label: self.current_label,
+                label_timestamp: self.label_timestamp,
+                entities: self.entities,
             }
         }
     }
 }
-impl Entity {
-    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity)
-    pub fn builder() -> crate::model::entity::Builder {
-        crate::model::entity::Builder::default()
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event)
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
     }
 }
 
@@ -2994,6 +3557,75 @@ impl Detector {
     }
 }
 
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AsyncJobStatus {
+    Canceled,
+    CancelInProgress,
+    Complete,
+    Failed,
+    InProgress,
+    InProgressInitializing,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AsyncJobStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CANCELED" => AsyncJobStatus::Canceled,
+            "CANCEL_IN_PROGRESS" => AsyncJobStatus::CancelInProgress,
+            "COMPLETE" => AsyncJobStatus::Complete,
+            "FAILED" => AsyncJobStatus::Failed,
+            "IN_PROGRESS" => AsyncJobStatus::InProgress,
+            "IN_PROGRESS_INITIALIZING" => AsyncJobStatus::InProgressInitializing,
+            other => AsyncJobStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AsyncJobStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AsyncJobStatus::from(s))
+    }
+}
+impl AsyncJobStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AsyncJobStatus::Canceled => "CANCELED",
+            AsyncJobStatus::CancelInProgress => "CANCEL_IN_PROGRESS",
+            AsyncJobStatus::Complete => "COMPLETE",
+            AsyncJobStatus::Failed => "FAILED",
+            AsyncJobStatus::InProgress => "IN_PROGRESS",
+            AsyncJobStatus::InProgressInitializing => "IN_PROGRESS_INITIALIZING",
+            AsyncJobStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CANCELED",
+            "CANCEL_IN_PROGRESS",
+            "COMPLETE",
+            "FAILED",
+            "IN_PROGRESS",
+            "IN_PROGRESS_INITIALIZING",
+        ]
+    }
+}
+impl AsRef<str> for AsyncJobStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The batch prediction details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3006,7 +3638,7 @@ pub struct BatchPrediction {
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>Timestamp of when the batch prediction job started.</p>
     pub start_time: std::option::Option<std::string::String>,
-    /// <p>Timestamp of when the batch prediction job comleted.</p>
+    /// <p>Timestamp of when the batch prediction job completed.</p>
     pub completion_time: std::option::Option<std::string::String>,
     /// <p>Timestamp of most recent heartbeat indicating the batch prediction job was making progress.</p>
     pub last_heartbeat_time: std::option::Option<std::string::String>,
@@ -3115,7 +3747,7 @@ pub mod batch_prediction {
             self.start_time = input;
             self
         }
-        /// <p>Timestamp of when the batch prediction job comleted.</p>
+        /// <p>Timestamp of when the batch prediction job completed.</p>
         pub fn completion_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.completion_time = Some(input.into());
             self
@@ -3258,72 +3890,230 @@ impl BatchPrediction {
     }
 }
 
+/// <p>The batch import job details.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum AsyncJobStatus {
-    Canceled,
-    CancelInProgress,
-    Complete,
-    Failed,
-    InProgress,
-    InProgressInitializing,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchImport {
+    /// <p>The ID of the batch import job. </p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The status of the batch import job.</p>
+    pub status: std::option::Option<crate::model::AsyncJobStatus>,
+    /// <p>The reason batch import job failed.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>Timestamp of when the batch import job started.</p>
+    pub start_time: std::option::Option<std::string::String>,
+    /// <p>Timestamp of when batch import job completed.</p>
+    pub completion_time: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 location of your data file for batch import.</p>
+    pub input_path: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 location of your output file.</p>
+    pub output_path: std::option::Option<std::string::String>,
+    /// <p>The name of the event type.</p>
+    pub event_type_name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the IAM role to use for this job request.</p>
+    pub iam_role_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the batch import job.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The number of records processed by batch import job.</p>
+    pub processed_records_count: std::option::Option<i32>,
+    /// <p>The number of records that failed to import. </p>
+    pub failed_records_count: std::option::Option<i32>,
+    /// <p>The total number of records in the batch import job.</p>
+    pub total_records_count: std::option::Option<i32>,
 }
-impl std::convert::From<&str> for AsyncJobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELED" => AsyncJobStatus::Canceled,
-            "CANCEL_IN_PROGRESS" => AsyncJobStatus::CancelInProgress,
-            "COMPLETE" => AsyncJobStatus::Complete,
-            "FAILED" => AsyncJobStatus::Failed,
-            "IN_PROGRESS" => AsyncJobStatus::InProgress,
-            "IN_PROGRESS_INITIALIZING" => AsyncJobStatus::InProgressInitializing,
-            other => AsyncJobStatus::Unknown(other.to_owned()),
+impl std::fmt::Debug for BatchImport {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchImport");
+        formatter.field("job_id", &self.job_id);
+        formatter.field("status", &self.status);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("completion_time", &self.completion_time);
+        formatter.field("input_path", &self.input_path);
+        formatter.field("output_path", &self.output_path);
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("iam_role_arn", &self.iam_role_arn);
+        formatter.field("arn", &self.arn);
+        formatter.field("processed_records_count", &self.processed_records_count);
+        formatter.field("failed_records_count", &self.failed_records_count);
+        formatter.field("total_records_count", &self.total_records_count);
+        formatter.finish()
+    }
+}
+/// See [`BatchImport`](crate::model::BatchImport)
+pub mod batch_import {
+    /// A builder for [`BatchImport`](crate::model::BatchImport)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::AsyncJobStatus>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) start_time: std::option::Option<std::string::String>,
+        pub(crate) completion_time: std::option::Option<std::string::String>,
+        pub(crate) input_path: std::option::Option<std::string::String>,
+        pub(crate) output_path: std::option::Option<std::string::String>,
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+        pub(crate) iam_role_arn: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) processed_records_count: std::option::Option<i32>,
+        pub(crate) failed_records_count: std::option::Option<i32>,
+        pub(crate) total_records_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The ID of the batch import job. </p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The status of the batch import job.</p>
+        pub fn status(mut self, input: crate::model::AsyncJobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AsyncJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The reason batch import job failed.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// <p>Timestamp of when the batch import job started.</p>
+        pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_time = Some(input.into());
+            self
+        }
+        pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>Timestamp of when batch import job completed.</p>
+        pub fn completion_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.completion_time = Some(input.into());
+            self
+        }
+        pub fn set_completion_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.completion_time = input;
+            self
+        }
+        /// <p>The Amazon S3 location of your data file for batch import.</p>
+        pub fn input_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_path = Some(input.into());
+            self
+        }
+        pub fn set_input_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_path = input;
+            self
+        }
+        /// <p>The Amazon S3 location of your output file.</p>
+        pub fn output_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_path = Some(input.into());
+            self
+        }
+        pub fn set_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_path = input;
+            self
+        }
+        /// <p>The name of the event type.</p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// <p>The ARN of the IAM role to use for this job request.</p>
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role_arn = Some(input.into());
+            self
+        }
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_role_arn = input;
+            self
+        }
+        /// <p>The ARN of the batch import job.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The number of records processed by batch import job.</p>
+        pub fn processed_records_count(mut self, input: i32) -> Self {
+            self.processed_records_count = Some(input);
+            self
+        }
+        pub fn set_processed_records_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.processed_records_count = input;
+            self
+        }
+        /// <p>The number of records that failed to import. </p>
+        pub fn failed_records_count(mut self, input: i32) -> Self {
+            self.failed_records_count = Some(input);
+            self
+        }
+        pub fn set_failed_records_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.failed_records_count = input;
+            self
+        }
+        /// <p>The total number of records in the batch import job.</p>
+        pub fn total_records_count(mut self, input: i32) -> Self {
+            self.total_records_count = Some(input);
+            self
+        }
+        pub fn set_total_records_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_records_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchImport`](crate::model::BatchImport)
+        pub fn build(self) -> crate::model::BatchImport {
+            crate::model::BatchImport {
+                job_id: self.job_id,
+                status: self.status,
+                failure_reason: self.failure_reason,
+                start_time: self.start_time,
+                completion_time: self.completion_time,
+                input_path: self.input_path,
+                output_path: self.output_path,
+                event_type_name: self.event_type_name,
+                iam_role_arn: self.iam_role_arn,
+                arn: self.arn,
+                processed_records_count: self.processed_records_count,
+                failed_records_count: self.failed_records_count,
+                total_records_count: self.total_records_count,
+            }
         }
     }
 }
-impl std::str::FromStr for AsyncJobStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AsyncJobStatus::from(s))
-    }
-}
-impl AsyncJobStatus {
-    pub fn as_str(&self) -> &str {
-        match self {
-            AsyncJobStatus::Canceled => "CANCELED",
-            AsyncJobStatus::CancelInProgress => "CANCEL_IN_PROGRESS",
-            AsyncJobStatus::Complete => "COMPLETE",
-            AsyncJobStatus::Failed => "FAILED",
-            AsyncJobStatus::InProgress => "IN_PROGRESS",
-            AsyncJobStatus::InProgressInitializing => "IN_PROGRESS_INITIALIZING",
-            AsyncJobStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "CANCELED",
-            "CANCEL_IN_PROGRESS",
-            "COMPLETE",
-            "FAILED",
-            "IN_PROGRESS",
-            "IN_PROGRESS_INITIALIZING",
-        ]
-    }
-}
-impl AsRef<str> for AsyncJobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
+impl BatchImport {
+    /// Creates a new builder-style object to manufacture [`BatchImport`](crate::model::BatchImport)
+    pub fn builder() -> crate::model::batch_import::Builder {
+        crate::model::batch_import::Builder::default()
     }
 }
 
@@ -3343,8 +4133,10 @@ pub struct ModelVersionDetail {
     pub training_data_source: std::option::Option<crate::model::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
     pub training_data_schema: std::option::Option<crate::model::TrainingDataSchema>,
-    /// <p>The event details.</p>
+    /// <p>The external events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as  <code>EXTERNAL_EVENTS</code>.</p>
     pub external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
+    /// <p>The ingested events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as  <code>INGESTED_EVENTS</code>.</p>
+    pub ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
     /// <p>The training results.</p>
     pub training_result: std::option::Option<crate::model::TrainingResult>,
     /// <p>The timestamp when the model was last updated.</p>
@@ -3364,6 +4156,7 @@ impl std::fmt::Debug for ModelVersionDetail {
         formatter.field("training_data_source", &self.training_data_source);
         formatter.field("training_data_schema", &self.training_data_schema);
         formatter.field("external_events_detail", &self.external_events_detail);
+        formatter.field("ingested_events_detail", &self.ingested_events_detail);
         formatter.field("training_result", &self.training_result);
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
@@ -3384,6 +4177,7 @@ pub mod model_version_detail {
         pub(crate) training_data_source: std::option::Option<crate::model::TrainingDataSourceEnum>,
         pub(crate) training_data_schema: std::option::Option<crate::model::TrainingDataSchema>,
         pub(crate) external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
+        pub(crate) ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
         pub(crate) training_result: std::option::Option<crate::model::TrainingResult>,
         pub(crate) last_updated_time: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<std::string::String>,
@@ -3456,7 +4250,7 @@ pub mod model_version_detail {
             self.training_data_schema = input;
             self
         }
-        /// <p>The event details.</p>
+        /// <p>The external events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as  <code>EXTERNAL_EVENTS</code>.</p>
         pub fn external_events_detail(mut self, input: crate::model::ExternalEventsDetail) -> Self {
             self.external_events_detail = Some(input);
             self
@@ -3466,6 +4260,18 @@ pub mod model_version_detail {
             input: std::option::Option<crate::model::ExternalEventsDetail>,
         ) -> Self {
             self.external_events_detail = input;
+            self
+        }
+        /// <p>The ingested events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as  <code>INGESTED_EVENTS</code>.</p>
+        pub fn ingested_events_detail(mut self, input: crate::model::IngestedEventsDetail) -> Self {
+            self.ingested_events_detail = Some(input);
+            self
+        }
+        pub fn set_ingested_events_detail(
+            mut self,
+            input: std::option::Option<crate::model::IngestedEventsDetail>,
+        ) -> Self {
+            self.ingested_events_detail = input;
             self
         }
         /// <p>The training results.</p>
@@ -3520,6 +4326,7 @@ pub mod model_version_detail {
                 training_data_source: self.training_data_source,
                 training_data_schema: self.training_data_schema,
                 external_events_detail: self.external_events_detail,
+                ingested_events_detail: self.ingested_events_detail,
                 training_result: self.training_result,
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,

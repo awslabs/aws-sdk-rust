@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use protocol_test_helpers::{validate_body, MediaType};
+use smithy_protocol_test::{validate_body, MediaType};
 use smithy_xml::encode;
 use smithy_xml::encode::ScopeWriter;
 

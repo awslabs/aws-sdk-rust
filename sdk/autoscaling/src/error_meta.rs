@@ -637,6 +637,9 @@ where
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeLoadBalancersErrorKind::InvalidNextToken(inner) => {
+                    Error::InvalidNextToken(inner)
+                }
                 crate::error::DescribeLoadBalancersErrorKind::ResourceContentionFault(inner) => {
                     Error::ResourceContentionFault(inner)
                 }
@@ -658,6 +661,7 @@ where
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeLoadBalancerTargetGroupsErrorKind::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
                 crate::error::DescribeLoadBalancerTargetGroupsErrorKind::ResourceContentionFault(inner) => Error::ResourceContentionFault(inner),
                 crate::error::DescribeLoadBalancerTargetGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }

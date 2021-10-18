@@ -290,6 +290,31 @@ where
         }
     }
 }
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::DeleteBackupVaultLockConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<
+            crate::error::DeleteBackupVaultLockConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteBackupVaultLockConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::DeleteBackupVaultLockConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::DeleteBackupVaultLockConfigurationErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+                crate::error::DeleteBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteBackupVaultLockConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::DeleteBackupVaultLockConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<smithy_http::result::SdkError<crate::error::DeleteBackupVaultNotificationsError, R>>
     for Error
 where
@@ -1282,6 +1307,27 @@ where
                 crate::error::PutBackupVaultAccessPolicyErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PutBackupVaultAccessPolicyErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::PutBackupVaultAccessPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::PutBackupVaultLockConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::PutBackupVaultLockConfigurationError, R>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutBackupVaultLockConfigurationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::PutBackupVaultLockConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::PutBackupVaultLockConfigurationErrorKind::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+                crate::error::PutBackupVaultLockConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::PutBackupVaultLockConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::PutBackupVaultLockConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

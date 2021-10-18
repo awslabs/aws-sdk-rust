@@ -22993,7 +22993,7 @@ impl CreateTransitGatewayOutput {
 pub struct CreateTrafficMirrorTargetOutput {
     /// <p>Information about the Traffic Mirror target.</p>
     pub traffic_mirror_target: std::option::Option<crate::model::TrafficMirrorTarget>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateTrafficMirrorTargetOutput {
@@ -23026,7 +23026,7 @@ pub mod create_traffic_mirror_target_output {
             self.traffic_mirror_target = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
@@ -23056,7 +23056,7 @@ impl CreateTrafficMirrorTargetOutput {
 pub struct CreateTrafficMirrorSessionOutput {
     /// <p>Information about the Traffic Mirror session.</p>
     pub traffic_mirror_session: std::option::Option<crate::model::TrafficMirrorSession>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateTrafficMirrorSessionOutput {
@@ -23089,7 +23089,7 @@ pub mod create_traffic_mirror_session_output {
             self.traffic_mirror_session = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
@@ -23119,7 +23119,7 @@ impl CreateTrafficMirrorSessionOutput {
 pub struct CreateTrafficMirrorFilterRuleOutput {
     /// <p>The Traffic Mirror rule.</p>
     pub traffic_mirror_filter_rule: std::option::Option<crate::model::TrafficMirrorFilterRule>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateTrafficMirrorFilterRuleOutput {
@@ -23159,7 +23159,7 @@ pub mod create_traffic_mirror_filter_rule_output {
             self.traffic_mirror_filter_rule = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
@@ -23189,7 +23189,7 @@ impl CreateTrafficMirrorFilterRuleOutput {
 pub struct CreateTrafficMirrorFilterOutput {
     /// <p>Information about the Traffic Mirror filter.</p>
     pub traffic_mirror_filter: std::option::Option<crate::model::TrafficMirrorFilter>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateTrafficMirrorFilterOutput {
@@ -23222,7 +23222,7 @@ pub mod create_traffic_mirror_filter_output {
             self.traffic_mirror_filter = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
@@ -28368,7 +28368,7 @@ pub struct AllocateAddressOutput {
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>The ID of an address pool.</p>
     pub public_ipv4_pool: std::option::Option<std::string::String>,
-    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises
+    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
     /// IP addresses.</p>
     pub network_border_group: std::option::Option<std::string::String>,
     /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
@@ -28445,7 +28445,7 @@ pub mod allocate_address_output {
             self.public_ipv4_pool = input;
             self
         }
-        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises
+        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
         /// IP addresses.</p>
         pub fn network_border_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_border_group = Some(input.into());

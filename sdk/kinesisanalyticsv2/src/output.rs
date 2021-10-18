@@ -350,7 +350,7 @@ pub struct ListApplicationVersionsOutput {
         std::option::Option<std::vec::Vec<crate::model::ApplicationVersionSummary>>,
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
     /// To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the AWS Command Line Interface's Pagination Options</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListApplicationVersionsOutput {
@@ -393,7 +393,7 @@ pub mod list_application_versions_output {
         }
         /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
         /// To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the AWS Command Line Interface's Pagination Options</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -494,7 +494,7 @@ pub struct ListApplicationsOutput {
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
     /// Pass this token into a subsequent command to retrieve the next set of items
     /// For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the AWS Command Line Interface's Pagination Options</a>.</p>
+    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListApplicationsOutput {
@@ -535,7 +535,7 @@ pub mod list_applications_output {
         /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results.
         /// Pass this token into a subsequent command to retrieve the next set of items
         /// For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the AWS Command Line Interface's Pagination Options</a>.</p>
+        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self

@@ -43,6 +43,9 @@ where
                 crate::error::BuildSuggestersErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::BuildSuggestersErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::BuildSuggestersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -101,6 +104,9 @@ where
                 crate::error::DefineAnalysisSchemeErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::DefineAnalysisSchemeErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::DefineAnalysisSchemeErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -130,6 +136,9 @@ where
                 }
                 crate::error::DefineExpressionErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DefineExpressionErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
                 }
                 crate::error::DefineExpressionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -161,6 +170,9 @@ where
                 crate::error::DefineIndexFieldErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::DefineIndexFieldErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::DefineIndexFieldErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -191,6 +203,9 @@ where
                 crate::error::DefineSuggesterErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::DefineSuggesterErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::DefineSuggesterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -217,6 +232,9 @@ where
                 }
                 crate::error::DeleteAnalysisSchemeErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteAnalysisSchemeErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
                 }
                 crate::error::DeleteAnalysisSchemeErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -264,6 +282,9 @@ where
                 crate::error::DeleteExpressionErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::DeleteExpressionErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::DeleteExpressionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -291,6 +312,9 @@ where
                 crate::error::DeleteIndexFieldErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::DeleteIndexFieldErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::DeleteIndexFieldErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -317,6 +341,9 @@ where
                 }
                 crate::error::DeleteSuggesterErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteSuggesterErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
                 }
                 crate::error::DeleteSuggesterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -568,6 +595,9 @@ where
                 crate::error::IndexDocumentsErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::IndexDocumentsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::IndexDocumentsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -692,6 +722,9 @@ where
                 crate::error::UpdateScalingParametersErrorKind::ResourceNotFoundException(
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateScalingParametersErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::UpdateScalingParametersErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -725,6 +758,9 @@ where
                 crate::error::UpdateServiceAccessPoliciesErrorKind::ResourceNotFoundException(
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateServiceAccessPoliciesErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
                 crate::error::UpdateServiceAccessPoliciesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }

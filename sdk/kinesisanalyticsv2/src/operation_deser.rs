@@ -860,6 +860,24 @@ pub fn parse_create_application_error(
                 tmp
             }),
         },
+        "UnsupportedOperationException" => crate::error::CreateApplicationError {
+            meta: generic,
+            kind: crate::error::CreateApplicationErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateApplicationError::generic(generic),
     })
 }
@@ -2332,6 +2350,20 @@ pub fn parse_discover_input_schema_error(
                     #[allow(unused_mut)]let mut output = crate::error::unable_to_detect_schema_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unable_to_detect_schema_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInputSchemaError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperationException" => crate::error::DiscoverInputSchemaError { meta: generic, kind: crate::error::DiscoverInputSchemaErrorKind::UnsupportedOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DiscoverInputSchemaError::unhandled)?;
                     output.build()
                 }
             ;

@@ -1,6 +1,6 @@
 {
   "name": "imds-token-fail",
-  "docs": "attempts to acquire an IMDS token, but the instance doesn't have a role configured",
+  "docs": "acquires credentials via IMDS and uses them to assume a role",
   "result": {
     "Ok": {
       "access_key_id": "ASIARCORRECT",

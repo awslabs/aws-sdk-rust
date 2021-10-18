@@ -55,6 +55,34 @@ impl smithy_http::response::ParseStrictResponse for CreateChannel {
     }
 }
 
+/// <p>Creates a new prefetch schedule for the specified playback configuration.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreatePrefetchSchedule {
+    _private: (),
+}
+impl CreatePrefetchSchedule {
+    /// Creates a new builder-style object to manufacture [`CreatePrefetchScheduleInput`](crate::input::CreatePrefetchScheduleInput)
+    pub fn builder() -> crate::input::create_prefetch_schedule_input::Builder {
+        crate::input::create_prefetch_schedule_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreatePrefetchSchedule {
+    type Output = std::result::Result<
+        crate::output::CreatePrefetchScheduleOutput,
+        crate::error::CreatePrefetchScheduleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_prefetch_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_create_prefetch_schedule_response(response)
+        }
+    }
+}
+
 /// <p>Creates a program.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateProgram {
@@ -215,6 +243,34 @@ impl smithy_http::response::ParseStrictResponse for DeletePlaybackConfiguration 
             crate::operation_deser::parse_delete_playback_configuration_error(response)
         } else {
             crate::operation_deser::parse_delete_playback_configuration_response(response)
+        }
+    }
+}
+
+/// <p>Deletes a prefetch schedule for a specific playback configuration. If you call DeletePrefetchSchedule on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeletePrefetchSchedule {
+    _private: (),
+}
+impl DeletePrefetchSchedule {
+    /// Creates a new builder-style object to manufacture [`DeletePrefetchScheduleInput`](crate::input::DeletePrefetchScheduleInput)
+    pub fn builder() -> crate::input::delete_prefetch_schedule_input::Builder {
+        crate::input::delete_prefetch_schedule_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeletePrefetchSchedule {
+    type Output = std::result::Result<
+        crate::output::DeletePrefetchScheduleOutput,
+        crate::error::DeletePrefetchScheduleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_prefetch_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_delete_prefetch_schedule_response(response)
         }
     }
 }
@@ -497,6 +553,34 @@ impl smithy_http::response::ParseStrictResponse for GetPlaybackConfiguration {
     }
 }
 
+/// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call GetPrefetchSchedule on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetPrefetchSchedule {
+    _private: (),
+}
+impl GetPrefetchSchedule {
+    /// Creates a new builder-style object to manufacture [`GetPrefetchScheduleInput`](crate::input::GetPrefetchScheduleInput)
+    pub fn builder() -> crate::input::get_prefetch_schedule_input::Builder {
+        crate::input::get_prefetch_schedule_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetPrefetchSchedule {
+    type Output = std::result::Result<
+        crate::output::GetPrefetchScheduleOutput,
+        crate::error::GetPrefetchScheduleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_prefetch_schedule_error(response)
+        } else {
+            crate::operation_deser::parse_get_prefetch_schedule_response(response)
+        }
+    }
+}
+
 /// <p>Returns a list of alerts for the given resource.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListAlerts {
@@ -573,6 +657,34 @@ impl smithy_http::response::ParseStrictResponse for ListPlaybackConfigurations {
             crate::operation_deser::parse_list_playback_configurations_error(response)
         } else {
             crate::operation_deser::parse_list_playback_configurations_response(response)
+        }
+    }
+}
+
+/// <p>Creates a new prefetch schedule.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListPrefetchSchedules {
+    _private: (),
+}
+impl ListPrefetchSchedules {
+    /// Creates a new builder-style object to manufacture [`ListPrefetchSchedulesInput`](crate::input::ListPrefetchSchedulesInput)
+    pub fn builder() -> crate::input::list_prefetch_schedules_input::Builder {
+        crate::input::list_prefetch_schedules_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListPrefetchSchedules {
+    type Output = std::result::Result<
+        crate::output::ListPrefetchSchedulesOutput,
+        crate::error::ListPrefetchSchedulesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_prefetch_schedules_error(response)
+        } else {
+            crate::operation_deser::parse_list_prefetch_schedules_response(response)
         }
     }
 }

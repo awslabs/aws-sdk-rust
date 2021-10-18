@@ -1105,6 +1105,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The type of IP address used for this target group. The possible values are
+        /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
+        /// the IP address type defaults to <code>ipv4</code>.</p>
+        pub fn ip_address_type(mut self, inp: crate::model::TargetGroupIpAddressTypeEnum) -> Self {
+            self.inner = self.inner.ip_address_type(inp);
+            self
+        }
+        pub fn set_ip_address_type(
+            mut self,
+            input: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
+        ) -> Self {
+            self.inner = self.inner.set_ip_address_type(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct DeleteListener<
@@ -1945,6 +1959,19 @@ pub mod fluent_builders {
         }
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
+            self
+        }
+        /// <p> The type of load balancer. The default lists the SSL policies for all load
+        /// balancers.</p>
+        pub fn load_balancer_type(mut self, inp: crate::model::LoadBalancerTypeEnum) -> Self {
+            self.inner = self.inner.load_balancer_type(inp);
+            self
+        }
+        pub fn set_load_balancer_type(
+            mut self,
+            input: std::option::Option<crate::model::LoadBalancerTypeEnum>,
+        ) -> Self {
+            self.inner = self.inner.set_load_balancer_type(input);
             self
         }
     }
@@ -3355,7 +3382,8 @@ pub mod fluent_builders {
 }
 impl<C> Client<C, aws_hyper::AwsMiddleware, smithy_client::retry::Standard> {
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
-        let client = aws_hyper::Client::new(conn);
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::new(conn).with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }
@@ -3375,7 +3403,8 @@ impl
 
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub fn from_conf(conf: crate::Config) -> Self {
-        let client = aws_hyper::Client::https();
+        let retry_config = conf.retry_config.as_ref().cloned().unwrap_or_default();
+        let client = aws_hyper::Client::https().with_retry_config(retry_config.into());
         Self {
             handle: std::sync::Arc::new(Handle { client, conf }),
         }

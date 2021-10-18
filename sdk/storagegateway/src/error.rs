@@ -7832,6 +7832,96 @@ impl std::error::Error for UpdateSMBFileShareVisibilityError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct UpdateSMBLocalGroupsError {
+    pub kind: UpdateSMBLocalGroupsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateSMBLocalGroupsErrorKind {
+    InternalServerError(crate::error::InternalServerError),
+    InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateSMBLocalGroupsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateSMBLocalGroupsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            UpdateSMBLocalGroupsErrorKind::InvalidGatewayRequestException(_inner) => _inner.fmt(f),
+            UpdateSMBLocalGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateSMBLocalGroupsError {
+    fn code(&self) -> Option<&str> {
+        UpdateSMBLocalGroupsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateSMBLocalGroupsError {
+    pub fn new(kind: UpdateSMBLocalGroupsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateSMBLocalGroupsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateSMBLocalGroupsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSMBLocalGroupsErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_invalid_gateway_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSMBLocalGroupsErrorKind::InvalidGatewayRequestException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateSMBLocalGroupsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateSMBLocalGroupsErrorKind::InternalServerError(_inner) => Some(_inner),
+            UpdateSMBLocalGroupsErrorKind::InvalidGatewayRequestException(_inner) => Some(_inner),
+            UpdateSMBLocalGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct UpdateSMBSecurityStrategyError {
     pub kind: UpdateSMBSecurityStrategyErrorKind,
     pub(crate) meta: smithy_types::Error,

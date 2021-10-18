@@ -255,6 +255,35 @@ impl UpdateModelOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateEventLabelOutput {}
+impl std::fmt::Debug for UpdateEventLabelOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateEventLabelOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput)
+pub mod update_event_label_output {
+    /// A builder for [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput)
+        pub fn build(self) -> crate::output::UpdateEventLabelOutput {
+            crate::output::UpdateEventLabelOutput {}
+        }
+    }
+}
+impl UpdateEventLabelOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput)
+    pub fn builder() -> crate::output::update_event_label_output::Builder {
+        crate::output::update_event_label_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDetectorVersionStatusOutput {}
 impl std::fmt::Debug for UpdateDetectorVersionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -395,6 +424,35 @@ impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SendEventOutput {}
+impl std::fmt::Debug for SendEventOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SendEventOutput");
+        formatter.finish()
+    }
+}
+/// See [`SendEventOutput`](crate::output::SendEventOutput)
+pub mod send_event_output {
+    /// A builder for [`SendEventOutput`](crate::output::SendEventOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`SendEventOutput`](crate::output::SendEventOutput)
+        pub fn build(self) -> crate::output::SendEventOutput {
+            crate::output::SendEventOutput {}
+        }
+    }
+}
+impl SendEventOutput {
+    /// Creates a new builder-style object to manufacture [`SendEventOutput`](crate::output::SendEventOutput)
+    pub fn builder() -> crate::output::send_event_output::Builder {
+        crate::output::send_event_output::Builder::default()
     }
 }
 
@@ -870,8 +928,13 @@ pub struct GetModelVersionOutput {
     pub training_data_source: std::option::Option<crate::model::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
     pub training_data_schema: std::option::Option<crate::model::TrainingDataSchema>,
-    /// <p>The event details.</p>
+    /// <p>The details of the external events data used for training the model version.
+    /// This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>
+    /// </p>
     pub external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
+    /// <p>The details of the ingested events data used for training the model version.
+    /// This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    pub ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
@@ -934,6 +997,7 @@ impl std::fmt::Debug for GetModelVersionOutput {
         formatter.field("training_data_source", &self.training_data_source);
         formatter.field("training_data_schema", &self.training_data_schema);
         formatter.field("external_events_detail", &self.external_events_detail);
+        formatter.field("ingested_events_detail", &self.ingested_events_detail);
         formatter.field("status", &self.status);
         formatter.field("arn", &self.arn);
         formatter.finish()
@@ -951,6 +1015,7 @@ pub mod get_model_version_output {
         pub(crate) training_data_source: std::option::Option<crate::model::TrainingDataSourceEnum>,
         pub(crate) training_data_schema: std::option::Option<crate::model::TrainingDataSchema>,
         pub(crate) external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
+        pub(crate) ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -1012,7 +1077,9 @@ pub mod get_model_version_output {
             self.training_data_schema = input;
             self
         }
-        /// <p>The event details.</p>
+        /// <p>The details of the external events data used for training the model version.
+        /// This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>
+        /// </p>
         pub fn external_events_detail(mut self, input: crate::model::ExternalEventsDetail) -> Self {
             self.external_events_detail = Some(input);
             self
@@ -1022,6 +1089,19 @@ pub mod get_model_version_output {
             input: std::option::Option<crate::model::ExternalEventsDetail>,
         ) -> Self {
             self.external_events_detail = input;
+            self
+        }
+        /// <p>The details of the ingested events data used for training the model version.
+        /// This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+        pub fn ingested_events_detail(mut self, input: crate::model::IngestedEventsDetail) -> Self {
+            self.ingested_events_detail = Some(input);
+            self
+        }
+        pub fn set_ingested_events_detail(
+            mut self,
+            input: std::option::Option<crate::model::IngestedEventsDetail>,
+        ) -> Self {
+            self.ingested_events_detail = input;
             self
         }
         /// <p>The model version status.</p>
@@ -1099,6 +1179,7 @@ pub mod get_model_version_output {
                 training_data_source: self.training_data_source,
                 training_data_schema: self.training_data_schema,
                 external_events_detail: self.external_events_detail,
+                ingested_events_detail: self.ingested_events_detail,
                 status: self.status,
                 arn: self.arn,
             }
@@ -1507,6 +1588,50 @@ impl GetEventPredictionOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEventOutput {
+    /// <p>The details of the event.</p>
+    pub event: std::option::Option<crate::model::Event>,
+}
+impl std::fmt::Debug for GetEventOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEventOutput");
+        formatter.field("event", &self.event);
+        formatter.finish()
+    }
+}
+/// See [`GetEventOutput`](crate::output::GetEventOutput)
+pub mod get_event_output {
+    /// A builder for [`GetEventOutput`](crate::output::GetEventOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event: std::option::Option<crate::model::Event>,
+    }
+    impl Builder {
+        /// <p>The details of the event.</p>
+        pub fn event(mut self, input: crate::model::Event) -> Self {
+            self.event = Some(input);
+            self
+        }
+        pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
+            self.event = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEventOutput`](crate::output::GetEventOutput)
+        pub fn build(self) -> crate::output::GetEventOutput {
+            crate::output::GetEventOutput { event: self.event }
+        }
+    }
+}
+impl GetEventOutput {
+    /// Creates a new builder-style object to manufacture [`GetEventOutput`](crate::output::GetEventOutput)
+    pub fn builder() -> crate::output::get_event_output::Builder {
+        crate::output::get_event_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEntityTypesOutput {
     /// <p>An array of entity types.</p>
     pub entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
@@ -1856,6 +1981,72 @@ impl GetDetectorsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDeleteEventsByEventTypeStatusOutput {
+    /// <p>The event type name.</p>
+    pub event_type_name: std::option::Option<std::string::String>,
+    /// <p>The deletion status.</p>
+    pub events_deletion_status: std::option::Option<crate::model::AsyncJobStatus>,
+}
+impl std::fmt::Debug for GetDeleteEventsByEventTypeStatusOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetDeleteEventsByEventTypeStatusOutput");
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("events_deletion_status", &self.events_deletion_status);
+        formatter.finish()
+    }
+}
+/// See [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput)
+pub mod get_delete_events_by_event_type_status_output {
+    /// A builder for [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+        pub(crate) events_deletion_status: std::option::Option<crate::model::AsyncJobStatus>,
+    }
+    impl Builder {
+        /// <p>The event type name.</p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// <p>The deletion status.</p>
+        pub fn events_deletion_status(mut self, input: crate::model::AsyncJobStatus) -> Self {
+            self.events_deletion_status = Some(input);
+            self
+        }
+        pub fn set_events_deletion_status(
+            mut self,
+            input: std::option::Option<crate::model::AsyncJobStatus>,
+        ) -> Self {
+            self.events_deletion_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput)
+        pub fn build(self) -> crate::output::GetDeleteEventsByEventTypeStatusOutput {
+            crate::output::GetDeleteEventsByEventTypeStatusOutput {
+                event_type_name: self.event_type_name,
+                events_deletion_status: self.events_deletion_status,
+            }
+        }
+    }
+}
+impl GetDeleteEventsByEventTypeStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput)
+    pub fn builder() -> crate::output::get_delete_events_by_event_type_status_output::Builder {
+        crate::output::get_delete_events_by_event_type_status_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBatchPredictionJobsOutput {
     /// <p>An array containing the details of each batch prediction job.</p>
     pub batch_predictions: std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
@@ -1919,6 +2110,70 @@ impl GetBatchPredictionJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetBatchPredictionJobsOutput`](crate::output::GetBatchPredictionJobsOutput)
     pub fn builder() -> crate::output::get_batch_prediction_jobs_output::Builder {
         crate::output::get_batch_prediction_jobs_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBatchImportJobsOutput {
+    /// <p>An array containing the details of each batch import job.</p>
+    pub batch_imports: std::option::Option<std::vec::Vec<crate::model::BatchImport>>,
+    /// <p>The next token for the subsequent resquest.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetBatchImportJobsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBatchImportJobsOutput");
+        formatter.field("batch_imports", &self.batch_imports);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput)
+pub mod get_batch_import_jobs_output {
+    /// A builder for [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) batch_imports: std::option::Option<std::vec::Vec<crate::model::BatchImport>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn batch_imports(mut self, input: impl Into<crate::model::BatchImport>) -> Self {
+            let mut v = self.batch_imports.unwrap_or_default();
+            v.push(input.into());
+            self.batch_imports = Some(v);
+            self
+        }
+        pub fn set_batch_imports(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchImport>>,
+        ) -> Self {
+            self.batch_imports = input;
+            self
+        }
+        /// <p>The next token for the subsequent resquest.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput)
+        pub fn build(self) -> crate::output::GetBatchImportJobsOutput {
+            crate::output::GetBatchImportJobsOutput {
+                batch_imports: self.batch_imports,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetBatchImportJobsOutput {
+    /// Creates a new builder-style object to manufacture [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput)
+    pub fn builder() -> crate::output::get_batch_import_jobs_output::Builder {
+        crate::output::get_batch_import_jobs_output::Builder::default()
     }
 }
 
@@ -2324,6 +2579,72 @@ impl DeleteEventTypeOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEventsByEventTypeOutput {
+    /// <p>Name of event type for which to delete the events.</p>
+    pub event_type_name: std::option::Option<std::string::String>,
+    /// <p>The status of the delete request.</p>
+    pub events_deletion_status: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteEventsByEventTypeOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEventsByEventTypeOutput");
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("events_deletion_status", &self.events_deletion_status);
+        formatter.finish()
+    }
+}
+/// See [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput)
+pub mod delete_events_by_event_type_output {
+    /// A builder for [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_type_name: std::option::Option<std::string::String>,
+        pub(crate) events_deletion_status: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Name of event type for which to delete the events.</p>
+        pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_type_name = Some(input.into());
+            self
+        }
+        pub fn set_event_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_type_name = input;
+            self
+        }
+        /// <p>The status of the delete request.</p>
+        pub fn events_deletion_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.events_deletion_status = Some(input.into());
+            self
+        }
+        pub fn set_events_deletion_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.events_deletion_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput)
+        pub fn build(self) -> crate::output::DeleteEventsByEventTypeOutput {
+            crate::output::DeleteEventsByEventTypeOutput {
+                event_type_name: self.event_type_name,
+                events_deletion_status: self.events_deletion_status,
+            }
+        }
+    }
+}
+impl DeleteEventsByEventTypeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput)
+    pub fn builder() -> crate::output::delete_events_by_event_type_output::Builder {
+        crate::output::delete_events_by_event_type_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventOutput {}
 impl std::fmt::Debug for DeleteEventOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2464,6 +2785,35 @@ impl DeleteBatchPredictionJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionJobOutput`](crate::output::DeleteBatchPredictionJobOutput)
     pub fn builder() -> crate::output::delete_batch_prediction_job_output::Builder {
         crate::output::delete_batch_prediction_job_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteBatchImportJobOutput {}
+impl std::fmt::Debug for DeleteBatchImportJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteBatchImportJobOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput)
+pub mod delete_batch_import_job_output {
+    /// A builder for [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput)
+        pub fn build(self) -> crate::output::DeleteBatchImportJobOutput {
+            crate::output::DeleteBatchImportJobOutput {}
+        }
+    }
+}
+impl DeleteBatchImportJobOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput)
+    pub fn builder() -> crate::output::delete_batch_import_job_output::Builder {
+        crate::output::delete_batch_import_job_output::Builder::default()
     }
 }
 
@@ -2774,6 +3124,35 @@ impl CreateBatchPredictionJobOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateBatchImportJobOutput {}
+impl std::fmt::Debug for CreateBatchImportJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBatchImportJobOutput");
+        formatter.finish()
+    }
+}
+/// See [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput)
+pub mod create_batch_import_job_output {
+    /// A builder for [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput)
+        pub fn build(self) -> crate::output::CreateBatchImportJobOutput {
+            crate::output::CreateBatchImportJobOutput {}
+        }
+    }
+}
+impl CreateBatchImportJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput)
+    pub fn builder() -> crate::output::create_batch_import_job_output::Builder {
+        crate::output::create_batch_import_job_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelBatchPredictionJobOutput {}
 impl std::fmt::Debug for CancelBatchPredictionJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2798,6 +3177,35 @@ impl CancelBatchPredictionJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelBatchPredictionJobOutput`](crate::output::CancelBatchPredictionJobOutput)
     pub fn builder() -> crate::output::cancel_batch_prediction_job_output::Builder {
         crate::output::cancel_batch_prediction_job_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelBatchImportJobOutput {}
+impl std::fmt::Debug for CancelBatchImportJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelBatchImportJobOutput");
+        formatter.finish()
+    }
+}
+/// See [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput)
+pub mod cancel_batch_import_job_output {
+    /// A builder for [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput)
+        pub fn build(self) -> crate::output::CancelBatchImportJobOutput {
+            crate::output::CancelBatchImportJobOutput {}
+        }
+    }
+}
+impl CancelBatchImportJobOutput {
+    /// Creates a new builder-style object to manufacture [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput)
+    pub fn builder() -> crate::output::cancel_batch_import_job_output::Builder {
+        crate::output::cancel_batch_import_job_output::Builder::default()
     }
 }
 

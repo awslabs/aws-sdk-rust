@@ -1,12 +1,11 @@
 [package]
 name = "aws-http"
-version = "0.1.0"
-authors = ["Russell Cohen <rcoh@amazon.com>"]
+version = "0.0.21-alpha"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
+description = "HTTP specific AWS SDK behaviors."
 edition = "2018"
-description = "HTTP specific AWS SDK behaviors"
 license = "Apache-2.0"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+repository = "https://github.com/awslabs/smithy-rs"
 
 [dependencies]
 aws-types = { path = "../aws-types" }

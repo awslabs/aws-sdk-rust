@@ -383,6 +383,243 @@ impl CreateChannelInput {
     }
 }
 
+/// See [`CreatePrefetchScheduleInput`](crate::input::CreatePrefetchScheduleInput)
+pub mod create_prefetch_schedule_input {
+    /// A builder for [`CreatePrefetchScheduleInput`](crate::input::CreatePrefetchScheduleInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) consumption: std::option::Option<crate::model::PrefetchConsumption>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
+        pub(crate) retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+        pub fn consumption(mut self, input: crate::model::PrefetchConsumption) -> Self {
+            self.consumption = Some(input);
+            self
+        }
+        pub fn set_consumption(
+            mut self,
+            input: std::option::Option<crate::model::PrefetchConsumption>,
+        ) -> Self {
+            self.consumption = input;
+            self
+        }
+        /// <p>The identifier for the playback configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the playback configuration.</p>
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = Some(input.into());
+            self
+        }
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = input;
+            self
+        }
+        /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+        pub fn retrieval(mut self, input: crate::model::PrefetchRetrieval) -> Self {
+            self.retrieval = Some(input);
+            self
+        }
+        pub fn set_retrieval(
+            mut self,
+            input: std::option::Option<crate::model::PrefetchRetrieval>,
+        ) -> Self {
+            self.retrieval = input;
+            self
+        }
+        /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
+            self
+        }
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreatePrefetchScheduleInput`](crate::input::CreatePrefetchScheduleInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreatePrefetchScheduleInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreatePrefetchScheduleInput {
+                consumption: self.consumption,
+                name: self.name,
+                playback_configuration_name: self.playback_configuration_name,
+                retrieval: self.retrieval,
+                stream_id: self.stream_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreatePrefetchScheduleInputOperationOutputAlias = crate::operation::CreatePrefetchSchedule;
+#[doc(hidden)]
+pub type CreatePrefetchScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl CreatePrefetchScheduleInput {
+    /// Consumes the builder and constructs an Operation<[`CreatePrefetchSchedule`](crate::operation::CreatePrefetchSchedule)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::CreatePrefetchSchedule,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreatePrefetchScheduleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_2 = &_input.playback_configuration_name;
+            let input_2 =
+                input_2
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "playback_configuration_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let playback_configuration_name = smithy_http::label::fmt_string(input_2, false);
+            if playback_configuration_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "playback_configuration_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_3 = &_input.name;
+            let input_3 =
+                input_3
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let name = smithy_http::label::fmt_string(input_3, false);
+            if name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/prefetchSchedule/{PlaybackConfigurationName}/{Name}",
+                PlaybackConfigurationName = playback_configuration_name,
+                Name = name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreatePrefetchScheduleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreatePrefetchScheduleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_prefetch_schedule(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreatePrefetchSchedule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "CreatePrefetchSchedule",
+            "mediatailor",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreatePrefetchScheduleInput`](crate::input::CreatePrefetchScheduleInput)
+    pub fn builder() -> crate::input::create_prefetch_schedule_input::Builder {
+        crate::input::create_prefetch_schedule_input::Builder::default()
+    }
+}
+
 /// See [`CreateProgramInput`](crate::input::CreateProgramInput)
 pub mod create_program_input {
     /// A builder for [`CreateProgramInput`](crate::input::CreateProgramInput)
@@ -504,30 +741,30 @@ impl CreateProgramInput {
             _input: &crate::input::CreateProgramInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_2 = &_input.channel_name;
-            let input_2 =
-                input_2
+            let input_4 = &_input.channel_name;
+            let input_4 =
+                input_4
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_2, false);
+            let channel_name = smithy_http::label::fmt_string(input_4, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_3 = &_input.program_name;
-            let input_3 =
-                input_3
+            let input_5 = &_input.program_name;
+            let input_5 =
+                input_5
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
                         details: "cannot be empty or unset",
                     })?;
-            let program_name = smithy_http::label::fmt_string(input_3, false);
+            let program_name = smithy_http::label::fmt_string(input_5, false);
             if program_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "program_name",
@@ -752,15 +989,15 @@ impl CreateSourceLocationInput {
             _input: &crate::input::CreateSourceLocationInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_4 = &_input.source_location_name;
-            let input_4 =
-                input_4
+            let input_6 = &_input.source_location_name;
+            let input_6 =
+                input_6
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     })?;
-            let source_location_name = smithy_http::label::fmt_string(input_4, false);
+            let source_location_name = smithy_http::label::fmt_string(input_6, false);
             if source_location_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
@@ -976,30 +1213,30 @@ impl CreateVodSourceInput {
             _input: &crate::input::CreateVodSourceInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_5 = &_input.source_location_name;
-            let input_5 =
-                input_5
+            let input_7 = &_input.source_location_name;
+            let input_7 =
+                input_7
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     })?;
-            let source_location_name = smithy_http::label::fmt_string(input_5, false);
+            let source_location_name = smithy_http::label::fmt_string(input_7, false);
             if source_location_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_6 = &_input.vod_source_name;
-            let input_6 =
-                input_6
+            let input_8 = &_input.vod_source_name;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
                         details: "cannot be empty or unset",
                     })?;
-            let vod_source_name = smithy_http::label::fmt_string(input_6, false);
+            let vod_source_name = smithy_http::label::fmt_string(input_8, false);
             if vod_source_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "vod_source_name",
@@ -1155,15 +1392,15 @@ impl DeleteChannelInput {
             _input: &crate::input::DeleteChannelInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_7 = &_input.channel_name;
-            let input_7 =
-                input_7
+            let input_9 = &_input.channel_name;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_7, false);
+            let channel_name = smithy_http::label::fmt_string(input_9, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
@@ -1310,15 +1547,15 @@ impl DeleteChannelPolicyInput {
             _input: &crate::input::DeleteChannelPolicyInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_8 = &_input.channel_name;
-            let input_8 =
-                input_8
+            let input_10 = &_input.channel_name;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_8, false);
+            let channel_name = smithy_http::label::fmt_string(input_10, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
@@ -1470,15 +1707,15 @@ impl DeletePlaybackConfigurationInput {
             _input: &crate::input::DeletePlaybackConfigurationInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_9 = &_input.name;
-            let input_9 =
-                input_9
+            let input_11 = &_input.name;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_9, false);
+            let name = smithy_http::label::fmt_string(input_11, false);
             if name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -1575,6 +1812,200 @@ impl DeletePlaybackConfigurationInput {
     }
 }
 
+/// See [`DeletePrefetchScheduleInput`](crate::input::DeletePrefetchScheduleInput)
+pub mod delete_prefetch_schedule_input {
+    /// A builder for [`DeletePrefetchScheduleInput`](crate::input::DeletePrefetchScheduleInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the playback configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the playback configuration.</p>
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = Some(input.into());
+            self
+        }
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeletePrefetchScheduleInput`](crate::input::DeletePrefetchScheduleInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeletePrefetchScheduleInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeletePrefetchScheduleInput {
+                name: self.name,
+                playback_configuration_name: self.playback_configuration_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeletePrefetchScheduleInputOperationOutputAlias = crate::operation::DeletePrefetchSchedule;
+#[doc(hidden)]
+pub type DeletePrefetchScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeletePrefetchScheduleInput {
+    /// Consumes the builder and constructs an Operation<[`DeletePrefetchSchedule`](crate::operation::DeletePrefetchSchedule)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DeletePrefetchSchedule,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeletePrefetchScheduleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_12 = &_input.playback_configuration_name;
+            let input_12 =
+                input_12
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "playback_configuration_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let playback_configuration_name = smithy_http::label::fmt_string(input_12, false);
+            if playback_configuration_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "playback_configuration_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_13 = &_input.name;
+            let input_13 =
+                input_13
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let name = smithy_http::label::fmt_string(input_13, false);
+            if name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/prefetchSchedule/{PlaybackConfigurationName}/{Name}",
+                PlaybackConfigurationName = playback_configuration_name,
+                Name = name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeletePrefetchScheduleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeletePrefetchScheduleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeletePrefetchSchedule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "DeletePrefetchSchedule",
+            "mediatailor",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeletePrefetchScheduleInput`](crate::input::DeletePrefetchScheduleInput)
+    pub fn builder() -> crate::input::delete_prefetch_schedule_input::Builder {
+        crate::input::delete_prefetch_schedule_input::Builder::default()
+    }
+}
+
 /// See [`DeleteProgramInput`](crate::input::DeleteProgramInput)
 pub mod delete_program_input {
     /// A builder for [`DeleteProgramInput`](crate::input::DeleteProgramInput)
@@ -1636,30 +2067,30 @@ impl DeleteProgramInput {
             _input: &crate::input::DeleteProgramInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_10 = &_input.channel_name;
-            let input_10 =
-                input_10
+            let input_14 = &_input.channel_name;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_10, false);
+            let channel_name = smithy_http::label::fmt_string(input_14, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_11 = &_input.program_name;
-            let input_11 =
-                input_11
+            let input_15 = &_input.program_name;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
                         details: "cannot be empty or unset",
                     })?;
-            let program_name = smithy_http::label::fmt_string(input_11, false);
+            let program_name = smithy_http::label::fmt_string(input_15, false);
             if program_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "program_name",
@@ -1814,15 +2245,15 @@ impl DeleteSourceLocationInput {
             _input: &crate::input::DeleteSourceLocationInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_12 = &_input.source_location_name;
-            let input_12 =
-                input_12
+            let input_16 = &_input.source_location_name;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     })?;
-            let source_location_name = smithy_http::label::fmt_string(input_12, false);
+            let source_location_name = smithy_http::label::fmt_string(input_16, false);
             if source_location_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
@@ -1992,30 +2423,30 @@ impl DeleteVodSourceInput {
             _input: &crate::input::DeleteVodSourceInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_13 = &_input.source_location_name;
-            let input_13 =
-                input_13
+            let input_17 = &_input.source_location_name;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     })?;
-            let source_location_name = smithy_http::label::fmt_string(input_13, false);
+            let source_location_name = smithy_http::label::fmt_string(input_17, false);
             if source_location_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_14 = &_input.vod_source_name;
-            let input_14 =
-                input_14
+            let input_18 = &_input.vod_source_name;
+            let input_18 =
+                input_18
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
                         details: "cannot be empty or unset",
                     })?;
-            let vod_source_name = smithy_http::label::fmt_string(input_14, false);
+            let vod_source_name = smithy_http::label::fmt_string(input_18, false);
             if vod_source_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "vod_source_name",
@@ -2169,15 +2600,15 @@ impl DescribeChannelInput {
             _input: &crate::input::DescribeChannelInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_15 = &_input.channel_name;
-            let input_15 =
-                input_15
+            let input_19 = &_input.channel_name;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_15, false);
+            let channel_name = smithy_http::label::fmt_string(input_19, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
@@ -2337,30 +2768,30 @@ impl DescribeProgramInput {
             _input: &crate::input::DescribeProgramInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_16 = &_input.channel_name;
-            let input_16 =
-                input_16
+            let input_20 = &_input.channel_name;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_16, false);
+            let channel_name = smithy_http::label::fmt_string(input_20, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_17 = &_input.program_name;
-            let input_17 =
-                input_17
+            let input_21 = &_input.program_name;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
                         details: "cannot be empty or unset",
                     })?;
-            let program_name = smithy_http::label::fmt_string(input_17, false);
+            let program_name = smithy_http::label::fmt_string(input_21, false);
             if program_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "program_name",
@@ -2517,15 +2948,15 @@ impl DescribeSourceLocationInput {
             _input: &crate::input::DescribeSourceLocationInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_18 = &_input.source_location_name;
-            let input_18 =
-                input_18
+            let input_22 = &_input.source_location_name;
+            let input_22 =
+                input_22
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     })?;
-            let source_location_name = smithy_http::label::fmt_string(input_18, false);
+            let source_location_name = smithy_http::label::fmt_string(input_22, false);
             if source_location_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
@@ -2695,30 +3126,30 @@ impl DescribeVodSourceInput {
             _input: &crate::input::DescribeVodSourceInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_19 = &_input.source_location_name;
-            let input_19 =
-                input_19
+            let input_23 = &_input.source_location_name;
+            let input_23 =
+                input_23
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     })?;
-            let source_location_name = smithy_http::label::fmt_string(input_19, false);
+            let source_location_name = smithy_http::label::fmt_string(input_23, false);
             if source_location_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_20 = &_input.vod_source_name;
-            let input_20 =
-                input_20
+            let input_24 = &_input.vod_source_name;
+            let input_24 =
+                input_24
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
                         details: "cannot be empty or unset",
                     })?;
-            let vod_source_name = smithy_http::label::fmt_string(input_20, false);
+            let vod_source_name = smithy_http::label::fmt_string(input_24, false);
             if vod_source_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "vod_source_name",
@@ -2872,15 +3303,15 @@ impl GetChannelPolicyInput {
             _input: &crate::input::GetChannelPolicyInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_21 = &_input.channel_name;
-            let input_21 =
-                input_21
+            let input_25 = &_input.channel_name;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_21, false);
+            let channel_name = smithy_http::label::fmt_string(input_25, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
@@ -3069,15 +3500,15 @@ impl GetChannelScheduleInput {
             _input: &crate::input::GetChannelScheduleInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_22 = &_input.channel_name;
-            let input_22 =
-                input_22
+            let input_26 = &_input.channel_name;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_22, false);
+            let channel_name = smithy_http::label::fmt_string(input_26, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
@@ -3094,10 +3525,10 @@ impl GetChannelScheduleInput {
         }
         fn uri_query(_input: &crate::input::GetChannelScheduleInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_23) = &_input.duration_minutes {
+            if let Some(inner_27) = &_input.duration_minutes {
                 query.push_kv(
                     "durationMinutes",
-                    &smithy_http::query::fmt_string(&inner_23),
+                    &smithy_http::query::fmt_string(&inner_27),
                 );
             }
             if _input.max_results != 0 {
@@ -3106,8 +3537,8 @@ impl GetChannelScheduleInput {
                     &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_24) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_24));
+            if let Some(inner_28) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_28));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3248,15 +3679,15 @@ impl GetPlaybackConfigurationInput {
             _input: &crate::input::GetPlaybackConfigurationInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_25 = &_input.name;
-            let input_25 =
-                input_25
+            let input_29 = &_input.name;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_25, false);
+            let name = smithy_http::label::fmt_string(input_29, false);
             if name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -3353,6 +3784,200 @@ impl GetPlaybackConfigurationInput {
     }
 }
 
+/// See [`GetPrefetchScheduleInput`](crate::input::GetPrefetchScheduleInput)
+pub mod get_prefetch_schedule_input {
+    /// A builder for [`GetPrefetchScheduleInput`](crate::input::GetPrefetchScheduleInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the playback configuration.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the playback configuration.</p>
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = Some(input.into());
+            self
+        }
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetPrefetchScheduleInput`](crate::input::GetPrefetchScheduleInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetPrefetchScheduleInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetPrefetchScheduleInput {
+                name: self.name,
+                playback_configuration_name: self.playback_configuration_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetPrefetchScheduleInputOperationOutputAlias = crate::operation::GetPrefetchSchedule;
+#[doc(hidden)]
+pub type GetPrefetchScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetPrefetchScheduleInput {
+    /// Consumes the builder and constructs an Operation<[`GetPrefetchSchedule`](crate::operation::GetPrefetchSchedule)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetPrefetchSchedule,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetPrefetchScheduleInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_30 = &_input.playback_configuration_name;
+            let input_30 =
+                input_30
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "playback_configuration_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let playback_configuration_name = smithy_http::label::fmt_string(input_30, false);
+            if playback_configuration_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "playback_configuration_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_31 = &_input.name;
+            let input_31 =
+                input_31
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let name = smithy_http::label::fmt_string(input_31, false);
+            if name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/prefetchSchedule/{PlaybackConfigurationName}/{Name}",
+                PlaybackConfigurationName = playback_configuration_name,
+                Name = name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetPrefetchScheduleInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetPrefetchScheduleInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetPrefetchSchedule::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "GetPrefetchSchedule",
+            "mediatailor",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetPrefetchScheduleInput`](crate::input::GetPrefetchScheduleInput)
+    pub fn builder() -> crate::input::get_prefetch_schedule_input::Builder {
+        crate::input::get_prefetch_schedule_input::Builder::default()
+    }
+}
+
 /// See [`ListAlertsInput`](crate::input::ListAlertsInput)
 pub mod list_alerts_input {
     /// A builder for [`ListAlertsInput`](crate::input::ListAlertsInput)
@@ -3436,11 +4061,11 @@ impl ListAlertsInput {
                     &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_26) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_26));
+            if let Some(inner_32) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_32));
             }
-            if let Some(inner_27) = &_input.resource_arn {
-                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_27));
+            if let Some(inner_33) = &_input.resource_arn {
+                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_33));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3600,8 +4225,8 @@ impl ListChannelsInput {
                     &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_28) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_28));
+            if let Some(inner_34) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_34));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3767,8 +4392,8 @@ impl ListPlaybackConfigurationsInput {
                     &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_29) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_29));
+            if let Some(inner_35) = &_input.next_token {
+                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_35));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3858,6 +4483,210 @@ impl ListPlaybackConfigurationsInput {
     }
 }
 
+/// See [`ListPrefetchSchedulesInput`](crate::input::ListPrefetchSchedulesInput)
+pub mod list_prefetch_schedules_input {
+    /// A builder for [`ListPrefetchSchedulesInput`](crate::input::ListPrefetchSchedulesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
+        pub(crate) stream_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The name of the playback configuration.</p>
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = Some(input.into());
+            self
+        }
+        pub fn set_playback_configuration_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.playback_configuration_name = input;
+            self
+        }
+        /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
+            self
+        }
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListPrefetchSchedulesInput`](crate::input::ListPrefetchSchedulesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListPrefetchSchedulesInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListPrefetchSchedulesInput {
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+                playback_configuration_name: self.playback_configuration_name,
+                stream_id: self.stream_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListPrefetchSchedulesInputOperationOutputAlias = crate::operation::ListPrefetchSchedules;
+#[doc(hidden)]
+pub type ListPrefetchSchedulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListPrefetchSchedulesInput {
+    /// Consumes the builder and constructs an Operation<[`ListPrefetchSchedules`](crate::operation::ListPrefetchSchedules)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListPrefetchSchedules,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListPrefetchSchedulesInput,
+            output: &mut String,
+        ) -> Result<(), smithy_http::operation::BuildError> {
+            let input_36 = &_input.playback_configuration_name;
+            let input_36 =
+                input_36
+                    .as_ref()
+                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                        field: "playback_configuration_name",
+                        details: "cannot be empty or unset",
+                    })?;
+            let playback_configuration_name = smithy_http::label::fmt_string(input_36, false);
+            if playback_configuration_name.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "playback_configuration_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/prefetchSchedule/{PlaybackConfigurationName}",
+                PlaybackConfigurationName = playback_configuration_name
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListPrefetchSchedulesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListPrefetchSchedulesInput,
+        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        {
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_prefetch_schedules(
+                &self,
+            )
+            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = smithy_http::operation::Request::from_parts(
+            request.map(smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPrefetchSchedules::new(),
+        )
+        .with_metadata(smithy_http::operation::Metadata::new(
+            "ListPrefetchSchedules",
+            "mediatailor",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListPrefetchSchedulesInput`](crate::input::ListPrefetchSchedulesInput)
+    pub fn builder() -> crate::input::list_prefetch_schedules_input::Builder {
+        crate::input::list_prefetch_schedules_input::Builder::default()
+    }
+}
+
 /// See [`ListSourceLocationsInput`](crate::input::ListSourceLocationsInput)
 pub mod list_source_locations_input {
     /// A builder for [`ListSourceLocationsInput`](crate::input::ListSourceLocationsInput)
@@ -3932,8 +4761,8 @@ impl ListSourceLocationsInput {
                     &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_30) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_30));
+            if let Some(inner_37) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_37));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4075,15 +4904,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_31 = &_input.resource_arn;
-            let input_31 =
-                input_31
+            let input_38 = &_input.resource_arn;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_31, false);
+            let resource_arn = smithy_http::label::fmt_string(input_38, false);
             if resource_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -4257,15 +5086,15 @@ impl ListVodSourcesInput {
             _input: &crate::input::ListVodSourcesInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_32 = &_input.source_location_name;
-            let input_32 =
-                input_32
+            let input_39 = &_input.source_location_name;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     })?;
-            let source_location_name = smithy_http::label::fmt_string(input_32, false);
+            let source_location_name = smithy_http::label::fmt_string(input_39, false);
             if source_location_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
@@ -4288,8 +5117,8 @@ impl ListVodSourcesInput {
                     &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_33) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_33));
+            if let Some(inner_40) = &_input.next_token {
+                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_40));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4442,15 +5271,15 @@ impl PutChannelPolicyInput {
             _input: &crate::input::PutChannelPolicyInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_34 = &_input.channel_name;
-            let input_34 =
-                input_34
+            let input_41 = &_input.channel_name;
+            let input_41 =
+                input_41
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_34, false);
+            let channel_name = smithy_http::label::fmt_string(input_41, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
@@ -4961,15 +5790,15 @@ impl StartChannelInput {
             _input: &crate::input::StartChannelInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_35 = &_input.channel_name;
-            let input_35 =
-                input_35
+            let input_42 = &_input.channel_name;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_35, false);
+            let channel_name = smithy_http::label::fmt_string(input_42, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
@@ -5118,15 +5947,15 @@ impl StopChannelInput {
             _input: &crate::input::StopChannelInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_36 = &_input.channel_name;
-            let input_36 =
-                input_36
+            let input_43 = &_input.channel_name;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_36, false);
+            let channel_name = smithy_http::label::fmt_string(input_43, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
@@ -5298,15 +6127,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_37 = &_input.resource_arn;
-            let input_37 =
-                input_37
+            let input_44 = &_input.resource_arn;
+            let input_44 =
+                input_44
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_37, false);
+            let resource_arn = smithy_http::label::fmt_string(input_44, false);
             if resource_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -5467,15 +6296,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_38 = &_input.resource_arn;
-            let input_38 =
-                input_38
+            let input_45 = &_input.resource_arn;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_38, false);
+            let resource_arn = smithy_http::label::fmt_string(input_45, false);
             if resource_arn.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -5488,9 +6317,9 @@ impl UntagResourceInput {
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
             let mut query = smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_39) = &_input.tag_keys {
-                for inner_40 in inner_39 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_40));
+            if let Some(inner_46) = &_input.tag_keys {
+                for inner_47 in inner_46 {
+                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_47));
                 }
             }
         }
@@ -5644,15 +6473,15 @@ impl UpdateChannelInput {
             _input: &crate::input::UpdateChannelInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_41 = &_input.channel_name;
-            let input_41 =
-                input_41
+            let input_48 = &_input.channel_name;
+            let input_48 =
+                input_48
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "channel_name",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_name = smithy_http::label::fmt_string(input_41, false);
+            let channel_name = smithy_http::label::fmt_string(input_48, false);
             if channel_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
@@ -5849,15 +6678,15 @@ impl UpdateSourceLocationInput {
             _input: &crate::input::UpdateSourceLocationInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_42 = &_input.source_location_name;
-            let input_42 =
-                input_42
+            let input_49 = &_input.source_location_name;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     })?;
-            let source_location_name = smithy_http::label::fmt_string(input_42, false);
+            let source_location_name = smithy_http::label::fmt_string(input_49, false);
             if source_location_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
@@ -6050,30 +6879,30 @@ impl UpdateVodSourceInput {
             _input: &crate::input::UpdateVodSourceInput,
             output: &mut String,
         ) -> Result<(), smithy_http::operation::BuildError> {
-            let input_43 = &_input.source_location_name;
-            let input_43 =
-                input_43
+            let input_50 = &_input.source_location_name;
+            let input_50 =
+                input_50
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "source_location_name",
                         details: "cannot be empty or unset",
                     })?;
-            let source_location_name = smithy_http::label::fmt_string(input_43, false);
+            let source_location_name = smithy_http::label::fmt_string(input_50, false);
             if source_location_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_44 = &_input.vod_source_name;
-            let input_44 =
-                input_44
+            let input_51 = &_input.vod_source_name;
+            let input_51 =
+                input_51
                     .as_ref()
                     .ok_or(smithy_http::operation::BuildError::MissingField {
                         field: "vod_source_name",
                         details: "cannot be empty or unset",
                     })?;
-            let vod_source_name = smithy_http::label::fmt_string(input_44, false);
+            let vod_source_name = smithy_http::label::fmt_string(input_51, false);
             if vod_source_name.is_empty() {
                 return Err(smithy_http::operation::BuildError::MissingField {
                     field: "vod_source_name",
@@ -6445,6 +7274,32 @@ impl std::fmt::Debug for ListSourceLocationsInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListPrefetchSchedulesInput {
+    /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
+    pub max_results: i32,
+    /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The name of the playback configuration.</p>
+    pub playback_configuration_name: std::option::Option<std::string::String>,
+    /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
+    pub stream_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListPrefetchSchedulesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListPrefetchSchedulesInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.field(
+            "playback_configuration_name",
+            &self.playback_configuration_name,
+        );
+        formatter.field("stream_id", &self.stream_id);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaybackConfigurationsInput {
     /// <p>Maximum number of records to return.</p>
     pub max_results: i32,
@@ -6493,6 +7348,26 @@ impl std::fmt::Debug for ListAlertsInput {
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
         formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetPrefetchScheduleInput {
+    /// <p>The identifier for the playback configuration.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the playback configuration.</p>
+    pub playback_configuration_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetPrefetchScheduleInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetPrefetchScheduleInput");
+        formatter.field("name", &self.name);
+        formatter.field(
+            "playback_configuration_name",
+            &self.playback_configuration_name,
+        );
         formatter.finish()
     }
 }
@@ -6660,6 +7535,26 @@ impl std::fmt::Debug for DeleteProgramInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePrefetchScheduleInput {
+    /// <p>The identifier for the playback configuration.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the playback configuration.</p>
+    pub playback_configuration_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeletePrefetchScheduleInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeletePrefetchScheduleInput");
+        formatter.field("name", &self.name);
+        formatter.field(
+            "playback_configuration_name",
+            &self.playback_configuration_name,
+        );
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlaybackConfigurationInput {
     /// <p>The identifier for the playback configuration.</p>
     pub name: std::option::Option<std::string::String>,
@@ -6784,6 +7679,35 @@ impl std::fmt::Debug for CreateProgramInput {
         formatter.field("schedule_configuration", &self.schedule_configuration);
         formatter.field("source_location_name", &self.source_location_name);
         formatter.field("vod_source_name", &self.vod_source_name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreatePrefetchScheduleInput {
+    /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+    pub consumption: std::option::Option<crate::model::PrefetchConsumption>,
+    /// <p>The identifier for the playback configuration.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the playback configuration.</p>
+    pub playback_configuration_name: std::option::Option<std::string::String>,
+    /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+    pub retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
+    /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
+    pub stream_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreatePrefetchScheduleInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreatePrefetchScheduleInput");
+        formatter.field("consumption", &self.consumption);
+        formatter.field("name", &self.name);
+        formatter.field(
+            "playback_configuration_name",
+            &self.playback_configuration_name,
+        );
+        formatter.field("retrieval", &self.retrieval);
+        formatter.field("stream_id", &self.stream_id);
         formatter.finish()
     }
 }

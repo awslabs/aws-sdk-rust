@@ -42176,6 +42176,141 @@ impl AsRef<str> for AccelerationMode {
     }
 }
 
+/// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Policy {
+    /// Allow or disallow jobs that specify HTTP inputs.
+    pub http_inputs: std::option::Option<crate::model::InputPolicy>,
+    /// Allow or disallow jobs that specify HTTPS inputs.
+    pub https_inputs: std::option::Option<crate::model::InputPolicy>,
+    /// Allow or disallow jobs that specify Amazon S3 inputs.
+    pub s3_inputs: std::option::Option<crate::model::InputPolicy>,
+}
+impl std::fmt::Debug for Policy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Policy");
+        formatter.field("http_inputs", &self.http_inputs);
+        formatter.field("https_inputs", &self.https_inputs);
+        formatter.field("s3_inputs", &self.s3_inputs);
+        formatter.finish()
+    }
+}
+/// See [`Policy`](crate::model::Policy)
+pub mod policy {
+    /// A builder for [`Policy`](crate::model::Policy)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) http_inputs: std::option::Option<crate::model::InputPolicy>,
+        pub(crate) https_inputs: std::option::Option<crate::model::InputPolicy>,
+        pub(crate) s3_inputs: std::option::Option<crate::model::InputPolicy>,
+    }
+    impl Builder {
+        /// Allow or disallow jobs that specify HTTP inputs.
+        pub fn http_inputs(mut self, input: crate::model::InputPolicy) -> Self {
+            self.http_inputs = Some(input);
+            self
+        }
+        pub fn set_http_inputs(
+            mut self,
+            input: std::option::Option<crate::model::InputPolicy>,
+        ) -> Self {
+            self.http_inputs = input;
+            self
+        }
+        /// Allow or disallow jobs that specify HTTPS inputs.
+        pub fn https_inputs(mut self, input: crate::model::InputPolicy) -> Self {
+            self.https_inputs = Some(input);
+            self
+        }
+        pub fn set_https_inputs(
+            mut self,
+            input: std::option::Option<crate::model::InputPolicy>,
+        ) -> Self {
+            self.https_inputs = input;
+            self
+        }
+        /// Allow or disallow jobs that specify Amazon S3 inputs.
+        pub fn s3_inputs(mut self, input: crate::model::InputPolicy) -> Self {
+            self.s3_inputs = Some(input);
+            self
+        }
+        pub fn set_s3_inputs(
+            mut self,
+            input: std::option::Option<crate::model::InputPolicy>,
+        ) -> Self {
+            self.s3_inputs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Policy`](crate::model::Policy)
+        pub fn build(self) -> crate::model::Policy {
+            crate::model::Policy {
+                http_inputs: self.http_inputs,
+                https_inputs: self.https_inputs,
+                s3_inputs: self.s3_inputs,
+            }
+        }
+    }
+}
+impl Policy {
+    /// Creates a new builder-style object to manufacture [`Policy`](crate::model::Policy)
+    pub fn builder() -> crate::model::policy::Builder {
+        crate::model::policy::Builder::default()
+    }
+}
+
+/// An input policy allows or disallows a job you submit to run based on the conditions that you specify.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InputPolicy {
+    Allowed,
+    Disallowed,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for InputPolicy {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALLOWED" => InputPolicy::Allowed,
+            "DISALLOWED" => InputPolicy::Disallowed,
+            other => InputPolicy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for InputPolicy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InputPolicy::from(s))
+    }
+}
+impl InputPolicy {
+    pub fn as_str(&self) -> &str {
+        match self {
+            InputPolicy::Allowed => "ALLOWED",
+            InputPolicy::Disallowed => "DISALLOWED",
+            InputPolicy::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ALLOWED", "DISALLOWED"]
+    }
+}
+impl AsRef<str> for InputPolicy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
