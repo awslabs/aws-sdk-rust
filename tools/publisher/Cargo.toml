@@ -16,6 +16,6 @@ num_cpus = "1.13"
 semver = "1.0"
 thiserror = "1.0"
 tokio = { version = "1.12", features = ["full"] }
-toml = "0.5.8"
+toml = { version = "0.5.8", features = ["preserve_order"] }
 tracing = "0.1.29"
 tracing-subscriber = "0.2.25"
