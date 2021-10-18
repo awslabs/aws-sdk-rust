@@ -1,29 +1,69 @@
 [package]
 name = "aws-auth"
+edition = "2018"
 version = "0.0.21-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "AWS auth middleware."
-edition = "2018"
+keywords = []
+categories = []
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
-
-[features]
-rt-tokio = ["smithy-async/rt-tokio"]
-default = ["rt-tokio"]
+autobins = true
+autoexamples = true
+autotests = true
+autobenches = true
+publish = true
 
 [dependencies]
 pin-project = "1"
-smithy-async = { path = "../smithy-async", default-features = false }
-smithy-http = { path = "../smithy-http" }
-aws-types = { path = "../aws-types" }
-tokio = { version = "1", features = ["sync"] }
 tracing = "0.1"
 zeroize = "1.2.0"
+
+[dependencies.aws-types]
+version = "0.0.21-alpha"
+path = "../aws-types"
+features = []
+optional = false
+
+[dependencies.smithy-async]
+version = "0.26.0-alpha"
+path = "../smithy-async"
+features = []
+optional = false
+default-features = false
+
+[dependencies.smithy-http]
+version = "0.26.0-alpha"
+path = "../smithy-http"
+features = []
+optional = false
+
+[dependencies.tokio]
+version = "1"
+features = ["sync"]
+optional = false
 
 [dev-dependencies]
 async-trait = "0.1.50"
 env_logger = "*"
 http = "0.2.3"
-tokio = { version = "1", features = ["macros", "rt", "rt-multi-thread", "test-util"] }
-tracing-subscriber = { version = "0.2.16", features = ["fmt"] }
-smithy-async = { path = "../smithy-async", features = ["rt-tokio"] }
+
+[dev-dependencies.smithy-async]
+version = "0.26.0-alpha"
+path = "../smithy-async"
+features = ["rt-tokio"]
+optional = false
+
+[dev-dependencies.tokio]
+version = "1"
+features = ["macros", "rt", "rt-multi-thread", "test-util"]
+optional = false
+
+[dev-dependencies.tracing-subscriber]
+version = "0.2.16"
+features = ["fmt"]
+optional = false
+
+[features]
+default = ["rt-tokio"]
+rt-tokio = ["smithy-async/rt-tokio"]

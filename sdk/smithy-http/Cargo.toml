@@ -1,46 +1,74 @@
 [package]
 name = "smithy-http"
+edition = "2018"
 version = "0.26.0-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "Smithy HTTP logic for smithy-rs."
-edition = "2018"
+keywords = []
+categories = []
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
-
-[features]
-bytestream-util = ["tokio/fs", "tokio-util/io"]
-event-stream = ["smithy-eventstream"]
-default = ["bytestream-util"]
+autobins = true
+autoexamples = true
+autotests = true
+autobenches = true
+publish = true
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
 
 [dependencies]
-smithy-types = { path = "../smithy-types" }
-smithy-eventstream = { path = "../smithy-eventstream", optional = true }
 bytes = "1"
 bytes-utils = "0.1"
-http-body = "0.4.0"
+futures-core = "0.3.14"
 http = "0.2.3"
-thiserror = "1"
-pin-project = "1"
+http-body = "0.4.0"
+hyper = "0.14.5"
 percent-encoding = "2.1.0"
+pin-project = "1"
+thiserror = "1"
 tracing = "0.1"
 
-# We are using hyper for our streaming body implementation, but this is an internal detail.
-hyper = "0.14.5"
+[dependencies.smithy-eventstream]
+version = "0.26.0-alpha"
+path = "../smithy-eventstream"
+features = []
+optional = true
 
-# ByteStream internals
-futures-core = "0.3.14"
-tokio = { version = "1.6", optional = true }
-tokio-util = { version = "0.6", optional = true}
+[dependencies.smithy-types]
+version = "0.26.0-alpha"
+path = "../smithy-types"
+features = []
+optional = false
+
+[dependencies.tokio]
+version = "1.6"
+features = []
+optional = true
+
+[dependencies.tokio-util]
+version = "0.6"
+features = []
+optional = true
 
 [dev-dependencies]
 async-stream = "0.3"
 futures-util = "0.3"
-hyper = { version = "0.14.5", features = ["stream"] }
 proptest = "1"
-tokio = {version = "1.6", features = ["macros", "rt", "rt-multi-thread", "fs", "io-util"]}
-tokio-stream = "0.1.5"
 tempfile = "3.2.0"
+tokio-stream = "0.1.5"
 
-[package.metadata.docs.rs]
-all-features = true
-rustdoc-args = ["--cfg", "docsrs"]
+[dev-dependencies.hyper]
+version = "0.14.5"
+features = ["stream"]
+optional = false
+
+[dev-dependencies.tokio]
+version = "1.6"
+features = ["macros", "rt", "rt-multi-thread", "fs", "io-util"]
+optional = false
+
+[features]
+bytestream-util = ["tokio/fs", "tokio-util/io"]
+default = ["bytestream-util"]
+event-stream = ["smithy-eventstream"]

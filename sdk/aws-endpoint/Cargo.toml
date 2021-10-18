@@ -1,14 +1,36 @@
 [package]
 name = "aws-endpoint"
+edition = "2018"
 version = "0.0.21-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "AWS SDK endpoint support."
-edition = "2018"
+keywords = []
+categories = []
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
+autobins = true
+autoexamples = true
+autotests = true
+autobenches = true
+publish = true
 
 [dependencies]
-smithy-http = { path = "../smithy-http"}
-aws-types = { path = "../aws-types" }
 http = "0.2.3"
-regex = { version = "1", default-features = false, features = ["std"]}
+
+[dependencies.aws-types]
+version = "0.0.21-alpha"
+path = "../aws-types"
+features = []
+optional = false
+
+[dependencies.regex]
+version = "1"
+features = ["std"]
+optional = false
+default-features = false
+
+[dependencies.smithy-http]
+version = "0.26.0-alpha"
+path = "../smithy-http"
+features = []
+optional = false

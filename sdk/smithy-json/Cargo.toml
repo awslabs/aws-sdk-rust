@@ -1,14 +1,23 @@
 [package]
 name = "smithy-json"
+edition = "2018"
 version = "0.26.0-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "John DiSanti <jdisanti@amazon.com>"]
 description = "Token streaming JSON parser for smithy-rs."
-edition = "2018"
+keywords = []
+categories = []
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
-
-[dependencies]
-smithy-types = { path = "../smithy-types" }
+autobins = true
+autoexamples = true
+autotests = true
+autobenches = true
+publish = true
+[dependencies.smithy-types]
+version = "0.26.0-alpha"
+path = "../smithy-types"
+features = []
+optional = false
 
 [dev-dependencies]
 proptest = "1"

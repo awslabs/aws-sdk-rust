@@ -1,17 +1,38 @@
 [package]
 name = "aws-http"
+edition = "2018"
 version = "0.0.21-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "HTTP specific AWS SDK behaviors."
-edition = "2018"
+keywords = []
+categories = []
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
+autobins = true
+autoexamples = true
+autotests = true
+autobenches = true
+publish = true
 
 [dependencies]
-aws-types = { path = "../aws-types" }
-smithy-http = { path = "../smithy-http" }
-smithy-types = { path = "../smithy-types" }
-
 http = "0.2.3"
-thiserror = "1"
 lazy_static = "1"
+thiserror = "1"
+
+[dependencies.aws-types]
+version = "0.0.21-alpha"
+path = "../aws-types"
+features = []
+optional = false
+
+[dependencies.smithy-http]
+version = "0.26.0-alpha"
+path = "../smithy-http"
+features = []
+optional = false
+
+[dependencies.smithy-types]
+version = "0.26.0-alpha"
+path = "../smithy-types"
+features = []
+optional = false

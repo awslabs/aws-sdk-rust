@@ -1,12 +1,24 @@
 [package]
 name = "smithy-query"
+edition = "2018"
 version = "0.26.0-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "John DiSanti <jdisanti@amazon.com>"]
 description = "AWSQuery and EC2Query Smithy protocol logic for smithy-rs."
-edition = "2018"
+keywords = []
+categories = []
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
+autobins = true
+autoexamples = true
+autotests = true
+autobenches = true
+publish = true
 
 [dependencies]
 urlencoding = "1.3"
-smithy-types = { path = "../smithy-types" }
+
+[dependencies.smithy-types]
+version = "0.26.0-alpha"
+path = "../smithy-types"
+features = []
+optional = false
