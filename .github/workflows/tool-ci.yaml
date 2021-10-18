@@ -1,0 +1,39 @@
+on:
+  pull_request:
+    paths: 'tools/**'
+
+env:
+  rust_version: 1.53.0
+  rust_toolchain_components: clippy,rustfmt
+
+name: Tools CI
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Compile, Test, and Lint the `tools/` path
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        name: Cargo Cache
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            tools/publisher/target
+          key: tools-${{ runner.os }}-cargo-${{ hashFiles('tools/**/Cargo.toml') }}
+          restore-keys: |
+            tools-${{ runner.os }}-cargo-
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ env.rust_version }}
+          components: ${{ env.rust_toolchain_components }}
+          default: true
+      - name: Format Check
+        run: rustfmt --check --edition 2018 $(find tools -name '*.rs' -print | grep -v /target/)
+      - name: Cargo Test
+        run: cargo test
+        working-directory: tools/publisher
+      - name: Cargo Clippy
+        run: cargo clippy -- -D warnings
+        working-directory: tools/publisher
