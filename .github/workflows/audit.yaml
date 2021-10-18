@@ -28,4 +28,4 @@ jobs:
         # There currently is no release from chrono that rectifies the issue, and we are working
         # on a mitigation to ensure that we either use a patched version of chrono or add a deny-lint
         # to call any chrono methods other than the method we use currently.
-        run: cargo audit --ignore RUSTSEC-2020-0071
+        run: cargo audit --ignore RUSTSEC-2020-0071 --ignore RUSTSEC-2020-0159
