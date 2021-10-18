@@ -1,33 +1,16 @@
 [package]
 name = "aws-types"
-edition = "2018"
 version = "0.0.21-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "Cross-service types for the AWS SDK."
-keywords = []
-categories = []
+edition = "2018"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
-autobins = true
-autoexamples = true
-autotests = true
-autobenches = true
-publish = true
 
 [dependencies]
+smithy-async = { path = "../smithy-async" }
+smithy-types = { path = "../smithy-types" }
 zeroize = "1.4.1"
-
-[dependencies.smithy-async]
-version = "0.26.0-alpha"
-path = "../smithy-async"
-features = []
-optional = false
-
-[dependencies.smithy-types]
-version = "0.26.0-alpha"
-path = "../smithy-types"
-features = []
-optional = false
 
 [dev-dependencies]
 futures-util = "0.3.16"

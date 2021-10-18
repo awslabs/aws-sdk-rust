@@ -1,42 +1,21 @@
 [package]
 name = "smithy-http-tower"
-edition = "2018"
 version = "0.26.0-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "Tower-compatible shims for smithy-rs middleware."
-keywords = []
-categories = []
+edition = "2018"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
-autobins = true
-autoexamples = true
-autotests = true
-autobenches = true
-publish = true
 
 [dependencies]
-bytes = "1"
-http = "0.2.3"
-http-body = "0.4.0"
+smithy-http = { path = "../smithy-http" }
+tower = { version = "0.4.4" }
 pin-project = "1"
+http = "0.2.3"
+bytes = "1"
+http-body = "0.4.0"
 tracing = "0.1"
 
-[dependencies.smithy-http]
-version = "0.26.0-alpha"
-path = "../smithy-http"
-features = []
-optional = false
-
-[dependencies.tower]
-version = "0.4.4"
-features = []
-optional = false
-[dev-dependencies.tokio]
-version = "1"
-features = ["full"]
-optional = false
-
-[dev-dependencies.tower]
-version = "0.4.4"
-features = ["util"]
-optional = false
+[dev-dependencies]
+tower = { version = "0.4.4", features = ["util"] }
+tokio = { version = "1", features = ["full"]}

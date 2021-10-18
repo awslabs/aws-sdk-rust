@@ -1,132 +1,44 @@
 [package]
 name = "aws-hyper"
-edition = "2018"
 version = "0.0.21-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "AWS SDK Tower middleware stack."
-keywords = []
-categories = []
+edition = "2018"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
-autobins = true
-autoexamples = true
-autotests = true
-autobenches = true
-publish = true
-
-[dependencies]
-bytes = "1"
-fastrand = "1.4.0"
-http = "0.2.3"
-http-body = "0.4.0"
-pin-project = "1"
-tracing = "0.1"
-
-[dependencies.aws-auth]
-version = "0.0.21-alpha"
-path = "../aws-auth"
-features = []
-optional = false
-
-[dependencies.aws-endpoint]
-version = "0.0.21-alpha"
-path = "../aws-endpoint"
-features = []
-optional = false
-
-[dependencies.aws-http]
-version = "0.0.21-alpha"
-path = "../aws-http"
-features = []
-optional = false
-
-[dependencies.aws-sig-auth]
-version = "0.0.21-alpha"
-path = "../aws-sig-auth"
-features = []
-optional = false
-
-[dependencies.hyper]
-version = "0.14.2"
-features = ["client", "http1", "http2", "tcp", "runtime"]
-optional = false
-
-[dependencies.hyper-rustls]
-version = "0.22.1"
-features = ["rustls-native-certs"]
-optional = true
-
-[dependencies.hyper-tls]
-version = "0.5.0"
-features = []
-optional = true
-
-[dependencies.smithy-client]
-version = "0.26.0-alpha"
-path = "../smithy-client"
-features = []
-optional = false
-
-[dependencies.smithy-http]
-version = "0.26.0-alpha"
-path = "../smithy-http"
-features = []
-optional = false
-
-[dependencies.smithy-http-tower]
-version = "0.26.0-alpha"
-path = "../smithy-http-tower"
-features = []
-optional = false
-
-[dependencies.smithy-types]
-version = "0.26.0-alpha"
-path = "../smithy-types"
-features = []
-optional = false
-
-[dependencies.tokio]
-version = "1"
-features = ["time"]
-optional = false
-
-[dependencies.tower]
-version = "0.4.6"
-features = ["util", "retry"]
-optional = false
-
-[dev-dependencies]
-tower-test = "0.4.0"
-
-[dev-dependencies.aws-types]
-version = "0.0.21-alpha"
-path = "../aws-types"
-features = []
-optional = false
-
-[dev-dependencies.smithy-client]
-version = "0.26.0-alpha"
-path = "../smithy-client"
-features = ["test-util"]
-optional = false
-
-[dev-dependencies.tokio]
-version = "1"
-features = ["full", "test-util"]
-optional = false
 
 [features]
 default = []
 native-tls = ["hyper-tls", "smithy-client/native-tls"]
 rustls = ["hyper-rustls", "smithy-client/rustls"]
 
+[dependencies]
+hyper = { version = "0.14.2", features = ["client", "http1", "http2", "tcp", "runtime"] }
+tower = { version = "0.4.6", features = ["util", "retry"] }
+hyper-tls = { version ="0.5.0", optional = true }
+hyper-rustls = { version = "0.22.1", optional = true, features = ["rustls-native-certs"] }
+aws-auth = { path = "../aws-auth" }
+aws-sig-auth = { path = "../aws-sig-auth" }
+aws-endpoint = { path = "../aws-endpoint" }
+aws-http = { path = "../aws-http" }
+http = "0.2.3"
+bytes = "1"
+http-body = "0.4.0"
+smithy-http = { path = "../smithy-http" }
+smithy-types = { path = "../smithy-types" }
+smithy-http-tower = { path = "../smithy-http-tower" }
+smithy-client = { path = "../smithy-client" }
+fastrand = "1.4.0"
+tokio = { version = "1", features = ["time"] }
+
+pin-project = "1"
+tracing = "0.1"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full", "test-util"] }
+tower-test = "0.4.0"
+aws-types = { path = "../aws-types" }
+smithy-client = { path = "../smithy-client", features = ["test-util"] }
+
 [[test]]
 name = "e2e_test"
-test = true
-doctest = true
-bench = true
-doc = true
-plugin = false
-proc-macro = false
-harness = true
-required-features = []

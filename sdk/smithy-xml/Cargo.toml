@@ -1,29 +1,17 @@
 [package]
 name = "smithy-xml"
-edition = "2018"
 version = "0.26.0-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "XML parsing logic for Smithy protocols."
-keywords = []
-categories = []
+edition = "2018"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
-autobins = true
-autoexamples = true
-autotests = true
-autobenches = true
-publish = true
 
 [dependencies]
-thiserror = "1"
 xmlparser = "=0.13.3"
+thiserror = "1"
 
 [dev-dependencies]
-base64 = "0.13.0"
 proptest = "1"
-
-[dev-dependencies.smithy-protocol-test]
-version = "0.26.0-alpha"
-path = "../smithy-protocol-test"
-features = []
-optional = false
+base64 = "0.13.0"
+smithy-protocol-test = { path = "../smithy-protocol-test" }

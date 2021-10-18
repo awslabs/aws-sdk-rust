@@ -1,37 +1,21 @@
 [package]
 name = "smithy-eventstream"
-edition = "2018"
 version = "0.26.0-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "John DiSanti <jdisanti@amazon.com>"]
 description = "Event stream logic for smithy-rs."
-keywords = []
-categories = []
+edition = "2018"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
-autobins = true
-autoexamples = true
-autotests = true
-autobenches = true
-publish = true
+
+[features]
+derive-arbitrary = ["arbitrary"]
+default = []
 
 [dependencies]
+arbitrary = { version = "1", optional = true, features = ["derive"] }
 bytes = "1"
 crc32fast = "1"
-
-[dependencies.arbitrary]
-version = "1"
-features = ["derive"]
-optional = true
-
-[dependencies.smithy-types]
-version = "0.26.0-alpha"
-path = "../smithy-types"
-features = []
-optional = false
+smithy-types = { path = "../smithy-types" }
 
 [dev-dependencies]
 bytes-utils = "0.1"
-
-[features]
-default = []
-derive-arbitrary = ["arbitrary"]

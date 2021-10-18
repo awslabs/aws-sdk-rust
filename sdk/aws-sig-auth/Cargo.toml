@@ -1,57 +1,27 @@
 [package]
 name = "aws-sig-auth"
-edition = "2018"
 version = "0.0.21-alpha"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "SigV4 signing middleware for the AWS SDK."
-keywords = []
-categories = []
+edition = "2018"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
-autobins = true
-autoexamples = true
-autotests = true
-autobenches = true
-publish = true
+
+[features]
+sign-eventstream = ["smithy-eventstream", "aws-sigv4/sign-eventstream"]
+default = []
 
 [dependencies]
 http = "0.2.2"
+aws-sigv4 = { path = "../aws-sigv4" }
+aws-types = { path = "../aws-types" }
+smithy-http = { path = "../smithy-http" }
+smithy-eventstream = { path = "../smithy-eventstream", optional = true }
+# Trying this out as an experiment. thiserror can be removed and replaced with hand written error
+# implementations and it is not a breaking change.
 thiserror = "1"
 tracing = "0.1"
 
-[dependencies.aws-sigv4]
-version = "0.0.21-alpha"
-path = "../aws-sigv4"
-features = []
-optional = false
-
-[dependencies.aws-types]
-version = "0.0.21-alpha"
-path = "../aws-types"
-features = []
-optional = false
-
-[dependencies.smithy-eventstream]
-version = "0.26.0-alpha"
-path = "../smithy-eventstream"
-features = []
-optional = true
-
-[dependencies.smithy-http]
-version = "0.26.0-alpha"
-path = "../smithy-http"
-features = []
-optional = false
-
 [dev-dependencies]
+aws-endpoint = { path = "../aws-endpoint" }
 tracing-test = "0.1"
-
-[dev-dependencies.aws-endpoint]
-version = "0.0.21-alpha"
-path = "../aws-endpoint"
-features = []
-optional = false
-
-[features]
-default = []
-sign-eventstream = ["smithy-eventstream", "aws-sigv4/sign-eventstream"]
