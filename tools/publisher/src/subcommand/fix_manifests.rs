@@ -4,6 +4,10 @@
  */
 
 //! Subcommand for fixing manifest dependency version numbers.
+//!
+//! Finds all of the version numbers for every crate in the repo crate path, and then
+//! finds all references to the crates in that path and updates them to have the correct
+//! version numbers in addition to the dependency path.
 
 use crate::fs::Fs;
 use crate::package::{discover_package_manifests, parse_version};
@@ -40,6 +44,7 @@ async fn read_manifests(fs: Fs, manifest_paths: Vec<PathBuf>) -> Result<Vec<Mani
     Ok(result)
 }
 
+/// Returns a map of crate name to semver version number
 fn package_versions(manifests: &[Manifest]) -> Result<BTreeMap<String, Version>> {
     let mut versions = BTreeMap::new();
     for manifest in manifests {
